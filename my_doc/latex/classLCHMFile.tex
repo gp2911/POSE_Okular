@@ -1,0 +1,788 @@
+\hypertarget{classLCHMFile}{\section{L\+C\+H\+M\+File Class Reference}
+\label{classLCHMFile}\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+}
+
+
+C\+H\+M files processor, heavily based on chmlib. Used search code from xchm.  
+
+
+
+
+{\ttfamily \#include $<$libchmfile.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLCHMFile_a5f255d3dfb72ac263aac25c97b08e97d}{L\+C\+H\+M\+File} ()
+\begin{DoxyCompactList}\small\item\em Default constructor and destructor. \end{DoxyCompactList}\item 
+\hyperlink{classLCHMFile_a2df7b87f3727793bf14d1ce44d11e743}{$\sim$\+L\+C\+H\+M\+File} ()
+\item 
+bool \hyperlink{classLCHMFile_a99187b66c1ad404bd77382b93c5c4a79}{load\+File} (const Q\+String \&archive\+Name)
+\begin{DoxyCompactList}\small\item\em Attempts to load a .chm file. \end{DoxyCompactList}\item 
+void \hyperlink{classLCHMFile_aa66c0bdfa729086fb3cdc818606cef0b}{close\+All} ()
+\begin{DoxyCompactList}\small\item\em Closes all the files, and frees the appropriate data. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classLCHMFile_ad44b1237596a2844ce743162d0ed7add}{title} () const 
+\begin{DoxyCompactList}\small\item\em Gets the title name of the opened .chm. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classLCHMFile_a6d33c304ba1c1e1ba2cbec2c90a5b975}{home\+Url} () const 
+\begin{DoxyCompactList}\small\item\em Gets the U\+R\+L of the default page in the chm archive. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a10c31294cb99483b4a9dca8dcc3a7a34}{has\+Table\+Of\+Contents} () const 
+\begin{DoxyCompactList}\small\item\em Checks whether the Table of Contents is present in this file. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a47c6e4a787c33ebad3556d7b1fd89738}{has\+Index\+Table} () const 
+\begin{DoxyCompactList}\small\item\em Checks whether the Index Table is present in this file. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a7a2cdadc94e6804bc05f99b19842bed1}{has\+Search\+Table} () const 
+\begin{DoxyCompactList}\small\item\em Checks whether the Search Table is available in this file. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a28d69103c40a289a41ef8f56e5f63eca}{parse\+Table\+Of\+Contents} (Q\+Vector$<$ \hyperlink{structLCHMParsedEntry}{L\+C\+H\+M\+Parsed\+Entry} $>$ $\ast$topics) const 
+\begin{DoxyCompactList}\small\item\em Parses the Table of Contents (\hyperlink{classTOC}{T\+O\+C}) \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_ad93af373778e2460fa0f667b9731e76d}{parse\+Index} (Q\+Vector$<$ \hyperlink{structLCHMParsedEntry}{L\+C\+H\+M\+Parsed\+Entry} $>$ $\ast$indexes) const 
+\begin{DoxyCompactList}\small\item\em Parses the Index Table. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a676da6f5d866c297977a5c521805af45}{get\+File\+Content\+As\+String} (Q\+String $\ast$str, const Q\+String \&url)
+\begin{DoxyCompactList}\small\item\em Retrieves the content from url in current chm file to Q\+String. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_ab3b176b6cd5794321fa7fef44c85db86}{get\+File\+Content\+As\+Binary} (Q\+Byte\+Array $\ast$data, const Q\+String \&url)
+\begin{DoxyCompactList}\small\item\em Retrieves the content from url in current chm file to Q\+Byte\+Array. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a2e4b934ed39c6f5f801423485a32b3e8}{get\+File\+Size} (unsigned int $\ast$\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}, const Q\+String \&url)
+\begin{DoxyCompactList}\small\item\em Retrieves the content size. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_af0dbccaf688f99e8c4519917159e8817}{enumerate\+Files} (Q\+String\+List $\ast$files)
+\begin{DoxyCompactList}\small\item\em Obtains the list of all the files in current chm file archive. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classLCHMFile_a4bb516986c667b9774e9d84700b96a00}{get\+Topic\+By\+Url} (const Q\+String \&url)
+\begin{DoxyCompactList}\small\item\em Gets the Title of the H\+T\+M\+L page referenced by url. \end{DoxyCompactList}\item 
+const Q\+Pixmap $\ast$ \hyperlink{classLCHMFile_a42b6781e6c3227656c9b6d12922fb522}{get\+Book\+Icon\+Pixmap} (unsigned int imagenum)
+\begin{DoxyCompactList}\small\item\em Gets the appropriate C\+H\+M pixmap icon. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classLCHMFile_a8c98d60af1fa1588548b99bbcd77b1e4}{normalize\+Url} (const Q\+String \&url) const 
+\begin{DoxyCompactList}\small\item\em Normalizes the U\+R\+L, converting relatives, adding \char`\"{}/\char`\"{} in front and removing .. \end{DoxyCompactList}\item 
+const \hyperlink{structLCHMTextEncoding}{L\+C\+H\+M\+Text\+Encoding} $\ast$ \hyperlink{classLCHMFile_a0847ee498ddb6e46c064cf0924868c01}{current\+Encoding} () const 
+\begin{DoxyCompactList}\small\item\em Gets the current C\+H\+M archive encoding (set or autodetected) \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_ae82f20e769b26a76eeff6beaca52a691}{set\+Current\+Encoding} (const \hyperlink{structLCHMTextEncoding}{L\+C\+H\+M\+Text\+Encoding} $\ast$encoding)
+\begin{DoxyCompactList}\small\item\em Sets the C\+H\+M archive encoding to use. \end{DoxyCompactList}\item 
+bool \hyperlink{classLCHMFile_a354fdf8c278379ff8e6a0b7408fc0981}{search\+Query} (const Q\+String \&query, Q\+String\+List $\ast$results, unsigned int limit=100)
+\begin{DoxyCompactList}\small\item\em Execute a search query, return the results. \end{DoxyCompactList}\item 
+\hyperlink{classLCHMFileImpl}{L\+C\+H\+M\+File\+Impl} $\ast$ \hyperlink{classLCHMFile_a74fa35f014782712fd33f53cb2247cc2}{impl} ()
+\begin{DoxyCompactList}\small\item\em Access to implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\+H\+M files processor, heavily based on chmlib. Used search code from xchm. 
+
+Definition at line 68 of file libchmfile.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLCHMFile_a5f255d3dfb72ac263aac25c97b08e97d}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{L\+C\+H\+M\+File}]{\setlength{\rightskip}{0pt plus 5cm}L\+C\+H\+M\+File\+::\+L\+C\+H\+M\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a5f255d3dfb72ac263aac25c97b08e97d}
+
+
+Default constructor and destructor. 
+
+
+
+Definition at line 28 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+29 \{
+30     m\_impl = \textcolor{keyword}{new} \hyperlink{classLCHMFileImpl}{LCHMFileImpl}();
+31 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a2df7b87f3727793bf14d1ce44d11e743}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!````~L\+C\+H\+M\+File@{$\sim$\+L\+C\+H\+M\+File}}
+\index{````~L\+C\+H\+M\+File@{$\sim$\+L\+C\+H\+M\+File}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{$\sim$\+L\+C\+H\+M\+File}]{\setlength{\rightskip}{0pt plus 5cm}L\+C\+H\+M\+File\+::$\sim$\+L\+C\+H\+M\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a2df7b87f3727793bf14d1ce44d11e743}
+
+
+Definition at line 33 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keyword}{delete} m\_impl;
+36 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLCHMFile_aa66c0bdfa729086fb3cdc818606cef0b}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!close\+All@{close\+All}}
+\index{close\+All@{close\+All}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{close\+All}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+H\+M\+File\+::close\+All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_aa66c0bdfa729086fb3cdc818606cef0b}
+
+
+Closes all the files, and frees the appropriate data. 
+
+
+
+Definition at line 43 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     m\_impl->\hyperlink{classLCHMFileImpl_a483f7cc028d300635b87e6975c6a1757}{closeAll}();
+46 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a0847ee498ddb6e46c064cf0924868c01}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!current\+Encoding@{current\+Encoding}}
+\index{current\+Encoding@{current\+Encoding}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{current\+Encoding}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf L\+C\+H\+M\+Text\+Encoding} $\ast$ L\+C\+H\+M\+File\+::current\+Encoding (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a0847ee498ddb6e46c064cf0924868c01}
+
+
+Gets the current C\+H\+M archive encoding (set or autodetected) 
+
+\begin{DoxyReturn}{Returns}
+The current encoding. 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+110 \{
+111     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a365b502e727dd2202dec204815d23c50}{m\_currentEncoding};
+112 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_af0dbccaf688f99e8c4519917159e8817}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!enumerate\+Files@{enumerate\+Files}}
+\index{enumerate\+Files@{enumerate\+Files}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{enumerate\+Files}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::enumerate\+Files (
+\begin{DoxyParamCaption}
+\item[{Q\+String\+List $\ast$}]{files}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_af0dbccaf688f99e8c4519917159e8817}
+
+
+Obtains the list of all the files in current chm file archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & An array to store list of U\+R\+Ls (file names) present in chm archive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the enumeration succeed; false otherwise (I could hardly imagine a reason). 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+95 \{
+96     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a21fea24de5c93c2d192fd5c6f26a1dfd}{enumerateFiles}( files );
+97 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a42b6781e6c3227656c9b6d12922fb522}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!get\+Book\+Icon\+Pixmap@{get\+Book\+Icon\+Pixmap}}
+\index{get\+Book\+Icon\+Pixmap@{get\+Book\+Icon\+Pixmap}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{get\+Book\+Icon\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Pixmap $\ast$ L\+C\+H\+M\+File\+::get\+Book\+Icon\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{imagenum}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a42b6781e6c3227656c9b6d12922fb522}
+
+
+Gets the appropriate C\+H\+M pixmap icon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imagenum} & The image number from \hyperlink{classTOC}{T\+O\+C}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pixmap to show in \hyperlink{classTOC}{T\+O\+C} tree. 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+105 \{
+106     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_ad0b8a4f3e8949c4f713919cf4aa10683}{getBookIconPixmap}( imagenum );
+107 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_ab3b176b6cd5794321fa7fef44c85db86}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!get\+File\+Content\+As\+Binary@{get\+File\+Content\+As\+Binary}}
+\index{get\+File\+Content\+As\+Binary@{get\+File\+Content\+As\+Binary}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{get\+File\+Content\+As\+Binary}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::get\+File\+Content\+As\+Binary (
+\begin{DoxyParamCaption}
+\item[{Q\+Byte\+Array $\ast$}]{data, }
+\item[{const Q\+String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_ab3b176b6cd5794321fa7fef44c85db86}
+
+
+Retrieves the content from url in current chm file to Q\+Byte\+Array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A data array where the retrieved content should be stored. \\
+\hline
+{\em url} & An U\+R\+L in chm file to retrieve content from. Must be absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the content is successfully received; false otherwise.
+\end{DoxyReturn}
+This function retrieves the file content from the chm archive opened by load() function. The content is not encoded.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classLCHMFile_a676da6f5d866c297977a5c521805af45}{get\+File\+Content\+As\+String()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 89 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+90 \{
+91     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a83f47ad1b36f953e7de3d32e3a83313c}{getFileContentAsBinary}( \hyperlink{structdrawinf_af73f66288002f0a25c7843a534bf1340}{data}, url );
+92 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a676da6f5d866c297977a5c521805af45}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!get\+File\+Content\+As\+String@{get\+File\+Content\+As\+String}}
+\index{get\+File\+Content\+As\+String@{get\+File\+Content\+As\+String}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{get\+File\+Content\+As\+String}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::get\+File\+Content\+As\+String (
+\begin{DoxyParamCaption}
+\item[{Q\+String $\ast$}]{str, }
+\item[{const Q\+String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a676da6f5d866c297977a5c521805af45}
+
+
+Retrieves the content from url in current chm file to Q\+String. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A string where the retrieved content should be stored. \\
+\hline
+{\em url} & An U\+R\+L in chm file to retrieve content from. Must be absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the content is successfully received; false otherwise.
+\end{DoxyReturn}
+This function retrieves the file content (mostly for H\+T\+M\+L pages) from the chm archive opened by load() function. Because the content in chm file is not stored in Unicode, it will be recoded according to current encoding. Do not use for binary data.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classLCHMFile_ae82f20e769b26a76eeff6beaca52a691}{set\+Current\+Encoding()} \hyperlink{classLCHMFile_a0847ee498ddb6e46c064cf0924868c01}{current\+Encoding()} \hyperlink{classLCHMFile_ab3b176b6cd5794321fa7fef44c85db86}{get\+File\+Content\+As\+Binary()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 84 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+85 \{
+86     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a4e0ea1a6ff803428299be6d72508c5c2}{getFileContentAsString}( str, url );
+87 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a2e4b934ed39c6f5f801423485a32b3e8}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{get\+File\+Size}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::get\+File\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned int $\ast$}]{size, }
+\item[{const Q\+String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a2e4b934ed39c6f5f801423485a32b3e8}
+
+
+Retrieves the content size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & A pointer where the size will be stored. \\
+\hline
+{\em url} & An U\+R\+L in chm file to retrieve content from. Must be absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the content size is successfully stored; false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+125 \{
+126     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a956d078842d2cc3ece160c9348930584}{getFileSize}( \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}, url );
+127 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a4bb516986c667b9774e9d84700b96a00}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!get\+Topic\+By\+Url@{get\+Topic\+By\+Url}}
+\index{get\+Topic\+By\+Url@{get\+Topic\+By\+Url}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{get\+Topic\+By\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String L\+C\+H\+M\+File\+::get\+Topic\+By\+Url (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a4bb516986c667b9774e9d84700b96a00}
+
+
+Gets the Title of the H\+T\+M\+L page referenced by url. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & An U\+R\+L in chm file to get title from. Must be absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The title, or Q\+String\+::null if the U\+R\+L cannot be found or not a H\+T\+M\+L page. 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+100 \{
+101     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_af5c1957e8dbcc4c4a06186d766e222be}{getTopicByUrl}( url );
+102 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a47c6e4a787c33ebad3556d7b1fd89738}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!has\+Index\+Table@{has\+Index\+Table}}
+\index{has\+Index\+Table@{has\+Index\+Table}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{has\+Index\+Table}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::has\+Index\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a47c6e4a787c33ebad3556d7b1fd89738}
+
+
+Checks whether the Index Table is present in this file. 
+
+\begin{DoxyReturn}{Returns}
+true if it is available; false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{return} !m\_impl->\hyperlink{classLCHMFileImpl_ab5f59c7a474b444bb07a1992bd0a6d82}{m\_indexFile}.isNull();
+67 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a7a2cdadc94e6804bc05f99b19842bed1}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!has\+Search\+Table@{has\+Search\+Table}}
+\index{has\+Search\+Table@{has\+Search\+Table}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{has\+Search\+Table}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::has\+Search\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a7a2cdadc94e6804bc05f99b19842bed1}
+
+
+Checks whether the Search Table is available in this file. 
+
+\begin{DoxyReturn}{Returns}
+true if it is available; false otherwise.
+\end{DoxyReturn}
+If the search table is not available, the search is not possible. 
+
+Definition at line 69 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a7f5f505b00220199785298bdad0627f6}{m\_searchAvailable};
+72 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a10c31294cb99483b4a9dca8dcc3a7a34}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!has\+Table\+Of\+Contents@{has\+Table\+Of\+Contents}}
+\index{has\+Table\+Of\+Contents@{has\+Table\+Of\+Contents}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{has\+Table\+Of\+Contents}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::has\+Table\+Of\+Contents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a10c31294cb99483b4a9dca8dcc3a7a34}
+
+
+Checks whether the Table of Contents is present in this file. 
+
+\begin{DoxyReturn}{Returns}
+true if it is available; false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     \textcolor{keywordflow}{return} !m\_impl->\hyperlink{classLCHMFileImpl_af3d33a88f44e3d103f08d9cc1c0ccf12}{m\_topicsFile}.isNull();
+62 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a6d33c304ba1c1e1ba2cbec2c90a5b975}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!home\+Url@{home\+Url}}
+\index{home\+Url@{home\+Url}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{home\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String L\+C\+H\+M\+File\+::home\+Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a6d33c304ba1c1e1ba2cbec2c90a5b975}
+
+
+Gets the U\+R\+L of the default page in the chm archive. 
+
+\begin{DoxyReturn}{Returns}
+The home page name, with a '/' added in front and relative to the root of the archive filesystem. If no .chm has been opened, returns \char`\"{}/\char`\"{}. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     QString url = m\_impl->\hyperlink{classLCHMFileImpl_a4a62bf461c3b534161fd2c09b638c929}{homeUrl}();
+56     \textcolor{keywordflow}{return} url.isNull() ? \textcolor{stringliteral}{"/"} : url;
+57 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a74fa35f014782712fd33f53cb2247cc2}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!impl@{impl}}
+\index{impl@{impl}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{impl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+C\+H\+M\+File\+Impl}$\ast$ L\+C\+H\+M\+File\+::impl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classLCHMFile_a74fa35f014782712fd33f53cb2247cc2}
+
+
+Access to implementation. 
+
+
+
+Definition at line 266 of file libchmfile.\+h.
+
+
+\begin{DoxyCode}
+266 \{ \textcolor{keywordflow}{return} m\_impl; \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a99187b66c1ad404bd77382b93c5c4a79}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{load\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::load\+File (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{archive\+Name}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a99187b66c1ad404bd77382b93c5c4a79}
+
+
+Attempts to load a .chm file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em archive\+Name} & The .chm filename. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure.
+\end{DoxyReturn}
+Loads a C\+H\+M file. Could internally load more than one file, if files linked to this one are present locally (like M\+S\+D\+N). 
+
+Definition at line 38 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a2bd2ffb002032653a199f24e091bca24}{loadFile}( archiveName );
+41 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a8c98d60af1fa1588548b99bbcd77b1e4}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!normalize\+Url@{normalize\+Url}}
+\index{normalize\+Url@{normalize\+Url}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{normalize\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String L\+C\+H\+M\+File\+::normalize\+Url (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{url}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a8c98d60af1fa1588548b99bbcd77b1e4}
+
+
+Normalizes the U\+R\+L, converting relatives, adding \char`\"{}/\char`\"{} in front and removing .. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+R\+L to normalize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The normalized, cleaned up U\+R\+L. 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+120 \{
+121     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_abdb0cfe83119a89df45ef681e2548b17}{normalizeUrl}( url );
+122 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_ad93af373778e2460fa0f667b9731e76d}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!parse\+Index@{parse\+Index}}
+\index{parse\+Index@{parse\+Index}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{parse\+Index}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::parse\+Index (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ {\bf L\+C\+H\+M\+Parsed\+Entry} $>$ $\ast$}]{indexes}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_ad93af373778e2460fa0f667b9731e76d}
+
+
+Parses the Index Table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indexes} & A pointer to the container which will store the parsed results. Will be cleaned before parsing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the tree is present and parsed successfully, false otherwise. The parser is built to be error-\/prone, however it still can abort with q\+Fatal() by really buggy chm file; so far it never happened on indexes. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a7d59bfdee96e603b0cd1e19f9bf37448}{parseFileAndFillArray}( m\_impl->
+      \hyperlink{classLCHMFileImpl_ab5f59c7a474b444bb07a1992bd0a6d82}{m\_indexFile}, indexes, \textcolor{keyword}{true} );
+82 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a28d69103c40a289a41ef8f56e5f63eca}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!parse\+Table\+Of\+Contents@{parse\+Table\+Of\+Contents}}
+\index{parse\+Table\+Of\+Contents@{parse\+Table\+Of\+Contents}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{parse\+Table\+Of\+Contents}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::parse\+Table\+Of\+Contents (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ {\bf L\+C\+H\+M\+Parsed\+Entry} $>$ $\ast$}]{topics}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_a28d69103c40a289a41ef8f56e5f63eca}
+
+
+Parses the Table of Contents (\hyperlink{classTOC}{T\+O\+C}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em topics} & A pointer to the container which will store the parsed results. Will be cleaned before parsing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the tree is present and parsed successfully, false otherwise. The parser is built to be error-\/prone, however it still can abort with q\+Fatal() by really buggy chm file; please report a bug if the file is opened ok under Windows. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_a7d59bfdee96e603b0cd1e19f9bf37448}{parseFileAndFillArray}( m\_impl->
+      \hyperlink{classLCHMFileImpl_af3d33a88f44e3d103f08d9cc1c0ccf12}{m\_topicsFile}, topics, \textcolor{keyword}{false} );
+77 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_a354fdf8c278379ff8e6a0b7408fc0981}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!search\+Query@{search\+Query}}
+\index{search\+Query@{search\+Query}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{search\+Query}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::search\+Query (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{query, }
+\item[{Q\+String\+List $\ast$}]{results, }
+\item[{unsigned int}]{limit = {\ttfamily 100}}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_a354fdf8c278379ff8e6a0b7408fc0981}
+
+
+Execute a search query, return the results. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & A search query. \\
+\hline
+{\em results} & An array to store U\+R\+Ls where the query was found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if search was successful (this does not mean that it returned any results); false otherwise.
+\end{DoxyReturn}
+This function executes a standard search query. The query should consist of one of more words separated by a space with a possible prefix. A prefix may be\+:
+\begin{DoxyItemize}
+\item Plus indicates that the word is required; any page without this word is excluded from the result.
+\item Minus indicates that the word is required to be absent; any page with this word is excluded from the result. \char`\"{}.\char`\"{} Quotes indicates a phrase. Anything between quotes is a phrase, which is set of space-\/separated words. Will be in result only if the words in phrase are in page in the same sequence, and follow each other.
+\end{DoxyItemize}
+
+If there is no prefix, the word considered as required. 
+
+Definition at line 176 of file libchmfile\+\_\+search.\+cpp.
+
+
+\begin{DoxyCode}
+177 \{
+178     QStringList words\_must\_exist, words\_must\_not\_exist, words\_highlight;
+179     QVector<QStringList> phrases\_must\_exist;
+180     QString query = inquery;
+181     \textcolor{keywordtype}{bool} query\_valid = \textcolor{keyword}{true};
+182     \hyperlink{libchmfileimpl_8h_a49915bbafbeae4acb86601a1e4f0c247}{LCHMSearchProgressResults} results;
+183     \textcolor{keywordtype}{int} pos;
+184     \textcolor{keywordtype}{int} i;  
+185         
+186     \textcolor{comment}{/*}
+187 \textcolor{comment}{    * Parse the search query with a simple state machine.}
+188 \textcolor{comment}{    * Query should consist of one of more words separated by a space with a possible prefix.}
+189 \textcolor{comment}{     * A prefix may be:}
+190 \textcolor{comment}{    *   +   indicates that the word is required; any page without this word is excluded from the result.}
+191 \textcolor{comment}{    *   -   indicates that the word is required to be absent; any page with this word is excluded from}
+192 \textcolor{comment}{    *       the result.}
+193 \textcolor{comment}{    *   "." indicates a phrase. Anything between quotes indicates a phrase, which is set of space-separated}
+194 \textcolor{comment}{    *       words. Will be in result only if the words in phrase are in page in the same sequence, and}
+195 \textcolor{comment}{    *       follow each other.}
+196 \textcolor{comment}{    *   If there is no prefix, the word considered as required.}
+197 \textcolor{comment}{    */}
+198     
+199     QRegExp rxphrase( \textcolor{stringliteral}{"\(\backslash\)"(.*)\(\backslash\)""} );
+200     QRegExp rxword( \textcolor{stringliteral}{"([^\(\backslash\)\(\backslash\)s]+)"} );
+201     rxphrase.setMinimal( \hyperlink{unpluckint_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE} );
+202 
+203     \textcolor{comment}{// First, get the phrase queries}
+204     \textcolor{keywordflow}{while} ( (pos = rxphrase.indexIn (query, 0)) != -1 )
+205     \{
+206         \textcolor{comment}{// A phrase query found. Locate its boundaries, and parse it.}
+207         QStringList plist = rxphrase.cap ( 1 ).split ( QRegExp (\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)s+"}) );
+208         
+209         validateWords ( plist, query\_valid );
+210         
+211         \textcolor{keywordflow}{if} ( plist.size() > 0 )
+212             phrases\_must\_exist.push\_back( plist );
+213         
+214         query.remove (pos, rxphrase.matchedLength());
+215     \}
+216 
+217     \textcolor{comment}{// Then, parse the rest query}
+218     \textcolor{keywordflow}{while} ( (pos = rxword.indexIn( query, 0 )) != -1 )
+219     \{
+220         \textcolor{comment}{// A phrase query found. Locate its boundaries, and parse it.}
+221         QString word = rxword.cap ( 1 );
+222         QChar type = \textcolor{charliteral}{'+'};
+223         
+224         \textcolor{keywordflow}{if} ( word[0] == \textcolor{charliteral}{'-'} || word[0] == \textcolor{charliteral}{'+'} )
+225         \{
+226             type = word[0];
+227             word.remove (0, 1);
+228         \}
+229         
+230         validateWord ( word, query\_valid );
+231                 
+232         \textcolor{keywordflow}{if} ( type == \textcolor{charliteral}{'-'} )
+233             words\_must\_not\_exist.push\_back ( word );
+234         \textcolor{keywordflow}{else}
+235             words\_must\_exist.push\_back ( word );
+236         
+237         query.remove (pos, rxword.matchedLength());
+238     \}
+239 
+240 \textcolor{preprocessor}{#if defined (DUMP\_SEARCH\_QUERY)}
+241     \textcolor{comment}{// Dump the search query}
+242     QString qdump;
+243     \textcolor{keywordflow}{for} ( i = 0; i < phrases\_must\_exist.size(); i++ )
+244         qdump += QString(\textcolor{stringliteral}{" \(\backslash\)""}) + phrases\_must\_exist[i].join (\textcolor{stringliteral}{" "}) + QString (\textcolor{stringliteral}{"\(\backslash\)""});
+245 
+246     \textcolor{keywordflow}{for} ( i = 0; i < words\_must\_not\_exist.size(); i++ )
+247         qdump += QString (\textcolor{stringliteral}{" -"}) + words\_must\_not\_exist[i];
+248     
+249     \textcolor{keywordflow}{for} ( i = 0; i < words\_must\_exist.size(); i++ )
+250         qdump += QString (\textcolor{stringliteral}{" +"}) + words\_must\_exist[i];
+251 
+252     qDebug (\textcolor{stringliteral}{"Search query dump: %s"}, qdump.ascii());
+253 \textcolor{preprocessor}{#endif}
+254 
+255     \textcolor{comment}{// First search for phrases}
+256     \textcolor{keywordflow}{if} ( phrases\_must\_exist.size() > 0 )
+257     \{
+258         \hyperlink{libchmfileimpl_8h_a49915bbafbeae4acb86601a1e4f0c247}{LCHMSearchProgressResults} tempres;
+259         
+260         \textcolor{keywordflow}{for} ( i = 0; i < phrases\_must\_exist.size(); i++ )
+261         \{
+262             \textcolor{keywordflow}{if} ( !\hyperlink{libchmfile__search_8cpp_a17cc37a7460f0c55fa27f233e21f4f94}{searchPhrase} ( \hyperlink{classLCHMFile_a74fa35f014782712fd33f53cb2247cc2}{impl}(), phrases\_must\_exist[i], tempres ) )
+263                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+264             
+265             mergeResults ( results, tempres, \textcolor{keyword}{true} );
+266         \}
+267     \}
+268 
+269     \textcolor{keywordflow}{for} ( i = 0; i < words\_must\_exist.size(); i++ )
+270     \{
+271         \hyperlink{libchmfileimpl_8h_a49915bbafbeae4acb86601a1e4f0c247}{LCHMSearchProgressResults} tempres;
+272         
+273         \textcolor{keywordflow}{if} ( !m\_impl->\hyperlink{classLCHMFileImpl_aef2f435b859a816d543af610ed65316e}{searchWord} ( words\_must\_exist[i], \textcolor{keyword}{true}, \textcolor{keyword}{false}, tempres, \textcolor{keyword}{false} ) )
+274             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+275 
+276         mergeResults ( results, tempres, \textcolor{keyword}{true} );
+277     \}
+278 
+279     \textcolor{keywordflow}{for} ( i = 0; i < words\_must\_not\_exist.size(); i++ )
+280     \{
+281         \hyperlink{libchmfileimpl_8h_a49915bbafbeae4acb86601a1e4f0c247}{LCHMSearchProgressResults} tempres;
+282         
+283         m\_impl->\hyperlink{classLCHMFileImpl_aef2f435b859a816d543af610ed65316e}{searchWord} ( words\_must\_not\_exist[i], \textcolor{keyword}{true}, \textcolor{keyword}{false}, tempres, \textcolor{keyword}{false} );
+284         mergeResults ( results, tempres, \textcolor{keyword}{false} );
+285     \}
+286 
+287     m\_impl->\hyperlink{classLCHMFileImpl_ace9ea6df1f8aa45d2ef89052aa953e19}{getSearchResults}( results, searchresults, limit );
+288     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+289 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_ae82f20e769b26a76eeff6beaca52a691}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!set\+Current\+Encoding@{set\+Current\+Encoding}}
+\index{set\+Current\+Encoding@{set\+Current\+Encoding}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{set\+Current\+Encoding}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+H\+M\+File\+::set\+Current\+Encoding (
+\begin{DoxyParamCaption}
+\item[{const {\bf L\+C\+H\+M\+Text\+Encoding} $\ast$}]{encoding}
+\end{DoxyParamCaption}
+)}}\label{classLCHMFile_ae82f20e769b26a76eeff6beaca52a691}
+
+
+Sets the C\+H\+M archive encoding to use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding} & An encoding to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+115 \{
+116     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_afa8e9063a88e0a8090b3412b49e67f9e}{setCurrentEncoding}( encoding );
+117 \}
+\end{DoxyCode}
+\hypertarget{classLCHMFile_ad44b1237596a2844ce743162d0ed7add}{\index{L\+C\+H\+M\+File@{L\+C\+H\+M\+File}!title@{title}}
+\index{title@{title}!L\+C\+H\+M\+File@{L\+C\+H\+M\+File}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String L\+C\+H\+M\+File\+::title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLCHMFile_ad44b1237596a2844ce743162d0ed7add}
+
+
+Gets the title name of the opened .chm. 
+
+\begin{DoxyReturn}{Returns}
+The name of the opened document, or an empty string if no .chm has been loaded. 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file libchmfile.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{return} m\_impl->\hyperlink{classLCHMFileImpl_ad4d900f2d705ecd494289de810318b5c}{title}();
+51 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/chm/lib/\hyperlink{libchmfile_8h}{libchmfile.\+h}\item 
+generators/chm/lib/\hyperlink{libchmfile_8cpp}{libchmfile.\+cpp}\item 
+generators/chm/lib/\hyperlink{libchmfile__search_8cpp}{libchmfile\+\_\+search.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\hypertarget{classSearchPoint}{\section{Search\+Point Class Reference}
+\label{classSearchPoint}\index{Search\+Point@{Search\+Point}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSearchPoint_ac16bb08bc53c76291ef5e0310bc3b43a}{Search\+Point} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Text\+List\+::\+Const\+Iterator \hyperlink{classSearchPoint_a2fbb5753fdf7adba3318560e9199f502}{it\+\_\+begin}
+\item 
+Text\+List\+::\+Const\+Iterator \hyperlink{classSearchPoint_a98ba2c6327cca4a7834238a9e67a7799}{it\+\_\+end}
+\item 
+int \hyperlink{classSearchPoint_aeac3cb8bdd76805bcf76e9b191732139}{offset\+\_\+begin}
+\item 
+int \hyperlink{classSearchPoint_ad727c2d1a0467af554fd1fe38d2c757c}{offset\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file textpage.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSearchPoint_ac16bb08bc53c76291ef5e0310bc3b43a}{\index{Search\+Point@{Search\+Point}!Search\+Point@{Search\+Point}}
+\index{Search\+Point@{Search\+Point}!Search\+Point@{Search\+Point}}
+\subsubsection[{Search\+Point}]{\setlength{\rightskip}{0pt plus 5cm}Search\+Point\+::\+Search\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearchPoint_ac16bb08bc53c76291ef5e0310bc3b43a}
+
+
+Definition at line 31 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+32             : \hyperlink{classSearchPoint_aeac3cb8bdd76805bcf76e9b191732139}{offset\_begin}( -1 ), \hyperlink{classSearchPoint_ad727c2d1a0467af554fd1fe38d2c757c}{offset\_end}( -1 )
+33         \{
+34         \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSearchPoint_a2fbb5753fdf7adba3318560e9199f502}{\index{Search\+Point@{Search\+Point}!it\+\_\+begin@{it\+\_\+begin}}
+\index{it\+\_\+begin@{it\+\_\+begin}!Search\+Point@{Search\+Point}}
+\subsubsection[{it\+\_\+begin}]{\setlength{\rightskip}{0pt plus 5cm}Text\+List\+::\+Const\+Iterator Search\+Point\+::it\+\_\+begin}}\label{classSearchPoint_a2fbb5753fdf7adba3318560e9199f502}
+The \hyperlink{classTinyTextEntity}{Tiny\+Text\+Entity} containing the first character of the match. 
+
+Definition at line 37 of file textpage.\+cpp.
+
+\hypertarget{classSearchPoint_a98ba2c6327cca4a7834238a9e67a7799}{\index{Search\+Point@{Search\+Point}!it\+\_\+end@{it\+\_\+end}}
+\index{it\+\_\+end@{it\+\_\+end}!Search\+Point@{Search\+Point}}
+\subsubsection[{it\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}Text\+List\+::\+Const\+Iterator Search\+Point\+::it\+\_\+end}}\label{classSearchPoint_a98ba2c6327cca4a7834238a9e67a7799}
+The \hyperlink{classTinyTextEntity}{Tiny\+Text\+Entity} containing the last character of the match. 
+
+Definition at line 40 of file textpage.\+cpp.
+
+\hypertarget{classSearchPoint_aeac3cb8bdd76805bcf76e9b191732139}{\index{Search\+Point@{Search\+Point}!offset\+\_\+begin@{offset\+\_\+begin}}
+\index{offset\+\_\+begin@{offset\+\_\+begin}!Search\+Point@{Search\+Point}}
+\subsubsection[{offset\+\_\+begin}]{\setlength{\rightskip}{0pt plus 5cm}int Search\+Point\+::offset\+\_\+begin}}\label{classSearchPoint_aeac3cb8bdd76805bcf76e9b191732139}
+The index of the first character of the match in ($\ast$it\+\_\+begin)-\/$>$text(). Satisfies 0 $<$= offset\+\_\+begin $<$ ($\ast$it\+\_\+begin)-\/$>$text().length(). 
+
+Definition at line 45 of file textpage.\+cpp.
+
+\hypertarget{classSearchPoint_ad727c2d1a0467af554fd1fe38d2c757c}{\index{Search\+Point@{Search\+Point}!offset\+\_\+end@{offset\+\_\+end}}
+\index{offset\+\_\+end@{offset\+\_\+end}!Search\+Point@{Search\+Point}}
+\subsubsection[{offset\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}int Search\+Point\+::offset\+\_\+end}}\label{classSearchPoint_ad727c2d1a0467af554fd1fe38d2c757c}
+One plus the index of the last character of the match in ($\ast$it\+\_\+end)-\/$>$text(). Satisfies 0 $<$ offset\+\_\+end $<$= ($\ast$it\+\_\+end)-\/$>$text().length(). 
+
+Definition at line 50 of file textpage.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{textpage_8cpp}{textpage.\+cpp}\end{DoxyCompactItemize}

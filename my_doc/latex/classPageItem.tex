@@ -1,0 +1,761 @@
+\hypertarget{classPageItem}{\section{Page\+Item Class Reference}
+\label{classPageItem}\index{Page\+Item@{Page\+Item}}
+}
+
+
+{\ttfamily \#include $<$pageitem.\+h$>$}
+
+Inheritance diagram for Page\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPageItem}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPageItem_ab275cd815fb3d3c0d4f32fa09a91487e}{flickable\+Changed} ()
+\item 
+void \hyperlink{classPageItem_a8a673dbcae60409bf8980b18938a6dee}{implicit\+Width\+Changed} ()
+\item 
+void \hyperlink{classPageItem_ad588f5d4f3873895b782924107db3a05}{implicit\+Height\+Changed} ()
+\item 
+void \hyperlink{classPageItem_a7b4461238868477570d345a62ab2ed00}{document\+Changed} ()
+\item 
+void \hyperlink{classPageItem_a66a8385e48e35ac417fba56e88bf226b}{page\+Number\+Changed} ()
+\item 
+void \hyperlink{classPageItem_a9b5dfe52923d8c0550c6fe4094f730e1}{bookmarked\+Changed} ()
+\item 
+void \hyperlink{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}{bookmarks\+Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageItem_a53b6c53f883357826b581dcbe08f077b}{Page\+Item} (Q\+Declarative\+Item $\ast$parent=0)
+\item 
+\hyperlink{classPageItem_afcdefde8bd5a50ac4b5cb51817b750f7}{$\sim$\+Page\+Item} ()
+\item 
+void \hyperlink{classPageItem_a3f904cf90ff046a1c9063147b471ad08}{set\+Flickable} (Q\+Declarative\+Item $\ast$\hyperlink{classPageItem_af39792e2ec4115ad25422269a02bd1f2}{flickable})
+\item 
+Q\+Declarative\+Item $\ast$ \hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable} () const 
+\item 
+int \hyperlink{classPageItem_a525954c0e78b517dfb5c17c87992ddf9}{implicit\+Width} () const 
+\item 
+int \hyperlink{classPageItem_a13c9faa65832c3e93b3fa5ef1847709f}{implicit\+Height} () const 
+\item 
+\hyperlink{classDocumentItem}{Document\+Item} $\ast$ \hyperlink{classPageItem_a10192a4073b812d2ad5628a8779d2d00}{document} () const 
+\item 
+void \hyperlink{classPageItem_a5b0607e27baa0e25772d2d3611fb35dd}{set\+Document} (\hyperlink{classDocumentItem}{Document\+Item} $\ast$doc)
+\item 
+int \hyperlink{classPageItem_a290317eadb966368d13e9c8cddf27f9e}{page\+Number} () const 
+\item 
+void \hyperlink{classPageItem_aaed366fb2cb34b80f68980a05db4d3df}{set\+Page\+Number} (int number)
+\item 
+bool \hyperlink{classPageItem_ab6bf0fffe91fe6a682d94e04aedd5c6a}{smooth} () const 
+\item 
+void \hyperlink{classPageItem_ac62761688e280da27a5a034a7681ce92}{set\+Smooth} (bool \hyperlink{classPageItem_a790f5adc2ae400da2f113d06e5fbb960}{smooth})
+\item 
+bool \hyperlink{classPageItem_a8f5c7e4f9a9d0bc2bdc961c6ebfd223e}{is\+Bookmarked} ()
+\item 
+void \hyperlink{classPageItem_a7eb4daf2e12bef7a7abe7a77332efc89}{set\+Bookmarked} (bool \hyperlink{classPageItem_afda223875d28abb3e8dcd8ed02531cec}{bookmarked})
+\item 
+Q\+String\+List \hyperlink{classPageItem_a228f6e6bf7db94304bde9896a5044d50}{bookmarks} () const 
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E void \hyperlink{classPageItem_a799f9e6617c40343d222ffcdca79e04d}{go\+To\+Bookmark} (const Q\+String \&bookmark)
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E Q\+Point\+F \hyperlink{classPageItem_afe720298c7a93ab422085ac0dcf37972}{bookmark\+Position} (const Q\+String \&bookmark) const 
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E void \hyperlink{classPageItem_a181d1c800169cdfd2cba40e54ecbee9c}{set\+Bookmark\+At\+Pos} (qreal x, qreal y)
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E void \hyperlink{classPageItem_ae9fa9318678a6cfe10b18b27d9a81dc5}{remove\+Bookmark\+At\+Pos} (qreal x, qreal y)
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E void \hyperlink{classPageItem_a1b44dc13d37d45db95f6105860eb1f82}{remove\+Bookmark} (const Q\+String \&bookmark)
+\item 
+void \hyperlink{classPageItem_a6c529a0195c9b3a1577acfc4dbf1b0db}{paint} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+Graphics\+Item $\ast$option, Q\+Widget $\ast$widget)
+\item 
+void \hyperlink{classPageItem_a798d865dcd9395cfffa29bb84cec2e0d}{geometry\+Changed} (const Q\+Rect\+F \&new\+Geometry, const Q\+Rect\+F \&old\+Geometry)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPageItem_ac51278c168c00ced0347bc4549b60fa7}{set\+Is\+Thumbnail} (bool thumbnail)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Declarative\+Item \hyperlink{classPageItem_af39792e2ec4115ad25422269a02bd1f2}{flickable}
+\item 
+\hyperlink{classDocumentItem}{Document\+Item} \hyperlink{classPageItem_aeacd9cae2d50dc7f416201020750b7aa}{document}
+\item 
+int \hyperlink{classPageItem_a01146d83f23d53bca72bfd69373c794a}{page\+Number}
+\item 
+bool \hyperlink{classPageItem_a790f5adc2ae400da2f113d06e5fbb960}{smooth}
+\item 
+int \hyperlink{classPageItem_a36e15ae9b525487c1008736d4e5adba7}{implicit\+Width}
+\item 
+int \hyperlink{classPageItem_a8a1c86f9d73839b632d4618a4884ef53}{implicit\+Height}
+\item 
+bool \hyperlink{classPageItem_afda223875d28abb3e8dcd8ed02531cec}{bookmarked}
+\item 
+Q\+String\+List \hyperlink{classPageItem_ae49c1d7d4e63cc5b058d8e834b4b1c81}{bookmarks}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file pageitem.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageItem_a53b6c53f883357826b581dcbe08f077b}{\index{Page\+Item@{Page\+Item}!Page\+Item@{Page\+Item}}
+\index{Page\+Item@{Page\+Item}!Page\+Item@{Page\+Item}}
+\subsubsection[{Page\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Item\+::\+Page\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+Declarative\+Item $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a53b6c53f883357826b581dcbe08f077b}
+
+
+Definition at line 38 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+39     : QDeclarativeItem(parent),
+40       \hyperlink{classOkular_1_1View}{Okular::View}( QString::fromLatin1( \textcolor{stringliteral}{"PageView"} ) ),
+41       m\_page(0),
+42       m\_smooth(\textcolor{keyword}{false}),
+43       m\_intentionalDraw(\textcolor{keyword}{false}),
+44       m\_bookmarked(\textcolor{keyword}{false}),
+45       m\_isThumbnail(\textcolor{keyword}{false})
+46 \{
+47     setFlag(QGraphicsItem::ItemHasNoContents, \textcolor{keyword}{false});
+48 
+49     m\_viewPort.\hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.\hyperlink{classOkular_1_1DocumentViewport_a6dddb31dbc72d7fb3efe094d840d8692}{enabled} = \textcolor{keyword}{true};
+50 
+51     m\_redrawTimer = \textcolor{keyword}{new} QTimer(\textcolor{keyword}{this});
+52     m\_redrawTimer->setInterval(\hyperlink{pageitem_8cpp_a54b1f9a92a2dbfca36ba4b3831755107}{REDRAW\_TIMEOUT});
+53     m\_redrawTimer->setSingleShot(\textcolor{keyword}{true});
+54     connect(m\_redrawTimer, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(delayedRedraw()));
+55 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_afcdefde8bd5a50ac4b5cb51817b750f7}{\index{Page\+Item@{Page\+Item}!````~Page\+Item@{$\sim$\+Page\+Item}}
+\index{````~Page\+Item@{$\sim$\+Page\+Item}!Page\+Item@{Page\+Item}}
+\subsubsection[{$\sim$\+Page\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Item\+::$\sim$\+Page\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_afcdefde8bd5a50ac4b5cb51817b750f7}
+
+
+Definition at line 58 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageItem_a9b5dfe52923d8c0550c6fe4094f730e1}{\index{Page\+Item@{Page\+Item}!bookmarked\+Changed@{bookmarked\+Changed}}
+\index{bookmarked\+Changed@{bookmarked\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{bookmarked\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::bookmarked\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_a9b5dfe52923d8c0550c6fe4094f730e1}
+\hypertarget{classPageItem_afe720298c7a93ab422085ac0dcf37972}{\index{Page\+Item@{Page\+Item}!bookmark\+Position@{bookmark\+Position}}
+\index{bookmark\+Position@{bookmark\+Position}!Page\+Item@{Page\+Item}}
+\subsubsection[{bookmark\+Position}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point\+F Page\+Item\+::bookmark\+Position (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{bookmark}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_afe720298c7a93ab422085ac0dcf37972}
+Returns the position in the page for a bookmark Q\+Point\+F(-\/1,-\/1) if doesn't belong to this page
+
+
+\begin{DoxyParams}{Parameters}
+{\em bookmark} & Url for the bookmark \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+228 \{
+229     \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewPort(KUrl(bookmark).htmlRef());
+230 
+231     \textcolor{keywordflow}{if} (viewPort.pageNumber != m\_viewPort.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber}) \{
+232         \textcolor{keywordflow}{return} QPointF(-1, -1);
+233     \}
+234 
+235     \textcolor{keywordflow}{return} QPointF(qMax((qreal)0, width() - m\_flickable.data()->width()) * viewPort.rePos.normalizedX,
+236                    qMax((qreal)0, height() - m\_flickable.data()->height()) * viewPort.rePos.normalizedY);
+237 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a228f6e6bf7db94304bde9896a5044d50}{\index{Page\+Item@{Page\+Item}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Page\+Item@{Page\+Item}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Page\+Item\+::bookmarks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_a228f6e6bf7db94304bde9896a5044d50}
+\hypertarget{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}{\index{Page\+Item@{Page\+Item}!bookmarks\+Changed@{bookmarks\+Changed}}
+\index{bookmarks\+Changed@{bookmarks\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{bookmarks\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::bookmarks\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}
+\hypertarget{classPageItem_a10192a4073b812d2ad5628a8779d2d00}{\index{Page\+Item@{Page\+Item}!document@{document}}
+\index{document@{document}!Page\+Item@{Page\+Item}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document\+Item}$\ast$ Page\+Item\+::document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_a10192a4073b812d2ad5628a8779d2d00}
+\hypertarget{classPageItem_a7b4461238868477570d345a62ab2ed00}{\index{Page\+Item@{Page\+Item}!document\+Changed@{document\+Changed}}
+\index{document\+Changed@{document\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{document\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::document\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_a7b4461238868477570d345a62ab2ed00}
+\hypertarget{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{\index{Page\+Item@{Page\+Item}!flickable@{flickable}}
+\index{flickable@{flickable}!Page\+Item@{Page\+Item}}
+\subsubsection[{flickable}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Declarative\+Item$\ast$ Page\+Item\+::flickable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}
+\hypertarget{classPageItem_ab275cd815fb3d3c0d4f32fa09a91487e}{\index{Page\+Item@{Page\+Item}!flickable\+Changed@{flickable\+Changed}}
+\index{flickable\+Changed@{flickable\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{flickable\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::flickable\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_ab275cd815fb3d3c0d4f32fa09a91487e}
+\hypertarget{classPageItem_a798d865dcd9395cfffa29bb84cec2e0d}{\index{Page\+Item@{Page\+Item}!geometry\+Changed@{geometry\+Changed}}
+\index{geometry\+Changed@{geometry\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{geometry\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::geometry\+Changed (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect\+F \&}]{new\+Geometry, }
+\item[{const Q\+Rect\+F \&}]{old\+Geometry}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a798d865dcd9395cfffa29bb84cec2e0d}
+
+
+Definition at line 279 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+281 \{
+282     \textcolor{keywordflow}{if} (newGeometry.size().isEmpty()) \{
+283         \textcolor{keywordflow}{return};
+284     \}
+285 
+286     \textcolor{keywordflow}{if} (newGeometry.size() != oldGeometry.size()) \{
+287         m\_redrawTimer->start();
+288     \}
+289 
+290     QDeclarativeItem::geometryChanged(newGeometry, oldGeometry);
+291     \textcolor{comment}{//Why aren't they automatically emuitted?}
+292     emit widthChanged();
+293     emit heightChanged();
+294 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a799f9e6617c40343d222ffcdca79e04d}{\index{Page\+Item@{Page\+Item}!go\+To\+Bookmark@{go\+To\+Bookmark}}
+\index{go\+To\+Bookmark@{go\+To\+Bookmark}!Page\+Item@{Page\+Item}}
+\subsubsection[{go\+To\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::go\+To\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{bookmark}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a799f9e6617c40343d222ffcdca79e04d}
+loads a page bookmark and tries to ensure the bookmarked position is visible 
+\begin{DoxyParams}{Parameters}
+{\em bookmark} & Url for the bookmark \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+214 \{
+215     \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewPort(KUrl(bookmark).htmlRef());
+216     \hyperlink{classPageItem_aaed366fb2cb34b80f68980a05db4d3df}{setPageNumber}(viewPort.pageNumber);
+217 
+218     \textcolor{comment}{//Are we in a flickable?}
+219     \textcolor{keywordflow}{if} (m\_flickable) \{
+220         \textcolor{comment}{//normalizedX is a proportion, so contentX will be the difference between document and viewport
+       times normalizedX}
+221         m\_flickable.data()->setProperty(\textcolor{stringliteral}{"contentX"}, qMax((qreal)0, width() - m\_flickable.data()->width()) *
+       viewPort.rePos.normalizedX);
+222 
+223         m\_flickable.data()->setProperty(\textcolor{stringliteral}{"contentY"}, qMax((qreal)0, height() - m\_flickable.data()->height())
+       * viewPort.rePos.normalizedY);
+224     \}
+225 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a13c9faa65832c3e93b3fa5ef1847709f}{\index{Page\+Item@{Page\+Item}!implicit\+Height@{implicit\+Height}}
+\index{implicit\+Height@{implicit\+Height}!Page\+Item@{Page\+Item}}
+\subsubsection[{implicit\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Item\+::implicit\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_a13c9faa65832c3e93b3fa5ef1847709f}
+\hypertarget{classPageItem_ad588f5d4f3873895b782924107db3a05}{\index{Page\+Item@{Page\+Item}!implicit\+Height\+Changed@{implicit\+Height\+Changed}}
+\index{implicit\+Height\+Changed@{implicit\+Height\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{implicit\+Height\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::implicit\+Height\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_ad588f5d4f3873895b782924107db3a05}
+\hypertarget{classPageItem_a525954c0e78b517dfb5c17c87992ddf9}{\index{Page\+Item@{Page\+Item}!implicit\+Width@{implicit\+Width}}
+\index{implicit\+Width@{implicit\+Width}!Page\+Item@{Page\+Item}}
+\subsubsection[{implicit\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Item\+::implicit\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_a525954c0e78b517dfb5c17c87992ddf9}
+\hypertarget{classPageItem_a8a673dbcae60409bf8980b18938a6dee}{\index{Page\+Item@{Page\+Item}!implicit\+Width\+Changed@{implicit\+Width\+Changed}}
+\index{implicit\+Width\+Changed@{implicit\+Width\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{implicit\+Width\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::implicit\+Width\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_a8a673dbcae60409bf8980b18938a6dee}
+\hypertarget{classPageItem_a8f5c7e4f9a9d0bc2bdc961c6ebfd223e}{\index{Page\+Item@{Page\+Item}!is\+Bookmarked@{is\+Bookmarked}}
+\index{is\+Bookmarked@{is\+Bookmarked}!Page\+Item@{Page\+Item}}
+\subsubsection[{is\+Bookmarked}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Item\+::is\+Bookmarked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a8f5c7e4f9a9d0bc2bdc961c6ebfd223e}
+
+
+Definition at line 180 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+181 \{
+182     \textcolor{keywordflow}{return} m\_bookmarked;
+183 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a290317eadb966368d13e9c8cddf27f9e}{\index{Page\+Item@{Page\+Item}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!Page\+Item@{Page\+Item}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Item\+::page\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_a290317eadb966368d13e9c8cddf27f9e}
+\hypertarget{classPageItem_a66a8385e48e35ac417fba56e88bf226b}{\index{Page\+Item@{Page\+Item}!page\+Number\+Changed@{page\+Number\+Changed}}
+\index{page\+Number\+Changed@{page\+Number\+Changed}!Page\+Item@{Page\+Item}}
+\subsubsection[{page\+Number\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::page\+Number\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classPageItem_a66a8385e48e35ac417fba56e88bf226b}
+\hypertarget{classPageItem_a6c529a0195c9b3a1577acfc4dbf1b0db}{\index{Page\+Item@{Page\+Item}!paint@{paint}}
+\index{paint@{paint}!Page\+Item@{Page\+Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::paint (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter, }
+\item[{const Q\+Style\+Option\+Graphics\+Item $\ast$}]{option, }
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a6c529a0195c9b3a1577acfc4dbf1b0db}
+
+
+Definition at line 296 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+297 \{
+298     \textcolor{keywordflow}{if} (!m\_documentItem || !m\_page) \{
+299         QDeclarativeItem::paint(painter, option, widget);
+300         \textcolor{keywordflow}{return};
+301     \}
+302 
+303     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} setAA = m\_smooth && !(painter->renderHints() & QPainter::Antialiasing);
+304     \textcolor{keywordflow}{if} (setAA) \{
+305         painter->save();
+306         painter->setRenderHint(QPainter::Antialiasing, \textcolor{keyword}{true});
+307     \}
+308 
+309     \hyperlink{classObserver}{Observer} *observer = m\_isThumbnail ? m\_documentItem.data()->thumbnailObserver() : 
+      m\_documentItem.data()->pageviewObserver();
+310     \textcolor{keyword}{const} \textcolor{keywordtype}{int} priority = m\_isThumbnail ? \hyperlink{priorities_8h_ab16b32c0e27c1b356de608b808b17736}{THUMBNAILS\_PRIO} : 
+      \hyperlink{priorities_8h_a0131e2e939bdcd26243b1406c3b924d6}{PAGEVIEW\_PRIO};
+311 
+312     \textcolor{keywordflow}{if} (m\_intentionalDraw) \{
+313         \hyperlink{classQLinkedList}{QLinkedList<Okular::PixmapRequest *>} requestedPixmaps;
+314         requestedPixmaps.push\_back(\textcolor{keyword}{new} \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest}(observer, m\_viewPort.
+      \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber}, width(), height(), priority, 
+      \hyperlink{classOkular_1_1PixmapRequest_a34c6774277612c3af3743fdd44ab0cbaa1c086a3111f9332b7a0b6d8ff0ab967f}{Okular::PixmapRequest::Asynchronous}));
+315         \textcolor{keyword}{const} \hyperlink{classOkular_1_1Document_a34c1f67c024cfbdd46379c5fac3674d7}{Okular::Document::PixmapRequestFlag} prf = m\_isThumbnail ? 
+      \hyperlink{classOkular_1_1Document_a34c1f67c024cfbdd46379c5fac3674d7a87c3cee454d9bacfd7e9642eb697abb0}{Okular::Document::NoOption} : 
+      \hyperlink{classOkular_1_1Document_a34c1f67c024cfbdd46379c5fac3674d7a3e895c552ec2119c4a743aaefa3d00af}{Okular::Document::RemoveAllPrevious};
+316         m\_documentItem.data()->document()->requestPixmaps(requestedPixmaps, prf);
+317         m\_intentionalDraw = \textcolor{keyword}{false};
+318     \}
+319     \textcolor{keyword}{const} \textcolor{keywordtype}{int} flags = \hyperlink{classPagePainter_ae7f51ac72a598d2753cfc35ecdb51e01ac3c6879723c19935fb6fe250d0feca17}{PagePainter::Accessibility} | 
+      \hyperlink{classPagePainter_ae7f51ac72a598d2753cfc35ecdb51e01a3582deaa27eb857b1bbdd54e6174b3b5}{PagePainter::Highlights} | \hyperlink{classPagePainter_ae7f51ac72a598d2753cfc35ecdb51e01a87c63f97188bb13cbafd5ae63be3fe40}{PagePainter::Annotations};
+320     \hyperlink{classPagePainter_a5eea3c770160bf6b62f36ef802b5bd25}{PagePainter::paintPageOnPainter}(painter, m\_page, observer, flags, width(
+      ), height(), option->exposedRect.toRect());
+321 
+322     \textcolor{keywordflow}{if} (setAA) \{
+323         painter->restore();
+324     \}
+325 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a1b44dc13d37d45db95f6105860eb1f82}{\index{Page\+Item@{Page\+Item}!remove\+Bookmark@{remove\+Bookmark}}
+\index{remove\+Bookmark@{remove\+Bookmark}!Page\+Item@{Page\+Item}}
+\subsubsection[{remove\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::remove\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{bookmark}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a1b44dc13d37d45db95f6105860eb1f82}
+Remove a bookmark at a given position, if any 
+
+Definition at line 272 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+273 \{
+274     m\_documentItem.data()->document()->bookmarkManager()->removeBookmark(bookmark);
+275     emit \hyperlink{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}{bookmarksChanged}();
+276 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_ae9fa9318678a6cfe10b18b27d9a81dc5}{\index{Page\+Item@{Page\+Item}!remove\+Bookmark\+At\+Pos@{remove\+Bookmark\+At\+Pos}}
+\index{remove\+Bookmark\+At\+Pos@{remove\+Bookmark\+At\+Pos}!Page\+Item@{Page\+Item}}
+\subsubsection[{remove\+Bookmark\+At\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::remove\+Bookmark\+At\+Pos (
+\begin{DoxyParamCaption}
+\item[{qreal}]{x, }
+\item[{qreal}]{y}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_ae9fa9318678a6cfe10b18b27d9a81dc5}
+Remove a bookmark ar a given position of the current page (if present) 
+
+Definition at line 255 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+256 \{
+257     \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewPort(m\_viewPort);
+258     viewPort.rePos.enabled = \textcolor{keyword}{true};
+259     viewPort.rePos.normalizedX = x;
+260     viewPort.rePos.normalizedY = y;
+261 
+262     m\_documentItem.data()->document()->bookmarkManager()->addBookmark(viewPort);
+263 
+264     \textcolor{keywordflow}{if} (m\_bookmarked && m\_documentItem.data()->document()->bookmarkManager()->bookmarks(m\_viewPort.
+      \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber}).count() == 0) \{
+265         m\_bookmarked = \textcolor{keyword}{false};
+266         emit \hyperlink{classPageItem_a9b5dfe52923d8c0550c6fe4094f730e1}{bookmarkedChanged}();
+267     \}
+268 
+269     emit \hyperlink{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}{bookmarksChanged}();
+270 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a181d1c800169cdfd2cba40e54ecbee9c}{\index{Page\+Item@{Page\+Item}!set\+Bookmark\+At\+Pos@{set\+Bookmark\+At\+Pos}}
+\index{set\+Bookmark\+At\+Pos@{set\+Bookmark\+At\+Pos}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Bookmark\+At\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Bookmark\+At\+Pos (
+\begin{DoxyParamCaption}
+\item[{qreal}]{x, }
+\item[{qreal}]{y}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a181d1c800169cdfd2cba40e54ecbee9c}
+Add a new bookmark ar a given position of the current page 
+
+Definition at line 239 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+240 \{
+241     \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewPort(m\_viewPort);
+242     viewPort.rePos.normalizedX = x;
+243     viewPort.rePos.normalizedY = y;
+244 
+245     m\_documentItem.data()->document()->bookmarkManager()->addBookmark(viewPort);
+246 
+247     \textcolor{keywordflow}{if} (!m\_bookmarked) \{
+248         m\_bookmarked = \textcolor{keyword}{true};
+249         emit \hyperlink{classPageItem_a9b5dfe52923d8c0550c6fe4094f730e1}{bookmarkedChanged}();
+250     \}
+251 
+252     emit \hyperlink{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}{bookmarksChanged}();
+253 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a7eb4daf2e12bef7a7abe7a77332efc89}{\index{Page\+Item@{Page\+Item}!set\+Bookmarked@{set\+Bookmarked}}
+\index{set\+Bookmarked@{set\+Bookmarked}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Bookmarked}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Bookmarked (
+\begin{DoxyParamCaption}
+\item[{bool}]{bookmarked}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a7eb4daf2e12bef7a7abe7a77332efc89}
+
+
+Definition at line 185 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+186 \{
+187     \textcolor{keywordflow}{if} (!m\_documentItem) \{
+188         \textcolor{keywordflow}{return};
+189     \}
+190 
+191     \textcolor{keywordflow}{if} (\hyperlink{classPageItem_afda223875d28abb3e8dcd8ed02531cec}{bookmarked} == m\_bookmarked) \{
+192         \textcolor{keywordflow}{return};
+193     \}
+194 
+195     \textcolor{keywordflow}{if} (\hyperlink{classPageItem_afda223875d28abb3e8dcd8ed02531cec}{bookmarked}) \{
+196         m\_documentItem.data()->document()->bookmarkManager()->addBookmark(m\_viewPort);
+197     \} \textcolor{keywordflow}{else} \{
+198         m\_documentItem.data()->document()->bookmarkManager()->removeBookmark(m\_viewPort.
+      \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber});
+199     \}
+200     m\_bookmarked = \hyperlink{classPageItem_afda223875d28abb3e8dcd8ed02531cec}{bookmarked};
+201     emit \hyperlink{classPageItem_a9b5dfe52923d8c0550c6fe4094f730e1}{bookmarkedChanged}();
+202 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a5b0607e27baa0e25772d2d3611fb35dd}{\index{Page\+Item@{Page\+Item}!set\+Document@{set\+Document}}
+\index{set\+Document@{set\+Document}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Document}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Document (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Item} $\ast$}]{doc}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a5b0607e27baa0e25772d2d3611fb35dd}
+
+
+Definition at line 105 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+106 \{
+107     \textcolor{keywordflow}{if} (doc == m\_documentItem.data() || !doc) \{
+108         \textcolor{keywordflow}{return};
+109     \}
+110 
+111     m\_page = 0;
+112     disconnect(doc, 0, \textcolor{keyword}{this}, 0);
+113     m\_documentItem = doc;
+114     \hyperlink{classObserver}{Observer} *observer = m\_isThumbnail ? m\_documentItem.data()->thumbnailObserver() : 
+      m\_documentItem.data()->pageviewObserver();
+115     connect(observer, SIGNAL(pageChanged(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(pageHasChanged(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int})));
+116     connect(doc->\hyperlink{classDocumentItem_a0b5e08614c27e8b6283a6e26146ce7ce}{document}()->\hyperlink{classOkular_1_1Document_a2a2a1f0f5384563c8b24c2ba48809839}{bookmarkManager}(), SIGNAL(
+      \hyperlink{classPageItem_a95e60e4061e0a2a3284be8b5dbd8a68a}{bookmarksChanged}(KUrl)),
+117             \textcolor{keyword}{this}, SLOT(checkBookmarksChanged()));
+118     \hyperlink{classPageItem_aaed366fb2cb34b80f68980a05db4d3df}{setPageNumber}(0);
+119     emit \hyperlink{classPageItem_a7b4461238868477570d345a62ab2ed00}{documentChanged}();
+120     m\_redrawTimer->start();
+121 
+122     connect(doc, SIGNAL(pathChanged()), \textcolor{keyword}{this}, SLOT(documentPathChanged()));
+123 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_a3f904cf90ff046a1c9063147b471ad08}{\index{Page\+Item@{Page\+Item}!set\+Flickable@{set\+Flickable}}
+\index{set\+Flickable@{set\+Flickable}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Flickable}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Flickable (
+\begin{DoxyParamCaption}
+\item[{Q\+Declarative\+Item $\ast$}]{flickable}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_a3f904cf90ff046a1c9063147b471ad08}
+
+
+Definition at line 62 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+63 \{
+64     \textcolor{keywordflow}{if} (m\_flickable.data() == \hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}) \{
+65         \textcolor{keywordflow}{return};
+66     \}
+67 
+68     \textcolor{comment}{//check the object can act as a flickable}
+69     \textcolor{keywordflow}{if} (!\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}->property(\textcolor{stringliteral}{"contentX"}).isValid() ||
+70         !\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}->property(\textcolor{stringliteral}{"contentY"}).isValid()) \{
+71         \textcolor{keywordflow}{return};
+72     \}
+73 
+74     \textcolor{keywordflow}{if} (m\_flickable) \{
+75         disconnect(m\_flickable.data(), 0, \textcolor{keyword}{this}, 0);
+76     \}
+77 
+78     \textcolor{comment}{//check the object can act as a flickable}
+79     \textcolor{keywordflow}{if} (!\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}->property(\textcolor{stringliteral}{"contentX"}).isValid() ||
+80         !\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}->property(\textcolor{stringliteral}{"contentY"}).isValid()) \{
+81         m\_flickable.clear();
+82         \textcolor{keywordflow}{return};
+83     \}
+84 
+85     m\_flickable = \hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable};
+86 
+87     \textcolor{keywordflow}{if} (\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}) \{
+88         connect(\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}, SIGNAL(contentXChanged()), \textcolor{keyword}{this}, SLOT(contentXChanged()));
+89         connect(\hyperlink{classPageItem_a99c4d7521ee476dd67694cbd52b79eba}{flickable}, SIGNAL(contentYChanged()), \textcolor{keyword}{this}, SLOT(contentYChanged()));
+90     \}
+91 
+92     emit \hyperlink{classPageItem_ab275cd815fb3d3c0d4f32fa09a91487e}{flickableChanged}();
+93 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_ac51278c168c00ced0347bc4549b60fa7}{\index{Page\+Item@{Page\+Item}!set\+Is\+Thumbnail@{set\+Is\+Thumbnail}}
+\index{set\+Is\+Thumbnail@{set\+Is\+Thumbnail}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Is\+Thumbnail}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Is\+Thumbnail (
+\begin{DoxyParamCaption}
+\item[{bool}]{thumbnail}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPageItem_ac51278c168c00ced0347bc4549b60fa7}
+
+
+Definition at line 394 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+395 \{
+396     \textcolor{keywordflow}{if} (thumbnail == m\_isThumbnail) \{
+397         \textcolor{keywordflow}{return};
+398     \}
+399 
+400     m\_isThumbnail = thumbnail;
+401 
+402     \textcolor{keywordflow}{if} (thumbnail) \{
+403         m\_smooth = \textcolor{keyword}{false};
+404     \}
+405 
+406     \textcolor{comment}{/*}
+407 \textcolor{comment}{    m\_redrawTimer->setInterval(thumbnail ? 0 : REDRAW\_TIMEOUT);}
+408 \textcolor{comment}{    m\_redrawTimer->setSingleShot(true);}
+409 \textcolor{comment}{    */}
+410 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_aaed366fb2cb34b80f68980a05db4d3df}{\index{Page\+Item@{Page\+Item}!set\+Page\+Number@{set\+Page\+Number}}
+\index{set\+Page\+Number@{set\+Page\+Number}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Page\+Number (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_aaed366fb2cb34b80f68980a05db4d3df}
+
+
+Definition at line 130 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+131 \{
+132     \textcolor{keywordflow}{if} ((m\_page && m\_viewPort.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} == number) ||
+133         !m\_documentItem ||
+134         !m\_documentItem.data()->isOpened() ||
+135         number < 0 ||
+136         (uint)number >= m\_documentItem.data()->document()->pages()) \{
+137         \textcolor{keywordflow}{return};
+138     \}
+139 
+140     m\_viewPort.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} = number;
+141     m\_page = m\_documentItem.data()->document()->page(number);
+142 
+143     emit \hyperlink{classPageItem_a66a8385e48e35ac417fba56e88bf226b}{pageNumberChanged}();
+144     emit \hyperlink{classPageItem_a8a673dbcae60409bf8980b18938a6dee}{implicitWidthChanged}();
+145     emit \hyperlink{classPageItem_ad588f5d4f3873895b782924107db3a05}{implicitHeightChanged}();
+146     checkBookmarksChanged();
+147     m\_redrawTimer->start();
+148 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_ac62761688e280da27a5a034a7681ce92}{\index{Page\+Item@{Page\+Item}!set\+Smooth@{set\+Smooth}}
+\index{set\+Smooth@{set\+Smooth}!Page\+Item@{Page\+Item}}
+\subsubsection[{set\+Smooth}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+::set\+Smooth (
+\begin{DoxyParamCaption}
+\item[{bool}]{smooth}
+\end{DoxyParamCaption}
+)}}\label{classPageItem_ac62761688e280da27a5a034a7681ce92}
+
+
+Definition at line 166 of file pageitem.\+cpp.
+
+
+\begin{DoxyCode}
+167 \{
+168     \textcolor{keywordflow}{if} (\hyperlink{classPageItem_ab6bf0fffe91fe6a682d94e04aedd5c6a}{smooth} == m\_smooth) \{
+169         \textcolor{keywordflow}{return};
+170     \}
+171     m\_smooth = \hyperlink{classPageItem_ab6bf0fffe91fe6a682d94e04aedd5c6a}{smooth};
+172     update();
+173 \}
+\end{DoxyCode}
+\hypertarget{classPageItem_ab6bf0fffe91fe6a682d94e04aedd5c6a}{\index{Page\+Item@{Page\+Item}!smooth@{smooth}}
+\index{smooth@{smooth}!Page\+Item@{Page\+Item}}
+\subsubsection[{smooth}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Item\+::smooth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageItem_ab6bf0fffe91fe6a682d94e04aedd5c6a}
+
+
+\subsection{Property Documentation}
+\hypertarget{classPageItem_afda223875d28abb3e8dcd8ed02531cec}{\index{Page\+Item@{Page\+Item}!bookmarked@{bookmarked}}
+\index{bookmarked@{bookmarked}!Page\+Item@{Page\+Item}}
+\subsubsection[{bookmarked}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Item\+::bookmarked\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classPageItem_afda223875d28abb3e8dcd8ed02531cec}
+True if the page contains at least a bookmark. Writing true to tis property idds a bookmark at the beginning of the page (if needed). Writing false, all bookmarks for this page will be removed 
+
+Definition at line 76 of file pageitem.\+h.
+
+\hypertarget{classPageItem_ae49c1d7d4e63cc5b058d8e834b4b1c81}{\index{Page\+Item@{Page\+Item}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Page\+Item@{Page\+Item}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Page\+Item\+::bookmarks\hspace{0.3cm}{\ttfamily [read]}}}\label{classPageItem_ae49c1d7d4e63cc5b058d8e834b4b1c81}
+list of bookmarks urls valid on this page 
+
+Definition at line 81 of file pageitem.\+h.
+
+\hypertarget{classPageItem_aeacd9cae2d50dc7f416201020750b7aa}{\index{Page\+Item@{Page\+Item}!document@{document}}
+\index{document@{document}!Page\+Item@{Page\+Item}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document\+Item} $\ast$ Page\+Item\+::document\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classPageItem_aeacd9cae2d50dc7f416201020750b7aa}
+The document this page belongs to 
+
+Definition at line 49 of file pageitem.\+h.
+
+\hypertarget{classPageItem_af39792e2ec4115ad25422269a02bd1f2}{\index{Page\+Item@{Page\+Item}!flickable@{flickable}}
+\index{flickable@{flickable}!Page\+Item@{Page\+Item}}
+\subsubsection[{flickable}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Declarative\+Item $\ast$ Page\+Item\+::flickable\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classPageItem_af39792e2ec4115ad25422269a02bd1f2}
+If this page is in a Flickable, assign it in this property, to make go\+To\+Bookmark work 
+
+Definition at line 44 of file pageitem.\+h.
+
+\hypertarget{classPageItem_a8a1c86f9d73839b632d4618a4884ef53}{\index{Page\+Item@{Page\+Item}!implicit\+Height@{implicit\+Height}}
+\index{implicit\+Height@{implicit\+Height}!Page\+Item@{Page\+Item}}
+\subsubsection[{implicit\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Item\+::implicit\+Height\hspace{0.3cm}{\ttfamily [read]}}}\label{classPageItem_a8a1c86f9d73839b632d4618a4884ef53}
+\char`\"{}\+Natural\char`\"{} height of the page 
+
+Definition at line 69 of file pageitem.\+h.
+
+\hypertarget{classPageItem_a36e15ae9b525487c1008736d4e5adba7}{\index{Page\+Item@{Page\+Item}!implicit\+Width@{implicit\+Width}}
+\index{implicit\+Width@{implicit\+Width}!Page\+Item@{Page\+Item}}
+\subsubsection[{implicit\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Item\+::implicit\+Width\hspace{0.3cm}{\ttfamily [read]}}}\label{classPageItem_a36e15ae9b525487c1008736d4e5adba7}
+\char`\"{}\+Natural\char`\"{} width of the page 
+
+Definition at line 64 of file pageitem.\+h.
+
+\hypertarget{classPageItem_a01146d83f23d53bca72bfd69373c794a}{\index{Page\+Item@{Page\+Item}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!Page\+Item@{Page\+Item}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Item\+::page\+Number\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classPageItem_a01146d83f23d53bca72bfd69373c794a}
+The currently displayed page 
+
+Definition at line 54 of file pageitem.\+h.
+
+\hypertarget{classPageItem_a790f5adc2ae400da2f113d06e5fbb960}{\index{Page\+Item@{Page\+Item}!smooth@{smooth}}
+\index{smooth@{smooth}!Page\+Item@{Page\+Item}}
+\subsubsection[{smooth}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Item\+::smooth\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classPageItem_a790f5adc2ae400da2f113d06e5fbb960}
+If true, the page will be rendered with antialias 
+
+Definition at line 59 of file pageitem.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+active/components/\hyperlink{pageitem_8h}{pageitem.\+h}\item 
+active/components/\hyperlink{pageitem_8cpp}{pageitem.\+cpp}\end{DoxyCompactItemize}

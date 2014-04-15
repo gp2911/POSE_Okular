@@ -1,0 +1,237 @@
+\hypertarget{classTeXFont__TFM}{\section{Te\+X\+Font\+\_\+\+T\+F\+M Class Reference}
+\label{classTeXFont__TFM}\index{Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}}
+}
+
+
+{\ttfamily \#include $<$Te\+X\+Font\+\_\+\+T\+F\+M.\+h$>$}
+
+Inheritance diagram for Te\+X\+Font\+\_\+\+T\+F\+M\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTeXFont__TFM}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTeXFont__TFM_ae01e0edc918eaa9acd8d29938dc318f3}{Te\+X\+Font\+\_\+\+T\+F\+M} (\hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$\hyperlink{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}{parent})
+\item 
+\hyperlink{classTeXFont__TFM_a1ff12e0d5a2a6d2eb4e200755891716f}{$\sim$\+Te\+X\+Font\+\_\+\+T\+F\+M} ()
+\item 
+\hyperlink{classglyph}{glyph} $\ast$ \hyperlink{classTeXFont__TFM_a4e42a94f04f889575227dd994645979e}{get\+Glyph} (quint16 character, bool generate\+Character\+Pixmap=false, const Q\+Color \&color=Qt\+::black)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTeXFont__TFM_ae01e0edc918eaa9acd8d29938dc318f3}{\index{Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}!Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}}
+\index{Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}!Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}}
+\subsubsection[{Te\+X\+Font\+\_\+\+T\+F\+M}]{\setlength{\rightskip}{0pt plus 5cm}Te\+X\+Font\+\_\+\+T\+F\+M\+::\+Te\+X\+Font\+\_\+\+T\+F\+M (
+\begin{DoxyParamCaption}
+\item[{{\bf Te\+X\+Font\+Definition} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classTeXFont__TFM_ae01e0edc918eaa9acd8d29938dc318f3}
+
+
+Definition at line 20 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+cpp.
+
+
+\begin{DoxyCode}
+21   : \hyperlink{classTeXFont_ac61cef23719a7d5e79b1c7fa09935b35}{TeXFont}(parent)
+22 \{
+23 \textcolor{preprocessor}{#ifdef DEBUG\_TFM}
+24   kDebug(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::TeXFont\_TFM( parent="} << parent << \textcolor{stringliteral}{" )"};
+25 \textcolor{preprocessor}{#endif}
+26 
+27   QFile file( parent->\hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename} );
+28   \textcolor{keywordflow}{if} ( !file.open( QIODevice::ReadOnly ) ) \{
+29     kError(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::TeXFont\_TFM(): Could not read TFM file"} << endl;
+30     \textcolor{keywordflow}{return};
+31   \}
+32   QDataStream stream( &file );
+33 
+34   \textcolor{comment}{// Data from the very beginning of the TFM file, as specified in}
+35   \textcolor{comment}{// "The DVI Driver Standard, Level 0", section D.2.1}
+36   quint16 lf, lh, bc, ec, nw, nh, nd;
+37   stream >> lf >> lh >> bc >> ec >> nw >> nh >> nd;
+38 \textcolor{preprocessor}{#ifdef DEBUG\_TFM}
+39   kDebug(kvs::dvi) << \textcolor{stringliteral}{"lf= "} << lf
+40                 << \textcolor{stringliteral}{"lh= "} << lh << endl
+41                 << \textcolor{stringliteral}{"bc= "} << bc << endl
+42                 << \textcolor{stringliteral}{"ec= "} << ec << endl
+43                 << \textcolor{stringliteral}{"nw= "} << nw << endl
+44                 << \textcolor{stringliteral}{"nh= "} << nh << endl
+45                 << \textcolor{stringliteral}{"nd= "} << nd << endl;
+46 \textcolor{preprocessor}{#endif}
+47   \textcolor{keywordflow}{if} ((bc > ec) || (ec >= \hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{TeXFontDefinition::max\_num\_of\_chars\_in\_font}
+      )) \{
+48     kError(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::TeXFont\_TFM( filename="} << parent->
+      \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename} << \textcolor{stringliteral}{" ): The font has an invalid bc and ec entries."} << endl;
+49     file.close();
+50     \textcolor{keywordflow}{return};
+51   \}
+52 
+53   \textcolor{comment}{// Data from the HEADER section of the TFM data.}
+54   file.seek(24);
+55   stream >> \hyperlink{classTeXFont_a7bd82a10157e19f7e7534fdc386d2421}{checksum} >> design\_size\_in\_TeX\_points.\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value};
+56 \textcolor{preprocessor}{#ifdef DEBUG\_TFM}
+57   kDebug(kvs::dvi) << \textcolor{stringliteral}{"checksum    = "} << \hyperlink{classTeXFont_a7bd82a10157e19f7e7534fdc386d2421}{checksum}
+58                 << \textcolor{stringliteral}{"design\_size = "} << design\_size\_in\_TeX\_points.\hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{toDouble}() << \textcolor{stringliteral}{" TeX Points"} << 
+      endl
+59                 << \textcolor{stringliteral}{"            = "} << design\_size\_in\_TeX\_points.\hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{toDouble}()*254.0/7227.0 << \textcolor{stringliteral}{" cm"} <
+      < endl;
+60 \textcolor{preprocessor}{#endif}
+61 
+62   \textcolor{comment}{// Width table}
+63   \hyperlink{classfix__word}{fix\_word} widthTable\_in\_units\_of\_design\_size[
+      \hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{TeXFontDefinition::max\_num\_of\_chars\_in\_font}];
+64   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{TeXFontDefinition::max\_num\_of\_chars\_in\_font}
+      ; i++)
+65     widthTable\_in\_units\_of\_design\_size[i].value = 0;
+66 
+67   file.seek( 24 + 4*lh + 4*(ec-bc) );
+68   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<nw; i++) \{
+69 
+70     stream >> widthTable\_in\_units\_of\_design\_size[i].\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value};
+71     \textcolor{comment}{// Some characters, which are used as parts of glyphs, have width}
+72     \textcolor{comment}{// 0 --the real width is caculated in a lig\_kern program and}
+73     \textcolor{comment}{// depends on the preceding character. We cannot calculate the}
+74     \textcolor{comment}{// real width here and take 0.4 times the design size as an}
+75     \textcolor{comment}{// approximation.}
+76     \textcolor{keywordflow}{if} (widthTable\_in\_units\_of\_design\_size[i].value == 0)
+77       widthTable\_in\_units\_of\_design\_size[i].\hyperlink{classfix__word_a7bba9d6cd8527149cbac372929b5d443}{fromDouble}(0.4);
+78   \}
+79 
+80   \textcolor{comment}{// Height table}
+81   \hyperlink{classfix__word}{fix\_word} heightTable\_in\_units\_of\_design\_size[16];
+82   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<16; i++)
+83     heightTable\_in\_units\_of\_design\_size[i].value = 0;
+84   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<nh; i++) \{
+85     stream >> heightTable\_in\_units\_of\_design\_size[i].\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value};
+86   \}
+87 
+88   \textcolor{comment}{// Char-Info table}
+89   file.seek( 24 + 4*lh );
+90   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} characterCode=bc; characterCode<ec; characterCode++) \{
+91     \hyperlink{classglyph}{glyph} *g = \hyperlink{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}{glyphtable}+characterCode;
+92 
+93     quint8 byte;
+94     stream >> byte;
+95     \textcolor{keywordflow}{if} (byte >= nw)
+96       kError(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::TeXFont\_TFM( filename="} << parent->
+      \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename} << \textcolor{stringliteral}{" ): The font has an invalid Char-Info table."} << endl;
+97     \textcolor{keywordflow}{else} \{
+98       characterWidth\_in\_units\_of\_design\_size[characterCode] = widthTable\_in\_units\_of\_design\_size[byte];
+99       g->\hyperlink{classglyph_ad5d39f93c1c63bd072b23783cd9ac7ce}{dvi\_advance\_in\_units\_of\_design\_size\_by\_2e20} = 
+      widthTable\_in\_units\_of\_design\_size[byte].\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value};
+100     \}
+101 
+102     stream >> byte;
+103     byte = byte >> 4;
+104     \textcolor{keywordflow}{if} (byte >= nh)
+105       kError(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::TeXFont\_TFM( filename="} << parent->
+      \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename} << \textcolor{stringliteral}{" ): The font has an invalid Char-Info table."} << endl;
+106     \textcolor{keywordflow}{else}
+107       characterHeight\_in\_units\_of\_design\_size[characterCode] = heightTable\_in\_units\_of\_design\_size[byte];
+108 
+109     stream >> byte;
+110     stream >> byte;
+111   \}
+112   file.close();
+113 \}
+\end{DoxyCode}
+\hypertarget{classTeXFont__TFM_a1ff12e0d5a2a6d2eb4e200755891716f}{\index{Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}!````~Te\+X\+Font\+\_\+\+T\+F\+M@{$\sim$\+Te\+X\+Font\+\_\+\+T\+F\+M}}
+\index{````~Te\+X\+Font\+\_\+\+T\+F\+M@{$\sim$\+Te\+X\+Font\+\_\+\+T\+F\+M}!Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}}
+\subsubsection[{$\sim$\+Te\+X\+Font\+\_\+\+T\+F\+M}]{\setlength{\rightskip}{0pt plus 5cm}Te\+X\+Font\+\_\+\+T\+F\+M\+::$\sim$\+Te\+X\+Font\+\_\+\+T\+F\+M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTeXFont__TFM_a1ff12e0d5a2a6d2eb4e200755891716f}
+
+
+Definition at line 116 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+cpp.
+
+
+\begin{DoxyCode}
+117 \{
+118 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTeXFont__TFM_a4e42a94f04f889575227dd994645979e}{\index{Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}!get\+Glyph@{get\+Glyph}}
+\index{get\+Glyph@{get\+Glyph}!Te\+X\+Font\+\_\+\+T\+F\+M@{Te\+X\+Font\+\_\+\+T\+F\+M}}
+\subsubsection[{get\+Glyph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf glyph} $\ast$ Te\+X\+Font\+\_\+\+T\+F\+M\+::get\+Glyph (
+\begin{DoxyParamCaption}
+\item[{quint16}]{character, }
+\item[{bool}]{generate\+Character\+Pixmap = {\ttfamily false}, }
+\item[{const Q\+Color \&}]{color = {\ttfamily Qt\+:\+:black}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTeXFont__TFM_a4e42a94f04f889575227dd994645979e}
+
+
+Implements \hyperlink{classTeXFont_a5c4953623f686aac4ec09981cf2680cf}{Te\+X\+Font}.
+
+
+
+Definition at line 121 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+cpp.
+
+
+\begin{DoxyCode}
+122 \{
+123 \textcolor{preprocessor}{#ifdef DEBUG\_TFM}
+124   kDebug(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::getGlyph( ch="} << ch << \textcolor{stringliteral}{", generateCharacterPixmap="} << 
+      generateCharacterPixmap << \textcolor{stringliteral}{" )"};
+125 \textcolor{preprocessor}{#endif}
+126 
+127   \textcolor{comment}{// Paranoia checks}
+128   \textcolor{keywordflow}{if} (characterCode >= \hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{TeXFontDefinition::max\_num\_of\_chars\_in\_font}
+      ) \{
+129     kError(kvs::dvi) << \textcolor{stringliteral}{"TeXFont\_TFM::getGlyph(): Argument is too big."} << endl;
+130     \textcolor{keywordflow}{return} \hyperlink{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}{glyphtable};
+131   \}
+132 
+133   \textcolor{comment}{// This is the address of the glyph that will be returned.}
+134   \textcolor{keyword}{class }\hyperlink{classglyph}{glyph} *g = \hyperlink{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}{glyphtable}+characterCode;
+135 
+136   \textcolor{keywordflow}{if} ((generateCharacterPixmap == \textcolor{keyword}{true}) && ((g->\hyperlink{classglyph_aeefa28a926bdd7a24595dbdc7cdf504c}{shrunkenCharacter}.isNull()) || (
+      \hyperlink{classglyph_ab4847af7a7b13322d5651fe47735c8dd}{color} != g->\hyperlink{classglyph_ab4847af7a7b13322d5651fe47735c8dd}{color})) ) \{
+137     g->\hyperlink{classglyph_ab4847af7a7b13322d5651fe47735c8dd}{color} = \hyperlink{classglyph_ab4847af7a7b13322d5651fe47735c8dd}{color};
+138     quint16 pixelWidth = (quint16)(\hyperlink{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}{parent}->\hyperlink{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}{displayResolution\_in\_dpi} *
+139                                      design\_size\_in\_TeX\_points.\hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{toDouble}() *
+140                                      characterWidth\_in\_units\_of\_design\_size[characterCode].
+      \hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{toDouble}() * 100.0/7227.0 + 0.5);
+141     quint16 pixelHeight = (quint16)(\hyperlink{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}{parent}->\hyperlink{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}{displayResolution\_in\_dpi} *
+142                                       design\_size\_in\_TeX\_points.\hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{toDouble}() *
+143                                       characterHeight\_in\_units\_of\_design\_size[characterCode].
+      \hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{toDouble}() * 100.0/7227.0 + 0.5);
+144 
+145     \textcolor{comment}{// Just make sure that weired TFM files never lead to giant}
+146     \textcolor{comment}{// pixmaps that eat all system memory...}
+147     \textcolor{keywordflow}{if} (pixelWidth > 50)
+148       pixelWidth = 50;
+149     \textcolor{keywordflow}{if} (pixelHeight > 50)
+150       pixelHeight = 50;
+151 
+152     g->\hyperlink{classglyph_aeefa28a926bdd7a24595dbdc7cdf504c}{shrunkenCharacter} = QImage(pixelWidth, pixelHeight, QImage::Format\_RGB32);
+153     g->\hyperlink{classglyph_aeefa28a926bdd7a24595dbdc7cdf504c}{shrunkenCharacter}.fill(\hyperlink{classglyph_ab4847af7a7b13322d5651fe47735c8dd}{color}.rgba());
+154     g->\hyperlink{classglyph_a07a7aa840a9a34588a5cc02508ac5e6d}{x2} = 0;
+155     g->\hyperlink{classglyph_afa1607f13eb1db99a5a3b1c92d47db7f}{y2} = pixelHeight;
+156   \}
+157 
+158   \textcolor{keywordflow}{return} g;
+159 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{TeXFont__TFM_8h}{Te\+X\+Font\+\_\+\+T\+F\+M.\+h}\item 
+generators/dvi/\hyperlink{TeXFont__TFM_8cpp}{Te\+X\+Font\+\_\+\+T\+F\+M.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,276 @@
+\hypertarget{classOkular_1_1RotationJob}{\section{Okular\+:\+:Rotation\+Job Class Reference}
+\label{classOkular_1_1RotationJob}\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+}
+
+
+{\ttfamily \#include $<$rotationjob\+\_\+p.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Rotation\+Job\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1RotationJob}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1RotationJob_a648ec5fe85483e6e8133db4ceb5f7e1a}{Rotation\+Job} (const Q\+Image \&\hyperlink{classOkular_1_1RotationJob_aac4f1232fd45b7d2131276b2d48f4089}{image}, \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} old\+Rotation, \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} new\+Rotation, \hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$\hyperlink{classOkular_1_1RotationJob_a84430c25be56a8576230fb3c648f52f2}{observer})
+\item 
+void \hyperlink{classOkular_1_1RotationJob_addceb19a418c8de1c00c23c421253eb0}{set\+Page} (\hyperlink{classOkular_1_1PagePrivate}{Page\+Private} $\ast$pd)
+\item 
+void \hyperlink{classOkular_1_1RotationJob_a6b8b2159a1482c7887d83942e8f8a6b4}{set\+Rect} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&\hyperlink{classOkular_1_1RotationJob_a117c247923adfb34241a7f15bf783bfd}{rect})
+\item 
+Q\+Image \hyperlink{classOkular_1_1RotationJob_aac4f1232fd45b7d2131276b2d48f4089}{image} () const 
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1RotationJob_a7cf5300ad4ee837c234bb6836f20f495}{rotation} () const 
+\item 
+\hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$ \hyperlink{classOkular_1_1RotationJob_a84430c25be56a8576230fb3c648f52f2}{observer} () const 
+\item 
+\hyperlink{classOkular_1_1PagePrivate}{Page\+Private} $\ast$ \hyperlink{classOkular_1_1RotationJob_a04a8e8d13e86a325239aed98e9019895}{page} () const 
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1RotationJob_a117c247923adfb34241a7f15bf783bfd}{rect} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Transform \hyperlink{classOkular_1_1RotationJob_a07c22589398445f27a3bcc6865da1733}{rotation\+Matrix} (\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} from, \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} to)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classOkular_1_1RotationJob_afece86bad378bf114ef4ff42c8b8799a}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file rotationjob\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1RotationJob_a648ec5fe85483e6e8133db4ceb5f7e1a}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!Rotation\+Job@{Rotation\+Job}}
+\index{Rotation\+Job@{Rotation\+Job}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{Rotation\+Job}]{\setlength{\rightskip}{0pt plus 5cm}Rotation\+Job\+::\+Rotation\+Job (
+\begin{DoxyParamCaption}
+\item[{const Q\+Image \&}]{image, }
+\item[{{\bf Rotation}}]{old\+Rotation, }
+\item[{{\bf Rotation}}]{new\+Rotation, }
+\item[{{\bf Document\+Observer} $\ast$}]{observer}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1RotationJob_a648ec5fe85483e6e8133db4ceb5f7e1a}
+
+
+Definition at line 16 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+17     : mImage( \hyperlink{classOkular_1_1RotationJob_aac4f1232fd45b7d2131276b2d48f4089}{image} ), mOldRotation( oldRotation ), mNewRotation( newRotation ), mObserver( observer )
+      , m\_pd( 0 )
+18     , mRect( \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}() )
+19 \{
+20 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1RotationJob_aac4f1232fd45b7d2131276b2d48f4089}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!image@{image}}
+\index{image@{image}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Rotation\+Job\+::image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RotationJob_aac4f1232fd45b7d2131276b2d48f4089}
+
+
+Definition at line 32 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{return} mRotatedImage;
+35 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_a84430c25be56a8576230fb3c648f52f2}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!observer@{observer}}
+\index{observer@{observer}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{observer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document\+Observer} $\ast$ Rotation\+Job\+::observer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RotationJob_a84430c25be56a8576230fb3c648f52f2}
+
+
+Definition at line 42 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{return} mObserver;
+45 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_a04a8e8d13e86a325239aed98e9019895}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!page@{page}}
+\index{page@{page}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Private} $\ast$ Rotation\+Job\+::page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RotationJob_a04a8e8d13e86a325239aed98e9019895}
+
+
+Definition at line 47 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} m\_pd;
+50 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_a117c247923adfb34241a7f15bf783bfd}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!rect@{rect}}
+\index{rect@{rect}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Rotation\+Job\+::rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RotationJob_a117c247923adfb34241a7f15bf783bfd}
+
+
+Definition at line 52 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+53 \{
+54     \textcolor{keywordflow}{return} mRect;
+55 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_a7cf5300ad4ee837c234bb6836f20f495}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!rotation@{rotation}}
+\index{rotation@{rotation}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Rotation\+Job\+::rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RotationJob_a7cf5300ad4ee837c234bb6836f20f495}
+
+
+Definition at line 37 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordflow}{return} mNewRotation;
+40 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_a07c22589398445f27a3bcc6865da1733}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!rotation\+Matrix@{rotation\+Matrix}}
+\index{rotation\+Matrix@{rotation\+Matrix}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{rotation\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Transform Rotation\+Job\+::rotation\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Rotation}}]{from, }
+\item[{{\bf Rotation}}]{to}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1RotationJob_a07c22589398445f27a3bcc6865da1733}
+
+
+Definition at line 69 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{
+71     QTransform matrix;
+72 
+73     \textcolor{keywordflow}{if} ( from == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} ) \{
+74         \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a72f281f9a68957920dc968695de4363a}{Rotation90} )
+75             matrix.rotate( 90 );
+76         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a95c9d62f7745cb6bf5895007070e8ee9}{Rotation180} )
+77             matrix.rotate( 180 );
+78         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a01963dd547f5723a6b3975ae67090390}{Rotation270} )
+79             matrix.rotate( 270 );
+80     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( from == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a72f281f9a68957920dc968695de4363a}{Rotation90} ) \{
+81         \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a95c9d62f7745cb6bf5895007070e8ee9}{Rotation180} )
+82             matrix.rotate( 90 );
+83         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a01963dd547f5723a6b3975ae67090390}{Rotation270} )
+84             matrix.rotate( 180 );
+85         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} )
+86             matrix.rotate( 270 );
+87     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( from == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a95c9d62f7745cb6bf5895007070e8ee9}{Rotation180} ) \{
+88         \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a01963dd547f5723a6b3975ae67090390}{Rotation270} )
+89             matrix.rotate( 90 );
+90         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} )
+91             matrix.rotate( 180 );
+92         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a72f281f9a68957920dc968695de4363a}{Rotation90} )
+93             matrix.rotate( 270 );
+94     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( from == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a01963dd547f5723a6b3975ae67090390}{Rotation270} ) \{
+95         \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} )
+96             matrix.rotate( 90 );
+97         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a72f281f9a68957920dc968695de4363a}{Rotation90} )
+98             matrix.rotate( 180 );
+99         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( to == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a95c9d62f7745cb6bf5895007070e8ee9}{Rotation180} )
+100             matrix.rotate( 270 );
+101     \}
+102 
+103     \textcolor{keywordflow}{return} matrix;
+104 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_afece86bad378bf114ef4ff42c8b8799a}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!run@{run}}
+\index{run@{run}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Rotation\+Job\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classOkular_1_1RotationJob_afece86bad378bf114ef4ff42c8b8799a}
+
+
+Definition at line 57 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordflow}{if} ( mOldRotation == mNewRotation ) \{
+60         mRotatedImage = mImage;
+61         \textcolor{keywordflow}{return};
+62     \}
+63 
+64     QTransform matrix = \hyperlink{classOkular_1_1RotationJob_a07c22589398445f27a3bcc6865da1733}{rotationMatrix}( mOldRotation, mNewRotation );
+65 
+66     mRotatedImage = mImage.transformed( matrix );
+67 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_addceb19a418c8de1c00c23c421253eb0}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!set\+Page@{set\+Page}}
+\index{set\+Page@{set\+Page}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{set\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Rotation\+Job\+::set\+Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\+Private} $\ast$}]{pd}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1RotationJob_addceb19a418c8de1c00c23c421253eb0}
+
+
+Definition at line 22 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{
+24     m\_pd = pd;
+25 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RotationJob_a6b8b2159a1482c7887d83942e8f8a6b4}{\index{Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}!set\+Rect@{set\+Rect}}
+\index{set\+Rect@{set\+Rect}!Okular\+::\+Rotation\+Job@{Okular\+::\+Rotation\+Job}}
+\subsubsection[{set\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Rotation\+Job\+::set\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1RotationJob_a6b8b2159a1482c7887d83942e8f8a6b4}
+
+
+Definition at line 27 of file rotationjob.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{
+29     mRect = \hyperlink{classOkular_1_1RotationJob_a117c247923adfb34241a7f15bf783bfd}{rect};
+30 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{rotationjob__p_8h}{rotationjob\+\_\+p.\+h}\item 
+core/\hyperlink{rotationjob_8cpp}{rotationjob.\+cpp}\end{DoxyCompactItemize}

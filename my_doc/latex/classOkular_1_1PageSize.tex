@@ -1,0 +1,288 @@
+\hypertarget{classOkular_1_1PageSize}{\section{Okular\+:\+:Page\+Size Class Reference}
+\label{classOkular_1_1PageSize}\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+}
+
+
+A small class that represents the size of a page.  
+
+
+
+
+{\ttfamily \#include $<$pagesize.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classQList}{Q\+List}$<$ \hyperlink{classOkular_1_1PageSize}{Page\+Size} $>$ \hyperlink{classOkular_1_1PageSize_a6c450ee7c579f47402a21588403ea0ab}{List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1PageSize_ad5c490f56fff0d987d9db2b6538d0ee3}{Page\+Size} ()
+\item 
+\hyperlink{classOkular_1_1PageSize_a7448b9c72e155fe549524a36ebce6d30}{Page\+Size} (double \hyperlink{classOkular_1_1PageSize_a8a2be3e61dc9f43b27946ffe2067ac55}{width}, double \hyperlink{classOkular_1_1PageSize_a78d47d2c41792dc3e05f094b40e3a197}{height}, const Q\+String \&\hyperlink{classOkular_1_1PageSize_a2083857cd82db104198342e4897862e4}{name})
+\item 
+\hyperlink{classOkular_1_1PageSize_a86e5777691c75fa0601f208e2f29d1d1}{Page\+Size} (const \hyperlink{classOkular_1_1PageSize}{Page\+Size} \&\hyperlink{classpageSize}{page\+Size})
+\item 
+\hyperlink{classOkular_1_1PageSize_a808c31a51a8dde37c797b8a7b0762fe6}{$\sim$\+Page\+Size} ()
+\item 
+double \hyperlink{classOkular_1_1PageSize_a8a2be3e61dc9f43b27946ffe2067ac55}{width} () const 
+\item 
+double \hyperlink{classOkular_1_1PageSize_a78d47d2c41792dc3e05f094b40e3a197}{height} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1PageSize_a2083857cd82db104198342e4897862e4}{name} () const 
+\item 
+bool \hyperlink{classOkular_1_1PageSize_a1f1a209158a4b2096fb820fea7ce7c52}{is\+Null} () const 
+\item 
+\hyperlink{classOkular_1_1PageSize}{Page\+Size} \& \hyperlink{classOkular_1_1PageSize_a2b7581c12d838a1e35c0cf1c91c803e8}{operator=} (const \hyperlink{classOkular_1_1PageSize}{Page\+Size} \&\hyperlink{classpageSize}{page\+Size})
+\item 
+bool \hyperlink{classOkular_1_1PageSize_a3ad2b86b8d812ba875657c0ebb8b63fb}{operator==} (const \hyperlink{classOkular_1_1PageSize}{Page\+Size} \&\hyperlink{classpageSize}{page\+Size}) const 
+\item 
+bool \hyperlink{classOkular_1_1PageSize_a19ec62a09b0339c244ccc4cb0c6c163a}{operator!=} (const \hyperlink{classOkular_1_1PageSize}{Page\+Size} \&\hyperlink{classpageSize}{page\+Size}) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A small class that represents the size of a page. 
+
+Definition at line 26 of file pagesize.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classOkular_1_1PageSize_a6c450ee7c579f47402a21588403ea0ab}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!List@{List}}
+\index{List@{List}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{List}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Q\+List}$<${\bf Page\+Size}$>$ {\bf Okular\+::\+Page\+Size\+::\+List}}}\label{classOkular_1_1PageSize_a6c450ee7c579f47402a21588403ea0ab}
+
+
+Definition at line 29 of file pagesize.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1PageSize_ad5c490f56fff0d987d9db2b6538d0ee3}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!Page\+Size@{Page\+Size}}
+\index{Page\+Size@{Page\+Size}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Size\+::\+Page\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PageSize_ad5c490f56fff0d987d9db2b6538d0ee3}
+Construct a null page size. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1PageSize_a1f1a209158a4b2096fb820fea7ce7c52}{is\+Null()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 37 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+38 \{
+39 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a7448b9c72e155fe549524a36ebce6d30}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!Page\+Size@{Page\+Size}}
+\index{Page\+Size@{Page\+Size}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Size\+::\+Page\+Size (
+\begin{DoxyParamCaption}
+\item[{double}]{width, }
+\item[{double}]{height, }
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PageSize_a7448b9c72e155fe549524a36ebce6d30}
+Construct a page size with the specified {\ttfamily width} and {\ttfamily height}, having the I\+D {\ttfamily name}. 
+
+Definition at line 41 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+42     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1PageSizePrivate}{PageSizePrivate} )
+43 \{
+44     d->m\_width = \hyperlink{classOkular_1_1PageSize_a8a2be3e61dc9f43b27946ffe2067ac55}{width};
+45     d->m\_height = \hyperlink{classOkular_1_1PageSize_a78d47d2c41792dc3e05f094b40e3a197}{height};
+46     d->m\_name = \hyperlink{classOkular_1_1PageSize_a2083857cd82db104198342e4897862e4}{name};
+47 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a86e5777691c75fa0601f208e2f29d1d1}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!Page\+Size@{Page\+Size}}
+\index{Page\+Size@{Page\+Size}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Size\+::\+Page\+Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\+Size} \&}]{page\+Size}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PageSize_a86e5777691c75fa0601f208e2f29d1d1}
+Copy constructor. 
+
+Definition at line 49 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+50     : d( pageSize.d )
+51 \{
+52 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a808c31a51a8dde37c797b8a7b0762fe6}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!````~Page\+Size@{$\sim$\+Page\+Size}}
+\index{````~Page\+Size@{$\sim$\+Page\+Size}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{$\sim$\+Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Size\+::$\sim$\+Page\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PageSize_a808c31a51a8dde37c797b8a7b0762fe6}
+
+
+Definition at line 54 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+55 \{
+56 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1PageSize_a78d47d2c41792dc3e05f094b40e3a197}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!height@{height}}
+\index{height@{height}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+Size\+::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PageSize_a78d47d2c41792dc3e05f094b40e3a197}
+Returns the height of the page size. 
+
+Definition at line 66 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{if} ( !d )
+69         \textcolor{keywordflow}{return} 0;
+70 
+71     \textcolor{keywordflow}{return} d->m\_height;
+72 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a1f1a209158a4b2096fb820fea7ce7c52}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{is\+Null}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Size\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PageSize_a1f1a209158a4b2096fb820fea7ce7c52}
+Whether the page size is null. 
+
+Definition at line 82 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+83 \{
+84     \textcolor{keywordflow}{if} ( !d )
+85         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+86 
+87     \textcolor{keywordflow}{return} d->m\_width == 0 && d->m\_height == 0 && d->m\_name.isEmpty();
+88 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a2083857cd82db104198342e4897862e4}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!name@{name}}
+\index{name@{name}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Page\+Size\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PageSize_a2083857cd82db104198342e4897862e4}
+Returns the I\+D of the page size. 
+
+Definition at line 74 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76     \textcolor{keywordflow}{if} ( !d )
+77         \textcolor{keywordflow}{return} QString();
+78 
+79     \textcolor{keywordflow}{return} d->m\_name;
+80 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a19ec62a09b0339c244ccc4cb0c6c163a}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Size\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\+Size} \&}]{page\+Size}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PageSize_a19ec62a09b0339c244ccc4cb0c6c163a}
+
+
+Definition at line 103 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{return} !\hyperlink{classOkular_1_1PageSize_a3ad2b86b8d812ba875657c0ebb8b63fb}{operator==}( pageSize );
+106 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a2b7581c12d838a1e35c0cf1c91c803e8}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!operator=@{operator=}}
+\index{operator=@{operator=}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Size} \& Page\+Size\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\+Size} \&}]{page\+Size}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PageSize_a2b7581c12d838a1e35c0cf1c91c803e8}
+
+
+Definition at line 108 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+109 \{
+110     \textcolor{keywordflow}{if} ( \textcolor{keyword}{this} == &pageSize )
+111         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+112 
+113     d = pageSize.d;
+114     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+115 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a3ad2b86b8d812ba875657c0ebb8b63fb}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!operator==@{operator==}}
+\index{operator==@{operator==}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Size\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Page\+Size} \&}]{page\+Size}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PageSize_a3ad2b86b8d812ba875657c0ebb8b63fb}
+Comparison operator. 
+
+Definition at line 90 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+91 \{
+92     \textcolor{comment}{// 1st: we're null: check if the other is null too}
+93     \textcolor{keywordflow}{if} ( !d )
+94         \textcolor{keywordflow}{return} !pageSize.d;
+95     \textcolor{comment}{// 2nd: we're not null, return if the other is null}
+96     \textcolor{keywordflow}{if} ( !pageSize.d )
+97         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+98 
+99     \textcolor{comment}{// 3rd: normal == check}
+100     \textcolor{keywordflow}{return} *d == *pageSize.d;
+101 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PageSize_a8a2be3e61dc9f43b27946ffe2067ac55}{\index{Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}!width@{width}}
+\index{width@{width}!Okular\+::\+Page\+Size@{Okular\+::\+Page\+Size}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+Size\+::width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PageSize_a8a2be3e61dc9f43b27946ffe2067ac55}
+Returns the width of the page size. 
+
+Definition at line 58 of file pagesize.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     \textcolor{keywordflow}{if} ( !d )
+61         \textcolor{keywordflow}{return} 0;
+62 
+63     \textcolor{keywordflow}{return} d->m\_width;
+64 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{pagesize_8h}{pagesize.\+h}\item 
+core/\hyperlink{pagesize_8cpp}{pagesize.\+cpp}\end{DoxyCompactItemize}

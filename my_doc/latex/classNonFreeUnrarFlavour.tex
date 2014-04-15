@@ -1,0 +1,102 @@
+\hypertarget{classNonFreeUnrarFlavour}{\section{Non\+Free\+Unrar\+Flavour Class Reference}
+\label{classNonFreeUnrarFlavour}\index{Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}}
+}
+
+
+{\ttfamily \#include $<$unrarflavours.\+h$>$}
+
+Inheritance diagram for Non\+Free\+Unrar\+Flavour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNonFreeUnrarFlavour}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNonFreeUnrarFlavour_a3f87f41749539bc8192fa3fb3e3374d5}{Non\+Free\+Unrar\+Flavour} ()
+\item 
+virtual Q\+String\+List \hyperlink{classNonFreeUnrarFlavour_a1d88709f1a1a210f8f8ffe623c9292c9}{process\+Listing} (const Q\+String\+List \&data)
+\item 
+virtual Q\+String \hyperlink{classNonFreeUnrarFlavour_a0b74e473c37a4b8416c0ccc12703b4af}{name} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file unrarflavours.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNonFreeUnrarFlavour_a3f87f41749539bc8192fa3fb3e3374d5}{\index{Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}!Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}}
+\index{Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}!Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}}
+\subsubsection[{Non\+Free\+Unrar\+Flavour}]{\setlength{\rightskip}{0pt plus 5cm}Non\+Free\+Unrar\+Flavour\+::\+Non\+Free\+Unrar\+Flavour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNonFreeUnrarFlavour_a3f87f41749539bc8192fa3fb3e3374d5}
+
+
+Definition at line 34 of file unrarflavours.\+cpp.
+
+
+\begin{DoxyCode}
+35     : \hyperlink{classUnrarFlavour_a3059a7173d07cebb28ca3215a6332fdb}{UnrarFlavour}()
+36 \{
+37 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNonFreeUnrarFlavour_a0b74e473c37a4b8416c0ccc12703b4af}{\index{Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}!name@{name}}
+\index{name@{name}!Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Non\+Free\+Unrar\+Flavour\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNonFreeUnrarFlavour_a0b74e473c37a4b8416c0ccc12703b4af}
+
+
+Implements \hyperlink{classUnrarFlavour_a96716e71ee74d815c81252ccd750be16}{Unrar\+Flavour}.
+
+
+
+Definition at line 45 of file unrarflavours.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"unrar-nonfree"};
+48 \}
+\end{DoxyCode}
+\hypertarget{classNonFreeUnrarFlavour_a1d88709f1a1a210f8f8ffe623c9292c9}{\index{Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}!process\+Listing@{process\+Listing}}
+\index{process\+Listing@{process\+Listing}!Non\+Free\+Unrar\+Flavour@{Non\+Free\+Unrar\+Flavour}}
+\subsubsection[{process\+Listing}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Non\+Free\+Unrar\+Flavour\+::process\+Listing (
+\begin{DoxyParamCaption}
+\item[{const Q\+String\+List \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNonFreeUnrarFlavour_a1d88709f1a1a210f8f8ffe623c9292c9}
+
+
+Implements \hyperlink{classUnrarFlavour_a1c84a80c8f20796dd4b3a2c9ebe96882}{Unrar\+Flavour}.
+
+
+
+Definition at line 39 of file unrarflavours.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{comment}{// unrar-nonfree just lists the files}
+42     \textcolor{keywordflow}{return} \hyperlink{structdrawinf_af73f66288002f0a25c7843a534bf1340}{data};
+43 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/comicbook/\hyperlink{unrarflavours_8h}{unrarflavours.\+h}\item 
+generators/comicbook/\hyperlink{unrarflavours_8cpp}{unrarflavours.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,622 @@
+\hypertarget{classOkular_1_1TextDocumentGenerator}{\section{Okular\+:\+:Text\+Document\+Generator Class Reference}
+\label{classOkular_1_1TextDocumentGenerator}\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+}
+
+
+Q\+Text\+Document-\/based \hyperlink{classOkular_1_1Generator}{Generator}.  
+
+
+
+
+{\ttfamily \#include $<$textdocumentgenerator.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Text\+Document\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.240000cm]{classOkular_1_1TextDocumentGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextDocumentGenerator_a70ca1106f9b9270ddcc5ac65e0c51744}{Text\+Document\+Generator} (\hyperlink{classOkular_1_1TextDocumentConverter}{Text\+Document\+Converter} $\ast$converter, const Q\+String \&config\+Name, Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D \hyperlink{classOkular_1_1TextDocumentGenerator_a68b20e4b484a9353574ce2073606f23b}{Text\+Document\+Generator} (\hyperlink{classOkular_1_1TextDocumentConverter}{Text\+Document\+Converter} $\ast$converter, Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+virtual \hyperlink{classOkular_1_1TextDocumentGenerator_acf8b879716282a22ebe51e9f3f1d5d26}{$\sim$\+Text\+Document\+Generator} ()
+\item 
+bool \hyperlink{classOkular_1_1TextDocumentGenerator_ad8845c4dc3d820eeac91b22912ad95b5}{load\+Document} (const Q\+String \&file\+Name, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+bool \hyperlink{classOkular_1_1TextDocumentGenerator_ad630c70586245b48662fb3948bce4a2f}{can\+Generate\+Pixmap} () const 
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGenerator_a204c621d56d41e8953c13619b032e416}{generate\+Pixmap} (\hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$request)
+\item 
+bool \hyperlink{classOkular_1_1TextDocumentGenerator_a5692da1c8edcfaaca2459ed2beb6c834}{print} (Q\+Printer \&printer)
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a987d72c1a1456b8a983a37603a8fa78d}{Okular\+::\+Export\+Format\+::\+List} \hyperlink{classOkular_1_1TextDocumentGenerator_a3d94162294ecc182dcc5b5d1e64fd1b1}{export\+Formats} () const 
+\item 
+bool \hyperlink{classOkular_1_1TextDocumentGenerator_a3b116bb8b3c28740203bdb7f0fce0e9f}{export\+To} (const Q\+String \&file\+Name, const \hyperlink{classOkular_1_1ExportFormat}{Okular\+::\+Export\+Format} \&format)
+\item 
+bool \hyperlink{classOkular_1_1TextDocumentGenerator_a875a07fa60e300a698a1f9278e32cd07}{reparse\+Config} ()
+\begin{DoxyCompactList}\small\item\em By default checks if the default font has changed or not. \end{DoxyCompactList}\item 
+void \hyperlink{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}{add\+Pages} (K\+Config\+Dialog $\ast$dlg)
+\begin{DoxyCompactList}\small\item\em Does nothing by default. You need to reimplement it in your generator. \end{DoxyCompactList}\item 
+\hyperlink{classOkular_1_1TextDocumentSettings}{Text\+Document\+Settings} $\ast$ \hyperlink{classOkular_1_1TextDocumentGenerator_a776f1b9f38f55fdf086e022388ee4e36}{general\+Settings} ()
+\item 
+const \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} $\ast$ \hyperlink{classOkular_1_1TextDocumentGenerator_a47f4b3917926e55c410c76321f76ff0e}{generate\+Document\+Info} ()
+\item 
+const \hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} $\ast$ \hyperlink{classOkular_1_1TextDocumentGenerator_a7017389c5e43bcf93ebf6a1a028674a3}{generate\+Document\+Synopsis} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classOkular_1_1TextDocumentGenerator_a2f0c915dd85d6b4959fb2ee4ccdad218}{do\+Close\+Document} ()
+\item 
+\hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} $\ast$ \hyperlink{classOkular_1_1TextDocumentGenerator_a88ee1468be05fea367d2405749ba93b2}{text\+Page} (\hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$page)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Q\+Text\+Document-\/based \hyperlink{classOkular_1_1Generator}{Generator}. 
+
+This generator provides a document in the form of a Q\+Text\+Document object, parsed using a specialized \hyperlink{classOkular_1_1TextDocumentConverter}{Text\+Document\+Converter}. 
+
+Definition at line 136 of file textdocumentgenerator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a70ca1106f9b9270ddcc5ac65e0c51744}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!Text\+Document\+Generator@{Text\+Document\+Generator}}
+\index{Text\+Document\+Generator@{Text\+Document\+Generator}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{Text\+Document\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Document\+Generator\+::\+Text\+Document\+Generator (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Document\+Converter} $\ast$}]{converter, }
+\item[{const Q\+String \&}]{config\+Name, }
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGenerator_a70ca1106f9b9270ddcc5ac65e0c51744}
+Creates a new generator that uses the specified {\ttfamily converter}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+Name} & -\/ see \hyperlink{classOkular_1_1TextDocumentSettings}{Okular\+::\+Text\+Document\+Settings}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+the generator will take ownership of the converter, so you don't have to delete it yourself 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+17 (K\+D\+E 4.\+11) 
+\end{DoxySince}
+
+
+Definition at line 253 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+254     : \hyperlink{classOkular_1_1Generator}{Okular::Generator}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate}{TextDocumentGeneratorPrivate}( 
+      converter ), parent, args )
+255 \{
+256     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+257     d->mGeneralSettings = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextDocumentSettings}{TextDocumentSettings}( configName, \textcolor{keyword}{this} );
+258 
+259     d->initializeGenerator();
+260 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a68b20e4b484a9353574ce2073606f23b}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!Text\+Document\+Generator@{Text\+Document\+Generator}}
+\index{Text\+Document\+Generator@{Text\+Document\+Generator}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{Text\+Document\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Document\+Generator\+::\+Text\+Document\+Generator (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Document\+Converter} $\ast$}]{converter, }
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGenerator_a68b20e4b484a9353574ce2073606f23b}
+Creates a new generator that uses the specified {\ttfamily converter}.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]use the one with config\+Name\end{DoxyRefDesc}
+
+
+\begin{DoxyNote}{Note}
+the generator will take ownership of the converter, so you don't have to delete it yourself 
+\end{DoxyNote}
+
+
+Definition at line 262 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+263     : \hyperlink{classOkular_1_1Generator}{Okular::Generator}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate}{TextDocumentGeneratorPrivate}( 
+      converter ), parent, args )
+264 \{
+265     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+266 
+267     d->initializeGenerator();
+268 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_acf8b879716282a22ebe51e9f3f1d5d26}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!````~Text\+Document\+Generator@{$\sim$\+Text\+Document\+Generator}}
+\index{````~Text\+Document\+Generator@{$\sim$\+Text\+Document\+Generator}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{$\sim$\+Text\+Document\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Document\+Generator\+::$\sim$\+Text\+Document\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_acf8b879716282a22ebe51e9f3f1d5d26}
+
+
+Definition at line 270 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+271 \{
+272 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dlg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}
+
+
+Does nothing by default. You need to reimplement it in your generator. 
+
+
+
+Implements \hyperlink{classOkular_1_1ConfigInterface_a75030ba3abbbd134e388c05154695610}{Okular\+::\+Config\+Interface}.
+
+
+
+Reimplemented in \hyperlink{classTxtGenerator_a30036a27058c18c3ce000e682ae2cb8c}{Txt\+Generator}, \hyperlink{classEPubGenerator_a9ef2fd420a698d07236def3a9162fab4}{E\+Pub\+Generator}, \hyperlink{classFictionBookGenerator_ab88be7d5d552061f08f931cf2d70c248}{Fiction\+Book\+Generator}, \hyperlink{classKOOOGenerator_afcf312689c8cfc2f6773befcffedb594}{K\+O\+O\+O\+Generator}, and \hyperlink{classMobiGenerator_a5121681db8b40d64c87cfc184fdbbf3a}{Mobi\+Generator}.
+
+
+
+Definition at line 528 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+529 \{
+530     kWarning() << \textcolor{stringliteral}{"You forgot to reimplement addPages in your TextDocumentGenerator"};
+531     \textcolor{keywordflow}{return};
+532 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_ad630c70586245b48662fb3948bce4a2f}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!can\+Generate\+Pixmap@{can\+Generate\+Pixmap}}
+\index{can\+Generate\+Pixmap@{can\+Generate\+Pixmap}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{can\+Generate\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Document\+Generator\+::can\+Generate\+Pixmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_ad630c70586245b48662fb3948bce4a2f}
+This method returns whether the generator is ready to handle a new pixmap request. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_abbf00927221e2d2b2b71101f2b7f5732}{Okular\+::\+Generator}.
+
+
+
+Definition at line 358 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+359 \{
+360     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Generator_abbf00927221e2d2b2b71101f2b7f5732}{Generator::canGeneratePixmap}();
+361 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a2f0c915dd85d6b4959fb2ee4ccdad218}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!do\+Close\+Document@{do\+Close\+Document}}
+\index{do\+Close\+Document@{do\+Close\+Document}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{do\+Close\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Document\+Generator\+::do\+Close\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a2f0c915dd85d6b4959fb2ee4ccdad218}
+This method is called when the document is closed and not used any longer.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{Okular\+::\+Generator}.
+
+
+
+Definition at line 340 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+341 \{
+342     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+343     \textcolor{keyword}{delete} d->mDocument;
+344     d->mDocument = 0;
+345 
+346     d->mTitlePositions.clear();
+347     d->mLinkPositions.clear();
+348     d->mLinkInfos.clear();
+349     d->mAnnotationPositions.clear();
+350     d->mAnnotationInfos.clear();
+351     \textcolor{comment}{// do not use clear() for the following two, otherwise they change type}
+352     d->mDocumentInfo = \hyperlink{classOkular_1_1DocumentInfo}{Okular::DocumentInfo}();
+353     d->mDocumentSynopsis = \hyperlink{classOkular_1_1DocumentSynopsis}{Okular::DocumentSynopsis}();
+354 
+355     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+356 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a3d94162294ecc182dcc5b5d1e64fd1b1}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!export\+Formats@{export\+Formats}}
+\index{export\+Formats@{export\+Formats}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{export\+Formats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Export\+Format\+::\+List} Text\+Document\+Generator\+::export\+Formats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a3d94162294ecc182dcc5b5d1e64fd1b1}
+Returns the list of additional supported export formats. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a74280fb193319daab955feac694123ac}{Okular\+::\+Generator}.
+
+
+
+Definition at line 456 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+457 \{
+458     \textcolor{keyword}{static} \hyperlink{classQList}{Okular::ExportFormat::List} formats;
+459     \textcolor{keywordflow}{if} ( formats.isEmpty() ) \{
+460         formats.append( \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{Okular::ExportFormat::standardFormat}( 
+      \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{Okular::ExportFormat::PlainText} ) );
+461         formats.append( \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{Okular::ExportFormat::standardFormat}( 
+      \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a282bea2bc8da48d30988d1286571c671}{Okular::ExportFormat::PDF} ) );
+462 \textcolor{preprocessor}{#if QT\_VERSION >= 0x040500}
+463         \textcolor{keywordflow}{if} ( QTextDocumentWriter::supportedDocumentFormats().contains( \textcolor{stringliteral}{"ODF"} ) ) \{
+464             formats.append( \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{Okular::ExportFormat::standardFormat}( 
+      \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a82b7e76dc44580c9742e6e41042892f3}{Okular::ExportFormat::OpenDocumentText} ) );
+465         \}
+466         \textcolor{keywordflow}{if} ( QTextDocumentWriter::supportedDocumentFormats().contains( \textcolor{stringliteral}{"HTML"} ) ) \{
+467             formats.append( \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{Okular::ExportFormat::standardFormat}( 
+      \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a7d2fa80544cea061db29c01e973131c0}{Okular::ExportFormat::HTML} ) );
+468         \}
+469 \textcolor{preprocessor}{#endif}
+470     \}
+471 
+472     \textcolor{keywordflow}{return} formats;
+473 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a3b116bb8b3c28740203bdb7f0fce0e9f}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!export\+To@{export\+To}}
+\index{export\+To@{export\+To}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{export\+To}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Document\+Generator\+::export\+To (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{const {\bf Okular\+::\+Export\+Format} \&}]{format}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a3b116bb8b3c28740203bdb7f0fce0e9f}
+This method is called to export the document in the given {\ttfamily format} and save it under the given {\ttfamily file\+Name}. The format must be one of the supported export formats. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9e78f37aafbfdaf04f76f4163c27aa5e}{Okular\+::\+Generator}.
+
+
+
+Definition at line 475 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+476 \{
+477     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+478     \textcolor{keywordflow}{if} ( !d->mDocument )
+479         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+480 
+481     \textcolor{keywordflow}{if} ( format.\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}()->name() == QLatin1String( \textcolor{stringliteral}{"application/pdf"} ) ) \{
+482         QFile file( fileName );
+483         \textcolor{keywordflow}{if} ( !file.open( QIODevice::WriteOnly ) )
+484             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+485 
+486         QPrinter printer( QPrinter::HighResolution );
+487         printer.setOutputFormat( QPrinter::PdfFormat );
+488         printer.setOutputFileName( fileName );
+489         d->mDocument->print( &printer );
+490 
+491         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+492     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( format.\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}()->name() == QLatin1String( \textcolor{stringliteral}{"text/plain"} ) ) \{
+493         QFile file( fileName );
+494         \textcolor{keywordflow}{if} ( !file.open( QIODevice::WriteOnly ) )
+495             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+496 
+497         QTextStream out( &file );
+498         out << d->mDocument->toPlainText();
+499 
+500         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+501 \textcolor{preprocessor}{#if QT\_VERSION >= 0x040500}
+502     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( format.\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}()->name() == QLatin1String( \textcolor{stringliteral}{"
+      application/vnd.oasis.opendocument.text"} ) ) \{
+503         QTextDocumentWriter odfWriter( fileName, \textcolor{stringliteral}{"odf"} );
+504 
+505         \textcolor{keywordflow}{return} odfWriter.write( d->mDocument );
+506     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( format.\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}()->name() == QLatin1String( \textcolor{stringliteral}{"text/html"} ) ) \{
+507         QTextDocumentWriter odfWriter( fileName, \textcolor{stringliteral}{"html"} );
+508 
+509         \textcolor{keywordflow}{return} odfWriter.write( d->mDocument );
+510 \textcolor{preprocessor}{#endif}
+511     \}
+512     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+513 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a776f1b9f38f55fdf086e022388ee4e36}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!general\+Settings@{general\+Settings}}
+\index{general\+Settings@{general\+Settings}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{general\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Document\+Settings} $\ast$ Text\+Document\+Generator\+::general\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGenerator_a776f1b9f38f55fdf086e022388ee4e36}
+Config skeleton for \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Text\+Document\+Settings\+Widget}
+
+You must use new construtor to initialize \hyperlink{classOkular_1_1TextDocumentSettings}{Text\+Document\+Settings}, that contain 
+\begin{DoxyParams}{Parameters}
+{\em config\+Name.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+17 (K\+D\+E 4.\+11) 
+\end{DoxySince}
+
+
+Definition at line 534 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+535 \{
+536     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+537 
+538     \textcolor{keywordflow}{return} d->mGeneralSettings;
+539 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a47f4b3917926e55c410c76321f76ff0e}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!generate\+Document\+Info@{generate\+Document\+Info}}
+\index{generate\+Document\+Info@{generate\+Document\+Info}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{generate\+Document\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Info} $\ast$ Text\+Document\+Generator\+::generate\+Document\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a47f4b3917926e55c410c76321f76ff0e}
+Returns the general information object of the document or 0 if no information are available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9993dd0a2415499e23d8394e7a447e98}{Okular\+::\+Generator}.
+
+
+
+Definition at line 431 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+432 \{
+433     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+434     \textcolor{keywordflow}{return} &d->mDocumentInfo;
+435 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a7017389c5e43bcf93ebf6a1a028674a3}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!generate\+Document\+Synopsis@{generate\+Document\+Synopsis}}
+\index{generate\+Document\+Synopsis@{generate\+Document\+Synopsis}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{generate\+Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Synopsis} $\ast$ Text\+Document\+Generator\+::generate\+Document\+Synopsis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a7017389c5e43bcf93ebf6a1a028674a3}
+Returns the 'table of content' object of the document or 0 if no table of content is available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a1f8b31c19d7a5101cadf3fe3186ab0f1}{Okular\+::\+Generator}.
+
+
+
+Definition at line 437 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+438 \{
+439     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+440     \textcolor{keywordflow}{if} ( !d->mDocumentSynopsis.hasChildNodes() )
+441         \textcolor{keywordflow}{return} 0;
+442     \textcolor{keywordflow}{else}
+443         \textcolor{keywordflow}{return} &d->mDocumentSynopsis;
+444 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a204c621d56d41e8953c13619b032e416}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!generate\+Pixmap@{generate\+Pixmap}}
+\index{generate\+Pixmap@{generate\+Pixmap}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{generate\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+::generate\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a204c621d56d41e8953c13619b032e416}
+This method can be called to trigger the generation of a new pixmap as described by {\ttfamily request}. We create the text page for every page that is visible to the user, so he can use the text extraction tools without a delay.
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a198cdcd9c27b179562c935342fd457b6}{Okular\+::\+Generator}.
+
+
+
+Definition at line 363 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+364 \{
+365     \hyperlink{classOkular_1_1Generator_a198cdcd9c27b179562c935342fd457b6}{Generator::generatePixmap}( request );
+366 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_ad8845c4dc3d820eeac91b22912ad95b5}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!load\+Document@{load\+Document}}
+\index{load\+Document@{load\+Document}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{load\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Document\+Generator\+::load\+Document (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGenerator_ad8845c4dc3d820eeac91b22912ad95b5}
+
+
+Definition at line 274 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+275 \{
+276     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+277     d->mDocument = d->mConverter->convert( fileName );
+278 
+279     \textcolor{keywordflow}{if} ( !d->mDocument )
+280     \{
+281         \textcolor{comment}{// loading failed, cleanup all the stuff eventually gathered from the converter}
+282         d->mTitlePositions.clear();
+283         Q\_FOREACH ( \textcolor{keyword}{const} \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkPosition}{TextDocumentGeneratorPrivate::LinkPosition}
+       &linkPos, d->mLinkPositions )
+284         \{
+285             \textcolor{keyword}{delete} linkPos.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkPosition_a28f22efca06cf1df74ae313225771b63}{link};
+286         \}
+287         d->mLinkPositions.clear();
+288         Q\_FOREACH ( \textcolor{keyword}{const} \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationPosition}{TextDocumentGeneratorPrivate::AnnotationPosition}
+       &annPos, d->mAnnotationPositions )
+289         \{
+290             \textcolor{keyword}{delete} annPos.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationPosition_af557e1e52655a87adfac85e87a112c94}{annotation};
+291         \}
+292         d->mAnnotationPositions.clear();
+293 
+294         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+295     \}
+296 
+297     d->generateTitleInfos();
+298     d->generateLinkInfos();
+299     d->generateAnnotationInfos();
+300 
+301     pagesVector.resize( d->mDocument->pageCount() );
+302 
+303     \textcolor{keyword}{const} QSize \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = d->mDocument->pageSize().toSize();
+304 
+305     QVector< QLinkedList<Okular::ObjectRect*> > objects( d->mDocument->pageCount() );
+306     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < d->mLinkInfos.count(); ++i ) \{
+307         \textcolor{keyword}{const} \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo}{TextDocumentGeneratorPrivate::LinkInfo} &info = d->
+      mLinkInfos.at( i );
+308 
+309         \textcolor{comment}{// in case that the converter report bogus link info data, do not assert here}
+310         \textcolor{keywordflow}{if} ( info.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo_aa123a5ca9189d3638522328da29e80b4}{page} >= objects.count() )
+311           \textcolor{keywordflow}{continue};
+312 
+313         \textcolor{keyword}{const} QRectF rect = info.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo_a29304f2dd84c1943c1dcec62baabc5c1}{boundingRect};
+314         objects[ info.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo_aa123a5ca9189d3638522328da29e80b4}{page} ].append( \textcolor{keyword}{new} \hyperlink{classOkular_1_1ObjectRect}{Okular::ObjectRect}( rect.left(), rect.top(),
+       rect.right(), rect.bottom(), \textcolor{keyword}{false},
+315                                                              
+      \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a2ad02138861dfdc8bc2a0c29bae5bed2}{Okular::ObjectRect::Action}, info.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo_a1b29014996bb28edc4c5cbb4ebc45d7f}{link} ) );
+316     \}
+317 
+318     QVector< QLinkedList<Okular::Annotation*> > annots( d->mDocument->pageCount() );
+319     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < d->mAnnotationInfos.count(); ++i ) \{
+320         \textcolor{keyword}{const} \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationInfo}{TextDocumentGeneratorPrivate::AnnotationInfo} &
+      info = d->mAnnotationInfos[ i ];
+321         annots[ info.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationInfo_a35a51f7a8d879d6196761cb6f34e2418}{page} ].append( info.\hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationInfo_aaff9d0604ce63a1816473ecf7bcf25e8}{annotation} );
+322     \}
+323 
+324     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < d->mDocument->pageCount(); ++i ) \{
+325         \hyperlink{classOkular_1_1Page}{Okular::Page} * page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( i, size.width(), size.height(), 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} );
+326         pagesVector[ i ] = page;
+327 
+328         \textcolor{keywordflow}{if} ( !objects.at( i ).isEmpty() ) \{
+329             page->\hyperlink{classOkular_1_1Page_af8c152286039a342f0b547b5efa79b9a}{setObjectRects}( objects.at( i ) );
+330         \}
+331         \hyperlink{classQLinkedList}{QLinkedList<Okular::Annotation*>::ConstIterator} 
+      annIt = annots.at( i ).begin(), annEnd = annots.at( i ).end();
+332         \textcolor{keywordflow}{for} ( ; annIt != annEnd; ++annIt ) \{
+333             page->\hyperlink{classOkular_1_1Page_a8730d8d4d0072467dc9407c7fc177b8a}{addAnnotation}( *annIt );
+334         \}
+335     \}
+336 
+337     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+338 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a5692da1c8edcfaaca2459ed2beb6c834}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!print@{print}}
+\index{print@{print}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Document\+Generator\+::print (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a5692da1c8edcfaaca2459ed2beb6c834}
+This method is called to print the document to the given {\ttfamily printer}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_aa786d406a1b0db6679a3bc62bbe2dc82}{Okular\+::\+Generator}.
+
+
+
+Definition at line 420 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+421 \{
+422     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+423     \textcolor{keywordflow}{if} ( !d->mDocument )
+424         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+425 
+426     d->mDocument->print( &printer );
+427 
+428     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+429 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a875a07fa60e300a698a1f9278e32cd07}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!reparse\+Config@{reparse\+Config}}
+\index{reparse\+Config@{reparse\+Config}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{reparse\+Config}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Document\+Generator\+::reparse\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a875a07fa60e300a698a1f9278e32cd07}
+
+
+By default checks if the default font has changed or not. 
+
+
+
+Implements \hyperlink{classOkular_1_1ConfigInterface_a0f61ec6852e483b898efd9709b1ef63b}{Okular\+::\+Config\+Interface}.
+
+
+
+Definition at line 515 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+516 \{
+517     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+518     \textcolor{keyword}{const} QFont newFont = d->mGeneralSettings->font();
+519 
+520     \textcolor{keywordflow}{if} ( newFont != d->mFont ) \{
+521         d->mFont = newFont;
+522         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+523     \}
+524 
+525     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+526 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGenerator_a88ee1468be05fea367d2405749ba93b2}{\index{Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}!text\+Page@{text\+Page}}
+\index{text\+Page@{text\+Page}!Okular\+::\+Text\+Document\+Generator@{Okular\+::\+Text\+Document\+Generator}}
+\subsubsection[{text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Text\+Page} $\ast$ Text\+Document\+Generator\+::text\+Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGenerator_a88ee1468be05fea367d2405749ba93b2}
+Returns the text page for the given {\ttfamily page}.
+
+\begin{DoxyWarning}{Warning}
+this method may be executed in its own separated thread if the \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} is enabled! 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_af7915b97ab4b9347fb76babdda212cef}{Okular\+::\+Generator}.
+
+
+
+Definition at line 414 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+415 \{
+416     Q\_D( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+417     \textcolor{keywordflow}{return} d->createTextPage( page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() );
+418 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{textdocumentgenerator_8h}{textdocumentgenerator.\+h}\item 
+core/\hyperlink{textdocumentgenerator_8cpp}{textdocumentgenerator.\+cpp}\end{DoxyCompactItemize}

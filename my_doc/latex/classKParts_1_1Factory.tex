@@ -1,0 +1,171 @@
+\hypertarget{classKParts_1_1Factory}{\section{K\+Parts\+:\+:Factory Class Reference}
+\label{classKParts_1_1Factory}\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+}
+
+
+{\ttfamily \#include $<$factory.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.835616cm]{classKParts_1_1Factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1Factory_aa5b7628de21a0b8b32dcd5bd3b3fe3af}{Factory} (Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classKParts_1_1Factory_a051bbca3a6feb3a865f7e119112ff813}{$\sim$\+Factory} ()
+\item 
+\hyperlink{classKParts_1_1Part}{Part} $\ast$ \hyperlink{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{create\+Part} (Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const char $\ast$classname=\char`\"{}K\+Parts\+::\+Part\char`\"{}, const Q\+String\+List \&args=Q\+String\+List())
+\item 
+virtual K\+Component\+Data \hyperlink{classKParts_1_1Factory_a94c5c244737f0aa7788a1c114bc2acb9}{part\+Component\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static K\+Component\+Data \hyperlink{classKParts_1_1Factory_a5333c938faf8ecd06a172edb4af5692a}{part\+Component\+Data\+From\+Library} (const Q\+String \&library\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classKParts_1_1Part}{Part} $\ast$ \hyperlink{classKParts_1_1Factory_a05e336b747b65776e31db466736570f2}{create\+Part\+Object} (Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const char $\ast$classname=\char`\"{}K\+Parts\+::\+Part\char`\"{}, const Q\+String\+List \&args=Q\+String\+List())=0
+\item 
+virtual Q\+Object $\ast$ \hyperlink{classKParts_1_1Factory_accec62e4a6f005b82cfad965cbeb1d7b}{create\+Object} (Q\+Object $\ast$parent=0, const char $\ast$classname=\char`\"{}Q\+Object\char`\"{}, const Q\+String\+List \&args=Q\+String\+List())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A generic factory object to create a \hyperlink{classKParts_1_1Part}{Part}.
+
+\hyperlink{classKParts_1_1Factory}{Factory} is an abstract class. Reimplement the \hyperlink{classKParts_1_1Factory_a05e336b747b65776e31db466736570f2}{create\+Part\+Object()} method to give it functionality.
+
+\begin{DoxySeeAlso}{See Also}
+K\+Lib\+Factory. 
+\end{DoxySeeAlso}
+
+
+Definition at line 42 of file factory.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1Factory_aa5b7628de21a0b8b32dcd5bd3b3fe3af}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!Factory@{Factory}}
+\index{Factory@{Factory}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{Factory}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Factory\+::\+Factory (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1Factory_aa5b7628de21a0b8b32dcd5bd3b3fe3af}
+\hypertarget{classKParts_1_1Factory_a051bbca3a6feb3a865f7e119112ff813}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!````~Factory@{$\sim$\+Factory}}
+\index{````~Factory@{$\sim$\+Factory}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{$\sim$\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Factory\+::$\sim$\+Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Factory_a051bbca3a6feb3a865f7e119112ff813}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1Factory_accec62e4a6f005b82cfad965cbeb1d7b}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!create\+Object@{create\+Object}}
+\index{create\+Object@{create\+Object}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{create\+Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Object$\ast$ K\+Parts\+::\+Factory\+::create\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{classname = {\ttfamily \char`\"{}QObject\char`\"{}}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Factory_accec62e4a6f005b82cfad965cbeb1d7b}
+Reimplemented from K\+Lib\+Factory. Calls \hyperlink{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{create\+Part()} \hypertarget{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!create\+Part@{create\+Part}}
+\index{create\+Part@{create\+Part}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{create\+Part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Part}$\ast$ K\+Parts\+::\+Factory\+::create\+Part (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{classname = {\ttfamily \char`\"{}KParts\+:\+:Part\char`\"{}}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}
+Creates a part.
+
+The Q\+String\+List can be used to pass additional arguments to the part. If the part needs additional arguments, it should take them as name=\char`\"{}value\char`\"{} pairs. This is the way additional arguments will get passed to the part from eg. khtml. You can for example emebed the part into H\+T\+M\+L by using the following code\+: 
+\begin{DoxyCode}
+<\textcolor{keywordtype}{object} type=\textcolor{stringliteral}{"my\_mimetype"} data=\textcolor{stringliteral}{"url\_to\_my\_data"}>
+    <param name=\textcolor{stringliteral}{"name1"} value=\textcolor{stringliteral}{"value1"}>
+    <param name=\textcolor{stringliteral}{"name2"} value=\textcolor{stringliteral}{"value2"}>
+</\textcolor{keywordtype}{object}>
+\end{DoxyCode}
+ This could result in a call to 
+\begin{DoxyCode}
+\hyperlink{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{createPart}( parentWidget, parentObject, \textcolor{stringliteral}{"KParts::Part"},
+            QStringList(\textcolor{stringliteral}{"name1="}value1\textcolor{stringliteral}{""}, \textcolor{stringliteral}{"name2="}value2\textcolor{stringliteral}{") );}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+the newly created part.
+\end{DoxyReturn}
+\hyperlink{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{create\+Part()} automatically emits a signal K\+Lib\+Factory\+::object\+Created to tell the library about its newly created object. This is very important for reference counting, and allows unloading the library automatically once all its objects have been destroyed. \hypertarget{classKParts_1_1Factory_a05e336b747b65776e31db466736570f2}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!create\+Part\+Object@{create\+Part\+Object}}
+\index{create\+Part\+Object@{create\+Part\+Object}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{create\+Part\+Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Part}$\ast$ K\+Parts\+::\+Factory\+::create\+Part\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const char $\ast$}]{classname = {\ttfamily \char`\"{}KParts\+:\+:Part\char`\"{}}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classKParts_1_1Factory_a05e336b747b65776e31db466736570f2}
+Reimplement this method in your implementation to create the \hyperlink{classKParts_1_1Part}{Part}.
+
+The Q\+String\+List can be used to pass additional arguments to the part. If the part needs additional arguments, it should take them as name=\char`\"{}value\char`\"{} pairs. This is the way additional arguments will get passed to the part from eg. khtml. You can for example emebed the part into H\+T\+M\+L by using the following code\+: 
+\begin{DoxyCode}
+<\textcolor{keywordtype}{object} type=\textcolor{stringliteral}{"my\_mimetype"} data=\textcolor{stringliteral}{"url\_to\_my\_data"}>
+    <param name=\textcolor{stringliteral}{"name1"} value=\textcolor{stringliteral}{"value1"}>
+    <param name=\textcolor{stringliteral}{"name2"} value=\textcolor{stringliteral}{"value2"}>
+</\textcolor{keywordtype}{object}>
+\end{DoxyCode}
+ This could result in a call to 
+\begin{DoxyCode}
+\hyperlink{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{createPart}( parentWidget, parentObject, \textcolor{stringliteral}{"KParts::Part"},
+            QStringList(\textcolor{stringliteral}{"name1="}value1\textcolor{stringliteral}{""}, \textcolor{stringliteral}{"name2="}value2\textcolor{stringliteral}{") );}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+the newly created part. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classKParts_1_1GenericFactory_3_01KTypeList_3_01T1_00_01T2_01_4_01_4_aa3e8c27c10a09306951a2e63159a3d56}{K\+Parts\+::\+Generic\+Factory$<$ K\+Type\+List$<$ T1, T2 $>$ $>$}, and \hyperlink{classKParts_1_1GenericFactory_ac80d722fb2433018dfea04f0f6b89f74}{K\+Parts\+::\+Generic\+Factory$<$ T $>$}.
+
+\hypertarget{classKParts_1_1Factory_a94c5c244737f0aa7788a1c114bc2acb9}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!part\+Component\+Data@{part\+Component\+Data}}
+\index{part\+Component\+Data@{part\+Component\+Data}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{part\+Component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Component\+Data K\+Parts\+::\+Factory\+::part\+Component\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Factory_a94c5c244737f0aa7788a1c114bc2acb9}
+If you have a part contained in a shared library you might want to query for meta-\/information like the about-\/data, or the K\+Component\+Data in general. If the part is exported using \hyperlink{classKParts_1_1GenericFactory}{K\+Parts\+::\+Generic\+Factory} then this method will return the instance that belongs to the part without the need to instantiate the part component. 
+
+Reimplemented in \hyperlink{classKParts_1_1GenericFactoryBase_a0b1d32c7adf2255890bdd3898757feae}{K\+Parts\+::\+Generic\+Factory\+Base$<$ T $>$}, and \hyperlink{classKParts_1_1GenericFactoryBase_a0b1d32c7adf2255890bdd3898757feae}{K\+Parts\+::\+Generic\+Factory\+Base$<$ T1 $>$}.
+
+\hypertarget{classKParts_1_1Factory_a5333c938faf8ecd06a172edb4af5692a}{\index{K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}!part\+Component\+Data\+From\+Library@{part\+Component\+Data\+From\+Library}}
+\index{part\+Component\+Data\+From\+Library@{part\+Component\+Data\+From\+Library}!K\+Parts\+::\+Factory@{K\+Parts\+::\+Factory}}
+\subsubsection[{part\+Component\+Data\+From\+Library}]{\setlength{\rightskip}{0pt plus 5cm}static K\+Component\+Data K\+Parts\+::\+Factory\+::part\+Component\+Data\+From\+Library (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{library\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1Factory_a5333c938faf8ecd06a172edb4af5692a}
+A convenience method for part\+Component\+Data that takes care of retrieving the factory for a given library name and calling part\+Component\+Data on it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+Name} & name of the library to query the instance from \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{factory_8h}{factory.\+h}\end{DoxyCompactItemize}

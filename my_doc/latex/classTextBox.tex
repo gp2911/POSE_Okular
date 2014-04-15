@@ -1,0 +1,119 @@
+\hypertarget{classTextBox}{\section{Text\+Box Class Reference}
+\label{classTextBox}\index{Text\+Box@{Text\+Box}}
+}
+
+
+{\ttfamily \#include $<$text\+Box.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTextBox_a25b67e5ff6788c60b8aef3f3540879d0}{Text\+Box} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classTextBox_a64a5cc01b2ef42639037cbd0247361f6}{Text\+Box} (const Q\+Rect \&re, const Q\+String \&l\+T)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Rect \hyperlink{classTextBox_aa383110556fc2ca0e787b9618a333074}{box}
+\begin{DoxyCompactList}\small\item\em Bounding box of the text or hyperlink. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classTextBox_a60aeb0b354c3e92da942f3fac174da2e}{text}
+\begin{DoxyCompactList}\small\item\em Name of the region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a rectangular region in a Rendered\+Document\+Page that contains text
+
+This trivial class is used in the Rendered\+Document\+Page class to give a non-\/graphical representation of text in a rendered document page. This is used, e.\+g. by text search and the text selection functions that need to know the contents and the position of text on a page
+
+\begin{DoxyAuthor}{Author}
+Stefan Kebekus \href{mailto:kebekus@kde.org}{\tt kebekus@kde.\+org} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 29 of file text\+Box.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTextBox_a25b67e5ff6788c60b8aef3f3540879d0}{\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\subsubsection[{Text\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Box\+::\+Text\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTextBox_a25b67e5ff6788c60b8aef3f3540879d0}
+
+
+Default Constructor. 
+
+The default constructor leaves all fields uninitialized. 
+
+Definition at line 36 of file text\+Box.\+h.
+
+
+\begin{DoxyCode}
+36 \{\}
+\end{DoxyCode}
+\hypertarget{classTextBox_a64a5cc01b2ef42639037cbd0247361f6}{\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\subsubsection[{Text\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Box\+::\+Text\+Box (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect \&}]{re, }
+\item[{const Q\+String \&}]{l\+T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTextBox_a64a5cc01b2ef42639037cbd0247361f6}
+
+
+Constructor. 
+
+Trivial constructor leaves that initialized all members.
+
+
+\begin{DoxyParams}{Parameters}
+{\em re} & value for the box \\
+\hline
+{\em l\+T} & valus for the text field \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file text\+Box.\+h.
+
+
+\begin{DoxyCode}
+45 : \hyperlink{classTextBox_aa383110556fc2ca0e787b9618a333074}{box}(re), \hyperlink{classTextBox_a60aeb0b354c3e92da942f3fac174da2e}{text}(lT) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTextBox_aa383110556fc2ca0e787b9618a333074}{\index{Text\+Box@{Text\+Box}!box@{box}}
+\index{box@{box}!Text\+Box@{Text\+Box}}
+\subsubsection[{box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Text\+Box\+::box}}\label{classTextBox_aa383110556fc2ca0e787b9618a333074}
+
+
+Bounding box of the text or hyperlink. 
+
+This rectangle specifies where on the page the text or hyperlink is found. It uses the same coordinates that were used when the associated document\+Page was rendered by the document\+Renderer.\+draw\+Page() method. The contents of the box is graphically inverted to indicate marked text. 
+
+Definition at line 55 of file text\+Box.\+h.
+
+\hypertarget{classTextBox_a60aeb0b354c3e92da942f3fac174da2e}{\index{Text\+Box@{Text\+Box}!text@{text}}
+\index{text@{text}!Text\+Box@{Text\+Box}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Text\+Box\+::text}}\label{classTextBox_a60aeb0b354c3e92da942f3fac174da2e}
+
+
+Name of the region. 
+
+The text associated with the box is stored here. 
+
+Definition at line 61 of file text\+Box.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{textBox_8h}{text\+Box.\+h}\end{DoxyCompactItemize}

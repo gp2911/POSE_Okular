@@ -1,0 +1,192 @@
+\hypertarget{classDVI__SourceFileSplitter}{\section{D\+V\+I\+\_\+\+Source\+File\+Splitter Class Reference}
+\label{classDVI__SourceFileSplitter}\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+}
+
+
+{\ttfamily \#include $<$dvisourcesplitter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDVI__SourceFileSplitter_aba678e0746b366b77494482c970d4316}{D\+V\+I\+\_\+\+Source\+File\+Splitter} (const Q\+String \&scrlink, const Q\+String \&dvi\+File)
+\item 
+Q\+String \hyperlink{classDVI__SourceFileSplitter_a17db00ec7e428e3ce86399db8773dd83}{file\+Name} () const 
+\item 
+Q\+String \hyperlink{classDVI__SourceFileSplitter_a4a38311dc73d70859eb139bb334b713e}{file\+Path} () const 
+\item 
+bool \hyperlink{classDVI__SourceFileSplitter_a943c4efab54e5ac54c294b252afff399}{file\+Exists} () const 
+\item 
+quint32 \hyperlink{classDVI__SourceFileSplitter_a2cc71ec5b2ea53196ce5879856803cda}{line} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file dvisourcesplitter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDVI__SourceFileSplitter_aba678e0746b366b77494482c970d4316}{\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}!D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}!D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+\subsubsection[{D\+V\+I\+\_\+\+Source\+File\+Splitter}]{\setlength{\rightskip}{0pt plus 5cm}D\+V\+I\+\_\+\+Source\+File\+Splitter\+::\+D\+V\+I\+\_\+\+Source\+File\+Splitter (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{scrlink, }
+\item[{const Q\+String \&}]{dvi\+File}
+\end{DoxyParamCaption}
+)}}\label{classDVI__SourceFileSplitter_aba678e0746b366b77494482c970d4316}
+
+
+Definition at line 20 of file dvisourcesplitter.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22   QString filepart = srclink, linepart;
+23   \textcolor{comment}{// if sourcefilename starts with a number}
+24   \textcolor{comment}{// then there could be a mix up, i.e. src:123file.tex}
+25   \textcolor{comment}{// line 123 and file.tex or line 12 and 3file.tex?}
+26   \textcolor{keywordtype}{bool} possibleNumberMixUp = \textcolor{keyword}{false};
+27 
+28 \textcolor{preprocessor}{#ifdef DEBUG\_SOURCESPLITTER}
+29   kDebug(kvs::dvi) << \textcolor{stringliteral}{"DVI\_SourceSplitter: srclink "} << srclink;
+30 \textcolor{preprocessor}{#endif}
+31 
+32   \textcolor{comment}{//remove src: if necessary}
+33   \textcolor{keywordflow}{if} ( filepart.left(4) == \textcolor{stringliteral}{"src:"} ) filepart = srclink.mid(4);
+34 
+35   \textcolor{comment}{//split first}
+36   quint32 max = filepart.length(), i = 0;
+37   \textcolor{keywordflow}{for}(i=0; i<max; ++i) \textcolor{keywordflow}{if} ( !filepart[i].isDigit()) \textcolor{keywordflow}{break};
+38   linepart = filepart.left(i);
+39   filepart = filepart.mid(i);
+40 
+41   \textcolor{comment}{//check for number mix up}
+42   \textcolor{keywordflow}{if} ( filepart[0] != \textcolor{charliteral}{' '} && (linepart.length() != 1) ) possibleNumberMixUp = \textcolor{keyword}{true};
+43 
+44   \textcolor{comment}{//remove a spaces}
+45   filepart = filepart.trimmed();
+46   linepart = linepart.trimmed();
+47 
+48 \textcolor{preprocessor}{#ifdef DEBUG\_SOURCESPLITTER}
+49   kDebug(kvs::dvi) << \textcolor{stringliteral}{"DVI\_SourceSplitter: filepart "} << filepart << \textcolor{stringliteral}{" linepart "} << linepart;
+50 \textcolor{preprocessor}{#endif}
+51 
+52   \textcolor{comment}{//test if the file exists}
+53   m\_fileInfo.setFile(QFileInfo(dviFile).absoluteDir(), filepart);
+54   \textcolor{keywordtype}{bool} fiExists = m\_fileInfo.exists();
+55 
+56   \textcolor{comment}{//if it doesn't exist, but adding ".tex"}
+57   \textcolor{keywordflow}{if} ( !fiExists && QFileInfo(m\_fileInfo.absoluteFilePath() + \textcolor{stringliteral}{".tex"}).exists() )
+58     m\_fileInfo.setFile(m\_fileInfo.absoluteFilePath() + \textcolor{stringliteral}{".tex"});
+59 
+60   \textcolor{comment}{//if that doesn't help either, perhaps the file started with a}
+61   \textcolor{comment}{//number: move the numbers from the sourceline to the filename}
+62   \textcolor{comment}{//one by one (also try to add .tex repeatedly)}
+63   \textcolor{keywordflow}{if} ( possibleNumberMixUp && !fiExists )
+64   \{
+65     QFileInfo tempInfo(m\_fileInfo);
+66     QString tempFileName = tempInfo.fileName();
+67     quint32 index, maxindex = linepart.length();
+68     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+69     \textcolor{keywordflow}{for} ( index = 1; index < maxindex; ++index)
+70     \{
+71       tempInfo.setFile(linepart.right(index) + tempFileName);
+72 \textcolor{preprocessor}{#ifdef DEBUG\_SOURCESPLITTER}
+73       kDebug(kvs::dvi) << \textcolor{stringliteral}{"DVI\_SourceSplitter: trying "} << tempInfo.fileName();
+74 \textcolor{preprocessor}{#endif}
+75       \textcolor{keywordflow}{if} ( tempInfo.exists() ) \{ found = \textcolor{keyword}{true}; \textcolor{keywordflow}{break};\}
+76       tempInfo.setFile(linepart.right(index) + tempFileName + \textcolor{stringliteral}{".tex"});
+77 \textcolor{preprocessor}{#ifdef DEBUG\_SOURCESPLITTER}
+78       kDebug(kvs::dvi) << \textcolor{stringliteral}{"DVI\_SourceSplitter: trying "} << tempInfo.fileName();
+79 \textcolor{preprocessor}{#endif}
+80       \textcolor{keywordflow}{if} ( tempInfo.exists() ) \{ found = \textcolor{keyword}{true}; \textcolor{keywordflow}{break};\}
+81     \}
+82 
+83     \textcolor{keywordflow}{if} (found)
+84     \{
+85       m\_fileInfo = tempInfo;
+86       linepart = linepart.left(maxindex - index);
+87     \}
+88   \}
+89 
+90   \textcolor{keywordtype}{bool} ok;
+91   m\_line = linepart.toInt(&ok);
+92   \textcolor{keywordflow}{if} (!ok) m\_line = 0;
+93 
+94 \textcolor{preprocessor}{#ifdef DEBUG\_SOURCESPLITTER}
+95   kDebug(kvs::dvi) << \textcolor{stringliteral}{"DVI\_SourceSplitter: result: file "} << m\_fileInfo.absoluteFilePath() << \textcolor{stringliteral}{" line "} << 
+      m\_line;
+96 \textcolor{preprocessor}{#endif}
+97 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDVI__SourceFileSplitter_a943c4efab54e5ac54c294b252afff399}{\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}!file\+Exists@{file\+Exists}}
+\index{file\+Exists@{file\+Exists}!D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+\subsubsection[{file\+Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool D\+V\+I\+\_\+\+Source\+File\+Splitter\+::file\+Exists (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDVI__SourceFileSplitter_a943c4efab54e5ac54c294b252afff399}
+
+
+Definition at line 25 of file dvisourcesplitter.\+h.
+
+
+\begin{DoxyCode}
+25 \{ \textcolor{keywordflow}{return} m\_fileInfo.exists(); \}
+\end{DoxyCode}
+\hypertarget{classDVI__SourceFileSplitter_a17db00ec7e428e3ce86399db8773dd83}{\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+\subsubsection[{file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String D\+V\+I\+\_\+\+Source\+File\+Splitter\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDVI__SourceFileSplitter_a17db00ec7e428e3ce86399db8773dd83}
+
+
+Definition at line 23 of file dvisourcesplitter.\+h.
+
+
+\begin{DoxyCode}
+23 \{ \textcolor{keywordflow}{return} m\_fileInfo.fileName(); \}
+\end{DoxyCode}
+\hypertarget{classDVI__SourceFileSplitter_a4a38311dc73d70859eb139bb334b713e}{\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}!file\+Path@{file\+Path}}
+\index{file\+Path@{file\+Path}!D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+\subsubsection[{file\+Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String D\+V\+I\+\_\+\+Source\+File\+Splitter\+::file\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDVI__SourceFileSplitter_a4a38311dc73d70859eb139bb334b713e}
+
+
+Definition at line 24 of file dvisourcesplitter.\+h.
+
+
+\begin{DoxyCode}
+24 \{ \textcolor{keywordflow}{return} m\_fileInfo.absoluteFilePath(); \}
+\end{DoxyCode}
+\hypertarget{classDVI__SourceFileSplitter_a2cc71ec5b2ea53196ce5879856803cda}{\index{D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}!line@{line}}
+\index{line@{line}!D\+V\+I\+\_\+\+Source\+File\+Splitter@{D\+V\+I\+\_\+\+Source\+File\+Splitter}}
+\subsubsection[{line}]{\setlength{\rightskip}{0pt plus 5cm}quint32 D\+V\+I\+\_\+\+Source\+File\+Splitter\+::line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDVI__SourceFileSplitter_a2cc71ec5b2ea53196ce5879856803cda}
+
+
+Definition at line 26 of file dvisourcesplitter.\+h.
+
+
+\begin{DoxyCode}
+26 \{ \textcolor{keywordflow}{return} m\_line; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{dvisourcesplitter_8h}{dvisourcesplitter.\+h}\item 
+generators/dvi/\hyperlink{dvisourcesplitter_8cpp}{dvisourcesplitter.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,272 @@
+\hypertarget{classOkular_1_1Utils}{\section{Okular\+:\+:Utils Class Reference}
+\label{classOkular_1_1Utils}\index{Okular\+::\+Utils@{Okular\+::\+Utils}}
+}
+
+
+General utility functions.  
+
+
+
+
+{\ttfamily \#include $<$utils.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Rect \hyperlink{classOkular_1_1Utils_a3c9f04ef5d3db4fe55c05aee593ac026}{rotate\+Rect} (const Q\+Rect \&source, int width, int height, int orientation)
+\item 
+static double \hyperlink{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}{dpi\+X} ()
+\item 
+static double \hyperlink{classOkular_1_1Utils_aeee309843e66a38840d6cec2002df3ea}{dpi\+Y} ()
+\item 
+static double \hyperlink{classOkular_1_1Utils_a63b8636c3289528b1e5922b08ee55661}{real\+Dpi\+X} ()
+\item 
+static double \hyperlink{classOkular_1_1Utils_ab04cf7a89a0de943cddc5fa5b9389cd2}{real\+Dpi\+Y} ()
+\item 
+static Q\+Size\+F \hyperlink{classOkular_1_1Utils_a503c8cbc3fa6623139daa4abd5dfe52a}{real\+Dpi} (Q\+Widget $\ast$widget\+On\+Screen)
+\item 
+static \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1Utils_af1d97967ffcdda70bbc4ddb293da5020}{image\+Bounding\+Box} (const Q\+Image $\ast$image)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+General utility functions. 
+
+This class contains some static functions of general utility. 
+
+Definition at line 28 of file utils.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!dpi\+X@{dpi\+X}}
+\index{dpi\+X@{dpi\+X}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{dpi\+X}]{\setlength{\rightskip}{0pt plus 5cm}double Utils\+::dpi\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}
+Return the horizontal D\+P\+I of the main display 
+
+Definition at line 227 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+228 \{
+229     \textcolor{keywordflow}{return} QDesktopWidget().physicalDpiX();
+230 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Utils_aeee309843e66a38840d6cec2002df3ea}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!dpi\+Y@{dpi\+Y}}
+\index{dpi\+Y@{dpi\+Y}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{dpi\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double Utils\+::dpi\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_aeee309843e66a38840d6cec2002df3ea}
+Return the vertical D\+P\+I of the main display 
+
+Definition at line 232 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+233 \{
+234     \textcolor{keywordflow}{return} QDesktopWidget().physicalDpiY();
+235 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Utils_af1d97967ffcdda70bbc4ddb293da5020}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!image\+Bounding\+Box@{image\+Bounding\+Box}}
+\index{image\+Bounding\+Box@{image\+Bounding\+Box}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{image\+Bounding\+Box}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Utils\+::image\+Bounding\+Box (
+\begin{DoxyParamCaption}
+\item[{const Q\+Image $\ast$}]{image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_af1d97967ffcdda70bbc4ddb293da5020}
+Compute the smallest rectangle that contains all non-\/white pixels in image), in normalized \mbox{[}0,1\mbox{]} coordinates.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 257 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+258 \{
+259     \textcolor{keywordflow}{if} ( !image )
+260         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}();
+261 
+262     \textcolor{keywordtype}{int} width = image->width();
+263     \textcolor{keywordtype}{int} height = image->height();
+264     \textcolor{keywordtype}{int} left, top, bottom, right, x, y;
+265 
+266 \textcolor{preprocessor}{#ifdef BBOX\_DEBUG}
+267     QTime time;
+268     time.start();
+269 \textcolor{preprocessor}{#endif}
+270 
+271     \textcolor{comment}{// Scan pixels for top non-white}
+272     \textcolor{keywordflow}{for} ( top = 0; top < height; ++top )
+273         \textcolor{keywordflow}{for} ( x = 0; x < width; ++x )
+274             \textcolor{keywordflow}{if} ( !isWhite( image->pixel( x, top ) ) )
+275                 \textcolor{keywordflow}{goto} got\_top;
+276     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}( 0, 0, 0, 0 ); \textcolor{comment}{// the image is blank}
+277 got\_top:
+278     left = right = x;
+279 
+280     \textcolor{comment}{// Scan pixels for bottom non-white}
+281     \textcolor{keywordflow}{for} ( bottom = height-1; bottom >= top; --bottom )
+282         \textcolor{keywordflow}{for} ( x = width-1; x >= 0; --x )
+283             \textcolor{keywordflow}{if} ( !isWhite( image->pixel( x, bottom ) ) )
+284                 \textcolor{keywordflow}{goto} got\_bottom;
+285     Q\_ASSERT( 0 ); \textcolor{comment}{// image changed?!}
+286 got\_bottom:
+287     \textcolor{keywordflow}{if} ( x < left )
+288         left = x;
+289     \textcolor{keywordflow}{if} ( x > right )
+290         right = x;
+291 
+292     \textcolor{comment}{// Scan for leftmost and rightmost (we already found some bounds on these):}
+293     \textcolor{keywordflow}{for} ( y = top; y <= bottom && ( left > 0 || right < width-1 ); ++y )
+294     \{
+295         \textcolor{keywordflow}{for} ( x = 0; x < left; ++x )
+296             \textcolor{keywordflow}{if} ( !isWhite( image->pixel( x, y ) ) )
+297                 left = x;
+298         \textcolor{keywordflow}{for} ( x = width-1; x > right+1; --x )
+299             \textcolor{keywordflow}{if} ( !isWhite( image->pixel( x, y ) ) )
+300                 right = x;
+301     \}
+302 
+303     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} bbox( QRect( left, top, ( right - left + 1), ( bottom - top + 1 ) ),
+304                          image->width(), image->height() );
+305 
+306 \textcolor{preprocessor}{#ifdef BBOX\_DEBUG}
+307     kDebug() << \textcolor{stringliteral}{"Computed bounding box"} << bbox << \textcolor{stringliteral}{"in"} << time.elapsed() << \textcolor{stringliteral}{"ms"};
+308 \textcolor{preprocessor}{#endif}
+309 
+310     \textcolor{keywordflow}{return} bbox;
+311 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Utils_a503c8cbc3fa6623139daa4abd5dfe52a}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!real\+Dpi@{real\+Dpi}}
+\index{real\+Dpi@{real\+Dpi}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{real\+Dpi}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size\+F Utils\+::real\+Dpi (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget\+On\+Screen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_a503c8cbc3fa6623139daa4abd5dfe52a}
+Return the real D\+P\+I of the display containing given widget
+
+On X11, it can indicate the real horizontal D\+P\+I value without any Xrdb setting. Otherwise, returns the same as real\+Dpi\+X/\+Y(),
+
+\begin{DoxySince}{Since}
+0.\+19 (K\+D\+E 4.\+13) 
+\end{DoxySince}
+
+
+Definition at line 247 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+248 \{
+249     \textcolor{keywordflow}{return} QSizeF(\hyperlink{classOkular_1_1Utils_a63b8636c3289528b1e5922b08ee55661}{realDpiX}(), \hyperlink{classOkular_1_1Utils_ab04cf7a89a0de943cddc5fa5b9389cd2}{realDpiY}());
+250 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Utils_a63b8636c3289528b1e5922b08ee55661}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!real\+Dpi\+X@{real\+Dpi\+X}}
+\index{real\+Dpi\+X@{real\+Dpi\+X}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{real\+Dpi\+X}]{\setlength{\rightskip}{0pt plus 5cm}double Utils\+::real\+Dpi\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_a63b8636c3289528b1e5922b08ee55661}
+Return the real horizontal D\+P\+I of the main display.
+
+On X11, it can indicate the real horizontal D\+P\+I value without any Xrdb setting. Otherwise, returns the same as \hyperlink{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}{dpi\+X()},
+
+\begin{DoxySince}{Since}
+0.\+9 (K\+D\+E 4.\+3) 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]Can not work with multi-\/monitor configurations \end{DoxyRefDesc}
+
+
+Definition at line 237 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+238 \{
+239     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}{dpiX}();
+240 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Utils_ab04cf7a89a0de943cddc5fa5b9389cd2}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!real\+Dpi\+Y@{real\+Dpi\+Y}}
+\index{real\+Dpi\+Y@{real\+Dpi\+Y}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{real\+Dpi\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double Utils\+::real\+Dpi\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_ab04cf7a89a0de943cddc5fa5b9389cd2}
+Return the real vertical D\+P\+I of the main display
+
+On X11, it can indicate the real horizontal D\+P\+I value without any Xrdb setting. Otherwise, returns the same as \hyperlink{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}{dpi\+X()},
+
+\begin{DoxySince}{Since}
+0.\+9 (K\+D\+E 4.\+3) 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]Can not work with multi-\/monitor configurations \end{DoxyRefDesc}
+
+
+Definition at line 242 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+243 \{
+244     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Utils_aeee309843e66a38840d6cec2002df3ea}{dpiY}();
+245 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Utils_a3c9f04ef5d3db4fe55c05aee593ac026}{\index{Okular\+::\+Utils@{Okular\+::\+Utils}!rotate\+Rect@{rotate\+Rect}}
+\index{rotate\+Rect@{rotate\+Rect}!Okular\+::\+Utils@{Okular\+::\+Utils}}
+\subsubsection[{rotate\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Utils\+::rotate\+Rect (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect \&}]{source, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{int}]{orientation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1Utils_a3c9f04ef5d3db4fe55c05aee593ac026}
+Rotate the rect {\ttfamily source} in the area {\ttfamily width} x {\ttfamily height} with the specified {\ttfamily orientation} . 
+
+Definition at line 37 of file utils.\+cpp.
+
+
+\begin{DoxyCode}
+38 \{
+39     QRect ret;
+40 
+41     \textcolor{comment}{// adapt the coordinates of the boxes to the rotation}
+42     \textcolor{keywordflow}{switch} ( orientation )
+43     \{
+44         \textcolor{keywordflow}{case} 1:
+45             ret = QRect( width - source.y() - source.height(), source.x(),
+46                          source.height(), source.width() );
+47             \textcolor{keywordflow}{break};
+48         \textcolor{keywordflow}{case} 2:
+49             ret = QRect( width - source.x() - source.width(), height - source.y() - source.height(),
+50                          source.width(), source.height() );
+51             \textcolor{keywordflow}{break};
+52         \textcolor{keywordflow}{case} 3:
+53             ret = QRect( source.y(), height - source.x() - source.width(),
+54                          source.height(), source.width() );
+55             \textcolor{keywordflow}{break};
+56         \textcolor{keywordflow}{case} 0:  \textcolor{comment}{// no modifications}
+57         \textcolor{keywordflow}{default}: \textcolor{comment}{// other cases}
+58             ret = source;
+59     \}
+60 
+61     \textcolor{keywordflow}{return} ret;
+62 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{utils_8h}{utils.\+h}\item 
+core/\hyperlink{utils_8cpp}{utils.\+cpp}\end{DoxyCompactItemize}

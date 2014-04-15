@@ -1,0 +1,194 @@
+\hypertarget{classKParts_1_1LiveConnectExtension}{\section{K\+Parts\+:\+:Live\+Connect\+Extension Class Reference}
+\label{classKParts_1_1LiveConnectExtension}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+}
+
+
+{\ttfamily \#include $<$browserextension.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Live\+Connect\+Extension\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKParts_1_1LiveConnectExtension}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{Type} \{ \\*
+\hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca862f2f5258607f30adbbe03395426c20}{Type\+Void} =0, 
+\hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca3fed8b3ab2f5490fd7e6c6fca8b4a14b}{Type\+Bool}, 
+\hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca9f107d1ffb0bab7084c2952c00cf7f79}{Type\+Function}, 
+\hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadd765f23d443e96389613f184e874987}{Type\+Number}, 
+\\*
+\hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadc439c83b2bb144692429d76408cb5b7}{Type\+Object}, 
+\hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca2f39f6b5f442bd7909c8810770d3ca95}{Type\+String}
+ \}
+\item 
+typedef \hyperlink{classQList}{Q\+List}$<$ \hyperlink{structQPair}{Q\+Pair}$<$ \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{Type}, \\*
+Q\+String $>$ $>$ \hyperlink{classKParts_1_1LiveConnectExtension_a16a7a582605755e47eaab5b37e73d8cb}{Arg\+List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1LiveConnectExtension_a11b7499199001f613246861dda90c101}{Live\+Connect\+Extension} (\hyperlink{classKParts_1_1ReadOnlyPart}{K\+Parts\+::\+Read\+Only\+Part} $\ast$parent)
+\item 
+virtual \hyperlink{classKParts_1_1LiveConnectExtension_aef598b47d0fc11d1323588c67928da7c}{$\sim$\+Live\+Connect\+Extension} ()
+\item 
+virtual bool \hyperlink{classKParts_1_1LiveConnectExtension_a91ddec0deaa49516ade1e86d8bbd3b90}{get} (const unsigned long objid, const Q\+String \&field, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{Type} \&type, unsigned long \&retobjid, Q\+String \&value)
+\item 
+virtual bool \hyperlink{classKParts_1_1LiveConnectExtension_a20088d732c9bf45abf31e9723b263e4f}{put} (const unsigned long objid, const Q\+String \&field, const Q\+String \&value)
+\item 
+virtual bool \hyperlink{classKParts_1_1LiveConnectExtension_ac925e087aa86e8e11c7616b8f03551a0}{call} (const unsigned long objid, const Q\+String \&func, const Q\+String\+List \&args, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{Type} \&type, unsigned long \&retobjid, Q\+String \&value)
+\item 
+virtual void \hyperlink{classKParts_1_1LiveConnectExtension_aceb4e2b994572baf1d87f78c7134c42a}{unregister} (const unsigned long objid)
+\item 
+void \hyperlink{classKParts_1_1LiveConnectExtension_a0cb4efb5b26992f31ae44f3d4a6ba2a1}{part\+Event} (const unsigned long objid, const Q\+String \&event, const \hyperlink{classKParts_1_1LiveConnectExtension_a16a7a582605755e47eaab5b37e73d8cb}{K\+Parts\+::\+Live\+Connect\+Extension\+::\+Arg\+List} \&args)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1LiveConnectExtension}{Live\+Connect\+Extension} $\ast$ \hyperlink{classKParts_1_1LiveConnectExtension_acfe5c3014688d5b0efdc5a1534aacb49}{child\+Object} (Q\+Object $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An extension class for Live\+Connect, i.\+e. a call from Java\+Script from a H\+T\+M\+L page which embeds this part. A part can have an object hierarchy by using objid as a reference to an object. 
+
+Definition at line 765 of file browserextension.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classKParts_1_1LiveConnectExtension_a16a7a582605755e47eaab5b37e73d8cb}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Arg\+List@{Arg\+List}}
+\index{Arg\+List@{Arg\+List}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{Arg\+List}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Q\+List}$<${\bf Q\+Pair}$<${\bf Type}, Q\+String$>$ $>$ {\bf K\+Parts\+::\+Live\+Connect\+Extension\+::\+Arg\+List}}}\label{classKParts_1_1LiveConnectExtension_a16a7a582605755e47eaab5b37e73d8cb}
+
+
+Definition at line 772 of file browserextension.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type@{Type}}
+\index{Type@{Type}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Live\+Connect\+Extension\+::\+Type}}}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Type\+Void@{Type\+Void}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type\+Void@{Type\+Void}}\item[{\em 
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca862f2f5258607f30adbbe03395426c20}{Type\+Void}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca862f2f5258607f30adbbe03395426c20}
+}]\index{Type\+Bool@{Type\+Bool}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type\+Bool@{Type\+Bool}}\item[{\em 
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca3fed8b3ab2f5490fd7e6c6fca8b4a14b}{Type\+Bool}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca3fed8b3ab2f5490fd7e6c6fca8b4a14b}
+}]\index{Type\+Function@{Type\+Function}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type\+Function@{Type\+Function}}\item[{\em 
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca9f107d1ffb0bab7084c2952c00cf7f79}{Type\+Function}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca9f107d1ffb0bab7084c2952c00cf7f79}
+}]\index{Type\+Number@{Type\+Number}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type\+Number@{Type\+Number}}\item[{\em 
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadd765f23d443e96389613f184e874987}{Type\+Number}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadd765f23d443e96389613f184e874987}
+}]\index{Type\+Object@{Type\+Object}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type\+Object@{Type\+Object}}\item[{\em 
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadc439c83b2bb144692429d76408cb5b7}{Type\+Object}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadc439c83b2bb144692429d76408cb5b7}
+}]\index{Type\+String@{Type\+String}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Type\+String@{Type\+String}}\item[{\em 
+\hypertarget{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca2f39f6b5f442bd7909c8810770d3ca95}{Type\+String}\label{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca2f39f6b5f442bd7909c8810770d3ca95}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 769 of file browserextension.\+h.
+
+
+\begin{DoxyCode}
+769             \{
+770       \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca862f2f5258607f30adbbe03395426c20}{TypeVoid}=0, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca3fed8b3ab2f5490fd7e6c6fca8b4a14b}{TypeBool}, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca9f107d1ffb0bab7084c2952c00cf7f79}{TypeFunction}, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadd765f23d443e96389613f184e874987}{TypeNumber}, 
+      \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9cadc439c83b2bb144692429d76408cb5b7}{TypeObject}, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca2f39f6b5f442bd7909c8810770d3ca95}{TypeString}
+771   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1LiveConnectExtension_a11b7499199001f613246861dda90c101}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!Live\+Connect\+Extension@{Live\+Connect\+Extension}}
+\index{Live\+Connect\+Extension@{Live\+Connect\+Extension}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{Live\+Connect\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Live\+Connect\+Extension\+::\+Live\+Connect\+Extension (
+\begin{DoxyParamCaption}
+\item[{{\bf K\+Parts\+::\+Read\+Only\+Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1LiveConnectExtension_a11b7499199001f613246861dda90c101}
+\hypertarget{classKParts_1_1LiveConnectExtension_aef598b47d0fc11d1323588c67928da7c}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!````~Live\+Connect\+Extension@{$\sim$\+Live\+Connect\+Extension}}
+\index{````~Live\+Connect\+Extension@{$\sim$\+Live\+Connect\+Extension}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{$\sim$\+Live\+Connect\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Live\+Connect\+Extension\+::$\sim$\+Live\+Connect\+Extension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1LiveConnectExtension_aef598b47d0fc11d1323588c67928da7c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1LiveConnectExtension_ac925e087aa86e8e11c7616b8f03551a0}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!call@{call}}
+\index{call@{call}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{call}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Live\+Connect\+Extension\+::call (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{func, }
+\item[{const Q\+String\+List \&}]{args, }
+\item[{{\bf Type} \&}]{type, }
+\item[{unsigned long \&}]{retobjid, }
+\item[{Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1LiveConnectExtension_ac925e087aa86e8e11c7616b8f03551a0}
+calls a function of objid, return true on success 
+
+Reimplemented in \hyperlink{classOkular_1_1OkularLiveConnectExtension_a1db71ccc9e59e46203cd7cd9eccd6870}{Okular\+::\+Okular\+Live\+Connect\+Extension}.
+
+\hypertarget{classKParts_1_1LiveConnectExtension_acfe5c3014688d5b0efdc5a1534aacb49}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!child\+Object@{child\+Object}}
+\index{child\+Object@{child\+Object}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{child\+Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Live\+Connect\+Extension}$\ast$ K\+Parts\+::\+Live\+Connect\+Extension\+::child\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1LiveConnectExtension_acfe5c3014688d5b0efdc5a1534aacb49}
+\hypertarget{classKParts_1_1LiveConnectExtension_a91ddec0deaa49516ade1e86d8bbd3b90}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!get@{get}}
+\index{get@{get}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Live\+Connect\+Extension\+::get (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{field, }
+\item[{{\bf Type} \&}]{type, }
+\item[{unsigned long \&}]{retobjid, }
+\item[{Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1LiveConnectExtension_a91ddec0deaa49516ade1e86d8bbd3b90}
+get a field value from objid, return true on success 
+
+Reimplemented in \hyperlink{classOkular_1_1OkularLiveConnectExtension_ad0b24f4bdb9c4e2c010a83677ded3f69}{Okular\+::\+Okular\+Live\+Connect\+Extension}.
+
+\hypertarget{classKParts_1_1LiveConnectExtension_a0cb4efb5b26992f31ae44f3d4a6ba2a1}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!part\+Event@{part\+Event}}
+\index{part\+Event@{part\+Event}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{part\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Live\+Connect\+Extension\+::part\+Event (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{event, }
+\item[{const {\bf K\+Parts\+::\+Live\+Connect\+Extension\+::\+Arg\+List} \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1LiveConnectExtension_a0cb4efb5b26992f31ae44f3d4a6ba2a1}
+notify a event from the part of object objid \hypertarget{classKParts_1_1LiveConnectExtension_a20088d732c9bf45abf31e9723b263e4f}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!put@{put}}
+\index{put@{put}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Live\+Connect\+Extension\+::put (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{field, }
+\item[{const Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1LiveConnectExtension_a20088d732c9bf45abf31e9723b263e4f}
+put a field value in objid, return true on success 
+
+Reimplemented in \hyperlink{classOkular_1_1OkularLiveConnectExtension_a694218a47c9f7fa0658fea86478b7e12}{Okular\+::\+Okular\+Live\+Connect\+Extension}.
+
+\hypertarget{classKParts_1_1LiveConnectExtension_aceb4e2b994572baf1d87f78c7134c42a}{\index{K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}!unregister@{unregister}}
+\index{unregister@{unregister}!K\+Parts\+::\+Live\+Connect\+Extension@{K\+Parts\+::\+Live\+Connect\+Extension}}
+\subsubsection[{unregister}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Live\+Connect\+Extension\+::unregister (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1LiveConnectExtension_aceb4e2b994572baf1d87f78c7134c42a}
+notifies the part that there is no reference anymore to objid 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browserextension_8h}{browserextension.\+h}\end{DoxyCompactItemize}

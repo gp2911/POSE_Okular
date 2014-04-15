@@ -1,0 +1,364 @@
+\hypertarget{classOkular_1_1DocumentViewport}{\section{Okular\+:\+:Document\+Viewport Class Reference}
+\label{classOkular_1_1DocumentViewport}\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+}
+
+
+A view on the document.  
+
+
+
+
+{\ttfamily \#include $<$document.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552}{Position} \{ \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center} = 1, 
+\hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a7a96c06e6321a16c2efccd08095bc59d}{Top\+Left} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1DocumentViewport_a917400b59b99798882d831e215bd7793}{Document\+Viewport} (int number=-\/1)
+\item 
+\hyperlink{classOkular_1_1DocumentViewport_a4538363620c63a7c030b7e6fa0d40601}{Document\+Viewport} (const Q\+String \&description)
+\item 
+Q\+String \hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{to\+String} () const 
+\item 
+bool \hyperlink{classOkular_1_1DocumentViewport_a13161b17f2d0b68bf033955f81d41584}{is\+Valid} () const 
+\item 
+bool \hyperlink{classOkular_1_1DocumentViewport_a3f27a5e264f7eac910711e9b05ac3103}{operator==} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&other) const 
+\item 
+bool \hyperlink{classOkular_1_1DocumentViewport_a27140735768c683c81fc9e6d63ef3313}{operator$<$} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{page\+Number}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>bool \hyperlink{classOkular_1_1DocumentViewport_a6dddb31dbc72d7fb3efe094d840d8692}{enabled}\\
+\>double \hyperlink{classOkular_1_1DocumentViewport_a2f749d09360cca2f64af1a893a190e2f}{normalizedX}\\
+\>double \hyperlink{classOkular_1_1DocumentViewport_aa86271c42d62ef102c6ba570bf40e770}{normalizedY}\\
+\>\hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552}{Position} \hyperlink{classOkular_1_1DocumentViewport_a013c8cd543d57045791fe054da340a0e}{pos}\\
+\} \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>bool \hyperlink{classOkular_1_1DocumentViewport_a6dddb31dbc72d7fb3efe094d840d8692}{enabled}\\
+\>bool \hyperlink{classOkular_1_1DocumentViewport_a3cff94312e391a1b0b786a718ea72356}{width}\\
+\>bool \hyperlink{classOkular_1_1DocumentViewport_a1deb8db38c11ca9c5239261be374ab8a}{height}\\
+\} \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A view on the document. 
+
+The Viewport structure is the 'current view' over the document. Contained data is broadcasted between observers to synchronize their viewports to get the 'I scroll one view and others scroll too' views. 
+
+Definition at line 1002 of file document.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!Position@{Position}}
+\index{Position@{Position}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{Position}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Document\+Viewport\+::\+Position}}}\label{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552}
+Describes the relative position of the viewport. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Center@{Center}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!Center@{Center}}\item[{\em 
+\hypertarget{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center}\label{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}
+}]Relative to the center of the page. \index{Top\+Left@{Top\+Left}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!Top\+Left@{Top\+Left}}\item[{\em 
+\hypertarget{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a7a96c06e6321a16c2efccd08095bc59d}{Top\+Left}\label{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a7a96c06e6321a16c2efccd08095bc59d}
+}]Relative to the top left corner of the page. \end{description}
+\end{Desc}
+
+
+Definition at line 1039 of file document.\+h.
+
+
+\begin{DoxyCode}
+1040         \{
+1041             \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center} = 1,  
+1042             \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a7a96c06e6321a16c2efccd08095bc59d}{TopLeft} = 2  
+1043         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1DocumentViewport_a917400b59b99798882d831e215bd7793}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!Document\+Viewport@{Document\+Viewport}}
+\index{Document\+Viewport@{Document\+Viewport}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{Document\+Viewport}]{\setlength{\rightskip}{0pt plus 5cm}Document\+Viewport\+::\+Document\+Viewport (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1DocumentViewport_a917400b59b99798882d831e215bd7793}
+Creates a new viewport for the given page {\ttfamily number}.
+
+\hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} 
+
+Definition at line 4544 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4545     : \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber}( n )
+4546 \{
+4547     \textcolor{comment}{// default settings}
+4548     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled = \textcolor{keyword}{false};
+4549     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX = 0.5;
+4550     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY = 0.0;
+4551     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos = \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center};
+4552     \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.enabled = \textcolor{keyword}{false};
+4553     \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.width = \textcolor{keyword}{false};
+4554     \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.height = \textcolor{keyword}{false};
+4555 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1DocumentViewport_a4538363620c63a7c030b7e6fa0d40601}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!Document\+Viewport@{Document\+Viewport}}
+\index{Document\+Viewport@{Document\+Viewport}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{Document\+Viewport}]{\setlength{\rightskip}{0pt plus 5cm}Document\+Viewport\+::\+Document\+Viewport (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1DocumentViewport_a4538363620c63a7c030b7e6fa0d40601}
+Creates a new viewport from the given xml {\ttfamily description}. 
+
+Definition at line 4557 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4558     : \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber}( -1 )
+4559 \{
+4560     \textcolor{comment}{// default settings (maybe overridden below)}
+4561     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled = \textcolor{keyword}{false};
+4562     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX = 0.5;
+4563     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY = 0.0;
+4564     \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos = \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center};
+4565     \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.enabled = \textcolor{keyword}{false};
+4566     \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.width = \textcolor{keyword}{false};
+4567     \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.height = \textcolor{keyword}{false};
+4568 
+4569     \textcolor{comment}{// check for string presence}
+4570     \textcolor{keywordflow}{if} ( xmlDesc.isEmpty() )
+4571         \textcolor{keywordflow}{return};
+4572 
+4573     \textcolor{comment}{// decode the string}
+4574     \textcolor{keywordtype}{bool} ok;
+4575     \textcolor{keywordtype}{int} field = 0;
+4576     QString token = xmlDesc.section( \textcolor{charliteral}{';'}, field, field );
+4577     \textcolor{keywordflow}{while} ( !token.isEmpty() )
+4578     \{
+4579         \textcolor{comment}{// decode the current token}
+4580         \textcolor{keywordflow}{if} ( field == 0 )
+4581         \{
+4582             \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} = token.toInt( &ok );
+4583             \textcolor{keywordflow}{if} ( !ok )
+4584                 \textcolor{keywordflow}{return};
+4585         \}
+4586         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( token.startsWith( \textcolor{stringliteral}{"C1"} ) )
+4587         \{
+4588             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled = \textcolor{keyword}{true};
+4589             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX = token.section( \textcolor{charliteral}{':'}, 1, 1 ).toDouble();
+4590             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY = token.section( \textcolor{charliteral}{':'}, 2, 2 ).toDouble();
+4591             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos = \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center};
+4592         \}
+4593         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( token.startsWith( \textcolor{stringliteral}{"C2"} ) )
+4594         \{
+4595             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled = \textcolor{keyword}{true};
+4596             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX = token.section( \textcolor{charliteral}{':'}, 1, 1 ).toDouble();
+4597             \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY = token.section( \textcolor{charliteral}{':'}, 2, 2 ).toDouble();
+4598             \textcolor{keywordflow}{if} (token.section( \textcolor{charliteral}{':'}, 3, 3 ).toInt() == 1) \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos = \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a254c6d87e8ba55bb53347ff32e501167}{Center};
+4599             \textcolor{keywordflow}{else} \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos = \hyperlink{classOkular_1_1DocumentViewport_aad7228ed215e5a676cf50dabd4e41552a7a96c06e6321a16c2efccd08095bc59d}{TopLeft};
+4600         \}
+4601         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( token.startsWith( \textcolor{stringliteral}{"AF1"} ) )
+4602         \{
+4603             \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.enabled = \textcolor{keyword}{true};
+4604             \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.width = token.section( \textcolor{charliteral}{':'}, 1, 1 ) == \textcolor{stringliteral}{"T"};
+4605             \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.height = token.section( \textcolor{charliteral}{':'}, 2, 2 ) == \textcolor{stringliteral}{"T"};
+4606         \}
+4607         \textcolor{comment}{// proceed tokenizing string}
+4608         field++;
+4609         token = xmlDesc.section( \textcolor{charliteral}{';'}, field, field );
+4610     \}
+4611 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1DocumentViewport_a13161b17f2d0b68bf033955f81d41584}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Viewport\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1DocumentViewport_a13161b17f2d0b68bf033955f81d41584}
+Returns whether the viewport is valid. 
+
+Definition at line 4629 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4630 \{
+4631     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} >= 0;
+4632 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1DocumentViewport_a27140735768c683c81fc9e6d63ef3313}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Viewport\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1DocumentViewport_a27140735768c683c81fc9e6d63ef3313}
+
+
+Definition at line 4652 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4653 \{
+4654     \textcolor{comment}{// TODO: Check autoFit and Position}
+4655 
+4656     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} != vp.pageNumber )
+4657         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} < vp.pageNumber;
+4658 
+4659     \textcolor{keywordflow}{if} ( !\hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled && vp.rePos.enabled )
+4660         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+4661 
+4662     \textcolor{keywordflow}{if} ( !vp.rePos.enabled )
+4663         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4664 
+4665     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY != vp.rePos.normalizedY )
+4666         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY < vp.rePos.normalizedY;
+4667 
+4668     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX < vp.rePos.normalizedX;
+4669 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1DocumentViewport_a3f27a5e264f7eac910711e9b05ac3103}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!operator==@{operator==}}
+\index{operator==@{operator==}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Viewport\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1DocumentViewport_a3f27a5e264f7eac910711e9b05ac3103}
+
+
+Definition at line 4634 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4635 \{
+4636     \textcolor{keywordtype}{bool} equal = ( \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} == vp.pageNumber ) &&
+4637                  ( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled == vp.rePos.enabled ) &&
+4638                  ( \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.enabled == vp.autoFit.enabled );
+4639     \textcolor{keywordflow}{if} ( !equal )
+4640         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4641     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled &&
+4642          (( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX != vp.rePos.normalizedX) ||
+4643          ( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY != vp.rePos.normalizedY ) || \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos != vp.rePos.pos) )
+4644         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4645     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.enabled &&
+4646          (( \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.width != vp.autoFit.width ) ||
+4647          ( \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.height != vp.autoFit.height )) )
+4648         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4649     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+4650 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{to\+String}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Document\+Viewport\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}
+Returns the viewport as xml description. 
+
+Definition at line 4613 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4614 \{
+4615     \textcolor{comment}{// start string with page number}
+4616     QString s = QString::number( \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} );
+4617     \textcolor{comment}{// if has center coordinates, save them on string}
+4618     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.enabled )
+4619         s += QString( \textcolor{stringliteral}{";C2:"} ) + QString::number( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedX ) +
+4620              \textcolor{charliteral}{':'} + QString::number( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.normalizedY ) +
+4621              \textcolor{charliteral}{':'} + QString::number( \hyperlink{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{rePos}.pos );
+4622     \textcolor{comment}{// if has autofit enabled, save its state on string}
+4623     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.enabled )
+4624         s += QString( \textcolor{stringliteral}{";AF1:"} ) + (\hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.width ? \textcolor{stringliteral}{"T"} : \textcolor{stringliteral}{"F"}) +
+4625              \textcolor{charliteral}{':'} + (\hyperlink{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{autoFit}.height ? \textcolor{stringliteral}{"T"} : \textcolor{stringliteral}{"F"});
+4626     \textcolor{keywordflow}{return} s;
+4627 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!auto\+Fit@{auto\+Fit}}
+\index{auto\+Fit@{auto\+Fit}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{auto\+Fit}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   Okular\+::\+Document\+Viewport\+::auto\+Fit}}\label{classOkular_1_1DocumentViewport_a5acbe494c97c15ae7937003474a78a40}
+If 'auto\+Fit.\+enabled == true' then the page must be autofitted in the viewport. \hypertarget{classOkular_1_1DocumentViewport_a6dddb31dbc72d7fb3efe094d840d8692}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!enabled@{enabled}}
+\index{enabled@{enabled}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Document\+Viewport\+::enabled}}\label{classOkular_1_1DocumentViewport_a6dddb31dbc72d7fb3efe094d840d8692}
+
+
+Definition at line 1050 of file document.\+h.
+
+\hypertarget{classOkular_1_1DocumentViewport_a1deb8db38c11ca9c5239261be374ab8a}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!height@{height}}
+\index{height@{height}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Document\+Viewport\+::height}}\label{classOkular_1_1DocumentViewport_a1deb8db38c11ca9c5239261be374ab8a}
+
+
+Definition at line 1062 of file document.\+h.
+
+\hypertarget{classOkular_1_1DocumentViewport_a2f749d09360cca2f64af1a893a190e2f}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!normalized\+X@{normalized\+X}}
+\index{normalized\+X@{normalized\+X}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{normalized\+X}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Document\+Viewport\+::normalized\+X}}\label{classOkular_1_1DocumentViewport_a2f749d09360cca2f64af1a893a190e2f}
+
+
+Definition at line 1051 of file document.\+h.
+
+\hypertarget{classOkular_1_1DocumentViewport_aa86271c42d62ef102c6ba570bf40e770}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!normalized\+Y@{normalized\+Y}}
+\index{normalized\+Y@{normalized\+Y}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{normalized\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Document\+Viewport\+::normalized\+Y}}\label{classOkular_1_1DocumentViewport_aa86271c42d62ef102c6ba570bf40e770}
+
+
+Definition at line 1052 of file document.\+h.
+
+\hypertarget{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Document\+Viewport\+::page\+Number}}\label{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}
+The number of the page nearest the center of the viewport. 
+
+Definition at line 1034 of file document.\+h.
+
+\hypertarget{classOkular_1_1DocumentViewport_a013c8cd543d57045791fe054da340a0e}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!pos@{pos}}
+\index{pos@{pos}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position} Okular\+::\+Document\+Viewport\+::pos}}\label{classOkular_1_1DocumentViewport_a013c8cd543d57045791fe054da340a0e}
+
+
+Definition at line 1053 of file document.\+h.
+
+\hypertarget{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!re\+Pos@{re\+Pos}}
+\index{re\+Pos@{re\+Pos}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{re\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   Okular\+::\+Document\+Viewport\+::re\+Pos}}\label{classOkular_1_1DocumentViewport_a054f24bcba44b795a3671ac53693ff45}
+If 're\+Pos.\+enabled == true' then this structure contains the viewport center or top left depending on the value of pos. \hypertarget{classOkular_1_1DocumentViewport_a3cff94312e391a1b0b786a718ea72356}{\index{Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}!width@{width}}
+\index{width@{width}!Okular\+::\+Document\+Viewport@{Okular\+::\+Document\+Viewport}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Document\+Viewport\+::width}}\label{classOkular_1_1DocumentViewport_a3cff94312e391a1b0b786a718ea72356}
+
+
+Definition at line 1061 of file document.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{core_2document_8h}{document.\+h}\item 
+core/\hyperlink{core_2document_8cpp}{document.\+cpp}\end{DoxyCompactItemize}

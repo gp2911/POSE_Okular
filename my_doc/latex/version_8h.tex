@@ -1,0 +1,84 @@
+\hypertarget{version_8h}{\section{core/version.h File Reference}
+\label{version_8h}\index{core/version.\+h@{core/version.\+h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{version_8h_afbb5a0ecc8edeaa5e234bb8254ccb7cb}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}~\char`\"{}0.\+19.\+60\char`\"{}
+\item 
+\#define \hyperlink{version_8h_a689ed5594bb1cb952e7c623e5d74ebcb}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}~0
+\item 
+\#define \hyperlink{version_8h_a168a886f457716ae0aa680417d5b8b17}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}~19
+\item 
+\#define \hyperlink{version_8h_abb4e075215d571b6ae4c226305d928e3}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}~60
+\item 
+\#define \hyperlink{version_8h_aa0f4e28e5ba37cd3441aee9fb90c5ae4}{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}(a, b, c)~(((a) $<$$<$ 16) $\vert$ ((b) $<$$<$ 8) $\vert$ (c))
+\item 
+\#define \hyperlink{version_8h_a8b9528362471c9618270b860102950a1}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N}~\hyperlink{version_8h_aa0f4e28e5ba37cd3441aee9fb90c5ae4}{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}(\hyperlink{version_8h_a689ed5594bb1cb952e7c623e5d74ebcb}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R},\hyperlink{version_8h_a168a886f457716ae0aa680417d5b8b17}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R},\hyperlink{version_8h_abb4e075215d571b6ae4c226305d928e3}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E})
+\item 
+\#define \hyperlink{version_8h_a7ed77be807188e54101213b50d2d4133}{O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N}(a, b, c)~( \hyperlink{version_8h_a8b9528362471c9618270b860102950a1}{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N} $>$= \hyperlink{version_8h_aa0f4e28e5ba37cd3441aee9fb90c5ae4}{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}(a,b,c) )
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{version_8h_a7ed77be807188e54101213b50d2d4133}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N@{O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N@{O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~( {\bf O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N} $>$= {\bf O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}(a,b,c) )}}\label{version_8h_a7ed77be807188e54101213b50d2d4133}
+
+
+Definition at line 22 of file version.\+h.
+
+\hypertarget{version_8h_aa0f4e28e5ba37cd3441aee9fb90c5ae4}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N@{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N@{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~(((a) $<$$<$ 16) $\vert$ ((b) $<$$<$ 8) $\vert$ (c))}}\label{version_8h_aa0f4e28e5ba37cd3441aee9fb90c5ae4}
+
+
+Definition at line 17 of file version.\+h.
+
+\hypertarget{version_8h_a8b9528362471c9618270b860102950a1}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N~{\bf O\+K\+U\+L\+A\+R\+\_\+\+M\+A\+K\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N}({\bf O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R},{\bf O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R},{\bf O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E})}}\label{version_8h_a8b9528362471c9618270b860102950a1}
+
+
+Definition at line 19 of file version.\+h.
+
+\hypertarget{version_8h_a689ed5594bb1cb952e7c623e5d74ebcb}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+O\+R~0}}\label{version_8h_a689ed5594bb1cb952e7c623e5d74ebcb}
+
+
+Definition at line 14 of file version.\+h.
+
+\hypertarget{version_8h_a168a886f457716ae0aa680417d5b8b17}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+O\+R~19}}\label{version_8h_a168a886f457716ae0aa680417d5b8b17}
+
+
+Definition at line 15 of file version.\+h.
+
+\hypertarget{version_8h_abb4e075215d571b6ae4c226305d928e3}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+L\+E\+A\+S\+E~60}}\label{version_8h_abb4e075215d571b6ae4c226305d928e3}
+
+
+Definition at line 16 of file version.\+h.
+
+\hypertarget{version_8h_afbb5a0ecc8edeaa5e234bb8254ccb7cb}{\index{version.\+h@{version.\+h}!O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}}
+\index{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G@{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}!version.\+h@{version.\+h}}
+\subsubsection[{O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+K\+U\+L\+A\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G~\char`\"{}0.\+19.\+60\char`\"{}}}\label{version_8h_afbb5a0ecc8edeaa5e234bb8254ccb7cb}
+
+
+Definition at line 13 of file version.\+h.
+

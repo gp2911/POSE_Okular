@@ -1,0 +1,201 @@
+\hypertarget{classOkular_1_1PixmapGenerationThread}{\section{Okular\+:\+:Pixmap\+Generation\+Thread Class Reference}
+\label{classOkular_1_1PixmapGenerationThread}\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+p.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Pixmap\+Generation\+Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1PixmapGenerationThread}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1PixmapGenerationThread_a85f8dd3655a02eea9591277ce066c168}{Pixmap\+Generation\+Thread} (\hyperlink{classOkular_1_1Generator}{Generator} $\ast$generator)
+\item 
+void \hyperlink{classOkular_1_1PixmapGenerationThread_a577f6af025efc8c54567fb86f7e13bd0}{start\+Generation} (\hyperlink{classOkular_1_1PixmapRequest}{Pixmap\+Request} $\ast$\hyperlink{classOkular_1_1PixmapGenerationThread_a1238aa6b9c9aa1e7c1a5fb6b9592afab}{request}, bool calc\+Bounding\+Rect)
+\item 
+void \hyperlink{classOkular_1_1PixmapGenerationThread_a95d2f82e7cb4e358437b15c2f7e8fe2b}{end\+Generation} ()
+\item 
+\hyperlink{classOkular_1_1PixmapRequest}{Pixmap\+Request} $\ast$ \hyperlink{classOkular_1_1PixmapGenerationThread_a1238aa6b9c9aa1e7c1a5fb6b9592afab}{request} () const 
+\item 
+Q\+Image \hyperlink{classOkular_1_1PixmapGenerationThread_a3a7901f1b19e8ad3a0172bf139eec428}{image} () const 
+\item 
+bool \hyperlink{classOkular_1_1PixmapGenerationThread_a4dcec1fa684a0c71be9d592d2d021a69}{calc\+Bounding\+Box} () const 
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1PixmapGenerationThread_a970537f1118bb955a1e0ba2c5637e4f7}{bounding\+Box} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classOkular_1_1PixmapGenerationThread_aa8b88bf73b2558ed6304f986ce85964a}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 91 of file generator\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a85f8dd3655a02eea9591277ce066c168}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!Pixmap\+Generation\+Thread@{Pixmap\+Generation\+Thread}}
+\index{Pixmap\+Generation\+Thread@{Pixmap\+Generation\+Thread}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{Pixmap\+Generation\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}Pixmap\+Generation\+Thread\+::\+Pixmap\+Generation\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf Generator} $\ast$}]{generator}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PixmapGenerationThread_a85f8dd3655a02eea9591277ce066c168}
+
+
+Definition at line 20 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+21     : mGenerator( generator ), mRequest( 0 ), mCalcBoundingBox( \textcolor{keyword}{false} )
+22 \{
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a970537f1118bb955a1e0ba2c5637e4f7}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!bounding\+Box@{bounding\+Box}}
+\index{bounding\+Box@{bounding\+Box}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{bounding\+Box}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Pixmap\+Generation\+Thread\+::bounding\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PixmapGenerationThread_a970537f1118bb955a1e0ba2c5637e4f7}
+
+
+Definition at line 53 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{return} mBoundingBox;
+56 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a4dcec1fa684a0c71be9d592d2d021a69}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!calc\+Bounding\+Box@{calc\+Bounding\+Box}}
+\index{calc\+Bounding\+Box@{calc\+Bounding\+Box}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{calc\+Bounding\+Box}]{\setlength{\rightskip}{0pt plus 5cm}bool Pixmap\+Generation\+Thread\+::calc\+Bounding\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PixmapGenerationThread_a4dcec1fa684a0c71be9d592d2d021a69}
+
+
+Definition at line 48 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{return} mCalcBoundingBox;
+51 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a95d2f82e7cb4e358437b15c2f7e8fe2b}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!end\+Generation@{end\+Generation}}
+\index{end\+Generation@{end\+Generation}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{end\+Generation}]{\setlength{\rightskip}{0pt plus 5cm}void Pixmap\+Generation\+Thread\+::end\+Generation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PixmapGenerationThread_a95d2f82e7cb4e358437b15c2f7e8fe2b}
+
+
+Definition at line 33 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+34 \{
+35     mRequest = 0;
+36 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a3a7901f1b19e8ad3a0172bf139eec428}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!image@{image}}
+\index{image@{image}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Pixmap\+Generation\+Thread\+::image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PixmapGenerationThread_a3a7901f1b19e8ad3a0172bf139eec428}
+
+
+Definition at line 43 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keywordflow}{return} mImage;
+46 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a1238aa6b9c9aa1e7c1a5fb6b9592afab}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!request@{request}}
+\index{request@{request}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pixmap\+Request} $\ast$ Pixmap\+Generation\+Thread\+::request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1PixmapGenerationThread_a1238aa6b9c9aa1e7c1a5fb6b9592afab}
+
+
+Definition at line 38 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} mRequest;
+41 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PixmapGenerationThread_aa8b88bf73b2558ed6304f986ce85964a}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!run@{run}}
+\index{run@{run}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Pixmap\+Generation\+Thread\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classOkular_1_1PixmapGenerationThread_aa8b88bf73b2558ed6304f986ce85964a}
+
+
+Definition at line 58 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     mImage = QImage();
+61 
+62     \textcolor{keywordflow}{if} ( mRequest )
+63     \{
+64         mImage = mGenerator->\hyperlink{classOkular_1_1Generator_a6712c8d3c2759c3a1fcacbd503d3286e}{image}( mRequest );
+65         \textcolor{keywordflow}{if} ( mCalcBoundingBox )
+66             mBoundingBox = \hyperlink{classOkular_1_1Utils_af1d97967ffcdda70bbc4ddb293da5020}{Utils::imageBoundingBox}( &mImage );
+67     \}
+68 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1PixmapGenerationThread_a577f6af025efc8c54567fb86f7e13bd0}{\index{Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}!start\+Generation@{start\+Generation}}
+\index{start\+Generation@{start\+Generation}!Okular\+::\+Pixmap\+Generation\+Thread@{Okular\+::\+Pixmap\+Generation\+Thread}}
+\subsubsection[{start\+Generation}]{\setlength{\rightskip}{0pt plus 5cm}void Pixmap\+Generation\+Thread\+::start\+Generation (
+\begin{DoxyParamCaption}
+\item[{{\bf Pixmap\+Request} $\ast$}]{request, }
+\item[{bool}]{calc\+Bounding\+Rect}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1PixmapGenerationThread_a577f6af025efc8c54567fb86f7e13bd0}
+
+
+Definition at line 25 of file generator\+\_\+p.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{
+27     mRequest = \hyperlink{classOkular_1_1PixmapGenerationThread_a1238aa6b9c9aa1e7c1a5fb6b9592afab}{request};
+28     mCalcBoundingBox = \hyperlink{classOkular_1_1PixmapGenerationThread_a4dcec1fa684a0c71be9d592d2d021a69}{calcBoundingBox};
+29 
+30     start( QThread::InheritPriority );
+31 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{generator__p_8h}{generator\+\_\+p.\+h}\item 
+core/\hyperlink{generator__p_8cpp}{generator\+\_\+p.\+cpp}\end{DoxyCompactItemize}

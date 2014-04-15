@@ -1,0 +1,86 @@
+\hypertarget{classfontMap}{\section{font\+Map Class Reference}
+\label{classfontMap}\index{font\+Map@{font\+Map}}
+}
+
+
+{\ttfamily \#include $<$font\+Map.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfontMap_a679cb90290ba45d83dffd758132ec545}{font\+Map} (void)
+\item 
+const Q\+String \& \hyperlink{classfontMap_adaedae5df4d4eb4d9397b6ac03102c05}{find\+File\+Name} (const Q\+String \&Te\+X\+Name)
+\item 
+const Q\+String \& \hyperlink{classfontMap_adfba987e6e46bd9ca446f3faaa370f51}{find\+Font\+Name} (const Q\+String \&Te\+X\+Name)
+\item 
+const Q\+String \& \hyperlink{classfontMap_ae24a23fb4fcd13b3f722cff2d90624d6}{find\+Encoding} (const Q\+String \&Te\+X\+Name)
+\item 
+double \hyperlink{classfontMap_aff91edbddf9508896cd24f4873b5469f}{find\+Slant} (const Q\+String \&Te\+X\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the contents of the font map file \char`\"{}ps2pk.\+map\char`\"{}
+
+A font map file is part of the machinery that make it possible to access Post\+Script (and possibly also True\+Type and Open\+Type) fonts from a D\+V\+I file.
+
+Long time ago, when Te\+X was only used with Meta\+Font fonts, the D\+V\+I file would specify a font by giving an 8-\/character name, such as 'cmr10'. The D\+V\+I previewer would then locate the associated P\+K font file, load it, and retrieve the character shaped. Happy times, they were.
+
+Today Te\+X is also used to access Type1 and True\+Type fonts, which do not fit well into the Te\+X naming scheme. Like in earlier times, the D\+V\+I file specifies the name of a font, e.\+g. 'rpbkd', but nowadays the D\+V\+I previewer cannot just go and find a file 'rpbkd.\+pk'. No, no. Instead, the D\+V\+I previewr needs to look up the meaning of 'rpbkd' in a map-\/file. There it finds that 'rpbkd' refers to a font called 'U\+R\+W\+Bookman\+L-\/\+Demi\+Bold', to be found under the file name 'ubkd8a.\+pfb' whose glyphs are to be encoded using the '8a' encoding file (see the header file '\hyperlink{fontEncoding_8h}{font\+Encoding.\+h}' for more information about encodings)
+
+Such map files exists for all dvi output drivers that are part of the Te\+X distribution that is installed on your computer. Unfortunately, K\+D\+V\+I is not part of a Te\+X distribution, and therefore does not have its own map file. As a workaround, K\+D\+V\+I uses the map file of the program ps2pk which is similar to K\+D\+V\+I in that the ps2pk driver does not have built-\/in fonts, unlike the Post\+Script printers for which dvips is used.
+
+\begin{DoxyAuthor}{Author}
+Stefan Kebekus \href{mailto:kebekus@kde.org}{\tt kebekus@kde.\+org} 
+\end{DoxyAuthor}
+
+
+Definition at line 84 of file font\+Map.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfontMap_a679cb90290ba45d83dffd758132ec545}{\index{font\+Map@{font\+Map}!font\+Map@{font\+Map}}
+\index{font\+Map@{font\+Map}!font\+Map@{font\+Map}}
+\subsubsection[{font\+Map}]{\setlength{\rightskip}{0pt plus 5cm}font\+Map\+::font\+Map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classfontMap_a679cb90290ba45d83dffd758132ec545}
+The default constructor will try to locate the file 'ps2pk.\+map', and read its contents. If the file 'ps2pk.\+map' cannot be found using the kpsewhich command, or if it cannot be read, or is (partially) in an improper format, an error message is printed to stderr using the k\+Debug() stream. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classfontMap_ae24a23fb4fcd13b3f722cff2d90624d6}{\index{font\+Map@{font\+Map}!find\+Encoding@{find\+Encoding}}
+\index{find\+Encoding@{find\+Encoding}!font\+Map@{font\+Map}}
+\subsubsection[{find\+Encoding}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+String\& font\+Map\+::find\+Encoding (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{Te\+X\+Name}
+\end{DoxyParamCaption}
+)}}\label{classfontMap_ae24a23fb4fcd13b3f722cff2d90624d6}
+find the name of an encoding file for a font (e.\+g. '8r') from a Te\+X font name (e.\+g. 'rpbkd'). This method return a reference to Q\+String() if the font could not be found. \hypertarget{classfontMap_adaedae5df4d4eb4d9397b6ac03102c05}{\index{font\+Map@{font\+Map}!find\+File\+Name@{find\+File\+Name}}
+\index{find\+File\+Name@{find\+File\+Name}!font\+Map@{font\+Map}}
+\subsubsection[{find\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+String\& font\+Map\+::find\+File\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{Te\+X\+Name}
+\end{DoxyParamCaption}
+)}}\label{classfontMap_adaedae5df4d4eb4d9397b6ac03102c05}
+find the name of a font file (e.\+g. 'ubkd8a.\+pfb') from a Te\+X font name (e.\+g. 'rpbkd'). This method return a reference to Q\+String() if the font could not be found. \hypertarget{classfontMap_adfba987e6e46bd9ca446f3faaa370f51}{\index{font\+Map@{font\+Map}!find\+Font\+Name@{find\+Font\+Name}}
+\index{find\+Font\+Name@{find\+Font\+Name}!font\+Map@{font\+Map}}
+\subsubsection[{find\+Font\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+String\& font\+Map\+::find\+Font\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{Te\+X\+Name}
+\end{DoxyParamCaption}
+)}}\label{classfontMap_adfba987e6e46bd9ca446f3faaa370f51}
+find the name of a font (e.\+g. 'U\+R\+W\+Bookman\+L-\/\+Demi\+Bold') from a Te\+X font name (e.\+g. 'rpbkd'). This method return a reference to Q\+String() if the font could not be found. \hypertarget{classfontMap_aff91edbddf9508896cd24f4873b5469f}{\index{font\+Map@{font\+Map}!find\+Slant@{find\+Slant}}
+\index{find\+Slant@{find\+Slant}!font\+Map@{font\+Map}}
+\subsubsection[{find\+Slant}]{\setlength{\rightskip}{0pt plus 5cm}double font\+Map\+::find\+Slant (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{Te\+X\+Name}
+\end{DoxyParamCaption}
+)}}\label{classfontMap_aff91edbddf9508896cd24f4873b5469f}
+This method finds the slant of a font. Returns 0.\+0 if no slant was defined. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{fontMap_8h}{font\+Map.\+h}\end{DoxyCompactItemize}

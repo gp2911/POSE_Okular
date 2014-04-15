@@ -1,0 +1,314 @@
+\hypertarget{classProgressWidget}{\section{Progress\+Widget Class Reference}
+\label{classProgressWidget}\index{Progress\+Widget@{Progress\+Widget}}
+}
+
+
+A small progress bar.  
+
+
+
+
+{\ttfamily \#include $<$minibar.\+h$>$}
+
+Inheritance diagram for Progress\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProgressWidget}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classProgressWidget_a2c52151e2281d61edb9fab878b7a269d}{prev\+Page} ()
+\item 
+void \hyperlink{classProgressWidget_a2bd3763381658d30420a05540100322c}{next\+Page} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProgressWidget_a070e0775236d1e9a01c53577d1e982d6}{Progress\+Widget} (Q\+Widget $\ast$parent, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document)
+\item 
+\hyperlink{classProgressWidget_a52d6a1fc716dec6132439682644dab48}{$\sim$\+Progress\+Widget} ()
+\item 
+void \hyperlink{classProgressWidget_a2458a226f1768d356ee94bdfaeebdfdd}{notify\+Current\+Page\+Changed} (int previous, int current)
+\item 
+void \hyperlink{classProgressWidget_ad3ae9ff881ea01ce6f9734ebaf529655}{slot\+Goto\+Normalized\+Page} (float index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classProgressWidget_a0dfa4bf58c09c2f5a12e3fbd3a1e1eba}{set\+Progress} (float percentage)
+\item 
+void \hyperlink{classProgressWidget_ab5a1118ee47c4ac8f5b79f51fbd2025b}{mouse\+Move\+Event} (Q\+Mouse\+Event $\ast$e)
+\item 
+void \hyperlink{classProgressWidget_ac0d8a45351e944397abfd492f902324e}{mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$e)
+\item 
+void \hyperlink{classProgressWidget_ab4accfbd2b3af4d4e3dbcf01e2b7848e}{wheel\+Event} (Q\+Wheel\+Event $\ast$e)
+\item 
+void \hyperlink{classProgressWidget_a8c2421c074877ffa687d9919faefe44f}{paint\+Event} (Q\+Paint\+Event $\ast$e)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A small progress bar. 
+
+Definition at line 149 of file minibar.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classProgressWidget_a070e0775236d1e9a01c53577d1e982d6}{\index{Progress\+Widget@{Progress\+Widget}!Progress\+Widget@{Progress\+Widget}}
+\index{Progress\+Widget@{Progress\+Widget}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{Progress\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Progress\+Widget\+::\+Progress\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document}
+\end{DoxyParamCaption}
+)}}\label{classProgressWidget_a070e0775236d1e9a01c53577d1e982d6}
+\hyperlink{classProgressWidget}{Progress\+Widget} 
+
+Definition at line 321 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+322     : QWidget( parent ), m\_document( document ),
+323     m\_progressPercentage( -1 )
+324 \{
+325     setObjectName( QLatin1String( \textcolor{stringliteral}{"progress"} ) );
+326     setAttribute( Qt::WA\_OpaquePaintEvent, \textcolor{keyword}{true} );
+327     setFixedHeight( 4 );
+328     setMouseTracking( \textcolor{keyword}{true} );
+329 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_a52d6a1fc716dec6132439682644dab48}{\index{Progress\+Widget@{Progress\+Widget}!````~Progress\+Widget@{$\sim$\+Progress\+Widget}}
+\index{````~Progress\+Widget@{$\sim$\+Progress\+Widget}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{$\sim$\+Progress\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Progress\+Widget\+::$\sim$\+Progress\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classProgressWidget_a52d6a1fc716dec6132439682644dab48}
+
+
+Definition at line 331 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+332 \{
+333     m\_document->\hyperlink{classOkular_1_1Document_a2d704dea2ab28c846e58443ac38841f2}{removeObserver}( \textcolor{keyword}{this} );
+334 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classProgressWidget_ab5a1118ee47c4ac8f5b79f51fbd2025b}{\index{Progress\+Widget@{Progress\+Widget}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{mouse\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classProgressWidget_ab5a1118ee47c4ac8f5b79f51fbd2025b}
+
+
+Definition at line 367 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+368 \{
+369     \textcolor{keywordflow}{if} ( ( QApplication::mouseButtons() & Qt::LeftButton ) && width() > 0 )
+370         \hyperlink{classProgressWidget_ad3ae9ff881ea01ce6f9734ebaf529655}{slotGotoNormalizedPage}( (\textcolor{keywordtype}{float})( QApplication::isRightToLeft() ? width() - e
+      ->x() : e->x() ) / (\textcolor{keywordtype}{float})width() );
+371 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_ac0d8a45351e944397abfd492f902324e}{\index{Progress\+Widget@{Progress\+Widget}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classProgressWidget_ac0d8a45351e944397abfd492f902324e}
+
+
+Definition at line 373 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+374 \{
+375     \textcolor{keywordflow}{if} ( e->button() == Qt::LeftButton && width() > 0 )
+376         \hyperlink{classProgressWidget_ad3ae9ff881ea01ce6f9734ebaf529655}{slotGotoNormalizedPage}( (\textcolor{keywordtype}{float})( QApplication::isRightToLeft() ? width() - e
+      ->x() : e->x() ) / (\textcolor{keywordtype}{float})width() );
+377 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_a2bd3763381658d30420a05540100322c}{\index{Progress\+Widget@{Progress\+Widget}!next\+Page@{next\+Page}}
+\index{next\+Page@{next\+Page}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{next\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::next\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classProgressWidget_a2bd3763381658d30420a05540100322c}
+\hypertarget{classProgressWidget_a2458a226f1768d356ee94bdfaeebdfdd}{\index{Progress\+Widget@{Progress\+Widget}!notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}}
+\index{notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{notify\+Current\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::notify\+Current\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{previous, }
+\item[{int}]{current}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classProgressWidget_a2458a226f1768d356ee94bdfaeebdfdd}
+This method is called after the current page of the document has been entered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em previous} & The number of the previous page (is {\ttfamily -\/1} for the initial page change). \\
+\hline
+{\em current} & The number of the current page.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_ae449ca3f3f8aa7dffab61a6b723a1fd8}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 336 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+337 \{
+338     Q\_UNUSED( previousPage )
+339 
+340     \textcolor{comment}{// get current page number}
+341     int pages = m\_document->pages();
+342 
+343     \textcolor{comment}{// if the document is opened and page is changed}
+344     if ( pages > 0 )
+345     \{
+346         \textcolor{comment}{// update percentage}
+347         \textcolor{keyword}{const} \textcolor{keywordtype}{float} percentage = pages < 2 ? 1.0 : (float)currentPage / (\textcolor{keywordtype}{float})(pages - 1);
+348         \hyperlink{classProgressWidget_a0dfa4bf58c09c2f5a12e3fbd3a1e1eba}{setProgress}( percentage );
+349     \}
+350 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_a8c2421c074877ffa687d9919faefe44f}{\index{Progress\+Widget@{Progress\+Widget}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::paint\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Paint\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classProgressWidget_a8c2421c074877ffa687d9919faefe44f}
+
+
+Definition at line 387 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+388 \{
+389     QPainter p( \textcolor{keyword}{this} );
+390 
+391     \textcolor{keywordflow}{if} ( m\_progressPercentage < 0.0 )
+392     \{
+393         p.fillRect( rect(), palette().color( QPalette::Active, QPalette::HighlightedText ) );
+394         \textcolor{keywordflow}{return};
+395     \}
+396 
+397     \textcolor{comment}{// find out the 'fill' and the 'clear' rectangles}
+398     \textcolor{keywordtype}{int} w = width(),
+399         h = height(),
+400         l = (int)( (\textcolor{keywordtype}{float})w * m\_progressPercentage );
+401     QRect cRect = ( QApplication::isRightToLeft() ? QRect( 0, 0, w - l, h ) : QRect( l, 0, w - l, h ) ).
+      intersect( e->rect() );
+402     QRect fRect = ( QApplication::isRightToLeft() ? QRect( w - l, 0, l, h ) : QRect( 0, 0, l, h ) ).
+      intersect( e->rect() );
+403 
+404     QPalette pal = palette();
+405     \textcolor{comment}{// paint clear rect}
+406     \textcolor{keywordflow}{if} ( cRect.isValid() )
+407         p.fillRect( cRect, pal.color( QPalette::Active, QPalette::HighlightedText ) );
+408     \textcolor{comment}{// draw a frame-like outline}
+409     \textcolor{comment}{//p.setPen( palette().active().mid() );}
+410     \textcolor{comment}{//p.drawRect( 0,0, w, h );}
+411     \textcolor{comment}{// paint fill rect}
+412     \textcolor{keywordflow}{if} ( fRect.isValid() )
+413         p.fillRect( fRect, pal.color( QPalette::Active, QPalette::Highlight ) );
+414     \textcolor{keywordflow}{if} ( l && l != w  )
+415     \{
+416         p.setPen( pal.color( QPalette::Active, QPalette::Highlight ).dark( 120 ) );
+417         \textcolor{keywordtype}{int} delta = QApplication::isRightToLeft() ? w - l : l;
+418         p.drawLine( delta, 0, delta, h );
+419     \}
+420 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_a2c52151e2281d61edb9fab878b7a269d}{\index{Progress\+Widget@{Progress\+Widget}!prev\+Page@{prev\+Page}}
+\index{prev\+Page@{prev\+Page}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{prev\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::prev\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classProgressWidget_a2c52151e2281d61edb9fab878b7a269d}
+\hypertarget{classProgressWidget_a0dfa4bf58c09c2f5a12e3fbd3a1e1eba}{\index{Progress\+Widget@{Progress\+Widget}!set\+Progress@{set\+Progress}}
+\index{set\+Progress@{set\+Progress}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{set\+Progress}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::set\+Progress (
+\begin{DoxyParamCaption}
+\item[{float}]{percentage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classProgressWidget_a0dfa4bf58c09c2f5a12e3fbd3a1e1eba}
+
+
+Definition at line 352 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+353 \{
+354     m\_progressPercentage = percentage;
+355     update();
+356 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_ad3ae9ff881ea01ce6f9734ebaf529655}{\index{Progress\+Widget@{Progress\+Widget}!slot\+Goto\+Normalized\+Page@{slot\+Goto\+Normalized\+Page}}
+\index{slot\+Goto\+Normalized\+Page@{slot\+Goto\+Normalized\+Page}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{slot\+Goto\+Normalized\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::slot\+Goto\+Normalized\+Page (
+\begin{DoxyParamCaption}
+\item[{float}]{index}
+\end{DoxyParamCaption}
+)}}\label{classProgressWidget_ad3ae9ff881ea01ce6f9734ebaf529655}
+
+
+Definition at line 358 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+359 \{
+360     \textcolor{comment}{// figure out page number and go to that page}
+361     \textcolor{keywordtype}{int} number = (int)( index * (\textcolor{keywordtype}{float})m\_document->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}() );
+362     \textcolor{keywordflow}{if} ( number >= 0 && number < (\textcolor{keywordtype}{int})m\_document->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}() &&
+363          number != (int)m\_document->\hyperlink{classOkular_1_1Document_a42ec374d73794bf56d7e7b11f1f56319}{currentPage}() )
+364         m\_document->\hyperlink{classOkular_1_1Document_ac3bdbd5137c7fd4d5e960646affc25ec}{setViewportPage}( number );
+365 \}
+\end{DoxyCode}
+\hypertarget{classProgressWidget_ab4accfbd2b3af4d4e3dbcf01e2b7848e}{\index{Progress\+Widget@{Progress\+Widget}!wheel\+Event@{wheel\+Event}}
+\index{wheel\+Event@{wheel\+Event}!Progress\+Widget@{Progress\+Widget}}
+\subsubsection[{wheel\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Progress\+Widget\+::wheel\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Wheel\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classProgressWidget_ab4accfbd2b3af4d4e3dbcf01e2b7848e}
+
+
+Definition at line 379 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+380 \{
+381     \textcolor{keywordflow}{if} ( e->delta() > 0 )
+382         emit \hyperlink{classProgressWidget_a2bd3763381658d30420a05540100322c}{nextPage}();
+383     \textcolor{keywordflow}{else}
+384         emit \hyperlink{classProgressWidget_a2c52151e2281d61edb9fab878b7a269d}{prevPage}();
+385 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{minibar_8h}{minibar.\+h}\item 
+ui/\hyperlink{minibar_8cpp}{minibar.\+cpp}\end{DoxyCompactItemize}

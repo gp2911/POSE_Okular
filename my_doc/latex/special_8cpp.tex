@@ -1,0 +1,58 @@
+\hypertarget{special_8cpp}{\section{generators/dvi/special.cpp File Reference}
+\label{special_8cpp}\index{generators/dvi/special.\+cpp@{generators/dvi/special.\+cpp}}
+}
+{\ttfamily \#include $<$config.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}dvi\+File.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dvi\+Renderer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hyperlink.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}kvs\+\_\+debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}psgs.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$kmimetype.\+h$>$}\\*
+{\ttfamily \#include $<$Q\+File$>$}\\*
+{\ttfamily \#include $<$Q\+Image$>$}\\*
+{\ttfamily \#include $<$Q\+Painter$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{special_8cpp_af625280aa85641cf0c71ffee7d5e4519}{parse\+\_\+special\+\_\+argument} (const Q\+String \&strg, const char $\ast$argument\+\_\+name, int $\ast$variable)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{special_8cpp_af625280aa85641cf0c71ffee7d5e4519}{\index{special.\+cpp@{special.\+cpp}!parse\+\_\+special\+\_\+argument@{parse\+\_\+special\+\_\+argument}}
+\index{parse\+\_\+special\+\_\+argument@{parse\+\_\+special\+\_\+argument}!special.\+cpp@{special.\+cpp}}
+\subsubsection[{parse\+\_\+special\+\_\+argument}]{\setlength{\rightskip}{0pt plus 5cm}void parse\+\_\+special\+\_\+argument (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{strg, }
+\item[{const char $\ast$}]{argument\+\_\+name, }
+\item[{int $\ast$}]{variable}
+\end{DoxyParamCaption}
+)}}\label{special_8cpp_af625280aa85641cf0c71ffee7d5e4519}
+
+
+Definition at line 286 of file special.\+cpp.
+
+
+\begin{DoxyCode}
+287 \{
+288   \textcolor{keywordtype}{int} index = strg.indexOf(argument\_name);
+289   \textcolor{keywordflow}{if} (index >= 0) \{
+290     QString tmp = strg.mid(index + strlen(argument\_name));
+291     index = tmp.indexOf(\textcolor{charliteral}{' '});
+292     \textcolor{keywordflow}{if} (index >= 0)
+293       tmp.truncate(index);
+294 
+295     \textcolor{keywordtype}{bool} OK;
+296     \textcolor{keywordtype}{float} \textcolor{keyword}{const} tmp\_float = tmp.toFloat(&OK);
+297 
+298     \textcolor{keywordflow}{if} (OK)
+299       *variable = int(tmp\_float+0.5);
+300     \textcolor{keywordflow}{else}
+301       \textcolor{comment}{// Maybe we should open a dialog here.}
+302       kError(kvs::dvi) << i18n(\textcolor{stringliteral}{"Malformed parameter in the epsf special command.\(\backslash\)n"}
+303                                    \textcolor{stringliteral}{"Expected a float to follow %1 in %2"},
+304                                argument\_name, strg) << endl;
+305   \}
+306 \}
+\end{DoxyCode}

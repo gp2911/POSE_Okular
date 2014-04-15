@@ -1,0 +1,185 @@
+\hypertarget{classKParts_1_1OpenUrlArguments}{\section{K\+Parts\+:\+:Open\+Url\+Arguments Class Reference}
+\label{classKParts_1_1OpenUrlArguments}\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+}
+
+
+{\ttfamily \#include $<$part.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments_af4c1ee81217691a1dc9c7db9ba7d59f8}{Open\+Url\+Arguments} ()
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments_ac6d97bc2c3d8f926bd163b3a35bd5809}{Open\+Url\+Arguments} (const \hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments} \&other)
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments} \& \hyperlink{classKParts_1_1OpenUrlArguments_a17e55b23d031666e50cc96aae65233f3}{operator=} (const \hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments} \&other)
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments_a667623f26093523412bd9060b423971d}{$\sim$\+Open\+Url\+Arguments} ()
+\item 
+bool \hyperlink{classKParts_1_1OpenUrlArguments_a75c903644fed82bc1982cededcb1c05a}{reload} () const 
+\item 
+void \hyperlink{classKParts_1_1OpenUrlArguments_a2b9d7ac959db074ef06697de8f4e7a14}{set\+Reload} (bool b)
+\item 
+int \hyperlink{classKParts_1_1OpenUrlArguments_a3eb562ffb04cc93b0a5aa0e385058aa3}{x\+Offset} () const 
+\item 
+void \hyperlink{classKParts_1_1OpenUrlArguments_a2429db3ff60f2cca3aac4d3e9c7cde7b}{set\+X\+Offset} (int x)
+\item 
+int \hyperlink{classKParts_1_1OpenUrlArguments_a29dbdad63be6e6904d5fd2c9fd9cd38b}{y\+Offset} () const 
+\item 
+void \hyperlink{classKParts_1_1OpenUrlArguments_a19d0a9e25a2bbe4cd0d7c255bfa8441c}{set\+Y\+Offset} (int y)
+\item 
+Q\+String \hyperlink{classKParts_1_1OpenUrlArguments_aaddc679e216a0ce1a20983c0134675c5}{mime\+Type} () const 
+\item 
+void \hyperlink{classKParts_1_1OpenUrlArguments_aa3c7601bb5f1ecfa1ed23009f7dfdc87}{set\+Mime\+Type} (const Q\+String \&mime)
+\item 
+bool \hyperlink{classKParts_1_1OpenUrlArguments_ab581f9d940912f8e8967f34c56cd2e29}{action\+Requested\+By\+User} () const 
+\item 
+void \hyperlink{classKParts_1_1OpenUrlArguments_ac3e9c56a054c7d5fb882e5724f713041}{set\+Action\+Requested\+By\+User} (bool user\+Requested)
+\item 
+\hyperlink{classQMap}{Q\+Map}$<$ Q\+String, Q\+String $>$ \& \hyperlink{classKParts_1_1OpenUrlArguments_a8c85d3cfe28606c6101f382158468d72}{meta\+Data} ()
+\item 
+const \hyperlink{classQMap}{Q\+Map}$<$ Q\+String, Q\+String $>$ \& \hyperlink{classKParts_1_1OpenUrlArguments_abf11199bbcb7496af97a0058c1a2c7f6}{meta\+Data} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments} is the set of arguments that specify how a U\+R\+L should be opened by \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{K\+Parts\+::\+Read\+Only\+Part\+::open\+Url()}.
+
+For instance \hyperlink{classKParts_1_1OpenUrlArguments_a75c903644fed82bc1982cededcb1c05a}{reload()} indicates that the url should be loaded from the network even if it matches the current url of the part.
+
+All setter methods in this class are for the class that calls open\+Url (usually the hosting application), all the getter methods are for the part. 
+
+Definition at line 404 of file part.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1OpenUrlArguments_af4c1ee81217691a1dc9c7db9ba7d59f8}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!Open\+Url\+Arguments@{Open\+Url\+Arguments}}
+\index{Open\+Url\+Arguments@{Open\+Url\+Arguments}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{Open\+Url\+Arguments}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Open\+Url\+Arguments\+::\+Open\+Url\+Arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_af4c1ee81217691a1dc9c7db9ba7d59f8}
+\hypertarget{classKParts_1_1OpenUrlArguments_ac6d97bc2c3d8f926bd163b3a35bd5809}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!Open\+Url\+Arguments@{Open\+Url\+Arguments}}
+\index{Open\+Url\+Arguments@{Open\+Url\+Arguments}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{Open\+Url\+Arguments}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Open\+Url\+Arguments\+::\+Open\+Url\+Arguments (
+\begin{DoxyParamCaption}
+\item[{const {\bf Open\+Url\+Arguments} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_ac6d97bc2c3d8f926bd163b3a35bd5809}
+\hypertarget{classKParts_1_1OpenUrlArguments_a667623f26093523412bd9060b423971d}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!````~Open\+Url\+Arguments@{$\sim$\+Open\+Url\+Arguments}}
+\index{````~Open\+Url\+Arguments@{$\sim$\+Open\+Url\+Arguments}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{$\sim$\+Open\+Url\+Arguments}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Open\+Url\+Arguments\+::$\sim$\+Open\+Url\+Arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_a667623f26093523412bd9060b423971d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1OpenUrlArguments_ab581f9d940912f8e8967f34c56cd2e29}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!action\+Requested\+By\+User@{action\+Requested\+By\+User}}
+\index{action\+Requested\+By\+User@{action\+Requested\+By\+User}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{action\+Requested\+By\+User}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Open\+Url\+Arguments\+::action\+Requested\+By\+User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlArguments_ab581f9d940912f8e8967f34c56cd2e29}
+True if the user requested that the U\+R\+L be opened. False if the U\+R\+L should be opened due to an external event, like javascript popups or automatic redirections. This is true by default \begin{DoxySince}{Since}
+4.\+1 
+\end{DoxySince}
+\hypertarget{classKParts_1_1OpenUrlArguments_a8c85d3cfe28606c6101f382158468d72}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!meta\+Data@{meta\+Data}}
+\index{meta\+Data@{meta\+Data}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Map}$<$Q\+String, Q\+String$>$\& K\+Parts\+::\+Open\+Url\+Arguments\+::meta\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_a8c85d3cfe28606c6101f382158468d72}
+Meta-\/data to associate with the \hyperlink{namespaceKIO}{K\+I\+O} operation that will be used to open the U\+R\+L. This method can be used to add or retrieve metadata. \begin{DoxySeeAlso}{See Also}
+K\+I\+O\+::\+Transfer\+Job etc. 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1OpenUrlArguments_abf11199bbcb7496af97a0058c1a2c7f6}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!meta\+Data@{meta\+Data}}
+\index{meta\+Data@{meta\+Data}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Q\+Map}$<$Q\+String, Q\+String$>$\& K\+Parts\+::\+Open\+Url\+Arguments\+::meta\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlArguments_abf11199bbcb7496af97a0058c1a2c7f6}
+\hypertarget{classKParts_1_1OpenUrlArguments_aaddc679e216a0ce1a20983c0134675c5}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!mime\+Type@{mime\+Type}}
+\index{mime\+Type@{mime\+Type}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String K\+Parts\+::\+Open\+Url\+Arguments\+::mime\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlArguments_aaddc679e216a0ce1a20983c0134675c5}
+The mimetype to use when opening the url, when known by the calling application. \hypertarget{classKParts_1_1OpenUrlArguments_a17e55b23d031666e50cc96aae65233f3}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!operator=@{operator=}}
+\index{operator=@{operator=}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Open\+Url\+Arguments}\& K\+Parts\+::\+Open\+Url\+Arguments\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Open\+Url\+Arguments} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_a17e55b23d031666e50cc96aae65233f3}
+\hypertarget{classKParts_1_1OpenUrlArguments_a75c903644fed82bc1982cededcb1c05a}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!reload@{reload}}
+\index{reload@{reload}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{reload}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Open\+Url\+Arguments\+::reload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlArguments_a75c903644fed82bc1982cededcb1c05a}
+\begin{DoxyReturn}{Returns}
+true to indicate that the part should reload the U\+R\+L, i.\+e. the cache shouldn't be used (forced reload). 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1OpenUrlArguments_ac3e9c56a054c7d5fb882e5724f713041}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!set\+Action\+Requested\+By\+User@{set\+Action\+Requested\+By\+User}}
+\index{set\+Action\+Requested\+By\+User@{set\+Action\+Requested\+By\+User}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{set\+Action\+Requested\+By\+User}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Open\+Url\+Arguments\+::set\+Action\+Requested\+By\+User (
+\begin{DoxyParamCaption}
+\item[{bool}]{user\+Requested}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_ac3e9c56a054c7d5fb882e5724f713041}
+\hypertarget{classKParts_1_1OpenUrlArguments_aa3c7601bb5f1ecfa1ed23009f7dfdc87}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!set\+Mime\+Type@{set\+Mime\+Type}}
+\index{set\+Mime\+Type@{set\+Mime\+Type}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{set\+Mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Open\+Url\+Arguments\+::set\+Mime\+Type (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_aa3c7601bb5f1ecfa1ed23009f7dfdc87}
+\hypertarget{classKParts_1_1OpenUrlArguments_a2b9d7ac959db074ef06697de8f4e7a14}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!set\+Reload@{set\+Reload}}
+\index{set\+Reload@{set\+Reload}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{set\+Reload}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Open\+Url\+Arguments\+::set\+Reload (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_a2b9d7ac959db074ef06697de8f4e7a14}
+Indicates that the url should be loaded from the network even if it matches the current url of the part. \hypertarget{classKParts_1_1OpenUrlArguments_a2429db3ff60f2cca3aac4d3e9c7cde7b}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!set\+X\+Offset@{set\+X\+Offset}}
+\index{set\+X\+Offset@{set\+X\+Offset}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{set\+X\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Open\+Url\+Arguments\+::set\+X\+Offset (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_a2429db3ff60f2cca3aac4d3e9c7cde7b}
+\hypertarget{classKParts_1_1OpenUrlArguments_a19d0a9e25a2bbe4cd0d7c255bfa8441c}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!set\+Y\+Offset@{set\+Y\+Offset}}
+\index{set\+Y\+Offset@{set\+Y\+Offset}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{set\+Y\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Open\+Url\+Arguments\+::set\+Y\+Offset (
+\begin{DoxyParamCaption}
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlArguments_a19d0a9e25a2bbe4cd0d7c255bfa8441c}
+\hypertarget{classKParts_1_1OpenUrlArguments_a3eb562ffb04cc93b0a5aa0e385058aa3}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!x\+Offset@{x\+Offset}}
+\index{x\+Offset@{x\+Offset}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{x\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int K\+Parts\+::\+Open\+Url\+Arguments\+::x\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlArguments_a3eb562ffb04cc93b0a5aa0e385058aa3}
+x\+Offset is the horizontal scrolling of the part's widget (in case it's a scrollview). This is saved into the history and restored when going back in the history. \hypertarget{classKParts_1_1OpenUrlArguments_a29dbdad63be6e6904d5fd2c9fd9cd38b}{\index{K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}!y\+Offset@{y\+Offset}}
+\index{y\+Offset@{y\+Offset}!K\+Parts\+::\+Open\+Url\+Arguments@{K\+Parts\+::\+Open\+Url\+Arguments}}
+\subsubsection[{y\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int K\+Parts\+::\+Open\+Url\+Arguments\+::y\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlArguments_a29dbdad63be6e6904d5fd2c9fd9cd38b}
+y\+Offset is the horizontal scrolling of the part's widget (in case it's a scrollview). This is saved into the history and restored when going back in the history. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{usr_2include_2kparts_2part_8h}{part.\+h}\end{DoxyCompactItemize}

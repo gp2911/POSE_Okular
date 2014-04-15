@@ -1,0 +1,475 @@
+\hypertarget{unpluckint_8h}{\section{generators/plucker/unpluck/unpluckint.h File Reference}
+\label{unpluckint_8h}\index{generators/plucker/unpluck/unpluckint.\+h@{generators/plucker/unpluck/unpluckint.\+h}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structReservedRecordEntry}{Reserved\+Record\+Entry}
+\item 
+struct \hyperlink{structplkr__DataRecord__s}{plkr\+\_\+\+Data\+Record\+\_\+s}
+\item 
+struct \hyperlink{structplkr__Document__s}{plkr\+\_\+\+Document\+\_\+s}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{unpluckint_8h_a324bd288b42b2aa412811df53ca4f07d}{P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T}
+\item 
+\#define \hyperlink{unpluckint_8h_aa0b0779992ee63e5b90b143aaa2dcc01}{M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D}~8
+\item 
+\#define \hyperlink{unpluckint_8h_a9e579f8fc10772d609a18d57c4a0dfbb}{O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N}~40
+\item 
+\#define \hyperlink{unpluckint_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+A\+X}(a, b)~(((a)$>$(b))?(a)\+:(b))
+\item 
+\#define \hyperlink{unpluckint_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+I\+N}(a, b)~(((a)$<$(b))?(a)\+:(b))
+\item 
+\#define \hyperlink{unpluckint_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+S\+E}~0
+\item 
+\#define \hyperlink{unpluckint_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\+R\+U\+E}~1
+\item 
+\#define \hyperlink{unpluckint_8h_a756a14a5789fcc36b0978f3132708bc5}{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T}(p)~(((p)\mbox{[}0\mbox{]} $<$$<$ 8)$\vert$((p)\mbox{[}1\mbox{]}))
+\item 
+\#define \hyperlink{unpluckint_8h_aa8b20ddec6246d14b8a353de6039f535}{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G}(p)~(((p)\mbox{[}0\mbox{]} $<$$<$ 24)$\vert$((p)\mbox{[}1\mbox{]} $<$$<$ 16)$\vert$((p)\mbox{[}2\mbox{]} $<$$<$ 8)$\vert$((p)\mbox{[}3\mbox{]}))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structplkr__DataRecord__s}{plkr\+\_\+\+Data\+Record\+\_\+s} \hyperlink{unpluckint_8h_a50cfb039ab6227812a2ee8b8c105ef87}{plkr\+\_\+\+Data\+Record}
+\item 
+typedef struct \hyperlink{structHashTable}{Hash\+Table} \hyperlink{unpluckint_8h_a8dea4341d1b1662a30ec89ea38da0c0c}{Hash\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08}{Reserved\+Record\+Name} \{ \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08aae4e0fc7e0b3e82441db10dd79ea031a}{P\+L\+K\+R\+\_\+\+H\+O\+M\+E\+\_\+\+N\+A\+M\+E} = 0, 
+\hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08af5747d5e9aaaed2e8f7b1140faf57cf8}{P\+L\+K\+R\+\_\+\+U\+R\+L\+S\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E} = 2, 
+\hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a08d2098d87813305760ffb943e6a6894}{P\+L\+K\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+N\+A\+M\+E} = 3, 
+\hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a94e006cc3c975bf3074337d7c64efd83}{P\+L\+K\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+N\+A\+M\+E} = 4
+ \}
+\item 
+enum \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99}{Metadata\+Typecodes} \{ \\*
+\hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a56e6a9e926984dfc2a5f7f72ab186625}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+C\+H\+A\+R\+S\+E\+T} = 1, 
+\hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aa04ce8ff47d77d167377932d78f27a4d}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+E\+X\+C\+E\+P\+T\+C\+H\+A\+R\+S\+E\+T\+S} = 2, 
+\hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99ab055c1bf2504816258be8cce13234714}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+O\+W\+N\+E\+R\+I\+D\+C\+R\+C} = 3, 
+\hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a074d73325cf80dd3d15941148ce9d5b8}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H\+O\+R} = 4, 
+\\*
+\hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aaa832ab595b808f3189c2e23983d6c3d}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+T\+I\+T\+L\+E} = 5, 
+\hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a2ea2631fb1eb374b603b61377f2b38ff}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+A\+T\+I\+O\+N\+T\+I\+M\+E} = 6
+ \}
+\item 
+enum \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1}{plkr\+\_\+\+Compression\+Type} \{ \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1aaf1b8213f013aac5d019463b89300045}{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+D\+O\+C} = 1, 
+\hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1ac9bc2c67365532c8641e520c4b0c0ea1}{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+Z\+L\+I\+B} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\+\_\+plkr\+\_\+message} (const char $\ast$format\+Spec,...)
+\item 
+char $\ast$ \hyperlink{unpluckint_8h_a1be042165603e16fc2aacd92929321e1}{\+\_\+plkr\+\_\+strndup} (char $\ast$str, int len)
+\item 
+\hyperlink{structHashTable}{Hash\+Table} $\ast$ \hyperlink{unpluckint_8h_ae103dcefa40c9913abc265073fcf3170}{\+\_\+plkr\+\_\+\+New\+Hash\+Table} (int \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size})
+\item 
+void $\ast$ \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\+\_\+plkr\+\_\+\+Find\+In\+Table} (\hyperlink{structHashTable}{Hash\+Table} $\ast$ht, char $\ast$key)
+\item 
+void $\ast$ \hyperlink{unpluckint_8h_a9915f1c508d3c328f4ab81d556107734}{\+\_\+plkr\+\_\+\+Remove\+From\+Table} (\hyperlink{structHashTable}{Hash\+Table} $\ast$ht, char $\ast$key)
+\item 
+int \hyperlink{unpluckint_8h_a7b1d7c3618cea83299b75661725d38eb}{\+\_\+plkr\+\_\+\+Add\+To\+Table} (\hyperlink{structHashTable}{Hash\+Table} $\ast$ht, char $\ast$key, void $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{unpluckint_8h_aa93f0eb578d23995850d61f7d61c55c1}{\index{unpluckint.\+h@{unpluckint.\+h}!F\+A\+L\+S\+E@{F\+A\+L\+S\+E}}
+\index{F\+A\+L\+S\+E@{F\+A\+L\+S\+E}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{F\+A\+L\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+L\+S\+E~0}}\label{unpluckint_8h_aa93f0eb578d23995850d61f7d61c55c1}
+
+
+Definition at line 45 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{\index{unpluckint.\+h@{unpluckint.\+h}!M\+A\+X@{M\+A\+X}}
+\index{M\+A\+X@{M\+A\+X}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~(((a)$>$(b))?(a)\+:(b))}}\label{unpluckint_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}
+
+
+Definition at line 37 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_aa0b0779992ee63e5b90b143aaa2dcc01}{\index{unpluckint.\+h@{unpluckint.\+h}!M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D@{M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D}}
+\index{M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D@{M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+R\+E\+S\+E\+R\+V\+E\+D~8}}\label{unpluckint_8h_aa0b0779992ee63e5b90b143aaa2dcc01}
+
+
+Definition at line 32 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{\index{unpluckint.\+h@{unpluckint.\+h}!M\+I\+N@{M\+I\+N}}
+\index{M\+I\+N@{M\+I\+N}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~(((a)$<$(b))?(a)\+:(b))}}\label{unpluckint_8h_a3acffbd305ee72dcd4593c0d8af64a4f}
+
+
+Definition at line 41 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_a9e579f8fc10772d609a18d57c4a0dfbb}{\index{unpluckint.\+h@{unpluckint.\+h}!O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N@{O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N}}
+\index{O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N@{O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+W\+N\+E\+R\+\_\+\+I\+D\+\_\+\+H\+A\+S\+H\+\_\+\+L\+E\+N~40}}\label{unpluckint_8h_a9e579f8fc10772d609a18d57c4a0dfbb}
+
+
+Definition at line 34 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_a324bd288b42b2aa412811df53ca4f07d}{\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T@{P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T}}
+\index{P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T@{P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+K\+R\+\_\+\+T\+I\+M\+E\+A\+D\+J\+U\+S\+T}}\label{unpluckint_8h_a324bd288b42b2aa412811df53ca4f07d}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+2082848400    \textcolor{comment}{/* difference in seconds between}
+\textcolor{comment}{                                           Palm timebase of 12 AM Jan 1, 1904,}
+\textcolor{comment}{                                           and UNIX timebase of 12 AM Jan 1, 1970 */}
+\end{DoxyCode}
+
+
+Definition at line 28 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_aa8b20ddec6246d14b8a353de6039f535}{\index{unpluckint.\+h@{unpluckint.\+h}!R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G@{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G}}
+\index{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G@{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+L\+O\+N\+G(
+\begin{DoxyParamCaption}
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~(((p)\mbox{[}0\mbox{]} $<$$<$ 24)$\vert$((p)\mbox{[}1\mbox{]} $<$$<$ 16)$\vert$((p)\mbox{[}2\mbox{]} $<$$<$ 8)$\vert$((p)\mbox{[}3\mbox{]}))}}\label{unpluckint_8h_aa8b20ddec6246d14b8a353de6039f535}
+
+
+Definition at line 53 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_a756a14a5789fcc36b0978f3132708bc5}{\index{unpluckint.\+h@{unpluckint.\+h}!R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T@{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T}}
+\index{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T@{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+B\+I\+G\+E\+N\+D\+I\+A\+N\+\_\+\+S\+H\+O\+R\+T(
+\begin{DoxyParamCaption}
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~(((p)\mbox{[}0\mbox{]} $<$$<$ 8)$\vert$((p)\mbox{[}1\mbox{]}))}}\label{unpluckint_8h_a756a14a5789fcc36b0978f3132708bc5}
+
+
+Definition at line 52 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{\index{unpluckint.\+h@{unpluckint.\+h}!T\+R\+U\+E@{T\+R\+U\+E}}
+\index{T\+R\+U\+E@{T\+R\+U\+E}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{T\+R\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+R\+U\+E~1}}\label{unpluckint_8h_aa8cecfc5c5c054d2875c03e77b7be15d}
+
+
+Definition at line 49 of file unpluckint.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{unpluckint_8h_a8dea4341d1b1662a30ec89ea38da0c0c}{\index{unpluckint.\+h@{unpluckint.\+h}!Hash\+Table@{Hash\+Table}}
+\index{Hash\+Table@{Hash\+Table}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{Hash\+Table}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf Hash\+Table} {\bf Hash\+Table}}}\label{unpluckint_8h_a8dea4341d1b1662a30ec89ea38da0c0c}
+
+
+Definition at line 129 of file unpluckint.\+h.
+
+\hypertarget{unpluckint_8h_a50cfb039ab6227812a2ee8b8c105ef87}{\index{unpluckint.\+h@{unpluckint.\+h}!plkr\+\_\+\+Data\+Record@{plkr\+\_\+\+Data\+Record}}
+\index{plkr\+\_\+\+Data\+Record@{plkr\+\_\+\+Data\+Record}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{plkr\+\_\+\+Data\+Record}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf plkr\+\_\+\+Data\+Record\+\_\+s} {\bf plkr\+\_\+\+Data\+Record}}}\label{unpluckint_8h_a50cfb039ab6227812a2ee8b8c105ef87}
+
+
+Definition at line 81 of file unpluckint.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99}{\index{unpluckint.\+h@{unpluckint.\+h}!Metadata\+Typecodes@{Metadata\+Typecodes}}
+\index{Metadata\+Typecodes@{Metadata\+Typecodes}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{Metadata\+Typecodes}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Metadata\+Typecodes}}}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+C\+H\+A\+R\+S\+E\+T@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+C\+H\+A\+R\+S\+E\+T}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+C\+H\+A\+R\+S\+E\+T@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+C\+H\+A\+R\+S\+E\+T}}\item[{\em 
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a56e6a9e926984dfc2a5f7f72ab186625}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+C\+H\+A\+R\+S\+E\+T}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a56e6a9e926984dfc2a5f7f72ab186625}
+}]\index{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+E\+X\+C\+E\+P\+T\+C\+H\+A\+R\+S\+E\+T\+S@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+E\+X\+C\+E\+P\+T\+C\+H\+A\+R\+S\+E\+T\+S}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+E\+X\+C\+E\+P\+T\+C\+H\+A\+R\+S\+E\+T\+S@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+E\+X\+C\+E\+P\+T\+C\+H\+A\+R\+S\+E\+T\+S}}\item[{\em 
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aa04ce8ff47d77d167377932d78f27a4d}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+E\+X\+C\+E\+P\+T\+C\+H\+A\+R\+S\+E\+T\+S}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aa04ce8ff47d77d167377932d78f27a4d}
+}]\index{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+O\+W\+N\+E\+R\+I\+D\+C\+R\+C@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+O\+W\+N\+E\+R\+I\+D\+C\+R\+C}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+O\+W\+N\+E\+R\+I\+D\+C\+R\+C@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+O\+W\+N\+E\+R\+I\+D\+C\+R\+C}}\item[{\em 
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99ab055c1bf2504816258be8cce13234714}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+O\+W\+N\+E\+R\+I\+D\+C\+R\+C}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99ab055c1bf2504816258be8cce13234714}
+}]\index{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H\+O\+R@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H\+O\+R}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H\+O\+R@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H\+O\+R}}\item[{\em 
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a074d73325cf80dd3d15941148ce9d5b8}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+A\+U\+T\+H\+O\+R}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a074d73325cf80dd3d15941148ce9d5b8}
+}]\index{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+T\+I\+T\+L\+E@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+T\+I\+T\+L\+E}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+T\+I\+T\+L\+E@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+T\+I\+T\+L\+E}}\item[{\em 
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aaa832ab595b808f3189c2e23983d6c3d}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+T\+I\+T\+L\+E}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aaa832ab595b808f3189c2e23983d6c3d}
+}]\index{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+A\+T\+I\+O\+N\+T\+I\+M\+E@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+A\+T\+I\+O\+N\+T\+I\+M\+E}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+A\+T\+I\+O\+N\+T\+I\+M\+E@{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+A\+T\+I\+O\+N\+T\+I\+M\+E}}\item[{\em 
+\hypertarget{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a2ea2631fb1eb374b603b61377f2b38ff}{P\+L\+K\+R\+\_\+\+M\+D\+T\+Y\+P\+E\+\_\+\+P\+U\+B\+L\+I\+C\+A\+T\+I\+O\+N\+T\+I\+M\+E}\label{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a2ea2631fb1eb374b603b61377f2b38ff}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 67 of file unpluckint.\+h.
+
+
+\begin{DoxyCode}
+67              \{
+68     \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a56e6a9e926984dfc2a5f7f72ab186625}{PLKR\_MDTYPE\_DEFAULTCHARSET} = 1,
+69     \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aa04ce8ff47d77d167377932d78f27a4d}{PLKR\_MDTYPE\_EXCEPTCHARSETS} = 2,
+70     \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99ab055c1bf2504816258be8cce13234714}{PLKR\_MDTYPE\_OWNERIDCRC} = 3,
+71     \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a074d73325cf80dd3d15941148ce9d5b8}{PLKR\_MDTYPE\_AUTHOR} = 4,
+72     \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99aaa832ab595b808f3189c2e23983d6c3d}{PLKR\_MDTYPE\_TITLE} = 5,
+73     \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99a2ea2631fb1eb374b603b61377f2b38ff}{PLKR\_MDTYPE\_PUBLICATIONTIME} = 6
+74 \} \hyperlink{unpluckint_8h_a94d0467f2cd4db2709df6ce49b3eaf99}{MetadataTypecodes};
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1}{\index{unpluckint.\+h@{unpluckint.\+h}!plkr\+\_\+\+Compression\+Type@{plkr\+\_\+\+Compression\+Type}}
+\index{plkr\+\_\+\+Compression\+Type@{plkr\+\_\+\+Compression\+Type}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{plkr\+\_\+\+Compression\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf plkr\+\_\+\+Compression\+Type}}}\label{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+D\+O\+C@{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+D\+O\+C}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+D\+O\+C@{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+D\+O\+C}}\item[{\em 
+\hypertarget{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1aaf1b8213f013aac5d019463b89300045}{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+D\+O\+C}\label{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1aaf1b8213f013aac5d019463b89300045}
+}]\index{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+Z\+L\+I\+B@{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+Z\+L\+I\+B}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+Z\+L\+I\+B@{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+Z\+L\+I\+B}}\item[{\em 
+\hypertarget{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1ac9bc2c67365532c8641e520c4b0c0ea1}{P\+L\+K\+R\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+O\+N\+\_\+\+Z\+L\+I\+B}\label{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1ac9bc2c67365532c8641e520c4b0c0ea1}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 76 of file unpluckint.\+h.
+
+
+\begin{DoxyCode}
+76              \{
+77     \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1aaf1b8213f013aac5d019463b89300045}{PLKR\_COMPRESSION\_DOC} = 1,
+78     \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1ac9bc2c67365532c8641e520c4b0c0ea1}{PLKR\_COMPRESSION\_ZLIB} = 2
+79 \} \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1}{plkr\_CompressionType};
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08}{\index{unpluckint.\+h@{unpluckint.\+h}!Reserved\+Record\+Name@{Reserved\+Record\+Name}}
+\index{Reserved\+Record\+Name@{Reserved\+Record\+Name}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{Reserved\+Record\+Name}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Reserved\+Record\+Name}}}\label{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+K\+R\+\_\+\+H\+O\+M\+E\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+H\+O\+M\+E\+\_\+\+N\+A\+M\+E}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+H\+O\+M\+E\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+H\+O\+M\+E\+\_\+\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08aae4e0fc7e0b3e82441db10dd79ea031a}{P\+L\+K\+R\+\_\+\+H\+O\+M\+E\+\_\+\+N\+A\+M\+E}\label{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08aae4e0fc7e0b3e82441db10dd79ea031a}
+}]\index{P\+L\+K\+R\+\_\+\+U\+R\+L\+S\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+U\+R\+L\+S\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+U\+R\+L\+S\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+U\+R\+L\+S\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08af5747d5e9aaaed2e8f7b1140faf57cf8}{P\+L\+K\+R\+\_\+\+U\+R\+L\+S\+\_\+\+I\+N\+D\+E\+X\+\_\+\+N\+A\+M\+E}\label{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08af5747d5e9aaaed2e8f7b1140faf57cf8}
+}]\index{P\+L\+K\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+N\+A\+M\+E}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a08d2098d87813305760ffb943e6a6894}{P\+L\+K\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y\+\_\+\+N\+A\+M\+E}\label{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a08d2098d87813305760ffb943e6a6894}
+}]\index{P\+L\+K\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+N\+A\+M\+E}!unpluckint.\+h@{unpluckint.\+h}}\index{unpluckint.\+h@{unpluckint.\+h}!P\+L\+K\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+N\+A\+M\+E@{P\+L\+K\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a94e006cc3c975bf3074337d7c64efd83}{P\+L\+K\+R\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A\+\_\+\+N\+A\+M\+E}\label{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a94e006cc3c975bf3074337d7c64efd83}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 55 of file unpluckint.\+h.
+
+
+\begin{DoxyCode}
+55              \{
+56     \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08aae4e0fc7e0b3e82441db10dd79ea031a}{PLKR\_HOME\_NAME} = 0,
+57     \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08af5747d5e9aaaed2e8f7b1140faf57cf8}{PLKR\_URLS\_INDEX\_NAME} = 2,
+58     \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a08d2098d87813305760ffb943e6a6894}{PLKR\_DEFAULT\_CATEGORY\_NAME} = 3,
+59     \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a94e006cc3c975bf3074337d7c64efd83}{PLKR\_METADATA\_NAME} = 4
+60 \} \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08}{ReservedRecordName};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{unpluckint_8h_a7b1d7c3618cea83299b75661725d38eb}{\index{unpluckint.\+h@{unpluckint.\+h}!\+\_\+plkr\+\_\+\+Add\+To\+Table@{\+\_\+plkr\+\_\+\+Add\+To\+Table}}
+\index{\+\_\+plkr\+\_\+\+Add\+To\+Table@{\+\_\+plkr\+\_\+\+Add\+To\+Table}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{\+\_\+plkr\+\_\+\+Add\+To\+Table}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+plkr\+\_\+\+Add\+To\+Table (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Table} $\ast$}]{ht, }
+\item[{char $\ast$}]{key, }
+\item[{void $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{unpluckint_8h_a7b1d7c3618cea83299b75661725d38eb}
+
+
+Definition at line 211 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+216 \{
+217     \hyperlink{structHashTableSlot}{HashTableSlot}*  slot;
+218     \textcolor{keywordtype}{int}             count;
+219 
+220     \textcolor{keywordflow}{if} (ht == NULL)
+221         \textcolor{keywordflow}{return} (0);
+222 
+223     slot = \hyperlink{plucker_2unpluck_2util_8cpp_a86f48263f07b8b11e500a5eda9f0bad3}{hashtable\_slot} (ht, \hyperlink{plucker_2unpluck_2util_8cpp_a7b490fd217415bf4e37a507e4d1c0af6}{hashtable\_hash\_index} (ht, key));
+224 
+225     \textcolor{keywordflow}{for} (count = slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count}; count > 0; count -= 1)
+226         \textcolor{keywordflow}{if} (\hyperlink{plucker_2unpluck_2util_8cpp_a8a508e77154fc72ba6f2376648a061f9}{hashtable\_compare\_keys}
+227             (ht, key, slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count - 1].\hyperlink{structHashEntry_aae8728a5a900b3f5d7ad43642c88ddb4}{he\_key}))
+228             \textcolor{keywordflow}{return} (0);
+229 
+230     \textcolor{keywordflow}{if} (slot->\hyperlink{structHashTableSlot_af78b3b5c843a3291b66ba8ea5748acc7}{hs\_allocated} == 0) \{
+231         slot->\hyperlink{structHashTableSlot_af78b3b5c843a3291b66ba8ea5748acc7}{hs\_allocated} = \hyperlink{plucker_2unpluck_2util_8cpp_ad18c559273d02a5c145b243b60e7ec7a}{HASH\_INCREMENT\_SIZE};
+232         slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries} =
+233             (\hyperlink{structHashEntry}{HashEntry} *) malloc (\textcolor{keyword}{sizeof} (\hyperlink{structHashEntry}{HashEntry}) * slot->
+      \hyperlink{structHashTableSlot_af78b3b5c843a3291b66ba8ea5748acc7}{hs\_allocated});
+234         slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count} = 0;
+235     \}
+236     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count} >= slot->\hyperlink{structHashTableSlot_af78b3b5c843a3291b66ba8ea5748acc7}{hs\_allocated})
+237         slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries} = (\hyperlink{structHashEntry}{HashEntry} *) realloc (slot->
+      \hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries},
+238                                                   (slot->\hyperlink{structHashTableSlot_af78b3b5c843a3291b66ba8ea5748acc7}{hs\_allocated} +=
+239                                                    \hyperlink{plucker_2unpluck_2util_8cpp_ad18c559273d02a5c145b243b60e7ec7a}{HASH\_INCREMENT\_SIZE})
+240                                                   * \textcolor{keyword}{sizeof} (\hyperlink{structHashEntry}{HashEntry}));
+241     slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count}].\hyperlink{structHashEntry_aae8728a5a900b3f5d7ad43642c88ddb4}{he\_key} =
+242         \hyperlink{plucker_2unpluck_2util_8cpp_a1be042165603e16fc2aacd92929321e1}{\_plkr\_strndup} (key, strlen (key));
+243     slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count}].\hyperlink{structHashEntry_a32c228dc26a77332e89dc3abc333a086}{he\_data} = obj;
+244     slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count} += 1;
+245     ht->\hyperlink{structHashTable_a74747aaf3301627afdcddb55578e3c7b}{ht\_nPairs} += 1;
+246     \textcolor{keywordflow}{return} (1);
+247 \}
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\index{unpluckint.\+h@{unpluckint.\+h}!\+\_\+plkr\+\_\+\+Find\+In\+Table@{\+\_\+plkr\+\_\+\+Find\+In\+Table}}
+\index{\+\_\+plkr\+\_\+\+Find\+In\+Table@{\+\_\+plkr\+\_\+\+Find\+In\+Table}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{\+\_\+plkr\+\_\+\+Find\+In\+Table}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ \+\_\+plkr\+\_\+\+Find\+In\+Table (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Table} $\ast$}]{ht, }
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}
+
+
+Definition at line 159 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+163 \{
+164     \hyperlink{structHashTableSlot}{HashTableSlot}*  slot;
+165     \textcolor{keywordtype}{int}             count;
+166 
+167     \textcolor{keywordflow}{if} (ht == NULL)
+168         \textcolor{keywordflow}{return} (NULL);
+169     slot = \hyperlink{plucker_2unpluck_2util_8cpp_a86f48263f07b8b11e500a5eda9f0bad3}{hashtable\_slot} (ht, \hyperlink{plucker_2unpluck_2util_8cpp_a7b490fd217415bf4e37a507e4d1c0af6}{hashtable\_hash\_index} (ht, key));
+170     \textcolor{keywordflow}{for} (count = slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count}; count > 0; count -= 1)
+171         \textcolor{keywordflow}{if} (\hyperlink{plucker_2unpluck_2util_8cpp_a8a508e77154fc72ba6f2376648a061f9}{hashtable\_compare\_keys}
+172             (ht, key, slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count - 1].\hyperlink{structHashEntry_aae8728a5a900b3f5d7ad43642c88ddb4}{he\_key}))
+173             \textcolor{keywordflow}{return} (slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count - 1].\hyperlink{structHashEntry_a32c228dc26a77332e89dc3abc333a086}{he\_data});
+174     \textcolor{keywordflow}{return} (NULL);
+175 \}
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\index{unpluckint.\+h@{unpluckint.\+h}!\+\_\+plkr\+\_\+message@{\+\_\+plkr\+\_\+message}}
+\index{\+\_\+plkr\+\_\+message@{\+\_\+plkr\+\_\+message}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{\+\_\+plkr\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}void \+\_\+plkr\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format\+Spec, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}
+
+
+Definition at line 55 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     va\_list  ap;
+61 
+62     va\_start (ap, formatSpec);
+63 
+64     \textcolor{keywordflow}{if} (ShowMessages) \{
+65         (void) vfprintf (stderr, formatSpec, ap);
+66         fprintf (stderr, \textcolor{stringliteral}{"\(\backslash\)n"});
+67     \}
+68 
+69     va\_end (ap);
+70 \}
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_ae103dcefa40c9913abc265073fcf3170}{\index{unpluckint.\+h@{unpluckint.\+h}!\+\_\+plkr\+\_\+\+New\+Hash\+Table@{\+\_\+plkr\+\_\+\+New\+Hash\+Table}}
+\index{\+\_\+plkr\+\_\+\+New\+Hash\+Table@{\+\_\+plkr\+\_\+\+New\+Hash\+Table}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{\+\_\+plkr\+\_\+\+New\+Hash\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ \+\_\+plkr\+\_\+\+New\+Hash\+Table (
+\begin{DoxyParamCaption}
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{unpluckint_8h_ae103dcefa40c9913abc265073fcf3170}
+
+
+Definition at line 250 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+253 \{
+254     \hyperlink{structHashTable}{HashTable} *newHash = (\hyperlink{structHashTable}{HashTable} *) malloc (\textcolor{keyword}{sizeof} (
+      \hyperlink{structHashTable}{HashTable}));
+255 
+256     newHash->\hyperlink{structHashTable_a0417bd42eaced28297250a107dfc6843}{ht\_size} = \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size};
+257     newHash->\hyperlink{structHashTable_a74747aaf3301627afdcddb55578e3c7b}{ht\_nPairs} = 0;
+258     newHash->\hyperlink{structHashTable_ab8cedc8a27628fcf828d19c222cb641b}{ht\_slots} =
+259         (\hyperlink{structHashTableSlot}{HashTableSlot} *) malloc (\textcolor{keyword}{sizeof} (\hyperlink{structHashTableSlot}{HashTableSlot}) * 
+      \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size});
+260     memset ((\textcolor{keywordtype}{void} *) (newHash->\hyperlink{structHashTable_ab8cedc8a27628fcf828d19c222cb641b}{ht\_slots}), 0, sizeof (\hyperlink{structHashTableSlot}{HashTableSlot}) * 
+      \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size});
+261     \textcolor{keywordflow}{return} (newHash);
+262 \}
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_a9915f1c508d3c328f4ab81d556107734}{\index{unpluckint.\+h@{unpluckint.\+h}!\+\_\+plkr\+\_\+\+Remove\+From\+Table@{\+\_\+plkr\+\_\+\+Remove\+From\+Table}}
+\index{\+\_\+plkr\+\_\+\+Remove\+From\+Table@{\+\_\+plkr\+\_\+\+Remove\+From\+Table}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{\+\_\+plkr\+\_\+\+Remove\+From\+Table}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ \+\_\+plkr\+\_\+\+Remove\+From\+Table (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Table} $\ast$}]{ht, }
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{unpluckint_8h_a9915f1c508d3c328f4ab81d556107734}
+
+
+Definition at line 178 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+182 \{
+183     \hyperlink{structHashTableSlot}{HashTableSlot}*  slot;
+184     \textcolor{keywordtype}{int}             count;
+185 
+186     \textcolor{keywordflow}{if} (ht == NULL)
+187         \textcolor{keywordflow}{return} (NULL);
+188 
+189     slot = \hyperlink{plucker_2unpluck_2util_8cpp_a86f48263f07b8b11e500a5eda9f0bad3}{hashtable\_slot} (ht, \hyperlink{plucker_2unpluck_2util_8cpp_a7b490fd217415bf4e37a507e4d1c0af6}{hashtable\_hash\_index} (ht, key));
+190     \textcolor{keywordflow}{for} (count = 0; count < slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count}; count += 1)
+191         \textcolor{keywordflow}{if} (\hyperlink{plucker_2unpluck_2util_8cpp_a8a508e77154fc72ba6f2376648a061f9}{hashtable\_compare\_keys}
+192             (ht, slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count].\hyperlink{structHashEntry_aae8728a5a900b3f5d7ad43642c88ddb4}{he\_key}, key)) \{
+193             \textcolor{keywordtype}{void} *data = slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count].\hyperlink{structHashEntry_a32c228dc26a77332e89dc3abc333a086}{he\_data};
+194             free (slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count].\hyperlink{structHashEntry_aae8728a5a900b3f5d7ad43642c88ddb4}{he\_key});
+195             \textcolor{keywordflow}{if} ((1 + (\textcolor{keywordtype}{unsigned}) count) < (\textcolor{keywordtype}{unsigned}) slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count})
+196                 slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[count] =
+197                     slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries}[slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count} - 1];
+198             --ht->\hyperlink{structHashTable_a74747aaf3301627afdcddb55578e3c7b}{ht\_nPairs};
+199             \textcolor{keywordflow}{if} (--slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count} <= 0) \{
+200                 free (slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries});
+201                 slot->\hyperlink{structHashTableSlot_aa7774f3e87d521e6e1b83dee6511e3f4}{hs\_entries} = NULL;
+202                 slot->\hyperlink{structHashTableSlot_af78b3b5c843a3291b66ba8ea5748acc7}{hs\_allocated} = 0;
+203                 slot->\hyperlink{structHashTableSlot_aa249ad04bb7f1116b66e560566a03db9}{hs\_count} = 0;
+204             \}
+205             \textcolor{keywordflow}{return} (data);
+206         \}
+207     \textcolor{keywordflow}{return} (NULL);
+208 \}
+\end{DoxyCode}
+\hypertarget{unpluckint_8h_a1be042165603e16fc2aacd92929321e1}{\index{unpluckint.\+h@{unpluckint.\+h}!\+\_\+plkr\+\_\+strndup@{\+\_\+plkr\+\_\+strndup}}
+\index{\+\_\+plkr\+\_\+strndup@{\+\_\+plkr\+\_\+strndup}!unpluckint.\+h@{unpluckint.\+h}}
+\subsubsection[{\+\_\+plkr\+\_\+strndup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+plkr\+\_\+strndup (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}\label{unpluckint_8h_a1be042165603e16fc2aacd92929321e1}
+
+
+Definition at line 92 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+96 \{
+97     \textcolor{keywordtype}{char}*  dup;
+98 
+99     dup = (\textcolor{keywordtype}{char} *) malloc (len + 1);
+100     strncpy (dup, str, len);
+101     dup[len] = 0;
+102     \textcolor{keywordflow}{return} dup;
+103 \}
+\end{DoxyCode}

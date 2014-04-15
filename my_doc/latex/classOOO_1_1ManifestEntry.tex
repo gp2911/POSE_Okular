@@ -1,0 +1,471 @@
+\hypertarget{classOOO_1_1ManifestEntry}{\section{O\+O\+O\+:\+:Manifest\+Entry Class Reference}
+\label{classOOO_1_1ManifestEntry}\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+}
+
+
+{\ttfamily \#include $<$manifest.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOOO_1_1ManifestEntry_a7e44712a89481d7e6bc9519a95230597}{Manifest\+Entry} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{file\+Name})
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_ab100ed14298e33bb907752ad8e8d17f1}{set\+Mime\+Type} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_af31da7ffc13137810f8d5611a77e69c9}{mime\+Type})
+\item 
+Q\+String \hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{file\+Name} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_ae73f2907cba2cfec09e9203299ca701a}{set\+Size} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_a81d532880b25c6db4a1f7586a468f138}{size})
+\item 
+Q\+String \hyperlink{classOOO_1_1ManifestEntry_af31da7ffc13137810f8d5611a77e69c9}{mime\+Type} () const 
+\item 
+Q\+String \hyperlink{classOOO_1_1ManifestEntry_a81d532880b25c6db4a1f7586a468f138}{size} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_a4e69eda5242a4f4a4741a8d627f6962c}{set\+Checksum\+Type} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_a4f38fd726261188239dddf22aad3094d}{checksum\+Type})
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_a48e5174537ba7916f143a9329a5b4218}{set\+Checksum} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_a664851cf0939cdd4ffa5f1c79085d8e3}{checksum})
+\item 
+Q\+String \hyperlink{classOOO_1_1ManifestEntry_a4f38fd726261188239dddf22aad3094d}{checksum\+Type} () const 
+\item 
+Q\+Byte\+Array \hyperlink{classOOO_1_1ManifestEntry_a664851cf0939cdd4ffa5f1c79085d8e3}{checksum} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_a77d0d27a37517813700ee830f9c11c72}{set\+Algorithm} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}{algorithm})
+\item 
+Q\+String \hyperlink{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}{algorithm} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_a5a6783f55b0e2f5e9c41a77c518f9cb2}{set\+Initialisation\+Vector} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_a3222cd472a37cdb9b69ebc4aaa34c9a1}{initialisation\+Vector})
+\item 
+Q\+Byte\+Array \hyperlink{classOOO_1_1ManifestEntry_a3222cd472a37cdb9b69ebc4aaa34c9a1}{initialisation\+Vector} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_a6d1398f193f038fd3e605df33564154b}{set\+Key\+Derivation\+Name} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_aba1a83aefa6e73835117c93daf6d9955}{key\+Derivation\+Name})
+\item 
+Q\+String \hyperlink{classOOO_1_1ManifestEntry_aba1a83aefa6e73835117c93daf6d9955}{key\+Derivation\+Name} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_ab78f36fcf7d297649148a1e97f810328}{set\+Iteration\+Count} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_acc01f966a209860856a84ea83e9aff8c}{iteration\+Count})
+\item 
+int \hyperlink{classOOO_1_1ManifestEntry_acc01f966a209860856a84ea83e9aff8c}{iteration\+Count} () const 
+\item 
+void \hyperlink{classOOO_1_1ManifestEntry_a94422c9f4b80209ec1fdf876b0832c7d}{set\+Salt} (const Q\+String \&\hyperlink{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}{salt})
+\item 
+Q\+Byte\+Array \hyperlink{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}{salt} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespaceOOO}{O\+O\+O} document manifest entry
+
+This class holds the manifest information for a single file-\/entry element. An example of the X\+M\+L that could be passed in is shown below, although not all manifest entries will have encryption-\/data. 
+\begin{DoxyCode}
+<manifest:file-entry manifest:media-type=\textcolor{stringliteral}{"image/jpeg"} manifest:full-path=\textcolor{stringliteral}{"
+      Pictures/100000000000032000000258912EB1C3.jpg"} manifest:\hyperlink{classOOO_1_1ManifestEntry_a81d532880b25c6db4a1f7586a468f138}{size}=\textcolor{stringliteral}{"66704"}>
+  <manifest:encryption-data>
+    <manifest:\hyperlink{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}{algorithm} manifest:\hyperlink{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}{algorithm}-name=\textcolor{stringliteral}{"Blowfish CFB"} manifest:initialisation-
+      vector=\textcolor{stringliteral}{"T+miu403484="}/>
+    <manifest:key-derivation manifest:key-derivation-name=\textcolor{stringliteral}{"PBKDF2"} manifest:iteration-count=\textcolor{stringliteral}{"1024"} manifest
+      :\hyperlink{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}{salt}=\textcolor{stringliteral}{"aNYdmqv4cObAJSJjm4RzqA=="}/>
+  </manifest:encryption-data>
+</manifest:file-entry>
+\end{DoxyCode}
+ 
+
+Definition at line 38 of file manifest.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOOO_1_1ManifestEntry_a7e44712a89481d7e6bc9519a95230597}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!Manifest\+Entry@{Manifest\+Entry}}
+\index{Manifest\+Entry@{Manifest\+Entry}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{Manifest\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}Manifest\+Entry\+::\+Manifest\+Entry (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a7e44712a89481d7e6bc9519a95230597}
+Create a new manifest entry 
+
+Definition at line 26 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+26                                                       :
+27   m\_fileName( \hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{fileName} )
+28 \{
+29 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{algorithm}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Manifest\+Entry\+::algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}
+Get the algorithm name
+
+This is only meaningful for files with encryption 
+
+Definition at line 81 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+82 \{
+83   \textcolor{keywordflow}{return} m\_algorithm;
+84 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a664851cf0939cdd4ffa5f1c79085d8e3}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!checksum@{checksum}}
+\index{checksum@{checksum}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{checksum}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Manifest\+Entry\+::checksum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_a664851cf0939cdd4ffa5f1c79085d8e3}
+Get the checksum
+
+This is only meaningful for files with encryption 
+
+Definition at line 71 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73   \textcolor{keywordflow}{return} m\_checksum;
+74 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a4f38fd726261188239dddf22aad3094d}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!checksum\+Type@{checksum\+Type}}
+\index{checksum\+Type@{checksum\+Type}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{checksum\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Manifest\+Entry\+::checksum\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_a4f38fd726261188239dddf22aad3094d}
+Get the checksum type
+
+This is only meaningful for files with encryption 
+
+Definition at line 61 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{
+63   \textcolor{keywordflow}{return} m\_checksumType;
+64 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Manifest\+Entry\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}
+Get the file name 
+
+Definition at line 41 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+42 \{
+43   \textcolor{keywordflow}{return} m\_fileName;
+44 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a3222cd472a37cdb9b69ebc4aaa34c9a1}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!initialisation\+Vector@{initialisation\+Vector}}
+\index{initialisation\+Vector@{initialisation\+Vector}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{initialisation\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Manifest\+Entry\+::initialisation\+Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_a3222cd472a37cdb9b69ebc4aaa34c9a1}
+Get the initialisation vector for the cipher algorithm
+
+This is only meaningful for files with encryption 
+
+Definition at line 91 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+92 \{
+93   \textcolor{keywordflow}{return} m\_initialisationVector;
+94 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_acc01f966a209860856a84ea83e9aff8c}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!iteration\+Count@{iteration\+Count}}
+\index{iteration\+Count@{iteration\+Count}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{iteration\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Manifest\+Entry\+::iteration\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_acc01f966a209860856a84ea83e9aff8c}
+Get the iteration count for the key derivation function
+
+This is only meaningful for files with encryption 
+
+Definition at line 111 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+112 \{
+113   \textcolor{keywordflow}{return} m\_iterationCount;
+114 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_aba1a83aefa6e73835117c93daf6d9955}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!key\+Derivation\+Name@{key\+Derivation\+Name}}
+\index{key\+Derivation\+Name@{key\+Derivation\+Name}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{key\+Derivation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Manifest\+Entry\+::key\+Derivation\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_aba1a83aefa6e73835117c93daf6d9955}
+Get the name of the key derivation function
+
+This is only meaningful for files with encryption 
+
+Definition at line 101 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+102 \{
+103   \textcolor{keywordflow}{return} m\_keyDerivationName;
+104 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_af31da7ffc13137810f8d5611a77e69c9}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!mime\+Type@{mime\+Type}}
+\index{mime\+Type@{mime\+Type}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Manifest\+Entry\+::mime\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_af31da7ffc13137810f8d5611a77e69c9}
+Get the mime type 
+
+Definition at line 46 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+47 \{
+48   \textcolor{keywordflow}{return} m\_mimeType;
+49 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!salt@{salt}}
+\index{salt@{salt}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{salt}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Manifest\+Entry\+::salt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}
+Get the salt for the key derivation function
+
+This is only meaningful for files with encryption 
+
+Definition at line 121 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+122 \{
+123   \textcolor{keywordflow}{return} m\_salt;
+124 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a77d0d27a37517813700ee830f9c11c72}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Algorithm@{set\+Algorithm}}
+\index{set\+Algorithm@{set\+Algorithm}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Algorithm (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{algorithm}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a77d0d27a37517813700ee830f9c11c72}
+Set the algorithm name
+
+This is only required for files with encryption 
+
+Definition at line 76 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78   m\_algorithm = \hyperlink{classOOO_1_1ManifestEntry_a1077f5bb046c6b561ab9f19b6bdf83c4}{algorithm};
+79 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a48e5174537ba7916f143a9329a5b4218}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Checksum@{set\+Checksum}}
+\index{set\+Checksum@{set\+Checksum}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Checksum}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Checksum (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{checksum}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a48e5174537ba7916f143a9329a5b4218}
+Set the checksum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em checksum} & the checksum in base64 encoding.\\
+\hline
+\end{DoxyParams}
+This is only required for files with encryption 
+
+Definition at line 66 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68   m\_checksum = QByteArray::fromBase64( \hyperlink{classOOO_1_1ManifestEntry_a664851cf0939cdd4ffa5f1c79085d8e3}{checksum}.toAscii() );
+69 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a4e69eda5242a4f4a4741a8d627f6962c}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Checksum\+Type@{set\+Checksum\+Type}}
+\index{set\+Checksum\+Type@{set\+Checksum\+Type}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Checksum\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Checksum\+Type (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{checksum\+Type}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a4e69eda5242a4f4a4741a8d627f6962c}
+Set the checksum type.
+
+This is only required for files with encryption 
+
+Definition at line 56 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+57 \{
+58   m\_checksumType = \hyperlink{classOOO_1_1ManifestEntry_a4f38fd726261188239dddf22aad3094d}{checksumType};
+59 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a5a6783f55b0e2f5e9c41a77c518f9cb2}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Initialisation\+Vector@{set\+Initialisation\+Vector}}
+\index{set\+Initialisation\+Vector@{set\+Initialisation\+Vector}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Initialisation\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Initialisation\+Vector (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{initialisation\+Vector}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a5a6783f55b0e2f5e9c41a77c518f9cb2}
+Set the initialisation vector for the cipher algorithm
+
+
+\begin{DoxyParams}{Parameters}
+{\em initialisation\+Vector} & the I\+V in base64 encoding.\\
+\hline
+\end{DoxyParams}
+This is only required for files with encryption 
+
+Definition at line 86 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+87 \{
+88   m\_initialisationVector = QByteArray::fromBase64( \hyperlink{classOOO_1_1ManifestEntry_a3222cd472a37cdb9b69ebc4aaa34c9a1}{initialisationVector}.toAscii() );
+89 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_ab78f36fcf7d297649148a1e97f810328}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Iteration\+Count@{set\+Iteration\+Count}}
+\index{set\+Iteration\+Count@{set\+Iteration\+Count}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Iteration\+Count}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Iteration\+Count (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{iteration\+Count}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_ab78f36fcf7d297649148a1e97f810328}
+Set the iteration count for the key derivation function
+
+This is only required for files with encryption 
+
+Definition at line 106 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+107 \{
+108   m\_iterationCount = \hyperlink{classOOO_1_1ManifestEntry_acc01f966a209860856a84ea83e9aff8c}{iterationCount}.toInt();
+109 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a6d1398f193f038fd3e605df33564154b}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Key\+Derivation\+Name@{set\+Key\+Derivation\+Name}}
+\index{set\+Key\+Derivation\+Name@{set\+Key\+Derivation\+Name}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Key\+Derivation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Key\+Derivation\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key\+Derivation\+Name}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a6d1398f193f038fd3e605df33564154b}
+Set the name of the key derivation function
+
+This is only required for files with encryption 
+
+Definition at line 96 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+97 \{
+98   m\_keyDerivationName = \hyperlink{classOOO_1_1ManifestEntry_aba1a83aefa6e73835117c93daf6d9955}{keyDerivationName};
+99 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_ab100ed14298e33bb907752ad8e8d17f1}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Mime\+Type@{set\+Mime\+Type}}
+\index{set\+Mime\+Type@{set\+Mime\+Type}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Mime\+Type (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime\+Type}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_ab100ed14298e33bb907752ad8e8d17f1}
+Set the mimetype of the file. 
+
+Definition at line 31 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{
+33   m\_mimeType = \hyperlink{classOOO_1_1ManifestEntry_af31da7ffc13137810f8d5611a77e69c9}{mimeType};
+34 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a94422c9f4b80209ec1fdf876b0832c7d}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Salt@{set\+Salt}}
+\index{set\+Salt@{set\+Salt}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Salt}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Salt (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{salt}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_a94422c9f4b80209ec1fdf876b0832c7d}
+Set the salt for the key derivation function
+
+
+\begin{DoxyParams}{Parameters}
+{\em salt} & the salt in base64 encoding.\\
+\hline
+\end{DoxyParams}
+This is only required for files with encryption 
+
+Definition at line 116 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+117 \{
+118   m\_salt = QByteArray::fromBase64( \hyperlink{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}{salt}.toAscii() );
+119 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_ae73f2907cba2cfec09e9203299ca701a}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{set\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Manifest\+Entry\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{size}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ManifestEntry_ae73f2907cba2cfec09e9203299ca701a}
+Set the file size.
+
+This is only required for files with encryption 
+
+Definition at line 36 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{
+38   m\_size = \hyperlink{classOOO_1_1ManifestEntry_a81d532880b25c6db4a1f7586a468f138}{size};
+39 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ManifestEntry_a81d532880b25c6db4a1f7586a468f138}{\index{O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}!size@{size}}
+\index{size@{size}!O\+O\+O\+::\+Manifest\+Entry@{O\+O\+O\+::\+Manifest\+Entry}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Manifest\+Entry\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ManifestEntry_a81d532880b25c6db4a1f7586a468f138}
+Get the file size
+
+This is only meaningful for files with encryption 
+
+Definition at line 51 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+52 \{
+53   \textcolor{keywordflow}{return} m\_size;
+54 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/ooo/\hyperlink{manifest_8h}{manifest.\+h}\item 
+generators/ooo/\hyperlink{manifest_8cpp}{manifest.\+cpp}\end{DoxyCompactItemize}

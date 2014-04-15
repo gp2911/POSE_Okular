@@ -1,0 +1,410 @@
+\hypertarget{classKParts_1_1HtmlSettingsInterface}{\section{K\+Parts\+:\+:Html\+Settings\+Interface Class Reference}
+\label{classKParts_1_1HtmlSettingsInterface}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+}
+
+
+An interface for modifying the settings of browser engines.  
+
+
+
+
+{\ttfamily \#include $<$htmlextension.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312f}{Html\+Settings\+Type} \{ \\*
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa468efa7fce9486ff8b5d4a77a2a5c65a}{Auto\+Load\+Images}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7ba037d57a86d39804300f97c2b179af}{Dns\+Prefetch\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa2ba86a71d6da5c17bbfc08e51ffe33fb}{Java\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa0f5a45bd022785fe4a0af542f3ba8225}{Javascript\+Enabled}, 
+\\*
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa5686235c34f3d1d62a37ddd0cd1d54f1}{Meta\+Refresh\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faed7f52d152accb3051b3771f29b704b2}{Plugins\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa1fcc78190cb150e98219649b5c04f0bb}{Private\+Browsing\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7827dac10876b9a335cfeda7c4429787}{Offline\+Storage\+Database\+Enabled}, 
+\\*
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faca608c19402cb76cbe76f07f71878b00}{Offline\+Web\+Application\+Cache\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa8016ce157d4d18ea76fdf0e30ce168fb}{Local\+Storage\+Enabled}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa973267fbb4bfc8fbb2427efb759f1851}{User\+Defined\+Style\+Sheet\+U\+R\+L}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}{Java\+Script\+Advice} \{ \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba62d0bcc106417263cb46b6ced5bbfa49}{Java\+Script\+Dunno} =0, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba10e74b73b0ab617b5db0de123a3068ae}{Java\+Script\+Accept}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba8dd329b5196f7c0e2cf71338f2414479}{Java\+Script\+Reject}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643}{J\+S\+Window\+Open\+Policy} \{ \hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a079669fa32d8b86f6ae3b50241599431}{J\+S\+Window\+Open\+Allow} =0, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a3b5d146c17900bcb3ac5a3c40762400b}{J\+S\+Window\+Open\+Ask}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a7855bf2e8181c4ed74c47ef5c305ea66}{J\+S\+Window\+Open\+Deny}, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643aeb4533569b1d543c35bcbe2c13b4e0aa}{J\+S\+Window\+Open\+Smart}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961f}{J\+S\+Window\+Status\+Policy} \{ \hyperlink{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fad04d2617a3d59e82bb71b11eb8f522c4}{J\+S\+Window\+Status\+Allow} =0, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fa43c54134ec0c80999f2cf5ef0644ca71}{J\+S\+Window\+Status\+Ignore}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34}{J\+S\+Window\+Move\+Policy} \{ \hyperlink{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34a737536429edb7501bfc0a0e094c31005}{J\+S\+Window\+Move\+Allow} =0, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34affadad155cdf06f9eb98da8e1aa7cbb1}{J\+S\+Window\+Move\+Ignore}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359}{J\+S\+Window\+Resize\+Policy} \{ \hyperlink{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae2869f76bc4f064d4a60b89d09f043c8}{J\+S\+Window\+Resize\+Allow} =0, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae1c6f55c12b5abb6cafb06128334667a}{J\+S\+Window\+Resize\+Ignore}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8c}{J\+S\+Window\+Focus\+Policy} \{ \hyperlink{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8ca3eff6842f00de1e9ceef9a2f86e55e52}{J\+S\+Window\+Focus\+Allow} =0, 
+\hyperlink{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8cacc28bfbd61e4ae293d1201b4586b817a}{J\+S\+Window\+Focus\+Ignore}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classKParts_1_1HtmlSettingsInterface_a044f53f15e82bc3c209d578849812cfd}{$\sim$\+Html\+Settings\+Interface} ()
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1HtmlSettingsInterface_a00b2a2f9ce6f7b505ab0bbfa4f71eca5}{html\+Settings\+Property} (\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312f}{Html\+Settings\+Type} type) const =0
+\item 
+virtual bool \hyperlink{classKParts_1_1HtmlSettingsInterface_ad345737d10028b838bb1324568d813f3}{set\+Html\+Settings\+Property} (\hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312f}{Html\+Settings\+Type} type, const Q\+Variant \&value)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}{Java\+Script\+Advice} \hyperlink{classKParts_1_1HtmlSettingsInterface_a6c0aaecc231a6005d37e7c4702f6d302}{text\+To\+Javascript\+Advice} (const Q\+String \&text)
+\item 
+static const char $\ast$ \hyperlink{classKParts_1_1HtmlSettingsInterface_a4f165269160ae72578b0c3c5a1fca22b}{javascript\+Advice\+To\+Text} (\hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}{Java\+Script\+Advice} advice)
+\item 
+static void \hyperlink{classKParts_1_1HtmlSettingsInterface_a116a4f8ec62c3558ff75ae8099a2e030}{split\+Domain\+Advice} (const Q\+String \&text, Q\+String \&domain, \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}{Java\+Script\+Advice} \&java\+Advice, \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}{Java\+Script\+Advice} \&java\+Script\+Advice)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface for modifying the settings of browser engines. 
+
+This interface provides a generic means for querying or changing the settings of browser engines that implement it.
+
+To use this class simply cast an instance of the H\+T\+M\+L\+Extension object using qobject\+\_\+cast$<$\+K\+Parts\+::\+Html\+Settings\+Interface$>$.
+
+Example\+: {\ttfamily  K\+Parts\+::\+H\+T\+M\+L\+Extension$\ast$ extension = K\+Parts\+::\+H\+T\+M\+L\+Extension\+::child\+Object(part); \hyperlink{classKParts_1_1HtmlSettingsInterface}{K\+Parts\+::\+Html\+Settings\+Interface}$\ast$ settings = qobject\+\_\+cast$<$\hyperlink{classKParts_1_1HtmlSettingsInterface}{K\+Parts\+::\+Html\+Settings\+Interface}$>$(extension); const bool auto\+Load\+Images = settings-\/$>$attribute(\+K\+Parts\+::\+Auto\+Load\+Images); }
+
+\begin{DoxySince}{Since}
+4.\+8.\+1 
+\end{DoxySince}
+
+
+Definition at line 245 of file htmlextension.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312f}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Html\+Settings\+Type@{Html\+Settings\+Type}}
+\index{Html\+Settings\+Type@{Html\+Settings\+Type}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{Html\+Settings\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+Html\+Settings\+Type}}}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312f}
+Settings attribute types. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Auto\+Load\+Images@{Auto\+Load\+Images}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Auto\+Load\+Images@{Auto\+Load\+Images}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa468efa7fce9486ff8b5d4a77a2a5c65a}{Auto\+Load\+Images}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa468efa7fce9486ff8b5d4a77a2a5c65a}
+}]\index{Dns\+Prefetch\+Enabled@{Dns\+Prefetch\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Dns\+Prefetch\+Enabled@{Dns\+Prefetch\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7ba037d57a86d39804300f97c2b179af}{Dns\+Prefetch\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7ba037d57a86d39804300f97c2b179af}
+}]\index{Java\+Enabled@{Java\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Java\+Enabled@{Java\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa2ba86a71d6da5c17bbfc08e51ffe33fb}{Java\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa2ba86a71d6da5c17bbfc08e51ffe33fb}
+}]\index{Javascript\+Enabled@{Javascript\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Javascript\+Enabled@{Javascript\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa0f5a45bd022785fe4a0af542f3ba8225}{Javascript\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa0f5a45bd022785fe4a0af542f3ba8225}
+}]\index{Meta\+Refresh\+Enabled@{Meta\+Refresh\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Meta\+Refresh\+Enabled@{Meta\+Refresh\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa5686235c34f3d1d62a37ddd0cd1d54f1}{Meta\+Refresh\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa5686235c34f3d1d62a37ddd0cd1d54f1}
+}]\index{Plugins\+Enabled@{Plugins\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Plugins\+Enabled@{Plugins\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faed7f52d152accb3051b3771f29b704b2}{Plugins\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faed7f52d152accb3051b3771f29b704b2}
+}]\index{Private\+Browsing\+Enabled@{Private\+Browsing\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Private\+Browsing\+Enabled@{Private\+Browsing\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa1fcc78190cb150e98219649b5c04f0bb}{Private\+Browsing\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa1fcc78190cb150e98219649b5c04f0bb}
+}]\index{Offline\+Storage\+Database\+Enabled@{Offline\+Storage\+Database\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Offline\+Storage\+Database\+Enabled@{Offline\+Storage\+Database\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7827dac10876b9a335cfeda7c4429787}{Offline\+Storage\+Database\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7827dac10876b9a335cfeda7c4429787}
+}]\index{Offline\+Web\+Application\+Cache\+Enabled@{Offline\+Web\+Application\+Cache\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Offline\+Web\+Application\+Cache\+Enabled@{Offline\+Web\+Application\+Cache\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faca608c19402cb76cbe76f07f71878b00}{Offline\+Web\+Application\+Cache\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faca608c19402cb76cbe76f07f71878b00}
+}]\index{Local\+Storage\+Enabled@{Local\+Storage\+Enabled}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Local\+Storage\+Enabled@{Local\+Storage\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa8016ce157d4d18ea76fdf0e30ce168fb}{Local\+Storage\+Enabled}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa8016ce157d4d18ea76fdf0e30ce168fb}
+}]\index{User\+Defined\+Style\+Sheet\+U\+R\+L@{User\+Defined\+Style\+Sheet\+U\+R\+L}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!User\+Defined\+Style\+Sheet\+U\+R\+L@{User\+Defined\+Style\+Sheet\+U\+R\+L}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa973267fbb4bfc8fbb2427efb759f1851}{User\+Defined\+Style\+Sheet\+U\+R\+L}\label{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa973267fbb4bfc8fbb2427efb759f1851}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 251 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+251                           \{
+252         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa468efa7fce9486ff8b5d4a77a2a5c65a}{AutoLoadImages},
+253         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7ba037d57a86d39804300f97c2b179af}{DnsPrefetchEnabled},
+254         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa2ba86a71d6da5c17bbfc08e51ffe33fb}{JavaEnabled},
+255         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa0f5a45bd022785fe4a0af542f3ba8225}{JavascriptEnabled},
+256         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa5686235c34f3d1d62a37ddd0cd1d54f1}{MetaRefreshEnabled},
+257         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faed7f52d152accb3051b3771f29b704b2}{PluginsEnabled},
+258         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa1fcc78190cb150e98219649b5c04f0bb}{PrivateBrowsingEnabled},
+259         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa7827dac10876b9a335cfeda7c4429787}{OfflineStorageDatabaseEnabled},
+260         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312faca608c19402cb76cbe76f07f71878b00}{OfflineWebApplicationCacheEnabled},
+261         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa8016ce157d4d18ea76fdf0e30ce168fb}{LocalStorageEnabled},
+262         \hyperlink{classKParts_1_1HtmlSettingsInterface_a62e44360376f423604c5c838ec0e312fa973267fbb4bfc8fbb2427efb759f1851}{UserDefinedStyleSheetURL}
+263     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Java\+Script\+Advice@{Java\+Script\+Advice}}
+\index{Java\+Script\+Advice@{Java\+Script\+Advice}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{Java\+Script\+Advice}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+Java\+Script\+Advice}}}\label{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54b}
+This enum specifies whether Java/\+Java\+Script execution is allowed.
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Java\+Script\+Dunno@{Java\+Script\+Dunno}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Java\+Script\+Dunno@{Java\+Script\+Dunno}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba62d0bcc106417263cb46b6ced5bbfa49}{Java\+Script\+Dunno}\label{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba62d0bcc106417263cb46b6ced5bbfa49}
+}]\index{Java\+Script\+Accept@{Java\+Script\+Accept}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Java\+Script\+Accept@{Java\+Script\+Accept}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba10e74b73b0ab617b5db0de123a3068ae}{Java\+Script\+Accept}\label{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba10e74b73b0ab617b5db0de123a3068ae}
+}]\index{Java\+Script\+Reject@{Java\+Script\+Reject}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!Java\+Script\+Reject@{Java\+Script\+Reject}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba8dd329b5196f7c0e2cf71338f2414479}{Java\+Script\+Reject}\label{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba8dd329b5196f7c0e2cf71338f2414479}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 270 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+270                           \{
+271         \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba62d0bcc106417263cb46b6ced5bbfa49}{JavaScriptDunno}=0,
+272         \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba10e74b73b0ab617b5db0de123a3068ae}{JavaScriptAccept},
+273         \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba8dd329b5196f7c0e2cf71338f2414479}{JavaScriptReject}
+274     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8c}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Focus\+Policy@{J\+S\+Window\+Focus\+Policy}}
+\index{J\+S\+Window\+Focus\+Policy@{J\+S\+Window\+Focus\+Policy}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{J\+S\+Window\+Focus\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+J\+S\+Window\+Focus\+Policy}}}\label{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8c}
+This enum specifies the policy for window.\+focus
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{J\+S\+Window\+Focus\+Allow@{J\+S\+Window\+Focus\+Allow}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Focus\+Allow@{J\+S\+Window\+Focus\+Allow}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8ca3eff6842f00de1e9ceef9a2f86e55e52}{J\+S\+Window\+Focus\+Allow}\label{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8ca3eff6842f00de1e9ceef9a2f86e55e52}
+}]\index{J\+S\+Window\+Focus\+Ignore@{J\+S\+Window\+Focus\+Ignore}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Focus\+Ignore@{J\+S\+Window\+Focus\+Ignore}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8cacc28bfbd61e4ae293d1201b4586b817a}{J\+S\+Window\+Focus\+Ignore}\label{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8cacc28bfbd61e4ae293d1201b4586b817a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 323 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+323                              \{
+324         \hyperlink{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8ca3eff6842f00de1e9ceef9a2f86e55e52}{JSWindowFocusAllow}=0,
+325         \hyperlink{classKParts_1_1HtmlSettingsInterface_a3c00e5813af380f956480b47a76fdf8cacc28bfbd61e4ae293d1201b4586b817a}{JSWindowFocusIgnore}
+326     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Move\+Policy@{J\+S\+Window\+Move\+Policy}}
+\index{J\+S\+Window\+Move\+Policy@{J\+S\+Window\+Move\+Policy}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{J\+S\+Window\+Move\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+J\+S\+Window\+Move\+Policy}}}\label{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34}
+This enum specifies the policy for window.\+move\+By and .move\+To
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{J\+S\+Window\+Move\+Allow@{J\+S\+Window\+Move\+Allow}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Move\+Allow@{J\+S\+Window\+Move\+Allow}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34a737536429edb7501bfc0a0e094c31005}{J\+S\+Window\+Move\+Allow}\label{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34a737536429edb7501bfc0a0e094c31005}
+}]\index{J\+S\+Window\+Move\+Ignore@{J\+S\+Window\+Move\+Ignore}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Move\+Ignore@{J\+S\+Window\+Move\+Ignore}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34affadad155cdf06f9eb98da8e1aa7cbb1}{J\+S\+Window\+Move\+Ignore}\label{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34affadad155cdf06f9eb98da8e1aa7cbb1}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 303 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+303                             \{
+304         \hyperlink{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34a737536429edb7501bfc0a0e094c31005}{JSWindowMoveAllow}=0,
+305         \hyperlink{classKParts_1_1HtmlSettingsInterface_a2774dbe8635ec916babf19de468d6c34affadad155cdf06f9eb98da8e1aa7cbb1}{JSWindowMoveIgnore}
+306     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Open\+Policy@{J\+S\+Window\+Open\+Policy}}
+\index{J\+S\+Window\+Open\+Policy@{J\+S\+Window\+Open\+Policy}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{J\+S\+Window\+Open\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+J\+S\+Window\+Open\+Policy}}}\label{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643}
+This enum specifies the policy for window.\+open
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{J\+S\+Window\+Open\+Allow@{J\+S\+Window\+Open\+Allow}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Open\+Allow@{J\+S\+Window\+Open\+Allow}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a079669fa32d8b86f6ae3b50241599431}{J\+S\+Window\+Open\+Allow}\label{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a079669fa32d8b86f6ae3b50241599431}
+}]\index{J\+S\+Window\+Open\+Ask@{J\+S\+Window\+Open\+Ask}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Open\+Ask@{J\+S\+Window\+Open\+Ask}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a3b5d146c17900bcb3ac5a3c40762400b}{J\+S\+Window\+Open\+Ask}\label{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a3b5d146c17900bcb3ac5a3c40762400b}
+}]\index{J\+S\+Window\+Open\+Deny@{J\+S\+Window\+Open\+Deny}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Open\+Deny@{J\+S\+Window\+Open\+Deny}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a7855bf2e8181c4ed74c47ef5c305ea66}{J\+S\+Window\+Open\+Deny}\label{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a7855bf2e8181c4ed74c47ef5c305ea66}
+}]\index{J\+S\+Window\+Open\+Smart@{J\+S\+Window\+Open\+Smart}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Open\+Smart@{J\+S\+Window\+Open\+Smart}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643aeb4533569b1d543c35bcbe2c13b4e0aa}{J\+S\+Window\+Open\+Smart}\label{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643aeb4533569b1d543c35bcbe2c13b4e0aa}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 281 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+281                             \{
+282         \hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a079669fa32d8b86f6ae3b50241599431}{JSWindowOpenAllow}=0,
+283         \hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a3b5d146c17900bcb3ac5a3c40762400b}{JSWindowOpenAsk},
+284         \hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643a7855bf2e8181c4ed74c47ef5c305ea66}{JSWindowOpenDeny},
+285         \hyperlink{classKParts_1_1HtmlSettingsInterface_aab245c057a7179fc1bdc16e020750643aeb4533569b1d543c35bcbe2c13b4e0aa}{JSWindowOpenSmart}
+286     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Resize\+Policy@{J\+S\+Window\+Resize\+Policy}}
+\index{J\+S\+Window\+Resize\+Policy@{J\+S\+Window\+Resize\+Policy}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{J\+S\+Window\+Resize\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+J\+S\+Window\+Resize\+Policy}}}\label{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359}
+This enum specifies the policy for window.\+resize\+By and .resize\+To
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{J\+S\+Window\+Resize\+Allow@{J\+S\+Window\+Resize\+Allow}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Resize\+Allow@{J\+S\+Window\+Resize\+Allow}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae2869f76bc4f064d4a60b89d09f043c8}{J\+S\+Window\+Resize\+Allow}\label{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae2869f76bc4f064d4a60b89d09f043c8}
+}]\index{J\+S\+Window\+Resize\+Ignore@{J\+S\+Window\+Resize\+Ignore}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Resize\+Ignore@{J\+S\+Window\+Resize\+Ignore}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae1c6f55c12b5abb6cafb06128334667a}{J\+S\+Window\+Resize\+Ignore}\label{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae1c6f55c12b5abb6cafb06128334667a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 313 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+313                               \{
+314         \hyperlink{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae2869f76bc4f064d4a60b89d09f043c8}{JSWindowResizeAllow}=0,
+315         \hyperlink{classKParts_1_1HtmlSettingsInterface_a0fcf7802e2f831ee1449e82713f6f359ae1c6f55c12b5abb6cafb06128334667a}{JSWindowResizeIgnore}
+316     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961f}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Status\+Policy@{J\+S\+Window\+Status\+Policy}}
+\index{J\+S\+Window\+Status\+Policy@{J\+S\+Window\+Status\+Policy}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{J\+S\+Window\+Status\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Html\+Settings\+Interface\+::\+J\+S\+Window\+Status\+Policy}}}\label{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961f}
+This enum specifies the policy for window.\+status and .default\+Status
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{J\+S\+Window\+Status\+Allow@{J\+S\+Window\+Status\+Allow}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Status\+Allow@{J\+S\+Window\+Status\+Allow}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fad04d2617a3d59e82bb71b11eb8f522c4}{J\+S\+Window\+Status\+Allow}\label{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fad04d2617a3d59e82bb71b11eb8f522c4}
+}]\index{J\+S\+Window\+Status\+Ignore@{J\+S\+Window\+Status\+Ignore}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!J\+S\+Window\+Status\+Ignore@{J\+S\+Window\+Status\+Ignore}}\item[{\em 
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fa43c54134ec0c80999f2cf5ef0644ca71}{J\+S\+Window\+Status\+Ignore}\label{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fa43c54134ec0c80999f2cf5ef0644ca71}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 293 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+293                               \{
+294         \hyperlink{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fad04d2617a3d59e82bb71b11eb8f522c4}{JSWindowStatusAllow}=0,
+295         \hyperlink{classKParts_1_1HtmlSettingsInterface_a88188ac567388141e0b1b988ae71961fa43c54134ec0c80999f2cf5ef0644ca71}{JSWindowStatusIgnore}
+296     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a044f53f15e82bc3c209d578849812cfd}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!````~Html\+Settings\+Interface@{$\sim$\+Html\+Settings\+Interface}}
+\index{````~Html\+Settings\+Interface@{$\sim$\+Html\+Settings\+Interface}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{$\sim$\+Html\+Settings\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Html\+Settings\+Interface\+::$\sim$\+Html\+Settings\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classKParts_1_1HtmlSettingsInterface_a044f53f15e82bc3c209d578849812cfd}
+Destructor 
+
+Definition at line 331 of file htmlextension.\+h.
+
+
+\begin{DoxyCode}
+331 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a00b2a2f9ce6f7b505ab0bbfa4f71eca5}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!html\+Settings\+Property@{html\+Settings\+Property}}
+\index{html\+Settings\+Property@{html\+Settings\+Property}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{html\+Settings\+Property}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Html\+Settings\+Interface\+::html\+Settings\+Property (
+\begin{DoxyParamCaption}
+\item[{{\bf Html\+Settings\+Type}}]{type}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKParts_1_1HtmlSettingsInterface_a00b2a2f9ce6f7b505ab0bbfa4f71eca5}
+Returns the value of the browser engine's attribute {\ttfamily type}. \hypertarget{classKParts_1_1HtmlSettingsInterface_a4f165269160ae72578b0c3c5a1fca22b}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!javascript\+Advice\+To\+Text@{javascript\+Advice\+To\+Text}}
+\index{javascript\+Advice\+To\+Text@{javascript\+Advice\+To\+Text}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{javascript\+Advice\+To\+Text}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ K\+Parts\+::\+Html\+Settings\+Interface\+::javascript\+Advice\+To\+Text (
+\begin{DoxyParamCaption}
+\item[{{\bf Java\+Script\+Advice}}]{advice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1HtmlSettingsInterface_a4f165269160ae72578b0c3c5a1fca22b}
+A convenience function Returns the text for the given Javascript\+Advice {\ttfamily advice}.
+
+If {\ttfamily advice} is not either Java\+Script\+Accept or Java\+Script\+Reject, this function returns a N\+U\+L\+L string.
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_ad345737d10028b838bb1324568d813f3}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!set\+Html\+Settings\+Property@{set\+Html\+Settings\+Property}}
+\index{set\+Html\+Settings\+Property@{set\+Html\+Settings\+Property}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{set\+Html\+Settings\+Property}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Html\+Settings\+Interface\+::set\+Html\+Settings\+Property (
+\begin{DoxyParamCaption}
+\item[{{\bf Html\+Settings\+Type}}]{type, }
+\item[{const Q\+Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKParts_1_1HtmlSettingsInterface_ad345737d10028b838bb1324568d813f3}
+Sets the value of the browser engine's attribute {\ttfamily type} to {\ttfamily value}. \hypertarget{classKParts_1_1HtmlSettingsInterface_a116a4f8ec62c3558ff75ae8099a2e030}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!split\+Domain\+Advice@{split\+Domain\+Advice}}
+\index{split\+Domain\+Advice@{split\+Domain\+Advice}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{split\+Domain\+Advice}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Html\+Settings\+Interface\+::split\+Domain\+Advice (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text, }
+\item[{Q\+String \&}]{domain, }
+\item[{{\bf Java\+Script\+Advice} \&}]{java\+Advice, }
+\item[{{\bf Java\+Script\+Advice} \&}]{java\+Script\+Advice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1HtmlSettingsInterface_a116a4f8ec62c3558ff75ae8099a2e030}
+A convenience function that splits {\ttfamily text} into {\ttfamily domain}, {\ttfamily java\+Advice} and {\ttfamily j\+Script\+Advice}.
+
+If {\ttfamily text} is empty or does not contain the proper delimiter ('\+:'), this function will set {\ttfamily domain} to {\ttfamily text} and the other two parameters to Java\+Script\+Dunno.
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+\hypertarget{classKParts_1_1HtmlSettingsInterface_a6c0aaecc231a6005d37e7c4702f6d302}{\index{K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}!text\+To\+Javascript\+Advice@{text\+To\+Javascript\+Advice}}
+\index{text\+To\+Javascript\+Advice@{text\+To\+Javascript\+Advice}!K\+Parts\+::\+Html\+Settings\+Interface@{K\+Parts\+::\+Html\+Settings\+Interface}}
+\subsubsection[{text\+To\+Javascript\+Advice}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Java\+Script\+Advice} K\+Parts\+::\+Html\+Settings\+Interface\+::text\+To\+Javascript\+Advice (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1HtmlSettingsInterface_a6c0aaecc231a6005d37e7c4702f6d302}
+A convenience function that returns the javascript advice for {\ttfamily text}.
+
+If text is not either \char`\"{}accept\char`\"{} or \char`\"{}reject\char`\"{}, this function returns \hyperlink{classKParts_1_1HtmlSettingsInterface_af6b2303d6834ceff4d5251e10bd9d54ba62d0bcc106417263cb46b6ced5bbfa49}{Java\+Script\+Dunno}.
+
+\begin{DoxySince}{Since}
+4.\+8.\+2 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{htmlextension_8h}{htmlextension.\+h}\end{DoxyCompactItemize}

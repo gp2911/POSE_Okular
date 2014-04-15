@@ -1,0 +1,76 @@
+\hypertarget{classAnnotationWidgetFactory}{\section{Annotation\+Widget\+Factory Class Reference}
+\label{classAnnotationWidgetFactory}\index{Annotation\+Widget\+Factory@{Annotation\+Widget\+Factory}}
+}
+
+
+{\ttfamily \#include $<$annotationwidgets.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAnnotationWidget}{Annotation\+Widget} $\ast$ \hyperlink{classAnnotationWidgetFactory_a47ee680b5716e27021cadd0476735e78}{widget\+For} (\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A factory to create \hyperlink{classAnnotationWidget}{Annotation\+Widget}'s. 
+
+Definition at line 63 of file annotationwidgets.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAnnotationWidgetFactory_a47ee680b5716e27021cadd0476735e78}{\index{Annotation\+Widget\+Factory@{Annotation\+Widget\+Factory}!widget\+For@{widget\+For}}
+\index{widget\+For@{widget\+For}!Annotation\+Widget\+Factory@{Annotation\+Widget\+Factory}}
+\subsubsection[{widget\+For}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+Widget} $\ast$ Annotation\+Widget\+Factory\+::widget\+For (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classAnnotationWidgetFactory_a47ee680b5716e27021cadd0476735e78}
+
+
+Definition at line 121 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+122 \{
+123     \textcolor{keywordflow}{switch} ( ann->\hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{subType}() )
+124     \{
+125         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0ad542ded420c9b01f44ee923bf28ecd9a}{Okular::Annotation::AStamp}:
+126             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classStampAnnotationWidget}{StampAnnotationWidget}( ann );
+127             \textcolor{keywordflow}{break};
+128         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a48f93d5a9352abc4e38a45f69075e504}{Okular::Annotation::AText}:
+129             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classTextAnnotationWidget}{TextAnnotationWidget}( ann );
+130             \textcolor{keywordflow}{break};
+131         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a7035dc978d8b79958f34e3d164838726}{Okular::Annotation::ALine}:
+132             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classLineAnnotationWidget}{LineAnnotationWidget}( ann );
+133             \textcolor{keywordflow}{break};
+134         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a03e002f9ae62005b2d7c7f1445507501}{Okular::Annotation::AHighlight}:
+135             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classHighlightAnnotationWidget}{HighlightAnnotationWidget}( ann );
+136             \textcolor{keywordflow}{break};
+137         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a4ed60063584ceb146c2a378f0df4ed37}{Okular::Annotation::AInk}:
+138             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classInkAnnotationWidget}{InkAnnotationWidget}( ann );
+139             \textcolor{keywordflow}{break};
+140         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a2c11d328af34f5526fd9e761297fb3c2}{Okular::Annotation::AGeom}:
+141             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classGeomAnnotationWidget}{GeomAnnotationWidget}( ann );
+142             \textcolor{keywordflow}{break};
+143         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a7209cbfb5e13c0f80ac36f87c9575836}{Okular::Annotation::AFileAttachment}:
+144             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classFileAttachmentAnnotationWidget}{FileAttachmentAnnotationWidget}( ann );
+145             \textcolor{keywordflow}{break};
+146         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a904187454fd508d898a3d5843193ad43}{Okular::Annotation::ACaret}:
+147             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classCaretAnnotationWidget}{CaretAnnotationWidget}( ann );
+148             \textcolor{keywordflow}{break};
+149         \textcolor{comment}{// shut up gcc}
+150         \textcolor{keywordflow}{default}:
+151             ;
+152     \}
+153     \textcolor{comment}{// cases not covered yet: return a generic widget}
+154     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classAnnotationWidget}{AnnotationWidget}( ann );
+155 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationwidgets_8h}{annotationwidgets.\+h}\item 
+ui/\hyperlink{annotationwidgets_8cpp}{annotationwidgets.\+cpp}\end{DoxyCompactItemize}

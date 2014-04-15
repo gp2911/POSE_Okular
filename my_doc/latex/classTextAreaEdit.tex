@@ -1,0 +1,213 @@
+\hypertarget{classTextAreaEdit}{\section{Text\+Area\+Edit Class Reference}
+\label{classTextAreaEdit}\index{Text\+Area\+Edit@{Text\+Area\+Edit}}
+}
+
+
+{\ttfamily \#include $<$formwidgets.\+h$>$}
+
+Inheritance diagram for Text\+Area\+Edit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTextAreaEdit}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTextAreaEdit_ad3ac48ad237ebd71004785085df0d23a}{slot\+Handle\+Text\+Changed\+By\+Undo\+Redo} (int page\+Number, \hyperlink{classOkular_1_1FormFieldText}{Okular\+::\+Form\+Field\+Text} $\ast$text\+Form, const Q\+String \&contents, int cursor\+Pos, int anchor\+Pos)
+\item 
+void \hyperlink{classTextAreaEdit_a9093fdd4088d7c4c01b0bba3f44dcf37}{slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu} (Q\+Menu $\ast$menu)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTextAreaEdit_a80b6d983ef09baa909e6d822f6430aef}{Text\+Area\+Edit} (\hyperlink{classOkular_1_1FormFieldText}{Okular\+::\+Form\+Field\+Text} $\ast$text, Q\+Widget $\ast$parent=0)
+\item 
+void \hyperlink{classTextAreaEdit_a0eef63eea0033429f0dedf1208cb01f1}{set\+Form\+Widgets\+Controller} (\hyperlink{classFormWidgetsController}{Form\+Widgets\+Controller} $\ast$controller)
+\item 
+virtual bool \hyperlink{classTextAreaEdit_abc4486e113dfedf775a3a18f0685dde3}{event} (Q\+Event $\ast$e)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 241 of file formwidgets.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTextAreaEdit_a80b6d983ef09baa909e6d822f6430aef}{\index{Text\+Area\+Edit@{Text\+Area\+Edit}!Text\+Area\+Edit@{Text\+Area\+Edit}}
+\index{Text\+Area\+Edit@{Text\+Area\+Edit}!Text\+Area\+Edit@{Text\+Area\+Edit}}
+\subsubsection[{Text\+Area\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Area\+Edit\+::\+Text\+Area\+Edit (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Form\+Field\+Text} $\ast$}]{text, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classTextAreaEdit_a80b6d983ef09baa909e6d822f6430aef}
+
+
+Definition at line 503 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+504 : KTextEdit( parent ), \hyperlink{classFormWidgetIface_a1737728a2348ae69415008ddb1aa3b9d}{FormWidgetIface}( \textcolor{keyword}{this}, text ), m\_form( text )
+505 \{
+506     setAcceptRichText( m\_form->\hyperlink{classOkular_1_1FormFieldText_ab19c3a41187ae8d1129950c5bc03c7b7}{isRichText}() );
+507     setCheckSpellingEnabled( m\_form->\hyperlink{classOkular_1_1FormFieldText_ae85f290a7d8cbe1a280c6129d72df561}{canBeSpellChecked}() );
+508     setAlignment( m\_form->\hyperlink{classOkular_1_1FormFieldText_a5a089e161057983827b40ca3ca57a1b3}{textAlignment}() );
+509     setPlainText( m\_form->\hyperlink{classOkular_1_1FormFieldText_ae81ae855ec36f258bc690a4960c93eb3}{text}() );
+510     setReadOnly( m\_form->\hyperlink{classOkular_1_1FormField_ad1636c715682959442f528c72a2f4c0a}{isReadOnly}() );
+511     setUndoRedoEnabled( \textcolor{keyword}{false} );
+512 
+513     connect( \textcolor{keyword}{this}, SIGNAL( textChanged() ), \textcolor{keyword}{this}, SLOT( slotChanged() ) );
+514     connect( \textcolor{keyword}{this}, SIGNAL( cursorPositionChanged() ), \textcolor{keyword}{this}, SLOT( slotChanged() ) );
+515 
+516     connect( \textcolor{keyword}{this}, SIGNAL( aboutToShowContextMenu( QMenu* ) ),
+517              \textcolor{keyword}{this}, SLOT( \hyperlink{classTextAreaEdit_a9093fdd4088d7c4c01b0bba3f44dcf37}{slotUpdateUndoAndRedoInContextMenu}( QMenu* ) ) )
+      ;
+518 
+519     m\_prevCursorPos = textCursor().position();
+520     m\_prevAnchorPos = textCursor().anchor();
+521     setVisible( m\_form->\hyperlink{classOkular_1_1FormField_aee63f77f88a7f8359d9a53de3d07ebe0}{isVisible}() );
+522 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTextAreaEdit_abc4486e113dfedf775a3a18f0685dde3}{\index{Text\+Area\+Edit@{Text\+Area\+Edit}!event@{event}}
+\index{event@{event}!Text\+Area\+Edit@{Text\+Area\+Edit}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}bool Text\+Area\+Edit\+::event (
+\begin{DoxyParamCaption}
+\item[{Q\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTextAreaEdit_abc4486e113dfedf775a3a18f0685dde3}
+
+
+Definition at line 524 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+525 \{
+526     \textcolor{keywordflow}{if} ( e->type() == QEvent::KeyPress )
+527     \{
+528         QKeyEvent *keyEvent = \textcolor{keyword}{static\_cast<} QKeyEvent* \textcolor{keyword}{>}(e);
+529         \textcolor{keywordflow}{if} ( keyEvent == QKeySequence::Undo )
+530         \{
+531             emit \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}->\hyperlink{classFormWidgetsController_a90e5af0601c7e5efcfbf6e1b93ae5641}{requestUndo}();
+532             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+533         \}
+534         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( keyEvent == QKeySequence::Redo )
+535         \{
+536             emit \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}->\hyperlink{classFormWidgetsController_a828b4d568a04cd6728bcf1d49ed5c425}{requestRedo}();
+537             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+538         \}
+539     \}
+540     \textcolor{keywordflow}{return} KTextEdit::event( e );
+541 \}
+\end{DoxyCode}
+\hypertarget{classTextAreaEdit_a0eef63eea0033429f0dedf1208cb01f1}{\index{Text\+Area\+Edit@{Text\+Area\+Edit}!set\+Form\+Widgets\+Controller@{set\+Form\+Widgets\+Controller}}
+\index{set\+Form\+Widgets\+Controller@{set\+Form\+Widgets\+Controller}!Text\+Area\+Edit@{Text\+Area\+Edit}}
+\subsubsection[{set\+Form\+Widgets\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Area\+Edit\+::set\+Form\+Widgets\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Form\+Widgets\+Controller} $\ast$}]{controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTextAreaEdit_a0eef63eea0033429f0dedf1208cb01f1}
+
+
+Reimplemented from \hyperlink{classFormWidgetIface_a4d3129afff43729fafc4e6b58a4d16fe}{Form\+Widget\+Iface}.
+
+
+
+Definition at line 568 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+569 \{
+570     \hyperlink{classFormWidgetIface_a4d3129afff43729fafc4e6b58a4d16fe}{FormWidgetIface::setFormWidgetsController}( controller );
+571     connect( \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}, SIGNAL( formTextChangedByUndoRedo( \textcolor{keywordtype}{int}, 
+      \hyperlink{classOkular_1_1FormFieldText}{Okular::FormFieldText}*, QString, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int} ) ),
+572              \textcolor{keyword}{this}, SLOT( \hyperlink{classTextAreaEdit_ad3ac48ad237ebd71004785085df0d23a}{slotHandleTextChangedByUndoRedo}( \textcolor{keywordtype}{int}, 
+      \hyperlink{classOkular_1_1FormFieldText}{Okular::FormFieldText}*, QString, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int} ) ) );
+573 \}
+\end{DoxyCode}
+\hypertarget{classTextAreaEdit_ad3ac48ad237ebd71004785085df0d23a}{\index{Text\+Area\+Edit@{Text\+Area\+Edit}!slot\+Handle\+Text\+Changed\+By\+Undo\+Redo@{slot\+Handle\+Text\+Changed\+By\+Undo\+Redo}}
+\index{slot\+Handle\+Text\+Changed\+By\+Undo\+Redo@{slot\+Handle\+Text\+Changed\+By\+Undo\+Redo}!Text\+Area\+Edit@{Text\+Area\+Edit}}
+\subsubsection[{slot\+Handle\+Text\+Changed\+By\+Undo\+Redo}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Area\+Edit\+::slot\+Handle\+Text\+Changed\+By\+Undo\+Redo (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Number, }
+\item[{{\bf Okular\+::\+Form\+Field\+Text} $\ast$}]{text\+Form, }
+\item[{const Q\+String \&}]{contents, }
+\item[{int}]{cursor\+Pos, }
+\item[{int}]{anchor\+Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classTextAreaEdit_ad3ac48ad237ebd71004785085df0d23a}
+
+
+Definition at line 575 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+580 \{
+581     \textcolor{keywordflow}{if} ( textForm != m\_form )
+582     \{
+583         \textcolor{keywordflow}{return};
+584     \}
+585     setPlainText( contents );
+586     QTextCursor c = textCursor();
+587     c.setPosition( anchorPos );
+588     c.setPosition( cursorPos,QTextCursor::KeepAnchor );
+589     m\_prevCursorPos = cursorPos;
+590     m\_prevAnchorPos = anchorPos;
+591     setTextCursor( c );
+592     setFocus();
+593 \}
+\end{DoxyCode}
+\hypertarget{classTextAreaEdit_a9093fdd4088d7c4c01b0bba3f44dcf37}{\index{Text\+Area\+Edit@{Text\+Area\+Edit}!slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu@{slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu}}
+\index{slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu@{slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu}!Text\+Area\+Edit@{Text\+Area\+Edit}}
+\subsubsection[{slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Area\+Edit\+::slot\+Update\+Undo\+And\+Redo\+In\+Context\+Menu (
+\begin{DoxyParamCaption}
+\item[{Q\+Menu $\ast$}]{menu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classTextAreaEdit_a9093fdd4088d7c4c01b0bba3f44dcf37}
+
+
+Definition at line 543 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+544 \{
+545     \textcolor{keywordflow}{if} ( !menu ) \textcolor{keywordflow}{return};
+546 
+547     \hyperlink{classQList}{QList<QAction *>} actionList = menu->actions();
+548     \textcolor{keyword}{enum} \{ UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs \};
+549 
+550     KAction *kundo = KStandardAction::create( KStandardAction::Undo, 
+      \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}, SIGNAL( requestUndo() ), menu );
+551     KAction *kredo = KStandardAction::create( KStandardAction::Redo, 
+      \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}, SIGNAL( requestRedo() ), menu );
+552     connect(\hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}, SIGNAL( canUndoChanged( \textcolor{keywordtype}{bool} ) ), kundo, SLOT( setEnabled( \textcolor{keywordtype}{bool} ) ) )
+      ;
+553     connect(\hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}, SIGNAL( canRedoChanged( \textcolor{keywordtype}{bool} ) ), kredo, SLOT( setEnabled( \textcolor{keywordtype}{bool} ) ) )
+      ;
+554     kundo->setEnabled( \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}->\hyperlink{classFormWidgetsController_a2711f4f025e96e95fe55c162ca321de5}{canUndo}() );
+555     kredo->setEnabled( \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}->\hyperlink{classFormWidgetsController_a960c176392a58a63f271b6c561216b74}{canRedo}() );
+556 
+557     QAction *oldUndo, *oldRedo;
+558     oldUndo = actionList[UndoAct];
+559     oldRedo = actionList[RedoAct];
+560 
+561     menu->insertAction( oldUndo, kundo );
+562     menu->insertAction( oldRedo, kredo );
+563 
+564     menu->removeAction( oldUndo );
+565     menu->removeAction( oldRedo );
+566 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{formwidgets_8h}{formwidgets.\+h}\item 
+ui/\hyperlink{formwidgets_8cpp}{formwidgets.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\hypertarget{faxinit_8cpp}{\section{generators/fax/faxinit.cpp File Reference}
+\label{faxinit_8cpp}\index{generators/fax/faxinit.\+cpp@{generators/fax/faxinit.\+cpp}}
+}
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}faxexpand.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structproto}{proto}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{faxinit_8cpp_ac37c16fdffc1a2515833c490d6598a07}{fax\+\_\+init\+\_\+tables} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtabent}{tabent} \hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{Main\+Table} \mbox{[}128\mbox{]}
+\item 
+struct \hyperlink{structtabent}{tabent} \hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{White\+Table} \mbox{[}4096\mbox{]}
+\item 
+struct \hyperlink{structtabent}{tabent} \hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{Black\+Table} \mbox{[}8192\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{faxinit_8cpp_ac37c16fdffc1a2515833c490d6598a07}{\index{faxinit.\+cpp@{faxinit.\+cpp}!fax\+\_\+init\+\_\+tables@{fax\+\_\+init\+\_\+tables}}
+\index{fax\+\_\+init\+\_\+tables@{fax\+\_\+init\+\_\+tables}!faxinit.\+cpp@{faxinit.\+cpp}}
+\subsubsection[{fax\+\_\+init\+\_\+tables}]{\setlength{\rightskip}{0pt plus 5cm}void fax\+\_\+init\+\_\+tables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{faxinit_8cpp_ac37c16fdffc1a2515833c490d6598a07}
+
+
+Definition at line 318 of file faxinit.\+cpp.
+
+
+\begin{DoxyCode}
+319 \{
+320     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} already\_initialized = 0;
+321     \textcolor{keywordflow}{if} (already\_initialized)
+322     \textcolor{keywordflow}{return};
+323 
+324     ++already\_initialized;
+325 
+326     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, Pass, \hyperlink{faxexpand_8h_a72b4832f1164c4f3b659dfc742b36481}{S\_Pass});
+327     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, Horiz, \hyperlink{faxexpand_8h_a88eea109c27daac9c5d2baf219902dc2}{S\_Horiz});
+328     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, V0, \hyperlink{faxexpand_8h_ac38621ef183f0cd4651ec7d3932fb3f1}{S\_V0});
+329     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, VR, \hyperlink{faxexpand_8h_a3315214cb60615e39414fdb9dbb16059}{S\_VR});
+330     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, VL, \hyperlink{faxexpand_8h_a76702aad2f0099324e34130e5a6a906a}{S\_VL});
+331     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, ExtV, \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\_Ext});
+332     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, EOLV, \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\_EOL});
+333     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, MakeUpW, \hyperlink{faxexpand_8h_ae2ed6a7f2592387348a13c59b695e1f0}{S\_MakeUpW});
+334     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, MakeUp, \hyperlink{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}{S\_MakeUp});
+335     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, TermW, \hyperlink{faxexpand_8h_a2f2c945ef9f17bab25de7b98aa05179e}{S\_TermW});
+336     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, ExtH, \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\_Ext});
+337     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, EOLH, \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\_EOL});
+338     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, MakeUpB, \hyperlink{faxexpand_8h_a2b541757e75c5fdec437f1491846239f}{S\_MakeUpB});
+339     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, MakeUp, \hyperlink{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}{S\_MakeUp});
+340     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, TermB, \hyperlink{faxexpand_8h_ab3e2b89caaf53cda52846c85422bcd33}{S\_TermB});
+341     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, ExtH, \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\_Ext});
+342     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, EOLH, \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\_EOL});
+343 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{\index{faxinit.\+cpp@{faxinit.\+cpp}!Black\+Table@{Black\+Table}}
+\index{Black\+Table@{Black\+Table}!faxinit.\+cpp@{faxinit.\+cpp}}
+\subsubsection[{Black\+Table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tabent} Black\+Table\mbox{[}8192\mbox{]}}}\label{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}
+
+
+Definition at line 25 of file faxinit.\+cpp.
+
+\hypertarget{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{\index{faxinit.\+cpp@{faxinit.\+cpp}!Main\+Table@{Main\+Table}}
+\index{Main\+Table@{Main\+Table}!faxinit.\+cpp@{faxinit.\+cpp}}
+\subsubsection[{Main\+Table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tabent} Main\+Table\mbox{[}128\mbox{]}}}\label{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}
+
+
+Definition at line 23 of file faxinit.\+cpp.
+
+\hypertarget{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{\index{faxinit.\+cpp@{faxinit.\+cpp}!White\+Table@{White\+Table}}
+\index{White\+Table@{White\+Table}!faxinit.\+cpp@{faxinit.\+cpp}}
+\subsubsection[{White\+Table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tabent} White\+Table\mbox{[}4096\mbox{]}}}\label{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}
+
+
+Definition at line 24 of file faxinit.\+cpp.
+

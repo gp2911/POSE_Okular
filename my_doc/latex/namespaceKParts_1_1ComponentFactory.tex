@@ -1,0 +1,270 @@
+\hypertarget{namespaceKParts_1_1ComponentFactory}{\section{K\+Parts\+:\+:Component\+Factory Namespace Reference}
+\label{namespaceKParts_1_1ComponentFactory}\index{K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T $\ast$ \hyperlink{namespaceKParts_1_1ComponentFactory_a912a99f55a6cd314f0519bdc8b6b53be}{create\+Part\+Instance\+From\+Factory} (\hyperlink{classKParts_1_1Factory}{K\+Parts\+::\+Factory} $\ast$factory, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List())
+\item 
+{\footnotesize template$<$class T $>$ }\\K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T $\ast$ \hyperlink{namespaceKParts_1_1ComponentFactory_a9fbd68a5b3a1e872dd6ae181fff65136}{create\+Part\+Instance\+From\+Library} (const char $\ast$library\+Name, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List(), int $\ast$error=0)
+\item 
+{\footnotesize template$<$class T $>$ }\\K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T $\ast$ \hyperlink{namespaceKParts_1_1ComponentFactory_a85bb410165e80f12e79a45c2e3ab39ce}{create\+Part\+Instance\+From\+Service} (const K\+Service\+::\+Ptr \&service, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List(), int $\ast$error=0)
+\item 
+{\footnotesize template$<$class T , class Service\+Iterator $>$ }\\K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T $\ast$ \hyperlink{namespaceKParts_1_1ComponentFactory_ad56c0a6af0a338e56dc3e2613073b195}{create\+Part\+Instance\+From\+Services} (Service\+Iterator begin, Service\+Iterator end, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List(), int $\ast$error=0)
+\item 
+{\footnotesize template$<$class T $>$ }\\K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T $\ast$ \hyperlink{namespaceKParts_1_1ComponentFactory_aaa10d0b82f1e3de6e36eae47b8c8aa17}{create\+Part\+Instance\+From\+Query} (const Q\+String \&mime\+Type, const Q\+String \&constraint, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List(), int $\ast$error=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceKParts_1_1ComponentFactory_a912a99f55a6cd314f0519bdc8b6b53be}{\index{K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}!create\+Part\+Instance\+From\+Factory@{create\+Part\+Instance\+From\+Factory}}
+\index{create\+Part\+Instance\+From\+Factory@{create\+Part\+Instance\+From\+Factory}!K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}}
+\subsubsection[{create\+Part\+Instance\+From\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T$\ast$ K\+Parts\+::\+Component\+Factory\+::create\+Part\+Instance\+From\+Factory (
+\begin{DoxyParamCaption}
+\item[{{\bf K\+Parts\+::\+Factory} $\ast$}]{factory, }
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}}
+\end{DoxyParamCaption}
+)}}\label{namespaceKParts_1_1ComponentFactory_a912a99f55a6cd314f0519bdc8b6b53be}
+This template function allows to ask the given kparts factory to create an instance of the given template type.
+
+Example of usage\+: 
+\begin{DoxyCode}
+KViewPart *doc = \hyperlink{namespaceKParts_1_1ComponentFactory_a912a99f55a6cd314f0519bdc8b6b53be}{KParts::ComponentFactory::createPartInstanceFromFactory}
+      &lt;KViewPart&gt;( factory, parent );
+\end{DoxyCode}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000006}{Deprecated}]use K\+Plugin\+Factory\+::create instead\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & The factory to ask for the creation of the component \\
+\hline
+{\em parent\+Widget} & the parent widget for the part \\
+\hline
+{\em parent} & The parent object (see Q\+Object constructor) \\
+\hline
+{\em args} & A list of string arguments, passed to the factory and possibly to the component (see K\+Lib\+Factory) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created object or a null pointer if the factory was unable to create an object of the given type. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file componentfactory.\+h.
+
+
+\begin{DoxyCode}
+60         \{
+61             \hyperlink{classKParts_1_1Part}{KParts::Part} *\textcolor{keywordtype}{object} = factory->\hyperlink{classKParts_1_1Factory_a41e7c93ddb621d17b7f380a9455ba2a8}{createPart}( parentWidget,
+62                                                         parent,
+63                                                         T::staticMetaObject.className(),
+64                                                         args );
+65 
+66             T *result = \textcolor{keyword}{dynamic\_cast<}T *\textcolor{keyword}{>}( object );
+67             \textcolor{keywordflow}{if} ( !result )
+68                 \textcolor{keyword}{delete} object;
+69             \textcolor{keywordflow}{return} result;
+70         \}
+\end{DoxyCode}
+\hypertarget{namespaceKParts_1_1ComponentFactory_a9fbd68a5b3a1e872dd6ae181fff65136}{\index{K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}!create\+Part\+Instance\+From\+Library@{create\+Part\+Instance\+From\+Library}}
+\index{create\+Part\+Instance\+From\+Library@{create\+Part\+Instance\+From\+Library}!K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}}
+\subsubsection[{create\+Part\+Instance\+From\+Library}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T$\ast$ K\+Parts\+::\+Component\+Factory\+::create\+Part\+Instance\+From\+Library (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{library\+Name, }
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}, }
+\item[{int $\ast$}]{error = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespaceKParts_1_1ComponentFactory_a9fbd68a5b3a1e872dd6ae181fff65136}
+
+
+Definition at line 78 of file componentfactory.\+h.
+
+
+\begin{DoxyCode}
+83         \{
+84             KLibrary *library = KLibLoader::self()->library( QString( libraryName ) ); \textcolor{comment}{// compatibility
+       hack}
+85             \textcolor{keywordflow}{if} ( !library )
+86             \{
+87                 \textcolor{keywordflow}{if} ( error )
+88                     *error = KLibLoader::ErrNoLibrary;
+89                 \textcolor{keywordflow}{return} 0;
+90             \}
+91             KLibFactory *factory = library->factory();
+92             \textcolor{keywordflow}{if} ( !factory )
+93             \{
+94                 library->unload();
+95                 \textcolor{keywordflow}{if} ( error )
+96                     *error = KLibLoader::ErrNoFactory;
+97                 \textcolor{keywordflow}{return} 0;
+98             \}
+99             \hyperlink{classKParts_1_1Factory}{KParts::Factory} *partFactory = \textcolor{keyword}{dynamic\_cast<}
+      \hyperlink{classKParts_1_1Factory}{KParts::Factory} *\textcolor{keyword}{>}( factory );
+100             \textcolor{keywordflow}{if} ( !partFactory )
+101             \{
+102                 library->unload();
+103                 \textcolor{keywordflow}{if} ( error )
+104                     *error = KLibLoader::ErrNoFactory;
+105                 \textcolor{keywordflow}{return} 0;
+106             \}
+107             T *res = createPartInstanceFromFactory<T>( partFactory, parentWidget,
+108                                                        parent, args );
+109             \textcolor{keywordflow}{if} ( !res )
+110             \{
+111                 library->unload();
+112                 \textcolor{keywordflow}{if} ( error )
+113                     *error = KLibLoader::ErrNoComponent;
+114             \}
+115             \textcolor{keywordflow}{return} res;
+116         \}
+\end{DoxyCode}
+\hypertarget{namespaceKParts_1_1ComponentFactory_aaa10d0b82f1e3de6e36eae47b8c8aa17}{\index{K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}!create\+Part\+Instance\+From\+Query@{create\+Part\+Instance\+From\+Query}}
+\index{create\+Part\+Instance\+From\+Query@{create\+Part\+Instance\+From\+Query}!K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}}
+\subsubsection[{create\+Part\+Instance\+From\+Query}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T$\ast$ K\+Parts\+::\+Component\+Factory\+::create\+Part\+Instance\+From\+Query (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime\+Type, }
+\item[{const Q\+String \&}]{constraint, }
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}, }
+\item[{int $\ast$}]{error = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespaceKParts_1_1ComponentFactory_aaa10d0b82f1e3de6e36eae47b8c8aa17}
+This method creates and returns a \hyperlink{namespaceKParts}{K\+Parts} part from a service\+Type (e.\+g. a mimetype).
+
+You can use this method to create a generic viewer -\/ that can display any kind of file, provided that there is a \hyperlink{classKParts_1_1ReadOnlyPart}{Read\+Only\+Part} installed for it -\/ in 5 lines\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// Given the following: KUrl url, QWidget* parentWidget and QObject* parentObject.}
+QString mimetype = KMimeType::findByURL( url )->name();
+\hyperlink{classKParts_1_1ReadOnlyPart}{KParts::ReadOnlyPart}* part = 
+      KParts::ComponentFactory::createPartInstanceFromQuery<KParts::ReadOnlyPart>( mimetype, QString(), parentWidget, parentObject );
+\textcolor{keywordflow}{if} ( part ) \{
+    part->\hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{openUrl}( url );
+    part->\hyperlink{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{widget}()->show();  \textcolor{comment}{// also insert the widget into a layout, or simply use a KVBox as
+       parentWidget}
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000008}{Deprecated}]use K\+Mime\+Type\+Trader\+::create\+Part\+Instance\+From\+Query instead\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em mime\+Type} & the mimetype which this part is associated with \\
+\hline
+{\em constraint} & an optional constraint to pass to the trader (see K\+Trader) \\
+\hline
+{\em parent\+Widget} & the parent widget, will be set as the parent of the part's widget \\
+\hline
+{\em parent} & the parent object for the part itself \\
+\hline
+{\em args} & A list of string arguments, passed to the factory and possibly to the component (see K\+Lib\+Factory) \\
+\hline
+{\em error} & The int passed here will receive an error code in case of errors. (See enum K\+Lib\+Loader\+::\+Component\+Loading\+Error) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created object or a null pointer if the factory was unable to create an object of the given type. 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file componentfactory.\+h.
+
+
+\begin{DoxyCode}
+209         \{
+210             \textcolor{keyword}{const} KService::List offers = KMimeTypeTrader::self()->query( mimeType, QLatin1String(\textcolor{stringliteral}{"
+      KParts/ReadOnlyPart"}), constraint );
+211             \textcolor{keywordflow}{if} ( offers.isEmpty() )
+212             \{
+213                 \textcolor{keywordflow}{if} ( error )
+214                     *error = KLibLoader::ErrNoServiceFound;
+215                 \textcolor{keywordflow}{return} 0;
+216             \}
+217 
+218             \textcolor{keywordflow}{return} createPartInstanceFromServices<T>( offers.begin(), offers.end(),
+219                                                       parentWidget,
+220                                                       parent, args, error );
+221         \}
+\end{DoxyCode}
+\hypertarget{namespaceKParts_1_1ComponentFactory_a85bb410165e80f12e79a45c2e3ab39ce}{\index{K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}!create\+Part\+Instance\+From\+Service@{create\+Part\+Instance\+From\+Service}}
+\index{create\+Part\+Instance\+From\+Service@{create\+Part\+Instance\+From\+Service}!K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}}
+\subsubsection[{create\+Part\+Instance\+From\+Service}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T$\ast$ K\+Parts\+::\+Component\+Factory\+::create\+Part\+Instance\+From\+Service (
+\begin{DoxyParamCaption}
+\item[{const K\+Service\+::\+Ptr \&}]{service, }
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}, }
+\item[{int $\ast$}]{error = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespaceKParts_1_1ComponentFactory_a85bb410165e80f12e79a45c2e3ab39ce}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000007}{Deprecated}]use K\+Service\+::create\+Instance instead \end{DoxyRefDesc}
+
+
+Definition at line 124 of file componentfactory.\+h.
+
+
+\begin{DoxyCode}
+129         \{
+130             QString library = service->library();
+131             \textcolor{keywordflow}{if} ( library.isEmpty() )
+132             \{
+133                 \textcolor{keywordflow}{if} ( error )
+134                     *error = KLibLoader::ErrServiceProvidesNoLibrary;
+135                 \textcolor{keywordflow}{return} 0;
+136             \}
+137 
+138             \textcolor{keywordflow}{return} createPartInstanceFromLibrary<T>( library.toLocal8Bit().data(), parentWidget,
+139                                                      parent, args, error );
+140         \}
+\end{DoxyCode}
+\hypertarget{namespaceKParts_1_1ComponentFactory_ad56c0a6af0a338e56dc3e2613073b195}{\index{K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}!create\+Part\+Instance\+From\+Services@{create\+Part\+Instance\+From\+Services}}
+\index{create\+Part\+Instance\+From\+Services@{create\+Part\+Instance\+From\+Services}!K\+Parts\+::\+Component\+Factory@{K\+Parts\+::\+Component\+Factory}}
+\subsubsection[{create\+Part\+Instance\+From\+Services}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Service\+Iterator $>$ K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D T$\ast$ K\+Parts\+::\+Component\+Factory\+::create\+Part\+Instance\+From\+Services (
+\begin{DoxyParamCaption}
+\item[{Service\+Iterator}]{begin, }
+\item[{Service\+Iterator}]{end, }
+\item[{Q\+Widget $\ast$}]{parent\+Widget = {\ttfamily 0}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}, }
+\item[{const Q\+String\+List \&}]{args = {\ttfamily QStringList()}, }
+\item[{int $\ast$}]{error = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespaceKParts_1_1ComponentFactory_ad56c0a6af0a338e56dc3e2613073b195}
+
+
+Definition at line 145 of file componentfactory.\+h.
+
+
+\begin{DoxyCode}
+151          \{
+152             \textcolor{keywordflow}{for} (; begin != end; ++begin )
+153             \{
+154                 KService::Ptr service = *begin;
+155 
+156                 \textcolor{keywordflow}{if} ( error )
+157                     *error = 0;
+158 
+159                 T *component = createPartInstanceFromService<T>( service, parentWidget,
+160                                                                  parent, args, error );
+161                 \textcolor{keywordflow}{if} ( component )
+162                     \textcolor{keywordflow}{return} component;
+163             \}
+164 
+165             \textcolor{keywordflow}{if} ( error )
+166                 *error = KLibLoader::ErrNoServiceFound;
+167 
+168             \textcolor{keywordflow}{return} 0;
+169 
+170         \}
+\end{DoxyCode}

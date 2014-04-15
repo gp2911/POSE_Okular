@@ -1,0 +1,111 @@
+\hypertarget{classmacro}{\section{macro Class Reference}
+\label{classmacro}\index{macro@{macro}}
+}
+
+
+{\ttfamily \#include $<$Te\+X\+Font\+Definition.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmacro_ad828c2a34214296f8c22dbe71d3c5599}{macro} ()
+\item 
+\hyperlink{classmacro_a0413006867341a6d2411b5694197dc58}{$\sim$macro} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char $\ast$ \hyperlink{classmacro_a56bb221e766cbb0240c9fb2cd443e2fe}{pos}
+\item 
+unsigned char $\ast$ \hyperlink{classmacro_af735e3479e8a7088d4e84d918dbf73f7}{end}
+\item 
+qint32 \hyperlink{classmacro_a863ec3097dc73a4d71bad3e73b0b2e62}{dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20}
+\item 
+bool \hyperlink{classmacro_a2225237c5521630df5811ab6a8802c45}{free\+\_\+me}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file Te\+X\+Font\+Definition.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmacro_ad828c2a34214296f8c22dbe71d3c5599}{\index{macro@{macro}!macro@{macro}}
+\index{macro@{macro}!macro@{macro}}
+\subsubsection[{macro}]{\setlength{\rightskip}{0pt plus 5cm}macro\+::macro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmacro_ad828c2a34214296f8c22dbe71d3c5599}
+
+
+Definition at line 235 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+236 \{
+237   \hyperlink{classmacro_a56bb221e766cbb0240c9fb2cd443e2fe}{pos}     = 0;                \textcolor{comment}{/* address of first byte of macro */}
+238   \hyperlink{classmacro_af735e3479e8a7088d4e84d918dbf73f7}{end}     = 0;                \textcolor{comment}{/* address of last+1 byte */}
+239   \hyperlink{classmacro_a863ec3097dc73a4d71bad3e73b0b2e62}{dvi\_advance\_in\_units\_of\_design\_size\_by\_2e20} = 0;        \textcolor{comment}{/* DVI
+       units to move reference point */}
+240   \hyperlink{classmacro_a2225237c5521630df5811ab6a8802c45}{free\_me} = \textcolor{keyword}{false};
+241 \}
+\end{DoxyCode}
+\hypertarget{classmacro_a0413006867341a6d2411b5694197dc58}{\index{macro@{macro}!````~macro@{$\sim$macro}}
+\index{````~macro@{$\sim$macro}!macro@{macro}}
+\subsubsection[{$\sim$macro}]{\setlength{\rightskip}{0pt plus 5cm}macro\+::$\sim$macro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmacro_a0413006867341a6d2411b5694197dc58}
+
+
+Definition at line 244 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+245 \{
+246   \textcolor{keywordflow}{if} ((\hyperlink{classmacro_a56bb221e766cbb0240c9fb2cd443e2fe}{pos} != 0L) && (\hyperlink{classmacro_a2225237c5521630df5811ab6a8802c45}{free\_me} == \textcolor{keyword}{true}))
+247     \textcolor{keyword}{delete} [] \hyperlink{classmacro_a56bb221e766cbb0240c9fb2cd443e2fe}{pos};
+248 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmacro_a863ec3097dc73a4d71bad3e73b0b2e62}{\index{macro@{macro}!dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20@{dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20}}
+\index{dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20@{dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20}!macro@{macro}}
+\subsubsection[{dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20}]{\setlength{\rightskip}{0pt plus 5cm}qint32 macro\+::dvi\+\_\+advance\+\_\+in\+\_\+units\+\_\+of\+\_\+design\+\_\+size\+\_\+by\+\_\+2e20}}\label{classmacro_a863ec3097dc73a4d71bad3e73b0b2e62}
+
+
+Definition at line 42 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classmacro_af735e3479e8a7088d4e84d918dbf73f7}{\index{macro@{macro}!end@{end}}
+\index{end@{end}!macro@{macro}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ macro\+::end}}\label{classmacro_af735e3479e8a7088d4e84d918dbf73f7}
+
+
+Definition at line 40 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classmacro_a2225237c5521630df5811ab6a8802c45}{\index{macro@{macro}!free\+\_\+me@{free\+\_\+me}}
+\index{free\+\_\+me@{free\+\_\+me}!macro@{macro}}
+\subsubsection[{free\+\_\+me}]{\setlength{\rightskip}{0pt plus 5cm}bool macro\+::free\+\_\+me}}\label{classmacro_a2225237c5521630df5811ab6a8802c45}
+
+
+Definition at line 44 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classmacro_a56bb221e766cbb0240c9fb2cd443e2fe}{\index{macro@{macro}!pos@{pos}}
+\index{pos@{pos}!macro@{macro}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ macro\+::pos}}\label{classmacro_a56bb221e766cbb0240c9fb2cd443e2fe}
+
+
+Definition at line 38 of file Te\+X\+Font\+Definition.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{TeXFontDefinition_8h}{Te\+X\+Font\+Definition.\+h}\item 
+generators/dvi/\hyperlink{TeXFontDefinition_8cpp}{Te\+X\+Font\+Definition.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,460 @@
+\hypertarget{classSidebar}{\section{Sidebar Class Reference}
+\label{classSidebar}\index{Sidebar@{Sidebar}}
+}
+
+
+{\ttfamily \#include $<$sidebar.\+h$>$}
+
+Inheritance diagram for Sidebar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSidebar}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSidebar_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342}{Set\+Current\+Index\+Behaviour} \{ \hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342acd60138922798b43dcd1004c95f00fb4}{Uncollapse\+If\+Collapsed}, 
+\hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342a8595bb09015022393bc23cca88e491f5}{Do\+Not\+Uncollapse\+If\+Collapsed}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSidebar_ab143c40f6c4f3e2c4480d88c9ced8269}{Sidebar} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{classSidebar_ab52078a5886bdb0f0fdbdc81c5c04b46}{$\sim$\+Sidebar} ()
+\item 
+int \hyperlink{classSidebar_a642911afe1e9edd9d758df420a12a03d}{add\+Item} (Q\+Widget $\ast$widget, const Q\+Icon \&icon, const Q\+String \&text)
+\item 
+void \hyperlink{classSidebar_a33bb2672e2e75d2997ea116bd25feea2}{set\+Main\+Widget} (Q\+Widget $\ast$widget)
+\item 
+void \hyperlink{classSidebar_a4d2956c76781bec3fdffda29b699a75e}{set\+Bottom\+Widget} (Q\+Widget $\ast$widget)
+\item 
+void \hyperlink{classSidebar_a4284408c37255e81f294508f4cd19f76}{set\+Item\+Enabled} (int index, bool enabled)
+\item 
+bool \hyperlink{classSidebar_af8daf68e83b592177a830b7ec35de3db}{is\+Item\+Enabled} (int index) const 
+\item 
+void \hyperlink{classSidebar_a2e8f04dcf175f5d4dc5b6961a417611e}{set\+Current\+Index} (int index, \hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342}{Set\+Current\+Index\+Behaviour} b=\hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342acd60138922798b43dcd1004c95f00fb4}{Uncollapse\+If\+Collapsed})
+\item 
+int \hyperlink{classSidebar_a87085cfe9098de2cd21dff4f13f4df5a}{current\+Index} () const 
+\item 
+void \hyperlink{classSidebar_acab620fd1f317c5c40c5f5b162dfa77d}{set\+Sidebar\+Visibility} (bool visible)
+\item 
+bool \hyperlink{classSidebar_af919caad848a5f5079b275bdd4666409}{is\+Sidebar\+Visible} () const 
+\item 
+void \hyperlink{classSidebar_a3bcef186eab8bd313c0c4e92948e605a}{set\+Collapsed} (bool collapsed)
+\item 
+bool \hyperlink{classSidebar_a7faa5e2df81f4fc935dfc85cead3efe6}{is\+Collapsed} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file sidebar.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classSidebar_af06ad6ae553bd93cabeef79df1277342}{\index{Sidebar@{Sidebar}!Set\+Current\+Index\+Behaviour@{Set\+Current\+Index\+Behaviour}}
+\index{Set\+Current\+Index\+Behaviour@{Set\+Current\+Index\+Behaviour}!Sidebar@{Sidebar}}
+\subsubsection[{Set\+Current\+Index\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Sidebar\+::\+Set\+Current\+Index\+Behaviour}}}\label{classSidebar_af06ad6ae553bd93cabeef79df1277342}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Uncollapse\+If\+Collapsed@{Uncollapse\+If\+Collapsed}!Sidebar@{Sidebar}}\index{Sidebar@{Sidebar}!Uncollapse\+If\+Collapsed@{Uncollapse\+If\+Collapsed}}\item[{\em 
+\hypertarget{classSidebar_af06ad6ae553bd93cabeef79df1277342acd60138922798b43dcd1004c95f00fb4}{Uncollapse\+If\+Collapsed}\label{classSidebar_af06ad6ae553bd93cabeef79df1277342acd60138922798b43dcd1004c95f00fb4}
+}]\index{Do\+Not\+Uncollapse\+If\+Collapsed@{Do\+Not\+Uncollapse\+If\+Collapsed}!Sidebar@{Sidebar}}\index{Sidebar@{Sidebar}!Do\+Not\+Uncollapse\+If\+Collapsed@{Do\+Not\+Uncollapse\+If\+Collapsed}}\item[{\em 
+\hypertarget{classSidebar_af06ad6ae553bd93cabeef79df1277342a8595bb09015022393bc23cca88e491f5}{Do\+Not\+Uncollapse\+If\+Collapsed}\label{classSidebar_af06ad6ae553bd93cabeef79df1277342a8595bb09015022393bc23cca88e491f5}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 33 of file sidebar.\+h.
+
+
+\begin{DoxyCode}
+33 \{ \hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342acd60138922798b43dcd1004c95f00fb4}{UncollapseIfCollapsed}, \hyperlink{classSidebar_af06ad6ae553bd93cabeef79df1277342a8595bb09015022393bc23cca88e491f5}{DoNotUncollapseIfCollapsed} \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSidebar_ab143c40f6c4f3e2c4480d88c9ced8269}{\index{Sidebar@{Sidebar}!Sidebar@{Sidebar}}
+\index{Sidebar@{Sidebar}!Sidebar@{Sidebar}}
+\subsubsection[{Sidebar}]{\setlength{\rightskip}{0pt plus 5cm}Sidebar\+::\+Sidebar (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_ab143c40f6c4f3e2c4480d88c9ced8269}
+
+
+Definition at line 444 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+445     : QWidget( parent ), d( \textcolor{keyword}{new} Private )
+446 \{
+447     QHBoxLayout *mainlay = \textcolor{keyword}{new} QHBoxLayout( \textcolor{keyword}{this} );
+448     mainlay->setMargin( 0 );
+449     mainlay->setSpacing( 0 );
+450 
+451     setAutoFillBackground( \textcolor{keyword}{true} );
+452 
+453     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list} = \textcolor{keyword}{new} \hyperlink{classSidebarListWidget}{SidebarListWidget}( \textcolor{keyword}{this} );
+454     mainlay->addWidget( d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list} );
+455     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setMouseTracking( \textcolor{keyword}{true} );
+456     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->viewport()->setAttribute( Qt::WA\_Hover );
+457     d->\hyperlink{classSidebar_1_1Private_a25b75ddd6cbb379f77f71207ad627d54}{sideDelegate} = \textcolor{keyword}{new} \hyperlink{classSidebarDelegate}{SidebarDelegate}( d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list} );
+458     d->\hyperlink{classSidebar_1_1Private_a25b75ddd6cbb379f77f71207ad627d54}{sideDelegate}->\hyperlink{classSidebarDelegate_a34dd8d82dc4a30ae4256027b1df5389e}{setShowText}( 
+      \hyperlink{classOkular_1_1Settings_ac62d059c9ffd6c8a6ed9da3fd5bbcb7b}{Okular::Settings::sidebarShowText}() );
+459     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setItemDelegate( d->\hyperlink{classSidebar_1_1Private_a25b75ddd6cbb379f77f71207ad627d54}{sideDelegate} );
+460     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setUniformItemSizes( \textcolor{keyword}{true} );
+461     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setSelectionMode( QAbstractItemView::SingleSelection );
+462     \textcolor{keywordtype}{int} iconsize = \hyperlink{classOkular_1_1Settings_a7315fd4eb5b604d22ca0b4b0ac6231fc}{Okular::Settings::sidebarIconSize}();
+463     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setIconSize( QSize( iconsize, iconsize ) );
+464     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+465     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+466     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setContextMenuPolicy( Qt::CustomContextMenu );
+467     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->viewport()->setAutoFillBackground( \textcolor{keyword}{false} );
+468     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setFont( KGlobalSettings::toolBarFont() );
+469 
+470     d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter} = \textcolor{keyword}{new} QSplitter( \textcolor{keyword}{this} );
+471     mainlay->addWidget( d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter} );
+472     d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter}->setOpaqueResize( \textcolor{keyword}{true} );
+473     d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter}->setChildrenCollapsible( \textcolor{keyword}{false} );
+474 
+475     d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer} = \textcolor{keyword}{new} QWidget( d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter} );
+476     d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer}->setMinimumWidth( 90 );
+477     d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer}->setMaximumWidth( 600 );
+478     d->\hyperlink{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{vlay} = \textcolor{keyword}{new} QVBoxLayout( d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer} );
+479     d->\hyperlink{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{vlay}->setMargin( 0 );
+480 
+481     d->\hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{sideTitle} = \textcolor{keyword}{new} QLabel( d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer} );
+482     d->\hyperlink{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{vlay}->addWidget( d->\hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{sideTitle} );
+483     QFont tf = d->\hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{sideTitle}->font();
+484     tf.setBold( \textcolor{keyword}{true} );
+485     d->\hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{sideTitle}->setFont( tf );
+486     d->\hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{sideTitle}->setMargin( 3 );
+487     d->\hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{sideTitle}->setIndent( 3 );
+488 
+489     d->\hyperlink{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}{stack} = \textcolor{keyword}{new} QStackedWidget( d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer} );
+490     d->\hyperlink{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{vlay}->addWidget( d->\hyperlink{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}{stack} );
+491 
+492     connect( d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}, SIGNAL(customContextMenuRequested(QPoint)),
+493              \textcolor{keyword}{this}, SLOT(listContextMenu(QPoint)) );
+494     connect( d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter}, SIGNAL(splitterMoved(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(splitterMoved(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})) );
+495 
+496     connect( KGlobalSettings::self(), SIGNAL(appearanceChanged()), \textcolor{keyword}{this}, SLOT(appearanceChanged()) );
+497 
+498     \hyperlink{classSidebar_a3bcef186eab8bd313c0c4e92948e605a}{setCollapsed}( \textcolor{keyword}{true} );
+499     setFocusProxy( d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list} );
+500 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_ab52078a5886bdb0f0fdbdc81c5c04b46}{\index{Sidebar@{Sidebar}!````~Sidebar@{$\sim$\+Sidebar}}
+\index{````~Sidebar@{$\sim$\+Sidebar}!Sidebar@{Sidebar}}
+\subsubsection[{$\sim$\+Sidebar}]{\setlength{\rightskip}{0pt plus 5cm}Sidebar\+::$\sim$\+Sidebar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_ab52078a5886bdb0f0fdbdc81c5c04b46}
+
+
+Definition at line 502 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+503 \{
+504     \textcolor{keyword}{delete} d;
+505 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSidebar_a642911afe1e9edd9d758df420a12a03d}{\index{Sidebar@{Sidebar}!add\+Item@{add\+Item}}
+\index{add\+Item@{add\+Item}!Sidebar@{Sidebar}}
+\subsubsection[{add\+Item}]{\setlength{\rightskip}{0pt plus 5cm}int Sidebar\+::add\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget, }
+\item[{const Q\+Icon \&}]{icon, }
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_a642911afe1e9edd9d758df420a12a03d}
+
+
+Definition at line 507 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+508 \{
+509     \textcolor{keywordflow}{if} ( !widget )
+510         \textcolor{keywordflow}{return} -1;
+511 
+512     \hyperlink{classSidebarItem}{SidebarItem} *newitem = \textcolor{keyword}{new} \hyperlink{classSidebarItem}{SidebarItem}( widget, icon, text );
+513     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->addItem( newitem );
+514     d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.append( newitem );
+515     widget->setParent( d->\hyperlink{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}{stack} );
+516     d->\hyperlink{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}{stack}->addWidget( widget );
+517     \textcolor{comment}{// updating the minimum height of the icon view, so all are visible with no scrolling}
+518     d->\hyperlink{classSidebar_1_1Private_a65d6c77ebd73135cc391a85e2732cbfa}{adjustListSize}( \textcolor{keyword}{false}, \textcolor{keyword}{true} );
+519     \textcolor{keywordflow}{return} d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.count() - 1;
+520 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a87085cfe9098de2cd21dff4f13f4df5a}{\index{Sidebar@{Sidebar}!current\+Index@{current\+Index}}
+\index{current\+Index@{current\+Index}!Sidebar@{Sidebar}}
+\subsubsection[{current\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int Sidebar\+::current\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSidebar_a87085cfe9098de2cd21dff4f13f4df5a}
+
+
+Definition at line 606 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+607 \{
+608     \textcolor{keywordflow}{return} d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->currentRow();
+609 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a7faa5e2df81f4fc935dfc85cead3efe6}{\index{Sidebar@{Sidebar}!is\+Collapsed@{is\+Collapsed}}
+\index{is\+Collapsed@{is\+Collapsed}!Sidebar@{Sidebar}}
+\subsubsection[{is\+Collapsed}]{\setlength{\rightskip}{0pt plus 5cm}bool Sidebar\+::is\+Collapsed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSidebar_a7faa5e2df81f4fc935dfc85cead3efe6}
+
+
+Definition at line 641 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+642 \{
+643     \textcolor{keywordflow}{return} d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer}->isHidden();
+644 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_af8daf68e83b592177a830b7ec35de3db}{\index{Sidebar@{Sidebar}!is\+Item\+Enabled@{is\+Item\+Enabled}}
+\index{is\+Item\+Enabled@{is\+Item\+Enabled}!Sidebar@{Sidebar}}
+\subsubsection[{is\+Item\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool Sidebar\+::is\+Item\+Enabled (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classSidebar_af8daf68e83b592177a830b7ec35de3db}
+
+
+Definition at line 586 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+587 \{
+588     \textcolor{keywordflow}{if} ( index < 0 || index >= d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.count() )
+589         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+590 
+591     Qt::ItemFlags f = d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.at( index )->flags();
+592     \textcolor{keywordflow}{return} ( f & Qt::ItemIsEnabled ) == Qt::ItemIsEnabled;
+593 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_af919caad848a5f5079b275bdd4666409}{\index{Sidebar@{Sidebar}!is\+Sidebar\+Visible@{is\+Sidebar\+Visible}}
+\index{is\+Sidebar\+Visible@{is\+Sidebar\+Visible}!Sidebar@{Sidebar}}
+\subsubsection[{is\+Sidebar\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Sidebar\+::is\+Sidebar\+Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSidebar_af919caad848a5f5079b275bdd4666409}
+
+
+Definition at line 631 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+632 \{
+633     \textcolor{keywordflow}{return} !d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->isHidden();
+634 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a4d2956c76781bec3fdffda29b699a75e}{\index{Sidebar@{Sidebar}!set\+Bottom\+Widget@{set\+Bottom\+Widget}}
+\index{set\+Bottom\+Widget@{set\+Bottom\+Widget}!Sidebar@{Sidebar}}
+\subsubsection[{set\+Bottom\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::set\+Bottom\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_a4d2956c76781bec3fdffda29b699a75e}
+
+
+Definition at line 547 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+548 \{
+549     \textcolor{keyword}{delete} d->\hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottomWidget};
+550     d->\hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottomWidget} = widget;
+551     \textcolor{keywordflow}{if} ( d->\hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottomWidget} )
+552     \{
+553         d->\hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottomWidget}->setParent( \textcolor{keyword}{this} );
+554         d->\hyperlink{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{vlay}->addWidget( d->\hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottomWidget} );
+555     \}
+556 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a3bcef186eab8bd313c0c4e92948e605a}{\index{Sidebar@{Sidebar}!set\+Collapsed@{set\+Collapsed}}
+\index{set\+Collapsed@{set\+Collapsed}!Sidebar@{Sidebar}}
+\subsubsection[{set\+Collapsed}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::set\+Collapsed (
+\begin{DoxyParamCaption}
+\item[{bool}]{collapsed}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_a3bcef186eab8bd313c0c4e92948e605a}
+
+
+Definition at line 636 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+637 \{
+638     d->\hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{sideContainer}->setHidden( collapsed );
+639 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a2e8f04dcf175f5d4dc5b6961a417611e}{\index{Sidebar@{Sidebar}!set\+Current\+Index@{set\+Current\+Index}}
+\index{set\+Current\+Index@{set\+Current\+Index}!Sidebar@{Sidebar}}
+\subsubsection[{set\+Current\+Index}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::set\+Current\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{{\bf Set\+Current\+Index\+Behaviour}}]{b = {\ttfamily {\bf Uncollapse\+If\+Collapsed}}}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_a2e8f04dcf175f5d4dc5b6961a417611e}
+
+
+Definition at line 595 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+596 \{
+597     \textcolor{keywordflow}{if} ( index < 0 || index >= d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.count() || !\hyperlink{classSidebar_af8daf68e83b592177a830b7ec35de3db}{isItemEnabled}( index ) )
+598         \textcolor{keywordflow}{return};
+599 
+600     itemClicked( d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.at( index ), b );
+601     QModelIndex modelindex = d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->model()->index( index, 0 );
+602     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setCurrentIndex( modelindex );
+603     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->selectionModel()->select( modelindex, QItemSelectionModel::ClearAndSelect );
+604 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a4284408c37255e81f294508f4cd19f76}{\index{Sidebar@{Sidebar}!set\+Item\+Enabled@{set\+Item\+Enabled}}
+\index{set\+Item\+Enabled@{set\+Item\+Enabled}!Sidebar@{Sidebar}}
+\subsubsection[{set\+Item\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::set\+Item\+Enabled (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_a4284408c37255e81f294508f4cd19f76}
+
+
+Definition at line 558 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+559 \{
+560     \textcolor{keywordflow}{if} ( index < 0 || index >= d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.count() )
+561         \textcolor{keywordflow}{return};
+562 
+563     Qt::ItemFlags f = d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.at( index )->flags();
+564     \textcolor{keywordflow}{if} ( enabled )
+565     \{
+566         f |= Qt::ItemIsEnabled;
+567         f |= Qt::ItemIsSelectable;
+568     \}
+569     \textcolor{keywordflow}{else}
+570     \{
+571         f &= ~Qt::ItemIsEnabled;
+572         f &= ~Qt::ItemIsSelectable;
+573     \}
+574     d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.at( index )->setFlags( f );
+575 
+576     \textcolor{keywordflow}{if} ( !enabled && index == \hyperlink{classSidebar_a87085cfe9098de2cd21dff4f13f4df5a}{currentIndex}() && \hyperlink{classSidebar_af919caad848a5f5079b275bdd4666409}{isSidebarVisible}() )
+577         \textcolor{comment}{// find an enabled item, and select that one}
+578         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.count(); ++i )
+579             \textcolor{keywordflow}{if} ( d->\hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}.at(i)->flags() & Qt::ItemIsEnabled )
+580             \{
+581                 \hyperlink{classSidebar_a2e8f04dcf175f5d4dc5b6961a417611e}{setCurrentIndex}( i );
+582                 \textcolor{keywordflow}{break};
+583             \}
+584 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_a33bb2672e2e75d2997ea116bd25feea2}{\index{Sidebar@{Sidebar}!set\+Main\+Widget@{set\+Main\+Widget}}
+\index{set\+Main\+Widget@{set\+Main\+Widget}!Sidebar@{Sidebar}}
+\subsubsection[{set\+Main\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::set\+Main\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_a33bb2672e2e75d2997ea116bd25feea2}
+
+
+Definition at line 522 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+523 \{
+524     \textcolor{keyword}{delete} d->\hyperlink{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{sideWidget};
+525     d->\hyperlink{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{sideWidget} = widget;
+526     \textcolor{keywordflow}{if} ( d->\hyperlink{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{sideWidget} )
+527     \{
+528         \textcolor{comment}{// setting the splitter as parent for the widget automatically plugs it}
+529         \textcolor{comment}{// into the splitter, neat!}
+530         d->\hyperlink{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{sideWidget}->setParent( d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter} );
+531 
+532         \textcolor{keywordflow}{if} ( !d->\hyperlink{classSidebar_1_1Private_a99a16d70b6092f5ae63c2b349006beb0}{splitterSizesSet} )
+533         \{
+534             \hyperlink{classQList}{QList<int>} splitterSizes = \hyperlink{classOkular_1_1Settings_a1de19e4396dc92ba19264cf8baced20f}{Okular::Settings::splitterSizes}
+      ();
+535             \textcolor{keywordflow}{if} ( !splitterSizes.count() )
+536             \{
+537                 \textcolor{comment}{// the first time use 1/10 for the panel and 9/10 for the pageView}
+538                 splitterSizes.push\_back( 50 );
+539                 splitterSizes.push\_back( 500 );
+540             \}
+541             d->\hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter}->setSizes( splitterSizes );
+542             d->\hyperlink{classSidebar_1_1Private_a99a16d70b6092f5ae63c2b349006beb0}{splitterSizesSet} = \textcolor{keyword}{true};
+543         \}
+544     \}
+545 \}
+\end{DoxyCode}
+\hypertarget{classSidebar_acab620fd1f317c5c40c5f5b162dfa77d}{\index{Sidebar@{Sidebar}!set\+Sidebar\+Visibility@{set\+Sidebar\+Visibility}}
+\index{set\+Sidebar\+Visibility@{set\+Sidebar\+Visibility}!Sidebar@{Sidebar}}
+\subsubsection[{set\+Sidebar\+Visibility}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::set\+Sidebar\+Visibility (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_acab620fd1f317c5c40c5f5b162dfa77d}
+
+
+Definition at line 611 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+612 \{
+613     \textcolor{keywordflow}{if} ( visible != d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->isHidden() )
+614         \textcolor{keywordflow}{return};
+615 
+616     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} wasCollapsed = \hyperlink{classSidebar_a7faa5e2df81f4fc935dfc85cead3efe6}{isCollapsed}();
+617 
+618     d->\hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setHidden( !visible );
+619     \textcolor{keywordflow}{if} ( visible )
+620     \{
+621         \hyperlink{classSidebar_a3bcef186eab8bd313c0c4e92948e605a}{setCollapsed}( wasCollapsed );
+622         wasCollapsed = \textcolor{keyword}{false};
+623     \}
+624     \textcolor{keywordflow}{else}
+625     \{
+626         wasCollapsed = \hyperlink{classSidebar_a7faa5e2df81f4fc935dfc85cead3efe6}{isCollapsed}();
+627         \hyperlink{classSidebar_a3bcef186eab8bd313c0c4e92948e605a}{setCollapsed}( \textcolor{keyword}{true} );
+628     \}
+629 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{sidebar_8h}{sidebar.\+h}\item 
+ui/\hyperlink{sidebar_8cpp}{sidebar.\+cpp}\end{DoxyCompactItemize}

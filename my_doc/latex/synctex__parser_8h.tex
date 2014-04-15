@@ -1,0 +1,1891 @@
+\hypertarget{synctex__parser_8h}{\section{generators/poppler/synctex/synctex\+\_\+parser.h File Reference}
+\label{synctex__parser_8h}\index{generators/poppler/synctex/synctex\+\_\+parser.\+h@{generators/poppler/synctex/synctex\+\_\+parser.\+h}}
+}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__synctex__node}{\+\_\+synctex\+\_\+node} $\ast$ \hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t}
+\item 
+typedef struct \hyperlink{struct____synctex__scanner__t}{\+\_\+\+\_\+synctex\+\_\+scanner\+\_\+t} \hyperlink{synctex__parser_8h_a05ff652efe60edf7954a646168484476}{\+\_\+synctex\+\_\+scanner\+\_\+t}
+\item 
+typedef \hyperlink{synctex__parser_8h_a05ff652efe60edf7954a646168484476}{\+\_\+synctex\+\_\+scanner\+\_\+t} $\ast$ \hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t}
+\item 
+typedef struct \hyperlink{struct____synctex__updater__t}{\+\_\+\+\_\+synctex\+\_\+updater\+\_\+t} \hyperlink{synctex__parser_8h_ad019fa90e591adb64846fcda8c6df58b}{\+\_\+synctex\+\_\+updater\+\_\+t}
+\item 
+typedef \hyperlink{synctex__parser_8h_ad019fa90e591adb64846fcda8c6df58b}{\+\_\+synctex\+\_\+updater\+\_\+t} $\ast$ \hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\+\_\+updater\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59}{synctex\+\_\+node\+\_\+type\+\_\+t} \{ \\*
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59ab7580d189f068a5eb430bacb4b020763}{synctex\+\_\+node\+\_\+type\+\_\+error} = 0, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a3a8cabbc163b6d335233ff434f625fc4}{synctex\+\_\+node\+\_\+type\+\_\+input}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\+\_\+node\+\_\+type\+\_\+sheet}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\+\_\+node\+\_\+type\+\_\+vbox}, 
+\\*
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+vbox}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\+\_\+node\+\_\+type\+\_\+hbox}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+hbox}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}{synctex\+\_\+node\+\_\+type\+\_\+kern}, 
+\\*
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abd1f7a18072437c5aaee40e485885ec6}{synctex\+\_\+node\+\_\+type\+\_\+glue}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aae6087a351bc58f8b6cb56d27c23c1f3}{synctex\+\_\+node\+\_\+type\+\_\+math}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}{synctex\+\_\+node\+\_\+type\+\_\+boundary}, 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abad99a41f11fbb8af51a36c57c4b362a}{synctex\+\_\+node\+\_\+number\+\_\+of\+\_\+types}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} \hyperlink{synctex__parser_8h_aa3ddfb08e151d7bb4994274ddaf50918}{synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file} (const char $\ast$output, const char $\ast$build\+\_\+directory, int parse)
+\item 
+void \hyperlink{synctex__parser_8h_a4dbef4e290dab90d51369540ad2e6f7f}{synctex\+\_\+scanner\+\_\+free} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} \hyperlink{synctex__parser_8h_a9d75503defaf16159195ec10dc2b2d30}{synctex\+\_\+scanner\+\_\+parse} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+int \hyperlink{synctex__parser_8h_acc1bcbcf095468d2c40d546479aa0467}{synctex\+\_\+display\+\_\+query} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner, const char $\ast$name, int line, int column)
+\item 
+int \hyperlink{synctex__parser_8h_ad7c1af3278e15601db9d93c550dabe0c}{synctex\+\_\+edit\+\_\+query} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner, int page, float h, float v)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_a3572d323fcab00f6638f81d073961826}{synctex\+\_\+next\+\_\+result} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+void \hyperlink{synctex__parser_8h_a5497c6776ca0a30206c7d25a831ef646}{synctex\+\_\+scanner\+\_\+display} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+int \hyperlink{synctex__parser_8h_abeeeca0fddb595536ef45eb22dda6413}{synctex\+\_\+scanner\+\_\+x\+\_\+offset} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+int \hyperlink{synctex__parser_8h_a2aecfbd6d2abb758a754f462c8cf22aa}{synctex\+\_\+scanner\+\_\+y\+\_\+offset} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+float \hyperlink{synctex__parser_8h_ad29b3d71a9c9650652f80ccf16d382e9}{synctex\+\_\+scanner\+\_\+magnification} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+const char $\ast$ \hyperlink{synctex__parser_8h_abb91d6985477a11ae021525b74e9a4e0}{synctex\+\_\+scanner\+\_\+get\+\_\+name} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner, int tag)
+\item 
+int \hyperlink{synctex__parser_8h_a4a234439753aa715a1402a096f787e28}{synctex\+\_\+scanner\+\_\+get\+\_\+tag} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner, const char $\ast$name)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_a9ef386e4ae8b36fe4b933d726e32d9a1}{synctex\+\_\+scanner\+\_\+input} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+const char $\ast$ \hyperlink{synctex__parser_8h_ac9a25f581ab998642158d7e4f81e7c14}{synctex\+\_\+scanner\+\_\+get\+\_\+output} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+const char $\ast$ \hyperlink{synctex__parser_8h_a18cec6f1980602f214afb6bdf2b8c348}{synctex\+\_\+scanner\+\_\+get\+\_\+synctex} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_a46ab9a750768aff05527a60a33247c82}{synctex\+\_\+node\+\_\+parent} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_a6e54f8b897b0065313e6100a2d0e407d}{synctex\+\_\+node\+\_\+sheet} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_a0c14c5c0300b00b63fb9e6ce580abea3}{synctex\+\_\+node\+\_\+child} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_ae703ad77551fd275bd33ae161c873145}{synctex\+\_\+node\+\_\+sibling} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_abf415b16ee0d9432183b77e45bfa9fd6}{synctex\+\_\+node\+\_\+next} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} \hyperlink{synctex__parser_8h_ad538ba3e6aee95091dd427e08a88eed0}{synctex\+\_\+sheet\+\_\+content} (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\+\_\+scanner\+\_\+t} scanner, int page)
+\item 
+\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59}{synctex\+\_\+node\+\_\+type\+\_\+t} \hyperlink{synctex__parser_8h_ada45f8d6545bb11d74bca1c08fb4d913}{synctex\+\_\+node\+\_\+type} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+const char $\ast$ \hyperlink{synctex__parser_8h_aa63d24cee9895dd74897954114560e14}{synctex\+\_\+node\+\_\+isa} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+void \hyperlink{synctex__parser_8h_a15bdd3747e9ec50a6fce8f2a71ab6b03}{synctex\+\_\+node\+\_\+log} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+void \hyperlink{synctex__parser_8h_abaa2b204f8c62048181909e08fa257ab}{synctex\+\_\+node\+\_\+display} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_ab3d02b8057ef89ad67d5d21a733af79a}{synctex\+\_\+node\+\_\+tag} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_ad5401e3051ae209e27e04befb90055d9}{synctex\+\_\+node\+\_\+line} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_a1bfb062d863d622ef4e9bdaa6bb065cd}{synctex\+\_\+node\+\_\+column} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_a5f7109cdc5483a179edb80a7c54c6bd5}{synctex\+\_\+node\+\_\+page} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_aa516bb1c3d15cf610c8b350e00453b3d}{synctex\+\_\+node\+\_\+h} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_a2532dadee7348697e784de0ce13c4b69}{synctex\+\_\+node\+\_\+v} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_a63b250170ea3369d7640475af65695db}{synctex\+\_\+node\+\_\+width} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_aa4923cfdcde5b9d889e32adb911736ea}{synctex\+\_\+node\+\_\+box\+\_\+h} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_a217666d5440dd42c05959508475977ab}{synctex\+\_\+node\+\_\+box\+\_\+v} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_af04e79b978cf60901761ddf80c3556d4}{synctex\+\_\+node\+\_\+box\+\_\+width} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_a7d480dace4455645f42bdd4dcff0a74d}{synctex\+\_\+node\+\_\+box\+\_\+height} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+int \hyperlink{synctex__parser_8h_aeba646fee2eb92507ffbb095ea482c85}{synctex\+\_\+node\+\_\+box\+\_\+depth} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_abf429cea3ab8edc549b78175a4541dc7}{synctex\+\_\+node\+\_\+visible\+\_\+h} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_a0e07ac8b23941b05f712f86416e73aea}{synctex\+\_\+node\+\_\+visible\+\_\+v} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_a711e5290d9b0302fb324744d9a544588}{synctex\+\_\+node\+\_\+visible\+\_\+width} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_af3bbc0a7bcc9c82c9439dce4b6f615e8}{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_aeeac4c6cf0c385d0d0277eeeca4136bd}{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_a1249cb5b59924305482aefafde81b012}{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_a71354124607a4ed20dd3dc998c681ec5}{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+float \hyperlink{synctex__parser_8h_a10f65f232b96ba57d10fdbf0f6e2087f}{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth} (\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\+\_\+node\+\_\+t} node)
+\item 
+\hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\+\_\+updater\+\_\+t} \hyperlink{synctex__parser_8h_ab8a345a6e5f2a34ecf8f3aa82820c570}{synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file} (const char $\ast$output, const char $\ast$directory)
+\item 
+void \hyperlink{synctex__parser_8h_a38f234ae8e32c15e3d27cdf8d1ba1518}{synctex\+\_\+updater\+\_\+append\+\_\+magnification} (\hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\+\_\+updater\+\_\+t} updater, char $\ast$magnification)
+\item 
+void \hyperlink{synctex__parser_8h_adfddaf0dc58b54ac2e256ac87431489b}{synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset} (\hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\+\_\+updater\+\_\+t} updater, char $\ast$x\+\_\+offset)
+\item 
+void \hyperlink{synctex__parser_8h_a1f88acaec0a713bd3c3a745a99922dc1}{synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset} (\hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\+\_\+updater\+\_\+t} updater, char $\ast$y\+\_\+offset)
+\item 
+void \hyperlink{synctex__parser_8h_ada037216861f2ab4c0705d3fd14a8420}{synctex\+\_\+updater\+\_\+free} (\hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\+\_\+updater\+\_\+t} updater)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{synctex__parser_8h_a05ff652efe60edf7954a646168484476}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!\+\_\+synctex\+\_\+scanner\+\_\+t@{\+\_\+synctex\+\_\+scanner\+\_\+t}}
+\index{\+\_\+synctex\+\_\+scanner\+\_\+t@{\+\_\+synctex\+\_\+scanner\+\_\+t}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{\+\_\+synctex\+\_\+scanner\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+\_\+synctex\+\_\+scanner\+\_\+t} {\bf \+\_\+synctex\+\_\+scanner\+\_\+t}}}\label{synctex__parser_8h_a05ff652efe60edf7954a646168484476}
+
+
+Definition at line 73 of file synctex\+\_\+parser.\+h.
+
+\hypertarget{synctex__parser_8h_ad019fa90e591adb64846fcda8c6df58b}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!\+\_\+synctex\+\_\+updater\+\_\+t@{\+\_\+synctex\+\_\+updater\+\_\+t}}
+\index{\+\_\+synctex\+\_\+updater\+\_\+t@{\+\_\+synctex\+\_\+updater\+\_\+t}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{\+\_\+synctex\+\_\+updater\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+\_\+synctex\+\_\+updater\+\_\+t} {\bf \+\_\+synctex\+\_\+updater\+\_\+t}}}\label{synctex__parser_8h_ad019fa90e591adb64846fcda8c6df58b}
+
+
+Definition at line 325 of file synctex\+\_\+parser.\+h.
+
+\hypertarget{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+t@{synctex\+\_\+node\+\_\+t}}
+\index{synctex\+\_\+node\+\_\+t@{synctex\+\_\+node\+\_\+t}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+synctex\+\_\+node}$\ast$ {\bf synctex\+\_\+node\+\_\+t}}}\label{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}
+
+
+Definition at line 64 of file synctex\+\_\+parser.\+h.
+
+\hypertarget{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+t@{synctex\+\_\+scanner\+\_\+t}}
+\index{synctex\+\_\+scanner\+\_\+t@{synctex\+\_\+scanner\+\_\+t}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \+\_\+synctex\+\_\+scanner\+\_\+t}$\ast$ {\bf synctex\+\_\+scanner\+\_\+t}}}\label{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}
+
+
+Definition at line 74 of file synctex\+\_\+parser.\+h.
+
+\hypertarget{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+updater\+\_\+t@{synctex\+\_\+updater\+\_\+t}}
+\index{synctex\+\_\+updater\+\_\+t@{synctex\+\_\+updater\+\_\+t}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+updater\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \+\_\+synctex\+\_\+updater\+\_\+t}$\ast$ {\bf synctex\+\_\+updater\+\_\+t}}}\label{synctex__parser_8h_a55100fb545234b8b65802384dea95987}
+
+
+Definition at line 326 of file synctex\+\_\+parser.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+t@{synctex\+\_\+node\+\_\+type\+\_\+t}}
+\index{synctex\+\_\+node\+\_\+type\+\_\+t@{synctex\+\_\+node\+\_\+type\+\_\+t}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+type\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf synctex\+\_\+node\+\_\+type\+\_\+t}}}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{synctex\+\_\+node\+\_\+type\+\_\+error@{synctex\+\_\+node\+\_\+type\+\_\+error}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+error@{synctex\+\_\+node\+\_\+type\+\_\+error}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59ab7580d189f068a5eb430bacb4b020763}{synctex\+\_\+node\+\_\+type\+\_\+error}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59ab7580d189f068a5eb430bacb4b020763}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+input@{synctex\+\_\+node\+\_\+type\+\_\+input}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+input@{synctex\+\_\+node\+\_\+type\+\_\+input}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a3a8cabbc163b6d335233ff434f625fc4}{synctex\+\_\+node\+\_\+type\+\_\+input}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a3a8cabbc163b6d335233ff434f625fc4}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+sheet@{synctex\+\_\+node\+\_\+type\+\_\+sheet}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+sheet@{synctex\+\_\+node\+\_\+type\+\_\+sheet}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\+\_\+node\+\_\+type\+\_\+sheet}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+vbox@{synctex\+\_\+node\+\_\+type\+\_\+vbox}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+vbox@{synctex\+\_\+node\+\_\+type\+\_\+vbox}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\+\_\+node\+\_\+type\+\_\+vbox}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+vbox@{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+vbox}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+vbox@{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+vbox}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+vbox}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+hbox@{synctex\+\_\+node\+\_\+type\+\_\+hbox}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+hbox@{synctex\+\_\+node\+\_\+type\+\_\+hbox}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\+\_\+node\+\_\+type\+\_\+hbox}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+hbox@{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+hbox}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+hbox@{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+hbox}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\+\_\+node\+\_\+type\+\_\+void\+\_\+hbox}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+kern@{synctex\+\_\+node\+\_\+type\+\_\+kern}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+kern@{synctex\+\_\+node\+\_\+type\+\_\+kern}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}{synctex\+\_\+node\+\_\+type\+\_\+kern}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+glue@{synctex\+\_\+node\+\_\+type\+\_\+glue}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+glue@{synctex\+\_\+node\+\_\+type\+\_\+glue}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abd1f7a18072437c5aaee40e485885ec6}{synctex\+\_\+node\+\_\+type\+\_\+glue}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abd1f7a18072437c5aaee40e485885ec6}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+math@{synctex\+\_\+node\+\_\+type\+\_\+math}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+math@{synctex\+\_\+node\+\_\+type\+\_\+math}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aae6087a351bc58f8b6cb56d27c23c1f3}{synctex\+\_\+node\+\_\+type\+\_\+math}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aae6087a351bc58f8b6cb56d27c23c1f3}
+}]\index{synctex\+\_\+node\+\_\+type\+\_\+boundary@{synctex\+\_\+node\+\_\+type\+\_\+boundary}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type\+\_\+boundary@{synctex\+\_\+node\+\_\+type\+\_\+boundary}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}{synctex\+\_\+node\+\_\+type\+\_\+boundary}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}
+}]\index{synctex\+\_\+node\+\_\+number\+\_\+of\+\_\+types@{synctex\+\_\+node\+\_\+number\+\_\+of\+\_\+types}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+number\+\_\+of\+\_\+types@{synctex\+\_\+node\+\_\+number\+\_\+of\+\_\+types}}\item[{\em 
+\hypertarget{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abad99a41f11fbb8af51a36c57c4b362a}{synctex\+\_\+node\+\_\+number\+\_\+of\+\_\+types}\label{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abad99a41f11fbb8af51a36c57c4b362a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 242 of file synctex\+\_\+parser.\+h.
+
+
+\begin{DoxyCode}
+242              \{
+243     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59ab7580d189f068a5eb430bacb4b020763}{synctex\_node\_type\_error} = 0,
+244     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a3a8cabbc163b6d335233ff434f625fc4}{synctex\_node\_type\_input},
+245     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet},
+246     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox},
+247     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox},
+248     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox},
+249     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox},
+250     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}{synctex\_node\_type\_kern},
+251     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abd1f7a18072437c5aaee40e485885ec6}{synctex\_node\_type\_glue},
+252     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aae6087a351bc58f8b6cb56d27c23c1f3}{synctex\_node\_type\_math},
+253     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}{synctex\_node\_type\_boundary},
+254     \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abad99a41f11fbb8af51a36c57c4b362a}{synctex\_node\_number\_of\_types}
+255 \} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59}{synctex\_node\_type\_t};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{synctex__parser_8h_acc1bcbcf095468d2c40d546479aa0467}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+display\+\_\+query@{synctex\+\_\+display\+\_\+query}}
+\index{synctex\+\_\+display\+\_\+query@{synctex\+\_\+display\+\_\+query}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+display\+\_\+query}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+display\+\_\+query (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner, }
+\item[{const char $\ast$}]{name, }
+\item[{int}]{line, }
+\item[{int}]{column}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_acc1bcbcf095468d2c40d546479aa0467}
+
+
+Definition at line 3292 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3292                                                                                            \{
+3293 \textcolor{preprocessor}{#   ifdef \_\_DARWIN\_UNIX03}
+3294 \textcolor{preprocessor}{#       pragma unused(column)}
+3295 \textcolor{preprocessor}{#   endif}
+3296     \textcolor{keywordtype}{int} tag = \hyperlink{synctex__parser_8c_a4a234439753aa715a1402a096f787e28}{synctex\_scanner\_get\_tag}(scanner,name);
+3297     \textcolor{keywordtype}{size\_t} \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = 0;
+3298     \textcolor{keywordtype}{int} friend\_index = 0;
+3299     \textcolor{keywordtype}{int} max\_line = 0;
+3300     \hyperlink{struct__synctex__node}{synctex\_node\_t} node = NULL;
+3301     \textcolor{keywordflow}{if} (tag == 0) \{
+3302         printf(\textcolor{stringliteral}{"SyncTeX Warning: No tag for %s\(\backslash\)n"},name);
+3303         \textcolor{keywordflow}{return} -1;
+3304     \}
+3305     free(\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START});
+3306     \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = NULL;
+3307     max\_line = line < INT\_MAX-scanner->\hyperlink{struct____synctex__scanner__t_a50a90639f1b9198207b0066c333285b3}{number\_of\_lists} ? line+scanner->
+      \hyperlink{struct____synctex__scanner__t_a50a90639f1b9198207b0066c333285b3}{number\_of\_lists}:INT\_MAX;
+3308     \textcolor{keywordflow}{while}(line<max\_line) \{
+3309         \textcolor{comment}{/*  This loop will only be performed once for advanced viewers */}
+3310         friend\_index = (tag+line)%(scanner->\hyperlink{struct____synctex__scanner__t_a50a90639f1b9198207b0066c333285b3}{number\_of\_lists});
+3311         \textcolor{keywordflow}{if} ((node = (scanner->\hyperlink{struct____synctex__scanner__t_adf66d7da8f27c0afa90cc103dd17b619}{lists\_of\_friends})[friend\_index])) \{
+3312             \textcolor{keywordflow}{do} \{
+3313                 \textcolor{keywordflow}{if} ((\hyperlink{synctex__parser_8c_ada45f8d6545bb11d74bca1c08fb4d913}{synctex\_node\_type}(node)>=
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}{synctex\_node\_type\_boundary})
+3314                     && (tag == \hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(node))
+3315                         && (line == \hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(node))) \{
+3316                     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} == \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}) \{
+3317                         size += 16;
+3318                         \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = realloc(\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START},size*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t} *));
+3319                         \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} += \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} - 
+      \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3320                         SYNCTEX\_START = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END};
+3321                         \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = SYNCTEX\_START + size*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t} *);
+3322                     \}           
+3323                     *(\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = node;
+3324                     \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} += \textcolor{keyword}{sizeof}(\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3325                 \}
+3326             \} \textcolor{keywordflow}{while}((node = \hyperlink{synctex__parser_8c_a3664dec0b283ee7c4a5788cdf2d5739e}{SYNCTEX\_FRIEND}(node)));
+3327             \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} == NULL) \{
+3328                 \textcolor{comment}{/*  We did not find any matching boundary, retry with glue or kern */}
+3329                 node = (scanner->\hyperlink{struct____synctex__scanner__t_adf66d7da8f27c0afa90cc103dd17b619}{lists\_of\_friends})[friend\_index];\textcolor{comment}{/*  no need to test it
+       again, already done */}
+3330                 \textcolor{keywordflow}{do} \{
+3331                     \textcolor{keywordflow}{if} ((\hyperlink{synctex__parser_8c_ada45f8d6545bb11d74bca1c08fb4d913}{synctex\_node\_type}(node)>=
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}{synctex\_node\_type\_kern})
+3332                         && (tag == \hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(node))
+3333                             && (line == \hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(node))) \{
+3334                         \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} == \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}) \{
+3335                             size += 16;
+3336                             \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = realloc(\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START},size*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t} *));
+3337                             \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} += \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} - 
+      \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3338                             SYNCTEX\_START = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END};
+3339                             \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = SYNCTEX\_START + size*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t} *);
+3340                         \}           
+3341                         *(\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = node;
+3342                         \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} += \textcolor{keyword}{sizeof}(\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3343                     \}
+3344                 \} \textcolor{keywordflow}{while}((node = \hyperlink{synctex__parser_8c_a3664dec0b283ee7c4a5788cdf2d5739e}{SYNCTEX\_FRIEND}(node)));
+3345                 \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} == NULL) \{
+3346                     \textcolor{comment}{/*  We did not find any matching glue or kern, retry with boxes */}
+3347                     node = (scanner->\hyperlink{struct____synctex__scanner__t_adf66d7da8f27c0afa90cc103dd17b619}{lists\_of\_friends})[friend\_index];\textcolor{comment}{/*  no need to test it
+       again, already done */}
+3348                     \textcolor{keywordflow}{do} \{
+3349                         \textcolor{keywordflow}{if} ((tag == \hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(node))
+3350                                 && (line == \hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(node))) \{
+3351                             \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} == \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}) \{
+3352                                 size += 16;
+3353                                 \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = realloc(\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START},size*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t} *));
+3354                                 \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} += \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} - 
+      \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3355                                 SYNCTEX\_START = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END};
+3356                                 \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = SYNCTEX\_START + size*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t} *);
+3357                             \}           
+3358                             *(\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = node;
+3359                             \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} += \textcolor{keyword}{sizeof}(\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3360                         \}
+3361                     \} \textcolor{keywordflow}{while}((node = \hyperlink{synctex__parser_8c_a3664dec0b283ee7c4a5788cdf2d5739e}{SYNCTEX\_FRIEND}(node)));
+3362                 \}
+3363             \}
+3364             \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR};
+3365             \textcolor{comment}{/*  Now reverse the order to have nodes in display order, and keep just a few nodes */}
+3366             \textcolor{keywordflow}{if} ((\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START}) && (\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}))
+3367             \{
+3368                 \hyperlink{struct__synctex__node}{synctex\_node\_t} * start\_ref = (\hyperlink{struct__synctex__node}{synctex\_node\_t} *)
+      \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3369                 \hyperlink{struct__synctex__node}{synctex\_node\_t} * end\_ref   = (\hyperlink{struct__synctex__node}{synctex\_node\_t} *)
+      \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END};
+3370                 end\_ref -= 1;
+3371                 \textcolor{keywordflow}{while}(start\_ref < end\_ref) \{
+3372                     node = *start\_ref;
+3373                     *start\_ref = *end\_ref;
+3374                     *end\_ref = node;
+3375                     start\_ref += 1;
+3376                     end\_ref -= 1;
+3377                 \}
+3378                 \textcolor{comment}{/*  Basically, we keep the first node for each parent.}
+3379 \textcolor{comment}{                 *  More precisely, we keep only nodes that are not descendants of}
+3380 \textcolor{comment}{                 *  their predecessor's parent. */}
+3381                 start\_ref = (\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3382                 end\_ref   = (\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3383         next\_end:
+3384                 end\_ref += 1; \textcolor{comment}{/*  we allways have start\_ref<= end\_ref*/}
+3385                 \textcolor{keywordflow}{if} (end\_ref < (\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}) \{
+3386                     node = *end\_ref;
+3387                     \textcolor{keywordflow}{while}((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node))) \{
+3388                         \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(*start\_ref) == node) \{
+3389                             \textcolor{keywordflow}{goto} next\_end;
+3390                         \}
+3391                     \}
+3392                     start\_ref += 1;
+3393                     *start\_ref = *end\_ref;
+3394                     \textcolor{keywordflow}{goto} next\_end;
+3395                 \}
+3396                 start\_ref += 1;
+3397                 \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = (\textcolor{keywordtype}{char} *)start\_ref;
+3398                 \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = NULL;\textcolor{comment}{/* added on behalf of Jose Alliste */}
+3399                 \textcolor{keywordflow}{return} (\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}-\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})/\textcolor{keyword}{sizeof}(
+      \hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});\textcolor{comment}{/* added on behalf Jan Sundermeyer */}
+3400             \}
+3401             \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = NULL;
+3402             \textcolor{comment}{/* return (SYNCTEX\_END-SYNCTEX\_START)/sizeof(synctex\_node\_t); removed on behalf Jan Sundermeyer
+       */}
+3403         \}
+3404 \textcolor{preprocessor}{#       if defined(\_\_SYNCTEX\_STRONG\_DISPLAY\_QUERY\_\_)}
+3405         \textcolor{keywordflow}{break};
+3406 \textcolor{preprocessor}{#       else}
+3407         ++line;
+3408 \textcolor{preprocessor}{#       endif}
+3409     \}
+3410     \textcolor{keywordflow}{return} 0;
+3411 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ad7c1af3278e15601db9d93c550dabe0c}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+edit\+\_\+query@{synctex\+\_\+edit\+\_\+query}}
+\index{synctex\+\_\+edit\+\_\+query@{synctex\+\_\+edit\+\_\+query}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+edit\+\_\+query}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+edit\+\_\+query (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner, }
+\item[{int}]{page, }
+\item[{float}]{h, }
+\item[{float}]{v}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ad7c1af3278e15601db9d93c550dabe0c}
+
+
+Definition at line 3479 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3479                                                                            \{
+3480     \hyperlink{struct__synctex__node}{synctex\_node\_t} sheet = NULL;
+3481     \hyperlink{struct__synctex__node}{synctex\_node\_t} node = NULL; \textcolor{comment}{/*  placeholder */}
+3482     \hyperlink{struct__synctex__node}{synctex\_node\_t} other\_node = NULL; \textcolor{comment}{/*  placeholder */}
+3483     \hyperlink{structsynctex__point__t}{synctex\_point\_t} hitPoint = \{0,0\}; \textcolor{comment}{/*  placeholder */}
+3484     \hyperlink{structsynctex__node__set__t}{synctex\_node\_set\_t} bestNodes = \{NULL,NULL\}; \textcolor{comment}{/*  holds the best node */}
+3485     \hyperlink{structsynctex__distances__t}{synctex\_distances\_t} bestDistances = \{INT\_MAX,INT\_MAX\}; \textcolor{comment}{/*  holds the best distances
+       for the best node */}
+3486     \hyperlink{struct__synctex__node}{synctex\_node\_t} bestContainer = NULL; \textcolor{comment}{/*  placeholder */}
+3487     \textcolor{keywordflow}{if} (NULL == (scanner = \hyperlink{synctex__parser_8c_a9d75503defaf16159195ec10dc2b2d30}{synctex\_scanner\_parse}(scanner)) || 0 >= scanner->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}) \{\textcolor{comment}{/*  scanner->unit must be >0 */}
+3488         \textcolor{keywordflow}{return} 0;
+3489     \}
+3490     \textcolor{comment}{/*  Convert the given point to scanner integer coordinates */}
+3491     hitPoint.\hyperlink{structsynctex__point__t_ac3f7563da1a5c828a3c5f73da1437336}{h} = (h-scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset})/scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3492     hitPoint.\hyperlink{structsynctex__point__t_a47fa1080adf9e08e535c80b9854cf186}{v} = (v-scanner->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset})/scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3493     \textcolor{comment}{/*  We will store in the scanner's buffer the result of the query. */}
+3494     free(\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START});
+3495     \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = NULL;
+3496     \textcolor{comment}{/*  Find the proper sheet */}
+3497     sheet = scanner->\hyperlink{struct____synctex__scanner__t_a8438cc8e64fd36c7dcb54b6f3c1450dd}{sheet};
+3498     \textcolor{keywordflow}{while}((sheet) && \hyperlink{synctex__parser_8c_a3bd2cd6f724b8eadfc42a2a488fcccdb}{SYNCTEX\_PAGE}(sheet) != page) \{
+3499         sheet = \hyperlink{synctex__parser_8c_a5f7c140dda5a543ebad235983359fb6d}{SYNCTEX\_SIBLING}(sheet);
+3500     \}
+3501     \textcolor{keywordflow}{if} (NULL == sheet) \{
+3502         \textcolor{keywordflow}{return} -1;
+3503     \}
+3504     \textcolor{comment}{/*  Now sheet points to the sheet node with proper page number */}
+3505     \textcolor{comment}{/*  Here is how we work:}
+3506 \textcolor{comment}{     *  At first we do not consider the visible box dimensions. This will cover the most frequent cases.}
+3507 \textcolor{comment}{     *  Then we try with the visible box dimensions.}
+3508 \textcolor{comment}{     *  We try to find a non void box containing the hit point.}
+3509 \textcolor{comment}{     *  We browse all the horizontal boxes until we find one containing the hit point. */}
+3510     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a1f28ce6f7806917dbb86eacc343065df}{SYNCTEX\_NEXT\_HORIZ\_BOX}(sheet))) \{
+3511         \textcolor{keywordflow}{do} \{
+3512             \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a62b68dfe664b42915b6c8b9338b9e211}{\_synctex\_point\_in\_box}(hitPoint,node,
+      \hyperlink{synctex__parser__utils_8h_aefe95728c055ef228ea9bdecb0bf3a80}{synctex\_YES})) \{
+3513                 \textcolor{comment}{/*  Maybe the hitPoint belongs to a contained vertical box. */}
+3514 end:
+3515                 \textcolor{comment}{/*  This trick is for catching overlapping boxes */}
+3516                 \textcolor{keywordflow}{if} ((other\_node = \hyperlink{synctex__parser_8c_a1f28ce6f7806917dbb86eacc343065df}{SYNCTEX\_NEXT\_HORIZ\_BOX}(node))) \{
+3517                     \textcolor{keywordflow}{do} \{
+3518                         \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a62b68dfe664b42915b6c8b9338b9e211}{\_synctex\_point\_in\_box}(hitPoint,other\_node,
+      \hyperlink{synctex__parser__utils_8h_aefe95728c055ef228ea9bdecb0bf3a80}{synctex\_YES})) \{
+3519                             node = \_synctex\_smallest\_container(other\_node,node); 
+3520                         \}
+3521                     \} \textcolor{keywordflow}{while}((other\_node = \hyperlink{synctex__parser_8c_a1f28ce6f7806917dbb86eacc343065df}{SYNCTEX\_NEXT\_HORIZ\_BOX}(other\_node)));
+3522                 \}
+3523                 \textcolor{comment}{/*  node is the smallest horizontal box that contains hitPoint. */}
+3524                 \textcolor{keywordflow}{if} ((bestContainer = \_synctex\_eq\_deepest\_container(hitPoint,node,
+      \hyperlink{synctex__parser__utils_8h_aefe95728c055ef228ea9bdecb0bf3a80}{synctex\_YES}))) \{
+3525                     node = bestContainer;
+3526                 \}
+3527                 \_synctex\_eq\_get\_closest\_children\_in\_box(hitPoint,node,&bestNodes,&bestDistances,
+      \hyperlink{synctex__parser__utils_8h_aefe95728c055ef228ea9bdecb0bf3a80}{synctex\_YES});
+3528                 \textcolor{keywordflow}{if} (bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right} && bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left}) \{
+3529                     \textcolor{keywordflow}{if} ((\hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right})!=
+      \hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left}))
+3530                             || (\hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right})!=
+      \hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left}))
+3531                                 || (\hyperlink{synctex__parser_8c_a8ac7291585a1a68b6272ae65c7902156}{SYNCTEX\_COLUMN}(bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right})!=
+      \hyperlink{synctex__parser_8c_a8ac7291585a1a68b6272ae65c7902156}{SYNCTEX\_COLUMN}(bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left}))) \{
+3532                         \textcolor{keywordflow}{if} ((\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = malloc(2*\textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t})))) \{
+3533                             \textcolor{keywordflow}{if} (bestDistances.\hyperlink{structsynctex__distances__t_ac03b2fb447b841c7cd1eaef882d9bb0e}{left}>bestDistances.\hyperlink{structsynctex__distances__t_a4a9740a00d530e6c7b58eabe644a6d77}{right}) \{
+3534                                 ((\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})[0] = bestNodes
+      .\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right};
+3535                                 ((\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})[1] = bestNodes
+      .\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left};
+3536                             \} \textcolor{keywordflow}{else} \{
+3537                                 ((\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})[0] = bestNodes
+      .\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left};
+3538                                 ((\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})[1] = bestNodes
+      .\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right};
+3539                             \}
+3540                             \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} + 2*\textcolor{keyword}{sizeof}(
+      \hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3541                             \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = NULL;
+3542                             \textcolor{keywordflow}{return} (\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}-\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})/\textcolor{keyword}{sizeof}(
+      \hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3543                         \}
+3544                         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3e84aa899ab8cc68f31d1e80a946deec}{SYNCTEX\_STATUS\_ERROR};
+3545                     \}
+3546                     \textcolor{comment}{/*  both nodes have the same input coordinates}
+3547 \textcolor{comment}{                     *  We choose the one closest to the hit point  */}
+3548                     \textcolor{keywordflow}{if} (bestDistances.\hyperlink{structsynctex__distances__t_ac03b2fb447b841c7cd1eaef882d9bb0e}{left}>bestDistances.\hyperlink{structsynctex__distances__t_a4a9740a00d530e6c7b58eabe644a6d77}{right}) \{
+3549                         bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left} = bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right};
+3550                     \}
+3551                     bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right} = NULL;
+3552                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right}) \{
+3553                     bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left} = bestNodes.\hyperlink{structsynctex__node__set__t_a99e18c2a2158cf33ced43ea92c96ebd8}{right};
+3554                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left})\{
+3555                     bestNodes.\hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left} = node;
+3556                 \}
+3557                 \textcolor{keywordflow}{if} ((\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = malloc(\textcolor{keyword}{sizeof}(\hyperlink{struct__synctex__node}{synctex\_node\_t})))) \{
+3558                     * (\hyperlink{struct__synctex__node}{synctex\_node\_t} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = bestNodes.
+      \hyperlink{structsynctex__node__set__t_a819d6d3bef5b6a0606612f9618316695}{left};
+3559                     \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} + \textcolor{keyword}{sizeof}(
+      \hyperlink{struct__synctex__node}{synctex\_node\_t});
+3560                     \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = NULL;
+3561                     \textcolor{keywordflow}{return} (\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}-\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START})/\textcolor{keyword}{sizeof}(
+      \hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3562                 \}
+3563                 \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3e84aa899ab8cc68f31d1e80a946deec}{SYNCTEX\_STATUS\_ERROR};
+3564             \}
+3565         \} \textcolor{keywordflow}{while} ((node = \hyperlink{synctex__parser_8c_a1f28ce6f7806917dbb86eacc343065df}{SYNCTEX\_NEXT\_HORIZ\_BOX}(node)));
+3566         \textcolor{comment}{/*  All the horizontal boxes have been tested,}
+3567 \textcolor{comment}{         *  None of them contains the hit point.}
+3568 \textcolor{comment}{         */}
+3569     \}
+3570     \textcolor{comment}{/*  We are not lucky */}
+3571     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a3c761636bc778975f68d5e647a6837b1}{SYNCTEX\_CHILD}(sheet))) \{
+3572         \textcolor{keywordflow}{goto} end;
+3573     \}
+3574     \textcolor{keywordflow}{return} 0;
+3575 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a3572d323fcab00f6638f81d073961826}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+next\+\_\+result@{synctex\+\_\+next\+\_\+result}}
+\index{synctex\+\_\+next\+\_\+result@{synctex\+\_\+next\+\_\+result}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+next\+\_\+result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+next\+\_\+result (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a3572d323fcab00f6638f81d073961826}
+
+
+Definition at line 3413 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3413                                                               \{
+3414     \textcolor{keywordflow}{if} (NULL == \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR}) \{
+3415         \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START};
+3416     \} \textcolor{keywordflow}{else} \{
+3417         \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR}+=\textcolor{keyword}{sizeof}(\hyperlink{synctex__parser_8h_a78e6c0b9c2b02f3c486a2cbffeabaeae}{synctex\_node\_t});
+3418     \}
+3419     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR}<\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END}) \{
+3420         \textcolor{keywordflow}{return} *(\hyperlink{struct__synctex__node}{synctex\_node\_t}*)\hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR};
+3421     \} \textcolor{keywordflow}{else} \{
+3422         \textcolor{keywordflow}{return} NULL;
+3423     \}
+3424 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_aeba646fee2eb92507ffbb095ea482c85}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+depth@{synctex\+\_\+node\+\_\+box\+\_\+depth}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+depth@{synctex\+\_\+node\+\_\+box\+\_\+depth}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+depth}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+box\+\_\+depth (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_aeba646fee2eb92507ffbb095ea482c85}
+
+
+Definition at line 3112 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3112                                                \{
+3113     \textcolor{keywordflow}{if} (!node) \{
+3114         \textcolor{keywordflow}{return} 0;
+3115     \}
+3116     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a2c4b621dae38ac5134a248303a183ef2}{SYNCTEX\_IS\_BOX}(node)) \{
+3117 result:
+3118         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_adf02c66b9b0db37d3890c7656b649f05}{SYNCTEX\_DEPTH}(node);
+3119     \}
+3120     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3121         \textcolor{keywordflow}{goto} result;
+3122     \}
+3123     \textcolor{keywordflow}{return} 0;
+3124 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_aa4923cfdcde5b9d889e32adb911736ea}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+h@{synctex\+\_\+node\+\_\+box\+\_\+h}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+h@{synctex\+\_\+node\+\_\+box\+\_\+h}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+h}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+box\+\_\+h (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_aa4923cfdcde5b9d889e32adb911736ea}
+
+
+Definition at line 3060 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3060                                            \{
+3061     \textcolor{keywordflow}{if} (!node) \{
+3062         \textcolor{keywordflow}{return} 0;
+3063     \}
+3064     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a2c4b621dae38ac5134a248303a183ef2}{SYNCTEX\_IS\_BOX}(node)) \{
+3065 result:
+3066         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_af1b7a11774fd76e061372a48eadc149f}{SYNCTEX\_HORIZ}(node);
+3067     \}
+3068     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3069         \textcolor{keywordflow}{goto} result;
+3070     \}
+3071     \textcolor{keywordflow}{return} 0;
+3072 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a7d480dace4455645f42bdd4dcff0a74d}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+height@{synctex\+\_\+node\+\_\+box\+\_\+height}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+height@{synctex\+\_\+node\+\_\+box\+\_\+height}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+height}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+box\+\_\+height (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a7d480dace4455645f42bdd4dcff0a74d}
+
+
+Definition at line 3099 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3099                                                 \{
+3100     \textcolor{keywordflow}{if} (!node) \{
+3101         \textcolor{keywordflow}{return} 0;
+3102     \}
+3103     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a2c4b621dae38ac5134a248303a183ef2}{SYNCTEX\_IS\_BOX}(node)) \{
+3104 result:
+3105         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3dd642acc12c7662f5a7b70c1ae80d2e}{SYNCTEX\_HEIGHT}(node);
+3106     \}
+3107     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3108         \textcolor{keywordflow}{goto} result;
+3109     \}
+3110     \textcolor{keywordflow}{return} 0;
+3111 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a217666d5440dd42c05959508475977ab}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+v@{synctex\+\_\+node\+\_\+box\+\_\+v}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+v@{synctex\+\_\+node\+\_\+box\+\_\+v}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+v}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+box\+\_\+v (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a217666d5440dd42c05959508475977ab}
+
+
+Definition at line 3073 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3073                                            \{
+3074     \textcolor{keywordflow}{if} (!node) \{
+3075         \textcolor{keywordflow}{return} 0;
+3076     \}
+3077     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a2c4b621dae38ac5134a248303a183ef2}{SYNCTEX\_IS\_BOX}(node)) \{
+3078 result:
+3079         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_ae91fb6c0ce3404ec568a456dca4730f7}{SYNCTEX\_VERT}(node);
+3080     \}
+3081     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3082         \textcolor{keywordflow}{goto} result;
+3083     \}
+3084     \textcolor{keywordflow}{return} 0;
+3085 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a10f65f232b96ba57d10fdbf0f6e2087f}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+depth (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a10f65f232b96ba57d10fdbf0f6e2087f}
+
+
+Definition at line 3219 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3219                                                          \{
+3220     \textcolor{keywordflow}{if} (!node) \{
+3221         \textcolor{keywordflow}{return} 0;
+3222     \}
+3223     \textcolor{keywordflow}{switch}(node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type}) \{
+3224         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}:
+3225         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}:
+3226         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}:
+3227             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_adf02c66b9b0db37d3890c7656b649f05}{SYNCTEX\_DEPTH}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3228         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}:
+3229 result:
+3230             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_abe0c9578340f157640ae8b827f70b4e5}{SYNCTEX\_DEPTH\_V}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->
+      \hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3231     \}
+3232     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3233         \textcolor{keywordflow}{goto} result;
+3234     \}
+3235     \textcolor{keywordflow}{return} 0;
+3236 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_af3bbc0a7bcc9c82c9439dce4b6f615e8}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+h (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_af3bbc0a7bcc9c82c9439dce4b6f615e8}
+
+
+Definition at line 3147 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3147                                                      \{
+3148     \textcolor{keywordflow}{if} (!node) \{
+3149         \textcolor{keywordflow}{return} 0;
+3150     \}
+3151     \textcolor{keywordflow}{switch}(node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type}) \{
+3152         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}:
+3153         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}:
+3154         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}:
+3155             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_af1b7a11774fd76e061372a48eadc149f}{SYNCTEX\_HORIZ}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}+node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset};
+3156         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}:
+3157 result:
+3158             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a64fdf9fb582c420d15e1ce0534ee63ce}{SYNCTEX\_HORIZ\_V}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->
+      \hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}+node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset};
+3159     \}
+3160     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3161         \textcolor{keywordflow}{goto} result;
+3162     \}
+3163     \textcolor{keywordflow}{return} 0;
+3164 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a71354124607a4ed20dd3dc998c681ec5}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+height (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a71354124607a4ed20dd3dc998c681ec5}
+
+
+Definition at line 3201 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3201                                                           \{
+3202     \textcolor{keywordflow}{if} (!node) \{
+3203         \textcolor{keywordflow}{return} 0;
+3204     \}
+3205     \textcolor{keywordflow}{switch}(node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type}) \{
+3206         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}:
+3207         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}:
+3208         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}:
+3209             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3dd642acc12c7662f5a7b70c1ae80d2e}{SYNCTEX\_HEIGHT}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3210         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}:
+3211 result:
+3212             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3ec677000f6da84f22cf9d4bd88e2fd1}{SYNCTEX\_HEIGHT\_V}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->
+      \hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3213     \}
+3214     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3215         \textcolor{keywordflow}{goto} result;
+3216     \}
+3217     \textcolor{keywordflow}{return} 0;
+3218 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_aeeac4c6cf0c385d0d0277eeeca4136bd}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+v (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_aeeac4c6cf0c385d0d0277eeeca4136bd}
+
+
+Definition at line 3165 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3165                                                      \{
+3166     \textcolor{keywordflow}{if} (!node) \{
+3167         \textcolor{keywordflow}{return} 0;
+3168     \}
+3169     \textcolor{keywordflow}{switch}(node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type}) \{
+3170         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}:
+3171         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}:
+3172         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}:
+3173             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_ae91fb6c0ce3404ec568a456dca4730f7}{SYNCTEX\_VERT}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}+node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset};
+3174         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}:
+3175 result:
+3176             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_afa6b2784eb8f231f641370aac9af45c5}{SYNCTEX\_VERT\_V}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}+node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset};
+3177     \}
+3178     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3179         \textcolor{keywordflow}{goto} result;
+3180     \}
+3181     \textcolor{keywordflow}{return} 0;
+3182 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a1249cb5b59924305482aefafde81b012}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width@{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+box\+\_\+visible\+\_\+width (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a1249cb5b59924305482aefafde81b012}
+
+
+Definition at line 3183 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3183                                                          \{
+3184     \textcolor{keywordflow}{if} (!node) \{
+3185         \textcolor{keywordflow}{return} 0;
+3186     \}
+3187     \textcolor{keywordflow}{switch}(node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type}) \{
+3188         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}:
+3189         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}:
+3190         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}:
+3191             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a90a9b310f36a5dabd07f092812739a3d}{SYNCTEX\_WIDTH}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3192         \textcolor{keywordflow}{case} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}:
+3193 result:
+3194             \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_ae56b94b4e0dfc10b9ca6230fb1641de8}{SYNCTEX\_WIDTH\_V}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->
+      \hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3195     \}
+3196     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3197         \textcolor{keywordflow}{goto} result;
+3198     \}
+3199     \textcolor{keywordflow}{return} 0;
+3200 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_af04e79b978cf60901761ddf80c3556d4}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+box\+\_\+width@{synctex\+\_\+node\+\_\+box\+\_\+width}}
+\index{synctex\+\_\+node\+\_\+box\+\_\+width@{synctex\+\_\+node\+\_\+box\+\_\+width}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+box\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+box\+\_\+width (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_af04e79b978cf60901761ddf80c3556d4}
+
+
+Definition at line 3086 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3086                                                \{
+3087     \textcolor{keywordflow}{if} (!node) \{
+3088         \textcolor{keywordflow}{return} 0;
+3089     \}
+3090     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a2c4b621dae38ac5134a248303a183ef2}{SYNCTEX\_IS\_BOX}(node)) \{
+3091 result:
+3092         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a90a9b310f36a5dabd07f092812739a3d}{SYNCTEX\_WIDTH}(node);
+3093     \}
+3094     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node)) && (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != 
+      \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet})) \{
+3095         \textcolor{keywordflow}{goto} result;
+3096     \}
+3097     \textcolor{keywordflow}{return} 0;
+3098 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a0c14c5c0300b00b63fb9e6ce580abea3}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+child@{synctex\+\_\+node\+\_\+child}}
+\index{synctex\+\_\+node\+\_\+child@{synctex\+\_\+node\+\_\+child}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+node\+\_\+child (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a0c14c5c0300b00b63fb9e6ce580abea3}
+
+
+Definition at line 751 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+752 \{
+753     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3c761636bc778975f68d5e647a6837b1}{SYNCTEX\_CHILD}(node);
+754 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a1bfb062d863d622ef4e9bdaa6bb065cd}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+column@{synctex\+\_\+node\+\_\+column}}
+\index{synctex\+\_\+node\+\_\+column@{synctex\+\_\+node\+\_\+column}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+column}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a1bfb062d863d622ef4e9bdaa6bb065cd}
+
+
+Definition at line 3263 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3263                                              \{
+3264 \textcolor{preprocessor}{#   ifdef \_\_DARWIN\_UNIX03}
+3265 \textcolor{preprocessor}{#       pragma unused(node)}
+3266 \textcolor{preprocessor}{#   endif}
+3267     \textcolor{keywordflow}{return} -1;
+3268 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_abaa2b204f8c62048181909e08fa257ab}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+display@{synctex\+\_\+node\+\_\+display}}
+\index{synctex\+\_\+node\+\_\+display@{synctex\+\_\+node\+\_\+display}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+node\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_abaa2b204f8c62048181909e08fa257ab}
+
+
+Definition at line 809 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+809                                                \{
+810     \hyperlink{synctex__parser_8c_af8fd9d5feca7a20b86c65fc912bbeae3}{SYNCTEX\_DISPLAY}(node);
+811 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_aa516bb1c3d15cf610c8b350e00453b3d}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+h@{synctex\+\_\+node\+\_\+h}}
+\index{synctex\+\_\+node\+\_\+h@{synctex\+\_\+node\+\_\+h}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+h}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+h (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_aa516bb1c3d15cf610c8b350e00453b3d}
+
+
+Definition at line 3042 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3042                                        \{
+3043     \textcolor{keywordflow}{if} (!node) \{
+3044         \textcolor{keywordflow}{return} 0;
+3045     \}
+3046     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_af1b7a11774fd76e061372a48eadc149f}{SYNCTEX\_HORIZ}(node);
+3047 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_aa63d24cee9895dd74897954114560e14}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+isa@{synctex\+\_\+node\+\_\+isa}}
+\index{synctex\+\_\+node\+\_\+isa@{synctex\+\_\+node\+\_\+isa}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+isa}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ synctex\+\_\+node\+\_\+isa (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_aa63d24cee9895dd74897954114560e14}
+
+
+Definition at line 789 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+789                                                    \{
+790 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} * isa[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abad99a41f11fbb8af51a36c57c4b362a}{synctex\_node\_number\_of\_types}] =
+791         \{\textcolor{stringliteral}{"Not a node"},\textcolor{stringliteral}{"input"},\textcolor{stringliteral}{"sheet"},\textcolor{stringliteral}{"vbox"},\textcolor{stringliteral}{"void vbox"},\textcolor{stringliteral}{"hbox"},\textcolor{stringliteral}{"void hbox"},\textcolor{stringliteral}{"kern"},\textcolor{stringliteral}{"glue"},\textcolor{stringliteral}{"math"},\textcolor{stringliteral}{"boundary"}
+      \};
+792     \textcolor{keywordflow}{return} isa[\hyperlink{synctex__parser_8c_ada45f8d6545bb11d74bca1c08fb4d913}{synctex\_node\_type}(node)];
+793 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ad5401e3051ae209e27e04befb90055d9}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+line@{synctex\+\_\+node\+\_\+line}}
+\index{synctex\+\_\+node\+\_\+line@{synctex\+\_\+node\+\_\+line}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+line}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ad5401e3051ae209e27e04befb90055d9}
+
+
+Definition at line 3260 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3260                                            \{
+3261     \textcolor{keywordflow}{return} node?\hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(node):-1;
+3262 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a15bdd3747e9ec50a6fce8f2a71ab6b03}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+log@{synctex\+\_\+node\+\_\+log}}
+\index{synctex\+\_\+node\+\_\+log@{synctex\+\_\+node\+\_\+log}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+log}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+node\+\_\+log (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a15bdd3747e9ec50a6fce8f2a71ab6b03}
+
+
+Definition at line 803 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+803                                            \{
+804     \hyperlink{synctex__parser_8c_a6ff5ed23c33ea4b34ec1c90883ffb320}{SYNCTEX\_LOG}(node);
+805 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_abf415b16ee0d9432183b77e45bfa9fd6}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+next@{synctex\+\_\+node\+\_\+next}}
+\index{synctex\+\_\+node\+\_\+next@{synctex\+\_\+node\+\_\+next}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+node\+\_\+next (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_abf415b16ee0d9432183b77e45bfa9fd6}
+
+
+Definition at line 759 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+759                                                       \{
+760     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a3c761636bc778975f68d5e647a6837b1}{SYNCTEX\_CHILD}(node)) \{
+761         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3c761636bc778975f68d5e647a6837b1}{SYNCTEX\_CHILD}(node);
+762     \}
+763 sibling:
+764     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a5f7c140dda5a543ebad235983359fb6d}{SYNCTEX\_SIBLING}(node)) \{
+765         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a5f7c140dda5a543ebad235983359fb6d}{SYNCTEX\_SIBLING}(node);
+766     \}
+767     \textcolor{keywordflow}{if} ((node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node))) \{
+768         \textcolor{keywordflow}{if} (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} == \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet}) \{\textcolor{comment}{/* 
+       EXC\_BAD\_ACCESS? */}
+769             \textcolor{keywordflow}{return} NULL;
+770         \}
+771         \textcolor{keywordflow}{goto} sibling;
+772     \}
+773     \textcolor{keywordflow}{return} NULL;
+774 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a5f7109cdc5483a179edb80a7c54c6bd5}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+page@{synctex\+\_\+node\+\_\+page}}
+\index{synctex\+\_\+node\+\_\+page@{synctex\+\_\+node\+\_\+page}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+page}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+page (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a5f7109cdc5483a179edb80a7c54c6bd5}
+
+
+Definition at line 3242 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3242                                           \{
+3243     \hyperlink{struct__synctex__node}{synctex\_node\_t} parent = NULL;
+3244     \textcolor{keywordflow}{if} (!node) \{
+3245         \textcolor{keywordflow}{return} -1;
+3246     \}
+3247     parent = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node);
+3248     \textcolor{keywordflow}{while}(parent) \{
+3249         node = parent;
+3250         parent = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node);
+3251     \}
+3252     \textcolor{keywordflow}{if} (node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} == \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet}) \{
+3253         \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3bd2cd6f724b8eadfc42a2a488fcccdb}{SYNCTEX\_PAGE}(node);
+3254     \}
+3255     \textcolor{keywordflow}{return} -1;
+3256 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a46ab9a750768aff05527a60a33247c82}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+parent@{synctex\+\_\+node\+\_\+parent}}
+\index{synctex\+\_\+node\+\_\+parent@{synctex\+\_\+node\+\_\+parent}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+node\+\_\+parent (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a46ab9a750768aff05527a60a33247c82}
+
+
+Definition at line 739 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+740 \{
+741     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node);
+742 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a6e54f8b897b0065313e6100a2d0e407d}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+sheet@{synctex\+\_\+node\+\_\+sheet}}
+\index{synctex\+\_\+node\+\_\+sheet@{synctex\+\_\+node\+\_\+sheet}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+sheet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+node\+\_\+sheet (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a6e54f8b897b0065313e6100a2d0e407d}
+
+
+Definition at line 743 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+744 \{
+745     \textcolor{keywordflow}{while}(node && node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_aeafcb7d3d64d9a0c0632bd1d6e84b961}{type} != \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet}) \{
+746         node = \hyperlink{synctex__parser_8c_a75894b0be5e6a8d827011d83ce17ce04}{SYNCTEX\_PARENT}(node);
+747     \}
+748     \textcolor{comment}{/*  exit the while loop either when node is NULL or node is a sheet */}
+749     \textcolor{keywordflow}{return} node;
+750 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ae703ad77551fd275bd33ae161c873145}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+sibling@{synctex\+\_\+node\+\_\+sibling}}
+\index{synctex\+\_\+node\+\_\+sibling@{synctex\+\_\+node\+\_\+sibling}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+node\+\_\+sibling (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ae703ad77551fd275bd33ae161c873145}
+
+
+Definition at line 755 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+756 \{
+757     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a5f7c140dda5a543ebad235983359fb6d}{SYNCTEX\_SIBLING}(node);
+758 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ab3d02b8057ef89ad67d5d21a733af79a}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+tag@{synctex\+\_\+node\+\_\+tag}}
+\index{synctex\+\_\+node\+\_\+tag@{synctex\+\_\+node\+\_\+tag}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+tag}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ab3d02b8057ef89ad67d5d21a733af79a}
+
+
+Definition at line 3257 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3257                                           \{
+3258     \textcolor{keywordflow}{return} node?\hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(node):-1;
+3259 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ada45f8d6545bb11d74bca1c08fb4d913}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+type@{synctex\+\_\+node\+\_\+type}}
+\index{synctex\+\_\+node\+\_\+type@{synctex\+\_\+node\+\_\+type}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+type\+\_\+t} synctex\+\_\+node\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ada45f8d6545bb11d74bca1c08fb4d913}
+
+
+Definition at line 781 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+781                                                            \{
+782     \textcolor{keywordflow}{if} (node) \{
+783         \textcolor{keywordflow}{return} (((node)->\textcolor{keyword}{class}))->type;
+784     \}
+785     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59ab7580d189f068a5eb430bacb4b020763}{synctex\_node\_type\_error};
+786 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a2532dadee7348697e784de0ce13c4b69}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+v@{synctex\+\_\+node\+\_\+v}}
+\index{synctex\+\_\+node\+\_\+v@{synctex\+\_\+node\+\_\+v}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+v}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+v (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a2532dadee7348697e784de0ce13c4b69}
+
+
+Definition at line 3048 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3048                                        \{
+3049     \textcolor{keywordflow}{if} (!node) \{
+3050         \textcolor{keywordflow}{return} 0;
+3051     \}
+3052     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_ae91fb6c0ce3404ec568a456dca4730f7}{SYNCTEX\_VERT}(node);
+3053 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_abf429cea3ab8edc549b78175a4541dc7}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+visible\+\_\+h@{synctex\+\_\+node\+\_\+visible\+\_\+h}}
+\index{synctex\+\_\+node\+\_\+visible\+\_\+h@{synctex\+\_\+node\+\_\+visible\+\_\+h}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+visible\+\_\+h}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+visible\+\_\+h (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_abf429cea3ab8edc549b78175a4541dc7}
+
+
+Definition at line 3129 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3129                                                  \{
+3130     \textcolor{keywordflow}{if} (!node) \{
+3131         \textcolor{keywordflow}{return} 0;
+3132     \}
+3133     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_af1b7a11774fd76e061372a48eadc149f}{SYNCTEX\_HORIZ}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}+node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset};
+3134 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a0e07ac8b23941b05f712f86416e73aea}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+visible\+\_\+v@{synctex\+\_\+node\+\_\+visible\+\_\+v}}
+\index{synctex\+\_\+node\+\_\+visible\+\_\+v@{synctex\+\_\+node\+\_\+visible\+\_\+v}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+visible\+\_\+v}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+visible\+\_\+v (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a0e07ac8b23941b05f712f86416e73aea}
+
+
+Definition at line 3135 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3135                                                  \{
+3136     \textcolor{keywordflow}{if} (!node) \{
+3137         \textcolor{keywordflow}{return} 0;
+3138     \}
+3139     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_ae91fb6c0ce3404ec568a456dca4730f7}{SYNCTEX\_VERT}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}+node->
+      \hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset};
+3140 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a711e5290d9b0302fb324744d9a544588}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+visible\+\_\+width@{synctex\+\_\+node\+\_\+visible\+\_\+width}}
+\index{synctex\+\_\+node\+\_\+visible\+\_\+width@{synctex\+\_\+node\+\_\+visible\+\_\+width}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+visible\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+node\+\_\+visible\+\_\+width (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a711e5290d9b0302fb324744d9a544588}
+
+
+Definition at line 3141 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3141                                                      \{
+3142     \textcolor{keywordflow}{if} (!node) \{
+3143         \textcolor{keywordflow}{return} 0;
+3144     \}
+3145     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a90a9b310f36a5dabd07f092812739a3d}{SYNCTEX\_WIDTH}(node)*node->\hyperlink{struct__synctex__node_aaec7a3e6468120aa3648a22776026754}{class}->\hyperlink{struct____synctex__class__t_ae7c5f8184868bbf7221bc3f381a92ac6}{scanner}->
+      \hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit};
+3146 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a63b250170ea3369d7640475af65695db}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+node\+\_\+width@{synctex\+\_\+node\+\_\+width}}
+\index{synctex\+\_\+node\+\_\+width@{synctex\+\_\+node\+\_\+width}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+node\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+node\+\_\+width (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+node\+\_\+t}}]{node}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a63b250170ea3369d7640475af65695db}
+
+
+Definition at line 3054 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3054                                            \{
+3055     \textcolor{keywordflow}{if} (!node) \{
+3056         \textcolor{keywordflow}{return} 0;
+3057     \}
+3058     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a90a9b310f36a5dabd07f092812739a3d}{SYNCTEX\_WIDTH}(node);
+3059 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a5497c6776ca0a30206c7d25a831ef646}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+display@{synctex\+\_\+scanner\+\_\+display}}
+\index{synctex\+\_\+scanner\+\_\+display@{synctex\+\_\+scanner\+\_\+display}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+scanner\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a5497c6776ca0a30206c7d25a831ef646}
+
+
+Definition at line 2915 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2915                                                         \{
+2916     \textcolor{keywordflow}{if} (NULL == scanner) \{
+2917         \textcolor{keywordflow}{return};
+2918     \}
+2919     printf(\textcolor{stringliteral}{"The scanner:\(\backslash\)noutput:%s\(\backslash\)noutput\_fmt:%s\(\backslash\)nversion:%i\(\backslash\)n"},scanner->
+      \hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output},scanner->\hyperlink{struct____synctex__scanner__t_a6b47843cf9ba4e354ec770fcf3224383}{output\_fmt},scanner->\hyperlink{struct____synctex__scanner__t_ad7c390700b8d63577dbd959a8a3310e7}{version});
+2920     printf(\textcolor{stringliteral}{"pre\_unit:%i\(\backslash\)nx\_offset:%i\(\backslash\)ny\_offset:%i\(\backslash\)n"},scanner->\hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit},scanner->
+      \hyperlink{struct____synctex__scanner__t_a7e40da777ed2d810359b72361a29193a}{pre\_x\_offset},scanner->\hyperlink{struct____synctex__scanner__t_a74d67e2408f0e5dc2cd71be04651b204}{pre\_y\_offset});
+2921     printf(\textcolor{stringliteral}{"count:%i\(\backslash\)npost\_magnification:%f\(\backslash\)npost\_x\_offset:%f\(\backslash\)npost\_y\_offset:%f\(\backslash\)n"},
+2922         scanner->\hyperlink{struct____synctex__scanner__t_aa09bf8eca2508d26805b53e173ecfd65}{count},scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit},scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset},scanner->
+      \hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset});
+2923     printf(\textcolor{stringliteral}{"The input:\(\backslash\)n"});
+2924     \hyperlink{synctex__parser_8c_af8fd9d5feca7a20b86c65fc912bbeae3}{SYNCTEX\_DISPLAY}(scanner->\hyperlink{struct____synctex__scanner__t_a507ab21e198032457f2178c943384239}{input});
+2925     \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_aa09bf8eca2508d26805b53e173ecfd65}{count}<1000) \{
+2926         printf(\textcolor{stringliteral}{"The sheets:\(\backslash\)n"});
+2927         \hyperlink{synctex__parser_8c_af8fd9d5feca7a20b86c65fc912bbeae3}{SYNCTEX\_DISPLAY}(scanner->\hyperlink{struct____synctex__scanner__t_a8438cc8e64fd36c7dcb54b6f3c1450dd}{sheet});
+2928         printf(\textcolor{stringliteral}{"The friends:\(\backslash\)n"});
+2929         \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_adf66d7da8f27c0afa90cc103dd17b619}{lists\_of\_friends}) \{
+2930             \textcolor{keywordtype}{int} i = scanner->\hyperlink{struct____synctex__scanner__t_a50a90639f1b9198207b0066c333285b3}{number\_of\_lists};
+2931             \hyperlink{struct__synctex__node}{synctex\_node\_t} node;
+2932             \textcolor{keywordflow}{while}(i--) \{
+2933                 printf(\textcolor{stringliteral}{"Friend index:%i\(\backslash\)n"},i);
+2934                 node = (scanner->\hyperlink{struct____synctex__scanner__t_adf66d7da8f27c0afa90cc103dd17b619}{lists\_of\_friends})[i];
+2935                 \textcolor{keywordflow}{while}(node) \{
+2936                     printf(\textcolor{stringliteral}{"%s:%i,%i\(\backslash\)n"},
+2937                         \hyperlink{synctex__parser_8c_aa63d24cee9895dd74897954114560e14}{synctex\_node\_isa}(node),
+2938                         \hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(node),
+2939                         \hyperlink{synctex__parser_8c_a7013cbd60df63eb3e9ebbee86d15ac06}{SYNCTEX\_LINE}(node)
+2940                     );
+2941                     node = \hyperlink{synctex__parser_8c_a3664dec0b283ee7c4a5788cdf2d5739e}{SYNCTEX\_FRIEND}(node);
+2942                 \}
+2943             \}
+2944         \}
+2945     \} \textcolor{keywordflow}{else} \{
+2946         printf(\textcolor{stringliteral}{"SyncTeX Warning: Too many objects\(\backslash\)n"});
+2947     \}
+2948 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a4dbef4e290dab90d51369540ad2e6f7f}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+free@{synctex\+\_\+scanner\+\_\+free}}
+\index{synctex\+\_\+scanner\+\_\+free@{synctex\+\_\+scanner\+\_\+free}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+scanner\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a4dbef4e290dab90d51369540ad2e6f7f}
+
+
+Definition at line 2788 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2788                                                      \{
+2789     \textcolor{keywordflow}{if} (NULL == scanner) \{
+2790         \textcolor{keywordflow}{return};
+2791     \}
+2792     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE}) \{
+2793         gzclose(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE});
+2794         \hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE} = NULL;
+2795     \}
+2796     \hyperlink{synctex__parser_8c_a86f79b1594c74ab566fb9c02a8465898}{SYNCTEX\_FREE}(scanner->\hyperlink{struct____synctex__scanner__t_a8438cc8e64fd36c7dcb54b6f3c1450dd}{sheet});
+2797     \hyperlink{synctex__parser_8c_a86f79b1594c74ab566fb9c02a8465898}{SYNCTEX\_FREE}(scanner->\hyperlink{struct____synctex__scanner__t_a507ab21e198032457f2178c943384239}{input});
+2798     free(\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START});
+2799     free(scanner->\hyperlink{struct____synctex__scanner__t_a6b47843cf9ba4e354ec770fcf3224383}{output\_fmt});
+2800     free(scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output});
+2801     free(scanner->\hyperlink{struct____synctex__scanner__t_a7bdf8f488a5bb7ed9a21b4ded5db693f}{synctex});
+2802     free(scanner->\hyperlink{struct____synctex__scanner__t_adf66d7da8f27c0afa90cc103dd17b619}{lists\_of\_friends});
+2803     free(scanner);
+2804 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_abb91d6985477a11ae021525b74e9a4e0}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+get\+\_\+name@{synctex\+\_\+scanner\+\_\+get\+\_\+name}}
+\index{synctex\+\_\+scanner\+\_\+get\+\_\+name@{synctex\+\_\+scanner\+\_\+get\+\_\+name}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+get\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ synctex\+\_\+scanner\+\_\+get\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner, }
+\item[{int}]{tag}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_abb91d6985477a11ae021525b74e9a4e0}
+
+
+Definition at line 2950 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2950                                                                          \{
+2951     \hyperlink{struct__synctex__node}{synctex\_node\_t} input = NULL;
+2952     \textcolor{keywordflow}{if} (NULL == scanner) \{
+2953         \textcolor{keywordflow}{return} NULL;
+2954     \}
+2955     input = scanner->\hyperlink{struct____synctex__scanner__t_a507ab21e198032457f2178c943384239}{input};
+2956     \textcolor{keywordflow}{do} \{
+2957         \textcolor{keywordflow}{if} (tag == \hyperlink{synctex__parser_8c_a07bb05ee5d546b9263636b2e6002cc74}{SYNCTEX\_TAG}(input)) \{
+2958             \textcolor{keywordflow}{return} (\hyperlink{synctex__parser_8c_a28afc2255158c14f2a2fbf497da99b06}{SYNCTEX\_NAME}(input));
+2959         \}
+2960     \} \textcolor{keywordflow}{while}((input = \hyperlink{synctex__parser_8c_a5f7c140dda5a543ebad235983359fb6d}{SYNCTEX\_SIBLING}(input)) != NULL);
+2961     \textcolor{keywordflow}{return} NULL;
+2962 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ac9a25f581ab998642158d7e4f81e7c14}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+get\+\_\+output@{synctex\+\_\+scanner\+\_\+get\+\_\+output}}
+\index{synctex\+\_\+scanner\+\_\+get\+\_\+output@{synctex\+\_\+scanner\+\_\+get\+\_\+output}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+get\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ synctex\+\_\+scanner\+\_\+get\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ac9a25f581ab998642158d7e4f81e7c14}
+
+
+Definition at line 3032 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3032                                                                    \{
+3033     \textcolor{keywordflow}{return} NULL != scanner && scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output}?scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output}:\textcolor{stringliteral}{""};
+3034 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a18cec6f1980602f214afb6bdf2b8c348}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+get\+\_\+synctex@{synctex\+\_\+scanner\+\_\+get\+\_\+synctex}}
+\index{synctex\+\_\+scanner\+\_\+get\+\_\+synctex@{synctex\+\_\+scanner\+\_\+get\+\_\+synctex}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+get\+\_\+synctex}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ synctex\+\_\+scanner\+\_\+get\+\_\+synctex (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a18cec6f1980602f214afb6bdf2b8c348}
+
+
+Definition at line 3035 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3035                                                                     \{
+3036     \textcolor{keywordflow}{return} NULL != scanner && scanner->\hyperlink{struct____synctex__scanner__t_a7bdf8f488a5bb7ed9a21b4ded5db693f}{synctex}?scanner->\hyperlink{struct____synctex__scanner__t_a7bdf8f488a5bb7ed9a21b4ded5db693f}{synctex}:\textcolor{stringliteral}{""};
+3037 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a4a234439753aa715a1402a096f787e28}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+get\+\_\+tag@{synctex\+\_\+scanner\+\_\+get\+\_\+tag}}
+\index{synctex\+\_\+scanner\+\_\+get\+\_\+tag@{synctex\+\_\+scanner\+\_\+get\+\_\+tag}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+get\+\_\+tag}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+scanner\+\_\+get\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a4a234439753aa715a1402a096f787e28}
+
+
+Definition at line 2979 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2979                                                                          \{
+2980     \textcolor{keywordtype}{size\_t} char\_index = strlen(name);
+2981     \textcolor{keywordflow}{if} ((scanner = \hyperlink{synctex__parser_8c_a9d75503defaf16159195ec10dc2b2d30}{synctex\_scanner\_parse}(scanner)) && (0 < char\_index)) \{
+2982         \textcolor{comment}{/*  the name is not void */}
+2983         char\_index -= 1;
+2984         \textcolor{keywordflow}{if} (!\hyperlink{synctex__parser__utils_8h_ac009a442aeb9cc9e95babccc24197922}{SYNCTEX\_IS\_PATH\_SEPARATOR}(name[char\_index])) \{
+2985             \textcolor{comment}{/*  the last character of name is not a path separator */}
+2986             \textcolor{keywordtype}{int} result = \hyperlink{synctex__parser_8c_a9d8459d18962303b831bb8b71c0ae599}{\_synctex\_scanner\_get\_tag}(scanner,name);
+2987             \textcolor{keywordflow}{if} (result) \{
+2988                 \textcolor{keywordflow}{return} result;
+2989             \} \textcolor{keywordflow}{else} \{
+2990                 \textcolor{comment}{/*  the given name was not the one known by TeX}
+2991 \textcolor{comment}{                 *  try a name relative to the enclosing directory of the scanner->output file */}
+2992                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * relative = name;
+2993                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} * ptr = scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output};
+2994                 \textcolor{keywordflow}{while}((strlen(relative) > 0) && (strlen(ptr) > 0) && (*relative == *ptr))
+2995                 \{
+2996                     relative += 1;
+2997                     ptr += 1;
+2998                 \}
+2999                 \textcolor{comment}{/*  Find the last path separator before relative */}
+3000                 \textcolor{keywordflow}{while}(relative > name) \{
+3001                     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser__utils_8h_ac009a442aeb9cc9e95babccc24197922}{SYNCTEX\_IS\_PATH\_SEPARATOR}(*(relative-1))) \{
+3002                         \textcolor{keywordflow}{break};
+3003                     \}
+3004                     relative -= 1;
+3005                 \}
+3006                 \textcolor{keywordflow}{if} ((relative > name) && (result = \hyperlink{synctex__parser_8c_a9d8459d18962303b831bb8b71c0ae599}{\_synctex\_scanner\_get\_tag}(scanner
+      ,relative))) \{
+3007                     \textcolor{keywordflow}{return} result;
+3008                 \}
+3009                 \textcolor{keywordflow}{if} (\hyperlink{synctex__parser__utils_8h_ac009a442aeb9cc9e95babccc24197922}{SYNCTEX\_IS\_PATH\_SEPARATOR}(name[0])) \{
+3010                     \textcolor{comment}{/*  No tag found for the given absolute name,}
+3011 \textcolor{comment}{                     *  Try each relative path starting from the shortest one */}
+3012                     \textcolor{keywordflow}{while}(0<char\_index) \{
+3013                         char\_index -= 1;
+3014                         \textcolor{keywordflow}{if} (\hyperlink{synctex__parser__utils_8h_ac009a442aeb9cc9e95babccc24197922}{SYNCTEX\_IS\_PATH\_SEPARATOR}(name[char\_index])
+3015                                 && (result = \hyperlink{synctex__parser_8c_a9d8459d18962303b831bb8b71c0ae599}{\_synctex\_scanner\_get\_tag}(scanner,name+
+      char\_index+1))) \{
+3016                             \textcolor{keywordflow}{return} result;
+3017                         \}
+3018                     \}
+3019                 \}
+3020             \}
+3021             \textcolor{keywordflow}{return} result;
+3022         \}
+3023     \}
+3024     \textcolor{keywordflow}{return} 0;
+3025 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a9ef386e4ae8b36fe4b933d726e32d9a1}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+input@{synctex\+\_\+scanner\+\_\+input}}
+\index{synctex\+\_\+scanner\+\_\+input@{synctex\+\_\+scanner\+\_\+input}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+input}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+scanner\+\_\+input (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a9ef386e4ae8b36fe4b933d726e32d9a1}
+
+
+Definition at line 3026 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3026                                                                 \{
+3027     \textcolor{keywordflow}{return} scanner?scanner->\hyperlink{struct____synctex__scanner__t_a507ab21e198032457f2178c943384239}{input}:NULL;
+3028 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ad29b3d71a9c9650652f80ccf16d382e9}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+magnification@{synctex\+\_\+scanner\+\_\+magnification}}
+\index{synctex\+\_\+scanner\+\_\+magnification@{synctex\+\_\+scanner\+\_\+magnification}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+magnification}]{\setlength{\rightskip}{0pt plus 5cm}float synctex\+\_\+scanner\+\_\+magnification (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ad29b3d71a9c9650652f80ccf16d382e9}
+
+
+Definition at line 2912 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2912                                                               \{
+2913     \textcolor{keywordflow}{return} scanner?scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit}:1;
+2914 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_aa3ddfb08e151d7bb4994274ddaf50918}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file@{synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file}}
+\index{synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file@{synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+scanner\+\_\+t} synctex\+\_\+scanner\+\_\+new\+\_\+with\+\_\+output\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{output, }
+\item[{const char $\ast$}]{build\+\_\+directory, }
+\item[{int}]{parse}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_aa3ddfb08e151d7bb4994274ddaf50918}
+
+
+Definition at line 2565 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2565                                                                                                            
+                \{
+2566     gzFile file = NULL;
+2567     \textcolor{keywordtype}{char} * synctex = NULL;
+2568     \hyperlink{struct____synctex__scanner__t}{synctex\_scanner\_t} scanner = NULL;
+2569     \hyperlink{synctex__parser__utils_8h_ad718db474a9acf904031706fbffd84be}{synctex\_io\_mode\_t} io\_mode = 0;
+2570     \textcolor{comment}{/*  Here we assume that int are smaller than void * */}
+2571     \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})>\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*)) \{
+2572         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"INTERNAL INCONSISTENCY: int's are unexpectedly bigger than pointers,
+       bailing out."});
+2573         \textcolor{keywordflow}{return} NULL;
+2574     \}
+2575     \textcolor{comment}{/*  We ensure that SYNCTEX\_BUFFER\_SIZE < UINT\_MAX, I don't know if it makes sense... */}
+2576     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a8ba4d0414eda0c55bbecb4b00478185c}{SYNCTEX\_BUFFER\_SIZE} >= UINT\_MAX) \{
+2577         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"SyncTeX BUG: Internal inconsistency, bad SYNCTEX\_BUFFER\_SIZE (1)"});
+2578         \textcolor{keywordflow}{return} NULL;
+2579     \}
+2580     \textcolor{comment}{/*  for integers: */}
+2581     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a8ba4d0414eda0c55bbecb4b00478185c}{SYNCTEX\_BUFFER\_SIZE} < \hyperlink{synctex__parser_8c_af5ff23906b820f11de27a3a80673f64a}{SYNCTEX\_BUFFER\_MIN\_SIZE}) \{
+2582         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"SyncTeX BUG: Internal inconsistency, bad SYNCTEX\_BUFFER\_SIZE (2)"});
+2583         \textcolor{keywordflow}{return} NULL;
+2584     \}
+2585     \textcolor{comment}{/*  now open the synctex file */}
+2586     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a29b1cd48e4ea95bd73da74b019c04239}{\_synctex\_open}(output,build\_directory,&synctex,&file,
+      \hyperlink{synctex__parser__utils_8h_a4f123df83b5a97f62fa48731d36b4d3e}{synctex\_ADD\_QUOTES},&io\_mode) || !file) \{
+2587         \textcolor{comment}{/* reset the io\_mode to the default, ie read */}
+2588         io\_mode = 0;
+2589         \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a29b1cd48e4ea95bd73da74b019c04239}{\_synctex\_open}(output,build\_directory,&synctex,&file,
+      \hyperlink{synctex__parser__utils_8h_a1852458dce34dc41f79fcf3bf7e1b3ff}{synctex\_DONT\_ADD\_QUOTES},&io\_mode) || !file) \{
+2590             \textcolor{keywordflow}{return} NULL;
+2591         \}
+2592     \}
+2593     scanner = (\hyperlink{synctex__parser_8h_a9fa4d5ea994bd4b018380f1ba72dfe9b}{synctex\_scanner\_t})\hyperlink{synctex__parser__utils_8c_ae502668cd62641fb7474f2d58e13585d}{\_synctex\_malloc}(\textcolor{keyword}{sizeof}(
+      \hyperlink{struct____synctex__scanner__t}{\_synctex\_scanner\_t}));
+2594     \textcolor{keywordflow}{if} (NULL == scanner) \{
+2595         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"SyncTeX: malloc problem"});
+2596         free(synctex);
+2597         gzclose(file);
+2598         \textcolor{keywordflow}{return} NULL;
+2599     \}
+2600     \textcolor{comment}{/*  make a private copy of output for the scanner */}
+2601     \textcolor{keywordflow}{if} (NULL == (scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output} = (\textcolor{keywordtype}{char} *)malloc(strlen(output)+1)))\{
+2602         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"!  synctex\_scanner\_new\_with\_output\_file: Memory problem (2),
+       scanner's output is not reliable."});
+2603     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output} != strcpy(scanner->\hyperlink{struct____synctex__scanner__t_a0c31d194ab4bab987d0d93719731856e}{output},output)) \{
+2604         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"!  synctex\_scanner\_new\_with\_output\_file: Copy problem, scanner's
+       output is not reliable."});
+2605     \}
+2606     scanner->\hyperlink{struct____synctex__scanner__t_a7bdf8f488a5bb7ed9a21b4ded5db693f}{synctex} = synctex;\textcolor{comment}{/*  Now the scanner owns synctex */}
+2607     \hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE} = file;
+2608     \textcolor{keywordflow}{return} parse? \hyperlink{synctex__parser_8c_a9d75503defaf16159195ec10dc2b2d30}{synctex\_scanner\_parse}(scanner):scanner;
+2609 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a9d75503defaf16159195ec10dc2b2d30}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+parse@{synctex\+\_\+scanner\+\_\+parse}}
+\index{synctex\+\_\+scanner\+\_\+parse@{synctex\+\_\+scanner\+\_\+parse}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+scanner\+\_\+t} synctex\+\_\+scanner\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a9d75503defaf16159195ec10dc2b2d30}
+
+
+Definition at line 2807 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2807                                                                    \{
+2808     \hyperlink{synctex__parser_8c_aa1b2c13ecabbee00205a9c0bba432bc1}{synctex\_status\_t} status = 0;
+2809     \textcolor{keywordflow}{if} (!scanner || scanner->\hyperlink{struct____synctex__scanner__t_a289f9b4a141138aeee44afa6d1bee45d}{flags}.\hyperlink{struct____synctex__scanner__t_a837f7c06752eaf446f5d3beb9e612ebd}{has\_parsed}) \{
+2810         \textcolor{keywordflow}{return} scanner;
+2811     \}
+2812     scanner->\hyperlink{struct____synctex__scanner__t_a289f9b4a141138aeee44afa6d1bee45d}{flags}.\hyperlink{struct____synctex__scanner__t_a837f7c06752eaf446f5d3beb9e612ebd}{has\_parsed}=1;
+2813     scanner->\hyperlink{struct____synctex__scanner__t_ab830f0b6d8d83da0eb582b353fa0eed1}{pre\_magnification} = 1000;
+2814     scanner->\hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit} = 8192;
+2815     scanner->\hyperlink{struct____synctex__scanner__t_a7e40da777ed2d810359b72361a29193a}{pre\_x\_offset} = scanner->\hyperlink{struct____synctex__scanner__t_a74d67e2408f0e5dc2cd71be04651b204}{pre\_y\_offset} = 578;
+2816     \textcolor{comment}{/*  initialize the offset with a fake unprobable value,}
+2817 \textcolor{comment}{     *  If there is a post scriptum section, this value will be overriden by the real life value */}
+2818     scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset} = scanner->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset} = 6.027e23f;
+2819     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet}] = synctex\_class\_sheet;
+2820     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a3a8cabbc163b6d335233ff434f625fc4}{synctex\_node\_type\_input}] = synctex\_class\_input;
+2821     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a3a8cabbc163b6d335233ff434f625fc4}{synctex\_node\_type\_input}]).scanner = scanner;
+2822     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a33ed7d45a57b103bda3203d22789123a}{synctex\_node\_type\_sheet}]).scanner = scanner;
+2823     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}] = synctex\_class\_vbox;
+2824     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a36a211986fab8dce042c5ef1fd12237f}{synctex\_node\_type\_vbox}]).scanner = scanner;
+2825     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}] = synctex\_class\_void\_vbox;
+2826     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a22b3e178603cff9b651ef49d3d6effed}{synctex\_node\_type\_void\_vbox}]).scanner = scanner;
+2827     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}] = synctex\_class\_hbox;
+2828     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a138a4b47beacca2adcdb6e881ff7236d}{synctex\_node\_type\_hbox}]).scanner = scanner;
+2829     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}] = synctex\_class\_void\_hbox;
+2830     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aa5dfaf6dc39fe0de1e484a5f8db7117d}{synctex\_node\_type\_void\_hbox}]).scanner = scanner;
+2831     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}{synctex\_node\_type\_kern}] = synctex\_class\_kern;
+2832     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aafe4c6cc4d4af7b0a7b1239702b2d7cd}{synctex\_node\_type\_kern}]).scanner = scanner;
+2833     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abd1f7a18072437c5aaee40e485885ec6}{synctex\_node\_type\_glue}] = synctex\_class\_glue;
+2834     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59abd1f7a18072437c5aaee40e485885ec6}{synctex\_node\_type\_glue}]).scanner = scanner;
+2835     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aae6087a351bc58f8b6cb56d27c23c1f3}{synctex\_node\_type\_math}] = synctex\_class\_math;
+2836     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59aae6087a351bc58f8b6cb56d27c23c1f3}{synctex\_node\_type\_math}]).scanner = scanner;
+2837     scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}{synctex\_node\_type\_boundary}] = synctex\_class\_boundary;
+2838     (scanner->\hyperlink{struct____synctex__scanner__t_a5313be691a11d7f4c4dc3dfa18adb010}{class}[\hyperlink{synctex__parser_8h_a085407d3cf15193e7db661749b83cf59a885ab2d241d78e723bb828f1d4d625da}{synctex\_node\_type\_boundary}]).scanner = scanner;
+2839     \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = (\textcolor{keywordtype}{char} *)malloc(\hyperlink{synctex__parser_8c_a8ba4d0414eda0c55bbecb4b00478185c}{SYNCTEX\_BUFFER\_SIZE}+1); \textcolor{comment}{/*  one more
+       character for null termination */}
+2840     \textcolor{keywordflow}{if} (NULL == \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START}) \{
+2841         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"SyncTeX: malloc error"});
+2842         \hyperlink{synctex__parser_8c_a4dbef4e290dab90d51369540ad2e6f7f}{synctex\_scanner\_free}(scanner);
+2843         \textcolor{keywordflow}{return} NULL;
+2844     \}
+2845     \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START}+\hyperlink{synctex__parser_8c_a8ba4d0414eda0c55bbecb4b00478185c}{SYNCTEX\_BUFFER\_SIZE};
+2846     \textcolor{comment}{/*  SYNCTEX\_END always points to a null terminating character.}
+2847 \textcolor{comment}{     *  Maybe there is another null terminating character between SYNCTEX\_CUR and SYNCTEX\_END-1.}
+2848 \textcolor{comment}{     *  At least, we are sure that SYNCTEX\_CUR points to a string covering a valid part of the memory. */}
+2849     *\hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = \textcolor{charliteral}{'\(\backslash\)0'};
+2850     \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END};
+2851     status = \hyperlink{synctex__parser_8c_ae9ad334747a248fd9ab9efd6518116c5}{\_synctex\_scan\_preamble}(scanner);
+2852     \textcolor{keywordflow}{if} (status<\hyperlink{synctex__parser_8c_a95de08b84c0664d58cc9128b0d3ecb34}{SYNCTEX\_STATUS\_OK}) \{
+2853         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"SyncTeX Error: Bad preamble\(\backslash\)n"});
+2854 bailey:
+2855         \hyperlink{synctex__parser_8c_a4dbef4e290dab90d51369540ad2e6f7f}{synctex\_scanner\_free}(scanner);
+2856         \textcolor{keywordflow}{return} NULL;
+2857     \}
+2858     status = \hyperlink{synctex__parser_8c_a2b712fd4dac5720df55bb855c4db605d}{\_synctex\_scan\_content}(scanner);
+2859     \textcolor{keywordflow}{if} (status<\hyperlink{synctex__parser_8c_a95de08b84c0664d58cc9128b0d3ecb34}{SYNCTEX\_STATUS\_OK}) \{
+2860         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"SyncTeX Error: Bad content\(\backslash\)n"});
+2861         \textcolor{keywordflow}{goto} bailey;
+2862     \}
+2863     \textcolor{comment}{/*  Everything is finished, free the buffer, close the file */}
+2864     free((\textcolor{keywordtype}{void} *)\hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START});
+2865     \hyperlink{synctex__parser_8c_ab5059b51070195594a0a8fd90a6c28f0}{SYNCTEX\_START} = \hyperlink{synctex__parser_8c_ac8903dc05455e1bdc06ad7ade66eb4a4}{SYNCTEX\_CUR} = \hyperlink{synctex__parser_8c_a874166464ae457ca7a333519690aa2a3}{SYNCTEX\_END} = NULL;
+2866     gzclose(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE});
+2867     \hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE} = NULL;
+2868     \textcolor{comment}{/*  Final tuning: set the default values for various parameters */}
+2869     \textcolor{comment}{/*  1 pre\_unit = (scanner->pre\_unit)/65536 pt = (scanner->pre\_unit)/65781.76 bp}
+2870 \textcolor{comment}{     * 1 pt = 65536 sp */}
+2871     \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit}<=0) \{
+2872         scanner->\hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit} = 8192;
+2873     \}
+2874     \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_ab830f0b6d8d83da0eb582b353fa0eed1}{pre\_magnification}<=0) \{
+2875         scanner->\hyperlink{struct____synctex__scanner__t_ab830f0b6d8d83da0eb582b353fa0eed1}{pre\_magnification} = 1000;
+2876     \}
+2877     \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit} <= 0) \{
+2878         \textcolor{comment}{/*  no post magnification */}
+2879         scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit} = scanner->\hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit} / 65781.76;\textcolor{comment}{/*  65781.76 or 65536.0*/}
+2880     \} \textcolor{keywordflow}{else} \{
+2881         \textcolor{comment}{/*  post magnification */}
+2882         scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit} *= scanner->\hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit} / 65781.76;
+2883     \}
+2884     scanner->\hyperlink{struct____synctex__scanner__t_a2172ebc84061c83e8e9c9d2039dfb3cb}{unit} *= scanner->\hyperlink{struct____synctex__scanner__t_ab830f0b6d8d83da0eb582b353fa0eed1}{pre\_magnification} / 1000.0;
+2885     \textcolor{keywordflow}{if} (scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset} > 6e23) \{
+2886         \textcolor{comment}{/*  no post offset */}
+2887         scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset} = scanner->\hyperlink{struct____synctex__scanner__t_a7e40da777ed2d810359b72361a29193a}{pre\_x\_offset} * (scanner->
+      \hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit} / 65781.76);
+2888         scanner->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset} = scanner->\hyperlink{struct____synctex__scanner__t_a74d67e2408f0e5dc2cd71be04651b204}{pre\_y\_offset} * (scanner->
+      \hyperlink{struct____synctex__scanner__t_a3c003c5af5fae997e7a7f6f6cf302232}{pre\_unit} / 65781.76);
+2889     \} \textcolor{keywordflow}{else} \{
+2890         \textcolor{comment}{/*  post offset */}
+2891         scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset} /= 65781.76f;
+2892         scanner->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset} /= 65781.76f;
+2893     \}
+2894     \textcolor{keywordflow}{return} scanner;
+2895 \textcolor{preprocessor}{    #undef SYNCTEX\_FILE}
+2896 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_abeeeca0fddb595536ef45eb22dda6413}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+x\+\_\+offset@{synctex\+\_\+scanner\+\_\+x\+\_\+offset}}
+\index{synctex\+\_\+scanner\+\_\+x\+\_\+offset@{synctex\+\_\+scanner\+\_\+x\+\_\+offset}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+x\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+scanner\+\_\+x\+\_\+offset (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_abeeeca0fddb595536ef45eb22dda6413}
+
+
+Definition at line 2906 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2906                                                        \{
+2907     \textcolor{keywordflow}{return} scanner?scanner->\hyperlink{struct____synctex__scanner__t_aa6abb8a43f2d6c768736bd1e88fff5a0}{x\_offset}:0;
+2908 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a2aecfbd6d2abb758a754f462c8cf22aa}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+scanner\+\_\+y\+\_\+offset@{synctex\+\_\+scanner\+\_\+y\+\_\+offset}}
+\index{synctex\+\_\+scanner\+\_\+y\+\_\+offset@{synctex\+\_\+scanner\+\_\+y\+\_\+offset}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+scanner\+\_\+y\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}int synctex\+\_\+scanner\+\_\+y\+\_\+offset (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a2aecfbd6d2abb758a754f462c8cf22aa}
+
+
+Definition at line 2909 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+2909                                                        \{
+2910     \textcolor{keywordflow}{return} scanner?scanner->\hyperlink{struct____synctex__scanner__t_a0f0c39c893f6812770fe5665de04302f}{y\_offset}:0;
+2911 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ad538ba3e6aee95091dd427e08a88eed0}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+sheet\+\_\+content@{synctex\+\_\+sheet\+\_\+content}}
+\index{synctex\+\_\+sheet\+\_\+content@{synctex\+\_\+sheet\+\_\+content}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+sheet\+\_\+content}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+node\+\_\+t} synctex\+\_\+sheet\+\_\+content (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+scanner\+\_\+t}}]{scanner, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ad538ba3e6aee95091dd427e08a88eed0}
+
+
+Definition at line 3274 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+3274                                                                          \{
+3275     \textcolor{keywordflow}{if} (scanner) \{
+3276         \hyperlink{struct__synctex__node}{synctex\_node\_t} sheet = scanner->\hyperlink{struct____synctex__scanner__t_a8438cc8e64fd36c7dcb54b6f3c1450dd}{sheet};
+3277         \textcolor{keywordflow}{while}(sheet) \{
+3278             \textcolor{keywordflow}{if} (page == \hyperlink{synctex__parser_8c_a3bd2cd6f724b8eadfc42a2a488fcccdb}{SYNCTEX\_PAGE}(sheet)) \{
+3279                 \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_a3c761636bc778975f68d5e647a6837b1}{SYNCTEX\_CHILD}(sheet);
+3280             \}
+3281             sheet = \hyperlink{synctex__parser_8c_a5f7c140dda5a543ebad235983359fb6d}{SYNCTEX\_SIBLING}(sheet);
+3282         \}
+3283     \}
+3284     \textcolor{keywordflow}{return} NULL;
+3285 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a38f234ae8e32c15e3d27cdf8d1ba1518}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+updater\+\_\+append\+\_\+magnification@{synctex\+\_\+updater\+\_\+append\+\_\+magnification}}
+\index{synctex\+\_\+updater\+\_\+append\+\_\+magnification@{synctex\+\_\+updater\+\_\+append\+\_\+magnification}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+updater\+\_\+append\+\_\+magnification}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+updater\+\_\+append\+\_\+magnification (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+updater\+\_\+t}}]{updater, }
+\item[{char $\ast$}]{magnification}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a38f234ae8e32c15e3d27cdf8d1ba1518}
+
+
+Definition at line 4209 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+4209                                                                                           \{
+4210     \textcolor{keywordflow}{if} (NULL==updater) \{
+4211         \textcolor{keywordflow}{return};
+4212     \}
+4213     \textcolor{keywordflow}{if} (magnification && strlen(magnification)) \{
+4214         updater->\hyperlink{struct____synctex__updater__t_ae675c2ae1794c2f15d7a492253bb38e5}{length} += \hyperlink{synctex__parser_8c_ada79e48902c5764d6c4739535ff4a9d7}{SYNCTEX\_fprintf}(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE},\textcolor{stringliteral}{"Magnification:%s
+      \(\backslash\)n"},magnification);
+4215     \}
+4216 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_adfddaf0dc58b54ac2e256ac87431489b}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset@{synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset}}
+\index{synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset@{synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+updater\+\_\+append\+\_\+x\+\_\+offset (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+updater\+\_\+t}}]{updater, }
+\item[{char $\ast$}]{x\+\_\+offset}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_adfddaf0dc58b54ac2e256ac87431489b}
+
+
+Definition at line 4218 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+4218                                                                                 \{
+4219     \textcolor{keywordflow}{if} (NULL==updater) \{
+4220         \textcolor{keywordflow}{return};
+4221     \}
+4222     \textcolor{keywordflow}{if} (x\_offset && strlen(x\_offset)) \{
+4223         updater->\hyperlink{struct____synctex__updater__t_ae675c2ae1794c2f15d7a492253bb38e5}{length} += \hyperlink{synctex__parser_8c_ada79e48902c5764d6c4739535ff4a9d7}{SYNCTEX\_fprintf}(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE},\textcolor{stringliteral}{"X Offset:%s\(\backslash\)n"},
+      x\_offset);
+4224     \}
+4225 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_a1f88acaec0a713bd3c3a745a99922dc1}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset@{synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset}}
+\index{synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset@{synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+updater\+\_\+append\+\_\+y\+\_\+offset (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+updater\+\_\+t}}]{updater, }
+\item[{char $\ast$}]{y\+\_\+offset}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_a1f88acaec0a713bd3c3a745a99922dc1}
+
+
+Definition at line 4227 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+4227                                                                                 \{
+4228     \textcolor{keywordflow}{if} (NULL==updater) \{
+4229         \textcolor{keywordflow}{return};
+4230     \}
+4231     \textcolor{keywordflow}{if} (y\_offset && strlen(y\_offset)) \{
+4232         updater->\hyperlink{struct____synctex__updater__t_ae675c2ae1794c2f15d7a492253bb38e5}{length} += \hyperlink{synctex__parser_8c_ada79e48902c5764d6c4739535ff4a9d7}{SYNCTEX\_fprintf}(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE},\textcolor{stringliteral}{"Y Offset:%s\(\backslash\)n"},
+      y\_offset);
+4233     \}
+4234 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ada037216861f2ab4c0705d3fd14a8420}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+updater\+\_\+free@{synctex\+\_\+updater\+\_\+free}}
+\index{synctex\+\_\+updater\+\_\+free@{synctex\+\_\+updater\+\_\+free}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+updater\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void synctex\+\_\+updater\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf synctex\+\_\+updater\+\_\+t}}]{updater}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ada037216861f2ab4c0705d3fd14a8420}
+
+
+Definition at line 4236 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+4236                                                     \{
+4237     \textcolor{keywordflow}{if} (NULL==updater) \{
+4238         \textcolor{keywordflow}{return};
+4239     \}
+4240     \textcolor{keywordflow}{if} (updater->\hyperlink{struct____synctex__updater__t_ae675c2ae1794c2f15d7a492253bb38e5}{length}>0) \{
+4241         \hyperlink{synctex__parser_8c_ada79e48902c5764d6c4739535ff4a9d7}{SYNCTEX\_fprintf}(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE},\textcolor{stringliteral}{"!%i\(\backslash\)n"},updater->
+      \hyperlink{struct____synctex__updater__t_ae675c2ae1794c2f15d7a492253bb38e5}{length});
+4242     \}
+4243     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a589b8d16ac7569f68f94e75268f75b9f}{SYNCTEX\_NO\_GZ}) \{
+4244         fclose((FILE *)\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE});
+4245     \} \textcolor{keywordflow}{else} \{
+4246         gzclose((gzFile)\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE});
+4247     \}
+4248     free(updater);
+4249     printf(\textcolor{stringliteral}{"... done.\(\backslash\)n"});
+4250     \textcolor{keywordflow}{return};
+4251 \}
+\end{DoxyCode}
+\hypertarget{synctex__parser_8h_ab8a345a6e5f2a34ecf8f3aa82820c570}{\index{synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}!synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file@{synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file}}
+\index{synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file@{synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file}!synctex\+\_\+parser.\+h@{synctex\+\_\+parser.\+h}}
+\subsubsection[{synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf synctex\+\_\+updater\+\_\+t} synctex\+\_\+updater\+\_\+new\+\_\+with\+\_\+output\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{output, }
+\item[{const char $\ast$}]{directory}
+\end{DoxyParamCaption}
+)}}\label{synctex__parser_8h_ab8a345a6e5f2a34ecf8f3aa82820c570}
+
+
+Definition at line 4165 of file synctex\+\_\+parser.\+c.
+
+
+\begin{DoxyCode}
+4165                                                                                                           \{
+4166     \hyperlink{struct____synctex__updater__t}{synctex\_updater\_t} updater = NULL;
+4167     \textcolor{keywordtype}{char} * synctex = NULL;
+4168     \hyperlink{synctex__parser__utils_8h_ad718db474a9acf904031706fbffd84be}{synctex\_io\_mode\_t} io\_mode = 0;
+4169     \textcolor{keyword}{const} \textcolor{keywordtype}{char} * mode = NULL;
+4170     \textcolor{comment}{/*  prepare the updater, the memory is the only one dynamically allocated */}
+4171     updater = (\hyperlink{synctex__parser_8h_a55100fb545234b8b65802384dea95987}{synctex\_updater\_t})\hyperlink{synctex__parser__utils_8c_ae502668cd62641fb7474f2d58e13585d}{\_synctex\_malloc}(\textcolor{keyword}{sizeof}(
+      \hyperlink{struct____synctex__updater__t}{synctex\_updater\_t}));
+4172     \textcolor{keywordflow}{if} (NULL == updater) \{
+4173         \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"!  synctex\_updater\_new\_with\_file: malloc problem"});
+4174         \textcolor{keywordflow}{return} NULL;
+4175     \}
+4176     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a29b1cd48e4ea95bd73da74b019c04239}{\_synctex\_open}(output,build\_directory,&synctex,&\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE},
+      \hyperlink{synctex__parser__utils_8h_a4f123df83b5a97f62fa48731d36b4d3e}{synctex\_ADD\_QUOTES},&io\_mode)
+4177         && \hyperlink{synctex__parser_8c_a29b1cd48e4ea95bd73da74b019c04239}{\_synctex\_open}(output,build\_directory,&synctex,&
+      \hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE},\hyperlink{synctex__parser__utils_8h_a1852458dce34dc41f79fcf3bf7e1b3ff}{synctex\_DONT\_ADD\_QUOTES},&io\_mode)) \{
+4178 return\_on\_error:
+4179         free(updater);
+4180         updater = NULL;
+4181         \textcolor{keywordflow}{return} NULL;
+4182     \}
+4183     \textcolor{comment}{/*  OK, the file exists, we close it and reopen it with the correct mode.}
+4184 \textcolor{comment}{     *  The receiver is now the owner of the "synctex" variable. */}
+4185     gzclose(\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE});
+4186     \hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE} = NULL;
+4187     \hyperlink{synctex__parser_8c_a589b8d16ac7569f68f94e75268f75b9f}{SYNCTEX\_NO\_GZ} = (io\_mode&\hyperlink{synctex__parser__utils_8h_a2b6595ffade34c86ed1f11571fbaf019a417d7196f20acc364f6cc1af8cadc6a3}{synctex\_io\_gz\_mask})?
+      \hyperlink{synctex__parser__utils_8h_a913570648d1bea87078321a1257fa781}{synctex\_NO}:\hyperlink{synctex__parser__utils_8h_aefe95728c055ef228ea9bdecb0bf3a80}{synctex\_YES};
+4188     mode = \hyperlink{synctex__parser__utils_8c_aaea9a68bccb8992b16a6e8c21381cb0f}{\_synctex\_get\_io\_mode\_name}(io\_mode|
+      \hyperlink{synctex__parser__utils_8h_a2b6595ffade34c86ed1f11571fbaf019aa4fcf19f60c9f649b49a49e41edbcaf0}{synctex\_io\_append\_mask});\textcolor{comment}{/* either "a" or "ab", depending on the file extension */}
+4189     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_a589b8d16ac7569f68f94e75268f75b9f}{SYNCTEX\_NO\_GZ}) \{
+4190         \textcolor{keywordflow}{if} (NULL == (\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE} = (\textcolor{keywordtype}{void} *)fopen(synctex,mode))) \{
+4191 no\_write\_error:
+4192             \hyperlink{synctex__parser__utils_8c_a9c118970c033e5ab0b74c59ad4920610}{\_synctex\_error}(\textcolor{stringliteral}{"!  synctex\_updater\_new\_with\_file: Can't append to %s"},synctex);
+4193             free(synctex);
+4194             \textcolor{keywordflow}{goto} return\_on\_error;
+4195         \}
+4196         updater->\hyperlink{struct____synctex__updater__t_a46b15c92f83b585176dc0b39bce363c3}{fprintf} = (\hyperlink{synctex__parser_8c_a4ffd45e24fabfd771cf495754e4d173a}{synctex\_fprintf\_t})(&fprintf);
+4197     \} \textcolor{keywordflow}{else} \{
+4198         \textcolor{keywordflow}{if} (NULL == (\hyperlink{synctex__parser_8c_a6b7366e2c8ce573069245a5a010a63c8}{SYNCTEX\_FILE} = (\textcolor{keywordtype}{void} *)gzopen(synctex,mode))) \{
+4199             \textcolor{keywordflow}{goto} no\_write\_error;
+4200         \}
+4201         updater->\hyperlink{struct____synctex__updater__t_a46b15c92f83b585176dc0b39bce363c3}{fprintf} = (\hyperlink{synctex__parser_8c_a4ffd45e24fabfd771cf495754e4d173a}{synctex\_fprintf\_t})(&gzprintf);
+4202     \}
+4203     printf(\textcolor{stringliteral}{"SyncTeX: updating %s..."},synctex);
+4204     free(synctex);
+4205     \textcolor{keywordflow}{return} updater;
+4206 \}
+\end{DoxyCode}

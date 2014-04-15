@@ -1,0 +1,25 @@
+var classPageViewItem =
+[
+    [ "PageViewItem", "classPageViewItem.html#a309d8671e7dc72dcb3e08e7c64886f05", null ],
+    [ "~PageViewItem", "classPageViewItem.html#a9636b20b548065c6cd904a16ba4625d3", null ],
+    [ "absToPageX", "classPageViewItem.html#ac8c32541cbae1efd5b4ab54f0a4b4576", null ],
+    [ "absToPageY", "classPageViewItem.html#afdbba9ce015155c0e655efbb23e5d13b", null ],
+    [ "crop", "classPageViewItem.html#a587a87792c6c65854b512192274f9c78", null ],
+    [ "croppedGeometry", "classPageViewItem.html#aa2c3e988ccbe9ee162b73d7f89ab0d02", null ],
+    [ "croppedHeight", "classPageViewItem.html#a4e74bfd4a2f4afaf8e905c59293b4978", null ],
+    [ "croppedWidth", "classPageViewItem.html#a94c289b7fcbadf14d0b06a68589aa72a", null ],
+    [ "formWidgets", "classPageViewItem.html#a24394acf608eed67ef99280f6958258d", null ],
+    [ "invalidate", "classPageViewItem.html#aae4d30e1d447c96f8fb12ed27316d0f5", null ],
+    [ "isVisible", "classPageViewItem.html#ae7a4dfa618d0cb56e01075842c67bf9f", null ],
+    [ "moveTo", "classPageViewItem.html#a0c23111c6e56e5198b5f25518fb4f9bf", null ],
+    [ "page", "classPageViewItem.html#a5c512d95e5563e8d19d1fb3d93dafc31", null ],
+    [ "pageNumber", "classPageViewItem.html#ad75aab4c1ffd842bd5d54c0cfe84d1bf", null ],
+    [ "setFormWidgetsVisible", "classPageViewItem.html#ae022a536fc5d7fd23a20253b1544ae76", null ],
+    [ "setVisible", "classPageViewItem.html#aa5e5ccb0e93d2ab16f6785503ff1ed21", null ],
+    [ "setWHZC", "classPageViewItem.html#a9bd1865804399e1c5cf54ee5871f173a", null ],
+    [ "uncroppedGeometry", "classPageViewItem.html#a5d2e73a003f65b4e95c0c21b1698f835", null ],
+    [ "uncroppedHeight", "classPageViewItem.html#af1380fce5dc13a72458ef834c720b128", null ],
+    [ "uncroppedWidth", "classPageViewItem.html#a240924407ae22bb0489363a6a2d481b9", null ],
+    [ "videoWidgets", "classPageViewItem.html#a125302408597cab2a58ef2ad309e2912", null ],
+    [ "zoomFactor", "classPageViewItem.html#a49bd277d8c33f520df31548ef22373ea", null ]
+];

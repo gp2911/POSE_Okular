@@ -1,0 +1,105 @@
+\hypertarget{classKParts_1_1OpenUrlEvent}{\section{K\+Parts\+:\+:Open\+Url\+Event Class Reference}
+\label{classKParts_1_1OpenUrlEvent}\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+}
+
+
+{\ttfamily \#include $<$browserextension.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Open\+Url\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKParts_1_1OpenUrlEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1OpenUrlEvent_af98b6f595f6aa62dca8d72ff54138ec9}{Open\+Url\+Event} (\hyperlink{classKParts_1_1ReadOnlyPart}{Read\+Only\+Part} $\ast$\hyperlink{classKParts_1_1OpenUrlEvent_a2c23bcde7fee2966c25dbd7d961b151b}{part}, const K\+Url \&\hyperlink{classKParts_1_1OpenUrlEvent_a910c8c089b7c863e49cd83ddf4b8f003}{url}, const \hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments} \&args=\hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments}(), const \hyperlink{structKParts_1_1BrowserArguments}{Browser\+Arguments} \&browser\+Args=\hyperlink{structKParts_1_1BrowserArguments}{Browser\+Arguments}())
+\item 
+virtual \hyperlink{classKParts_1_1OpenUrlEvent_aceb6c7fd12ae21889f779d7a074e02ca}{$\sim$\+Open\+Url\+Event} ()
+\item 
+\hyperlink{classKParts_1_1ReadOnlyPart}{Read\+Only\+Part} $\ast$ \hyperlink{classKParts_1_1OpenUrlEvent_a2c23bcde7fee2966c25dbd7d961b151b}{part} () const 
+\item 
+K\+Url \hyperlink{classKParts_1_1OpenUrlEvent_a910c8c089b7c863e49cd83ddf4b8f003}{url} () const 
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments}{Open\+Url\+Arguments} \hyperlink{classKParts_1_1OpenUrlEvent_a8a365e2cb9c4be571aa5c0c383280fa0}{arguments} () const 
+\item 
+\hyperlink{structKParts_1_1BrowserArguments}{Browser\+Arguments} \hyperlink{classKParts_1_1OpenUrlEvent_a410497aaab6fbe7c2ff0ab9ca86f32ab}{browser\+Arguments} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classKParts_1_1OpenUrlEvent_aa2c34fa11ddbcbf9828661fe681bcb62}{test} (const Q\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classKParts_1_1OpenUrlEvent}{K\+Parts\+::\+Open\+Url\+Event} event informs that a given part has opened a given U\+R\+L. Applications can use this event to send this information to interested plugins.
+
+The event should be sent before opening the U\+R\+L in the part, so that the plugins can use \hyperlink{classKParts_1_1OpenUrlEvent_a2c23bcde7fee2966c25dbd7d961b151b}{part()}-\/$>$\hyperlink{classKParts_1_1OpenUrlEvent_a910c8c089b7c863e49cd83ddf4b8f003}{url()} to get the old U\+R\+L. 
+
+Definition at line 249 of file browserextension.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1OpenUrlEvent_af98b6f595f6aa62dca8d72ff54138ec9}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!Open\+Url\+Event@{Open\+Url\+Event}}
+\index{Open\+Url\+Event@{Open\+Url\+Event}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{Open\+Url\+Event}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Open\+Url\+Event\+::\+Open\+Url\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Read\+Only\+Part} $\ast$}]{part, }
+\item[{const K\+Url \&}]{url, }
+\item[{const {\bf Open\+Url\+Arguments} \&}]{args = {\ttfamily {\bf Open\+Url\+Arguments}()}, }
+\item[{const {\bf Browser\+Arguments} \&}]{browser\+Args = {\ttfamily {\bf Browser\+Arguments}()}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1OpenUrlEvent_af98b6f595f6aa62dca8d72ff54138ec9}
+\hypertarget{classKParts_1_1OpenUrlEvent_aceb6c7fd12ae21889f779d7a074e02ca}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!````~Open\+Url\+Event@{$\sim$\+Open\+Url\+Event}}
+\index{````~Open\+Url\+Event@{$\sim$\+Open\+Url\+Event}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{$\sim$\+Open\+Url\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Open\+Url\+Event\+::$\sim$\+Open\+Url\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1OpenUrlEvent_aceb6c7fd12ae21889f779d7a074e02ca}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1OpenUrlEvent_a8a365e2cb9c4be571aa5c0c383280fa0}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!arguments@{arguments}}
+\index{arguments@{arguments}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Open\+Url\+Arguments} K\+Parts\+::\+Open\+Url\+Event\+::arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlEvent_a8a365e2cb9c4be571aa5c0c383280fa0}
+\hypertarget{classKParts_1_1OpenUrlEvent_a410497aaab6fbe7c2ff0ab9ca86f32ab}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!browser\+Arguments@{browser\+Arguments}}
+\index{browser\+Arguments@{browser\+Arguments}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{browser\+Arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Browser\+Arguments} K\+Parts\+::\+Open\+Url\+Event\+::browser\+Arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlEvent_a410497aaab6fbe7c2ff0ab9ca86f32ab}
+\hypertarget{classKParts_1_1OpenUrlEvent_a2c23bcde7fee2966c25dbd7d961b151b}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!part@{part}}
+\index{part@{part}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Read\+Only\+Part}$\ast$ K\+Parts\+::\+Open\+Url\+Event\+::part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlEvent_a2c23bcde7fee2966c25dbd7d961b151b}
+\hypertarget{classKParts_1_1OpenUrlEvent_aa2c34fa11ddbcbf9828661fe681bcb62}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!test@{test}}
+\index{test@{test}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{test}]{\setlength{\rightskip}{0pt plus 5cm}static bool K\+Parts\+::\+Open\+Url\+Event\+::test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1OpenUrlEvent_aa2c34fa11ddbcbf9828661fe681bcb62}
+\hypertarget{classKParts_1_1OpenUrlEvent_a910c8c089b7c863e49cd83ddf4b8f003}{\index{K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}!url@{url}}
+\index{url@{url}!K\+Parts\+::\+Open\+Url\+Event@{K\+Parts\+::\+Open\+Url\+Event}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}K\+Url K\+Parts\+::\+Open\+Url\+Event\+::url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1OpenUrlEvent_a910c8c089b7c863e49cd83ddf4b8f003}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browserextension_8h}{browserextension.\+h}\end{DoxyCompactItemize}

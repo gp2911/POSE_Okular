@@ -1,0 +1,141 @@
+\hypertarget{classOkular_1_1SourceRefObjectRect}{\section{Okular\+:\+:Source\+Ref\+Object\+Rect Class Reference}
+\label{classOkular_1_1SourceRefObjectRect}\index{Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}}
+}
+
+
+{\ttfamily \#include $<$area.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Source\+Ref\+Object\+Rect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1SourceRefObjectRect}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1SourceRefObjectRect_a354f74d01736e6d1aacd744e409872a3}{Source\+Ref\+Object\+Rect} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&point, void $\ast$reference)
+\item 
+virtual Q\+Rect \hyperlink{classOkular_1_1SourceRefObjectRect_a98e76ad83344b38637d27a80c2d18034}{bounding\+Rect} (double x\+Scale, double y\+Scale) const 
+\item 
+virtual bool \hyperlink{classOkular_1_1SourceRefObjectRect_a0e39f51ab84d5c36b2a16c30b2a33ff3}{contains} (double x, double y, double x\+Scale, double y\+Scale) const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1SourceRefObjectRect_ae6167dbefdc7f5fd8f1425f4d036da82}{Object\+Rect}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class describes the object rectangle for a source reference. 
+
+Definition at line 474 of file area.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1SourceRefObjectRect_a354f74d01736e6d1aacd744e409872a3}{\index{Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}!Source\+Ref\+Object\+Rect@{Source\+Ref\+Object\+Rect}}
+\index{Source\+Ref\+Object\+Rect@{Source\+Ref\+Object\+Rect}!Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}}
+\subsubsection[{Source\+Ref\+Object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Source\+Ref\+Object\+Rect\+::\+Source\+Ref\+Object\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{point, }
+\item[{void $\ast$}]{src\+Ref}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SourceRefObjectRect_a354f74d01736e6d1aacd744e409872a3}
+Creates a new source reference object rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point of the source reference. \\
+\hline
+{\em reference} & The storable source reference object.\\
+\hline
+\end{DoxyParams}
+class \hyperlink{classOkular_1_1SourceRefObjectRect}{Source\+Ref\+Object\+Rect} 
+
+Definition at line 471 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+472     : \hyperlink{classOkular_1_1SourceRefObjectRect_ae6167dbefdc7f5fd8f1425f4d036da82}{ObjectRect}( point.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, point.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y}, .0, .0, \textcolor{keyword}{false}, \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16abd7dcb9a8d9df2544c535d1a22155f83}{SourceRef}, srcRef ), m\_point( point
+       )
+473 \{
+474     \textcolor{keyword}{const} \textcolor{keywordtype}{double} x = m\_point.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} < 0.0 ? 0.5 : m\_point.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x};
+475     \textcolor{keyword}{const} \textcolor{keywordtype}{double} y = m\_point.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} < 0.0 ? 0.5 : m\_point.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y};
+476     \textcolor{keyword}{const} QRectF rect( x - 2, y - 2, 5, 5 );
+477     \hyperlink{classOkular_1_1ObjectRect_a92f00ded61bc665991952b8d66d415eb}{m\_path}.addRect( rect );
+478 
+479     \hyperlink{classOkular_1_1ObjectRect_a2df8a0dd35a6097de4058b68fd5b8dad}{m\_transformedPath} = \hyperlink{classOkular_1_1ObjectRect_a92f00ded61bc665991952b8d66d415eb}{m\_path};
+480 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1SourceRefObjectRect_a98e76ad83344b38637d27a80c2d18034}{\index{Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}!bounding\+Rect@{bounding\+Rect}}
+\index{bounding\+Rect@{bounding\+Rect}!Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}}
+\subsubsection[{bounding\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Source\+Ref\+Object\+Rect\+::bounding\+Rect (
+\begin{DoxyParamCaption}
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SourceRefObjectRect_a98e76ad83344b38637d27a80c2d18034}
+Returns the bounding rect of the source reference object rectangle for the scaling factor {\ttfamily x\+Scale} and {\ttfamily y\+Scale}. 
+
+Reimplemented from \hyperlink{classOkular_1_1ObjectRect_aa6b1c3b6ed093291d5ec7f92b97754ae}{Okular\+::\+Object\+Rect}.
+
+
+
+Definition at line 482 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+483 \{
+484     \textcolor{keyword}{const} \textcolor{keywordtype}{double} x = m\_point.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} < 0.0 ? 0.5 : m\_point.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x};
+485     \textcolor{keyword}{const} \textcolor{keywordtype}{double} y = m\_point.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} < 0.0 ? 0.5 : m\_point.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y};
+486 
+487     \textcolor{keywordflow}{return} QRect( x * xScale, y * yScale, 1, 1 );
+488 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SourceRefObjectRect_a0e39f51ab84d5c36b2a16c30b2a33ff3}{\index{Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}!contains@{contains}}
+\index{contains@{contains}!Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Source\+Ref\+Object\+Rect\+::contains (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SourceRefObjectRect_a0e39f51ab84d5c36b2a16c30b2a33ff3}
+Returns whether the source reference object rectangle contains the point {\ttfamily x}, {\ttfamily y} for the scaling factor {\ttfamily x\+Scale} and {\ttfamily y\+Scale}. 
+
+Reimplemented from \hyperlink{classOkular_1_1ObjectRect_aadc1a6f33f9af0f6da1fd94c07d52488}{Okular\+::\+Object\+Rect}.
+
+
+
+Definition at line 490 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+491 \{
+492     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ObjectRect_a9e1f6727b141e7cb86529dbc55120e81}{distanceSqr}( x, y, xScale, yScale ) < ( pow( 7.0 / xScale, 2 ) + pow( 7.0 / yScale, 2
+       ) );
+493 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classOkular_1_1SourceRefObjectRect_ae6167dbefdc7f5fd8f1425f4d036da82}{\index{Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}!Object\+Rect@{Object\+Rect}}
+\index{Object\+Rect@{Object\+Rect}!Okular\+::\+Source\+Ref\+Object\+Rect@{Okular\+::\+Source\+Ref\+Object\+Rect}}
+\subsubsection[{Object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Object\+Rect}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1SourceRefObjectRect_ae6167dbefdc7f5fd8f1425f4d036da82}
+
+
+Definition at line 476 of file area.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{area_8h}{area.\+h}\item 
+core/\hyperlink{area_8cpp}{area.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,281 @@
+\hypertarget{classOkular_1_1HighlightAnnotation}{\section{Okular\+:\+:Highlight\+Annotation Class Reference}
+\label{classOkular_1_1HighlightAnnotation}\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Highlight\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1HighlightAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad}{Quad}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999}{Highlight\+Type} \{ \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a250833fcd89a56dd46955dc287e1a3af}{Highlight}, 
+\hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999ad02aabccfaaea6082d9402b01e6ae9b8}{Squiggly}, 
+\hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a1cb762e7ebfd92add9d8b71106e3fa2c}{Underline}, 
+\hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999afcdb9513e4039b7239d89f351f8aff85}{Strike\+Out}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_aa4225ec6a5811b7dfda9575424233dc4}{Highlight\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_a860c26f49020ced5bd628450537ab5ce}{Highlight\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_a9d92c42bb9937fdda0cdb6bcd1b51768}{$\sim$\+Highlight\+Annotation} ()
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_af02dd3d33472c9e903fea2e4a58363c4}{set\+Highlight\+Type} (\hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999}{Highlight\+Type} type)
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999}{Highlight\+Type} \hyperlink{classOkular_1_1HighlightAnnotation_a3e95972aebea730877a033f8b2908b90}{highlight\+Type} () const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad}{Quad} $>$ \& \hyperlink{classOkular_1_1HighlightAnnotation_ac0099fec5f383ea7296b86db15b6c08c}{highlight\+Quads} ()
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1HighlightAnnotation_a4c897125cc4ca653dd9e8c6879a7321f}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_ae0fb83f294770aef2d1dc1bb02c7972b}{store} (Q\+Dom\+Node \&node, Q\+Dom\+Document \&document) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1078 of file annotations.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Highlight\+Type@{Highlight\+Type}}
+\index{Highlight\+Type@{Highlight\+Type}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{Highlight\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Highlight\+Annotation\+::\+Highlight\+Type}}}\label{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999}
+Describes the highlighting style of the annotation. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Highlight@{Highlight}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Highlight@{Highlight}}\item[{\em 
+\hypertarget{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a250833fcd89a56dd46955dc287e1a3af}{Highlight}\label{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a250833fcd89a56dd46955dc287e1a3af}
+}]Highlights the text. \index{Squiggly@{Squiggly}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Squiggly@{Squiggly}}\item[{\em 
+\hypertarget{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999ad02aabccfaaea6082d9402b01e6ae9b8}{Squiggly}\label{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999ad02aabccfaaea6082d9402b01e6ae9b8}
+}]Squiggles the text. \index{Underline@{Underline}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Underline@{Underline}}\item[{\em 
+\hypertarget{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a1cb762e7ebfd92add9d8b71106e3fa2c}{Underline}\label{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a1cb762e7ebfd92add9d8b71106e3fa2c}
+}]Underlines the text. \index{Strike\+Out@{Strike\+Out}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Strike\+Out@{Strike\+Out}}\item[{\em 
+\hypertarget{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999afcdb9513e4039b7239d89f351f8aff85}{Strike\+Out}\label{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999afcdb9513e4039b7239d89f351f8aff85}
+}]Strikes out the text. \end{description}
+\end{Desc}
+
+
+Definition at line 1084 of file annotations.\+h.
+
+
+\begin{DoxyCode}
+1085         \{
+1086             \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a250833fcd89a56dd46955dc287e1a3af}{Highlight},  
+1087             \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999ad02aabccfaaea6082d9402b01e6ae9b8}{Squiggly},   
+1088             \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a1cb762e7ebfd92add9d8b71106e3fa2c}{Underline},  
+1089             \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999afcdb9513e4039b7239d89f351f8aff85}{StrikeOut}   
+1090         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1HighlightAnnotation_aa4225ec6a5811b7dfda9575424233dc4}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Highlight\+Annotation@{Highlight\+Annotation}}
+\index{Highlight\+Annotation@{Highlight\+Annotation}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{Highlight\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Highlight\+Annotation\+::\+Highlight\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_aa4225ec6a5811b7dfda9575424233dc4}
+Creates a new highlight annotation. 
+
+Definition at line 1880 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1881     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1HighlightAnnotationPrivate}{HighlightAnnotationPrivate}() )
+1882 \{
+1883 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_a860c26f49020ced5bd628450537ab5ce}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!Highlight\+Annotation@{Highlight\+Annotation}}
+\index{Highlight\+Annotation@{Highlight\+Annotation}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{Highlight\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Highlight\+Annotation\+::\+Highlight\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1HighlightAnnotation_a860c26f49020ced5bd628450537ab5ce}
+Creates a new highlight annotation from the xml {\ttfamily description} 
+
+Definition at line 1885 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1886     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1HighlightAnnotationPrivate}{HighlightAnnotationPrivate}(), node )
+1887 \{
+1888 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_a9d92c42bb9937fdda0cdb6bcd1b51768}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!````~Highlight\+Annotation@{$\sim$\+Highlight\+Annotation}}
+\index{````~Highlight\+Annotation@{$\sim$\+Highlight\+Annotation}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{$\sim$\+Highlight\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Highlight\+Annotation\+::$\sim$\+Highlight\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_a9d92c42bb9937fdda0cdb6bcd1b51768}
+Destroys the highlight annotation. 
+
+Definition at line 1890 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1891 \{
+1892 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1HighlightAnnotation_ac0099fec5f383ea7296b86db15b6c08c}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!highlight\+Quads@{highlight\+Quads}}
+\index{highlight\+Quads@{highlight\+Quads}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{highlight\+Quads}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ {\bf Highlight\+Annotation\+::\+Quad} $>$ \& Highlight\+Annotation\+::highlight\+Quads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_ac0099fec5f383ea7296b86db15b6c08c}
+Returns a reference to the quad list of the highlight annotation. 
+
+Definition at line 1906 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1907 \{
+1908     Q\_D( \hyperlink{classOkular_1_1HighlightAnnotation}{HighlightAnnotation} );
+1909     \textcolor{keywordflow}{return} d->m\_highlightQuads;
+1910 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_a3e95972aebea730877a033f8b2908b90}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!highlight\+Type@{highlight\+Type}}
+\index{highlight\+Type@{highlight\+Type}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{highlight\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Highlight\+Annotation\+::\+Highlight\+Type} Highlight\+Annotation\+::highlight\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1HighlightAnnotation_a3e95972aebea730877a033f8b2908b90}
+Returns the type of the highlight annotation. 
+
+Definition at line 1900 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1901 \{
+1902     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1HighlightAnnotation}{HighlightAnnotation} );
+1903     \textcolor{keywordflow}{return} d->m\_highlightType;
+1904 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_af02dd3d33472c9e903fea2e4a58363c4}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!set\+Highlight\+Type@{set\+Highlight\+Type}}
+\index{set\+Highlight\+Type@{set\+Highlight\+Type}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{set\+Highlight\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::set\+Highlight\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Highlight\+Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_af02dd3d33472c9e903fea2e4a58363c4}
+Sets the {\ttfamily type} of the highlight annotation. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999}{Highlight\+Type} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1894 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1895 \{
+1896     Q\_D( \hyperlink{classOkular_1_1HighlightAnnotation}{HighlightAnnotation} );
+1897     d->m\_highlightType = type;
+1898 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_ae0fb83f294770aef2d1dc1bb02c7972b}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1HighlightAnnotation_ae0fb83f294770aef2d1dc1bb02c7972b}
+Stores the highlight annotation as xml in {\ttfamily document} under the given parent {\ttfamily node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 1912 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1913 \{
+1914     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1HighlightAnnotation}{HighlightAnnotation} );
+1915     \textcolor{comment}{// recurse to parent objects storing properties}
+1916     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+1917 
+1918     \textcolor{comment}{// create [hl] element}
+1919     QDomElement hlElement = document.createElement( \textcolor{stringliteral}{"hl"} );
+1920     node.appendChild( hlElement );
+1921 
+1922     \textcolor{comment}{// append the optional attributes}
+1923     \textcolor{keywordflow}{if} ( d->m\_highlightType != \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a250833fcd89a56dd46955dc287e1a3af}{Highlight} )
+1924         hlElement.setAttribute( \textcolor{stringliteral}{"type"}, (\textcolor{keywordtype}{int})d->m\_highlightType );
+1925     \textcolor{keywordflow}{if} ( d->m\_highlightQuads.count() < 1 )
+1926         \textcolor{keywordflow}{return};
+1927     \textcolor{comment}{// append highlight quads, all children describe quads}
+1928     \hyperlink{classQList}{QList< Quad >::const\_iterator} it = d->m\_highlightQuads.begin(), end = d->
+      m\_highlightQuads.end();
+1929     \textcolor{keywordflow}{for} ( ; it != end; ++it )
+1930     \{
+1931         QDomElement quadElement = document.createElement( \textcolor{stringliteral}{"quad"} );
+1932         hlElement.appendChild( quadElement );
+1933         \textcolor{keyword}{const} Quad & q = *it;
+1934         quadElement.setAttribute( \textcolor{stringliteral}{"ax"}, QString::number( q.point( 0 ).x ) );
+1935         quadElement.setAttribute( \textcolor{stringliteral}{"ay"}, QString::number( q.point( 0 ).y ) );
+1936         quadElement.setAttribute( \textcolor{stringliteral}{"bx"}, QString::number( q.point( 1 ).x ) );
+1937         quadElement.setAttribute( \textcolor{stringliteral}{"by"}, QString::number( q.point( 1 ).y ) );
+1938         quadElement.setAttribute( \textcolor{stringliteral}{"cx"}, QString::number( q.point( 2 ).x ) );
+1939         quadElement.setAttribute( \textcolor{stringliteral}{"cy"}, QString::number( q.point( 2 ).y ) );
+1940         quadElement.setAttribute( \textcolor{stringliteral}{"dx"}, QString::number( q.point( 3 ).x ) );
+1941         quadElement.setAttribute( \textcolor{stringliteral}{"dy"}, QString::number( q.point( 3 ).y ) );
+1942         \textcolor{keywordflow}{if} ( q.capStart() )
+1943             quadElement.setAttribute( \textcolor{stringliteral}{"start"}, 1 );
+1944         \textcolor{keywordflow}{if} ( q.capEnd() )
+1945             quadElement.setAttribute( \textcolor{stringliteral}{"end"}, 1 );
+1946         quadElement.setAttribute( \textcolor{stringliteral}{"feather"}, QString::number( q.feather() ) );
+1947     \}
+1948 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_a4c897125cc4ca653dd9e8c6879a7321f}{\index{Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Highlight\+Annotation@{Okular\+::\+Highlight\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Highlight\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1HighlightAnnotation_a4c897125cc4ca653dd9e8c6879a7321f}
+Returns the sub type of the highlight annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 1950 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1951 \{
+1952     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a03e002f9ae62005b2d7c7f1445507501}{AHighlight};
+1953 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

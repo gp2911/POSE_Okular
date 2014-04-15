@@ -1,0 +1,82 @@
+\hypertarget{area_8cpp}{\section{core/area.cpp File Reference}
+\label{area_8cpp}\index{core/area.\+cpp@{core/area.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}area.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Rect$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Polygon\+F$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}action.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}annotations.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}annotations\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debug\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sourcereference.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{area_8cpp_a2ba287743d70cafc5517849f93c08eda}{operator-\/} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&a, const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&b)
+\item 
+Q\+Debug \hyperlink{area_8cpp_af0802399315a91f56267a73a8d5652d7}{operator$<$$<$} (Q\+Debug str, const \hyperlink{classOkular_1_1NormalizedPoint}{Okular\+::\+Normalized\+Point} \&p)
+\item 
+Q\+Debug \hyperlink{area_8cpp_aa3a11d3a24876755be8ff6336081ece1}{operator$<$$<$} (Q\+Debug str, const \hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \&r)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{area_8cpp_a2ba287743d70cafc5517849f93c08eda}{\index{area.\+cpp@{area.\+cpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!area.\+cpp@{area.\+cpp}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{a, }
+\item[{const {\bf Normalized\+Point} \&}]{b}
+\end{DoxyParamCaption}
+)}}\label{area_8cpp_a2ba287743d70cafc5517849f93c08eda}
+Returns a vector from the given points {\ttfamily a} and {\ttfamily b} 
+
+Definition at line 61 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{
+63     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}( a.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} - b.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, a.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} - b.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} );
+64 \}
+\end{DoxyCode}
+\hypertarget{area_8cpp_af0802399315a91f56267a73a8d5652d7}{\index{area.\+cpp@{area.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!area.\+cpp@{area.\+cpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Debug operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\+Debug}]{str, }
+\item[{const {\bf Okular\+::\+Normalized\+Point} \&}]{point}
+\end{DoxyParamCaption}
+)}}\label{area_8cpp_af0802399315a91f56267a73a8d5652d7}
+Debug operator for normalized {\ttfamily point}. 
+
+Definition at line 118 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+119 \{
+120     str.nospace() << \textcolor{stringliteral}{"NormPt("} << p.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} << \textcolor{stringliteral}{","} << p.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} << \textcolor{stringliteral}{")"};
+121     \textcolor{keywordflow}{return} str.space();
+122 \}
+\end{DoxyCode}
+\hypertarget{area_8cpp_aa3a11d3a24876755be8ff6336081ece1}{\index{area.\+cpp@{area.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!area.\+cpp@{area.\+cpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Debug operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\+Debug}]{str, }
+\item[{const {\bf Okular\+::\+Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{area_8cpp_aa3a11d3a24876755be8ff6336081ece1}
+Debug operator for normalized {\ttfamily rect}. 
+
+Definition at line 270 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+271 \{
+272     str.nospace() << \textcolor{stringliteral}{"NormRect("} << r.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} << \textcolor{stringliteral}{","} << r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} << \textcolor{stringliteral}{" x "} << ( r.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - r.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ) << \textcolor{stringliteral}{"+"} << ( r.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ) << \textcolor{stringliteral}{")"};
+273     \textcolor{keywordflow}{return} str.space();
+274 \}
+\end{DoxyCode}

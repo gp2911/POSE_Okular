@@ -1,0 +1,289 @@
+\hypertarget{config_8cpp}{\section{generators/plucker/unpluck/config.cpp File Reference}
+\label{config_8cpp}\index{generators/plucker/unpluck/config.\+cpp@{generators/plucker/unpluck/config.\+cpp}}
+}
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}unpluck.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}unpluckint.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{config_8cpp_a4689212d5a549893cabb9d7782eecfb6}{S\+T\+R\+I\+N\+G\+I\+F\+Y}(s)~\hyperlink{config_8cpp_ad04412286d8b7705ebd7a741aca2c28e}{S\+T\+R\+I\+N\+G\+I\+F\+Y2} (s)
+\item 
+\#define \hyperlink{config_8cpp_ad04412286d8b7705ebd7a741aca2c28e}{S\+T\+R\+I\+N\+G\+I\+F\+Y2}(s)~\#s
+\item 
+\#define \hyperlink{config_8cpp_a706068f562dd5c64a8b7bbd4b2298dd1}{M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}~1023
+\item 
+\#define \hyperlink{config_8cpp_ab9281d70e7fbe46de3f79532364c30a2}{C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S}~\char`\"{}\#;\char`\"{}
+\item 
+\#define \hyperlink{config_8cpp_a3474a013bfa4b3caf26373fd0a3d6447}{S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R}~'\mbox{[}'
+\item 
+\#define \hyperlink{config_8cpp_acb2caa1294a4566be731cdc2d1b6dd9e}{S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R}~'\mbox{]}'
+\item 
+\#define \hyperlink{config_8cpp_a4af83b6825f658ca30512f13ddaf3796}{O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S}~\char`\"{}=\+:\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\+\_\+\+Get\+Config\+String} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, char $\ast$default\+\_\+value)
+\item 
+long int \hyperlink{config_8cpp_a64ac2d15f29c5cf6f38a9773e103c6b3}{plkr\+\_\+\+Get\+Config\+Int} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, long int default\+\_\+value)
+\item 
+double \hyperlink{config_8cpp_a0e4e459acf2eef69b6dae7ed49326a7b}{plkr\+\_\+\+Get\+Config\+Float} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, double default\+\_\+value)
+\item 
+int \hyperlink{config_8cpp_a5a546e9c1b2e9bf56cec849e2fe2b5bb}{plkr\+\_\+\+Get\+Config\+Boolean} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, int default\+\_\+value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structHashTable}{Hash\+Table} $\ast$ \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{Sections\+Table} = N\+U\+L\+L
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{config_8cpp_ab9281d70e7fbe46de3f79532364c30a2}{\index{config.\+cpp@{config.\+cpp}!C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S@{C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S}}
+\index{C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S@{C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+E\+N\+T\+\_\+\+C\+H\+A\+R\+S~\char`\"{}\#;\char`\"{}}}\label{config_8cpp_ab9281d70e7fbe46de3f79532364c30a2}
+
+
+Definition at line 47 of file config.\+cpp.
+
+\hypertarget{config_8cpp_a706068f562dd5c64a8b7bbd4b2298dd1}{\index{config.\+cpp@{config.\+cpp}!M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+Z\+E~1023}}\label{config_8cpp_a706068f562dd5c64a8b7bbd4b2298dd1}
+
+
+Definition at line 45 of file config.\+cpp.
+
+\hypertarget{config_8cpp_a4af83b6825f658ca30512f13ddaf3796}{\index{config.\+cpp@{config.\+cpp}!O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S@{O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S}}
+\index{O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S@{O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R\+S~\char`\"{}=\+:\char`\"{}}}\label{config_8cpp_a4af83b6825f658ca30512f13ddaf3796}
+
+
+Definition at line 50 of file config.\+cpp.
+
+\hypertarget{config_8cpp_acb2caa1294a4566be731cdc2d1b6dd9e}{\index{config.\+cpp@{config.\+cpp}!S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R@{S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R}}
+\index{S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R@{S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+N\+D\+\_\+\+C\+H\+A\+R~'\mbox{]}'}}\label{config_8cpp_acb2caa1294a4566be731cdc2d1b6dd9e}
+
+
+Definition at line 49 of file config.\+cpp.
+
+\hypertarget{config_8cpp_a3474a013bfa4b3caf26373fd0a3d6447}{\index{config.\+cpp@{config.\+cpp}!S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R@{S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R}}
+\index{S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R@{S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+G\+M\+E\+N\+T\+\_\+\+L\+E\+A\+D\+\_\+\+C\+H\+A\+R~'\mbox{[}'}}\label{config_8cpp_a3474a013bfa4b3caf26373fd0a3d6447}
+
+
+Definition at line 48 of file config.\+cpp.
+
+\hypertarget{config_8cpp_a4689212d5a549893cabb9d7782eecfb6}{\index{config.\+cpp@{config.\+cpp}!S\+T\+R\+I\+N\+G\+I\+F\+Y@{S\+T\+R\+I\+N\+G\+I\+F\+Y}}
+\index{S\+T\+R\+I\+N\+G\+I\+F\+Y@{S\+T\+R\+I\+N\+G\+I\+F\+Y}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{S\+T\+R\+I\+N\+G\+I\+F\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+R\+I\+N\+G\+I\+F\+Y(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~{\bf S\+T\+R\+I\+N\+G\+I\+F\+Y2} (s)}}\label{config_8cpp_a4689212d5a549893cabb9d7782eecfb6}
+
+
+Definition at line 42 of file config.\+cpp.
+
+\hypertarget{config_8cpp_ad04412286d8b7705ebd7a741aca2c28e}{\index{config.\+cpp@{config.\+cpp}!S\+T\+R\+I\+N\+G\+I\+F\+Y2@{S\+T\+R\+I\+N\+G\+I\+F\+Y2}}
+\index{S\+T\+R\+I\+N\+G\+I\+F\+Y2@{S\+T\+R\+I\+N\+G\+I\+F\+Y2}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{S\+T\+R\+I\+N\+G\+I\+F\+Y2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+R\+I\+N\+G\+I\+F\+Y2(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~\#s}}\label{config_8cpp_ad04412286d8b7705ebd7a741aca2c28e}
+
+
+Definition at line 43 of file config.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{config_8cpp_a5a546e9c1b2e9bf56cec849e2fe2b5bb}{\index{config.\+cpp@{config.\+cpp}!plkr\+\_\+\+Get\+Config\+Boolean@{plkr\+\_\+\+Get\+Config\+Boolean}}
+\index{plkr\+\_\+\+Get\+Config\+Boolean@{plkr\+\_\+\+Get\+Config\+Boolean}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+Boolean}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Config\+Boolean (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{int}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{config_8cpp_a5a546e9c1b2e9bf56cec849e2fe2b5bb}
+
+
+Definition at line 373 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+378 \{
+379     \textcolor{keywordtype}{char}*  svalue = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (section\_name, option\_name, NULL);
+380 
+381     \textcolor{keywordflow}{if} (svalue == NULL)
+382         \textcolor{keywordflow}{return} default\_value;
+383 
+384     \textcolor{keywordflow}{if} ((strcmp (svalue, \textcolor{stringliteral}{"1"}) == 0) ||
+385         (strcmp (svalue, \textcolor{stringliteral}{"true"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"TRUE"}) == 0) ||
+386         (strcmp (svalue, \textcolor{stringliteral}{"on"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"ON"}) == 0) ||
+387         (strcmp (svalue, \textcolor{stringliteral}{"t"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"T"}) == 0)
+388         || (strcmp (svalue, \textcolor{stringliteral}{"True"}) == 0))
+389         \textcolor{keywordflow}{return} 1;
+390 
+391     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((strcmp (svalue, \textcolor{stringliteral}{"0"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"false"}) == 0)
+392              || (strcmp (svalue, \textcolor{stringliteral}{"FALSE"}) == 0)
+393              || (strcmp (svalue, \textcolor{stringliteral}{"off"}) == 0)
+394              || (strcmp (svalue, \textcolor{stringliteral}{"OFF"}) == 0)
+395              || (strcmp (svalue, \textcolor{stringliteral}{"F"}) == 0)
+396              || (strcmp (svalue, \textcolor{stringliteral}{"F"}) == 0)
+397              || (strcmp (svalue, \textcolor{stringliteral}{"False"}) == 0))
+398         \textcolor{keywordflow}{return} 0;
+399 
+400     \textcolor{keywordflow}{else} \{
+401         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad boolean value string '%s' for option %s:%s"},
+402                        svalue, (section\_name ? section\_name : \textcolor{stringliteral}{"default"}),
+403                        option\_name);
+404         \textcolor{keywordflow}{return} default\_value;
+405     \}
+406 \}
+\end{DoxyCode}
+\hypertarget{config_8cpp_a0e4e459acf2eef69b6dae7ed49326a7b}{\index{config.\+cpp@{config.\+cpp}!plkr\+\_\+\+Get\+Config\+Float@{plkr\+\_\+\+Get\+Config\+Float}}
+\index{plkr\+\_\+\+Get\+Config\+Float@{plkr\+\_\+\+Get\+Config\+Float}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+Float}]{\setlength{\rightskip}{0pt plus 5cm}double plkr\+\_\+\+Get\+Config\+Float (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{double}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{config_8cpp_a0e4e459acf2eef69b6dae7ed49326a7b}
+
+
+Definition at line 347 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+352 \{
+353     \textcolor{keywordtype}{char}*   svalue = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (section\_name, option\_name, NULL);
+354     \textcolor{keywordtype}{char}*   endptr;
+355     \textcolor{keywordtype}{double}  value;
+356 
+357     \textcolor{keywordflow}{if} (svalue == NULL)
+358         \textcolor{keywordflow}{return} default\_value;
+359 
+360     value = strtod (svalue, &endptr);
+361     \textcolor{keywordflow}{if} (*endptr != 0) \{
+362         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad float value string '%s' for option %s:%s"},
+363                        svalue, (section\_name ? section\_name : \textcolor{stringliteral}{"default"}),
+364                        option\_name);
+365         \textcolor{keywordflow}{return} default\_value;
+366     \}
+367     \textcolor{keywordflow}{else} \{
+368         \textcolor{keywordflow}{return} value;
+369     \}
+370 \}
+\end{DoxyCode}
+\hypertarget{config_8cpp_a64ac2d15f29c5cf6f38a9773e103c6b3}{\index{config.\+cpp@{config.\+cpp}!plkr\+\_\+\+Get\+Config\+Int@{plkr\+\_\+\+Get\+Config\+Int}}
+\index{plkr\+\_\+\+Get\+Config\+Int@{plkr\+\_\+\+Get\+Config\+Int}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+Int}]{\setlength{\rightskip}{0pt plus 5cm}long int plkr\+\_\+\+Get\+Config\+Int (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{long int}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{config_8cpp_a64ac2d15f29c5cf6f38a9773e103c6b3}
+
+
+Definition at line 321 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+326 \{
+327     \textcolor{keywordtype}{char}*     svalue = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (section\_name, option\_name, NULL);
+328     \textcolor{keywordtype}{char}*     endptr;
+329     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int}  value;
+330 
+331     \textcolor{keywordflow}{if} (svalue == NULL)
+332         \textcolor{keywordflow}{return} default\_value;
+333 
+334     value = strtol (svalue, &endptr, 0);
+335     \textcolor{keywordflow}{if} (*endptr != 0) \{
+336         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad int value string '%s' for option %s:%s"},
+337                        svalue, (section\_name ? section\_name : \textcolor{stringliteral}{"default"}),
+338                        option\_name);
+339         \textcolor{keywordflow}{return} default\_value;
+340     \}
+341     \textcolor{keywordflow}{else} \{
+342         \textcolor{keywordflow}{return} value;
+343     \}
+344 \}
+\end{DoxyCode}
+\hypertarget{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{\index{config.\+cpp@{config.\+cpp}!plkr\+\_\+\+Get\+Config\+String@{plkr\+\_\+\+Get\+Config\+String}}
+\index{plkr\+\_\+\+Get\+Config\+String@{plkr\+\_\+\+Get\+Config\+String}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+String}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ plkr\+\_\+\+Get\+Config\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{char $\ast$}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}
+
+
+Definition at line 280 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+285 \{
+286     \textcolor{keywordtype}{char}*       value = NULL;
+287     \hyperlink{structHashTable}{HashTable}*  section;
+288 
+289     \textcolor{keywordflow}{if} (\hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable} == NULL)
+290         InitializeConfigInfo ();
+291 
+292     \textcolor{keywordflow}{if} (\hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable} == NULL)
+293         \textcolor{keywordflow}{return} default\_value;
+294 
+295     \textcolor{keywordflow}{if} (section\_name != NULL) \{
+296         \textcolor{keywordflow}{if} ((section =
+297              (\hyperlink{structHashTable}{HashTable} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (
+      \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable},
+298                                               section\_name)) != NULL)
+299             value = (\textcolor{keywordtype}{char} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (section, option\_name);
+300     \}
+301     \textcolor{keywordflow}{if} (value == NULL && ((section\_name == NULL)
+302                           || (strcmp (section\_name, \textcolor{stringliteral}{"default"}) != 0))) \{
+303         \textcolor{keywordflow}{if} ((section =
+304              (\hyperlink{structHashTable}{HashTable} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (
+      \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable},
+305                                               \hyperlink{config_8cpp_a4689212d5a549893cabb9d7782eecfb6}{STRINGIFY} (OS\_SECTION\_NAME)))
+306             != NULL)
+307             value = (\textcolor{keywordtype}{char} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (section, option\_name);
+308     \}
+309     \textcolor{keywordflow}{if} (value == NULL && ((section\_name == NULL)
+310                           || (strcmp (section\_name, \textcolor{stringliteral}{"default"}) != 0))) \{
+311         \textcolor{keywordflow}{if} ((section =
+312              (\hyperlink{structHashTable}{HashTable} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (
+      \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable},
+313                                               \textcolor{stringliteral}{"default"})) != NULL)
+314             value = (\textcolor{keywordtype}{char} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (section, option\_name);
+315     \}
+316 
+317     \textcolor{keywordflow}{return} ((value == NULL) ? default\_value : value);
+318 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{config_8cpp_ac8463c73a988234bd6274364540a655b}{\index{config.\+cpp@{config.\+cpp}!Sections\+Table@{Sections\+Table}}
+\index{Sections\+Table@{Sections\+Table}!config.\+cpp@{config.\+cpp}}
+\subsubsection[{Sections\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Sections\+Table = N\+U\+L\+L}}\label{config_8cpp_ac8463c73a988234bd6274364540a655b}
+
+
+Definition at line 52 of file config.\+cpp.
+

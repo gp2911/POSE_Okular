@@ -1,0 +1,145 @@
+\hypertarget{classPageFilterProxyModel}{\section{Page\+Filter\+Proxy\+Model Class Reference}
+\label{classPageFilterProxyModel}\index{Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}}
+}
+
+
+{\ttfamily \#include $<$annotationproxymodels.\+h$>$}
+
+Inheritance diagram for Page\+Filter\+Proxy\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPageFilterProxyModel}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPageFilterProxyModel_a8bf420622ac83b8aee33f459907552b9}{group\+By\+Current\+Page} (bool value)
+\item 
+void \hyperlink{classPageFilterProxyModel_a68ba3ca58f7d8a4e921d08596bf3f7de}{set\+Current\+Page} (int page)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageFilterProxyModel_a23bcd2b5990f9ed86e3ad21dcb11554e}{Page\+Filter\+Proxy\+Model} (Q\+Object $\ast$parent=0)
+\item 
+virtual bool \hyperlink{classPageFilterProxyModel_a2f0524365f9965aa1d6455bcea52f4b0}{filter\+Accepts\+Row} (int, const Q\+Model\+Index \&) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A proxy model, which filters out all pages except the current one. 
+
+Definition at line 20 of file annotationproxymodels.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageFilterProxyModel_a23bcd2b5990f9ed86e3ad21dcb11554e}{\index{Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}!Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}}
+\index{Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}!Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}}
+\subsubsection[{Page\+Filter\+Proxy\+Model}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Filter\+Proxy\+Model\+::\+Page\+Filter\+Proxy\+Model (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classPageFilterProxyModel_a23bcd2b5990f9ed86e3ad21dcb11554e}
+Creates a new page filter proxy model.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+25   : QSortFilterProxyModel( parent ),
+26     mGroupByCurrentPage( \textcolor{keyword}{false} ),
+27     mCurrentPage( -1 )
+28 \{
+29   setDynamicSortFilter( \textcolor{keyword}{true} );
+30 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageFilterProxyModel_a2f0524365f9965aa1d6455bcea52f4b0}{\index{Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}!filter\+Accepts\+Row@{filter\+Accepts\+Row}}
+\index{filter\+Accepts\+Row@{filter\+Accepts\+Row}!Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}}
+\subsubsection[{filter\+Accepts\+Row}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Filter\+Proxy\+Model\+::filter\+Accepts\+Row (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{const Q\+Model\+Index \&}]{source\+Parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageFilterProxyModel_a2f0524365f9965aa1d6455bcea52f4b0}
+Reimplemented from Q\+Sort\+Filter\+Proxy. 
+
+Definition at line 56 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+57 \{
+58   \textcolor{keywordflow}{if} ( !mGroupByCurrentPage )
+59     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+60 
+61   \textcolor{keyword}{const} QModelIndex pageIndex = sourceModel()->index( row, 0, sourceParent );
+62   \textcolor{keywordtype}{int} page = sourceModel()->data( pageIndex, \hyperlink{classAnnotationModel_aa517b64760be429123ee732470e08169a36e01de5a0952a700d4f7cd17491aa57}{AnnotationModel::PageRole} ).toInt();
+63 
+64   \textcolor{keywordflow}{return} (page == mCurrentPage);
+65 \}
+\end{DoxyCode}
+\hypertarget{classPageFilterProxyModel_a8bf420622ac83b8aee33f459907552b9}{\index{Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}!group\+By\+Current\+Page@{group\+By\+Current\+Page}}
+\index{group\+By\+Current\+Page@{group\+By\+Current\+Page}!Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}}
+\subsubsection[{group\+By\+Current\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Filter\+Proxy\+Model\+::group\+By\+Current\+Page (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classPageFilterProxyModel_a8bf420622ac83b8aee33f459907552b9}
+Sets whether the proxy model shall filter by current page. 
+
+Definition at line 32 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{
+34   \textcolor{keywordflow}{if} ( mGroupByCurrentPage == value )
+35     \textcolor{keywordflow}{return};
+36 
+37   mGroupByCurrentPage = value;
+38 
+39   invalidateFilter();
+40 \}
+\end{DoxyCode}
+\hypertarget{classPageFilterProxyModel_a68ba3ca58f7d8a4e921d08596bf3f7de}{\index{Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}!set\+Current\+Page@{set\+Current\+Page}}
+\index{set\+Current\+Page@{set\+Current\+Page}!Page\+Filter\+Proxy\+Model@{Page\+Filter\+Proxy\+Model}}
+\subsubsection[{set\+Current\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Filter\+Proxy\+Model\+::set\+Current\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classPageFilterProxyModel_a68ba3ca58f7d8a4e921d08596bf3f7de}
+Sets the current page. 
+
+Definition at line 42 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44   \textcolor{keywordflow}{if} ( mCurrentPage == page )
+45     \textcolor{keywordflow}{return};
+46 
+47   mCurrentPage = page;
+48 
+49   \textcolor{comment}{// no need to invalidate when we're not showing the current page only}
+50   \textcolor{keywordflow}{if} ( !mGroupByCurrentPage )
+51     \textcolor{keywordflow}{return};
+52 
+53   invalidateFilter();
+54 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationproxymodels_8h}{annotationproxymodels.\+h}\item 
+ui/\hyperlink{annotationproxymodels_8cpp}{annotationproxymodels.\+cpp}\end{DoxyCompactItemize}

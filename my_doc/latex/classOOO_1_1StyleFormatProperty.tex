@@ -1,0 +1,362 @@
+\hypertarget{classOOO_1_1StyleFormatProperty}{\section{O\+O\+O\+:\+:Style\+Format\+Property Class Reference}
+\label{classOOO_1_1StyleFormatProperty}\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+}
+
+
+{\ttfamily \#include $<$formatproperty.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOOO_1_1StyleFormatProperty_a55923635b5a4697ba1b4e3366b68edec}{Style\+Format\+Property} ()
+\item 
+\hyperlink{classOOO_1_1StyleFormatProperty_a58fcc91919a3a06cf8037325c03ffcfa}{Style\+Format\+Property} (const \hyperlink{classOOO_1_1StyleInformation}{Style\+Information} $\ast$information)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_adb08bff832497841617d6bf6c97561fe}{apply\+Block} (Q\+Text\+Block\+Format $\ast$format) const 
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_ae9c09024e05a8150bd3947ba63f97ee2}{apply\+Text} (Q\+Text\+Char\+Format $\ast$format) const 
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_a2d0585ea9cab33696e8cd5699168635e}{apply\+Table\+Column} (Q\+Text\+Table\+Format $\ast$format) const 
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_ac88cdb833ae35a05a08a1809afa0d5ad}{apply\+Table\+Cell} (Q\+Text\+Block\+Format $\ast$format) const 
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_ab6dc7a5a0e81347f1dc1428ab77cb29c}{set\+Parent\+Style\+Name} (const Q\+String \&\hyperlink{classOOO_1_1StyleFormatProperty_a80fc7b56cacf26449765b89caeeae7d0}{parent\+Style\+Name})
+\item 
+Q\+String \hyperlink{classOOO_1_1StyleFormatProperty_a80fc7b56cacf26449765b89caeeae7d0}{parent\+Style\+Name} () const 
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_a3f53384eec7b44a07e2c8e06bbf097bf}{set\+Family} (const Q\+String \&family)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_ad6ea7a630f6e68af3e69ec835e59c725}{set\+Default\+Style} (bool default\+Style)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_adfefd9a07ec5b11cc5e1d910667bb71e}{set\+Master\+Page\+Name} (const Q\+String \&master\+Page\+Name)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_ac82d871d9c3671120446ca54663837c2}{set\+Paragraph\+Format} (const \hyperlink{classOOO_1_1ParagraphFormatProperty}{Paragraph\+Format\+Property} \&format)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_a123b42ed7000eaa17a0a633e3df304af}{set\+Text\+Format} (const \hyperlink{classOOO_1_1TextFormatProperty}{Text\+Format\+Property} \&format)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_ae2bb40574fd8f6fda7920f547f1a8a54}{set\+Table\+Column\+Format} (const \hyperlink{classOOO_1_1TableColumnFormatProperty}{Table\+Column\+Format\+Property} \&format)
+\item 
+void \hyperlink{classOOO_1_1StyleFormatProperty_a7940c8dd8f7293c7c3231c3ea58d557b}{set\+Table\+Cell\+Format} (const \hyperlink{classOOO_1_1TableCellFormatProperty}{Table\+Cell\+Format\+Property} \&format)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 201 of file formatproperty.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOOO_1_1StyleFormatProperty_a55923635b5a4697ba1b4e3366b68edec}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!Style\+Format\+Property@{Style\+Format\+Property}}
+\index{Style\+Format\+Property@{Style\+Format\+Property}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{Style\+Format\+Property}]{\setlength{\rightskip}{0pt plus 5cm}Style\+Format\+Property\+::\+Style\+Format\+Property (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_a55923635b5a4697ba1b4e3366b68edec}
+
+
+Definition at line 175 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+176   : mStyleInformation( 0 ), mDefaultStyle( \textcolor{keyword}{false} )
+177 \{
+178 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_a58fcc91919a3a06cf8037325c03ffcfa}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!Style\+Format\+Property@{Style\+Format\+Property}}
+\index{Style\+Format\+Property@{Style\+Format\+Property}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{Style\+Format\+Property}]{\setlength{\rightskip}{0pt plus 5cm}Style\+Format\+Property\+::\+Style\+Format\+Property (
+\begin{DoxyParamCaption}
+\item[{const {\bf Style\+Information} $\ast$}]{information}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_a58fcc91919a3a06cf8037325c03ffcfa}
+
+
+Definition at line 180 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+181   : mStyleInformation( information ), mDefaultStyle( \textcolor{keyword}{false} )
+182 \{
+183 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOOO_1_1StyleFormatProperty_adb08bff832497841617d6bf6c97561fe}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!apply\+Block@{apply\+Block}}
+\index{apply\+Block@{apply\+Block}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{apply\+Block}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::apply\+Block (
+\begin{DoxyParamCaption}
+\item[{Q\+Text\+Block\+Format $\ast$}]{format}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1StyleFormatProperty_adb08bff832497841617d6bf6c97561fe}
+
+
+Definition at line 185 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+186 \{
+187   \textcolor{keywordflow}{if} ( !mDefaultStyle && !mFamily.isEmpty() && mStyleInformation ) \{
+188     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mFamily );
+189     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_adb08bff832497841617d6bf6c97561fe}{applyBlock}( format );
+190   \}
+191 
+192   \textcolor{keywordflow}{if} ( !mParentStyleName.isEmpty() && mStyleInformation ) \{
+193     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mParentStyleName );
+194     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_adb08bff832497841617d6bf6c97561fe}{applyBlock}( format );
+195   \}
+196 
+197   mParagraphFormat.\hyperlink{classOOO_1_1ParagraphFormatProperty_a7f45453913ad9d57285c0f1e797fba52}{apply}( format );
+198 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_ac88cdb833ae35a05a08a1809afa0d5ad}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!apply\+Table\+Cell@{apply\+Table\+Cell}}
+\index{apply\+Table\+Cell@{apply\+Table\+Cell}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{apply\+Table\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::apply\+Table\+Cell (
+\begin{DoxyParamCaption}
+\item[{Q\+Text\+Block\+Format $\ast$}]{format}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1StyleFormatProperty_ac88cdb833ae35a05a08a1809afa0d5ad}
+
+
+Definition at line 230 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+231 \{
+232   \textcolor{keywordflow}{if} ( !mDefaultStyle && !mFamily.isEmpty() && mStyleInformation ) \{
+233     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mFamily );
+234     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_ac88cdb833ae35a05a08a1809afa0d5ad}{applyTableCell}( format );
+235   \}
+236 
+237   \textcolor{keywordflow}{if} ( !mParentStyleName.isEmpty() && mStyleInformation ) \{
+238     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mParentStyleName );
+239     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_ac88cdb833ae35a05a08a1809afa0d5ad}{applyTableCell}( format );
+240   \}
+241 
+242   mTableCellFormat.\hyperlink{classOOO_1_1TableCellFormatProperty_adc1eb42fbbabec2cd5d55fbed0673589}{apply}( format );
+243 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_a2d0585ea9cab33696e8cd5699168635e}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!apply\+Table\+Column@{apply\+Table\+Column}}
+\index{apply\+Table\+Column@{apply\+Table\+Column}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{apply\+Table\+Column}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::apply\+Table\+Column (
+\begin{DoxyParamCaption}
+\item[{Q\+Text\+Table\+Format $\ast$}]{format}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1StyleFormatProperty_a2d0585ea9cab33696e8cd5699168635e}
+
+
+Definition at line 215 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+216 \{
+217   \textcolor{keywordflow}{if} ( !mDefaultStyle && !mFamily.isEmpty() && mStyleInformation ) \{
+218     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mFamily );
+219     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_a2d0585ea9cab33696e8cd5699168635e}{applyTableColumn}( format );
+220   \}
+221 
+222   \textcolor{keywordflow}{if} ( !mParentStyleName.isEmpty() && mStyleInformation ) \{
+223     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mParentStyleName );
+224     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_a2d0585ea9cab33696e8cd5699168635e}{applyTableColumn}( format );
+225   \}
+226 
+227   mTableColumnFormat.\hyperlink{classOOO_1_1TableColumnFormatProperty_a30d6f1d42f7e751dc5fc83cd5cc66df3}{apply}( format );
+228 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_ae9c09024e05a8150bd3947ba63f97ee2}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!apply\+Text@{apply\+Text}}
+\index{apply\+Text@{apply\+Text}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{apply\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::apply\+Text (
+\begin{DoxyParamCaption}
+\item[{Q\+Text\+Char\+Format $\ast$}]{format}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1StyleFormatProperty_ae9c09024e05a8150bd3947ba63f97ee2}
+
+
+Definition at line 200 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+201 \{
+202   \textcolor{keywordflow}{if} ( !mDefaultStyle && !mFamily.isEmpty() && mStyleInformation ) \{
+203     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mFamily );
+204     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_ae9c09024e05a8150bd3947ba63f97ee2}{applyText}( format );
+205   \}
+206 
+207   \textcolor{keywordflow}{if} ( !mParentStyleName.isEmpty() && mStyleInformation ) \{
+208     \textcolor{keyword}{const} \hyperlink{classOOO_1_1StyleFormatProperty}{StyleFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a9f34b3c6cbf0c2cfcb16b0299ec5db75}{styleProperty}( mParentStyleName );
+209     \textcolor{keyword}{property}.\hyperlink{classOOO_1_1StyleFormatProperty_ae9c09024e05a8150bd3947ba63f97ee2}{applyText}( format );
+210   \}
+211 
+212   mTextFormat.\hyperlink{classOOO_1_1TextFormatProperty_af3a7e53d62458bfccdf7854b2529221a}{apply}( format );
+213 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_a80fc7b56cacf26449765b89caeeae7d0}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!parent\+Style\+Name@{parent\+Style\+Name}}
+\index{parent\+Style\+Name@{parent\+Style\+Name}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{parent\+Style\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Style\+Format\+Property\+::parent\+Style\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1StyleFormatProperty_a80fc7b56cacf26449765b89caeeae7d0}
+
+
+Definition at line 250 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+251 \{
+252   \textcolor{keywordflow}{return} mParentStyleName;
+253 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_ad6ea7a630f6e68af3e69ec835e59c725}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Default\+Style@{set\+Default\+Style}}
+\index{set\+Default\+Style@{set\+Default\+Style}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Default\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Default\+Style (
+\begin{DoxyParamCaption}
+\item[{bool}]{default\+Style}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_ad6ea7a630f6e68af3e69ec835e59c725}
+
+
+Definition at line 260 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+261 \{
+262   mDefaultStyle = defaultStyle;
+263 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_a3f53384eec7b44a07e2c8e06bbf097bf}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Family@{set\+Family}}
+\index{set\+Family@{set\+Family}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Family}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Family (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{family}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_a3f53384eec7b44a07e2c8e06bbf097bf}
+
+
+Definition at line 255 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+256 \{
+257   mFamily = family;
+258 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_adfefd9a07ec5b11cc5e1d910667bb71e}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Master\+Page\+Name@{set\+Master\+Page\+Name}}
+\index{set\+Master\+Page\+Name@{set\+Master\+Page\+Name}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Master\+Page\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Master\+Page\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{master\+Page\+Name}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_adfefd9a07ec5b11cc5e1d910667bb71e}
+
+
+Definition at line 265 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+266 \{
+267   mMasterPageName = masterPageName;
+268 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_ac82d871d9c3671120446ca54663837c2}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Paragraph\+Format@{set\+Paragraph\+Format}}
+\index{set\+Paragraph\+Format@{set\+Paragraph\+Format}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Paragraph\+Format}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Paragraph\+Format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Paragraph\+Format\+Property} \&}]{format}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_ac82d871d9c3671120446ca54663837c2}
+
+
+Definition at line 270 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+271 \{
+272   mParagraphFormat = format;
+273 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_ab6dc7a5a0e81347f1dc1428ab77cb29c}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Parent\+Style\+Name@{set\+Parent\+Style\+Name}}
+\index{set\+Parent\+Style\+Name@{set\+Parent\+Style\+Name}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Parent\+Style\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Parent\+Style\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{parent\+Style\+Name}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_ab6dc7a5a0e81347f1dc1428ab77cb29c}
+
+
+Definition at line 245 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+246 \{
+247   mParentStyleName = \hyperlink{classOOO_1_1StyleFormatProperty_a80fc7b56cacf26449765b89caeeae7d0}{parentStyleName};
+248 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_a7940c8dd8f7293c7c3231c3ea58d557b}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Table\+Cell\+Format@{set\+Table\+Cell\+Format}}
+\index{set\+Table\+Cell\+Format@{set\+Table\+Cell\+Format}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Table\+Cell\+Format}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Table\+Cell\+Format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Table\+Cell\+Format\+Property} \&}]{format}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_a7940c8dd8f7293c7c3231c3ea58d557b}
+
+
+Definition at line 285 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+286 \{
+287   mTableCellFormat = format;
+288 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_ae2bb40574fd8f6fda7920f547f1a8a54}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Table\+Column\+Format@{set\+Table\+Column\+Format}}
+\index{set\+Table\+Column\+Format@{set\+Table\+Column\+Format}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Table\+Column\+Format}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Table\+Column\+Format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Table\+Column\+Format\+Property} \&}]{format}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_ae2bb40574fd8f6fda7920f547f1a8a54}
+
+
+Definition at line 280 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+281 \{
+282   mTableColumnFormat = format;
+283 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1StyleFormatProperty_a123b42ed7000eaa17a0a633e3df304af}{\index{O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}!set\+Text\+Format@{set\+Text\+Format}}
+\index{set\+Text\+Format@{set\+Text\+Format}!O\+O\+O\+::\+Style\+Format\+Property@{O\+O\+O\+::\+Style\+Format\+Property}}
+\subsubsection[{set\+Text\+Format}]{\setlength{\rightskip}{0pt plus 5cm}void Style\+Format\+Property\+::set\+Text\+Format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Text\+Format\+Property} \&}]{format}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1StyleFormatProperty_a123b42ed7000eaa17a0a633e3df304af}
+
+
+Definition at line 275 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+276 \{
+277   mTextFormat = format;
+278 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/ooo/\hyperlink{formatproperty_8h}{formatproperty.\+h}\item 
+generators/ooo/\hyperlink{formatproperty_8cpp}{formatproperty.\+cpp}\end{DoxyCompactItemize}

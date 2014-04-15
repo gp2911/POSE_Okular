@@ -1,0 +1,201 @@
+\hypertarget{classSidebar_1_1Private}{\section{Sidebar\+:\+:Private Class Reference}
+\label{classSidebar_1_1Private}\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSidebar_1_1Private_ac1af202e142000d02c7c00122e0483fe}{Private} ()
+\item 
+void \hyperlink{classSidebar_1_1Private_a65d6c77ebd73135cc391a85e2732cbfa}{adjust\+List\+Size} (bool recalc, bool expand=true)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSidebarListWidget}{Sidebar\+List\+Widget} $\ast$ \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}
+\item 
+Q\+Splitter $\ast$ \hyperlink{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{splitter}
+\item 
+Q\+Stacked\+Widget $\ast$ \hyperlink{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}{stack}
+\item 
+Q\+Widget $\ast$ \hyperlink{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{side\+Container}
+\item 
+Q\+Label $\ast$ \hyperlink{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{side\+Title}
+\item 
+Q\+V\+Box\+Layout $\ast$ \hyperlink{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{vlay}
+\item 
+Q\+Widget $\ast$ \hyperlink{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{side\+Widget}
+\item 
+Q\+Widget $\ast$ \hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottom\+Widget}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{classSidebarItem}{Sidebar\+Item} $\ast$ $>$ \hyperlink{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{pages}
+\item 
+bool \hyperlink{classSidebar_1_1Private_a99a16d70b6092f5ae63c2b349006beb0}{splitter\+Sizes\+Set}
+\item 
+int \hyperlink{classSidebar_1_1Private_a467a6317bcfa987166b354f2145e1dbb}{items\+Height}
+\item 
+\hyperlink{classSidebarDelegate}{Sidebar\+Delegate} $\ast$ \hyperlink{classSidebar_1_1Private_a25b75ddd6cbb379f77f71207ad627d54}{side\+Delegate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 391 of file sidebar.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSidebar_1_1Private_ac1af202e142000d02c7c00122e0483fe}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!Private@{Private}}
+\index{Private@{Private}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}Sidebar\+::\+Private\+::\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSidebar_1_1Private_ac1af202e142000d02c7c00122e0483fe}
+
+
+Definition at line 394 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+395         : \hyperlink{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{sideWidget}( 0 ), \hyperlink{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{bottomWidget}( 0 ), 
+      \hyperlink{classSidebar_1_1Private_a99a16d70b6092f5ae63c2b349006beb0}{splitterSizesSet}( \textcolor{keyword}{false} ),
+396           \hyperlink{classSidebar_1_1Private_a467a6317bcfa987166b354f2145e1dbb}{itemsHeight}( 0 )
+397     \{
+398     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSidebar_1_1Private_a65d6c77ebd73135cc391a85e2732cbfa}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!adjust\+List\+Size@{adjust\+List\+Size}}
+\index{adjust\+List\+Size@{adjust\+List\+Size}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{adjust\+List\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+::\+Private\+::adjust\+List\+Size (
+\begin{DoxyParamCaption}
+\item[{bool}]{recalc, }
+\item[{bool}]{expand = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classSidebar_1_1Private_a65d6c77ebd73135cc391a85e2732cbfa}
+
+
+Definition at line 416 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+417 \{
+418     QRect bottomElemRect(
+419         QPoint( 0, 0 ),
+420         \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->sizeHintForIndex( \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->model()->index( \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->count() - 1, 0 ) )
+421     );
+422     \textcolor{keywordflow}{if} ( recalc )
+423     \{
+424         \textcolor{keywordtype}{int} w = 0;
+425         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->count(); ++i )
+426         \{
+427             QSize s = \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->sizeHintForIndex( \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->model()->index( i, 0 ) );
+428             \textcolor{keywordflow}{if} ( s.width() > w )
+429                 w = s.width();
+430         \}
+431         bottomElemRect.setWidth( w );
+432     \}
+433     bottomElemRect.translate( 0, bottomElemRect.height() * ( \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->count() - 1 ) );
+434     \hyperlink{classSidebar_1_1Private_a467a6317bcfa987166b354f2145e1dbb}{itemsHeight} = bottomElemRect.height() * \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->count();
+435     \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setMinimumHeight( \hyperlink{classSidebar_1_1Private_a467a6317bcfa987166b354f2145e1dbb}{itemsHeight} + \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->frameWidth() * 2 );
+436     \textcolor{keywordtype}{int} curWidth = \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->minimumWidth();
+437     \textcolor{keywordtype}{int} newWidth = expand
+438                    ? qMax( bottomElemRect.width() + \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->frameWidth() * 2, curWidth )
+439                    : qMin( bottomElemRect.width() + \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->frameWidth() * 2, curWidth );
+440     \hyperlink{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{list}->setFixedWidth( newWidth );
+441 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!bottom\+Widget@{bottom\+Widget}}
+\index{bottom\+Widget@{bottom\+Widget}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{bottom\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Sidebar\+::\+Private\+::bottom\+Widget}}\label{classSidebar_1_1Private_a4ba08960dff0b43cb43421a2ad171163}
+
+
+Definition at line 409 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a467a6317bcfa987166b354f2145e1dbb}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!items\+Height@{items\+Height}}
+\index{items\+Height@{items\+Height}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{items\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Sidebar\+::\+Private\+::items\+Height}}\label{classSidebar_1_1Private_a467a6317bcfa987166b354f2145e1dbb}
+
+
+Definition at line 412 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!list@{list}}
+\index{list@{list}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sidebar\+List\+Widget}$\ast$ Sidebar\+::\+Private\+::list}}\label{classSidebar_1_1Private_a0b3cabc80bb0d0d9259723cbe786908e}
+
+
+Definition at line 402 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!pages@{pages}}
+\index{pages@{pages}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ {\bf Sidebar\+Item}$\ast$ $>$ Sidebar\+::\+Private\+::pages}}\label{classSidebar_1_1Private_a4433064c6850086bce54e0ce62dc8885}
+
+
+Definition at line 410 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!side\+Container@{side\+Container}}
+\index{side\+Container@{side\+Container}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{side\+Container}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Sidebar\+::\+Private\+::side\+Container}}\label{classSidebar_1_1Private_a2a3136a30630243128369d98c44b1823}
+
+
+Definition at line 405 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a25b75ddd6cbb379f77f71207ad627d54}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!side\+Delegate@{side\+Delegate}}
+\index{side\+Delegate@{side\+Delegate}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{side\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sidebar\+Delegate}$\ast$ Sidebar\+::\+Private\+::side\+Delegate}}\label{classSidebar_1_1Private_a25b75ddd6cbb379f77f71207ad627d54}
+
+
+Definition at line 413 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!side\+Title@{side\+Title}}
+\index{side\+Title@{side\+Title}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{side\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Sidebar\+::\+Private\+::side\+Title}}\label{classSidebar_1_1Private_a37b19515edf372e8581845c398549122}
+
+
+Definition at line 406 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!side\+Widget@{side\+Widget}}
+\index{side\+Widget@{side\+Widget}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{side\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Sidebar\+::\+Private\+::side\+Widget}}\label{classSidebar_1_1Private_af2a5ad9bec19e907938f6eff1ade3ad9}
+
+
+Definition at line 408 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!splitter@{splitter}}
+\index{splitter@{splitter}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{splitter}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Splitter$\ast$ Sidebar\+::\+Private\+::splitter}}\label{classSidebar_1_1Private_acbf19dbc3945da830d814331d5fc9a26}
+
+
+Definition at line 403 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a99a16d70b6092f5ae63c2b349006beb0}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!splitter\+Sizes\+Set@{splitter\+Sizes\+Set}}
+\index{splitter\+Sizes\+Set@{splitter\+Sizes\+Set}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{splitter\+Sizes\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool Sidebar\+::\+Private\+::splitter\+Sizes\+Set}}\label{classSidebar_1_1Private_a99a16d70b6092f5ae63c2b349006beb0}
+
+
+Definition at line 411 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!stack@{stack}}
+\index{stack@{stack}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Stacked\+Widget$\ast$ Sidebar\+::\+Private\+::stack}}\label{classSidebar_1_1Private_abe83197f943319864ba227501d81cd04}
+
+
+Definition at line 404 of file sidebar.\+cpp.
+
+\hypertarget{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}{\index{Sidebar\+::\+Private@{Sidebar\+::\+Private}!vlay@{vlay}}
+\index{vlay@{vlay}!Sidebar\+::\+Private@{Sidebar\+::\+Private}}
+\subsubsection[{vlay}]{\setlength{\rightskip}{0pt plus 5cm}Q\+V\+Box\+Layout$\ast$ Sidebar\+::\+Private\+::vlay}}\label{classSidebar_1_1Private_a5c6712e42bbf4615df9c2366dd7fa073}
+
+
+Definition at line 407 of file sidebar.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{sidebar_8cpp}{sidebar.\+cpp}\end{DoxyCompactItemize}

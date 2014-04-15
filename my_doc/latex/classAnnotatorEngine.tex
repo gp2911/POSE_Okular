@@ -1,0 +1,392 @@
+\hypertarget{classAnnotatorEngine}{\section{Annotator\+Engine Class Reference}
+\label{classAnnotatorEngine}\index{Annotator\+Engine@{Annotator\+Engine}}
+}
+
+
+Engine\+: filter events to distill Annotations.  
+
+
+
+
+{\ttfamily \#include $<$annotationtools.\+h$>$}
+
+Inheritance diagram for Annotator\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAnnotatorEngine}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{Event\+Type} \{ \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{Press}, 
+\hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}{Move}, 
+\hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}{Release}
+ \}
+\item 
+enum \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{Button} \{ \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567aad36f3f65ac99d40e03cf36b3d65d018}{None}, 
+\hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{Left}, 
+\hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}{Right}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnnotatorEngine_a42302fe858494d3e3ad90b8607c543ef}{Annotator\+Engine} (const Q\+Dom\+Element \&engine\+Element)
+\item 
+virtual \hyperlink{classAnnotatorEngine_a51954e14195933ce370de28c466ddddf}{$\sim$\+Annotator\+Engine} ()
+\item 
+virtual Q\+Rect \hyperlink{classAnnotatorEngine_acca989fc60f9a6c20ed2518fafa8774e}{event} (\hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{Event\+Type} type, \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{Button} button, double n\+X, double n\+Y, double x\+Scale, double y\+Scale, const \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$page)=0
+\item 
+virtual void \hyperlink{classAnnotatorEngine_a71b2e9fcbcca36caadefa79adb99c93f}{paint} (Q\+Painter $\ast$painter, double x\+Scale, double y\+Scale, const Q\+Rect \&clip\+Rect)=0
+\item 
+virtual \hyperlink{classQList}{Q\+List}\\*
+$<$ \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ $>$ \hyperlink{classAnnotatorEngine_a50455740303878b891195132df27a2ab}{end} ()=0
+\item 
+bool \hyperlink{classAnnotatorEngine_a54e1ac7803149f1a94490e5511ad3deb}{creation\+Completed} () const 
+\item 
+void \hyperlink{classAnnotatorEngine_aae312cd62f6fd4c9997a655d18de7385}{set\+Item} (\hyperlink{classPageViewItem}{Page\+View\+Item} $\ast$\hyperlink{classAnnotatorEngine_a67d46d5364e6f54e107ccbbb1ed07e32}{item})
+\item 
+virtual Q\+Cursor \hyperlink{classAnnotatorEngine_adec4c7612b59357c7b58aa81e3e3b212}{cursor} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classAnnotatorEngine_acabc5b26b0693eb5b29138a7a70f7a39}{decode\+Event} (const Q\+Mouse\+Event $\ast$mouse\+Event, \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{Event\+Type} $\ast$event\+Type, \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{Button} $\ast$button)
+\item 
+static void \hyperlink{classAnnotatorEngine_aac61c2dd18f7a5c548d7844d0f096889}{decode\+Event} (const Q\+Tablet\+Event $\ast$tablet\+Event, \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{Event\+Type} $\ast$event\+Type, \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{Button} $\ast$button)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageViewItem}{Page\+View\+Item} $\ast$ \hyperlink{classAnnotatorEngine_a67d46d5364e6f54e107ccbbb1ed07e32}{item} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Dom\+Element \hyperlink{classAnnotatorEngine_aa60b9dda9bd0beb5af6f777b1e65b342}{m\+\_\+engine\+Element}
+\item 
+Q\+Dom\+Element \hyperlink{classAnnotatorEngine_ac95af6291cc2f0c601e1bbf8a5e6a0bd}{m\+\_\+annot\+Element}
+\item 
+Q\+Color \hyperlink{classAnnotatorEngine_a8911b0455be7eedfb2c102ce19acdce2}{m\+\_\+engine\+Color}
+\item 
+bool \hyperlink{classAnnotatorEngine_a0df119b4d87a1e3ea8ed60a96d7ff444}{m\+\_\+creation\+Completed}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Engine\+: filter events to distill Annotations. 
+
+Definition at line 32 of file annotationtools.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{\index{Annotator\+Engine@{Annotator\+Engine}!Button@{Button}}
+\index{Button@{Button}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{Button}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Annotator\+Engine\+::\+Button}}}\label{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Annotator\+Engine@{Annotator\+Engine}}\index{Annotator\+Engine@{Annotator\+Engine}!None@{None}}\item[{\em 
+\hypertarget{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567aad36f3f65ac99d40e03cf36b3d65d018}{None}\label{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567aad36f3f65ac99d40e03cf36b3d65d018}
+}]\index{Left@{Left}!Annotator\+Engine@{Annotator\+Engine}}\index{Annotator\+Engine@{Annotator\+Engine}!Left@{Left}}\item[{\em 
+\hypertarget{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{Left}\label{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}
+}]\index{Right@{Right}!Annotator\+Engine@{Annotator\+Engine}}\index{Annotator\+Engine@{Annotator\+Engine}!Right@{Right}}\item[{\em 
+\hypertarget{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}{Right}\label{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 40 of file annotationtools.\+h.
+
+
+\begin{DoxyCode}
+40 \{ \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567aad36f3f65ac99d40e03cf36b3d65d018}{None}, \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{Left}, \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}{Right} \};
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{\index{Annotator\+Engine@{Annotator\+Engine}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{Event\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Annotator\+Engine\+::\+Event\+Type}}}\label{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Press@{Press}!Annotator\+Engine@{Annotator\+Engine}}\index{Annotator\+Engine@{Annotator\+Engine}!Press@{Press}}\item[{\em 
+\hypertarget{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{Press}\label{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}
+}]\index{Move@{Move}!Annotator\+Engine@{Annotator\+Engine}}\index{Annotator\+Engine@{Annotator\+Engine}!Move@{Move}}\item[{\em 
+\hypertarget{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}{Move}\label{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}
+}]\index{Release@{Release}!Annotator\+Engine@{Annotator\+Engine}}\index{Annotator\+Engine@{Annotator\+Engine}!Release@{Release}}\item[{\em 
+\hypertarget{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}{Release}\label{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 39 of file annotationtools.\+h.
+
+
+\begin{DoxyCode}
+39 \{ \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{Press}, \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}{Move}, \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}{Release} \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAnnotatorEngine_a42302fe858494d3e3ad90b8607c543ef}{\index{Annotator\+Engine@{Annotator\+Engine}!Annotator\+Engine@{Annotator\+Engine}}
+\index{Annotator\+Engine@{Annotator\+Engine}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{Annotator\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Annotator\+Engine\+::\+Annotator\+Engine (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{engine\+Element}
+\end{DoxyParamCaption}
+)}}\label{classAnnotatorEngine_a42302fe858494d3e3ad90b8607c543ef}
+
+
+Definition at line 21 of file annotationtools.\+cpp.
+
+
+\begin{DoxyCode}
+22     : \hyperlink{classAnnotatorEngine_aa60b9dda9bd0beb5af6f777b1e65b342}{m\_engineElement}( engineElement ), \hyperlink{classAnnotatorEngine_a0df119b4d87a1e3ea8ed60a96d7ff444}{m\_creationCompleted}( \textcolor{keyword}{false} ), 
+      m\_item( 0 )
+23 \{
+24     \textcolor{comment}{// parse common engine attributes}
+25     \textcolor{keywordflow}{if} ( engineElement.hasAttribute( \textcolor{stringliteral}{"color"} ) )
+26         \hyperlink{classAnnotatorEngine_a8911b0455be7eedfb2c102ce19acdce2}{m\_engineColor} = QColor( engineElement.attribute( \textcolor{stringliteral}{"color"} ) );
+27 
+28     \textcolor{comment}{// get the annotation element}
+29     QDomElement annElement = \hyperlink{classAnnotatorEngine_aa60b9dda9bd0beb5af6f777b1e65b342}{m\_engineElement}.firstChild().toElement();
+30     \textcolor{keywordflow}{if} ( !annElement.isNull() && annElement.tagName() == \textcolor{stringliteral}{"annotation"} )
+31         \hyperlink{classAnnotatorEngine_ac95af6291cc2f0c601e1bbf8a5e6a0bd}{m\_annotElement} = annElement;
+32 \}
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_a51954e14195933ce370de28c466ddddf}{\index{Annotator\+Engine@{Annotator\+Engine}!````~Annotator\+Engine@{$\sim$\+Annotator\+Engine}}
+\index{````~Annotator\+Engine@{$\sim$\+Annotator\+Engine}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{$\sim$\+Annotator\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Annotator\+Engine\+::$\sim$\+Annotator\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotatorEngine_a51954e14195933ce370de28c466ddddf}
+
+
+Definition at line 76 of file annotationtools.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAnnotatorEngine_a54e1ac7803149f1a94490e5511ad3deb}{\index{Annotator\+Engine@{Annotator\+Engine}!creation\+Completed@{creation\+Completed}}
+\index{creation\+Completed@{creation\+Completed}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{creation\+Completed}]{\setlength{\rightskip}{0pt plus 5cm}bool Annotator\+Engine\+::creation\+Completed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAnnotatorEngine_a54e1ac7803149f1a94490e5511ad3deb}
+
+
+Definition at line 49 of file annotationtools.\+h.
+
+
+\begin{DoxyCode}
+49 \{ \textcolor{keywordflow}{return} \hyperlink{classAnnotatorEngine_a0df119b4d87a1e3ea8ed60a96d7ff444}{m\_creationCompleted}; \}
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_adec4c7612b59357c7b58aa81e3e3b212}{\index{Annotator\+Engine@{Annotator\+Engine}!cursor@{cursor}}
+\index{cursor@{cursor}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Cursor Annotator\+Engine\+::cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotatorEngine_adec4c7612b59357c7b58aa81e3e3b212}
+
+
+Reimplemented in \hyperlink{classTextSelectorEngine_a0b4309d25b8f6d56570f5a39bf6722fc}{Text\+Selector\+Engine}.
+
+
+
+Definition at line 80 of file annotationtools.\+cpp.
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordflow}{return} Qt::CrossCursor;
+83 \}
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_acabc5b26b0693eb5b29138a7a70f7a39}{\index{Annotator\+Engine@{Annotator\+Engine}!decode\+Event@{decode\+Event}}
+\index{decode\+Event@{decode\+Event}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{decode\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Annotator\+Engine\+::decode\+Event (
+\begin{DoxyParamCaption}
+\item[{const Q\+Mouse\+Event $\ast$}]{mouse\+Event, }
+\item[{{\bf Event\+Type} $\ast$}]{event\+Type, }
+\item[{{\bf Button} $\ast$}]{button}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classAnnotatorEngine_acabc5b26b0693eb5b29138a7a70f7a39}
+
+
+Definition at line 34 of file annotationtools.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36     *eventType = \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{AnnotatorEngine::Press};
+37     \textcolor{keywordflow}{if} ( mouseEvent->type() == QEvent::MouseMove )
+38         *eventType = \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}{AnnotatorEngine::Move};
+39     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( mouseEvent->type() == QEvent::MouseButtonRelease )
+40         *eventType = \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}{AnnotatorEngine::Release};
+41 
+42     *button = \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567aad36f3f65ac99d40e03cf36b3d65d018}{AnnotatorEngine::None};
+43     \textcolor{keyword}{const} Qt::MouseButtons buttonState = ( *eventType == \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}{AnnotatorEngine::Move} ) ? 
+      mouseEvent->buttons() : mouseEvent->button();
+44     \textcolor{keywordflow}{if} ( buttonState == Qt::LeftButton )
+45         *button = \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{AnnotatorEngine::Left};
+46     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( buttonState == Qt::RightButton )
+47         *button = \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}{AnnotatorEngine::Right};
+48 \}
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_aac61c2dd18f7a5c548d7844d0f096889}{\index{Annotator\+Engine@{Annotator\+Engine}!decode\+Event@{decode\+Event}}
+\index{decode\+Event@{decode\+Event}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{decode\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Annotator\+Engine\+::decode\+Event (
+\begin{DoxyParamCaption}
+\item[{const Q\+Tablet\+Event $\ast$}]{tablet\+Event, }
+\item[{{\bf Event\+Type} $\ast$}]{event\+Type, }
+\item[{{\bf Button} $\ast$}]{button}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classAnnotatorEngine_aac61c2dd18f7a5c548d7844d0f096889}
+
+
+Definition at line 50 of file annotationtools.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordflow}{switch} ( tabletEvent->type() )
+53     \{
+54         \textcolor{keywordflow}{case} QEvent::TabletPress:
+55             \textcolor{comment}{// Tablet press event is equivalent to pressing the left mouse button}
+56             *button = \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{AnnotatorEngine::Left};
+57             *eventType = \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{AnnotatorEngine::Press};
+58             \textcolor{keywordflow}{break};
+59         \textcolor{keywordflow}{case} QEvent::TabletRelease:
+60             \textcolor{comment}{// Tablet release event is equivalent to releasing the left mouse button}
+61             *button = \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{AnnotatorEngine::Left};
+62             *eventType = \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}{AnnotatorEngine::Release};
+63             \textcolor{keywordflow}{break};
+64         \textcolor{keywordflow}{case} QEvent::TabletMove:
+65             \textcolor{comment}{// Tablet events are only routed if the pen is down so}
+66             \textcolor{comment}{// this is equivalent to the left mouse button being pressed}
+67             *button = \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a2719e853d63982d67e9d8aae3620178c}{AnnotatorEngine::Left};
+68             *eventType = \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a4efcf099c4a82b1eab7de0fb124563a8}{AnnotatorEngine::Move};
+69             \textcolor{keywordflow}{break};
+70         \textcolor{keywordflow}{default}:
+71             Q\_ASSERT(\textcolor{keyword}{false});
+72             \textcolor{keywordflow}{break};
+73     \}
+74 \}
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_a50455740303878b891195132df27a2ab}{\index{Annotator\+Engine@{Annotator\+Engine}!end@{end}}
+\index{end@{end}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Q\+List}$<$ {\bf Okular\+::\+Annotation}$\ast$ $>$ Annotator\+Engine\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAnnotatorEngine_a50455740303878b891195132df27a2ab}
+
+
+Implemented in \hyperlink{classTextSelectorEngine_ac0478924c3210f726bedf6c10a50141e}{Text\+Selector\+Engine}, \hyperlink{classPolyLineEngine_ac5d84e9165cd9ab117d161aa935d102e}{Poly\+Line\+Engine}, \hyperlink{classPickPointEngine_a4a3cc45d8861f30637b2aa5ee85cc6c3}{Pick\+Point\+Engine}, and \hyperlink{classSmoothPathEngine_aa1dd0f64bab0f5d94aba93557a6ba328}{Smooth\+Path\+Engine}.
+
+\hypertarget{classAnnotatorEngine_acca989fc60f9a6c20ed2518fafa8774e}{\index{Annotator\+Engine@{Annotator\+Engine}!event@{event}}
+\index{event@{event}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Rect Annotator\+Engine\+::event (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\+Type}}]{type, }
+\item[{{\bf Button}}]{button, }
+\item[{double}]{n\+X, }
+\item[{double}]{n\+Y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale, }
+\item[{const {\bf Okular\+::\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAnnotatorEngine_acca989fc60f9a6c20ed2518fafa8774e}
+
+
+Implemented in \hyperlink{classTextSelectorEngine_a960e484c0c32e6500d9e75d676d0c60e}{Text\+Selector\+Engine}, \hyperlink{classPolyLineEngine_a822e6058b9e407228c83298678d3aa94}{Poly\+Line\+Engine}, \hyperlink{classSmoothPathEngine_a7234a32a90d2784e2459cf838a37f172}{Smooth\+Path\+Engine}, and \hyperlink{classPickPointEngine_a7dd04c96b28fbf6dba26c5f277827ece}{Pick\+Point\+Engine}.
+
+\hypertarget{classAnnotatorEngine_a67d46d5364e6f54e107ccbbb1ed07e32}{\index{Annotator\+Engine@{Annotator\+Engine}!item@{item}}
+\index{item@{item}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+View\+Item}$\ast$ Annotator\+Engine\+::item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classAnnotatorEngine_a67d46d5364e6f54e107ccbbb1ed07e32}
+
+
+Definition at line 59 of file annotationtools.\+h.
+
+
+\begin{DoxyCode}
+59 \{ \textcolor{keywordflow}{return} m\_item; \}
+\end{DoxyCode}
+\hypertarget{classAnnotatorEngine_a71b2e9fcbcca36caadefa79adb99c93f}{\index{Annotator\+Engine@{Annotator\+Engine}!paint@{paint}}
+\index{paint@{paint}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Annotator\+Engine\+::paint (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale, }
+\item[{const Q\+Rect \&}]{clip\+Rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAnnotatorEngine_a71b2e9fcbcca36caadefa79adb99c93f}
+
+
+Implemented in \hyperlink{classTextSelectorEngine_a68b752c46a1371f4caa0eb692553ff5c}{Text\+Selector\+Engine}, \hyperlink{classPolyLineEngine_ae2399ba29c9bc734ffe53db0310e54bd}{Poly\+Line\+Engine}, \hyperlink{classPickPointEngine_a1af9d4c401554caa10918985dbd7aae2}{Pick\+Point\+Engine}, and \hyperlink{classSmoothPathEngine_a08b94551c709ae56600afd692da10717}{Smooth\+Path\+Engine}.
+
+\hypertarget{classAnnotatorEngine_aae312cd62f6fd4c9997a655d18de7385}{\index{Annotator\+Engine@{Annotator\+Engine}!set\+Item@{set\+Item}}
+\index{set\+Item@{set\+Item}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{set\+Item}]{\setlength{\rightskip}{0pt plus 5cm}void Annotator\+Engine\+::set\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\+View\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAnnotatorEngine_aae312cd62f6fd4c9997a655d18de7385}
+
+
+Definition at line 51 of file annotationtools.\+h.
+
+
+\begin{DoxyCode}
+51 \{ m\_item = \hyperlink{classAnnotatorEngine_a67d46d5364e6f54e107ccbbb1ed07e32}{item}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAnnotatorEngine_ac95af6291cc2f0c601e1bbf8a5e6a0bd}{\index{Annotator\+Engine@{Annotator\+Engine}!m\+\_\+annot\+Element@{m\+\_\+annot\+Element}}
+\index{m\+\_\+annot\+Element@{m\+\_\+annot\+Element}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{m\+\_\+annot\+Element}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dom\+Element Annotator\+Engine\+::m\+\_\+annot\+Element\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotatorEngine_ac95af6291cc2f0c601e1bbf8a5e6a0bd}
+
+
+Definition at line 63 of file annotationtools.\+h.
+
+\hypertarget{classAnnotatorEngine_a0df119b4d87a1e3ea8ed60a96d7ff444}{\index{Annotator\+Engine@{Annotator\+Engine}!m\+\_\+creation\+Completed@{m\+\_\+creation\+Completed}}
+\index{m\+\_\+creation\+Completed@{m\+\_\+creation\+Completed}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{m\+\_\+creation\+Completed}]{\setlength{\rightskip}{0pt plus 5cm}bool Annotator\+Engine\+::m\+\_\+creation\+Completed\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotatorEngine_a0df119b4d87a1e3ea8ed60a96d7ff444}
+
+
+Definition at line 66 of file annotationtools.\+h.
+
+\hypertarget{classAnnotatorEngine_a8911b0455be7eedfb2c102ce19acdce2}{\index{Annotator\+Engine@{Annotator\+Engine}!m\+\_\+engine\+Color@{m\+\_\+engine\+Color}}
+\index{m\+\_\+engine\+Color@{m\+\_\+engine\+Color}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{m\+\_\+engine\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Annotator\+Engine\+::m\+\_\+engine\+Color\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotatorEngine_a8911b0455be7eedfb2c102ce19acdce2}
+
+
+Definition at line 64 of file annotationtools.\+h.
+
+\hypertarget{classAnnotatorEngine_aa60b9dda9bd0beb5af6f777b1e65b342}{\index{Annotator\+Engine@{Annotator\+Engine}!m\+\_\+engine\+Element@{m\+\_\+engine\+Element}}
+\index{m\+\_\+engine\+Element@{m\+\_\+engine\+Element}!Annotator\+Engine@{Annotator\+Engine}}
+\subsubsection[{m\+\_\+engine\+Element}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dom\+Element Annotator\+Engine\+::m\+\_\+engine\+Element\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotatorEngine_aa60b9dda9bd0beb5af6f777b1e65b342}
+
+
+Definition at line 62 of file annotationtools.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationtools_8h}{annotationtools.\+h}\item 
+ui/\hyperlink{annotationtools_8cpp}{annotationtools.\+cpp}\end{DoxyCompactItemize}

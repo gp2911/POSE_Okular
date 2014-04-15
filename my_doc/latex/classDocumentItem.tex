@@ -1,0 +1,596 @@
+\hypertarget{classDocumentItem}{\section{Document\+Item Class Reference}
+\label{classDocumentItem}\index{Document\+Item@{Document\+Item}}
+}
+
+
+{\ttfamily \#include $<$documentitem.\+h$>$}
+
+Inheritance diagram for Document\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDocumentItem}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDocumentItem_af2813f6fa5e8bb6cdee5df08f15e5f73}{path\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a3b5a91c64134447c0e9c628d26ad2968}{page\+Count\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a93e395b8ea99c16387763ef694cfb673}{opened\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a96cce0af8947ce4905fa2fba432e4a86}{search\+In\+Progress\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a63ca2488654c5dcd44faa0e9cb7f1593}{matching\+Pages\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a7bc66350bdf55e52a4964a321a3da336}{current\+Page\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_aae46fa6ed5a3979fb0fb513c26cd615d}{supports\+Searching\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a070d363a2fc7c35ba03eb30d1c43ff86}{bookmarked\+Pages\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_aed1dbcd6f792d073a0cb1997057eebf5}{bookmarks\+Changed} ()
+\item 
+void \hyperlink{classDocumentItem_a15dcdab66d2006d40291efb969c171e0}{window\+Title\+For\+Document\+Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDocumentItem_a8a5f6a64304146f2bdb210fa4ce389cf}{Document\+Item} (Q\+Object $\ast$parent=0)
+\item 
+\hyperlink{classDocumentItem_a7877876d68ce57c1abd6d032f827d90b}{$\sim$\+Document\+Item} ()
+\item 
+void \hyperlink{classDocumentItem_a37f59ff77a3ddb1e5489193a7fc4bd76}{set\+Path} (const Q\+String \&\hyperlink{classDocumentItem_a30563830d010ecd2bcff1fe87d3f22b5}{path})
+\item 
+Q\+String \hyperlink{classDocumentItem_a85bb3a660c7282a9902af4aaff4dca36}{path} () const 
+\item 
+Q\+String \hyperlink{classDocumentItem_a1b188e9c812433f8041da69e26655c5a}{window\+Title\+For\+Document} () const 
+\item 
+void \hyperlink{classDocumentItem_a64dc8e35de8034dd26a5f3362712a425}{set\+Current\+Page} (int page)
+\item 
+int \hyperlink{classDocumentItem_ac61bb0c127edebd8f088aa65287b5772}{current\+Page} () const 
+\item 
+bool \hyperlink{classDocumentItem_a9d3f0f9e5707a61307fed8c07599b58f}{is\+Opened} () const 
+\item 
+int \hyperlink{classDocumentItem_afd4f5c196855621c5dabbe706dd8f1c0}{page\+Count} () const 
+\item 
+bool \hyperlink{classDocumentItem_aadcded16a6571167891465b6c54d10c7}{supports\+Searching} () const 
+\item 
+bool \hyperlink{classDocumentItem_afd279bb2b306dffa5ba37d1c530fc8d8}{is\+Search\+In\+Progress} () const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classDocumentItem_aeb4a1f3c0a506387ca2f99fc918f3fd7}{matching\+Pages} () const 
+\item 
+\hyperlink{classTOCModel}{T\+O\+C\+Model} $\ast$ \hyperlink{classDocumentItem_a951ccd142ffc695850220a13dc70fa95}{table\+Of\+Contents} () const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classDocumentItem_a1eb9015c51dea5321dad0af01e520948}{bookmarked\+Pages} () const 
+\item 
+Q\+String\+List \hyperlink{classDocumentItem_aca9ab9de0403c1363f6dafa84f475b12}{bookmarks} () const 
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E void \hyperlink{classDocumentItem_a419b4a129d599d58bcc8313764da60bb}{search\+Text} (const Q\+String \&text)
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+L\+E void \hyperlink{classDocumentItem_a13948b8a6e6ce091fdcdc18a0eaf8a3b}{reset\+Search} ()
+\item 
+\hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$ \hyperlink{classDocumentItem_a0b5e08614c27e8b6283a6e26146ce7ce}{document} ()
+\item 
+\hyperlink{classObserver}{Observer} $\ast$ \hyperlink{classDocumentItem_aa43f574c0d96722c93c2484dc5e1deae}{pageview\+Observer} ()
+\item 
+\hyperlink{classObserver}{Observer} $\ast$ \hyperlink{classDocumentItem_a301cec0218500b5edffdf863d55de3c1}{thumbnail\+Observer} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{classDocumentItem_a30563830d010ecd2bcff1fe87d3f22b5}{path}
+\item 
+Q\+String \hyperlink{classDocumentItem_ad992855c3e20bfc6b4b62adc2f96061c}{window\+Title\+For\+Document}
+\item 
+int \hyperlink{classDocumentItem_aaf0a1ffedca483ef328739112fb2793b}{current\+Page}
+\item 
+bool \hyperlink{classDocumentItem_acc602f4248c496e5bcef51c9f98b1663}{opened}
+\item 
+int \hyperlink{classDocumentItem_a2604989a9553d297a141f14d2b00e142}{page\+Count}
+\item 
+bool \hyperlink{classDocumentItem_a0bff2b3923d9140ca120dabbf527b4fa}{supports\+Searching}
+\item 
+bool \hyperlink{classDocumentItem_a45a70095fcc040a324f5f2f2cc550282}{search\+In\+Progress}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classDocumentItem_ad4148c970f6cd31b9b26115e3d7a1753}{matching\+Pages}
+\item 
+\hyperlink{classTOCModel}{T\+O\+C\+Model} \hyperlink{classDocumentItem_a9291b1c2f73d783093898bdeb6562842}{table\+Of\+Contents}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classDocumentItem_aaf15a9cbebd00b8a3d51bcc967dbc105}{bookmarked\+Pages}
+\item 
+Q\+String\+List \hyperlink{classDocumentItem_a08ec9ecae239f79e0e806efa28cc22b0}{bookmarks}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file documentitem.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDocumentItem_a8a5f6a64304146f2bdb210fa4ce389cf}{\index{Document\+Item@{Document\+Item}!Document\+Item@{Document\+Item}}
+\index{Document\+Item@{Document\+Item}!Document\+Item@{Document\+Item}}
+\subsubsection[{Document\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Document\+Item\+::\+Document\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a8a5f6a64304146f2bdb210fa4ce389cf}
+
+
+Definition at line 30 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+31     : QObject(parent),
+32       m\_thumbnailObserver(0),
+33       m\_pageviewObserver(0),
+34       m\_searchInProgress(\textcolor{keyword}{false})
+35 \{
+36     qmlRegisterUncreatableType<TOCModel>(\textcolor{stringliteral}{"org.kde.okular"}, 1, 0, \textcolor{stringliteral}{"TOCModel"}, QLatin1String(\textcolor{stringliteral}{"Do not create
+       objects of this type."}));
+37     \hyperlink{classOkular_1_1Settings_abbb545088027d7de160764628c19a616}{Okular::Settings::instance}(\textcolor{stringliteral}{"okularproviderrc"});
+38     m\_document = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Document}{Okular::Document}(0);
+39     m\_tocModel = \textcolor{keyword}{new} \hyperlink{classTOCModel}{TOCModel}(m\_document, \textcolor{keyword}{this});
+40 
+41     connect(m\_document, SIGNAL(searchFinished(\textcolor{keywordtype}{int},\hyperlink{classOkular_1_1Document_aa9c2934f6abce7b0440ec74bb56eefbb}{Okular::Document::SearchStatus}
+      )),
+42             \textcolor{keyword}{this}, SLOT(searchFinished(\textcolor{keywordtype}{int},\hyperlink{classOkular_1_1Document_aa9c2934f6abce7b0440ec74bb56eefbb}{Okular::Document::SearchStatus})));
+43     connect(m\_document->\hyperlink{classOkular_1_1Document_a2a2a1f0f5384563c8b24c2ba48809839}{bookmarkManager}(), SIGNAL(
+      \hyperlink{classDocumentItem_aed1dbcd6f792d073a0cb1997057eebf5}{bookmarksChanged}(KUrl)),
+44             \textcolor{keyword}{this}, SIGNAL(\hyperlink{classDocumentItem_a070d363a2fc7c35ba03eb30d1c43ff86}{bookmarkedPagesChanged}()));
+45     connect(m\_document->\hyperlink{classOkular_1_1Document_a2a2a1f0f5384563c8b24c2ba48809839}{bookmarkManager}(), SIGNAL(
+      \hyperlink{classDocumentItem_aed1dbcd6f792d073a0cb1997057eebf5}{bookmarksChanged}(KUrl)),
+46             \textcolor{keyword}{this}, SIGNAL(\hyperlink{classDocumentItem_aed1dbcd6f792d073a0cb1997057eebf5}{bookmarksChanged}()));
+47 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a7877876d68ce57c1abd6d032f827d90b}{\index{Document\+Item@{Document\+Item}!````~Document\+Item@{$\sim$\+Document\+Item}}
+\index{````~Document\+Item@{$\sim$\+Document\+Item}!Document\+Item@{Document\+Item}}
+\subsubsection[{$\sim$\+Document\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Document\+Item\+::$\sim$\+Document\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a7877876d68ce57c1abd6d032f827d90b}
+
+
+Definition at line 50 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keyword}{delete} m\_document;
+53 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDocumentItem_a1eb9015c51dea5321dad0af01e520948}{\index{Document\+Item@{Document\+Item}!bookmarked\+Pages@{bookmarked\+Pages}}
+\index{bookmarked\+Pages@{bookmarked\+Pages}!Document\+Item@{Document\+Item}}
+\subsubsection[{bookmarked\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$int$>$ Document\+Item\+::bookmarked\+Pages (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_a1eb9015c51dea5321dad0af01e520948}
+\hypertarget{classDocumentItem_a070d363a2fc7c35ba03eb30d1c43ff86}{\index{Document\+Item@{Document\+Item}!bookmarked\+Pages\+Changed@{bookmarked\+Pages\+Changed}}
+\index{bookmarked\+Pages\+Changed@{bookmarked\+Pages\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{bookmarked\+Pages\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::bookmarked\+Pages\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a070d363a2fc7c35ba03eb30d1c43ff86}
+\hypertarget{classDocumentItem_aca9ab9de0403c1363f6dafa84f475b12}{\index{Document\+Item@{Document\+Item}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Document\+Item@{Document\+Item}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Document\+Item\+::bookmarks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_aca9ab9de0403c1363f6dafa84f475b12}
+\hypertarget{classDocumentItem_aed1dbcd6f792d073a0cb1997057eebf5}{\index{Document\+Item@{Document\+Item}!bookmarks\+Changed@{bookmarks\+Changed}}
+\index{bookmarks\+Changed@{bookmarks\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{bookmarks\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::bookmarks\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_aed1dbcd6f792d073a0cb1997057eebf5}
+\hypertarget{classDocumentItem_ac61bb0c127edebd8f088aa65287b5772}{\index{Document\+Item@{Document\+Item}!current\+Page@{current\+Page}}
+\index{current\+Page@{current\+Page}!Document\+Item@{Document\+Item}}
+\subsubsection[{current\+Page}]{\setlength{\rightskip}{0pt plus 5cm}int Document\+Item\+::current\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_ac61bb0c127edebd8f088aa65287b5772}
+\hypertarget{classDocumentItem_a7bc66350bdf55e52a4964a321a3da336}{\index{Document\+Item@{Document\+Item}!current\+Page\+Changed@{current\+Page\+Changed}}
+\index{current\+Page\+Changed@{current\+Page\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{current\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::current\+Page\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a7bc66350bdf55e52a4964a321a3da336}
+\hypertarget{classDocumentItem_a0b5e08614c27e8b6283a6e26146ce7ce}{\index{Document\+Item@{Document\+Item}!document@{document}}
+\index{document@{document}!Document\+Item@{Document\+Item}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Document} $\ast$ Document\+Item\+::document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a0b5e08614c27e8b6283a6e26146ce7ce}
+
+
+Definition at line 193 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+194 \{
+195     \textcolor{keywordflow}{return} m\_document;
+196 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a9d3f0f9e5707a61307fed8c07599b58f}{\index{Document\+Item@{Document\+Item}!is\+Opened@{is\+Opened}}
+\index{is\+Opened@{is\+Opened}!Document\+Item@{Document\+Item}}
+\subsubsection[{is\+Opened}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Item\+::is\+Opened (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_a9d3f0f9e5707a61307fed8c07599b58f}
+
+
+Definition at line 109 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+110 \{
+111     \textcolor{keywordflow}{return} m\_document->\hyperlink{classOkular_1_1Document_a909ad69d556a6525e194a28c7fbf643a}{isOpened}();
+112 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_afd279bb2b306dffa5ba37d1c530fc8d8}{\index{Document\+Item@{Document\+Item}!is\+Search\+In\+Progress@{is\+Search\+In\+Progress}}
+\index{is\+Search\+In\+Progress@{is\+Search\+In\+Progress}!Document\+Item@{Document\+Item}}
+\subsubsection[{is\+Search\+In\+Progress}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Item\+::is\+Search\+In\+Progress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_afd279bb2b306dffa5ba37d1c530fc8d8}
+
+
+Definition at line 156 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+157 \{
+158     \textcolor{keywordflow}{return} m\_searchInProgress;
+159 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_aeb4a1f3c0a506387ca2f99fc918f3fd7}{\index{Document\+Item@{Document\+Item}!matching\+Pages@{matching\+Pages}}
+\index{matching\+Pages@{matching\+Pages}!Document\+Item@{Document\+Item}}
+\subsubsection[{matching\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$int$>$ Document\+Item\+::matching\+Pages (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_aeb4a1f3c0a506387ca2f99fc918f3fd7}
+\hypertarget{classDocumentItem_a63ca2488654c5dcd44faa0e9cb7f1593}{\index{Document\+Item@{Document\+Item}!matching\+Pages\+Changed@{matching\+Pages\+Changed}}
+\index{matching\+Pages\+Changed@{matching\+Pages\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{matching\+Pages\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::matching\+Pages\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a63ca2488654c5dcd44faa0e9cb7f1593}
+\hypertarget{classDocumentItem_a93e395b8ea99c16387763ef694cfb673}{\index{Document\+Item@{Document\+Item}!opened\+Changed@{opened\+Changed}}
+\index{opened\+Changed@{opened\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{opened\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::opened\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a93e395b8ea99c16387763ef694cfb673}
+\hypertarget{classDocumentItem_afd4f5c196855621c5dabbe706dd8f1c0}{\index{Document\+Item@{Document\+Item}!page\+Count@{page\+Count}}
+\index{page\+Count@{page\+Count}!Document\+Item@{Document\+Item}}
+\subsubsection[{page\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Document\+Item\+::page\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_afd4f5c196855621c5dabbe706dd8f1c0}
+\hypertarget{classDocumentItem_a3b5a91c64134447c0e9c628d26ad2968}{\index{Document\+Item@{Document\+Item}!page\+Count\+Changed@{page\+Count\+Changed}}
+\index{page\+Count\+Changed@{page\+Count\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{page\+Count\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::page\+Count\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a3b5a91c64134447c0e9c628d26ad2968}
+\hypertarget{classDocumentItem_aa43f574c0d96722c93c2484dc5e1deae}{\index{Document\+Item@{Document\+Item}!pageview\+Observer@{pageview\+Observer}}
+\index{pageview\+Observer@{pageview\+Observer}!Document\+Item@{Document\+Item}}
+\subsubsection[{pageview\+Observer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Observer} $\ast$ Document\+Item\+::pageview\+Observer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_aa43f574c0d96722c93c2484dc5e1deae}
+
+
+Definition at line 206 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+207 \{
+208     \textcolor{keywordflow}{if} (!m\_pageviewObserver) \{
+209         m\_pageviewObserver = \textcolor{keyword}{new} \hyperlink{classObserver}{Observer}(\textcolor{keyword}{this});
+210     \}
+211 
+212     \textcolor{keywordflow}{return} m\_pageviewObserver;
+213 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a85bb3a660c7282a9902af4aaff4dca36}{\index{Document\+Item@{Document\+Item}!path@{path}}
+\index{path@{path}!Document\+Item@{Document\+Item}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Document\+Item\+::path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_a85bb3a660c7282a9902af4aaff4dca36}
+\hypertarget{classDocumentItem_af2813f6fa5e8bb6cdee5df08f15e5f73}{\index{Document\+Item@{Document\+Item}!path\+Changed@{path\+Changed}}
+\index{path\+Changed@{path\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{path\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::path\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_af2813f6fa5e8bb6cdee5df08f15e5f73}
+\hypertarget{classDocumentItem_a13948b8a6e6ce091fdcdc18a0eaf8a3b}{\index{Document\+Item@{Document\+Item}!reset\+Search@{reset\+Search}}
+\index{reset\+Search@{reset\+Search}!Document\+Item@{Document\+Item}}
+\subsubsection[{reset\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::reset\+Search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a13948b8a6e6ce091fdcdc18a0eaf8a3b}
+Reset the search over the document. 
+
+Definition at line 178 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+179 \{
+180     m\_document->\hyperlink{classOkular_1_1Document_a9a6bfbdfcf7a07fcf3b2624fdea81126}{resetSearch}(\hyperlink{core_2document_8h_af9c235c3cf8d6f911691075465f83fce}{PAGEVIEW\_SEARCH\_ID});
+181     m\_matchingPages.clear();
+182     \textcolor{keywordflow}{for} (uint i = 0; i < m\_document->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}(); ++i) \{
+183          m\_matchingPages << (int)i;
+184     \}
+185     \textcolor{keywordflow}{if} (m\_searchInProgress) \{
+186         m\_searchInProgress = \textcolor{keyword}{false};
+187         emit \hyperlink{classDocumentItem_a96cce0af8947ce4905fa2fba432e4a86}{searchInProgressChanged}();
+188     \}
+189 
+190     emit \hyperlink{classDocumentItem_a63ca2488654c5dcd44faa0e9cb7f1593}{matchingPagesChanged}();
+191 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a96cce0af8947ce4905fa2fba432e4a86}{\index{Document\+Item@{Document\+Item}!search\+In\+Progress\+Changed@{search\+In\+Progress\+Changed}}
+\index{search\+In\+Progress\+Changed@{search\+In\+Progress\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{search\+In\+Progress\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::search\+In\+Progress\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a96cce0af8947ce4905fa2fba432e4a86}
+\hypertarget{classDocumentItem_a419b4a129d599d58bcc8313764da60bb}{\index{Document\+Item@{Document\+Item}!search\+Text@{search\+Text}}
+\index{search\+Text@{search\+Text}!Document\+Item@{Document\+Item}}
+\subsubsection[{search\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::search\+Text (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a419b4a129d599d58bcc8313764da60bb}
+Performs a search in the document
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the string to search in the document \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 161 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+162 \{
+163     \textcolor{keywordflow}{if} (text.isEmpty()) \{
+164         \hyperlink{classDocumentItem_a13948b8a6e6ce091fdcdc18a0eaf8a3b}{resetSearch}();
+165         \textcolor{keywordflow}{return};
+166     \}
+167     m\_document->\hyperlink{classOkular_1_1Document_a1f2fa321ed9357c5110b78a0c2502a8d}{cancelSearch}();
+168     m\_document->\hyperlink{classOkular_1_1Document_a9a6bfbdfcf7a07fcf3b2624fdea81126}{resetSearch}(\hyperlink{core_2document_8h_af9c235c3cf8d6f911691075465f83fce}{PAGEVIEW\_SEARCH\_ID});
+169     m\_document->\hyperlink{classOkular_1_1Document_a9da5fe32531f4ab8b515ed553092421f}{searchText}(\hyperlink{core_2document_8h_af9c235c3cf8d6f911691075465f83fce}{PAGEVIEW\_SEARCH\_ID}, text, 1, Qt::CaseInsensitive,
+170                            \hyperlink{classOkular_1_1Document_af4b4b32563d6013d6da10be1667a7bada3b5d0384aa5f19eb1336ffbecfd20131}{Okular::Document::AllDocument}, \textcolor{keyword}{true}, QColor(100,100
+      ,200,40), \textcolor{keyword}{true});
+171 
+172     \textcolor{keywordflow}{if} (!m\_searchInProgress) \{
+173         m\_searchInProgress = \textcolor{keyword}{true};
+174         emit \hyperlink{classDocumentItem_a96cce0af8947ce4905fa2fba432e4a86}{searchInProgressChanged}();
+175     \}
+176 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a64dc8e35de8034dd26a5f3362712a425}{\index{Document\+Item@{Document\+Item}!set\+Current\+Page@{set\+Current\+Page}}
+\index{set\+Current\+Page@{set\+Current\+Page}!Document\+Item@{Document\+Item}}
+\subsubsection[{set\+Current\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::set\+Current\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a64dc8e35de8034dd26a5f3362712a425}
+
+
+Definition at line 97 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99     m\_document->\hyperlink{classOkular_1_1Document_ac3bdbd5137c7fd4d5e960646affc25ec}{setViewportPage}(page);
+100     m\_tocModel->\hyperlink{classTOCModel_a25d87b5313bdebaa05de74172e74f92b}{setCurrentViewport}(m\_document->\hyperlink{classOkular_1_1Document_abb8738de0a53aa4a9f552de0e1e749f8}{viewport}());
+101     emit \hyperlink{classDocumentItem_a7bc66350bdf55e52a4964a321a3da336}{currentPageChanged}();
+102 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a37f59ff77a3ddb1e5489193a7fc4bd76}{\index{Document\+Item@{Document\+Item}!set\+Path@{set\+Path}}
+\index{set\+Path@{set\+Path}!Document\+Item@{Document\+Item}}
+\subsubsection[{set\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::set\+Path (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{path}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a37f59ff77a3ddb1e5489193a7fc4bd76}
+
+
+Definition at line 55 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{
+57     \textcolor{comment}{//TODO: remote urls}
+58     m\_document->\hyperlink{classOkular_1_1Document_aaec42a1303846888ea6d3151d2be2c3e}{openDocument}(\hyperlink{classDocumentItem_a85bb3a660c7282a9902af4aaff4dca36}{path}, KUrl(\hyperlink{classDocumentItem_a85bb3a660c7282a9902af4aaff4dca36}{path}), KMimeType::findByUrl(KUrl(
+      \hyperlink{classDocumentItem_a85bb3a660c7282a9902af4aaff4dca36}{path})));
+59 
+60     m\_tocModel->\hyperlink{classTOCModel_a9c2336a41645593a2630dde4d2667425}{fill}(m\_document->\hyperlink{classOkular_1_1Document_aa9dad88fffd255f0a1112228f58512f2}{documentSynopsis}());
+61     m\_tocModel->\hyperlink{classTOCModel_a25d87b5313bdebaa05de74172e74f92b}{setCurrentViewport}(m\_document->\hyperlink{classOkular_1_1Document_abb8738de0a53aa4a9f552de0e1e749f8}{viewport}());
+62 
+63     m\_matchingPages.clear();
+64     \textcolor{keywordflow}{for} (uint i = 0; i < m\_document->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}(); ++i) \{
+65          m\_matchingPages << (int)i;
+66     \}
+67     emit \hyperlink{classDocumentItem_a63ca2488654c5dcd44faa0e9cb7f1593}{matchingPagesChanged}();
+68     emit \hyperlink{classDocumentItem_af2813f6fa5e8bb6cdee5df08f15e5f73}{pathChanged}();
+69     emit \hyperlink{classDocumentItem_a3b5a91c64134447c0e9c628d26ad2968}{pageCountChanged}();
+70     emit \hyperlink{classDocumentItem_a93e395b8ea99c16387763ef694cfb673}{openedChanged}();
+71     emit \hyperlink{classDocumentItem_aae46fa6ed5a3979fb0fb513c26cd615d}{supportsSearchingChanged}();
+72     emit \hyperlink{classDocumentItem_a15dcdab66d2006d40291efb969c171e0}{windowTitleForDocumentChanged}();
+73 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_aadcded16a6571167891465b6c54d10c7}{\index{Document\+Item@{Document\+Item}!supports\+Searching@{supports\+Searching}}
+\index{supports\+Searching@{supports\+Searching}!Document\+Item@{Document\+Item}}
+\subsubsection[{supports\+Searching}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Item\+::supports\+Searching (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_aadcded16a6571167891465b6c54d10c7}
+\hypertarget{classDocumentItem_aae46fa6ed5a3979fb0fb513c26cd615d}{\index{Document\+Item@{Document\+Item}!supports\+Searching\+Changed@{supports\+Searching\+Changed}}
+\index{supports\+Searching\+Changed@{supports\+Searching\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{supports\+Searching\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::supports\+Searching\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_aae46fa6ed5a3979fb0fb513c26cd615d}
+\hypertarget{classDocumentItem_a951ccd142ffc695850220a13dc70fa95}{\index{Document\+Item@{Document\+Item}!table\+Of\+Contents@{table\+Of\+Contents}}
+\index{table\+Of\+Contents@{table\+Of\+Contents}!Document\+Item@{Document\+Item}}
+\subsubsection[{table\+Of\+Contents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+O\+C\+Model}$\ast$ Document\+Item\+::table\+Of\+Contents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_a951ccd142ffc695850220a13dc70fa95}
+\hypertarget{classDocumentItem_a301cec0218500b5edffdf863d55de3c1}{\index{Document\+Item@{Document\+Item}!thumbnail\+Observer@{thumbnail\+Observer}}
+\index{thumbnail\+Observer@{thumbnail\+Observer}!Document\+Item@{Document\+Item}}
+\subsubsection[{thumbnail\+Observer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Observer} $\ast$ Document\+Item\+::thumbnail\+Observer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDocumentItem_a301cec0218500b5edffdf863d55de3c1}
+
+
+Definition at line 198 of file documentitem.\+cpp.
+
+
+\begin{DoxyCode}
+199 \{
+200     \textcolor{keywordflow}{if} (!m\_thumbnailObserver)
+201         m\_thumbnailObserver = \textcolor{keyword}{new} \hyperlink{classObserver}{Observer}(\textcolor{keyword}{this});
+202 
+203     \textcolor{keywordflow}{return} m\_thumbnailObserver;
+204 \}
+\end{DoxyCode}
+\hypertarget{classDocumentItem_a1b188e9c812433f8041da69e26655c5a}{\index{Document\+Item@{Document\+Item}!window\+Title\+For\+Document@{window\+Title\+For\+Document}}
+\index{window\+Title\+For\+Document@{window\+Title\+For\+Document}!Document\+Item@{Document\+Item}}
+\subsubsection[{window\+Title\+For\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Document\+Item\+::window\+Title\+For\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDocumentItem_a1b188e9c812433f8041da69e26655c5a}
+\hypertarget{classDocumentItem_a15dcdab66d2006d40291efb969c171e0}{\index{Document\+Item@{Document\+Item}!window\+Title\+For\+Document\+Changed@{window\+Title\+For\+Document\+Changed}}
+\index{window\+Title\+For\+Document\+Changed@{window\+Title\+For\+Document\+Changed}!Document\+Item@{Document\+Item}}
+\subsubsection[{window\+Title\+For\+Document\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+Item\+::window\+Title\+For\+Document\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDocumentItem_a15dcdab66d2006d40291efb969c171e0}
+
+
+\subsection{Property Documentation}
+\hypertarget{classDocumentItem_aaf15a9cbebd00b8a3d51bcc967dbc105}{\index{Document\+Item@{Document\+Item}!bookmarked\+Pages@{bookmarked\+Pages}}
+\index{bookmarked\+Pages@{bookmarked\+Pages}!Document\+Item@{Document\+Item}}
+\subsubsection[{bookmarked\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ int $>$ Document\+Item\+::bookmarked\+Pages\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_aaf15a9cbebd00b8a3d51bcc967dbc105}
+List of pages that contain a bookmark 
+
+Definition at line 89 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_a08ec9ecae239f79e0e806efa28cc22b0}{\index{Document\+Item@{Document\+Item}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Document\+Item@{Document\+Item}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Document\+Item\+::bookmarks\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_a08ec9ecae239f79e0e806efa28cc22b0}
+list of bookmarks urls valid on this page 
+
+Definition at line 94 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_aaf0a1ffedca483ef328739112fb2793b}{\index{Document\+Item@{Document\+Item}!current\+Page@{current\+Page}}
+\index{current\+Page@{current\+Page}!Document\+Item@{Document\+Item}}
+\subsubsection[{current\+Page}]{\setlength{\rightskip}{0pt plus 5cm}int Document\+Item\+::current\+Page\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classDocumentItem_aaf0a1ffedca483ef328739112fb2793b}
+Current displaying page for the document 
+
+Definition at line 54 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_ad4148c970f6cd31b9b26115e3d7a1753}{\index{Document\+Item@{Document\+Item}!matching\+Pages@{matching\+Pages}}
+\index{matching\+Pages@{matching\+Pages}!Document\+Item@{Document\+Item}}
+\subsubsection[{matching\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ int $>$ Document\+Item\+::matching\+Pages\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_ad4148c970f6cd31b9b26115e3d7a1753}
+A list of all pages that contain a match for the search terms. If no text has been searched, all pages are returned. 
+
+Definition at line 79 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_acc602f4248c496e5bcef51c9f98b1663}{\index{Document\+Item@{Document\+Item}!opened@{opened}}
+\index{opened@{opened}!Document\+Item@{Document\+Item}}
+\subsubsection[{opened}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Item\+::opened\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_acc602f4248c496e5bcef51c9f98b1663}
+True if this \hyperlink{classDocumentItem}{Document\+Item} instance has a document file opened 
+
+Definition at line 59 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_a2604989a9553d297a141f14d2b00e142}{\index{Document\+Item@{Document\+Item}!page\+Count@{page\+Count}}
+\index{page\+Count@{page\+Count}!Document\+Item@{Document\+Item}}
+\subsubsection[{page\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Document\+Item\+::page\+Count\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_a2604989a9553d297a141f14d2b00e142}
+How many pages there are in the document 
+
+Definition at line 64 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_a30563830d010ecd2bcff1fe87d3f22b5}{\index{Document\+Item@{Document\+Item}!path@{path}}
+\index{path@{path}!Document\+Item@{Document\+Item}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Document\+Item\+::path\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classDocumentItem_a30563830d010ecd2bcff1fe87d3f22b5}
+Absolute path of the document file to open 
+
+Definition at line 44 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_a45a70095fcc040a324f5f2f2cc550282}{\index{Document\+Item@{Document\+Item}!search\+In\+Progress@{search\+In\+Progress}}
+\index{search\+In\+Progress@{search\+In\+Progress}!Document\+Item@{Document\+Item}}
+\subsubsection[{search\+In\+Progress}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Item\+::search\+In\+Progress\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_a45a70095fcc040a324f5f2f2cc550282}
+True if a search is currently in progress and results didn't arrive yet 
+
+Definition at line 74 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_a0bff2b3923d9140ca120dabbf527b4fa}{\index{Document\+Item@{Document\+Item}!supports\+Searching@{supports\+Searching}}
+\index{supports\+Searching@{supports\+Searching}!Document\+Item@{Document\+Item}}
+\subsubsection[{supports\+Searching}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+Item\+::supports\+Searching\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_a0bff2b3923d9140ca120dabbf527b4fa}
+True if the document is able to perform full text searches in its contents 
+
+Definition at line 69 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_a9291b1c2f73d783093898bdeb6562842}{\index{Document\+Item@{Document\+Item}!table\+Of\+Contents@{table\+Of\+Contents}}
+\index{table\+Of\+Contents@{table\+Of\+Contents}!Document\+Item@{Document\+Item}}
+\subsubsection[{table\+Of\+Contents}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+O\+C\+Model} $\ast$ Document\+Item\+::table\+Of\+Contents\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_a9291b1c2f73d783093898bdeb6562842}
+Table of contents for the document, if available 
+
+Definition at line 84 of file documentitem.\+h.
+
+\hypertarget{classDocumentItem_ad992855c3e20bfc6b4b62adc2f96061c}{\index{Document\+Item@{Document\+Item}!window\+Title\+For\+Document@{window\+Title\+For\+Document}}
+\index{window\+Title\+For\+Document@{window\+Title\+For\+Document}!Document\+Item@{Document\+Item}}
+\subsubsection[{window\+Title\+For\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Document\+Item\+::window\+Title\+For\+Document\hspace{0.3cm}{\ttfamily [read]}}}\label{classDocumentItem_ad992855c3e20bfc6b4b62adc2f96061c}
+Suggested window title if a window represents this document. may be pathname or document title, dependeing from \hyperlink{namespaceOkular}{Okular} settings. 
+
+Definition at line 49 of file documentitem.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+active/components/\hyperlink{documentitem_8h}{documentitem.\+h}\item 
+active/components/\hyperlink{documentitem_8cpp}{documentitem.\+cpp}\end{DoxyCompactItemize}

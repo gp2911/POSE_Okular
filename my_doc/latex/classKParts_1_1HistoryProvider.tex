@@ -1,0 +1,173 @@
+\hypertarget{classKParts_1_1HistoryProvider}{\section{K\+Parts\+:\+:History\+Provider Class Reference}
+\label{classKParts_1_1HistoryProvider}\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+}
+
+
+{\ttfamily \#include $<$historyprovider.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:History\+Provider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKParts_1_1HistoryProvider}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1HistoryProvider_ac1328e387f0adb62419ddfdd74b1839e}{cleared} ()
+\item 
+void \hyperlink{classKParts_1_1HistoryProvider_adf153d0a7a3efcdaba20a86e323e115f}{updated} (const Q\+String\+List \&items)
+\item 
+void \hyperlink{classKParts_1_1HistoryProvider_a24304e5276a1f113314eb7b4e464828f}{inserted} (const Q\+String \&item)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classKParts_1_1HistoryProvider_a71a0c077cb80205334b56b0fd257a21d}{contains} (const Q\+String \&item) const 
+\item 
+virtual void \hyperlink{classKParts_1_1HistoryProvider_aace7bb17dca383aeecda7a34b9e0f40d}{insert} (const Q\+String \&item)
+\item 
+virtual void \hyperlink{classKParts_1_1HistoryProvider_a5852478b139f20346c53a30543748ed5}{remove} (const Q\+String \&item)
+\item 
+virtual void \hyperlink{classKParts_1_1HistoryProvider_ac377d52046a807032c21e17e8f03dd1e}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1HistoryProvider}{History\+Provider} $\ast$ \hyperlink{classKParts_1_1HistoryProvider_a3c2fe96b915ebe5e310bbcbd8499002d}{self} ()
+\item 
+static bool \hyperlink{classKParts_1_1HistoryProvider_a5d7683f8804027d0a4106ace9a01c926}{exists} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1HistoryProvider_a6b074dce67d7c90e6c795ef961272674}{History\+Provider} (Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classKParts_1_1HistoryProvider_ad1c5d49be5dd48a6fd6776b55afa13d9}{$\sim$\+History\+Provider} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classKParts_1_1HistoryProvider_aa6bf68e5e8d7a54d38811147d3243489}{\+::\+K\+Parts\+::\+History\+Provider\+Private}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic class to manage a history of \char`\"{}items\char`\"{}. This class is only meant for fast lookup, if an item is in the history or not.
+
+May be subclassed to implement a persistent history for example. For usage with khtml, just create your provider and call the \hyperlink{classKParts_1_1HistoryProvider}{History\+Provider} constructor {\itshape before} you do any khtml stuff. That way, khtml, using the \hyperlink{classKParts_1_1HistoryProvider_a3c2fe96b915ebe5e310bbcbd8499002d}{self()}-\/method, will use your subclassed provider.
+
+\begin{DoxyAuthor}{Author}
+Carsten Pfeiffer \href{mailto:pfeiffer@kde.org}{\tt pfeiffer@kde.\+org} 
+\end{DoxyAuthor}
+
+
+Definition at line 42 of file historyprovider.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1HistoryProvider_a6b074dce67d7c90e6c795ef961272674}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!History\+Provider@{History\+Provider}}
+\index{History\+Provider@{History\+Provider}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{History\+Provider}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+History\+Provider\+::\+History\+Provider (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1HistoryProvider_a6b074dce67d7c90e6c795ef961272674}
+Creates a K\+History\+Provider with an optional parent and name \hypertarget{classKParts_1_1HistoryProvider_ad1c5d49be5dd48a6fd6776b55afa13d9}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!````~History\+Provider@{$\sim$\+History\+Provider}}
+\index{````~History\+Provider@{$\sim$\+History\+Provider}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{$\sim$\+History\+Provider}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+History\+Provider\+::$\sim$\+History\+Provider (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1HistoryProvider_ad1c5d49be5dd48a6fd6776b55afa13d9}
+Destroys the provider. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1HistoryProvider_ac377d52046a807032c21e17e8f03dd1e}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!clear@{clear}}
+\index{clear@{clear}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+History\+Provider\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1HistoryProvider_ac377d52046a807032c21e17e8f03dd1e}
+Clears the history. The \hyperlink{classKParts_1_1HistoryProvider_ac1328e387f0adb62419ddfdd74b1839e}{cleared()} signal is emitted after clearing. \hypertarget{classKParts_1_1HistoryProvider_ac1328e387f0adb62419ddfdd74b1839e}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!cleared@{cleared}}
+\index{cleared@{cleared}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{cleared}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+History\+Provider\+::cleared (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKParts_1_1HistoryProvider_ac1328e387f0adb62419ddfdd74b1839e}
+Emitted after the history has been cleared. \hypertarget{classKParts_1_1HistoryProvider_a71a0c077cb80205334b56b0fd257a21d}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!contains@{contains}}
+\index{contains@{contains}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+History\+Provider\+::contains (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{item}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1HistoryProvider_a71a0c077cb80205334b56b0fd257a21d}
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily item} is present in the history. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1HistoryProvider_a5d7683f8804027d0a4106ace9a01c926}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!exists@{exists}}
+\index{exists@{exists}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{exists}]{\setlength{\rightskip}{0pt plus 5cm}static bool K\+Parts\+::\+History\+Provider\+::exists (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1HistoryProvider_a5d7683f8804027d0a4106ace9a01c926}
+\begin{DoxyReturn}{Returns}
+true if a provider has already been created. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+4.\+4 
+\end{DoxySince}
+\hypertarget{classKParts_1_1HistoryProvider_aace7bb17dca383aeecda7a34b9e0f40d}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!insert@{insert}}
+\index{insert@{insert}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+History\+Provider\+::insert (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1HistoryProvider_aace7bb17dca383aeecda7a34b9e0f40d}
+Inserts {\ttfamily item} into the history. \hypertarget{classKParts_1_1HistoryProvider_a24304e5276a1f113314eb7b4e464828f}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!inserted@{inserted}}
+\index{inserted@{inserted}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{inserted}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+History\+Provider\+::inserted (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKParts_1_1HistoryProvider_a24304e5276a1f113314eb7b4e464828f}
+Emitted after the item has been inserted \hypertarget{classKParts_1_1HistoryProvider_a5852478b139f20346c53a30543748ed5}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!remove@{remove}}
+\index{remove@{remove}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+History\+Provider\+::remove (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1HistoryProvider_a5852478b139f20346c53a30543748ed5}
+Removes {\ttfamily item} from the history. \hypertarget{classKParts_1_1HistoryProvider_a3c2fe96b915ebe5e310bbcbd8499002d}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!self@{self}}
+\index{self@{self}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{self}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf History\+Provider}$\ast$ K\+Parts\+::\+History\+Provider\+::self (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1HistoryProvider_a3c2fe96b915ebe5e310bbcbd8499002d}
+\hypertarget{classKParts_1_1HistoryProvider_adf153d0a7a3efcdaba20a86e323e115f}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!updated@{updated}}
+\index{updated@{updated}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{updated}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+History\+Provider\+::updated (
+\begin{DoxyParamCaption}
+\item[{const Q\+String\+List \&}]{items}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKParts_1_1HistoryProvider_adf153d0a7a3efcdaba20a86e323e115f}
+This signal is never emitted from this class, it is only meant as an interface for subclasses. Emit this signal to notify others that the history has changed. Put those items that were added or removed from the history into {\ttfamily items}. 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classKParts_1_1HistoryProvider_aa6bf68e5e8d7a54d38811147d3243489}{\index{K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}!\+::\+K\+Parts\+::\+History\+Provider\+Private@{\+::\+K\+Parts\+::\+History\+Provider\+Private}}
+\index{\+::\+K\+Parts\+::\+History\+Provider\+Private@{\+::\+K\+Parts\+::\+History\+Provider\+Private}!K\+Parts\+::\+History\+Provider@{K\+Parts\+::\+History\+Provider}}
+\subsubsection[{\+::\+K\+Parts\+::\+History\+Provider\+Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class \+::K\+Parts\+::\+History\+Provider\+Private\hspace{0.3cm}{\ttfamily [friend]}}}\label{classKParts_1_1HistoryProvider_aa6bf68e5e8d7a54d38811147d3243489}
+
+
+Definition at line 45 of file historyprovider.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{historyprovider_8h}{historyprovider.\+h}\end{DoxyCompactItemize}

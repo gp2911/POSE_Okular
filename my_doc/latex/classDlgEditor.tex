@@ -1,0 +1,95 @@
+\hypertarget{classDlgEditor}{\section{Dlg\+Editor Class Reference}
+\label{classDlgEditor}\index{Dlg\+Editor@{Dlg\+Editor}}
+}
+
+
+{\ttfamily \#include $<$dlgeditor.\+h$>$}
+
+Inheritance diagram for Dlg\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDlgEditor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDlgEditor_a5241c28c576969f4b87ae496bc295b5f}{Dlg\+Editor} (Q\+Widget $\ast$parent=0)
+\item 
+virtual \hyperlink{classDlgEditor_ab0bae0e6ac5e7f656984492fc8d4c260}{$\sim$\+Dlg\+Editor} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file dlgeditor.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDlgEditor_a5241c28c576969f4b87ae496bc295b5f}{\index{Dlg\+Editor@{Dlg\+Editor}!Dlg\+Editor@{Dlg\+Editor}}
+\index{Dlg\+Editor@{Dlg\+Editor}!Dlg\+Editor@{Dlg\+Editor}}
+\subsubsection[{Dlg\+Editor}]{\setlength{\rightskip}{0pt plus 5cm}Dlg\+Editor\+::\+Dlg\+Editor (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classDlgEditor_a5241c28c576969f4b87ae496bc295b5f}
+
+
+Definition at line 18 of file dlgeditor.\+cpp.
+
+
+\begin{DoxyCode}
+19     : QWidget( parent )
+20 \{
+21     m\_dlg = \textcolor{keyword}{new} \hyperlink{classUi__DlgEditorBase}{Ui\_DlgEditorBase}();
+22     m\_dlg->\hyperlink{classUi__DlgEditorBase_a5b23b644a6d5dd91f606e93e6f324960}{setupUi}( \textcolor{keyword}{this} );
+23 
+24     m\_editors = Okular::buildEditorsMap();
+25 
+26     connect( m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      editorChanged(\textcolor{keywordtype}{int})) );
+27 
+28     m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}->addItem( i18nc( \textcolor{stringliteral}{"Text editor"}, \textcolor{stringliteral}{"Custom Text Editor"} ) );
+29     m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}->addItem( i18nc( \textcolor{stringliteral}{"Text editor"}, \textcolor{stringliteral}{"Kate"} ), 1 );
+30     m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}->addItem( i18nc( \textcolor{stringliteral}{"Text editor"}, \textcolor{stringliteral}{"Kile"} ), 2 );
+31     m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}->addItem( i18nc( \textcolor{stringliteral}{"Text editor"}, \textcolor{stringliteral}{"SciTE"} ), 3 );
+32     m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}->addItem( i18nc( \textcolor{stringliteral}{"Text editor"}, \textcolor{stringliteral}{"Emacs client"} ), 4 );
+33     m\_dlg->\hyperlink{classUi__DlgEditorBase_aea3d3090a97b8e3074b1e571713a9510}{kcfg\_ExternalEditor}->addItem( i18nc( \textcolor{stringliteral}{"Text editor"}, \textcolor{stringliteral}{"Lyx client"} ), 5 );
+34 
+35     m\_dlg->\hyperlink{classUi__DlgEditorBase_a6123d3afc7b3db52828306e0c4de3e2d}{kcfg\_ExternalEditorCommand}->setWhatsThis( i18nc( \textcolor{stringliteral}{"@info:whatsthis"},
+36         \textcolor{stringliteral}{"<qt>Set the command of a custom text editor to be launched.<br />\(\backslash\)n"}
+37         \textcolor{stringliteral}{"You can also put few placeholders:\(\backslash\)n"}
+38         \textcolor{stringliteral}{"<ul>\(\backslash\)n"}
+39         \textcolor{stringliteral}{"  <li>%f - the file name</li>\(\backslash\)n"}
+40         \textcolor{stringliteral}{"  <li>%l - the line of the file to be reached</li>\(\backslash\)n"}
+41         \textcolor{stringliteral}{"  <li>%c - the column of the file to be reached</li>\(\backslash\)n"}
+42         \textcolor{stringliteral}{"</ul>\(\backslash\)n"}
+43         \textcolor{stringliteral}{"If %f is not specified, then the file name is appended to the specified "}
+44         \textcolor{stringliteral}{"command."} ) );
+45 \}
+\end{DoxyCode}
+\hypertarget{classDlgEditor_ab0bae0e6ac5e7f656984492fc8d4c260}{\index{Dlg\+Editor@{Dlg\+Editor}!````~Dlg\+Editor@{$\sim$\+Dlg\+Editor}}
+\index{````~Dlg\+Editor@{$\sim$\+Dlg\+Editor}!Dlg\+Editor@{Dlg\+Editor}}
+\subsubsection[{$\sim$\+Dlg\+Editor}]{\setlength{\rightskip}{0pt plus 5cm}Dlg\+Editor\+::$\sim$\+Dlg\+Editor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDlgEditor_ab0bae0e6ac5e7f656984492fc8d4c260}
+
+
+Definition at line 47 of file dlgeditor.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keyword}{delete} m\_dlg;
+50 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+conf/\hyperlink{dlgeditor_8h}{dlgeditor.\+h}\item 
+conf/\hyperlink{dlgeditor_8cpp}{dlgeditor.\+cpp}\end{DoxyCompactItemize}

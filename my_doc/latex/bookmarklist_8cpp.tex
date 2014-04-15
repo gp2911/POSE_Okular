@@ -1,0 +1,63 @@
+\hypertarget{bookmarklist_8cpp}{\section{ui/bookmarklist.cpp File Reference}
+\label{bookmarklist_8cpp}\index{ui/bookmarklist.\+cpp@{ui/bookmarklist.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}bookmarklist.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$qaction.\+h$>$}\\*
+{\ttfamily \#include $<$qcursor.\+h$>$}\\*
+{\ttfamily \#include $<$qheaderview.\+h$>$}\\*
+{\ttfamily \#include $<$qlayout.\+h$>$}\\*
+{\ttfamily \#include $<$qtoolbar.\+h$>$}\\*
+{\ttfamily \#include $<$qtreewidget.\+h$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$kicon.\+h$>$}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$kmenu.\+h$>$}\\*
+{\ttfamily \#include $<$ktreewidgetsearchline.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}pageitemdelegate.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/action.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/bookmarkmanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/document.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bookmarklist.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBookmarkItem}{Bookmark\+Item}
+\item 
+class \hyperlink{classFileItem}{File\+Item}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ Q\+Tree\+Widget\+Item $\ast$ $>$ \hyperlink{bookmarklist_8cpp_acf5111b19d19b1ccd9779bbf362eef25}{create\+Items} (const K\+Url \&baseurl, const K\+Bookmark\+::\+List \&bmlist)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bookmarklist_8cpp_acf5111b19d19b1ccd9779bbf362eef25}{\index{bookmarklist.\+cpp@{bookmarklist.\+cpp}!create\+Items@{create\+Items}}
+\index{create\+Items@{create\+Items}!bookmarklist.\+cpp@{bookmarklist.\+cpp}}
+\subsubsection[{create\+Items}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$Q\+Tree\+Widget\+Item$\ast$$>$ create\+Items (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{baseurl, }
+\item[{const K\+Bookmark\+::\+List \&}]{bmlist}
+\end{DoxyParamCaption}
+)}}\label{bookmarklist_8cpp_acf5111b19d19b1ccd9779bbf362eef25}
+
+
+Definition at line 318 of file bookmarklist.\+cpp.
+
+
+\begin{DoxyCode}
+319 \{
+320     (void)baseurl;
+321     \hyperlink{classQList}{QList<QTreeWidgetItem*>} ret;
+322     \textcolor{keywordflow}{foreach} ( \textcolor{keyword}{const} KBookmark& bm, bmlist )
+323     \{
+324 \textcolor{comment}{//        kDebug().nospace() << "checking '" << tmp << "'";}
+325 \textcolor{comment}{//        kDebug().nospace() << "      vs '" << baseurl << "'";}
+326         \textcolor{comment}{// TODO check that bm and baseurl are the same (#ref excluded)}
+327         QTreeWidgetItem * item = \textcolor{keyword}{new} \hyperlink{classBookmarkItem}{BookmarkItem}( bm );
+328         ret.append( item );
+329     \}
+330     \textcolor{keywordflow}{return} ret;
+331 \}
+\end{DoxyCode}

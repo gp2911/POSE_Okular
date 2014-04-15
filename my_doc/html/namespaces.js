@@ -1,0 +1,25 @@
+var namespaces =
+[
+    [ "ComicBook", "namespaceComicBook.html", null ],
+    [ "DOM", "namespaceDOM.html", null ],
+    [ "Epub", "namespaceEpub.html", null ],
+    [ "FictionBook", "namespaceFictionBook.html", null ],
+    [ "GuiUtils", "namespaceGuiUtils.html", null ],
+    [ "KIO", "namespaceKIO.html", null ],
+    [ "KParts", "namespaceKParts.html", "namespaceKParts" ],
+    [ "kvs", "namespacekvs.html", null ],
+    [ "LCHMBookIcons", "namespaceLCHMBookIcons.html", null ],
+    [ "LCHMUrlFactory", "namespaceLCHMUrlFactory.html", null ],
+    [ "Mobi", "namespaceMobi.html", null ],
+    [ "Mobipocket", "namespaceMobipocket.html", null ],
+    [ "Okular", "namespaceOkular.html", "namespaceOkular" ],
+    [ "OOO", "namespaceOOO.html", null ],
+    [ "org", "namespaceorg.html", "namespaceorg" ],
+    [ "QTest", "namespaceQTest.html", null ],
+    [ "ShellUtils", "namespaceShellUtils.html", "namespaceShellUtils" ],
+    [ "TestingUtils", "namespaceTestingUtils.html", null ],
+    [ "ThreadWeaver", "namespaceThreadWeaver.html", null ],
+    [ "Txt", "namespaceTxt.html", null ],
+    [ "Ui", "namespaceUi.html", null ],
+    [ "UrlUtils", "namespaceUrlUtils.html", null ]
+];

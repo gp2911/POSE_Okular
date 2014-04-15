@@ -1,0 +1,164 @@
+\hypertarget{classToolBarButton}{\section{Tool\+Bar\+Button Class Reference}
+\label{classToolBarButton}\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+}
+
+
+{\ttfamily \#include $<$pageviewutils.\+h$>$}
+
+Inheritance diagram for Tool\+Bar\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classToolBarButton}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classToolBarButton_adecb0c3d3dcc600fe6f43204005e07b9}{button\+Double\+Clicked} (int \hyperlink{classToolBarButton_a750e0214f1132f48d15000f8537f8c73}{button\+I\+D})
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classToolBarButton_a7a8fc00f72c150a3338f269854e21e1f}{Tool\+Bar\+Button} (Q\+Widget $\ast$parent, const \hyperlink{structAnnotationToolItem}{Annotation\+Tool\+Item} \&item)
+\item 
+int \hyperlink{classToolBarButton_a750e0214f1132f48d15000f8537f8c73}{button\+I\+D} () const 
+\item 
+bool \hyperlink{classToolBarButton_a9dee09e548ce48d260a3ba4d217cebf7}{is\+Text} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classToolBarButton_af20cb74ef4ee4e049fd8bb18619106fa}{icon\+Size} = 32
+\item 
+static const int \hyperlink{classToolBarButton_a124410faa69251b2a84d7ab039d6670d}{button\+Size} = 40
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classToolBarButton_a25a48874b90b5561f27d7664d8a04b41}{mouse\+Double\+Click\+Event} (Q\+Mouse\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 165 of file pageviewutils.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classToolBarButton_a7a8fc00f72c150a3338f269854e21e1f}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{Tool\+Bar\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Tool\+Bar\+Button\+::\+Tool\+Bar\+Button (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{const {\bf Annotation\+Tool\+Item} \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{classToolBarButton_a7a8fc00f72c150a3338f269854e21e1f}
+\hyperlink{classPageViewToolBar}{Page\+View\+Tool\+Bar} 
+
+Definition at line 488 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+489     : QToolButton( parent ), m\_id( item.\hyperlink{structAnnotationToolItem_a738162ebc807fdfb9d0a7937c34bab01}{id} ), m\_isText( item.\hyperlink{structAnnotationToolItem_a7627b1e7036d516cd4bd290a9099a549}{isText} )
+490 \{
+491     setCheckable( \textcolor{keyword}{true} );
+492     setAutoRaise( \textcolor{keyword}{true} );
+493     resize( \hyperlink{classToolBarButton_a124410faa69251b2a84d7ab039d6670d}{buttonSize}, \hyperlink{classToolBarButton_a124410faa69251b2a84d7ab039d6670d}{buttonSize} );
+494     setIconSize( QSize( \hyperlink{classToolBarButton_af20cb74ef4ee4e049fd8bb18619106fa}{iconSize}, \hyperlink{classToolBarButton_af20cb74ef4ee4e049fd8bb18619106fa}{iconSize} ) );
+495     setIcon( QIcon( item.\hyperlink{structAnnotationToolItem_a329b59ebf0a0064444d34874f41a70cb}{pixmap} ) );
+496     \textcolor{comment}{// set shortcut if defined}
+497     \textcolor{keywordflow}{if} ( !item.\hyperlink{structAnnotationToolItem_ad9bf3c20abf0ddfc1d1ff826cd3d3da5}{shortcut}.isEmpty() )
+498         setShortcut( QKeySequence( item.\hyperlink{structAnnotationToolItem_ad9bf3c20abf0ddfc1d1ff826cd3d3da5}{shortcut} ) );
+499     \textcolor{keywordflow}{else}
+500         KAcceleratorManager::setNoAccel( \textcolor{keyword}{this} );
+501 
+502     \textcolor{comment}{// if accel is set display it along name}
+503     QString accelString = shortcut().toString( QKeySequence::NativeText );
+504     \textcolor{keywordflow}{if} ( !accelString.isEmpty() )
+505         setToolTip( QString(\textcolor{stringliteral}{"%1 [%2]"}).arg( item.\hyperlink{structAnnotationToolItem_a5a24d93be5ae5fba2c921b205c29b017}{text} ).arg( accelString ) );
+506     \textcolor{keywordflow}{else}
+507         setToolTip( item.\hyperlink{structAnnotationToolItem_a5a24d93be5ae5fba2c921b205c29b017}{text} );
+508 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classToolBarButton_adecb0c3d3dcc600fe6f43204005e07b9}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!button\+Double\+Clicked@{button\+Double\+Clicked}}
+\index{button\+Double\+Clicked@{button\+Double\+Clicked}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{button\+Double\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Tool\+Bar\+Button\+::button\+Double\+Clicked (
+\begin{DoxyParamCaption}
+\item[{int}]{button\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classToolBarButton_adecb0c3d3dcc600fe6f43204005e07b9}
+\hypertarget{classToolBarButton_a750e0214f1132f48d15000f8537f8c73}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!button\+I\+D@{button\+I\+D}}
+\index{button\+I\+D@{button\+I\+D}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{button\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int Tool\+Bar\+Button\+::button\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classToolBarButton_a750e0214f1132f48d15000f8537f8c73}
+
+
+Definition at line 173 of file pageviewutils.\+h.
+
+
+\begin{DoxyCode}
+173 \{ \textcolor{keywordflow}{return} m\_id; \}
+\end{DoxyCode}
+\hypertarget{classToolBarButton_a9dee09e548ce48d260a3ba4d217cebf7}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!is\+Text@{is\+Text}}
+\index{is\+Text@{is\+Text}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{is\+Text}]{\setlength{\rightskip}{0pt plus 5cm}bool Tool\+Bar\+Button\+::is\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classToolBarButton_a9dee09e548ce48d260a3ba4d217cebf7}
+
+
+Definition at line 174 of file pageviewutils.\+h.
+
+
+\begin{DoxyCode}
+174 \{ \textcolor{keywordflow}{return} m\_isText; \}
+\end{DoxyCode}
+\hypertarget{classToolBarButton_a25a48874b90b5561f27d7664d8a04b41}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!mouse\+Double\+Click\+Event@{mouse\+Double\+Click\+Event}}
+\index{mouse\+Double\+Click\+Event@{mouse\+Double\+Click\+Event}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{mouse\+Double\+Click\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Tool\+Bar\+Button\+::mouse\+Double\+Click\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classToolBarButton_a25a48874b90b5561f27d7664d8a04b41}
+
+
+Definition at line 510 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+511 \{
+512   emit \hyperlink{classToolBarButton_adecb0c3d3dcc600fe6f43204005e07b9}{buttonDoubleClicked}( \hyperlink{classToolBarButton_a750e0214f1132f48d15000f8537f8c73}{buttonID}() );
+513 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classToolBarButton_a124410faa69251b2a84d7ab039d6670d}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!button\+Size@{button\+Size}}
+\index{button\+Size@{button\+Size}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{button\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const int Tool\+Bar\+Button\+::button\+Size = 40\hspace{0.3cm}{\ttfamily [static]}}}\label{classToolBarButton_a124410faa69251b2a84d7ab039d6670d}
+
+
+Definition at line 170 of file pageviewutils.\+h.
+
+\hypertarget{classToolBarButton_af20cb74ef4ee4e049fd8bb18619106fa}{\index{Tool\+Bar\+Button@{Tool\+Bar\+Button}!icon\+Size@{icon\+Size}}
+\index{icon\+Size@{icon\+Size}!Tool\+Bar\+Button@{Tool\+Bar\+Button}}
+\subsubsection[{icon\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const int Tool\+Bar\+Button\+::icon\+Size = 32\hspace{0.3cm}{\ttfamily [static]}}}\label{classToolBarButton_af20cb74ef4ee4e049fd8bb18619106fa}
+
+
+Definition at line 169 of file pageviewutils.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{pageviewutils_8h}{pageviewutils.\+h}\item 
+ui/\hyperlink{pageviewutils_8cpp}{pageviewutils.\+cpp}\end{DoxyCompactItemize}

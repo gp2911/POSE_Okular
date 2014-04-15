@@ -1,0 +1,239 @@
+\hypertarget{classOkular_1_1SoundAction}{\section{Okular\+:\+:Sound\+Action Class Reference}
+\label{classOkular_1_1SoundAction}\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+}
+
+
+{\ttfamily \#include $<$action.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Sound\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1SoundAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1SoundAction_a00e8d9b3dea4b0a03a10d869e38b57a2}{Sound\+Action} (double \hyperlink{classOkular_1_1SoundAction_ab8932519cb7c662a7163d913131c3307}{volume}, bool \hyperlink{classOkular_1_1SoundAction_a28855e4de48eb6212013a457d3eb9dda}{synchronous}, bool \hyperlink{classOkular_1_1SoundAction_a3fc908be10b8113ba72c7988c420cd23}{repeat}, bool \hyperlink{classOkular_1_1SoundAction_ac714168b6f391e2e1f2d3df3dc9a0c33}{mix}, \hyperlink{classOkular_1_1Sound}{Okular\+::\+Sound} $\ast$\hyperlink{classOkular_1_1SoundAction_aeca8e94b61e8b5a1c9ee5abf35b6569a}{sound})
+\item 
+virtual \hyperlink{classOkular_1_1SoundAction_ad367be264670f8a4e6d8b51a205c1bec}{$\sim$\+Sound\+Action} ()
+\item 
+\hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47}{Action\+Type} \hyperlink{classOkular_1_1SoundAction_a9f73cbcd3d77b77428e937b6ca83668c}{action\+Type} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1SoundAction_ae0bbcde29f828f1d5bcfddc0b4c7f0cd}{action\+Tip} () const 
+\item 
+double \hyperlink{classOkular_1_1SoundAction_ab8932519cb7c662a7163d913131c3307}{volume} () const 
+\item 
+bool \hyperlink{classOkular_1_1SoundAction_a28855e4de48eb6212013a457d3eb9dda}{synchronous} () const 
+\item 
+bool \hyperlink{classOkular_1_1SoundAction_a3fc908be10b8113ba72c7988c420cd23}{repeat} () const 
+\item 
+bool \hyperlink{classOkular_1_1SoundAction_ac714168b6f391e2e1f2d3df3dc9a0c33}{mix} () const 
+\item 
+\hyperlink{classOkular_1_1Sound}{Okular\+::\+Sound} $\ast$ \hyperlink{classOkular_1_1SoundAction_aeca8e94b61e8b5a1c9ee5abf35b6569a}{sound} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classOkular_1_1Sound}{Sound} action plays a sound on activation. 
+
+Definition at line 323 of file action.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1SoundAction_a00e8d9b3dea4b0a03a10d869e38b57a2}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!Sound\+Action@{Sound\+Action}}
+\index{Sound\+Action@{Sound\+Action}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{Sound\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Sound\+Action\+::\+Sound\+Action (
+\begin{DoxyParamCaption}
+\item[{double}]{volume, }
+\item[{bool}]{synchronous, }
+\item[{bool}]{repeat, }
+\item[{bool}]{mix, }
+\item[{{\bf Okular\+::\+Sound} $\ast$}]{sound}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SoundAction_a00e8d9b3dea4b0a03a10d869e38b57a2}
+Creates a new sound action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The volume of the sound. \\
+\hline
+{\em synchronous} & Whether the sound shall be played synchronous. \\
+\hline
+{\em repeat} & Whether the sound shall be repeated. \\
+\hline
+{\em mix} & Whether the sound shall be mixed. \\
+\hline
+{\em sound} & The sound object which contains the sound data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 315 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+316     : \hyperlink{classOkular_1_1Action}{Action}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1SoundActionPrivate}{SoundActionPrivate}( \hyperlink{classOkular_1_1SoundAction_ab8932519cb7c662a7163d913131c3307}{volume}, sync, 
+      \hyperlink{classOkular_1_1SoundAction_a3fc908be10b8113ba72c7988c420cd23}{repeat}, \hyperlink{classOkular_1_1SoundAction_ac714168b6f391e2e1f2d3df3dc9a0c33}{mix}, sound ) )
+317 \{
+318 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_ad367be264670f8a4e6d8b51a205c1bec}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!````~Sound\+Action@{$\sim$\+Sound\+Action}}
+\index{````~Sound\+Action@{$\sim$\+Sound\+Action}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{$\sim$\+Sound\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Sound\+Action\+::$\sim$\+Sound\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAction_ad367be264670f8a4e6d8b51a205c1bec}
+Destroys the sound action. 
+
+Definition at line 320 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+321 \{
+322 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1SoundAction_ae0bbcde29f828f1d5bcfddc0b4c7f0cd}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!action\+Tip@{action\+Tip}}
+\index{action\+Tip@{action\+Tip}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{action\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Sound\+Action\+::action\+Tip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAction_ae0bbcde29f828f1d5bcfddc0b4c7f0cd}
+Returns the action tip. 
+
+Reimplemented from \hyperlink{classOkular_1_1Action_a359c33818281df712da697c84975952f}{Okular\+::\+Action}.
+
+
+
+Definition at line 329 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+330 \{
+331     \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Play sound..."} );
+332 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_a9f73cbcd3d77b77428e937b6ca83668c}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!action\+Type@{action\+Type}}
+\index{action\+Type@{action\+Type}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{action\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action\+::\+Action\+Type} Sound\+Action\+::action\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAction_a9f73cbcd3d77b77428e937b6ca83668c}
+Returns the action type. 
+
+Implements \hyperlink{classOkular_1_1Action_ac4c2ef09b350b4041f8d1cfb261c3234}{Okular\+::\+Action}.
+
+
+
+Definition at line 324 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+325 \{
+326     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47ae1bf0d24610ef55451f2a122bbf48a3c}{Sound};
+327 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_ac714168b6f391e2e1f2d3df3dc9a0c33}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!mix@{mix}}
+\index{mix@{mix}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{mix}]{\setlength{\rightskip}{0pt plus 5cm}bool Sound\+Action\+::mix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAction_ac714168b6f391e2e1f2d3df3dc9a0c33}
+Returns whether the sound shall be mixed. 
+
+Definition at line 352 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+353 \{
+354     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction} );
+355     \textcolor{keywordflow}{return} d->m\_mix;
+356 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_a3fc908be10b8113ba72c7988c420cd23}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!repeat@{repeat}}
+\index{repeat@{repeat}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{repeat}]{\setlength{\rightskip}{0pt plus 5cm}bool Sound\+Action\+::repeat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAction_a3fc908be10b8113ba72c7988c420cd23}
+Returns whether the sound shall be repeated. 
+
+Definition at line 346 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+347 \{
+348     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction} );
+349     \textcolor{keywordflow}{return} d->m\_repeat;
+350 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_aeca8e94b61e8b5a1c9ee5abf35b6569a}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!sound@{sound}}
+\index{sound@{sound}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{sound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Sound} $\ast$ Sound\+Action\+::sound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAction_aeca8e94b61e8b5a1c9ee5abf35b6569a}
+Returns the sound object which contains the sound data. 
+
+Definition at line 358 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+359 \{
+360     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction} );
+361     \textcolor{keywordflow}{return} d->m\_sound;
+362 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_a28855e4de48eb6212013a457d3eb9dda}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!synchronous@{synchronous}}
+\index{synchronous@{synchronous}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{synchronous}]{\setlength{\rightskip}{0pt plus 5cm}bool Sound\+Action\+::synchronous (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAction_a28855e4de48eb6212013a457d3eb9dda}
+Returns whether the sound shall be played synchronous. 
+
+Definition at line 340 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+341 \{
+342     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction} );
+343     \textcolor{keywordflow}{return} d->m\_sync;
+344 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAction_ab8932519cb7c662a7163d913131c3307}{\index{Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}!volume@{volume}}
+\index{volume@{volume}!Okular\+::\+Sound\+Action@{Okular\+::\+Sound\+Action}}
+\subsubsection[{volume}]{\setlength{\rightskip}{0pt plus 5cm}double Sound\+Action\+::volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAction_ab8932519cb7c662a7163d913131c3307}
+Returns the volume of the sound. 
+
+Definition at line 334 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+335 \{
+336     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction} );
+337     \textcolor{keywordflow}{return} d->m\_volume;
+338 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{action_8h}{action.\+h}\item 
+core/\hyperlink{action_8cpp}{action.\+cpp}\end{DoxyCompactItemize}

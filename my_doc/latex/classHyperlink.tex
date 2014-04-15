@@ -1,0 +1,135 @@
+\hypertarget{classHyperlink}{\section{Hyperlink Class Reference}
+\label{classHyperlink}\index{Hyperlink@{Hyperlink}}
+}
+
+
+{\ttfamily \#include $<$hyperlink.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHyperlink_a54a241958a42b58e8fdb2d532ae16714}{Hyperlink} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHyperlink_a33d1db529eb90309918e2e6adbaf539a}{Hyperlink} (quint32 bl, const Q\+Rect \&re, const Q\+String \&l\+T)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \hyperlink{classHyperlink_aec2a7167f48623f38d3c628e0ebb298f}{baseline}
+\begin{DoxyCompactList}\small\item\em Base line of a hyperlink. \end{DoxyCompactList}\item 
+Q\+Rect \hyperlink{classHyperlink_ad7a3e8de8ad043dd8bbfb65eb963c72d}{box}
+\begin{DoxyCompactList}\small\item\em Bounding box of the text or hyperlink. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classHyperlink_a9aa732893dfb8f1c253132dca07cb052}{link\+Text}
+\begin{DoxyCompactList}\small\item\em Name of the region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a named, rectangular region in a rendered document\+Page
+
+This trivial class is used in the document\+Page class to represent a hyperlink in a rendered document\+Page.
+
+\begin{DoxyAuthor}{Author}
+Stefan Kebekus \href{mailto:kebekus@kde.org}{\tt kebekus@kde.\+org} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+Definition at line 25 of file hyperlink.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHyperlink_a54a241958a42b58e8fdb2d532ae16714}{\index{Hyperlink@{Hyperlink}!Hyperlink@{Hyperlink}}
+\index{Hyperlink@{Hyperlink}!Hyperlink@{Hyperlink}}
+\subsubsection[{Hyperlink}]{\setlength{\rightskip}{0pt plus 5cm}Hyperlink\+::\+Hyperlink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classHyperlink_a54a241958a42b58e8fdb2d532ae16714}
+
+
+Default Constructor. 
+
+The default constructor leaves all fields uninitialized. 
+
+Definition at line 32 of file hyperlink.\+h.
+
+
+\begin{DoxyCode}
+32 \{\}
+\end{DoxyCode}
+\hypertarget{classHyperlink_a33d1db529eb90309918e2e6adbaf539a}{\index{Hyperlink@{Hyperlink}!Hyperlink@{Hyperlink}}
+\index{Hyperlink@{Hyperlink}!Hyperlink@{Hyperlink}}
+\subsubsection[{Hyperlink}]{\setlength{\rightskip}{0pt plus 5cm}Hyperlink\+::\+Hyperlink (
+\begin{DoxyParamCaption}
+\item[{quint32}]{bl, }
+\item[{const Q\+Rect \&}]{re, }
+\item[{const Q\+String \&}]{l\+T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classHyperlink_a33d1db529eb90309918e2e6adbaf539a}
+
+
+Constructor. 
+
+Trivial constructor leaves that initialized all members.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bl} & value for the baseline field \\
+\hline
+{\em re} & value for the box \\
+\hline
+{\em l\+T} & valus for the text field \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file hyperlink.\+h.
+
+
+\begin{DoxyCode}
+42 : \hyperlink{classHyperlink_aec2a7167f48623f38d3c628e0ebb298f}{baseline}(bl), \hyperlink{classHyperlink_ad7a3e8de8ad043dd8bbfb65eb963c72d}{box}(re), \hyperlink{classHyperlink_a9aa732893dfb8f1c253132dca07cb052}{linkText}(lT) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classHyperlink_aec2a7167f48623f38d3c628e0ebb298f}{\index{Hyperlink@{Hyperlink}!baseline@{baseline}}
+\index{baseline@{baseline}!Hyperlink@{Hyperlink}}
+\subsubsection[{baseline}]{\setlength{\rightskip}{0pt plus 5cm}quint32 Hyperlink\+::baseline}}\label{classHyperlink_aec2a7167f48623f38d3c628e0ebb298f}
+
+
+Base line of a hyperlink. 
+
+This field specifies the Y-\/coordinate of the base line of the bounding box in the same coordinates that were used when the associated document\+Page was rendered by the document\+Renderer.\+draw\+Page() method. It is used to underline hyperlinks in blue. Note that this field does generally differ from the Y-\/coordinate of the bottom of the bounding box, e.\+g. if the text in the box contains characters with underlengths, such as 'y', 'j' or 'g'. 
+
+Definition at line 55 of file hyperlink.\+h.
+
+\hypertarget{classHyperlink_ad7a3e8de8ad043dd8bbfb65eb963c72d}{\index{Hyperlink@{Hyperlink}!box@{box}}
+\index{box@{box}!Hyperlink@{Hyperlink}}
+\subsubsection[{box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Hyperlink\+::box}}\label{classHyperlink_ad7a3e8de8ad043dd8bbfb65eb963c72d}
+
+
+Bounding box of the text or hyperlink. 
+
+This rectangle specifies where on the page the hyperlink is found. It uses the same coordinates that were used when the associated document\+Page was rendered by the document\+Renderer.\+draw\+Page() method. The box is used to determine if the mouse pointer hovers over the link. 
+
+Definition at line 65 of file hyperlink.\+h.
+
+\hypertarget{classHyperlink_a9aa732893dfb8f1c253132dca07cb052}{\index{Hyperlink@{Hyperlink}!link\+Text@{link\+Text}}
+\index{link\+Text@{link\+Text}!Hyperlink@{Hyperlink}}
+\subsubsection[{link\+Text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Hyperlink\+::link\+Text}}\label{classHyperlink_a9aa732893dfb8f1c253132dca07cb052}
+
+
+Name of the region. 
+
+This field contains the name of the target, e.\+g. \char`\"{}http\+://www.\+kde.\+org\char`\"{}. If the \hyperlink{classHyperlink}{Hyperlink} class is used to represent text, then the text is stored here. 
+
+Definition at line 73 of file hyperlink.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{hyperlink_8h}{hyperlink.\+h}\end{DoxyCompactItemize}

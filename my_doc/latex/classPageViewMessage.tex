@@ -1,0 +1,319 @@
+\hypertarget{classPageViewMessage}{\section{Page\+View\+Message Class Reference}
+\label{classPageViewMessage}\index{Page\+View\+Message@{Page\+View\+Message}}
+}
+
+
+A widget that displays messages in the top-\/left corner.  
+
+
+
+
+{\ttfamily \#include $<$pageviewutils.\+h$>$}
+
+Inheritance diagram for Page\+View\+Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPageViewMessage}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0c}{Icon} \{ \\*
+\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4d49e997ceb24be7bda744d934b3e65e}{None}, 
+\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca2ae901576662b28f92067841a52e11dd}{Info}, 
+\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca8d795d55732497f572dde8b9491ce280}{Warning}, 
+\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4fab3e3265e2d4386ce7b7ed21b086cc}{Error}, 
+\\*
+\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cac5541921f6620602ebc759c6a149472a}{Find}, 
+\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cacc210033b8c3a838c93af708e55cbbd0}{Annotation}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageViewMessage_a509793a17b4e511185f1eeed2637b06c}{Page\+View\+Message} (Q\+Widget $\ast$parent)
+\item 
+void \hyperlink{classPageViewMessage_a7fd107b1b7a6c0ae64a4d09fc2467982}{display} (const Q\+String \&message, const Q\+String \&details=Q\+String(), \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0c}{Icon} icon=\hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca2ae901576662b28f92067841a52e11dd}{Info}, int duration\+Ms=4000)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPageViewMessage_ad1f5c357af9bdbcad72dd40702e63385}{event\+Filter} (Q\+Object $\ast$obj, Q\+Event $\ast$event)
+\item 
+void \hyperlink{classPageViewMessage_a9812285d6bc84d2e1eb20c1d76be18c3}{paint\+Event} (Q\+Paint\+Event $\ast$e)
+\item 
+void \hyperlink{classPageViewMessage_af14a282e4b5ce779de38e4a87afdf6ff}{mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A widget that displays messages in the top-\/left corner. 
+
+This is a widget with thin border and rounded corners that displays a given text along as an icon. It's meant to be used for displaying messages to the user by placing this above other widgets. 
+
+Definition at line 102 of file pageviewutils.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0c}{\index{Page\+View\+Message@{Page\+View\+Message}!Icon@{Icon}}
+\index{Icon@{Icon}!Page\+View\+Message@{Page\+View\+Message}}
+\subsubsection[{Icon}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Page\+View\+Message\+::\+Icon}}}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Page\+View\+Message@{Page\+View\+Message}}\index{Page\+View\+Message@{Page\+View\+Message}!None@{None}}\item[{\em 
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4d49e997ceb24be7bda744d934b3e65e}{None}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4d49e997ceb24be7bda744d934b3e65e}
+}]\index{Info@{Info}!Page\+View\+Message@{Page\+View\+Message}}\index{Page\+View\+Message@{Page\+View\+Message}!Info@{Info}}\item[{\em 
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca2ae901576662b28f92067841a52e11dd}{Info}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca2ae901576662b28f92067841a52e11dd}
+}]\index{Warning@{Warning}!Page\+View\+Message@{Page\+View\+Message}}\index{Page\+View\+Message@{Page\+View\+Message}!Warning@{Warning}}\item[{\em 
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca8d795d55732497f572dde8b9491ce280}{Warning}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca8d795d55732497f572dde8b9491ce280}
+}]\index{Error@{Error}!Page\+View\+Message@{Page\+View\+Message}}\index{Page\+View\+Message@{Page\+View\+Message}!Error@{Error}}\item[{\em 
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4fab3e3265e2d4386ce7b7ed21b086cc}{Error}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4fab3e3265e2d4386ce7b7ed21b086cc}
+}]\index{Find@{Find}!Page\+View\+Message@{Page\+View\+Message}}\index{Page\+View\+Message@{Page\+View\+Message}!Find@{Find}}\item[{\em 
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cac5541921f6620602ebc759c6a149472a}{Find}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cac5541921f6620602ebc759c6a149472a}
+}]\index{Annotation@{Annotation}!Page\+View\+Message@{Page\+View\+Message}}\index{Page\+View\+Message@{Page\+View\+Message}!Annotation@{Annotation}}\item[{\em 
+\hypertarget{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cacc210033b8c3a838c93af708e55cbbd0}{Annotation}\label{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cacc210033b8c3a838c93af708e55cbbd0}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 107 of file pageviewutils.\+h.
+
+
+\begin{DoxyCode}
+107 \{ \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4d49e997ceb24be7bda744d934b3e65e}{None}, \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca2ae901576662b28f92067841a52e11dd}{Info}, \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca8d795d55732497f572dde8b9491ce280}{Warning}, \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4fab3e3265e2d4386ce7b7ed21b086cc}{Error}, \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cac5541921f6620602ebc759c6a149472a}{Find}, \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cacc210033b8c3a838c93af708e55cbbd0}{Annotation} \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageViewMessage_a509793a17b4e511185f1eeed2637b06c}{\index{Page\+View\+Message@{Page\+View\+Message}!Page\+View\+Message@{Page\+View\+Message}}
+\index{Page\+View\+Message@{Page\+View\+Message}!Page\+View\+Message@{Page\+View\+Message}}
+\subsubsection[{Page\+View\+Message}]{\setlength{\rightskip}{0pt plus 5cm}Page\+View\+Message\+::\+Page\+View\+Message (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classPageViewMessage_a509793a17b4e511185f1eeed2637b06c}
+\hyperlink{classPageViewMessage}{Page\+View\+Message} 
+
+Definition at line 215 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+216     : QWidget( parent ), m\_timer( 0 )
+217     , m\_lineSpacing( 0 )
+218 \{
+219     setObjectName( QLatin1String( \textcolor{stringliteral}{"pageViewMessage"} ) );
+220     setFocusPolicy( Qt::NoFocus );
+221     QPalette pal = palette();
+222     pal.setColor( QPalette::Active, QPalette::Window, QApplication::palette().color( QPalette::Active, 
+      QPalette::Window ) );
+223     setPalette( pal );
+224     \textcolor{comment}{// if the layout is LtR, we can safely place it in the right position}
+225     \textcolor{keywordflow}{if} ( layoutDirection() == Qt::LeftToRight )
+226         move( 10, 10 );
+227     resize( 0, 0 );
+228     hide();
+229 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageViewMessage_a7fd107b1b7a6c0ae64a4d09fc2467982}{\index{Page\+View\+Message@{Page\+View\+Message}!display@{display}}
+\index{display@{display}!Page\+View\+Message@{Page\+View\+Message}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Message\+::display (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{const Q\+String \&}]{details = {\ttfamily QString()}, }
+\item[{{\bf Icon}}]{icon = {\ttfamily {\bf Info}}, }
+\item[{int}]{duration\+Ms = {\ttfamily 4000}}
+\end{DoxyParamCaption}
+)}}\label{classPageViewMessage_a7fd107b1b7a6c0ae64a4d09fc2467982}
+
+
+Definition at line 231 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+235 \{
+236     \textcolor{keywordflow}{if} ( !\hyperlink{classOkular_1_1Settings_ab6a3d4459b9ef5fa47cc7083968da797}{Okular::Settings::showOSD}() )
+237     \{
+238         hide();
+239         \textcolor{keywordflow}{return};
+240     \}
+241 
+242     \textcolor{comment}{// set text}
+243     m\_message = message;
+244     m\_details = details;
+245     \textcolor{comment}{// reset vars}
+246     m\_lineSpacing = 0;
+247 
+248     \textcolor{comment}{// load icon (if set)}
+249     m\_symbol = QPixmap();
+250     \textcolor{keywordflow}{if} ( icon != \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4d49e997ceb24be7bda744d934b3e65e}{None} )
+251     \{
+252         \textcolor{keywordflow}{switch} ( icon )
+253         \{
+254             \textcolor{keywordflow}{case} \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cacc210033b8c3a838c93af708e55cbbd0}{Annotation}:
+255                 m\_symbol = SmallIcon( \textcolor{stringliteral}{"draw-freehand"} );
+256                 \textcolor{keywordflow}{break};
+257             \textcolor{keywordflow}{case} \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0cac5541921f6620602ebc759c6a149472a}{Find}:
+258                 m\_symbol = SmallIcon( \textcolor{stringliteral}{"zoom-original"} );
+259                 \textcolor{keywordflow}{break};
+260             \textcolor{keywordflow}{case} \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca4fab3e3265e2d4386ce7b7ed21b086cc}{Error}:
+261                 m\_symbol = SmallIcon( \textcolor{stringliteral}{"dialog-error"} );
+262                 \textcolor{keywordflow}{break};
+263             \textcolor{keywordflow}{case} \hyperlink{classPageViewMessage_aeb83801b92379715663d5a7beaa2ae0ca8d795d55732497f572dde8b9491ce280}{Warning}:
+264                 m\_symbol = SmallIcon( \textcolor{stringliteral}{"dialog-warning"} );
+265                 \textcolor{keywordflow}{break};
+266             \textcolor{keywordflow}{default}:
+267                 m\_symbol = SmallIcon( \textcolor{stringliteral}{"dialog-information"} );
+268                 \textcolor{keywordflow}{break};
+269         \}
+270 
+271     \}
+272 
+273     computeSizeAndResize();
+274     \textcolor{comment}{// show widget and schedule a repaint}
+275     show();
+276     update();
+277 
+278     \textcolor{comment}{// close the message window after given mS}
+279     \textcolor{keywordflow}{if} ( durationMs > 0 )
+280     \{
+281         \textcolor{keywordflow}{if} ( !m\_timer )
+282         \{
+283             m\_timer = \textcolor{keyword}{new} QTimer( \textcolor{keyword}{this} );
+284             m\_timer->setSingleShot( \textcolor{keyword}{true} );
+285             connect( m\_timer, SIGNAL(timeout()), SLOT(hide()) );
+286         \}
+287         m\_timer->start( durationMs );
+288     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( m\_timer )
+289         m\_timer->stop();
+290 
+291     qobject\_cast<QAbstractScrollArea*>(parentWidget())->viewport()->installEventFilter(\textcolor{keyword}{this});
+292 
+293 \}
+\end{DoxyCode}
+\hypertarget{classPageViewMessage_ad1f5c357af9bdbcad72dd40702e63385}{\index{Page\+View\+Message@{Page\+View\+Message}!event\+Filter@{event\+Filter}}
+\index{event\+Filter@{event\+Filter}!Page\+View\+Message@{Page\+View\+Message}}
+\subsubsection[{event\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Message\+::event\+Filter (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj, }
+\item[{Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPageViewMessage_ad1f5c357af9bdbcad72dd40702e63385}
+
+
+Definition at line 349 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+350 \{
+351     \textcolor{comment}{/* if the parent object (scroll area) resizes, the message should}
+352 \textcolor{comment}{       resize as well */}
+353     \textcolor{keywordflow}{if} (event->type() == QEvent::Resize)
+354     \{
+355         QResizeEvent *resizeEvent = \textcolor{keyword}{static\_cast<}QResizeEvent *\textcolor{keyword}{>}(event);
+356         \textcolor{keywordflow}{if} ( resizeEvent->oldSize() != resizeEvent->size() )
+357         \{
+358            computeSizeAndResize();
+359         \}
+360     \}
+361     \textcolor{comment}{// standard event processing}
+362     \textcolor{keywordflow}{return} QObject::eventFilter(obj, event);
+363 \}
+\end{DoxyCode}
+\hypertarget{classPageViewMessage_af14a282e4b5ce779de38e4a87afdf6ff}{\index{Page\+View\+Message@{Page\+View\+Message}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Page\+View\+Message@{Page\+View\+Message}}
+\subsubsection[{mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Message\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPageViewMessage_af14a282e4b5ce779de38e4a87afdf6ff}
+
+
+Definition at line 414 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+415 \{
+416     \textcolor{keywordflow}{if} ( m\_timer )
+417         m\_timer->stop();
+418     hide();
+419 \}
+\end{DoxyCode}
+\hypertarget{classPageViewMessage_a9812285d6bc84d2e1eb20c1d76be18c3}{\index{Page\+View\+Message@{Page\+View\+Message}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!Page\+View\+Message@{Page\+View\+Message}}
+\subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Message\+::paint\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Paint\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPageViewMessage_a9812285d6bc84d2e1eb20c1d76be18c3}
+
+
+Definition at line 365 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+366 \{
+367     \textcolor{keyword}{const} QRect textRect = computeTextRect( m\_message, m\_symbol.width() );
+368 
+369     QRect detailsRect;
+370     \textcolor{keywordflow}{if} ( !m\_details.isEmpty() )
+371     \{
+372         detailsRect = computeTextRect( m\_details, m\_symbol.width() );
+373     \}
+374 
+375     \textcolor{keywordtype}{int} textXOffset = 0,
+376         \textcolor{comment}{// add 2 to account for the reduced drawRoundRect later}
+377         textYOffset = ( geometry().height() - textRect.height() - detailsRect.height() - m\_lineSpacing + 2 
+      ) / 2,
+378         iconXOffset = 0,
+379         iconYOffset = !m\_symbol.isNull() ? ( geometry().height() - m\_symbol.height() ) / 2 : 0,
+380         shadowOffset = 1;
+381 
+382     \textcolor{keywordflow}{if} ( layoutDirection() == Qt::RightToLeft )
+383         iconXOffset = 2 + textRect.width();
+384     \textcolor{keywordflow}{else}
+385         textXOffset = 2 + m\_symbol.width();
+386 
+387     \textcolor{comment}{// draw background}
+388     QPainter painter( \textcolor{keyword}{this} );
+389     painter.setRenderHint( QPainter::Antialiasing, \textcolor{keyword}{true} );
+390     painter.setPen( Qt::black );
+391     painter.setBrush( palette().color( QPalette::Window ) );
+392     painter.translate( 0.5, 0.5 );
+393     painter.drawRoundRect( 1, 1, width()-2, height()-2, 1600 / width(), 1600 / height() );
+394 
+395     \textcolor{comment}{// draw icon if present}
+396     \textcolor{keywordflow}{if} ( !m\_symbol.isNull() )
+397         painter.drawPixmap( 5 + iconXOffset, iconYOffset, m\_symbol, 0, 0, m\_symbol.width(), m\_symbol.height
+      () );
+398 
+399     \textcolor{keyword}{const} \textcolor{keywordtype}{int} xStartPoint = 5 + textXOffset;
+400     \textcolor{keyword}{const} \textcolor{keywordtype}{int} yStartPoint = textYOffset;
+401     \textcolor{keyword}{const} \textcolor{keywordtype}{int} textDrawingFlags = Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap;
+402 
+403     \textcolor{comment}{// draw shadow and text}
+404     painter.setPen( palette().color( QPalette::Window ).dark( 115 ) );
+405     painter.drawText( xStartPoint + shadowOffset, yStartPoint + shadowOffset, textRect.width(), textRect.
+      height(), textDrawingFlags, m\_message );
+406     \textcolor{keywordflow}{if} ( !m\_details.isEmpty() )
+407         painter.drawText( xStartPoint + shadowOffset, yStartPoint + textRect.height() + m\_lineSpacing + 
+      shadowOffset, textRect.width(), detailsRect.height(), textDrawingFlags, m\_details );
+408     painter.setPen( palette().color( QPalette::WindowText ) );
+409     painter.drawText( xStartPoint, yStartPoint, textRect.width(), textRect.height(), textDrawingFlags, 
+      m\_message );
+410     \textcolor{keywordflow}{if} ( !m\_details.isEmpty() )
+411         painter.drawText( xStartPoint + shadowOffset, yStartPoint + textRect.height() + m\_lineSpacing, 
+      textRect.width(), detailsRect.height(), textDrawingFlags, m\_details );
+412 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{pageviewutils_8h}{pageviewutils.\+h}\item 
+ui/\hyperlink{pageviewutils_8cpp}{pageviewutils.\+cpp}\end{DoxyCompactItemize}

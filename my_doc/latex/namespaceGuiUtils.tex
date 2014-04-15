@@ -1,0 +1,386 @@
+\hypertarget{namespaceGuiUtils}{\section{Gui\+Utils Namespace Reference}
+\label{namespaceGuiUtils}\index{Gui\+Utils@{Gui\+Utils}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGuiUtils_1_1LatexRenderer}{Latex\+Renderer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{namespaceGuiUtils_af15abd3dd32e982db3f842e807146835}{caption\+For\+Annotation} (const \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+Q\+String \hyperlink{namespaceGuiUtils_a53e2db452488c1d84b5078a9e6b73420}{author\+For\+Annotation} (const \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+Q\+String \hyperlink{namespaceGuiUtils_a196f609501411f2cda3679872bc2ec9a}{contents\+Html} (const \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+Q\+String \hyperlink{namespaceGuiUtils_a4277357b6408ce44cf183cd7765bcc72}{pretty\+Tool\+Tip} (const \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+Q\+Pixmap \hyperlink{namespaceGuiUtils_a5ba797636890ba5fbc39db6a092f4bd5}{load\+Stamp} (const Q\+String \&\+\_\+name, const Q\+Size \&\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}, int icon\+Size)
+\item 
+void \hyperlink{namespaceGuiUtils_a72fd83c2762e1f347bb81b65b4094409}{add\+Icon\+Loader} (K\+Icon\+Loader $\ast$loader)
+\item 
+void \hyperlink{namespaceGuiUtils_a2d6ad4bc8343a4ea890f14b3d7492e3f}{remove\+Icon\+Loader} (K\+Icon\+Loader $\ast$loader)
+\item 
+K\+Icon\+Loader $\ast$ \hyperlink{namespaceGuiUtils_aa855f96a43d2d14c51acb8282d775d0a}{icon\+Loader} ()
+\item 
+void \hyperlink{namespaceGuiUtils_a5e934d5070afd94f91b3a5fbfb8cbc04}{save\+Embedded\+File} (\hyperlink{classOkular_1_1EmbeddedFile}{Okular\+::\+Embedded\+File} $\ast$ef, Q\+Widget $\ast$parent)
+\item 
+\hyperlink{classOkular_1_1Movie}{Okular\+::\+Movie} $\ast$ \hyperlink{namespaceGuiUtils_a51c606d14a293d5b3f5f49ad1c12be44}{rendition\+Movie\+From\+Screen\+Annotation} (const \hyperlink{classOkular_1_1ScreenAnnotation}{Okular\+::\+Screen\+Annotation} $\ast$annotation)
+\item 
+void \hyperlink{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}{colorize\+Image} (Q\+Image \&gray\+Image, const Q\+Color \&color, unsigned int dest\+Alpha)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceGuiUtils_a72fd83c2762e1f347bb81b65b4094409}{\index{Gui\+Utils@{Gui\+Utils}!add\+Icon\+Loader@{add\+Icon\+Loader}}
+\index{add\+Icon\+Loader@{add\+Icon\+Loader}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{add\+Icon\+Loader}]{\setlength{\rightskip}{0pt plus 5cm}void Gui\+Utils\+::add\+Icon\+Loader (
+\begin{DoxyParamCaption}
+\item[{K\+Icon\+Loader $\ast$}]{loader}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a72fd83c2762e1f347bb81b65b4094409}
+
+
+Definition at line 187 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+188 \{
+189     s\_data->il.append( loader );
+190 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a53e2db452488c1d84b5078a9e6b73420}{\index{Gui\+Utils@{Gui\+Utils}!author\+For\+Annotation@{author\+For\+Annotation}}
+\index{author\+For\+Annotation@{author\+For\+Annotation}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{author\+For\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Gui\+Utils\+::author\+For\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a53e2db452488c1d84b5078a9e6b73420}
+
+
+Definition at line 132 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+133 \{
+134     Q\_ASSERT( ann );
+135 
+136     \textcolor{keywordflow}{return} !ann->\hyperlink{classOkular_1_1Annotation_a45682b53c24e4f5d41c547d6e109f6a4}{author}().isEmpty() ? ann->\hyperlink{classOkular_1_1Annotation_a45682b53c24e4f5d41c547d6e109f6a4}{author}() : i18nc( \textcolor{stringliteral}{"Unknown author"}, \textcolor{stringliteral}{"Unknown"} );
+137 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_af15abd3dd32e982db3f842e807146835}{\index{Gui\+Utils@{Gui\+Utils}!caption\+For\+Annotation@{caption\+For\+Annotation}}
+\index{caption\+For\+Annotation@{caption\+For\+Annotation}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{caption\+For\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Gui\+Utils\+::caption\+For\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_af15abd3dd32e982db3f842e807146835}
+Returns the translated string with the type of the given {\ttfamily annotation}. 
+
+Definition at line 63 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65     Q\_ASSERT( ann );
+66 
+67     QString ret;
+68     \textcolor{keywordflow}{switch}( ann->subType() )
+69     \{
+70         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a48f93d5a9352abc4e38a45f69075e504}{Okular::Annotation::AText}:
+71             \textcolor{keywordflow}{if}( ( (\hyperlink{classOkular_1_1TextAnnotation}{Okular::TextAnnotation}*)ann )->textType() == 
+      \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}{Okular::TextAnnotation::Linked} )
+72                 ret = i18n( \textcolor{stringliteral}{"Pop-up Note"} );
+73             \textcolor{keywordflow}{else}
+74                 ret = i18n( \textcolor{stringliteral}{"Inline Note"} );
+75             \textcolor{keywordflow}{break};
+76         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a7035dc978d8b79958f34e3d164838726}{Okular::Annotation::ALine}:
+77             \textcolor{keywordflow}{if}( ( (\hyperlink{classOkular_1_1LineAnnotation}{Okular::LineAnnotation}*)ann )->linePoints().count() == 2 )
+78                 ret = i18n( \textcolor{stringliteral}{"Straight Line"} );
+79             \textcolor{keywordflow}{else}
+80                 ret = i18n( \textcolor{stringliteral}{"Polygon"} );
+81             \textcolor{keywordflow}{break};
+82         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a2c11d328af34f5526fd9e761297fb3c2}{Okular::Annotation::AGeom}:
+83             ret = i18n( \textcolor{stringliteral}{"Geometry"} );
+84             \textcolor{keywordflow}{break};
+85         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a03e002f9ae62005b2d7c7f1445507501}{Okular::Annotation::AHighlight}:
+86             \textcolor{keywordflow}{switch} ( ( (\hyperlink{classOkular_1_1HighlightAnnotation}{Okular::HighlightAnnotation}*)ann )->highlightType() )
+87             \{
+88                 \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a250833fcd89a56dd46955dc287e1a3af}{Okular::HighlightAnnotation::Highlight}:
+89                     ret = i18n( \textcolor{stringliteral}{"Highlight"} );
+90                     \textcolor{keywordflow}{break};
+91                 \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999ad02aabccfaaea6082d9402b01e6ae9b8}{Okular::HighlightAnnotation::Squiggly}:
+92                     ret = i18n( \textcolor{stringliteral}{"Squiggle"} );
+93                     \textcolor{keywordflow}{break};
+94                 \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999a1cb762e7ebfd92add9d8b71106e3fa2c}{Okular::HighlightAnnotation::Underline}:
+95                     ret = i18n( \textcolor{stringliteral}{"Underline"} );
+96                     \textcolor{keywordflow}{break};
+97                 \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1HighlightAnnotation_a63d2488735d1d6320e2e118743243999afcdb9513e4039b7239d89f351f8aff85}{Okular::HighlightAnnotation::StrikeOut}:
+98                     ret = i18n( \textcolor{stringliteral}{"Strike Out"} );
+99                     \textcolor{keywordflow}{break};
+100             \}
+101             \textcolor{keywordflow}{break};
+102         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0ad542ded420c9b01f44ee923bf28ecd9a}{Okular::Annotation::AStamp}:
+103             ret = i18n( \textcolor{stringliteral}{"Stamp"} );
+104             \textcolor{keywordflow}{break};
+105         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a4ed60063584ceb146c2a378f0df4ed37}{Okular::Annotation::AInk}:
+106             ret = i18n( \textcolor{stringliteral}{"Freehand Line"} );
+107             \textcolor{keywordflow}{break};
+108         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a904187454fd508d898a3d5843193ad43}{Okular::Annotation::ACaret}:
+109             ret = i18n( \textcolor{stringliteral}{"Caret"} );
+110             \textcolor{keywordflow}{break};
+111         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a7209cbfb5e13c0f80ac36f87c9575836}{Okular::Annotation::AFileAttachment}:
+112             ret = i18n( \textcolor{stringliteral}{"File Attachment"} );
+113             \textcolor{keywordflow}{break};
+114         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a9e75622bfcf537319a904538840a0bce}{Okular::Annotation::ASound}:
+115             ret = i18n( \textcolor{stringliteral}{"Sound"} );
+116             \textcolor{keywordflow}{break};
+117         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a711a9d706a86b55f0799e944fb2750e6}{Okular::Annotation::AMovie}:
+118             ret = i18n( \textcolor{stringliteral}{"Movie"} );
+119             \textcolor{keywordflow}{break};
+120         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a7cf8ba374ec139a8e2fb47a36182fa32}{Okular::Annotation::AScreen}:
+121             ret = i18nc( \textcolor{stringliteral}{"Caption for a screen annotation"}, \textcolor{stringliteral}{"Screen"} );
+122             \textcolor{keywordflow}{break};
+123         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0aa0f6a560b971fe69d18156176258d6c8}{Okular::Annotation::AWidget}:
+124             ret = i18nc( \textcolor{stringliteral}{"Caption for a widget annotation"}, \textcolor{stringliteral}{"Widget"} );
+125             \textcolor{keywordflow}{break};
+126         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a9064a6f3c5e70f272462bb78a1af6c55}{Okular::Annotation::A\_BASE}:
+127             \textcolor{keywordflow}{break};
+128     \}
+129     \textcolor{keywordflow}{return} ret;
+130 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}{\index{Gui\+Utils@{Gui\+Utils}!colorize\+Image@{colorize\+Image}}
+\index{colorize\+Image@{colorize\+Image}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{colorize\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void Gui\+Utils\+::colorize\+Image (
+\begin{DoxyParamCaption}
+\item[{Q\+Image \&}]{gray\+Image, }
+\item[{const Q\+Color \&}]{color, }
+\item[{unsigned int}]{dest\+Alpha}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}
+
+
+Definition at line 237 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+238 \{
+239     \textcolor{comment}{// Make sure that the image is Format\_ARGB32\_Premultiplied}
+240     \textcolor{keywordflow}{if} ( grayImage.format() != QImage::Format\_ARGB32\_Premultiplied )
+241         grayImage = grayImage.convertToFormat( QImage::Format\_ARGB32\_Premultiplied );
+242 
+243     \textcolor{comment}{// iterate over all pixels changing the alpha component value}
+244     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} * data = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)grayImage.bits();
+245     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pixels = grayImage.width() * grayImage.height();
+246     \textcolor{keywordtype}{int} red = color.red(),
+247         green = color.green(),
+248         blue = color.blue();
+249 
+250     \textcolor{keywordtype}{int} source, sourceSat, sourceAlpha;
+251     \textcolor{keywordflow}{for}( \textcolor{keyword}{register} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < pixels; ++i )
+252     \{   \textcolor{comment}{// optimize this loop keeping byte order into account}
+253         source = data[i];
+254         sourceSat = qRed( source );
+255         \textcolor{keywordtype}{int} newR = qt\_div\_255( sourceSat * red ),
+256             newG = qt\_div\_255( sourceSat * green ),
+257             newB = qt\_div\_255( sourceSat * blue );
+258         \textcolor{keywordflow}{if} ( (sourceAlpha = qAlpha( source )) == 255 )
+259         \{
+260             \textcolor{comment}{// use destAlpha}
+261             data[i] = qRgba( newR, newG, newB, destAlpha );
+262         \}
+263         \textcolor{keywordflow}{else}
+264         \{
+265             \textcolor{comment}{// use destAlpha * sourceAlpha product}
+266             \textcolor{keywordflow}{if} ( destAlpha < 255 )
+267                 sourceAlpha = qt\_div\_255( destAlpha * sourceAlpha );
+268             data[i] = qRgba( newR, newG, newB, sourceAlpha );
+269         \}
+270     \}
+271 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a196f609501411f2cda3679872bc2ec9a}{\index{Gui\+Utils@{Gui\+Utils}!contents\+Html@{contents\+Html}}
+\index{contents\+Html@{contents\+Html}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{contents\+Html}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Gui\+Utils\+::contents\+Html (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a196f609501411f2cda3679872bc2ec9a}
+
+
+Definition at line 139 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+140 \{
+141     QString text = Qt::escape( ann->\hyperlink{classOkular_1_1Annotation_a3b0c9fcbe9d01e06bfcc7216d0035908}{contents}() );
+142     text.replace( \textcolor{charliteral}{'\(\backslash\)n'}, \textcolor{stringliteral}{"<br>"} );
+143     \textcolor{keywordflow}{return} text;
+144 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_aa855f96a43d2d14c51acb8282d775d0a}{\index{Gui\+Utils@{Gui\+Utils}!icon\+Loader@{icon\+Loader}}
+\index{icon\+Loader@{icon\+Loader}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{icon\+Loader}]{\setlength{\rightskip}{0pt plus 5cm}K\+Icon\+Loader $\ast$ Gui\+Utils\+::icon\+Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_aa855f96a43d2d14c51acb8282d775d0a}
+
+
+Definition at line 197 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+198 \{
+199     \textcolor{keywordflow}{return} s\_data->il.isEmpty() ? KIconLoader::global() : s\_data->il.back();
+200 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a5ba797636890ba5fbc39db6a092f4bd5}{\index{Gui\+Utils@{Gui\+Utils}!load\+Stamp@{load\+Stamp}}
+\index{load\+Stamp@{load\+Stamp}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{load\+Stamp}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pixmap Gui\+Utils\+::load\+Stamp (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{\+\_\+name, }
+\item[{const Q\+Size \&}]{size, }
+\item[{int}]{icon\+Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a5ba797636890ba5fbc39db6a092f4bd5}
+
+
+Definition at line 162 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+163 \{
+164     \textcolor{keyword}{const} QString name = \_name.toLower();
+165     QSvgRenderer * r = 0;
+166     \textcolor{keywordflow}{if} ( ( r = s\_data->svgStamps() ) && r->elementExists( name ) )
+167     \{
+168         \textcolor{keyword}{const} QRectF stampElemRect = r->boundsOnElement( name );
+169         \textcolor{keyword}{const} QRectF stampRect( \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}.isValid() ? QRectF( QPointF( 0, 0 ), 
+      \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} ) : stampElemRect );
+170         QPixmap pixmap( stampRect.size().toSize() );
+171         pixmap.fill( Qt::transparent );
+172         QPainter p( &pixmap );
+173         r->render( &p, name );
+174         p.end();
+175         \textcolor{keywordflow}{return} pixmap;
+176     \}
+177     QPixmap pixmap;
+178     \textcolor{keyword}{const} KIconLoader * il = \hyperlink{namespaceGuiUtils_aa855f96a43d2d14c51acb8282d775d0a}{iconLoader}();
+179     QString path;
+180     \textcolor{keyword}{const} \textcolor{keywordtype}{int} minSize = iconSize > 0 ? iconSize : qMin( \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}.width(), \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}.height() );
+181     pixmap = il->loadIcon( name, KIconLoader::User, minSize, KIconLoader::DefaultState, QStringList(), &
+      path, \textcolor{keyword}{true} );
+182     \textcolor{keywordflow}{if} ( path.isEmpty() )
+183         pixmap = il->loadIcon( name, KIconLoader::NoGroup, minSize );
+184     \textcolor{keywordflow}{return} pixmap;
+185 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a4277357b6408ce44cf183cd7765bcc72}{\index{Gui\+Utils@{Gui\+Utils}!pretty\+Tool\+Tip@{pretty\+Tool\+Tip}}
+\index{pretty\+Tool\+Tip@{pretty\+Tool\+Tip}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{pretty\+Tool\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Gui\+Utils\+::pretty\+Tool\+Tip (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a4277357b6408ce44cf183cd7765bcc72}
+
+
+Definition at line 146 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+147 \{
+148     Q\_ASSERT( ann );
+149 
+150     QString author = \hyperlink{namespaceGuiUtils_a53e2db452488c1d84b5078a9e6b73420}{authorForAnnotation}( ann );
+151     QString contents = \hyperlink{namespaceGuiUtils_a196f609501411f2cda3679872bc2ec9a}{contentsHtml}( ann );
+152 
+153     QString tooltip = QString( \textcolor{stringliteral}{"<qt><b>"} ) + i18n( \textcolor{stringliteral}{"Author: %1"}, author ) + QString( \textcolor{stringliteral}{"</b>"} );
+154     \textcolor{keywordflow}{if} ( !contents.isEmpty() )
+155         tooltip += QString( \textcolor{stringliteral}{"<div style=\(\backslash\)"font-size: 4px;\(\backslash\)"><hr /></div>"} ) + contents;
+156 
+157     tooltip += \textcolor{stringliteral}{"</qt>"};
+158 
+159     \textcolor{keywordflow}{return} tooltip;
+160 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a2d6ad4bc8343a4ea890f14b3d7492e3f}{\index{Gui\+Utils@{Gui\+Utils}!remove\+Icon\+Loader@{remove\+Icon\+Loader}}
+\index{remove\+Icon\+Loader@{remove\+Icon\+Loader}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{remove\+Icon\+Loader}]{\setlength{\rightskip}{0pt plus 5cm}void Gui\+Utils\+::remove\+Icon\+Loader (
+\begin{DoxyParamCaption}
+\item[{K\+Icon\+Loader $\ast$}]{loader}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a2d6ad4bc8343a4ea890f14b3d7492e3f}
+
+
+Definition at line 192 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+193 \{
+194     s\_data->il.removeAll( loader );
+195 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a51c606d14a293d5b3f5f49ad1c12be44}{\index{Gui\+Utils@{Gui\+Utils}!rendition\+Movie\+From\+Screen\+Annotation@{rendition\+Movie\+From\+Screen\+Annotation}}
+\index{rendition\+Movie\+From\+Screen\+Annotation@{rendition\+Movie\+From\+Screen\+Annotation}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{rendition\+Movie\+From\+Screen\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Movie} $\ast$ Gui\+Utils\+::rendition\+Movie\+From\+Screen\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Screen\+Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a51c606d14a293d5b3f5f49ad1c12be44}
+Returns the movie object that is referenced by a rendition action of the passed screen {\ttfamily annotation} or {\ttfamily 0} if the screen annotation has no rendition action set or the rendition action does not contain a media rendition. 
+
+Definition at line 220 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+221 \{
+222     \textcolor{keywordflow}{if} ( !annotation )
+223         \textcolor{keywordflow}{return} 0;
+224 
+225     \textcolor{keywordflow}{if} ( annotation->\hyperlink{classOkular_1_1ScreenAnnotation_a7089901b395a88a805e404e4d8a6c75f}{action}() && annotation->\hyperlink{classOkular_1_1ScreenAnnotation_a7089901b395a88a805e404e4d8a6c75f}{action}()->\hyperlink{classOkular_1_1Action_ac4c2ef09b350b4041f8d1cfb261c3234}{actionType}() == 
+      \hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47abb9c459303f1d82e284acada9ba28ee5}{Okular::Action::Rendition} )
+226     \{
+227         \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} *renditionAction = \textcolor{keyword}{static\_cast<} 
+      \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} * \textcolor{keyword}{>}( annotation->\hyperlink{classOkular_1_1ScreenAnnotation_a7089901b395a88a805e404e4d8a6c75f}{action}() );
+228         \textcolor{keywordflow}{return} renditionAction->\hyperlink{classOkular_1_1RenditionAction_a42a9f31af60ad5647a5784f40dedd406}{movie}();
+229     \}
+230 
+231     \textcolor{keywordflow}{return} 0;
+232 \}
+\end{DoxyCode}
+\hypertarget{namespaceGuiUtils_a5e934d5070afd94f91b3a5fbfb8cbc04}{\index{Gui\+Utils@{Gui\+Utils}!save\+Embedded\+File@{save\+Embedded\+File}}
+\index{save\+Embedded\+File@{save\+Embedded\+File}!Gui\+Utils@{Gui\+Utils}}
+\subsubsection[{save\+Embedded\+File}]{\setlength{\rightskip}{0pt plus 5cm}void Gui\+Utils\+::save\+Embedded\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Embedded\+File} $\ast$}]{ef, }
+\item[{Q\+Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{namespaceGuiUtils_a5e934d5070afd94f91b3a5fbfb8cbc04}
+
+
+Definition at line 202 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+203 \{
+204     \textcolor{keyword}{const} QString caption = i18n( \textcolor{stringliteral}{"Where do you want to save %1?"}, ef->\hyperlink{classOkular_1_1EmbeddedFile_a70fcfea705979ce6a31b989fc92a8f2b}{name}() );
+205     \textcolor{keyword}{const} QString path = KFileDialog::getSaveFileName( ef->\hyperlink{classOkular_1_1EmbeddedFile_a70fcfea705979ce6a31b989fc92a8f2b}{name}(), QString(), parent, caption,
+206                                                        KFileDialog::ConfirmOverwrite );
+207     \textcolor{keywordflow}{if} ( path.isEmpty() )
+208         \textcolor{keywordflow}{return};
+209 
+210     QFile f( path );
+211     \textcolor{keywordflow}{if} ( !f.open( QIODevice::WriteOnly ) )
+212     \{
+213         KMessageBox::error( parent, i18n( \textcolor{stringliteral}{"Could not open \(\backslash\)"%1\(\backslash\)" for writing. File was not saved."}, path ) 
+      );
+214         \textcolor{keywordflow}{return};
+215     \}
+216     f.write( ef->\hyperlink{classOkular_1_1EmbeddedFile_af41767e900a9b6078fcc8705960a31a7}{data}() );
+217     f.close();
+218 \}
+\end{DoxyCode}

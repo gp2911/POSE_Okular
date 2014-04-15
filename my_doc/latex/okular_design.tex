@@ -1,0 +1,36 @@
+To support a wide range of document formats, \hyperlink{namespaceOkular}{Okular} was designed in a modular way, so you have the following components\+:
+
+\begin{DoxyItemize}
+\item \hyperlink{classShell}{Shell} \item Part \item \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} Class \item \hyperlink{classOkular_1_1Generator}{Okular\+::\+Generator}\end{DoxyItemize}
+The shell is the application which is started by the user as standalone application and which embedds the part. The part contains all G\+U\+I elements of \hyperlink{namespaceOkular}{Okular}, for example the content list, the bookmark manager, menus and the graphical view of the document class. The document class is an abstract presentation of the document content. It contains information about every page of the document, its size, orientation etc.
+
+But somehow the document class must retrieve these information from the various types of documents. This is the task of the Generators. Generators are plugins which are loaded at runtime and which have the knowledge about the internal structure of the different document types. They extract the needed information from the documents, convert the data into a common format and pass them to the document class.
+
+Currently Generators for the following document types are available\+:
+
+\begin{DoxyItemize}
+\item Portable Document Format (P\+D\+F) \item Post\+Script \item Device Independent Format (D\+V\+I) \item De\+Ja\+Vu Format \item Comic Books \item Images (J\+P\+E\+G, P\+N\+G, G\+I\+F, and many more) \item T\+I\+F\+F Image Format \item \hyperlink{namespaceFictionBook}{Fiction\+Book} Format \item Plucker Format \item Open\+Document Text Format \item Microsofts C\+H\+M Format \item Microsofts X\+M\+L Document Format\end{DoxyItemize}
+Now the questions is how can these various formats be represented in a unified way? \hyperlink{namespaceOkular}{Okular} provides features like rotation, text search and extraction, zooming and many more, so how does it match with the different capabilities of the formats?\hypertarget{okular_design_okular_design_basics}{}\section{Basics of Generators}\label{okular_design_okular_design_basics}
+Lets start with the smallest commonness of all document formats\+:
+
+\begin{DoxyItemize}
+\item they have pages (one ore more) of a given size \item pages can be represented as pictures\end{DoxyItemize}
+So the first thing every Generator must support is to return the number of pages of a document. Furthermore it must be able to return the picture of a page at a requested size.
+
+For vector based document formats (e.\+g. P\+D\+F or Post\+Script) the Generators can render the page for the requested size, for static documents formats (e.\+g. images), the Generator must scale the content according to the requested size, so when you zoom a page in \hyperlink{namespaceOkular}{Okular}, the Generators are just asked to return the page for the zoomed size.
+
+When the document class has retrieved the page pictures from the Generators, it can do further image manipulation on it, for example rotating them or applying fancy effects.\hypertarget{okular_design_okular_design_text_support}{}\section{Generators with Text support}\label{okular_design_okular_design_text_support}
+Some document formats however support more functionality than just representing a page as an image. P\+D\+F, Post\+Script, D\+V\+I and De\+Ja\+Vu for example contains a machine readable representation of the included text. For those document formats \hyperlink{namespaceOkular}{Okular} provides additional features like text search, text extraction and text selection.
+
+How is that supported by the Generators?
+
+To access the text from the documents the generators must extract it somehow and make it available to the document class. However for the text selection feature the document class must also know {\itshape where} the extracted text is located on the page. For a zoom factor of 100\% the absolute position of the text in the document can be used, however for larger or smaller zoom factors the position must be recalculated. To make this calculation as easy as possible, the Generators return an abstract represtentation (\hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page}) of the text which includes every character together with its {\itshape normalized} position. Normalized means that the width and height of the page is in the range of 0 to 1, so a character in the middle of the page is at x=0.\+5 and y=0.\+5.
+
+So when you want to know where this character is located on the page which is zoomed at 300\%, you just multiply the position by 3 $\ast$ page width (and page height) and get the absolute position for this zoom level.
+
+This abstract text representation also allows an easy rotation of the coordinates, so that text selection is available on rotated pages as well.\hypertarget{okular_design_okular_design_meta_information}{}\section{Meta Information}\label{okular_design_okular_design_meta_information}
+Most documents have additional meta information\+:
+
+\begin{DoxyItemize}
+\item Name of the author \item Date of creation \item Version number \item Table of Content \item Bookmarks \item Annotations\end{DoxyItemize}
+These information can be retrieved by the generator as well and will be shown by \hyperlink{namespaceOkular}{Okular}. 

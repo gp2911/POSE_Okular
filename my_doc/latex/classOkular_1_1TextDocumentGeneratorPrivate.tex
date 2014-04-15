@@ -1,0 +1,672 @@
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate}{\section{Okular\+:\+:Text\+Document\+Generator\+Private Class Reference}
+\label{classOkular_1_1TextDocumentGeneratorPrivate}\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+}
+
+
+{\ttfamily \#include $<$textdocumentgenerator\+\_\+p.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Text\+Document\+Generator\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1TextDocumentGeneratorPrivate}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationInfo}{Annotation\+Info}
+\item 
+struct \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationPosition}{Annotation\+Position}
+\item 
+struct \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo}{Link\+Info}
+\item 
+struct \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkPosition}{Link\+Position}
+\item 
+struct \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1TitlePosition}{Title\+Position}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ace3f2856c2229ab517e7b53cfd4e9eaa}{Text\+Document\+Generator\+Private} (\hyperlink{classOkular_1_1TextDocumentConverter}{Text\+Document\+Converter} $\ast$converter)
+\item 
+virtual \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ae1e9a45e22ea293af7ac886c1ab6a484}{$\sim$\+Text\+Document\+Generator\+Private} ()
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a51ac369d9713dbd21784502560b4c24f}{initialize\+Generator} ()
+\item 
+Q\+Variant \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ad2fa8ddf09fc98bc99c976e5b7db1bf6}{meta\+Data} (const Q\+String \&key, const Q\+Variant \&option) const 
+\item 
+Q\+Image \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}{image} (\hyperlink{classOkular_1_1PixmapRequest}{Pixmap\+Request} $\ast$)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a5f21990c6dd5f78ea2842739f7b704c0}{calculate\+Bounding\+Rect} (int start\+Position, int end\+Position, Q\+Rect\+F \&rect, int \&page) const 
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_aea72762d1f1702c11e6408b098399cb9}{calculate\+Positions} (int page, int \&start, int \&end) const 
+\item 
+\hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} $\ast$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a2f8b40b158be42ffd399447afaf596f2}{create\+Text\+Page} (int) const 
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a71f9541dce145e0233c5477b293a3962}{add\+Action} (\hyperlink{classOkular_1_1Action}{Action} $\ast$action, int cursor\+Begin, int cursor\+End)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ae2d64248e306cca0d3af1d30c2eb4bf9}{add\+Annotation} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation, int cursor\+Begin, int cursor\+End)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a91d516e83aa89bbdfd183ef6435dbaee}{add\+Title} (int level, const Q\+String \&title, const Q\+Text\+Block \&position)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}{add\+Meta\+Data} (const Q\+String \&key, const Q\+String \&value, const Q\+String \&title)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a5550ad77c8b15552cb1e2ce2a9a15486}{add\+Meta\+Data} (\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791}{Document\+Info\+::\+Key}, const Q\+String \&value)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a28f9bc59e4100d577d4e74109b0fdf16}{generate\+Link\+Infos} ()
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_aa4c252838dc01ca44941d7b3a9dfcf38}{generate\+Annotation\+Infos} ()
+\item 
+void \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a276197eeaadfe9de95eefd14289b82d6}{generate\+Title\+Infos} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextDocumentConverter}{Text\+Document\+Converter} $\ast$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{m\+Converter}
+\item 
+Q\+Text\+Document $\ast$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{m\+Document}
+\item 
+\hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a01e0da5b05611ea533eb92702943c8be}{m\+Document\+Info}
+\item 
+\hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_aca9fca1479a2577d263d40e93c4960fd}{m\+Document\+Synopsis}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1TitlePosition}{Title\+Position} $>$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a2facb58407e1b46e1e534956d1b1d46d}{m\+Title\+Positions}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkPosition}{Link\+Position} $>$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a84d3854584bfdb3c5151bb6bb049cbba}{m\+Link\+Positions}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1LinkInfo}{Link\+Info} $>$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a5378139e49bb973e98ac5a448401ff9e}{m\+Link\+Infos}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationPosition}{Annotation\+Position} $>$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a901bfd4fee249261a7816ccf96609801}{m\+Annotation\+Positions}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{structOkular_1_1TextDocumentGeneratorPrivate_1_1AnnotationInfo}{Annotation\+Info} $>$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ae2e334678a1fa943878aec4c55b30cf7}{m\+Annotation\+Infos}
+\item 
+\hyperlink{classOkular_1_1TextDocumentSettings}{Text\+Document\+Settings} $\ast$ \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a971d6bd6506cee93e6a8f0350feed03c}{m\+General\+Settings}
+\item 
+Q\+Font \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a33bafae112835888fdcce49189d66b52}{m\+Font}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_aa570f0af9ae47a4f046ee2f58752c439}{Text\+Document\+Converter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 111 of file textdocumentgenerator\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_ace3f2856c2229ab517e7b53cfd4e9eaa}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!Text\+Document\+Generator\+Private@{Text\+Document\+Generator\+Private}}
+\index{Text\+Document\+Generator\+Private@{Text\+Document\+Generator\+Private}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{Text\+Document\+Generator\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Text\+Document\+Generator\+Private\+::\+Text\+Document\+Generator\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Document\+Converter} $\ast$}]{converter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1TextDocumentGeneratorPrivate_ace3f2856c2229ab517e7b53cfd4e9eaa}
+
+
+Definition at line 116 of file textdocumentgenerator\+\_\+p.\+h.
+
+
+\begin{DoxyCode}
+117             : \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}( converter ), \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}( 0 ), 
+      \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a971d6bd6506cee93e6a8f0350feed03c}{mGeneralSettings}( 0 )
+118         \{
+119         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_ae1e9a45e22ea293af7ac886c1ab6a484}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!````~Text\+Document\+Generator\+Private@{$\sim$\+Text\+Document\+Generator\+Private}}
+\index{````~Text\+Document\+Generator\+Private@{$\sim$\+Text\+Document\+Generator\+Private}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{$\sim$\+Text\+Document\+Generator\+Private}]{\setlength{\rightskip}{0pt plus 5cm}virtual Okular\+::\+Text\+Document\+Generator\+Private\+::$\sim$\+Text\+Document\+Generator\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGeneratorPrivate_ae1e9a45e22ea293af7ac886c1ab6a484}
+
+
+Definition at line 121 of file textdocumentgenerator\+\_\+p.\+h.
+
+
+\begin{DoxyCode}
+122         \{
+123             \textcolor{keyword}{delete} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter};
+124             \textcolor{keyword}{delete} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument};
+125         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a71f9541dce145e0233c5477b293a3962}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!add\+Action@{add\+Action}}
+\index{add\+Action@{add\+Action}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{add\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::add\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Action} $\ast$}]{action, }
+\item[{int}]{cursor\+Begin, }
+\item[{int}]{cursor\+End}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a71f9541dce145e0233c5477b293a3962}
+
+
+Definition at line 100 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+101 \{
+102     \textcolor{keywordflow}{if} ( !action )
+103         \textcolor{keywordflow}{return};
+104 
+105     LinkPosition position;
+106     position.link = action;
+107     position.startPosition = cursorBegin;
+108     position.endPosition = cursorEnd;
+109 
+110     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a84d3854584bfdb3c5151bb6bb049cbba}{mLinkPositions}.append( position );
+111 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_ae2d64248e306cca0d3af1d30c2eb4bf9}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!add\+Annotation@{add\+Annotation}}
+\index{add\+Annotation@{add\+Annotation}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{add\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::add\+Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation, }
+\item[{int}]{cursor\+Begin, }
+\item[{int}]{cursor\+End}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_ae2d64248e306cca0d3af1d30c2eb4bf9}
+
+
+Definition at line 113 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+114 \{
+115     \textcolor{keywordflow}{if} ( !annotation )
+116         \textcolor{keywordflow}{return};
+117 
+118     annotation->\hyperlink{classOkular_1_1Annotation_ab91b36dc7ecfd9cacba7761ec58145fd}{setFlags}( annotation->\hyperlink{classOkular_1_1Annotation_a3d6f7ee5057155b90e76c24768880947}{flags}() | 
+      \hyperlink{classOkular_1_1Annotation_a8a214541446745761efeda70b3a4302eabe908102c97a725aa1928602f17833c0}{Okular::Annotation::External} );
+119 
+120     AnnotationPosition position;
+121     position.annotation = annotation;
+122     position.startPosition = cursorBegin;
+123     position.endPosition = cursorEnd;
+124 
+125     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a901bfd4fee249261a7816ccf96609801}{mAnnotationPositions}.append( position );
+126 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!add\+Meta\+Data@{add\+Meta\+Data}}
+\index{add\+Meta\+Data@{add\+Meta\+Data}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{add\+Meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::add\+Meta\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+String \&}]{value, }
+\item[{const Q\+String \&}]{title}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}
+
+
+Definition at line 138 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+139 \{
+140     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a01e0da5b05611ea533eb92702943c8be}{mDocumentInfo}.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( key, value, title );
+141 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a5550ad77c8b15552cb1e2ce2a9a15486}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!add\+Meta\+Data@{add\+Meta\+Data}}
+\index{add\+Meta\+Data@{add\+Meta\+Data}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{add\+Meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::add\+Meta\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Info\+::\+Key}}]{key, }
+\item[{const Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a5550ad77c8b15552cb1e2ce2a9a15486}
+
+
+Definition at line 143 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+144 \{
+145     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a01e0da5b05611ea533eb92702943c8be}{mDocumentInfo}.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( key, value );
+146 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a91d516e83aa89bbdfd183ef6435dbaee}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!add\+Title@{add\+Title}}
+\index{add\+Title@{add\+Title}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{add\+Title}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::add\+Title (
+\begin{DoxyParamCaption}
+\item[{int}]{level, }
+\item[{const Q\+String \&}]{title, }
+\item[{const Q\+Text\+Block \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a91d516e83aa89bbdfd183ef6435dbaee}
+
+
+Definition at line 128 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+129 \{
+130     TitlePosition position;
+131     position.level = level;
+132     position.title = title;
+133     position.block = block;
+134 
+135     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a2facb58407e1b46e1e534956d1b1d46d}{mTitlePositions}.append( position );
+136 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a5f21990c6dd5f78ea2842739f7b704c0}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!calculate\+Bounding\+Rect@{calculate\+Bounding\+Rect}}
+\index{calculate\+Bounding\+Rect@{calculate\+Bounding\+Rect}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{calculate\+Bounding\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Generator\+Private\+::calculate\+Bounding\+Rect (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+Position, }
+\item[{int}]{end\+Position, }
+\item[{Q\+Rect\+F \&}]{rect, }
+\item[{int \&}]{page}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a5f21990c6dd5f78ea2842739f7b704c0}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_aea72762d1f1702c11e6408b098399cb9}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!calculate\+Positions@{calculate\+Positions}}
+\index{calculate\+Positions@{calculate\+Positions}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{calculate\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Generator\+Private\+::calculate\+Positions (
+\begin{DoxyParamCaption}
+\item[{int}]{page, }
+\item[{int \&}]{start, }
+\item[{int \&}]{end}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextDocumentGeneratorPrivate_aea72762d1f1702c11e6408b098399cb9}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a2f8b40b158be42ffd399447afaf596f2}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!create\+Text\+Page@{create\+Text\+Page}}
+\index{create\+Text\+Page@{create\+Text\+Page}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{create\+Text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Text\+Page} $\ast$ Text\+Document\+Generator\+Private\+::create\+Text\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Number}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a2f8b40b158be42ffd399447afaf596f2}
+Generic \hyperlink{classOkular_1_1Generator}{Generator} Implementation 
+
+Definition at line 61 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{
+63 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+64     Q\_Q( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+65 \textcolor{preprocessor}{#endif}
+66 
+67     \hyperlink{classOkular_1_1TextPage}{Okular::TextPage} *textPage = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextPage}{Okular::TextPage};
+68 
+69     \textcolor{keywordtype}{int} start, end;
+70 
+71 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+72     q->userMutex()->lock();
+73 \textcolor{preprocessor}{#endif}
+74     TextDocumentUtils::calculatePositions( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}, pageNumber, start, end );
+75 
+76     \{
+77     QTextCursor cursor( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument} );
+78     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = start; i < end - 1; ++i ) \{
+79         cursor.setPosition( i );
+80         cursor.setPosition( i + 1, QTextCursor::KeepAnchor );
+81 
+82         QString text = cursor.selectedText();
+83         \textcolor{keywordflow}{if} ( text.length() == 1 ) \{
+84             QRectF rect;
+85             TextDocumentUtils::calculateBoundingRect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}, i, i + 1, rect, pageNumber );
+86             \textcolor{keywordflow}{if} ( pageNumber == -1 )
+87                 text = \textcolor{stringliteral}{"\(\backslash\)n"};
+88 
+89             textPage->\hyperlink{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}{append}( text, \textcolor{keyword}{new} \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( rect.left(), 
+      rect.top(), rect.right(), rect.bottom() ) );
+90         \}
+91     \}
+92     \}
+93 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+94     q->userMutex()->unlock();
+95 \textcolor{preprocessor}{#endif}
+96 
+97     \textcolor{keywordflow}{return} textPage;
+98 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_aa4c252838dc01ca44941d7b3a9dfcf38}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!generate\+Annotation\+Infos@{generate\+Annotation\+Infos}}
+\index{generate\+Annotation\+Infos@{generate\+Annotation\+Infos}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{generate\+Annotation\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::generate\+Annotation\+Infos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_aa4c252838dc01ca44941d7b3a9dfcf38}
+
+
+Definition at line 164 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+165 \{
+166     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a901bfd4fee249261a7816ccf96609801}{mAnnotationPositions}.count(); ++i ) \{
+167         \textcolor{keyword}{const} AnnotationPosition &annotationPosition = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a901bfd4fee249261a7816ccf96609801}{mAnnotationPositions}[ i ];
+168 
+169         AnnotationInfo info;
+170         info.annotation = annotationPosition.annotation;
+171 
+172         TextDocumentUtils::calculateBoundingRect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}, annotationPosition.startPosition, 
+      annotationPosition.endPosition,
+173                                                   info.boundingRect, info.page );
+174 
+175         \textcolor{keywordflow}{if} ( info.page >= 0 )
+176             \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ae2e334678a1fa943878aec4c55b30cf7}{mAnnotationInfos}.append( info );
+177     \}
+178 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a28f9bc59e4100d577d4e74109b0fdf16}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!generate\+Link\+Infos@{generate\+Link\+Infos}}
+\index{generate\+Link\+Infos@{generate\+Link\+Infos}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{generate\+Link\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::generate\+Link\+Infos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a28f9bc59e4100d577d4e74109b0fdf16}
+
+
+Definition at line 148 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+149 \{
+150     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a84d3854584bfdb3c5151bb6bb049cbba}{mLinkPositions}.count(); ++i ) \{
+151         \textcolor{keyword}{const} LinkPosition &linkPosition = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a84d3854584bfdb3c5151bb6bb049cbba}{mLinkPositions}[ i ];
+152 
+153         LinkInfo info;
+154         info.link = linkPosition.link;
+155 
+156         TextDocumentUtils::calculateBoundingRect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}, linkPosition.startPosition, 
+      linkPosition.endPosition,
+157                                                   info.boundingRect, info.page );
+158 
+159         \textcolor{keywordflow}{if} ( info.page >= 0 )
+160             \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a5378139e49bb973e98ac5a448401ff9e}{mLinkInfos}.append( info );
+161     \}
+162 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a276197eeaadfe9de95eefd14289b82d6}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!generate\+Title\+Infos@{generate\+Title\+Infos}}
+\index{generate\+Title\+Infos@{generate\+Title\+Infos}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{generate\+Title\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::generate\+Title\+Infos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a276197eeaadfe9de95eefd14289b82d6}
+
+
+Definition at line 180 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+181 \{
+182     QStack< QPair<int,QDomNode> > parentNodeStack;
+183 
+184     QDomNode parentNode = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_aca9fca1479a2577d263d40e93c4960fd}{mDocumentSynopsis};
+185 
+186     parentNodeStack.push( qMakePair( 0, parentNode ) );
+187 
+188     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a2facb58407e1b46e1e534956d1b1d46d}{mTitlePositions}.count(); ++i ) \{
+189         \textcolor{keyword}{const} TitlePosition &position = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a2facb58407e1b46e1e534956d1b1d46d}{mTitlePositions}[ i ];
+190 
+191         \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport = TextDocumentUtils::calculateViewport( 
+      \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}, position.block );
+192 
+193         QDomElement item = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_aca9fca1479a2577d263d40e93c4960fd}{mDocumentSynopsis}.createElement( position.title );
+194         item.setAttribute( \textcolor{stringliteral}{"Viewport"}, viewport.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}() );
+195 
+196         \textcolor{keywordtype}{int} headingLevel = position.level;
+197 
+198         \textcolor{comment}{// we need a parent, which has to be at a higher heading level than this heading level}
+199         \textcolor{comment}{// so we just work through the stack}
+200         \textcolor{keywordflow}{while} ( ! parentNodeStack.isEmpty() ) \{
+201             \textcolor{keywordtype}{int} parentLevel = parentNodeStack.top().first;
+202             \textcolor{keywordflow}{if} ( parentLevel < headingLevel ) \{
+203                 \textcolor{comment}{// this is OK as a parent}
+204                 parentNode = parentNodeStack.top().second;
+205                 \textcolor{keywordflow}{break};
+206             \} \textcolor{keywordflow}{else} \{
+207                 \textcolor{comment}{// we'll need to be further into the stack}
+208                 parentNodeStack.pop();
+209             \}
+210         \}
+211         parentNode.appendChild( item );
+212         parentNodeStack.push( qMakePair( headingLevel, QDomNode(item) ) );
+213     \}
+214 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!image@{image}}
+\index{image@{image}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Text\+Document\+Generator\+Private\+::image (
+\begin{DoxyParamCaption}
+\item[{{\bf Pixmap\+Request} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}
+
+
+Reimplemented from \hyperlink{classOkular_1_1GeneratorPrivate_ad97873993be234a51c08efdb06d2f38b}{Okular\+::\+Generator\+Private}.
+
+
+
+Definition at line 368 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+369 \{
+370     \textcolor{keywordflow}{if} ( !\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument} )
+371         \textcolor{keywordflow}{return} QImage();
+372 
+373 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+374     Q\_Q( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+375 \textcolor{preprocessor}{#endif}
+376 
+377     QImage \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}{image}( request->\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}(), request->\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}(), QImage::Format\_ARGB32 );
+378     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}{image}.fill( Qt::white );
+379 
+380     QPainter p;
+381     p.begin( &\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}{image} );
+382 
+383     qreal width = request->\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}();
+384     qreal height = request->\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}();
+385 
+386     \textcolor{keyword}{const} QSize \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}->pageSize().toSize();
+387 
+388     p.scale( width / (qreal)size.width(), height / (qreal)size.height() );
+389 
+390     QRect rect;
+391     rect = QRect( 0, request->\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() * size.height(), size.width(), size.height() );
+392     p.translate( QPoint( 0, request->\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() * size.height() * -1 ) );
+393     p.setClipRect( rect );
+394 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+395     q->userMutex()->lock();
+396 \textcolor{preprocessor}{#endif}
+397     QAbstractTextDocumentLayout::PaintContext context;
+398     context.palette.setColor( QPalette::Text, Qt::black );
+399 \textcolor{comment}{//  FIXME Fix Qt, this doesn't work, we have horrible hacks}
+400 \textcolor{comment}{//        in the generators that return html, remove that code}
+401 \textcolor{comment}{//        if Qt ever gets fixed}
+402 \textcolor{comment}{//     context.palette.setColor( QPalette::Link, Qt::blue );}
+403     context.clip = rect;
+404     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}->setDefaultFont( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a33bafae112835888fdcce49189d66b52}{mFont} );
+405     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{mDocument}->documentLayout()->draw( &p, context );
+406 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+407     q->userMutex()->unlock();
+408 \textcolor{preprocessor}{#endif}
+409     p.end();
+410 
+411     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a6245b449cf861a0841a38377205fbd8c}{image};
+412 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a51ac369d9713dbd21784502560b4c24f}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!initialize\+Generator@{initialize\+Generator}}
+\index{initialize\+Generator@{initialize\+Generator}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{initialize\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Document\+Generator\+Private\+::initialize\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a51ac369d9713dbd21784502560b4c24f}
+
+
+Definition at line 216 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+217 \{
+218     Q\_Q( \hyperlink{classOkular_1_1TextDocumentGenerator}{TextDocumentGenerator} );
+219 
+220     \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}->d\_ptr->\hyperlink{classOkular_1_1TextDocumentConverterPrivate_ad5ad65de1ddc666829e02e12c2bf9c3a}{mParent} = q->d\_func();
+221 
+222     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a971d6bd6506cee93e6a8f0350feed03c}{mGeneralSettings} ) \{
+223         \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a33bafae112835888fdcce49189d66b52}{mFont} = \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a971d6bd6506cee93e6a8f0350feed03c}{mGeneralSettings}->\hyperlink{classOkular_1_1TextDocumentSettings_abcd230ba0c0c7cd0f9b88c91197c7df0}{font}();
+224     \}
+225 
+226     q->setFeature( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1bf7de5d98ec0333e392ce7f004d6578}{Generator::TextExtraction} );
+227     q->setFeature( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a7b40b8f6b9e4330bddff3cdf0baf07a9}{Generator::PrintNative} );
+228     q->setFeature( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0bb6cbe50f2ffb616e25106b2e34c289}{Generator::PrintToFile} );
+229 \textcolor{preprocessor}{#ifdef OKULAR\_TEXTDOCUMENT\_THREADED\_RENDERING}
+230     \textcolor{keywordflow}{if} ( QFontDatabase::supportsThreadedFontRendering() )
+231         q->setFeature( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Generator::Threaded} );
+232 \textcolor{preprocessor}{#endif}
+233 
+234     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a71f9541dce145e0233c5477b293a3962}{addAction}(\hyperlink{classOkular_1_1Action}{Action}*,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+235                       q, SLOT(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a71f9541dce145e0233c5477b293a3962}{addAction}(\hyperlink{classOkular_1_1Action}{Action}*,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})) );
+236     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ae2d64248e306cca0d3af1d30c2eb4bf9}{addAnnotation}(
+      \hyperlink{classOkular_1_1Annotation}{Annotation}*,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+237                       q, SLOT(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_ae2d64248e306cca0d3af1d30c2eb4bf9}{addAnnotation}(\hyperlink{classOkular_1_1Annotation}{Annotation}*,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})) );
+238     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a91d516e83aa89bbdfd183ef6435dbaee}{addTitle}(\textcolor{keywordtype}{int},QString,QTextBlock)),
+239                       q, SLOT(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a91d516e83aa89bbdfd183ef6435dbaee}{addTitle}(\textcolor{keywordtype}{int},QString,QTextBlock)) );
+240     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}{addMetaData}(QString,QString,QString)),
+241                       q, SLOT(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}{addMetaData}(QString,QString,QString)) );
+242     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}{addMetaData}(
+      \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791}{DocumentInfo::Key},QString)),
+243                       q, SLOT(\hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_adbdb2c00e0db9a29e7414a41fb3bdf24}{addMetaData}(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791}{DocumentInfo::Key},QString)) );
+244 
+245     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(error(QString,\textcolor{keywordtype}{int})),
+246                       q, SIGNAL(error(QString,\textcolor{keywordtype}{int})) );
+247     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(warning(QString,\textcolor{keywordtype}{int})),
+248                       q, SIGNAL(warning(QString,\textcolor{keywordtype}{int})) );
+249     QObject::connect( \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{mConverter}, SIGNAL(notice(QString,\textcolor{keywordtype}{int})),
+250                       q, SIGNAL(notice(QString,\textcolor{keywordtype}{int})) );
+251 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_ad2fa8ddf09fc98bc99c976e5b7db1bf6}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!meta\+Data@{meta\+Data}}
+\index{meta\+Data@{meta\+Data}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant Text\+Document\+Generator\+Private\+::meta\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+Variant \&}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextDocumentGeneratorPrivate_ad2fa8ddf09fc98bc99c976e5b7db1bf6}
+
+
+Reimplemented from \hyperlink{classOkular_1_1GeneratorPrivate_af48e4b188bbc9799d08cd36b2b66f6e7}{Okular\+::\+Generator\+Private}.
+
+
+
+Definition at line 446 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+447 \{
+448     Q\_UNUSED( option )
+449     if ( key == "DocumentTitle" )
+450     \{
+451         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1TextDocumentGeneratorPrivate_a01e0da5b05611ea533eb92702943c8be}{mDocumentInfo}.\hyperlink{classOkular_1_1DocumentInfo_a568ea22f19b034255be4c19f55ab1d82}{get}( \textcolor{stringliteral}{"title"} );
+452     \}
+453     \textcolor{keywordflow}{return} QVariant();
+454 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_aa570f0af9ae47a4f046ee2f58752c439}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!Text\+Document\+Converter@{Text\+Document\+Converter}}
+\index{Text\+Document\+Converter@{Text\+Document\+Converter}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{Text\+Document\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Text\+Document\+Converter}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1TextDocumentGeneratorPrivate_aa570f0af9ae47a4f046ee2f58752c439}
+
+
+Definition at line 113 of file textdocumentgenerator\+\_\+p.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_ae2e334678a1fa943878aec4c55b30cf7}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Annotation\+Infos@{m\+Annotation\+Infos}}
+\index{m\+Annotation\+Infos@{m\+Annotation\+Infos}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Annotation\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Annotation\+Info}$>$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Annotation\+Infos}}\label{classOkular_1_1TextDocumentGeneratorPrivate_ae2e334678a1fa943878aec4c55b30cf7}
+
+
+Definition at line 192 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a901bfd4fee249261a7816ccf96609801}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Annotation\+Positions@{m\+Annotation\+Positions}}
+\index{m\+Annotation\+Positions@{m\+Annotation\+Positions}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Annotation\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Annotation\+Position}$>$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Annotation\+Positions}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a901bfd4fee249261a7816ccf96609801}
+
+
+Definition at line 184 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Converter@{m\+Converter}}
+\index{m\+Converter@{m\+Converter}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Document\+Converter}$\ast$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Converter}}\label{classOkular_1_1TextDocumentGeneratorPrivate_afe4df409b1e2fba52c7a027454d4eeef}
+
+
+Definition at line 148 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Document@{m\+Document}}
+\index{m\+Document@{m\+Document}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Document$\ast$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Document}}\label{classOkular_1_1TextDocumentGeneratorPrivate_abee33b8837b86732e286172de83e110e}
+
+
+Definition at line 150 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a01e0da5b05611ea533eb92702943c8be}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Document\+Info@{m\+Document\+Info}}
+\index{m\+Document\+Info@{m\+Document\+Info}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Document\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Document\+Info} Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Document\+Info}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a01e0da5b05611ea533eb92702943c8be}
+
+
+Definition at line 151 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_aca9fca1479a2577d263d40e93c4960fd}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Document\+Synopsis@{m\+Document\+Synopsis}}
+\index{m\+Document\+Synopsis@{m\+Document\+Synopsis}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Document\+Synopsis} Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Document\+Synopsis}}\label{classOkular_1_1TextDocumentGeneratorPrivate_aca9fca1479a2577d263d40e93c4960fd}
+
+
+Definition at line 152 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a33bafae112835888fdcce49189d66b52}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Font@{m\+Font}}
+\index{m\+Font@{m\+Font}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Font}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a33bafae112835888fdcce49189d66b52}
+
+
+Definition at line 196 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a971d6bd6506cee93e6a8f0350feed03c}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+General\+Settings@{m\+General\+Settings}}
+\index{m\+General\+Settings@{m\+General\+Settings}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+General\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Document\+Settings}$\ast$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+General\+Settings}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a971d6bd6506cee93e6a8f0350feed03c}
+
+
+Definition at line 194 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a5378139e49bb973e98ac5a448401ff9e}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Link\+Infos@{m\+Link\+Infos}}
+\index{m\+Link\+Infos@{m\+Link\+Infos}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Link\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Link\+Info}$>$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Link\+Infos}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a5378139e49bb973e98ac5a448401ff9e}
+
+
+Definition at line 176 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a84d3854584bfdb3c5151bb6bb049cbba}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Link\+Positions@{m\+Link\+Positions}}
+\index{m\+Link\+Positions@{m\+Link\+Positions}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Link\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Link\+Position}$>$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Link\+Positions}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a84d3854584bfdb3c5151bb6bb049cbba}
+
+
+Definition at line 168 of file textdocumentgenerator\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentGeneratorPrivate_a2facb58407e1b46e1e534956d1b1d46d}{\index{Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}!m\+Title\+Positions@{m\+Title\+Positions}}
+\index{m\+Title\+Positions@{m\+Title\+Positions}!Okular\+::\+Text\+Document\+Generator\+Private@{Okular\+::\+Text\+Document\+Generator\+Private}}
+\subsubsection[{m\+Title\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Title\+Position}$>$ Okular\+::\+Text\+Document\+Generator\+Private\+::m\+Title\+Positions}}\label{classOkular_1_1TextDocumentGeneratorPrivate_a2facb58407e1b46e1e534956d1b1d46d}
+
+
+Definition at line 160 of file textdocumentgenerator\+\_\+p.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{textdocumentgenerator__p_8h}{textdocumentgenerator\+\_\+p.\+h}\item 
+core/\hyperlink{textdocumentgenerator_8cpp}{textdocumentgenerator.\+cpp}\end{DoxyCompactItemize}

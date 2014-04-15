@@ -1,0 +1,250 @@
+\hypertarget{classFictionBook_1_1Converter}{\section{Fiction\+Book\+:\+:Converter Class Reference}
+\label{classFictionBook_1_1Converter}\index{Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}}
+}
+
+
+{\ttfamily \#include $<$converter.\+h$>$}
+
+Inheritance diagram for Fiction\+Book\+:\+:Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFictionBook_1_1Converter}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classConverter_1_1DocumentInfo}{Document\+Info}
+\item 
+class \hyperlink{classConverter_1_1TitleInfo}{Title\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFictionBook_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}{Converter} ()
+\item 
+\hyperlink{classFictionBook_1_1Converter_a9ecd05695a52c03158b81e544e13b996}{$\sim$\+Converter} ()
+\item 
+virtual Q\+Text\+Document $\ast$ \hyperlink{classFictionBook_1_1Converter_aa63e543977130604de659a4d725ee8bd}{convert} (const Q\+String \&file\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file converter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFictionBook_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}{\index{Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}!Converter@{Converter}}
+\index{Converter@{Converter}!Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}}
+\subsubsection[{Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\+::\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFictionBook_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}
+
+
+Definition at line 53 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+54     : mTextDocument( 0 ), mCursor( 0 ),
+55       mTitleInfo( 0 ), mDocumentInfo( 0 )
+56 \{
+57 \}
+\end{DoxyCode}
+\hypertarget{classFictionBook_1_1Converter_a9ecd05695a52c03158b81e544e13b996}{\index{Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}!````~Converter@{$\sim$\+Converter}}
+\index{````~Converter@{$\sim$\+Converter}!Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}}
+\subsubsection[{$\sim$\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\+::$\sim$\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFictionBook_1_1Converter_a9ecd05695a52c03158b81e544e13b996}
+
+
+Definition at line 59 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     \textcolor{keyword}{delete} mTitleInfo;
+62     \textcolor{keyword}{delete} mDocumentInfo;
+63 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFictionBook_1_1Converter_aa63e543977130604de659a4d725ee8bd}{\index{Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}!convert@{convert}}
+\index{convert@{convert}!Fiction\+Book\+::\+Converter@{Fiction\+Book\+::\+Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Document $\ast$ Converter\+::convert (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFictionBook_1_1Converter_aa63e543977130604de659a4d725ee8bd}
+Returns the generated Q\+Text\+Document object. Set the correct page size
+
+Parse the content of the document
+
+First we read all images, so we can calculate the size later.
+
+Read the rest...
+
+Add document info.
+
+Implements \hyperlink{classOkular_1_1TextDocumentConverter_ad05f8bcde0f347c6292968fab331bcef}{Okular\+::\+Text\+Document\+Converter}.
+
+
+
+Definition at line 65 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+66 \{
+67     \hyperlink{classFictionBook_1_1Document}{Document} fbDocument( fileName );
+68     \textcolor{keywordflow}{if} ( !fbDocument.open() ) \{
+69         emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}( fbDocument.lastErrorString(), -1 );
+70         \textcolor{keywordflow}{return} 0;
+71     \}
+72 
+73     mTextDocument = \textcolor{keyword}{new} QTextDocument;
+74     mCursor = \textcolor{keyword}{new} QTextCursor( mTextDocument );
+75     mSectionCounter = 0;
+76     mLocalLinks.clear();
+77     mSectionMap.clear();
+78 
+79     \textcolor{keyword}{const} QDomDocument document = fbDocument.content();
+80 
+84     mTextDocument->setPageSize( QSizeF( 600, 800 ) );
+85 
+86     QTextFrameFormat frameFormat;
+87     frameFormat.setMargin( 20 );
+88 
+89     QTextFrame *rootFrame = mTextDocument->rootFrame();
+90     rootFrame->setFrameFormat( frameFormat );
+91 
+95     \textcolor{keyword}{const} QDomElement documentElement = document.documentElement();
+96 
+97     \textcolor{keywordflow}{if} ( documentElement.tagName() != QLatin1String( \textcolor{stringliteral}{"FictionBook"} ) ) \{
+98         emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}( i18n( \textcolor{stringliteral}{"Document is not a valid FictionBook"} ), -1 );
+99         \textcolor{keyword}{delete} mCursor;
+100         \textcolor{keywordflow}{return} 0;
+101     \}
+102 
+106     QDomElement element = documentElement.firstChildElement();
+107     \textcolor{keywordflow}{while} ( !element.isNull() ) \{
+108         \textcolor{keywordflow}{if} ( element.tagName() == QLatin1String( \textcolor{stringliteral}{"binary"} ) ) \{
+109             \textcolor{keywordflow}{if} ( !convertBinary( element ) ) \{
+110                 \textcolor{keyword}{delete} mCursor;
+111                 \textcolor{keywordflow}{return} 0;
+112             \}
+113         \}
+114 
+115         element = element.nextSiblingElement();
+116     \}
+117 
+121     element = documentElement.firstChildElement();
+122     \textcolor{keywordflow}{while} ( !element.isNull() ) \{
+123         \textcolor{keywordflow}{if} ( element.tagName() == QLatin1String( \textcolor{stringliteral}{"description"} ) ) \{
+124             \textcolor{keywordflow}{if} ( !convertDescription( element ) ) \{
+125                 \textcolor{keyword}{delete} mCursor;
+126                 \textcolor{keywordflow}{return} 0;
+127             \}
+128         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( element.tagName() == QLatin1String( \textcolor{stringliteral}{"body"} ) ) \{
+129             \textcolor{keywordflow}{if} ( !mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_afd5944a2140785dd5e82dd104347ea43}{mCoverPage}.isNull() ) \{
+130                 convertCover( mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_afd5944a2140785dd5e82dd104347ea43}{mCoverPage} );
+131                 mCursor->insertBlock();
+132             \}
+133 
+134             QTextFrame *topFrame = mCursor->currentFrame();
+135 
+136             QTextFrameFormat frameFormat;
+137             frameFormat.setBorder( 2 );
+138             frameFormat.setPadding( 8 );
+139             frameFormat.setBackground( Qt::lightGray );
+140 
+141             \textcolor{keywordflow}{if} ( !mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a19645faf3d93e1588645fa6d50daa69a}{mTitle}.isEmpty() ) \{
+142                 mCursor->insertFrame( frameFormat );
+143 
+144                 QTextCharFormat charFormat;
+145                 charFormat.setFontPointSize( 22 );
+146                 charFormat.setFontWeight( QFont::Bold );
+147                 mCursor->insertText( mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a19645faf3d93e1588645fa6d50daa69a}{mTitle}, charFormat );
+148 
+149                 mCursor->setPosition( topFrame->lastPosition() );
+150             \}
+151 
+152             \textcolor{keywordflow}{if} ( !mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a7ecc1a061f21392a7a3c3daa8792476c}{mAuthor}.isEmpty() ) \{
+153                 frameFormat.setBorder( 1 );
+154                 mCursor->insertFrame( frameFormat );
+155 
+156                 QTextCharFormat charFormat;
+157                 charFormat.setFontPointSize( 10 );
+158                 mCursor->insertText( mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a7ecc1a061f21392a7a3c3daa8792476c}{mAuthor}, charFormat );
+159 
+160                 mCursor->setPosition( topFrame->lastPosition() );
+161                 mCursor->insertBlock();
+162             \}
+163 
+164             mCursor->insertBlock();
+165 
+166             \textcolor{keywordflow}{if} ( !convertBody( element ) ) \{
+167                 \textcolor{keyword}{delete} mCursor;
+168                 \textcolor{keywordflow}{return} 0;
+169             \}
+170         \}
+171 
+172         element = element.nextSiblingElement();
+173     \}
+174 
+178     \textcolor{keywordflow}{if} ( mTitleInfo ) \{
+179         \textcolor{keywordflow}{if} ( !mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a19645faf3d93e1588645fa6d50daa69a}{mTitle}.isEmpty() )
+180             emit \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{addMetaData}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ae400626d63f14b61c55bd22aca9481e0}{Okular::DocumentInfo::Title}, mTitleInfo
+      ->\hyperlink{classConverter_1_1TitleInfo_a19645faf3d93e1588645fa6d50daa69a}{mTitle} );
+181 
+182         \textcolor{keywordflow}{if} ( !mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a7ecc1a061f21392a7a3c3daa8792476c}{mAuthor}.isEmpty() )
+183             emit \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{addMetaData}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a1010574d070b1925e030c20fef3e7a35}{Okular::DocumentInfo::Author}, 
+      mTitleInfo->\hyperlink{classConverter_1_1TitleInfo_a7ecc1a061f21392a7a3c3daa8792476c}{mAuthor} );
+184     \}
+185 
+186     \textcolor{keywordflow}{if} ( mDocumentInfo ) \{
+187         \textcolor{keywordflow}{if} ( !mDocumentInfo->\hyperlink{classConverter_1_1DocumentInfo_a37486c959f5eb91b039b54092aa4eb33}{mProducer}.isEmpty() )
+188             emit \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{addMetaData}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a4781bb7ac85d4fe7bdc448097aa1c48c}{Okular::DocumentInfo::Producer}, 
+      mDocumentInfo->\hyperlink{classConverter_1_1DocumentInfo_a37486c959f5eb91b039b54092aa4eb33}{mProducer} );
+189 
+190         \textcolor{keywordflow}{if} ( mDocumentInfo->\hyperlink{classConverter_1_1DocumentInfo_a5a6937c62c571c7c757aa753012a24ca}{mDate}.isValid() )
+191             emit \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{addMetaData}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a58a72aeacd3cb08e85d0f9f19b2fe83a}{Okular::DocumentInfo::CreationDate}
+      ,
+192                       KGlobal::locale()->formatDate( mDocumentInfo->\hyperlink{classConverter_1_1DocumentInfo_a5a6937c62c571c7c757aa753012a24ca}{mDate}, KLocale::ShortDate ) );
+193     \}
+194 
+195     QMapIterator<QString, QPair<int, int> > it( mLocalLinks );
+196     \textcolor{keywordflow}{while} ( it.hasNext() ) \{
+197         it.next();
+198 
+199         \textcolor{keyword}{const} QTextBlock block = mSectionMap[ it.key() ];
+200         \textcolor{keywordflow}{if} ( !block.isValid() ) \textcolor{comment}{// local link without existing target}
+201           \textcolor{keywordflow}{continue};
+202 
+203         \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport = 
+      \hyperlink{classOkular_1_1TextDocumentConverter_a5d8709540be1213da6dac78759ce7172}{calculateViewport}( mTextDocument, block );
+204 
+205         \hyperlink{classOkular_1_1GotoAction}{Okular::GotoAction} *action = \textcolor{keyword}{new} \hyperlink{classOkular_1_1GotoAction}{Okular::GotoAction}( QString(),
+       viewport );
+206 
+207         emit \hyperlink{classOkular_1_1TextDocumentConverter_ac4f1b668547e87affede3663ea6d8bc6}{addAction}( action, it.value().first, it.value().second );
+208     \}
+209 
+210     \textcolor{keyword}{delete} mCursor;
+211 
+212     \textcolor{keywordflow}{return} mTextDocument;
+213 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/fictionbook/\hyperlink{fictionbook_2converter_8h}{converter.\+h}\item 
+generators/fictionbook/\hyperlink{fictionbook_2converter_8cpp}{converter.\+cpp}\end{DoxyCompactItemize}

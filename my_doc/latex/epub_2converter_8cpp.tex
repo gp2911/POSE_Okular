@@ -1,0 +1,52 @@
+\hypertarget{epub_2converter_8cpp}{\section{generators/epub/converter.cpp File Reference}
+\label{epub_2converter_8cpp}\index{generators/epub/converter.\+cpp@{generators/epub/converter.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}converter.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Abstract\+Text\+Document\+Layout$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Text\+Document$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Text\+Frame$>$}\\*
+{\ttfamily \#include $<$Q\+Text\+Document\+Fragment$>$}\\*
+{\ttfamily \#include $<$Q\+File\+Info$>$}\\*
+{\ttfamily \#include $<$Q\+Application$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$K\+Standard\+Dirs$>$}\\*
+{\ttfamily \#include $<$core/action.\+h$>$}\\*
+{\ttfamily \#include $<$core/movie.\+h$>$}\\*
+{\ttfamily \#include $<$core/sound.\+h$>$}\\*
+{\ttfamily \#include $<$core/annotations.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{epub_2converter_8cpp_a95f03040f8df3bd3629a85eb5ba7a944}{\+\_\+str\+Pack} (char $\ast$$\ast$str, int \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{epub_2converter_8cpp_a95f03040f8df3bd3629a85eb5ba7a944}{\index{epub/converter.\+cpp@{epub/converter.\+cpp}!\+\_\+str\+Pack@{\+\_\+str\+Pack}}
+\index{\+\_\+str\+Pack@{\+\_\+str\+Pack}!epub/converter.\+cpp@{epub/converter.\+cpp}}
+\subsubsection[{\+\_\+str\+Pack}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String \+\_\+str\+Pack (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{str, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{epub_2converter_8cpp_a95f03040f8df3bd3629a85eb5ba7a944}
+
+
+Definition at line 39 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41   QString res;
+42 
+43   res = QString::fromUtf8(str[0]);
+44 
+45   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=1;i<\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size};i++) \{
+46     res += \textcolor{stringliteral}{", "};
+47     res += QString::fromUtf8(str[i]);
+48   \}
+49 
+50   \textcolor{keywordflow}{return} res;
+51 \}
+\end{DoxyCode}

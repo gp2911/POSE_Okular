@@ -1,0 +1,189 @@
+\hypertarget{classOkular_1_1StampAnnotation}{\section{Okular\+:\+:Stamp\+Annotation Class Reference}
+\label{classOkular_1_1StampAnnotation}\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Stamp\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1StampAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1StampAnnotation_a0c693d9241c13bff0f98a34e2d2f578c}{Stamp\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1StampAnnotation_a959073044e142c120c771df3e32519b4}{Stamp\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+\hyperlink{classOkular_1_1StampAnnotation_ae3dbfccbace1e150da4c37eeea52a42b}{$\sim$\+Stamp\+Annotation} ()
+\item 
+void \hyperlink{classOkular_1_1StampAnnotation_a3bfe9da6d3494b762bc5561c6169179b}{set\+Stamp\+Icon\+Name} (const Q\+String \&name)
+\item 
+Q\+String \hyperlink{classOkular_1_1StampAnnotation_a444978f06c11e4f74fbf1653555b4170}{stamp\+Icon\+Name} () const 
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1StampAnnotation_ae148c417d2dab5c9c54ebc8221d18cb2}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1StampAnnotation_a57da3824cf0d1981136e7115f6c4b4ae}{store} (Q\+Dom\+Node \&node, Q\+Dom\+Document \&document) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1221 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1StampAnnotation_a0c693d9241c13bff0f98a34e2d2f578c}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!Stamp\+Annotation@{Stamp\+Annotation}}
+\index{Stamp\+Annotation@{Stamp\+Annotation}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{Stamp\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Stamp\+Annotation\+::\+Stamp\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1StampAnnotation_a0c693d9241c13bff0f98a34e2d2f578c}
+Creates a new stamp annotation. 
+
+Definition at line 2069 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2070     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1StampAnnotationPrivate}{StampAnnotationPrivate}() )
+2071 \{
+2072 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1StampAnnotation_a959073044e142c120c771df3e32519b4}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!Stamp\+Annotation@{Stamp\+Annotation}}
+\index{Stamp\+Annotation@{Stamp\+Annotation}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{Stamp\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Stamp\+Annotation\+::\+Stamp\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1StampAnnotation_a959073044e142c120c771df3e32519b4}
+Creates a new stamp annotation from the xml {\ttfamily description} 
+
+Definition at line 2074 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2075     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1StampAnnotationPrivate}{StampAnnotationPrivate}(), node )
+2076 \{
+2077 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1StampAnnotation_ae3dbfccbace1e150da4c37eeea52a42b}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!````~Stamp\+Annotation@{$\sim$\+Stamp\+Annotation}}
+\index{````~Stamp\+Annotation@{$\sim$\+Stamp\+Annotation}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{$\sim$\+Stamp\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Stamp\+Annotation\+::$\sim$\+Stamp\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1StampAnnotation_ae3dbfccbace1e150da4c37eeea52a42b}
+Destroys the stamp annotation. 
+
+Definition at line 2079 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2080 \{
+2081 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1StampAnnotation_a3bfe9da6d3494b762bc5561c6169179b}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!set\+Stamp\+Icon\+Name@{set\+Stamp\+Icon\+Name}}
+\index{set\+Stamp\+Icon\+Name@{set\+Stamp\+Icon\+Name}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{set\+Stamp\+Icon\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Stamp\+Annotation\+::set\+Stamp\+Icon\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1StampAnnotation_a3bfe9da6d3494b762bc5561c6169179b}
+Sets the {\ttfamily name} of the icon for the stamp annotation. 
+
+Definition at line 2083 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2084 \{
+2085     Q\_D( \hyperlink{classOkular_1_1StampAnnotation}{StampAnnotation} );
+2086     d->m\_stampIconName = name;
+2087 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1StampAnnotation_a444978f06c11e4f74fbf1653555b4170}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!stamp\+Icon\+Name@{stamp\+Icon\+Name}}
+\index{stamp\+Icon\+Name@{stamp\+Icon\+Name}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{stamp\+Icon\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Stamp\+Annotation\+::stamp\+Icon\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1StampAnnotation_a444978f06c11e4f74fbf1653555b4170}
+Returns the name of the icon. 
+
+Definition at line 2089 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2090 \{
+2091     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1StampAnnotation}{StampAnnotation} );
+2092     \textcolor{keywordflow}{return} d->m\_stampIconName;
+2093 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1StampAnnotation_a57da3824cf0d1981136e7115f6c4b4ae}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Stamp\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1StampAnnotation_a57da3824cf0d1981136e7115f6c4b4ae}
+Stores the stamp annotation as xml in {\ttfamily document} under the given parent {\ttfamily node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2100 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2101 \{
+2102     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1StampAnnotation}{StampAnnotation} );
+2103     \textcolor{comment}{// recurse to parent objects storing properties}
+2104     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+2105 
+2106     \textcolor{comment}{// create [stamp] element}
+2107     QDomElement stampElement = document.createElement( \textcolor{stringliteral}{"stamp"} );
+2108     node.appendChild( stampElement );
+2109 
+2110     \textcolor{comment}{// append the optional attributes}
+2111     \textcolor{keywordflow}{if} ( d->m\_stampIconName != \textcolor{stringliteral}{"Draft"} )
+2112         stampElement.setAttribute( \textcolor{stringliteral}{"icon"}, d->m\_stampIconName );
+2113 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1StampAnnotation_ae148c417d2dab5c9c54ebc8221d18cb2}{\index{Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Stamp\+Annotation@{Okular\+::\+Stamp\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Stamp\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1StampAnnotation_ae148c417d2dab5c9c54ebc8221d18cb2}
+Returns the sub type of the stamp annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2095 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2096 \{
+2097     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0ad542ded420c9b01f44ee923bf28ecd9a}{AStamp};
+2098 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

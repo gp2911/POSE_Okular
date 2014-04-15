@@ -1,0 +1,93 @@
+\hypertarget{searchtest_8cpp}{\section{tests/searchtest.cpp File Reference}
+\label{searchtest_8cpp}\index{tests/searchtest.\+cpp@{tests/searchtest.\+cpp}}
+}
+{\ttfamily \#include $<$qtest\+\_\+kde.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../core/document.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../core/page.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../core/textpage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../settings\+\_\+core.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}searchtest.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSearchFinishedReceiver}{Search\+Finished\+Receiver}
+\item 
+class \hyperlink{classSearchTest}{Search\+Test}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{searchtest_8cpp_a18e0c9baf22b86ea4edfde8e642acfca}{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E}
+\item 
+\#define \hyperlink{searchtest_8cpp_a29c9707db5edda8c79693baf029ac318}{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V}(search\+Type, expected\+Status)
+\item 
+\#define \hyperlink{searchtest_8cpp_adbe5de0bd29ec505d9fbee1cedbe14d6}{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T}~4
+\item 
+\#define \hyperlink{searchtest_8cpp_ae6e98170a9852cf8c51c7262afba0754}{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H}(search\+String, match\+Expected)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{searchtest_8cpp_a18e0c9baf22b86ea4edfde8e642acfca}{\index{searchtest.\+cpp@{searchtest.\+cpp}!C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E@{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E}}
+\index{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E@{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E}!searchtest.\+cpp@{searchtest.\+cpp}}
+\subsubsection[{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E}}\label{searchtest_8cpp_a18e0c9baf22b86ea4edfde8e642acfca}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+QCOMPARE(text.size(), rect.size()); \(\backslash\)
+  Okular::Page* page; \(\backslash\)
+  Okular::TextPage* tp; \(\backslash\)
+  createTextPage(text, rect, tp, page);
+\end{DoxyCode}
+
+
+Definition at line 75 of file searchtest.\+cpp.
+
+\hypertarget{searchtest_8cpp_ae6e98170a9852cf8c51c7262afba0754}{\index{searchtest.\+cpp@{searchtest.\+cpp}!C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H@{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H}}
+\index{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H@{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H}!searchtest.\+cpp@{searchtest.\+cpp}}
+\subsubsection[{C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+E\+A\+T\+E\+\_\+\+P\+A\+G\+E\+\_\+\+A\+N\+D\+\_\+\+T\+E\+S\+T\+\_\+\+S\+E\+A\+R\+C\+H(
+\begin{DoxyParamCaption}
+\item[{}]{search\+String, }
+\item[{}]{match\+Expected}
+\end{DoxyParamCaption}
+)}}\label{searchtest_8cpp_ae6e98170a9852cf8c51c7262afba0754}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \hyperlink{searchtest_8cpp_a18e0c9baf22b86ea4edfde8e642acfca}{\(\backslash\)}
+\hyperlink{searchtest_8cpp_a18e0c9baf22b86ea4edfde8e642acfca}{    CREATE\_PAGE}; \(\backslash\)
+ \(\backslash\)
+    Okular::RegularAreaRect* result = tp->findText(0, searchString, \(\backslash\)
+               \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2a12e1e0d5fba44b6eb075863eb0992cf6}{Okular::FromTop}, Qt::CaseSensitive, NULL); \(\backslash\)
+ \(\backslash\)
+    QCOMPARE(!!result, matchExpected); \(\backslash\)
+ \(\backslash\)
+    delete result; \(\backslash\)
+    delete page; \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Definition at line 298 of file searchtest.\+cpp.
+
+\hypertarget{searchtest_8cpp_a29c9707db5edda8c79693baf029ac318}{\index{searchtest.\+cpp@{searchtest.\+cpp}!T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V@{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V}}
+\index{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V@{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V}!searchtest.\+cpp@{searchtest.\+cpp}}
+\subsubsection[{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V(
+\begin{DoxyParamCaption}
+\item[{}]{search\+Type, }
+\item[{}]{expected\+Status}
+\end{DoxyParamCaption}
+)}}\label{searchtest_8cpp_a29c9707db5edda8c79693baf029ac318}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+   Okular::RegularAreaRect* result = tp->findText(0, searchString, searchType, Qt::CaseSensitive, NULL); \(\backslash\)
+   QCOMPARE(!!result, expectedStatus); \(\backslash\)
+   delete result; \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Definition at line 81 of file searchtest.\+cpp.
+
+\hypertarget{searchtest_8cpp_adbe5de0bd29ec505d9fbee1cedbe14d6}{\index{searchtest.\+cpp@{searchtest.\+cpp}!T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T@{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T}}
+\index{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T@{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T}!searchtest.\+cpp@{searchtest.\+cpp}}
+\subsubsection[{T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+S\+T\+\_\+\+N\+E\+X\+T\+\_\+\+P\+R\+E\+V\+\_\+\+S\+I\+T\+U\+A\+T\+I\+O\+N\+\_\+\+C\+O\+U\+N\+T~4}}\label{searchtest_8cpp_adbe5de0bd29ec505d9fbee1cedbe14d6}

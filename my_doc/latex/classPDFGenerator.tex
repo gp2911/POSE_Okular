@@ -1,0 +1,1428 @@
+\hypertarget{classPDFGenerator}{\section{P\+D\+F\+Generator Class Reference}
+\label{classPDFGenerator}\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+}
+
+
+A generator that builds contents from a P\+D\+F document.  
+
+
+
+
+{\ttfamily \#include $<$generator\+\_\+pdf.\+h$>$}
+
+Inheritance diagram for P\+D\+F\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.781457cm]{classPDFGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPDFGenerator_af71fed8f7f115cf780ed3e2baa1cc779}{P\+D\+F\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+virtual \hyperlink{classPDFGenerator_aae6389fe4a4a22d937f645f2e6cb4c4c}{$\sim$\+P\+D\+F\+Generator} ()
+\item 
+bool \hyperlink{classPDFGenerator_ab932e252efb8612a72324bda2c84e13c}{load\+Document} (const Q\+String \&file\+Name, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+bool \hyperlink{classPDFGenerator_a86fd391705e822ad399f8d418237a622}{load\+Document\+From\+Data} (const Q\+Byte\+Array \&file\+Data, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+void \hyperlink{classPDFGenerator_a73ba84528e0f5eefc41aa958e2b2fcd3}{load\+Pages} (Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector, int rotation=-\/1, bool clear=false)
+\item 
+const \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} $\ast$ \hyperlink{classPDFGenerator_a205c5054933ee0df179f27bb6cf3a70e}{generate\+Document\+Info} ()
+\item 
+const \hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} $\ast$ \hyperlink{classPDFGenerator_a9190f8cb03a628fd4bd097fc13c35545}{generate\+Document\+Synopsis} ()
+\item 
+\hyperlink{classOkular_1_1FontInfo_ada799641ba87703c808645f57fdfafaa}{Okular\+::\+Font\+Info\+::\+List} \hyperlink{classPDFGenerator_a0a10ed0a1e9120fcfef66d53be734a7d}{fonts\+For\+Page} (int page)
+\item 
+const \hyperlink{classQList}{Q\+List}\\*
+$<$ \hyperlink{classOkular_1_1EmbeddedFile}{Okular\+::\+Embedded\+File} $\ast$ $>$ $\ast$ \hyperlink{classPDFGenerator_acd876f79b66423f05ae149e12f922aff}{embedded\+Files} () const 
+\item 
+\hyperlink{classOkular_1_1Generator_aa09b8aeb5398ea5f07644f35bd5934f3}{Page\+Size\+Metric} \hyperlink{classPDFGenerator_ac59b305492d467a8057a72699f77a606}{pages\+Size\+Metric} () const 
+\item 
+bool \hyperlink{classPDFGenerator_ae60ab12202cf73cb8dba06e50b144460}{is\+Allowed} (\hyperlink{namespaceOkular_a3601f4e702453ddf1125476dd6e7577b}{Okular\+::\+Permission} permission) const 
+\item 
+Q\+Image \hyperlink{classPDFGenerator_a30b806bf421d9332bb2a6fb6ed3ce267}{image} (\hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$page)
+\item 
+bool \hyperlink{classPDFGenerator_a797d52d48229d5725375e21d56c3c949}{print} (Q\+Printer \&printer)
+\item 
+Q\+Variant \hyperlink{classPDFGenerator_a1ec53a069478b38389ed689e5881f98d}{meta\+Data} (const Q\+String \&key, const Q\+Variant \&option) const 
+\item 
+bool \hyperlink{classPDFGenerator_a29ebf5643e2bafa551146a777e61b3bd}{reparse\+Config} ()
+\item 
+void \hyperlink{classPDFGenerator_a04e154f556588e29c27de23d1447816b}{add\+Pages} (K\+Config\+Dialog $\ast$)
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a987d72c1a1456b8a983a37603a8fa78d}{Okular\+::\+Export\+Format\+::\+List} \hyperlink{classPDFGenerator_a50e45d9fdd09e64435fd342b77575aa4}{export\+Formats} () const 
+\item 
+bool \hyperlink{classPDFGenerator_a7a1a68fb2958335c8023e25265485288}{export\+To} (const Q\+String \&file\+Name, const \hyperlink{classOkular_1_1ExportFormat}{Okular\+::\+Export\+Format} \&format)
+\item 
+Q\+Widget $\ast$ \hyperlink{classPDFGenerator_afc09c9448b0942c506ca058ab01e6b36}{print\+Configuration\+Widget} () const 
+\item 
+bool \hyperlink{classPDFGenerator_ad1da694c1f5836ac61c26ec50a80b2c8}{supports\+Option} (\hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399}{Save\+Option}) const 
+\item 
+bool \hyperlink{classPDFGenerator_abf4927ecbbffacb3eefd8aeff58c0a62}{save} (const Q\+String \&file\+Name, Save\+Options options, Q\+String $\ast$error\+Text)
+\item 
+\hyperlink{classOkular_1_1AnnotationProxy}{Okular\+::\+Annotation\+Proxy} $\ast$ \hyperlink{classPDFGenerator_ade566b79f079689dcddef87ae5faf1d5}{annotation\+Proxy} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}{P\+D\+F\+Debug} = 4710
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPDFGenerator_af22308428f7e0f951eb1a7e249d97418}{request\+Font\+Data} (const \hyperlink{classOkular_1_1FontInfo}{Okular\+::\+Font\+Info} \&font, Q\+Byte\+Array $\ast$data)
+\item 
+const \hyperlink{classOkular_1_1SourceReference}{Okular\+::\+Source\+Reference} $\ast$ \hyperlink{classPDFGenerator_a0ba0eeb79132d7fb790fc4c3dfa500aa}{dynamic\+Source\+Reference} (int page\+Nr, double abs\+X, double abs\+Y)
+\item 
+\hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61}{Okular\+::\+Generator\+::\+Print\+Error} \hyperlink{classPDFGenerator_a903f4c338b3f2a14ce331fc4a7a06cfb}{print\+Error} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPDFGenerator_a5cc94a6693aeaea5533e34430f537ba1}{do\+Close\+Document} ()
+\item 
+\hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} $\ast$ \hyperlink{classPDFGenerator_aefd3eeaad15f2a32add422650c04c801}{text\+Page} (\hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$page)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A generator that builds contents from a P\+D\+F document. 
+
+All Generator features are supported and implented by this one. Internally this holds a reference to xpdf's core objects and provides contents generation using the P\+D\+F\+Doc object and a couple of Output\+Devices called Okular\+::\+Output\+Dev and Okular\+::\+Text\+Dev (both defined in gp\+\_\+outputdev.\+h).
+
+For generating page contents we tell P\+D\+F\+Doc to render a page and grab contents from out Output\+Devs when rendering finishes. 
+
+Definition at line 49 of file generator\+\_\+pdf.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPDFGenerator_af71fed8f7f115cf780ed3e2baa1cc779}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{P\+D\+F\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}P\+D\+F\+Generator\+::\+P\+D\+F\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classPDFGenerator_af71fed8f7f115cf780ed3e2baa1cc779}
+
+
+Definition at line 424 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+425     : \hyperlink{classOkular_1_1Generator_a9a493b3f23f5d8b34eae9fa7231556f6}{Generator}( parent, args ), pdfdoc( 0 ),
+426     docInfoDirty( \textcolor{keyword}{true} ), docSynopsisDirty( \textcolor{keyword}{true} ),
+427     docEmbeddedFilesDirty( \textcolor{keyword}{true} ), nextFontPage( 0 ),
+428     annotProxy( 0 ), synctex\_scanner( 0 )
+429 \{
+430     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} );
+431     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1bf7de5d98ec0333e392ce7f004d6578}{TextExtraction} );
+432     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a8b712b2b89239900d3d0d000280efa36}{FontInfo} );
+433 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN32}
+434     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a7b40b8f6b9e4330bddff3cdf0baf07a9}{PrintNative} );
+435 \textcolor{preprocessor}{#else}
+436     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77af0ce4775bf5c69b470c2cce6011d576b}{PrintPostscript} );
+437 \textcolor{preprocessor}{#endif}
+438     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1FilePrinter_a047b30a135796c064fda2823ae6c0ddb}{Okular::FilePrinter::ps2pdfAvailable}() )
+439         \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0bb6cbe50f2ffb616e25106b2e34c289}{PrintToFile} );
+440     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1a4bb4a7fe37342df79c702b4b2aab8a}{ReadRawData} );
+441     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a5ab094fe848056a0687d8a3c31c7fd4a}{TiledRendering} );
+442 
+443 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_16}
+444     \textcolor{comment}{// You only need to do it once not for each of the documents but it is cheap enough}
+445     \textcolor{comment}{// so doing it all the time won't hurt either}
+446     Poppler::setDebugErrorFunction(PDFGeneratorPopplerDebugFunction, QVariant());
+447 \textcolor{preprocessor}{#endif}
+448 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_aae6389fe4a4a22d937f645f2e6cb4c4c}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!````~P\+D\+F\+Generator@{$\sim$\+P\+D\+F\+Generator}}
+\index{````~P\+D\+F\+Generator@{$\sim$\+P\+D\+F\+Generator}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{$\sim$\+P\+D\+F\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}P\+D\+F\+Generator\+::$\sim$\+P\+D\+F\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_aae6389fe4a4a22d937f645f2e6cb4c4c}
+
+
+Definition at line 450 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+451 \{
+452     \textcolor{keyword}{delete} pdfOptionsPage;
+453 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPDFGenerator_a04e154f556588e29c27de23d1447816b}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void P\+D\+F\+Generator\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dialog}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a04e154f556588e29c27de23d1447816b}
+This method allows the generator to add custom configuration pages to the config {\ttfamily dialog} of okular. 
+
+Implements \hyperlink{classOkular_1_1ConfigInterface_a75030ba3abbbd134e388c05154695610}{Okular\+::\+Config\+Interface}.
+
+
+
+Definition at line 1296 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1297 \{
+1298 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_24}
+1299     \hyperlink{classUi__PDFSettingsWidget}{Ui\_PDFSettingsWidget} pdfsw;
+1300     QWidget* w = \textcolor{keyword}{new} QWidget(dlg);
+1301     pdfsw.\hyperlink{classUi__PDFSettingsWidget_a9df450caf334109eaa9a550f780451de}{setupUi}(w);
+1302     dlg->addPage(w, \hyperlink{classPDFSettings_a30b635d7a919a55642c4afab86f54b20}{PDFSettings::self}(), i18n(\textcolor{stringliteral}{"PDF"}), \textcolor{stringliteral}{"application-pdf"}, i18n(\textcolor{stringliteral}{"PDF Backend
+       Configuration"}) );
+1303 \textcolor{preprocessor}{#endif}
+1304 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_ade566b79f079689dcddef87ae5faf1d5}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!annotation\+Proxy@{annotation\+Proxy}}
+\index{annotation\+Proxy@{annotation\+Proxy}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{annotation\+Proxy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Annotation\+Proxy} $\ast$ P\+D\+F\+Generator\+::annotation\+Proxy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_ade566b79f079689dcddef87ae5faf1d5}
+Returns the annotation proxy. Generators can return N\+U\+L\+L if native annotations are not supported.
+
+\begin{DoxyNote}{Note}
+Returning N\+U\+L\+L is equivalent to returning an Annotation\+Proxy that doesn't support any capability. 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Implements \hyperlink{classOkular_1_1SaveInterface_a1fdb82695d9758e9e68ab0129bf16237}{Okular\+::\+Save\+Interface}.
+
+
+
+Definition at line 1931 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1932 \{
+1933     \textcolor{keywordflow}{return} annotProxy;
+1934 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a5cc94a6693aeaea5533e34430f537ba1}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!do\+Close\+Document@{do\+Close\+Document}}
+\index{do\+Close\+Document@{do\+Close\+Document}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{do\+Close\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::do\+Close\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classPDFGenerator_a5cc94a6693aeaea5533e34430f537ba1}
+This method is called when the document is closed and not used any longer.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{Okular\+::\+Generator}.
+
+
+
+Definition at line 590 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+591 \{
+592     \textcolor{comment}{// remove internal objects}
+593     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+594     \textcolor{keyword}{delete} annotProxy;
+595     annotProxy = 0;
+596     \textcolor{keyword}{delete} pdfdoc;
+597     pdfdoc = 0;
+598     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+599     docInfoDirty = \textcolor{keyword}{true};
+600     docSynopsisDirty = \textcolor{keyword}{true};
+601     docSyn.clear();
+602     docEmbeddedFilesDirty = \textcolor{keyword}{true};
+603     qDeleteAll(docEmbeddedFiles);
+604     docEmbeddedFiles.clear();
+605     nextFontPage = 0;
+606     rectsGenerated.clear();
+607     \textcolor{keywordflow}{if} ( synctex\_scanner )
+608     \{
+609         \hyperlink{synctex__parser_8c_a4dbef4e290dab90d51369540ad2e6f7f}{synctex\_scanner\_free}( synctex\_scanner );
+610         synctex\_scanner = 0;
+611     \}
+612 
+613     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+614 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a0ba0eeb79132d7fb790fc4c3dfa500aa}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!dynamic\+Source\+Reference@{dynamic\+Source\+Reference}}
+\index{dynamic\+Source\+Reference@{dynamic\+Source\+Reference}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{dynamic\+Source\+Reference}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Source\+Reference} $\ast$ P\+D\+F\+Generator\+::dynamic\+Source\+Reference (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Nr, }
+\item[{double}]{abs\+X, }
+\item[{double}]{abs\+Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classPDFGenerator_a0ba0eeb79132d7fb790fc4c3dfa500aa}
+
+
+Definition at line 1778 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1779 \{
+1780     \textcolor{keywordflow}{if}  ( !synctex\_scanner )
+1781         \textcolor{keywordflow}{return} 0;
+1782 
+1783     \textcolor{keywordflow}{if} (\hyperlink{synctex__parser_8c_ad7c1af3278e15601db9d93c550dabe0c}{synctex\_edit\_query}(synctex\_scanner, pageNr + 1, absX * 72. / 
+      \hyperlink{classOkular_1_1Generator_ad3dd14822e3f5c9d1785008a207f34fb}{dpi}().width(), absY * 72. / \hyperlink{classOkular_1_1Generator_ad3dd14822e3f5c9d1785008a207f34fb}{dpi}().height()) > 0)
+1784     \{
+1785         \hyperlink{struct__synctex__node}{synctex\_node\_t} node;
+1786         \textcolor{comment}{// TODO what should we do if there is really more than one node?}
+1787         \textcolor{keywordflow}{while} (( node = \hyperlink{synctex__parser_8c_a3572d323fcab00f6638f81d073961826}{synctex\_next\_result}( synctex\_scanner ) ))
+1788         \{
+1789             \textcolor{keywordtype}{int} line = \hyperlink{synctex__parser_8c_ad5401e3051ae209e27e04befb90055d9}{synctex\_node\_line}(node);
+1790             \textcolor{keywordtype}{int} col = \hyperlink{synctex__parser_8c_a1bfb062d863d622ef4e9bdaa6bb065cd}{synctex\_node\_column}(node);
+1791             \textcolor{comment}{// column extraction does not seem to be implemented in synctex so far. set the SourceReference
+       default value.}
+1792             \textcolor{keywordflow}{if} ( col == -1 )
+1793             \{
+1794                 col = 0;
+1795             \}
+1796             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name = \hyperlink{synctex__parser_8c_abb91d6985477a11ae021525b74e9a4e0}{synctex\_scanner\_get\_name}( synctex\_scanner, 
+      \hyperlink{synctex__parser_8c_ab3d02b8057ef89ad67d5d21a733af79a}{synctex\_node\_tag}( node ) );
+1797 
+1798             \hyperlink{classOkular_1_1SourceReference}{Okular::SourceReference} * sourceRef = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1SourceReference}{Okular::SourceReference}( QFile::decodeName( name ), line, col );
+1799             \textcolor{keywordflow}{return} sourceRef;
+1800         \}
+1801     \}
+1802     \textcolor{keywordflow}{return} 0;
+1803 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_acd876f79b66423f05ae149e12f922aff}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!embedded\+Files@{embedded\+Files}}
+\index{embedded\+Files@{embedded\+Files}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{embedded\+Files}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Q\+List}$<$ {\bf Okular\+::\+Embedded\+File} $\ast$ $>$ $\ast$ P\+D\+F\+Generator\+::embedded\+Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_acd876f79b66423f05ae149e12f922aff}
+Returns the 'list of embedded files' object of the document or 0 if no list of embedded files is available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a1573d9a398806b5b36e7b4b4b175c726}{Okular\+::\+Generator}.
+
+
+
+Definition at line 853 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+854 \{
+855     \textcolor{keywordflow}{if} (docEmbeddedFilesDirty)
+856     \{
+857         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+858         \textcolor{keyword}{const} \hyperlink{classQList}{QList<Poppler::EmbeddedFile*>} &popplerFiles = pdfdoc->
+      embeddedFiles();
+859         \textcolor{keywordflow}{foreach}(Poppler::EmbeddedFile* pef, popplerFiles)
+860         \{
+861             docEmbeddedFiles.append(\textcolor{keyword}{new} \hyperlink{classPDFEmbeddedFile}{PDFEmbeddedFile}(pef));
+862         \}
+863         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+864 
+865         docEmbeddedFilesDirty = \textcolor{keyword}{false};
+866     \}
+867 
+868     \textcolor{keywordflow}{return} &docEmbeddedFiles;
+869 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a50e45d9fdd09e64435fd342b77575aa4}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!export\+Formats@{export\+Formats}}
+\index{export\+Formats@{export\+Formats}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{export\+Formats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Export\+Format\+::\+List} P\+D\+F\+Generator\+::export\+Formats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a50e45d9fdd09e64435fd342b77575aa4}
+Returns the list of additional supported export formats. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a74280fb193319daab955feac694123ac}{Okular\+::\+Generator}.
+
+
+
+Definition at line 1344 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1345 \{
+1346     \textcolor{keyword}{static} \hyperlink{classQList}{Okular::ExportFormat::List} formats;
+1347     \textcolor{keywordflow}{if} ( formats.isEmpty() ) \{
+1348         formats.append( \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{Okular::ExportFormat::standardFormat}( 
+      \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{Okular::ExportFormat::PlainText} ) );
+1349     \}
+1350 
+1351     \textcolor{keywordflow}{return} formats;
+1352 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a7a1a68fb2958335c8023e25265485288}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!export\+To@{export\+To}}
+\index{export\+To@{export\+To}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{export\+To}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::export\+To (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{const {\bf Okular\+::\+Export\+Format} \&}]{format}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a7a1a68fb2958335c8023e25265485288}
+This method is called to export the document in the given {\ttfamily format} and save it under the given {\ttfamily file\+Name}. The format must be one of the supported export formats. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9e78f37aafbfdaf04f76f4163c27aa5e}{Okular\+::\+Generator}.
+
+
+
+Definition at line 1354 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1355 \{
+1356     \textcolor{keywordflow}{if} ( format.\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}()->name() == QLatin1String( \textcolor{stringliteral}{"text/plain"} ) ) \{
+1357         QFile f( fileName );
+1358         \textcolor{keywordflow}{if} ( !f.open( QIODevice::WriteOnly ) )
+1359             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1360 
+1361         QTextStream ts( &f );
+1362         \textcolor{keywordtype}{int} \hyperlink{dvi_2util_8cpp_acc54804c2bc92eef873c373c37b69ff7}{num} = \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}();
+1363         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{dvi_2util_8cpp_acc54804c2bc92eef873c373c37b69ff7}{num}; ++i )
+1364         \{
+1365             QString text;
+1366             \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1367             Poppler::Page *pp = pdfdoc->page(i);
+1368             \textcolor{keywordflow}{if} (pp)
+1369             \{
+1370                 text = pp->text(QRect()).normalized(QString::NormalizationForm\_KC);
+1371             \}
+1372             \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1373             ts << text;
+1374             \textcolor{keyword}{delete} pp;
+1375         \}
+1376         f.close();
+1377 
+1378         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1379     \}
+1380 
+1381     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1382 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a0a10ed0a1e9120fcfef66d53be734a7d}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!fonts\+For\+Page@{fonts\+For\+Page}}
+\index{fonts\+For\+Page@{fonts\+For\+Page}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{fonts\+For\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Font\+Info\+::\+List} P\+D\+F\+Generator\+::fonts\+For\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a0a10ed0a1e9120fcfef66d53be734a7d}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a75ae286341000fb8f30d383d42760ac2}{Okular\+::\+Generator}.
+
+
+
+Definition at line 820 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+821 \{
+822     \hyperlink{classQList}{Okular::FontInfo::List} list;
+823 
+824     \textcolor{keywordflow}{if} ( page != nextFontPage )
+825         \textcolor{keywordflow}{return} list;
+826 
+827     \hyperlink{classQList}{QList<Poppler::FontInfo>} fonts;
+828     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+829     pdfdoc->scanForFonts( 1, &fonts );
+830     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+831 
+832     \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} Poppler::FontInfo &font, fonts)
+833     \{
+834         \hyperlink{classOkular_1_1FontInfo}{Okular::FontInfo} of;
+835         of.\hyperlink{classOkular_1_1FontInfo_abd20d06c554455aee07624a6b3917e4e}{setName}( font.name() );
+836         of.\hyperlink{classOkular_1_1FontInfo_a3e4ff54705b7a349743e4634dfc373a8}{setType}( convertPopplerFontInfoTypeToOkularFontInfoType( font.type() ) );
+837         of.\hyperlink{classOkular_1_1FontInfo_af7ce75552d5064e350bf9a2e02dbffd0}{setEmbedType}( embedTypeForPopplerFontInfo( font) );
+838         of.\hyperlink{classOkular_1_1FontInfo_aa18933d938e0a5ac217f8a48acd88bca}{setFile}( font.file() );
+839         of.\hyperlink{classOkular_1_1FontInfo_a4008f39b90867e3d908c7345db2e636d}{setCanBeExtracted}( of.\hyperlink{classOkular_1_1FontInfo_ac5eddd02cc975110f98e3b3862a1d13e}{embedType}() != 
+      \hyperlink{classOkular_1_1FontInfo_a549f8b2d829aead40f868ba5a6bf427faf441cb538942a751a582d8fb5e47398d}{Okular::FontInfo::NotEmbedded} );
+840 
+841         QVariant nativeId;
+842         nativeId.setValue( font );
+843         of.\hyperlink{classOkular_1_1FontInfo_a7d453c6486badd040d83383f42651c35}{setNativeId}( nativeId );
+844 
+845         list.append( of );
+846     \}
+847 
+848     ++nextFontPage;
+849 
+850     \textcolor{keywordflow}{return} list;
+851 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a205c5054933ee0df179f27bb6cf3a70e}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!generate\+Document\+Info@{generate\+Document\+Info}}
+\index{generate\+Document\+Info@{generate\+Document\+Info}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{generate\+Document\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Info} $\ast$ P\+D\+F\+Generator\+::generate\+Document\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a205c5054933ee0df179f27bb6cf3a70e}
+Returns the general information object of the document or 0 if no information are available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9993dd0a2415499e23d8394e7a447e98}{Okular\+::\+Generator}.
+
+
+
+Definition at line 679 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+680 \{
+681     \textcolor{keywordflow}{if} ( docInfoDirty )
+682     \{
+683         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+684 
+685         docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, \textcolor{stringliteral}{"application/pdf"} );
+686 
+687         \textcolor{keywordflow}{if} ( pdfdoc )
+688         \{
+689             \textcolor{comment}{// compile internal structure reading properties from PDFDoc}
+690             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ae400626d63f14b61c55bd22aca9481e0}{Okular::DocumentInfo::Title}, pdfdoc->info(\textcolor{stringliteral}{"Title"}) )
+      ;
+691             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a19478a99f97624500aa2d050fe7e1ad8}{Okular::DocumentInfo::Subject}, pdfdoc->info(\textcolor{stringliteral}{"
+      Subject"}) );
+692             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a1010574d070b1925e030c20fef3e7a35}{Okular::DocumentInfo::Author}, pdfdoc->info(\textcolor{stringliteral}{"Author"}
+      ) );
+693             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a833799005454e6c7e389dcceddd42b19}{Okular::DocumentInfo::Keywords}, pdfdoc->info(\textcolor{stringliteral}{"
+      Keywords"}) );
+694             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ab361aa9681b157d8d81e52f440bf646f}{Okular::DocumentInfo::Creator}, pdfdoc->info(\textcolor{stringliteral}{"
+      Creator"}) );
+695             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a4781bb7ac85d4fe7bdc448097aa1c48c}{Okular::DocumentInfo::Producer}, pdfdoc->info(\textcolor{stringliteral}{"
+      Producer"}) );
+696             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a58a72aeacd3cb08e85d0f9f19b2fe83a}{Okular::DocumentInfo::CreationDate},
+697                          KGlobal::locale()->formatDateTime( pdfdoc->date(\textcolor{stringliteral}{"CreationDate"}), KLocale::LongDate
+      , true ) );
+698             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a0191dfd9c2c5b7f210a641b082a23969}{Okular::DocumentInfo::ModificationDate},
+699                          KGlobal::locale()->formatDateTime( pdfdoc->date(\textcolor{stringliteral}{"ModDate"}), KLocale::LongDate, 
+      true ) );
+700 
+701             \textcolor{keywordtype}{int} major, minor;
+702             pdfdoc->getPdfVersion(&major, &minor);
+703             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"format"}, i18nc( \textcolor{stringliteral}{"PDF v. <version>"}, \textcolor{stringliteral}{"PDF v. %1.%2"},
+704                          major, minor ), i18n( \textcolor{stringliteral}{"Format"} ) );
+705             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"encryption"}, pdfdoc->isEncrypted() ? i18n( \textcolor{stringliteral}{"Encrypted"} ) : i18n( \textcolor{stringliteral}{"Unencrypted"}
+       ),
+706                          i18n(\textcolor{stringliteral}{"Security"}) );
+707             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"optimization"}, pdfdoc->isLinearized() ? i18n( \textcolor{stringliteral}{"Yes"} ) : i18n( \textcolor{stringliteral}{"No"} ),
+708                          i18n(\textcolor{stringliteral}{"Optimized"}) );
+709 
+710             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ac4706afb6f17aac2a6da24699cbd7360}{Okular::DocumentInfo::Pages}, QString::number( pdfdoc
+      ->numPages() ) );
+711         \}
+712         \textcolor{keywordflow}{else}
+713         \{
+714             \textcolor{comment}{// TODO not sure one can reach here, check and if it is not possible, remove the code}
+715             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ae400626d63f14b61c55bd22aca9481e0}{Okular::DocumentInfo::Title}, i18n(\textcolor{stringliteral}{"Unknown"}) );
+716             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a19478a99f97624500aa2d050fe7e1ad8}{Okular::DocumentInfo::Subject}, i18n(\textcolor{stringliteral}{"Unknown"}) );
+717             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a1010574d070b1925e030c20fef3e7a35}{Okular::DocumentInfo::Author}, i18n(\textcolor{stringliteral}{"Unknown"}) );
+718             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a833799005454e6c7e389dcceddd42b19}{Okular::DocumentInfo::Keywords}, i18n(\textcolor{stringliteral}{"Unknown"}) )
+      ;
+719             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ab361aa9681b157d8d81e52f440bf646f}{Okular::DocumentInfo::Creator}, i18n(\textcolor{stringliteral}{"Unknown"}) );
+720             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a4781bb7ac85d4fe7bdc448097aa1c48c}{Okular::DocumentInfo::Producer}, i18n(\textcolor{stringliteral}{"Unknown"}) )
+      ;
+721             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a58a72aeacd3cb08e85d0f9f19b2fe83a}{Okular::DocumentInfo::CreationDate}, i18n(\textcolor{stringliteral}{"
+      Unknown Date"}) );
+722             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a0191dfd9c2c5b7f210a641b082a23969}{Okular::DocumentInfo::ModificationDate}, 
+      i18n(\textcolor{stringliteral}{"Unknown Date"}) );
+723 
+724             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"format"}, \textcolor{stringliteral}{"PDF"}, i18n( \textcolor{stringliteral}{"Format"} ) );
+725             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"encryption"}, i18n( \textcolor{stringliteral}{"Unknown Encryption"} ), i18n( \textcolor{stringliteral}{"Security"} ) );
+726             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"optimization"}, i18n( \textcolor{stringliteral}{"Unknown Optimization"} ), i18n( \textcolor{stringliteral}{"Optimized"} ) );
+727 
+728             docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ac4706afb6f17aac2a6da24699cbd7360}{Okular::DocumentInfo::Pages}, i18n(\textcolor{stringliteral}{"Unknown"}) );
+729         \}
+730         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+731 
+732         \textcolor{comment}{// if pdfdoc is valid then we cached good info -> don't cache them again}
+733         \textcolor{keywordflow}{if} ( pdfdoc )
+734             docInfoDirty = \textcolor{keyword}{false};
+735     \}
+736     \textcolor{keywordflow}{return} &docInfo;
+737 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a9190f8cb03a628fd4bd097fc13c35545}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!generate\+Document\+Synopsis@{generate\+Document\+Synopsis}}
+\index{generate\+Document\+Synopsis@{generate\+Document\+Synopsis}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{generate\+Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Synopsis} $\ast$ P\+D\+F\+Generator\+::generate\+Document\+Synopsis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a9190f8cb03a628fd4bd097fc13c35545}
+Returns the 'table of content' object of the document or 0 if no table of content is available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a1f8b31c19d7a5101cadf3fe3186ab0f1}{Okular\+::\+Generator}.
+
+
+
+Definition at line 739 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+740 \{
+741     \textcolor{keywordflow}{if} ( !docSynopsisDirty )
+742         \textcolor{keywordflow}{return} &docSyn;
+743 
+744     \textcolor{keywordflow}{if} ( !pdfdoc )
+745         \textcolor{keywordflow}{return} NULL;
+746 
+747     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+748     QDomDocument *toc = pdfdoc->toc();
+749     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+750     \textcolor{keywordflow}{if} ( !toc )
+751         \textcolor{keywordflow}{return} NULL;
+752 
+753     addSynopsisChildren(toc, &docSyn);
+754     \textcolor{keyword}{delete} toc;
+755 
+756     docSynopsisDirty = \textcolor{keyword}{false};
+757     \textcolor{keywordflow}{return} &docSyn;
+758 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a30b806bf421d9332bb2a6fb6ed3ce267}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!image@{image}}
+\index{image@{image}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image P\+D\+F\+Generator\+::image (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a30b806bf421d9332bb2a6fb6ed3ce267}
+Returns the image of the page as specified in the passed pixmap {\ttfamily request}.
+
+\begin{DoxyWarning}{Warning}
+this method may be executed in its own separated thread if the \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} is enabled! 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a6712c8d3c2759c3a1fcacbd503d3286e}{Okular\+::\+Generator}.
+
+
+
+Definition at line 896 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+897 \{
+898     \textcolor{comment}{// debug requests to this (xpdf) generator}
+899     \textcolor{comment}{//kDebug(PDFDebug) << "id: " << request->id << " is requesting " << (request->async ? "ASYNC" : "sync")
+       <<  " pixmap for page " << request->page->number() << " [" << request->width << " x " << request->height <<
+       "].";}
+900 
+901     \textcolor{comment}{// compute dpi used to get an image with desired width and height}
+902     \hyperlink{classOkular_1_1Page}{Okular::Page} * page = request->\hyperlink{classOkular_1_1PixmapRequest_a83b5e81f2e908e70f3c19a0a3c07fab3}{page}();
+903 
+904     \textcolor{keywordtype}{double} pageWidth = page->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}(),
+905            pageHeight = page->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+906 
+907     \textcolor{keywordflow}{if} ( page->\hyperlink{classOkular_1_1Page_a731947e32744bdcda791d22a2dc88726}{rotation}() % 2 )
+908         \hyperlink{htmlextension_8h_a6aa0d61b42274f15f4a693b0c7bea484}{qSwap}( pageWidth, pageHeight );
+909 
+910     qreal fakeDpiX = request->width() / pageWidth * \hyperlink{classOkular_1_1Generator_ad3dd14822e3f5c9d1785008a207f34fb}{dpi}().width();
+911     qreal fakeDpiY = request->height() / pageHeight * \hyperlink{classOkular_1_1Generator_ad3dd14822e3f5c9d1785008a207f34fb}{dpi}().height();
+912 
+913     \textcolor{comment}{// generate links rects only the first time}
+914     \textcolor{keywordtype}{bool} genObjectRects = !rectsGenerated.at( page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() );
+915 
+916     \textcolor{comment}{// 0. LOCK [waits for the thread end]}
+917     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+918 
+919     \textcolor{comment}{// 1. Set OutputDev parameters and Generate contents}
+920     \textcolor{comment}{// note: thread safety is set on 'false' for the GUI (this) thread}
+921     Poppler::Page *p = pdfdoc->page(page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}());
+922 
+923     \textcolor{comment}{// 2. Take data from outputdev and attach it to the Page}
+924     QImage img;
+925     \textcolor{keywordflow}{if} (p)
+926     \{
+927         \textcolor{keywordflow}{if} ( request->isTile() )
+928         \{
+929             QRect rect = request->normalizedRect().geometry( request->width(), request->height() );
+930             img = p->renderToImage( fakeDpiX, fakeDpiY, rect.x(), rect.y(), rect.width(), rect.height(), 
+      Poppler::Page::Rotate0 );
+931         \}
+932         \textcolor{keywordflow}{else}
+933         \{
+934             img = p->renderToImage(fakeDpiX, fakeDpiY, -1, -1, -1, -1, Poppler::Page::Rotate0 );
+935         \}
+936     \}
+937     \textcolor{keywordflow}{else}
+938     \{
+939         img = QImage( request->width(), request->height(), QImage::Format\_Mono );
+940         img.fill( Qt::white );
+941     \}
+942 
+943     \textcolor{keywordflow}{if} ( p && genObjectRects )
+944     \{
+945         \textcolor{comment}{// TODO previously we extracted Image type rects too, but that needed porting to poppler}
+946         \textcolor{comment}{// and as we are not doing anything with Image type rects i did not port it, have a look at}
+947         \textcolor{comment}{// dead gp\_outputdev.cpp on image extraction}
+948         page->\hyperlink{classOkular_1_1Page_af8c152286039a342f0b547b5efa79b9a}{setObjectRects}( generateLinks(p->links()) );
+949         rectsGenerated[ request->page()->number() ] = \textcolor{keyword}{true};
+950 
+951         resolveMediaLinkReferences( page );
+952     \}
+953 
+954     \textcolor{comment}{// 3. UNLOCK [re-enables shared access]}
+955     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+956 
+957     \textcolor{keyword}{delete} p;
+958 
+959     \textcolor{keywordflow}{return} img;
+960 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_ae60ab12202cf73cb8dba06e50b144460}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!is\+Allowed@{is\+Allowed}}
+\index{is\+Allowed@{is\+Allowed}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{is\+Allowed}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::is\+Allowed (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Permission}}]{action}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_ae60ab12202cf73cb8dba06e50b144460}
+This method returns whether given {\ttfamily action} (Permission) is allowed in this document. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a19c839d0ce232775f4fe51af85e822b1}{Okular\+::\+Generator}.
+
+
+
+Definition at line 871 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+872 \{
+873     \textcolor{keywordtype}{bool} b = \textcolor{keyword}{true};
+874     \textcolor{keywordflow}{switch} ( permission )
+875     \{
+876         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a3601f4e702453ddf1125476dd6e7577ba6b449d4f1533d6531535a6ed72e3bbce}{Okular::AllowModify}:
+877             b = pdfdoc->okToChange();
+878             \textcolor{keywordflow}{break};
+879         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a3601f4e702453ddf1125476dd6e7577ba36a60050e67a446a5ff61aac6756718c}{Okular::AllowCopy}:
+880             b = pdfdoc->okToCopy();
+881             \textcolor{keywordflow}{break};
+882         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a3601f4e702453ddf1125476dd6e7577ba92e90d638393c1cfd7ead353df6822a4}{Okular::AllowPrint}:
+883             b = pdfdoc->okToPrint();
+884             \textcolor{keywordflow}{break};
+885         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a3601f4e702453ddf1125476dd6e7577ba6c10962833bd58ea0f8d63e448eba8e9}{Okular::AllowNotes}:
+886             b = pdfdoc->okToAddNotes();
+887             \textcolor{keywordflow}{break};
+888         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a3601f4e702453ddf1125476dd6e7577ba451db87f0977de39b47316b878722136}{Okular::AllowFillForms}:
+889             b = pdfdoc->okToFillForm();
+890             \textcolor{keywordflow}{break};
+891         \textcolor{keywordflow}{default}: ;
+892     \}
+893     \textcolor{keywordflow}{return} b;
+894 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_ab932e252efb8612a72324bda2c84e13c}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!load\+Document@{load\+Document}}
+\index{load\+Document@{load\+Document}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{load\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::load\+Document (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_ab932e252efb8612a72324bda2c84e13c}
+Loads the document with the given {\ttfamily file\+Name} and fills the {\ttfamily pages\+Vector} with the parsed pages.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{Okular\+::\+Generator}.
+
+
+
+Definition at line 456 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+457 \{
+458 \textcolor{preprocessor}{#ifndef NDEBUG}
+459     \textcolor{keywordflow}{if} ( pdfdoc )
+460     \{
+461         kDebug(\hyperlink{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}{PDFDebug}) << \textcolor{stringliteral}{"PDFGenerator: multiple calls to loadDocument. Check it."};
+462         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+463     \}
+464 \textcolor{preprocessor}{#endif}
+465     \textcolor{comment}{// create PDFDoc for the given file}
+466     pdfdoc = Poppler::Document::load( filePath, 0, 0 );
+467     \textcolor{keywordtype}{bool} success = init(pagesVector, filePath.section(\textcolor{charliteral}{'/'}, -1, -1));
+468     \textcolor{keywordflow}{if} (success)
+469     \{
+470         \textcolor{comment}{// no need to check for the existence of a synctex file, no parser will be}
+471         \textcolor{comment}{// created if none exists}
+472         initSynctexParser(filePath);
+473         \textcolor{keywordflow}{if} ( !synctex\_scanner && QFile::exists(filePath + QLatin1String( \textcolor{stringliteral}{"sync"} ) ) )
+474         \{
+475             loadPdfSync(filePath, pagesVector);
+476         \}
+477     \}
+478     \textcolor{keywordflow}{return} success;
+479 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a86fd391705e822ad399f8d418237a622}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!load\+Document\+From\+Data@{load\+Document\+From\+Data}}
+\index{load\+Document\+From\+Data@{load\+Document\+From\+Data}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{load\+Document\+From\+Data}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::load\+Document\+From\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{file\+Data, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a86fd391705e822ad399f8d418237a622}
+Loads the document from the raw data {\ttfamily file\+Data} and fills the {\ttfamily pages\+Vector} with the parsed pages.
+
+\begin{DoxyNote}{Note}
+the Generator has to have the feature \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1a4bb4a7fe37342df79c702b4b2aab8a}{Read\+Raw\+Data} enabled
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_ad65d9a0e78c500475bb403ab0ffd640c}{Okular\+::\+Generator}.
+
+
+
+Definition at line 481 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+482 \{
+483 \textcolor{preprocessor}{#ifndef NDEBUG}
+484     \textcolor{keywordflow}{if} ( pdfdoc )
+485     \{
+486         kDebug(\hyperlink{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}{PDFDebug}) << \textcolor{stringliteral}{"PDFGenerator: multiple calls to loadDocument. Check it."};
+487         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+488     \}
+489 \textcolor{preprocessor}{#endif}
+490     \textcolor{comment}{// create PDFDoc for the given file}
+491     pdfdoc = Poppler::Document::loadFromData( fileData, 0, 0 );
+492     \textcolor{keywordflow}{return} init(pagesVector, QString());
+493 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a73ba84528e0f5eefc41aa958e2b2fcd3}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!load\+Pages@{load\+Pages}}
+\index{load\+Pages@{load\+Pages}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{load\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void P\+D\+F\+Generator\+::load\+Pages (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector, }
+\item[{int}]{rotation = {\ttfamily -\/1}, }
+\item[{bool}]{clear = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classPDFGenerator_a73ba84528e0f5eefc41aa958e2b2fcd3}
+
+
+Definition at line 616 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+617 \{
+618     \textcolor{comment}{// TODO XPDF 3.01 check}
+619     \textcolor{keyword}{const} \textcolor{keywordtype}{int} count = pagesVector.count();
+620     \textcolor{keywordtype}{double} w = 0, h = 0;
+621     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < count ; i++ )
+622     \{
+623         \textcolor{comment}{// get xpdf page}
+624         Poppler::Page * p = pdfdoc->page( i );
+625         \hyperlink{classOkular_1_1Page}{Okular::Page} * page;
+626         \textcolor{keywordflow}{if} (p)
+627         \{
+628             \textcolor{keyword}{const} QSizeF pSize = p->pageSizeF();
+629             w = pSize.\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}() / 72.0 * \hyperlink{classOkular_1_1Generator_ad3dd14822e3f5c9d1785008a207f34fb}{dpi}().width();
+630             h = pSize.height() / 72.0 * \hyperlink{classOkular_1_1Generator_ad3dd14822e3f5c9d1785008a207f34fb}{dpi}().height();
+631             \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Okular::Rotation} orientation = \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0};
+632             \textcolor{keywordflow}{switch} (p->orientation())
+633             \{
+634             \textcolor{keywordflow}{case} Poppler::Page::Landscape: orientation = \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a72f281f9a68957920dc968695de4363a}{Okular::Rotation90}; \textcolor{keywordflow}{break};
+635             \textcolor{keywordflow}{case} Poppler::Page::UpsideDown: orientation = \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a95c9d62f7745cb6bf5895007070e8ee9}{Okular::Rotation180}; \textcolor{keywordflow}{break};
+636             \textcolor{keywordflow}{case} Poppler::Page::Seascape: orientation = \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a01963dd547f5723a6b3975ae67090390}{Okular::Rotation270}; \textcolor{keywordflow}{break};
+637             \textcolor{keywordflow}{case} Poppler::Page::Portrait: orientation = \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0}; \textcolor{keywordflow}{break};
+638             \}
+639             \textcolor{keywordflow}{if} (rotation % 2 == 1)
+640             \hyperlink{htmlextension_8h_a6aa0d61b42274f15f4a693b0c7bea484}{qSwap}(w,h);
+641             \textcolor{comment}{// init a Okular::page, add transition and annotation information}
+642             page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( i, w, h, orientation );
+643             addTransition( p, page );
+644             \textcolor{keywordflow}{if} ( \textcolor{keyword}{true} ) \textcolor{comment}{//TODO real check}
+645             addAnnotations( p, page );
+646             Poppler::Link * tmplink = p->action( Poppler::Page::Opening );
+647             \textcolor{keywordflow}{if} ( tmplink )
+648             \{
+649                 page->\hyperlink{classOkular_1_1Page_add2a5b0b8218d36229a208f85b9904db}{setPageAction}( \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}{Okular::Page::Opening}, 
+      \hyperlink{generator__pdf_8cpp_ac8496a01bf2593a90b5063709cff7d99}{createLinkFromPopplerLink}( tmplink ) );
+650             \}
+651             tmplink = p->action( Poppler::Page::Closing );
+652             \textcolor{keywordflow}{if} ( tmplink )
+653             \{
+654                 page->\hyperlink{classOkular_1_1Page_add2a5b0b8218d36229a208f85b9904db}{setPageAction}( \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}{Okular::Page::Closing}, 
+      \hyperlink{generator__pdf_8cpp_ac8496a01bf2593a90b5063709cff7d99}{createLinkFromPopplerLink}( tmplink ) );
+655             \}
+656             page->\hyperlink{classOkular_1_1Page_aed91ead8670fb0784a95e949804945f8}{setDuration}( p->duration() );
+657             page->\hyperlink{classOkular_1_1Page_ab81a90b1fb9d3b52f5df5c2b26ceca27}{setLabel}( p->label() );
+658 
+659             addFormFields( p, page );
+660 \textcolor{comment}{//        kWarning(PDFDebug).nospace() << page->width() << "x" << page->height();}
+661 
+662 \textcolor{preprocessor}{#ifdef PDFGENERATOR\_DEBUG}
+663             kDebug(\hyperlink{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}{PDFDebug}) << \textcolor{stringliteral}{"load page"} << i << \textcolor{stringliteral}{"with rotation"} << rotation << \textcolor{stringliteral}{"and orientation
+      "} << orientation;
+664 \textcolor{preprocessor}{#endif}
+665             \textcolor{keyword}{delete} p;
+666 
+667             \textcolor{keywordflow}{if} (clear && pagesVector[i])
+668                 \textcolor{keyword}{delete} pagesVector[i];
+669         \}
+670         \textcolor{keywordflow}{else}
+671         \{
+672             page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( i, defaultPageWidth, defaultPageHeight, 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} );
+673         \}
+674         \textcolor{comment}{// set the Okular::page at the right position in document's pages vector}
+675         pagesVector[i] = page;
+676     \}
+677 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a1ec53a069478b38389ed689e5881f98d}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!meta\+Data@{meta\+Data}}
+\index{meta\+Data@{meta\+Data}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant P\+D\+F\+Generator\+::meta\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+Variant \&}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a1ec53a069478b38389ed689e5881f98d}
+This method returns the meta data of the given {\ttfamily key} with the given {\ttfamily option} of the document. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a74f6b91e31ead5b572ffb9fb6b06c188}{Okular\+::\+Generator}.
+
+
+
+Definition at line 1207 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1208 \{
+1209     \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"StartFullScreen"} )
+1210     \{
+1211         QMutexLocker ml(\hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}());
+1212         \textcolor{comment}{// asking for the 'start in fullscreen mode' (pdf property)}
+1213         \textcolor{keywordflow}{if} ( pdfdoc->pageMode() == Poppler::Document::FullScreen )
+1214             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1215     \}
+1216     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"NamedViewport"} && !option.toString().isEmpty() )
+1217     \{
+1218         \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport;
+1219         QString optionString = option.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}();
+1220 
+1221         \textcolor{comment}{// if option starts with "src:" assume that we are handling a}
+1222         \textcolor{comment}{// source reference}
+1223         \textcolor{keywordflow}{if} ( optionString.startsWith( \textcolor{stringliteral}{"src:"}, Qt::CaseInsensitive ) )
+1224         \{
+1225             fillViewportFromSourceReference( viewport, optionString );
+1226         \}
+1227         \textcolor{keywordflow}{else}
+1228         \{
+1229             \textcolor{comment}{// asking for the page related to a 'named link destination'. the}
+1230             \textcolor{comment}{// option is the link name. @see addSynopsisChildren.}
+1231             \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1232             Poppler::LinkDestination *ld = pdfdoc->linkDestination( optionString );
+1233             \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1234             \textcolor{keywordflow}{if} ( ld )
+1235             \{
+1236                 fillViewportFromLinkDestination( viewport, *ld );
+1237             \}
+1238             \textcolor{keyword}{delete} ld;
+1239         \}
+1240         \textcolor{keywordflow}{if} ( viewport.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} >= 0 )
+1241             \textcolor{keywordflow}{return} viewport.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}();
+1242     \}
+1243     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"DocumentTitle"} )
+1244     \{
+1245         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1246         QString title = pdfdoc->info( \textcolor{stringliteral}{"Title"} );
+1247         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1248         \textcolor{keywordflow}{return} title;
+1249     \}
+1250     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"OpenTOC"} )
+1251     \{
+1252         QMutexLocker ml(\hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}());
+1253         \textcolor{keywordflow}{if} ( pdfdoc->pageMode() == Poppler::Document::UseOutlines )
+1254             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1255     \}
+1256     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"DocumentScripts"} && option.toString() == \textcolor{stringliteral}{"JavaScript"} )
+1257     \{
+1258         QMutexLocker ml(\hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}());
+1259         \textcolor{keywordflow}{return} pdfdoc->scripts();
+1260     \}
+1261     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"HasUnsupportedXfaForm"} )
+1262     \{
+1263 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+1264         QMutexLocker ml(\hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}());
+1265         \textcolor{keywordflow}{return} pdfdoc->formType() == Poppler::Document::XfaForm;
+1266 \textcolor{preprocessor}{#else}
+1267         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1268 \textcolor{preprocessor}{#endif}
+1269     \}
+1270     \textcolor{keywordflow}{return} QVariant();
+1271 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_ac59b305492d467a8057a72699f77a606}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!pages\+Size\+Metric@{pages\+Size\+Metric}}
+\index{pages\+Size\+Metric@{pages\+Size\+Metric}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{pages\+Size\+Metric}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Size\+Metric} P\+D\+F\+Generator\+::pages\+Size\+Metric (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classPDFGenerator_ac59b305492d467a8057a72699f77a606}
+This method returns the metric of the page size. Default is \hyperlink{classOkular_1_1Generator_aa09b8aeb5398ea5f07644f35bd5934f3af29abc1614145cb6d332f22f8e1131d6}{None}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_add5b37f6ed7b6ce0b3bc72f72d26ec26}{Okular\+::\+Generator}.
+
+
+
+Definition at line 71 of file generator\+\_\+pdf.\+h.
+
+
+\begin{DoxyCode}
+71 \{ \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Generator_aa09b8aeb5398ea5f07644f35bd5934f3aabd551c49993c46e37a9b5772144ce7d}{Pixels}; \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a797d52d48229d5725375e21d56c3c949}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!print@{print}}
+\index{print@{print}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::print (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a797d52d48229d5725375e21d56c3c949}
+This method is called to print the document to the given {\ttfamily printer}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_aa786d406a1b0db6679a3bc62bbe2dc82}{Okular\+::\+Generator}.
+
+
+
+Definition at line 1076 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1077 \{
+1078 \textcolor{preprocessor}{#ifdef Q\_WS\_WIN}
+1079     QPainter painter;
+1080     painter.begin(&printer);
+1081 
+1082     \hyperlink{classQList}{QList<int>} pageList = \hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{Okular::FilePrinter::pageList}( printer, 
+      pdfdoc->numPages(),
+1083                                                          \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->
+      \hyperlink{classOkular_1_1Document_a42ec374d73794bf56d7e7b11f1f56319}{currentPage}() + 1,
+1084                                                          \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->
+      \hyperlink{classOkular_1_1Document_a01de5a7212e14772e647a8e1caa07627}{bookmarkedPageList}() );
+1085     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < pageList.count(); ++i )
+1086     \{
+1087         \textcolor{keywordflow}{if} ( i != 0 )
+1088             printer.newPage();
+1089 
+1090         \textcolor{keyword}{const} \textcolor{keywordtype}{int} page = pageList.at( i ) - 1;
+1091         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1092         Poppler::Page *pp = pdfdoc->page( page );
+1093         \textcolor{keywordflow}{if} (pp)
+1094         \{
+1095             QImage img = pp->renderToImage(  printer.physicalDpiX(), printer.physicalDpiY() );
+1096             painter.drawImage( painter.window(), img, QRectF(0, 0, img.width(), img.height()) );
+1097             \textcolor{keyword}{delete} pp;
+1098         \}
+1099         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1100     \}
+1101     painter.end();
+1102     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1103 
+1104 \textcolor{preprocessor}{#else}
+1105 \textcolor{preprocessor}{#ifdef DUMMY\_QPRINTER\_COPY}
+1106     \textcolor{comment}{// Get the real page size to pass to the ps generator}
+1107     QPrinter dummy( QPrinter::PrinterResolution );
+1108     dummy.setFullPage( \textcolor{keyword}{true} );
+1109     dummy.setOrientation( printer.orientation() );
+1110     dummy.setPageSize( printer.pageSize() );
+1111     dummy.setPaperSize( printer.paperSize( QPrinter::Millimeter ), QPrinter::Millimeter );
+1112     \textcolor{keywordtype}{int} width = dummy.width();
+1113     \textcolor{keywordtype}{int} height = dummy.height();
+1114 \textcolor{preprocessor}{#else}
+1115     \textcolor{keywordtype}{int} width = printer.width();
+1116     \textcolor{keywordtype}{int} height = printer.height();
+1117 \textcolor{preprocessor}{#endif}
+1118 
+1119     \textcolor{keywordflow}{if} (width <= 0 || height <= 0)
+1120     \{
+1121         lastPrintError = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a48f3e94e2e31e0b7d7d8d40bcc25f504}{InvalidPageSizePrintError};
+1122         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1123     \}
+1124 
+1125     \textcolor{comment}{// Create the tempfile to send to FilePrinter, which will manage the deletion}
+1126     KTemporaryFile tf;
+1127     tf.setSuffix( \textcolor{stringliteral}{".ps"} );
+1128     \textcolor{keywordflow}{if} ( !tf.open() )
+1129     \{
+1130         lastPrintError = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61adbece3d0a13cec6d66bbc310be83da49}{TemporaryFileOpenPrintError};
+1131         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1132     \}
+1133     QString tempfilename = tf.fileName();
+1134 
+1135     \textcolor{comment}{// Generate the list of pages to be printed as selected in the print dialog}
+1136     \hyperlink{classQList}{QList<int>} pageList = \hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{Okular::FilePrinter::pageList}( printer, 
+      pdfdoc->numPages(),
+1137                                                          \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->
+      \hyperlink{classOkular_1_1Document_a42ec374d73794bf56d7e7b11f1f56319}{currentPage}() + 1,
+1138                                                          \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->
+      \hyperlink{classOkular_1_1Document_a01de5a7212e14772e647a8e1caa07627}{bookmarkedPageList}() );
+1139 
+1140     \textcolor{comment}{// TODO rotation}
+1141 
+1142     tf.setAutoRemove(\textcolor{keyword}{false});
+1143 
+1144     QString pstitle = \hyperlink{classPDFGenerator_a1ec53a069478b38389ed689e5881f98d}{metaData}(QLatin1String(\textcolor{stringliteral}{"Title"}), QVariant()).toString();
+1145     \textcolor{keywordflow}{if} ( pstitle.trimmed().isEmpty() )
+1146     \{
+1147         pstitle = \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_acb6f05a191623dafbdf5d4788dd98fed}{currentDocument}().fileName();
+1148     \}
+1149 
+1150     \textcolor{keywordtype}{bool} printAnnots = \textcolor{keyword}{true};
+1151     \textcolor{keywordtype}{bool} forceRasterize = \textcolor{keyword}{false};
+1152     \textcolor{keywordflow}{if} ( pdfOptionsPage )
+1153     \{
+1154         printAnnots = pdfOptionsPage->printAnnots();
+1155         forceRasterize = pdfOptionsPage->printForceRaster();
+1156     \}
+1157 
+1158     Poppler::PSConverter *psConverter = pdfdoc->psConverter();
+1159 
+1160     psConverter->setOutputDevice(&tf);
+1161 
+1162     psConverter->setPageList(pageList);
+1163     psConverter->setPaperWidth(width);
+1164     psConverter->setPaperHeight(height);
+1165     psConverter->setRightMargin(0);
+1166     psConverter->setBottomMargin(0);
+1167     psConverter->setLeftMargin(0);
+1168     psConverter->setTopMargin(0);
+1169     psConverter->setStrictMargins(\textcolor{keyword}{false});
+1170     psConverter->setForceRasterize(forceRasterize);
+1171     psConverter->setTitle(pstitle);
+1172 
+1173 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_20}
+1174     \textcolor{keywordflow}{if} (!printAnnots)
+1175         psConverter->setPSOptions(psConverter->psOptions() | Poppler::PSConverter::HideAnnotations );
+1176 \textcolor{preprocessor}{#endif}
+1177 
+1178     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1179     \textcolor{keywordflow}{if} (psConverter->convert())
+1180     \{
+1181         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1182         \textcolor{keyword}{delete} psConverter;
+1183         tf.close();
+1184         \textcolor{keywordtype}{int} ret = \hyperlink{classOkular_1_1FilePrinter_abd5ec189d80d15983c49f91f7e1d38c1}{Okular::FilePrinter::printFile}( printer, tempfilename,
+1185                                                   \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->orientation(),
+1186                                                   
+      \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{Okular::FilePrinter::SystemDeletesFiles},
+1187                                                   
+      \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}{Okular::FilePrinter::ApplicationSelectsPages},
+1188                                                   \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->bookmarkedPageRange() );
+1189 
+1190         lastPrintError = \hyperlink{classOkular_1_1FilePrinter_aee2cfc9da47e38eb986a7f42dd774b41}{Okular::FilePrinter::printError}( ret );
+1191 
+1192         \textcolor{keywordflow}{return} (lastPrintError == \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a6186f0488397997c9a950b5e5c1b472d}{NoPrintError});
+1193     \}
+1194     \textcolor{keywordflow}{else}
+1195     \{
+1196         lastPrintError = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61aec9027f4e5cfdae52f83de14e52dde41}{FileConversionPrintError};
+1197         \textcolor{keyword}{delete} psConverter;
+1198         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1199     \}
+1200 
+1201     tf.close();
+1202 
+1203     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1204 \textcolor{preprocessor}{#endif}
+1205 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_afc09c9448b0942c506ca058ab01e6b36}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!print\+Configuration\+Widget@{print\+Configuration\+Widget}}
+\index{print\+Configuration\+Widget@{print\+Configuration\+Widget}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{print\+Configuration\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ P\+D\+F\+Generator\+::print\+Configuration\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_afc09c9448b0942c506ca058ab01e6b36}
+Builds and returns a new printing configuration widget.
+
+\begin{DoxyNote}{Note}
+don't keep a pointer to the new constructed widget, as it will be handled elsewhere (in the \hyperlink{namespaceOkular}{Okular} K\+Part) 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classOkular_1_1PrintInterface_abb520895dfde25d3c0befac5c0f77b80}{Okular\+::\+Print\+Interface}.
+
+
+
+Definition at line 1866 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1867 \{
+1868     \textcolor{keywordflow}{if} ( !pdfOptionsPage )
+1869     \{
+1870         \textcolor{keyword}{const\_cast<}\hyperlink{classPDFGenerator}{PDFGenerator}*\textcolor{keyword}{>}(\textcolor{keyword}{this})->pdfOptionsPage = \textcolor{keyword}{new} 
+      \hyperlink{classPDFOptionsPage}{PDFOptionsPage}();
+1871     \}
+1872     \textcolor{keywordflow}{return} pdfOptionsPage;
+1873 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a903f4c338b3f2a14ce331fc4a7a06cfb}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!print\+Error@{print\+Error}}
+\index{print\+Error@{print\+Error}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{print\+Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+D\+F\+Generator\+::\+Print\+Error} P\+D\+F\+Generator\+::print\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classPDFGenerator_a903f4c338b3f2a14ce331fc4a7a06cfb}
+
+
+Definition at line 1805 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1806 \{
+1807     \textcolor{keywordflow}{return} lastPrintError;
+1808 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_a29ebf5643e2bafa551146a777e61b3bd}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!reparse\+Config@{reparse\+Config}}
+\index{reparse\+Config@{reparse\+Config}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{reparse\+Config}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::reparse\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_a29ebf5643e2bafa551146a777e61b3bd}
+This method is called to tell the generator to re-\/parse its configuration.
+
+Returns true if something has changed.
+
+\begin{DoxyNote}{Note}
+this method can be called also when the generator is not the active generator, or when there was not changed in the config added by the generator itself. So the suggestion is to {\bfseries check} whether something changed, and only in that case return {\ttfamily true} 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classOkular_1_1ConfigInterface_a0f61ec6852e483b898efd9709b1ef63b}{Okular\+::\+Config\+Interface}.
+
+
+
+Definition at line 1273 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1274 \{
+1275     \textcolor{keywordflow}{if} ( !pdfdoc )
+1276         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1277 
+1278     \textcolor{keywordtype}{bool} somethingchanged = \textcolor{keyword}{false};
+1279     \textcolor{comment}{// load paper color}
+1280     QColor color = \hyperlink{classOkular_1_1Generator_a450f3316a563dcf217fcebac4fa0328e}{documentMetaData}( \textcolor{stringliteral}{"PaperColor"}, \textcolor{keyword}{true} ).value< QColor >();
+1281     \textcolor{comment}{// if paper color is changed we have to rebuild every visible pixmap in addition}
+1282     \textcolor{comment}{// to the outputDevice. it's the 'heaviest' case, other effect are just recoloring}
+1283     \textcolor{comment}{// over the page rendered on 'standard' white background.}
+1284     \textcolor{keywordflow}{if} ( color != pdfdoc->paperColor() )
+1285     \{
+1286         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1287         pdfdoc->setPaperColor(color);
+1288         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1289         somethingchanged = \textcolor{keyword}{true};
+1290     \}
+1291     \textcolor{keywordtype}{bool} aaChanged = setDocumentRenderHints();
+1292     somethingchanged = somethingchanged || aaChanged;
+1293     \textcolor{keywordflow}{return} somethingchanged;
+1294 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_af22308428f7e0f951eb1a7e249d97418}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!request\+Font\+Data@{request\+Font\+Data}}
+\index{request\+Font\+Data@{request\+Font\+Data}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{request\+Font\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void P\+D\+F\+Generator\+::request\+Font\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Font\+Info} \&}]{font, }
+\item[{Q\+Byte\+Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classPDFGenerator_af22308428f7e0f951eb1a7e249d97418}
+
+
+Definition at line 1069 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1070 \{
+1071     Poppler::FontInfo fi = font.\hyperlink{classOkular_1_1FontInfo_aae4d948a8671178cfa880167c1d78a78}{nativeId}().value<Poppler::FontInfo>();
+1072     *\hyperlink{structdrawinf_af73f66288002f0a25c7843a534bf1340}{data} = pdfdoc->fontData(fi);
+1073 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_abf4927ecbbffacb3eefd8aeff58c0a62}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!save@{save}}
+\index{save@{save}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::save (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Save\+Options}]{options, }
+\item[{Q\+String $\ast$}]{error\+Text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_abf4927ecbbffacb3eefd8aeff58c0a62}
+Save to the specified {\ttfamily file\+Name} with the specified {\ttfamily options}. 
+
+Implements \hyperlink{classOkular_1_1SaveInterface_a5a417719832a6c6fc245e305b6b64268}{Okular\+::\+Save\+Interface}.
+
+
+
+Definition at line 1894 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1895 \{
+1896     Poppler::PDFConverter *pdfConv = pdfdoc->pdfConverter();
+1897 
+1898     pdfConv->setOutputFileName( fileName );
+1899     \textcolor{keywordflow}{if} ( options & \hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399a595c02ea3ea3f3c841cdf3b7a0824d68}{SaveChanges} )
+1900         pdfConv->setPDFOptions( pdfConv->pdfOptions() | Poppler::PDFConverter::WithChanges );
+1901 
+1902     QMutexLocker locker( \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}() );
+1903     \textcolor{keywordtype}{bool} success = pdfConv->convert();
+1904 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_12\_1}
+1905     \textcolor{keywordflow}{if} (!success)
+1906     \{
+1907         \textcolor{keywordflow}{switch} (pdfConv->lastError())
+1908         \{
+1909             \textcolor{keywordflow}{case} Poppler::BaseConverter::NotSupportedInputFileError:
+1910 \textcolor{preprocessor}{#ifndef HAVE\_POPPLER\_0\_22}
+1911                 \textcolor{comment}{// This can only happen with Poppler before 0.22}
+1912                 *errorText = i18n(\textcolor{stringliteral}{"Saving files with /Encrypt is not supported."});
+1913 \textcolor{preprocessor}{#endif}
+1914             \textcolor{keywordflow}{break};
+1915 
+1916             \textcolor{keywordflow}{case} Poppler::BaseConverter::NoError:
+1917             \textcolor{keywordflow}{case} Poppler::BaseConverter::FileLockedError:
+1918                 \textcolor{comment}{// we can't get here}
+1919             \textcolor{keywordflow}{break};
+1920 
+1921             \textcolor{keywordflow}{case} Poppler::BaseConverter::OpenOutputError:
+1922                 \textcolor{comment}{// the default text message is good for this case}
+1923             \textcolor{keywordflow}{break};
+1924         \}
+1925     \}
+1926 \textcolor{preprocessor}{#endif}
+1927     \textcolor{keyword}{delete} pdfConv;
+1928     \textcolor{keywordflow}{return} success;
+1929 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_ad1da694c1f5836ac61c26ec50a80b2c8}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!supports\+Option@{supports\+Option}}
+\index{supports\+Option@{supports\+Option}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{supports\+Option}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Generator\+::supports\+Option (
+\begin{DoxyParamCaption}
+\item[{{\bf Save\+Option}}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPDFGenerator_ad1da694c1f5836ac61c26ec50a80b2c8}
+Query for the supported saving options.
+
+\begin{DoxyNote}{Note}
+No\+Option is never queried 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classOkular_1_1SaveInterface_a8015ceb5e3b6dffc5f7cd620a82fdc16}{Okular\+::\+Save\+Interface}.
+
+
+
+Definition at line 1875 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1876 \{
+1877     \textcolor{keywordflow}{switch} ( option )
+1878     \{
+1879         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399a595c02ea3ea3f3c841cdf3b7a0824d68}{SaveChanges}:
+1880         \{
+1881             \textcolor{comment}{// Saving files with /Encrypt is not supported before Poppler 0.22}
+1882 \textcolor{preprocessor}{#ifndef HAVE\_POPPLER\_0\_22}
+1883             QMutexLocker locker( \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}() );
+1884             \textcolor{keywordflow}{return} pdfdoc->isEncrypted() ? \textcolor{keyword}{false} : \textcolor{keyword}{true};
+1885 \textcolor{preprocessor}{#else}
+1886             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1887 \textcolor{preprocessor}{#endif}
+1888         \}
+1889         \textcolor{keywordflow}{default}: ;
+1890     \}
+1891     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1892 \}
+\end{DoxyCode}
+\hypertarget{classPDFGenerator_aefd3eeaad15f2a32add422650c04c801}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!text\+Page@{text\+Page}}
+\index{text\+Page@{text\+Page}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Text\+Page} $\ast$ P\+D\+F\+Generator\+::text\+Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classPDFGenerator_aefd3eeaad15f2a32add422650c04c801}
+Returns the text page for the given {\ttfamily page}.
+
+\begin{DoxyWarning}{Warning}
+this method may be executed in its own separated thread if the \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} is enabled! 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_af7915b97ab4b9347fb76babdda212cef}{Okular\+::\+Generator}.
+
+
+
+Definition at line 1037 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+1038 \{
+1039 \textcolor{preprocessor}{#ifdef PDFGENERATOR\_DEBUG}
+1040     kDebug(\hyperlink{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}{PDFDebug}) << \textcolor{stringliteral}{"page"} << page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}();
+1041 \textcolor{preprocessor}{#endif}
+1042     \textcolor{comment}{// build a TextList...}
+1043     \hyperlink{classQList}{QList<Poppler::TextBox*>} textList;
+1044     \textcolor{keywordtype}{double} pageWidth, pageHeight;
+1045     Poppler::Page *pp = pdfdoc->page( page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() );
+1046     \textcolor{keywordflow}{if} (pp)
+1047     \{
+1048         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+1049         textList = pp->textList();
+1050         \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+1051 
+1052         QSizeF s = pp->pageSizeF();
+1053         pageWidth = s.width();
+1054         pageHeight = s.height();
+1055 
+1056         \textcolor{keyword}{delete} pp;
+1057     \}
+1058     \textcolor{keywordflow}{else}
+1059     \{
+1060         pageWidth = defaultPageWidth;
+1061         pageHeight = defaultPageHeight;
+1062     \}
+1063 
+1064     \hyperlink{classOkular_1_1TextPage}{Okular::TextPage} *tp = abstractTextPage(textList, pageHeight, pageWidth, (
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Poppler::Page::Rotation})page->\hyperlink{classOkular_1_1Page_ab99c3e1660eb4a87afdb093ae0daf06c}{orientation}());
+1065     qDeleteAll(textList);
+1066     \textcolor{keywordflow}{return} tp;
+1067 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}{\index{P\+D\+F\+Generator@{P\+D\+F\+Generator}!P\+D\+F\+Debug@{P\+D\+F\+Debug}}
+\index{P\+D\+F\+Debug@{P\+D\+F\+Debug}!P\+D\+F\+Generator@{P\+D\+F\+Generator}}
+\subsubsection[{P\+D\+F\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}const int P\+D\+F\+Generator\+::\+P\+D\+F\+Debug = 4710\hspace{0.3cm}{\ttfamily [static]}}}\label{classPDFGenerator_ab548883f17326b0a73d3a1b07cae0f8d}
+
+
+Definition at line 60 of file generator\+\_\+pdf.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/poppler/\hyperlink{generator__pdf_8h}{generator\+\_\+pdf.\+h}\item 
+generators/poppler/\hyperlink{generator__pdf_8cpp}{generator\+\_\+pdf.\+cpp}\end{DoxyCompactItemize}

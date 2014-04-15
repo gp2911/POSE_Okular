@@ -1,0 +1,74 @@
+\hypertarget{classOkular_1_1JSConsole}{\section{Okular\+:\+:J\+S\+Console Class Reference}
+\label{classOkular_1_1JSConsole}\index{Okular\+::\+J\+S\+Console@{Okular\+::\+J\+S\+Console}}
+}
+
+
+{\ttfamily \#include $<$kjs\+\_\+console\+\_\+p.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classOkular_1_1JSConsole_a33209affd24a7a4dc38f0a8d8e7727a9}{init\+Type} (K\+J\+S\+Context $\ast$ctx)
+\item 
+static K\+J\+S\+Object \hyperlink{classOkular_1_1JSConsole_a3ab215342433251d3c12bd700f29c84a}{object} (K\+J\+S\+Context $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file kjs\+\_\+console\+\_\+p.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1JSConsole_a33209affd24a7a4dc38f0a8d8e7727a9}{\index{Okular\+::\+J\+S\+Console@{Okular\+::\+J\+S\+Console}!init\+Type@{init\+Type}}
+\index{init\+Type@{init\+Type}!Okular\+::\+J\+S\+Console@{Okular\+::\+J\+S\+Console}}
+\subsubsection[{init\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void J\+S\+Console\+::init\+Type (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSConsole_a33209affd24a7a4dc38f0a8d8e7727a9}
+
+
+Definition at line 132 of file kjs\+\_\+console.\+cpp.
+
+
+\begin{DoxyCode}
+133 \{
+134     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} initialized = \textcolor{keyword}{false};
+135     \textcolor{keywordflow}{if} ( initialized )
+136         \textcolor{keywordflow}{return};
+137     initialized = \textcolor{keyword}{true};
+138 
+139     g\_consoleProto = \textcolor{keyword}{new} KJSPrototype();
+140 
+141     g\_consoleProto->defineFunction( ctx, \textcolor{stringliteral}{"clear"}, consoleClear );
+142     g\_consoleProto->defineFunction( ctx, \textcolor{stringliteral}{"hide"}, consoleHide );
+143     g\_consoleProto->defineFunction( ctx, \textcolor{stringliteral}{"println"}, consolePrintln );
+144     g\_consoleProto->defineFunction( ctx, \textcolor{stringliteral}{"hide"}, consoleShow );
+145 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1JSConsole_a3ab215342433251d3c12bd700f29c84a}{\index{Okular\+::\+J\+S\+Console@{Okular\+::\+J\+S\+Console}!object@{object}}
+\index{object@{object}!Okular\+::\+J\+S\+Console@{Okular\+::\+J\+S\+Console}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}K\+J\+S\+Object J\+S\+Console\+::object (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSConsole_a3ab215342433251d3c12bd700f29c84a}
+
+
+Definition at line 147 of file kjs\+\_\+console.\+cpp.
+
+
+\begin{DoxyCode}
+148 \{
+149     \textcolor{keywordflow}{return} g\_consoleProto->constructObject( ctx, 0 );
+150 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/script/\hyperlink{kjs__console__p_8h}{kjs\+\_\+console\+\_\+p.\+h}\item 
+core/script/\hyperlink{kjs__console_8cpp}{kjs\+\_\+console.\+cpp}\end{DoxyCompactItemize}

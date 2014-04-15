@@ -1,0 +1,171 @@
+\hypertarget{classOkular_1_1ExecuteAction}{\section{Okular\+:\+:Execute\+Action Class Reference}
+\label{classOkular_1_1ExecuteAction}\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+}
+
+
+{\ttfamily \#include $<$action.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Execute\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1ExecuteAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1ExecuteAction_a934d2e231b090fdf1abe647edb44170b}{Execute\+Action} (const Q\+String \&\hyperlink{classOkular_1_1ExecuteAction_a9deef6fa77e658cc0bf65fb811209c28}{file\+Name}, const Q\+String \&\hyperlink{classOkular_1_1ExecuteAction_a5c2b9ecd8b20b9ff12edb792c04132ea}{parameters})
+\item 
+virtual \hyperlink{classOkular_1_1ExecuteAction_a4b4fb3bd8070c78a56b00fbb0a968988}{$\sim$\+Execute\+Action} ()
+\item 
+\hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47}{Action\+Type} \hyperlink{classOkular_1_1ExecuteAction_ac9d8d732913d262931c07eef33595f6d}{action\+Type} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1ExecuteAction_a60177f711289c231994888281d9d6b67}{action\+Tip} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1ExecuteAction_a9deef6fa77e658cc0bf65fb811209c28}{file\+Name} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1ExecuteAction_a5c2b9ecd8b20b9ff12edb792c04132ea}{parameters} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The Execute action executes an external application. 
+
+Definition at line 181 of file action.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1ExecuteAction_a934d2e231b090fdf1abe647edb44170b}{\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}!Execute\+Action@{Execute\+Action}}
+\index{Execute\+Action@{Execute\+Action}!Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+\subsubsection[{Execute\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Execute\+Action\+::\+Execute\+Action (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{const Q\+String \&}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExecuteAction_a934d2e231b090fdf1abe647edb44170b}
+Creates a new execute action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The file name of the application to execute. \\
+\hline
+{\em parameters} & The parameters of the application to execute. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 148 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+149     : \hyperlink{classOkular_1_1Action}{Action}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1ExecuteActionPrivate}{ExecuteActionPrivate}( file, 
+      \hyperlink{classOkular_1_1ExecuteAction_a5c2b9ecd8b20b9ff12edb792c04132ea}{parameters} ) )
+150 \{
+151 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExecuteAction_a4b4fb3bd8070c78a56b00fbb0a968988}{\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}!````~Execute\+Action@{$\sim$\+Execute\+Action}}
+\index{````~Execute\+Action@{$\sim$\+Execute\+Action}!Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+\subsubsection[{$\sim$\+Execute\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Execute\+Action\+::$\sim$\+Execute\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1ExecuteAction_a4b4fb3bd8070c78a56b00fbb0a968988}
+Destroys the execute action. 
+
+Definition at line 153 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+154 \{
+155 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1ExecuteAction_a60177f711289c231994888281d9d6b67}{\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}!action\+Tip@{action\+Tip}}
+\index{action\+Tip@{action\+Tip}!Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+\subsubsection[{action\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Execute\+Action\+::action\+Tip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1ExecuteAction_a60177f711289c231994888281d9d6b67}
+Returns the action tip. 
+
+Reimplemented from \hyperlink{classOkular_1_1Action_a359c33818281df712da697c84975952f}{Okular\+::\+Action}.
+
+
+
+Definition at line 162 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+163 \{
+164     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1ExecuteAction}{Okular::ExecuteAction} );
+165     \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Execute '%1'..."}, d->m\_fileName );
+166 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExecuteAction_ac9d8d732913d262931c07eef33595f6d}{\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}!action\+Type@{action\+Type}}
+\index{action\+Type@{action\+Type}!Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+\subsubsection[{action\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action\+::\+Action\+Type} Execute\+Action\+::action\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1ExecuteAction_ac9d8d732913d262931c07eef33595f6d}
+Returns the action type. 
+
+Implements \hyperlink{classOkular_1_1Action_ac4c2ef09b350b4041f8d1cfb261c3234}{Okular\+::\+Action}.
+
+
+
+Definition at line 157 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+158 \{
+159     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47a04ece2216c075107b03f6d91739252c2}{Execute};
+160 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExecuteAction_a9deef6fa77e658cc0bf65fb811209c28}{\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+\subsubsection[{file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Execute\+Action\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExecuteAction_a9deef6fa77e658cc0bf65fb811209c28}
+Returns the file name of the application to execute. 
+
+Definition at line 168 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+169 \{
+170     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1ExecuteAction}{Okular::ExecuteAction} );
+171     \textcolor{keywordflow}{return} d->m\_fileName;
+172 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExecuteAction_a5c2b9ecd8b20b9ff12edb792c04132ea}{\index{Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}!parameters@{parameters}}
+\index{parameters@{parameters}!Okular\+::\+Execute\+Action@{Okular\+::\+Execute\+Action}}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Execute\+Action\+::parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExecuteAction_a5c2b9ecd8b20b9ff12edb792c04132ea}
+Returns the parameters of the application to execute. 
+
+Definition at line 174 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+175 \{
+176     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1ExecuteAction}{Okular::ExecuteAction} );
+177     \textcolor{keywordflow}{return} d->m\_parameters;
+178 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{action_8h}{action.\+h}\item 
+core/\hyperlink{action_8cpp}{action.\+cpp}\end{DoxyCompactItemize}

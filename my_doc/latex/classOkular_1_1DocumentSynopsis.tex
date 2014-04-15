@@ -1,0 +1,89 @@
+\hypertarget{classOkular_1_1DocumentSynopsis}{\section{Okular\+:\+:Document\+Synopsis Class Reference}
+\label{classOkular_1_1DocumentSynopsis}\index{Okular\+::\+Document\+Synopsis@{Okular\+::\+Document\+Synopsis}}
+}
+
+
+A \hyperlink{namespaceDOM}{D\+O\+M} tree that describes the Table of Contents.  
+
+
+
+
+{\ttfamily \#include $<$document.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Document\+Synopsis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1DocumentSynopsis}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1DocumentSynopsis_aa6052ddb1676af69f25acb4a7c99e416}{Document\+Synopsis} ()
+\item 
+\hyperlink{classOkular_1_1DocumentSynopsis_a54e8db96b1c4971f8741420e6a6341a1}{Document\+Synopsis} (const Q\+Dom\+Document \&document)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{namespaceDOM}{D\+O\+M} tree that describes the Table of Contents. 
+
+The Synopsis (\hyperlink{classTOC}{T\+O\+C} or Table Of Contents for friends) is represented via a dom tree where each node has an internal name (displayed in the \hyperlink{classTOC}{T\+O\+C}) and one or more attributes.
+
+In the tree the tag name is the 'screen' name of the entry. A tag can have attributes. Here follows the list of tag attributes with meaning\+:
+\begin{DoxyItemize}
+\item Destination\+: A string description of the referred viewport
+\item Destination\+Name\+: A 'named reference' to the viewport that must be converted using meta\+Data( \char`\"{}\+Named\+Viewport\char`\"{}, viewport\+\_\+name )
+\item External\+File\+Name\+: A document to be opened, whose destination is specified with Destination or Destination\+Name
+\item Open\+: a boolean saying whether its \hyperlink{classTOC}{T\+O\+C} branch is open or not (default\+: false)
+\item U\+R\+L\+: a U\+R\+L to be open as destination; if set, no other Destination$\ast$ or External\+File\+Name entry is used 
+\end{DoxyItemize}
+
+Definition at line 1153 of file document.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1DocumentSynopsis_aa6052ddb1676af69f25acb4a7c99e416}{\index{Okular\+::\+Document\+Synopsis@{Okular\+::\+Document\+Synopsis}!Document\+Synopsis@{Document\+Synopsis}}
+\index{Document\+Synopsis@{Document\+Synopsis}!Okular\+::\+Document\+Synopsis@{Okular\+::\+Document\+Synopsis}}
+\subsubsection[{Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}Document\+Synopsis\+::\+Document\+Synopsis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1DocumentSynopsis_aa6052ddb1676af69f25acb4a7c99e416}
+Creates a new document synopsis object.
+
+\hyperlink{classOkular_1_1DocumentSynopsis}{Document\+Synopsis} 
+
+Definition at line 4839 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4840   : QDomDocument( \textcolor{stringliteral}{"DocumentSynopsis"} )
+4841 \{
+4842     \textcolor{comment}{// void implementation, only subclassed for naming}
+4843 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1DocumentSynopsis_a54e8db96b1c4971f8741420e6a6341a1}{\index{Okular\+::\+Document\+Synopsis@{Okular\+::\+Document\+Synopsis}!Document\+Synopsis@{Document\+Synopsis}}
+\index{Document\+Synopsis@{Document\+Synopsis}!Okular\+::\+Document\+Synopsis@{Okular\+::\+Document\+Synopsis}}
+\subsubsection[{Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}Document\+Synopsis\+::\+Document\+Synopsis (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1DocumentSynopsis_a54e8db96b1c4971f8741420e6a6341a1}
+Creates a new document synopsis object with the given {\ttfamily document} as parent node. 
+
+Definition at line 4845 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4846   : QDomDocument( document )
+4847 \{
+4848 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{core_2document_8h}{document.\+h}\item 
+core/\hyperlink{core_2document_8cpp}{document.\+cpp}\end{DoxyCompactItemize}

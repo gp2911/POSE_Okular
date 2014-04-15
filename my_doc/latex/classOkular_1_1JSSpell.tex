@@ -1,0 +1,70 @@
+\hypertarget{classOkular_1_1JSSpell}{\section{Okular\+:\+:J\+S\+Spell Class Reference}
+\label{classOkular_1_1JSSpell}\index{Okular\+::\+J\+S\+Spell@{Okular\+::\+J\+S\+Spell}}
+}
+
+
+{\ttfamily \#include $<$kjs\+\_\+spell\+\_\+p.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classOkular_1_1JSSpell_a434713263b8a00ac19caba0f664c702d}{init\+Type} (K\+J\+S\+Context $\ast$ctx)
+\item 
+static K\+J\+S\+Object \hyperlink{classOkular_1_1JSSpell_abb365517af8c5c615f97e54c74c922ce}{object} (K\+J\+S\+Context $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file kjs\+\_\+spell\+\_\+p.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1JSSpell_a434713263b8a00ac19caba0f664c702d}{\index{Okular\+::\+J\+S\+Spell@{Okular\+::\+J\+S\+Spell}!init\+Type@{init\+Type}}
+\index{init\+Type@{init\+Type}!Okular\+::\+J\+S\+Spell@{Okular\+::\+J\+S\+Spell}}
+\subsubsection[{init\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void J\+S\+Spell\+::init\+Type (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSSpell_a434713263b8a00ac19caba0f664c702d}
+
+
+Definition at line 28 of file kjs\+\_\+spell.\+cpp.
+
+
+\begin{DoxyCode}
+29 \{
+30     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} initialized = \textcolor{keyword}{false};
+31     \textcolor{keywordflow}{if} ( initialized )
+32         \textcolor{keywordflow}{return};
+33     initialized = \textcolor{keyword}{true};
+34 
+35     g\_spellProto = \textcolor{keyword}{new} KJSPrototype();
+36     g\_spellProto->defineProperty( ctx, QString( \textcolor{stringliteral}{"available"} ), spellGetAvailable );
+37 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1JSSpell_abb365517af8c5c615f97e54c74c922ce}{\index{Okular\+::\+J\+S\+Spell@{Okular\+::\+J\+S\+Spell}!object@{object}}
+\index{object@{object}!Okular\+::\+J\+S\+Spell@{Okular\+::\+J\+S\+Spell}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}K\+J\+S\+Object J\+S\+Spell\+::object (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSSpell_abb365517af8c5c615f97e54c74c922ce}
+
+
+Definition at line 39 of file kjs\+\_\+spell.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keywordflow}{return} g\_spellProto->constructObject( ctx, 0 );
+42 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/script/\hyperlink{kjs__spell__p_8h}{kjs\+\_\+spell\+\_\+p.\+h}\item 
+core/script/\hyperlink{kjs__spell_8cpp}{kjs\+\_\+spell.\+cpp}\end{DoxyCompactItemize}

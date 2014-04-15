@@ -1,0 +1,58 @@
+\hypertarget{aboutdata_8h}{\section{aboutdata.\+h File Reference}
+\label{aboutdata_8h}\index{aboutdata.\+h@{aboutdata.\+h}}
+}
+{\ttfamily \#include $<$kaboutdata.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}core/version.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+K\+About\+Data \hyperlink{aboutdata_8h_a2f42c04ec50c4ab644b0dfcf88e91ea4}{okular\+About\+Data} (const char $\ast$name, const char $\ast$iname)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{aboutdata_8h_a2f42c04ec50c4ab644b0dfcf88e91ea4}{\index{aboutdata.\+h@{aboutdata.\+h}!okular\+About\+Data@{okular\+About\+Data}}
+\index{okular\+About\+Data@{okular\+About\+Data}!aboutdata.\+h@{aboutdata.\+h}}
+\subsubsection[{okular\+About\+Data}]{\setlength{\rightskip}{0pt plus 5cm}K\+About\+Data okular\+About\+Data (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{iname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{aboutdata_8h_a2f42c04ec50c4ab644b0dfcf88e91ea4}
+
+
+Definition at line 17 of file aboutdata.\+h.
+
+
+\begin{DoxyCode}
+18 \{
+19     KAboutData about(
+20         name, \textcolor{comment}{//"okular",}
+21         \textcolor{stringliteral}{"okular"},
+22         ki18n(iname), \textcolor{comment}{//I18N\_NOOP("okular"),}
+23         \hyperlink{version_8h_afbb5a0ecc8edeaa5e234bb8254ccb7cb}{OKULAR\_VERSION\_STRING},
+24         ki18n(\textcolor{stringliteral}{"Okular, a universal document viewer"}),
+25         KAboutData::License\_GPL,
+26         ki18n(\textcolor{stringliteral}{"(C) 2002 Wilco Greven, Christophe Devriese\(\backslash\)n"}
+27               \textcolor{stringliteral}{"(C) 2004-2005 Enrico Ros\(\backslash\)n"}
+28               \textcolor{stringliteral}{"(C) 2005 Piotr Szymanski\(\backslash\)n"}
+29               \textcolor{stringliteral}{"(C) 2004-2009 Albert Astals Cid\(\backslash\)n"}
+30               \textcolor{stringliteral}{"(C) 2006-2009 Pino Toscano"}),
+31         KLocalizedString(),
+32         \textcolor{stringliteral}{"http://okular.kde.org"}
+33     );
+34 
+35     about.addAuthor(ki18n(\textcolor{stringliteral}{"Pino Toscano"}), ki18n(\textcolor{stringliteral}{"Former maintainer"}), \textcolor{stringliteral}{"pino@kde.org"});
+36     about.addAuthor(ki18n(\textcolor{stringliteral}{"Tobias Koenig"}), ki18n(\textcolor{stringliteral}{"Lots of framework work, ODT and FictionBook backends"}), \textcolor{stringliteral}{
+      "tokoe@kde.org"});
+37     about.addAuthor(ki18n(\textcolor{stringliteral}{"Albert Astals Cid"}), ki18n(\textcolor{stringliteral}{"Current maintainer"}), \textcolor{stringliteral}{"aacid@kde.org"});
+38     about.addAuthor(ki18n(\textcolor{stringliteral}{"Piotr Szymanski"}), ki18n(\textcolor{stringliteral}{"Created Okular from KPDF codebase"}), \textcolor{stringliteral}{"
+      djurban@pld-dc.org"});
+39     about.addAuthor(ki18n(\textcolor{stringliteral}{"Enrico Ros"}), ki18n(\textcolor{stringliteral}{"KPDF developer"}), \textcolor{stringliteral}{"eros.kde@email.it"});
+40     about.addCredit(ki18n(\textcolor{stringliteral}{"Eugene Trounev"}), ki18n(\textcolor{stringliteral}{"Annotations artwork"}), \textcolor{stringliteral}{"eugene.trounev@gmail.com"});
+41     about.addCredit(ki18n(\textcolor{stringliteral}{"Jiri Baum - NICTA"}), ki18n(\textcolor{stringliteral}{"Table selection tool"}), \textcolor{stringliteral}{"jiri@baum.com.au"});
+42     about.addCredit(ki18n(\textcolor{stringliteral}{"Fabio D'Urso"}), ki18n(\textcolor{stringliteral}{"Annotation improvements"}), \textcolor{stringliteral}{"fabiodurso@hotmail.it"});
+43 
+44     \textcolor{keywordflow}{return} about;
+45 \}
+\end{DoxyCode}

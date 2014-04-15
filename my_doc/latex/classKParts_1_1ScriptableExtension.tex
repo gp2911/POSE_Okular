@@ -1,0 +1,347 @@
+\hypertarget{classKParts_1_1ScriptableExtension}{\section{K\+Parts\+:\+:Scriptable\+Extension Class Reference}
+\label{classKParts_1_1ScriptableExtension}\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+}
+
+
+{\ttfamily \#include $<$scriptableextension.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Scriptable\+Extension\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKParts_1_1ScriptableExtension}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structKParts_1_1ScriptableExtension_1_1Exception}{Exception}
+\item 
+struct \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef}{Function\+Ref}
+\item 
+struct \hyperlink{structKParts_1_1ScriptableExtension_1_1Null}{Null}
+\begin{DoxyCompactList}\small\item\em Corresponds to 'null' in Java\+Script. \end{DoxyCompactList}\item 
+struct \hyperlink{structKParts_1_1ScriptableExtension_1_1Object}{Object}
+\item 
+struct \hyperlink{structKParts_1_1ScriptableExtension_1_1Undefined}{Undefined}
+\begin{DoxyCompactList}\small\item\em Corresponds to 'undefined' in Java\+Script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{lifetime}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1ScriptableExtension_ab5aa7a70fe1b0643b5498529e574ef76}{Scriptable\+Extension} (Q\+Object $\ast$parent)
+\item 
+virtual \hyperlink{classKParts_1_1ScriptableExtension_aea7c940a43c9fba7279bc4d3a1959407}{$\sim$\+Scriptable\+Extension} ()
+\item 
+static \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$ \hyperlink{classKParts_1_1ScriptableExtension_a03e2028b730dbe724f27d97ff6422325}{child\+Object} (Q\+Object $\ast$obj)
+\item 
+static \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$ \hyperlink{classKParts_1_1ScriptableExtension_afe1e57b7a4ec5119d0d8eefff3ba6134}{adapter\+From\+Live\+Connect} (Q\+Object $\ast$parent\+Obj, \hyperlink{classKParts_1_1LiveConnectExtension}{Live\+Connect\+Extension} $\ast$old\+Api)
+\end{DoxyCompactItemize}
+\subsection*{Object Hierarchy}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1ScriptableExtension_ac643fa084835c8fc07abd9072c1a079c}{set\+Host} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$\hyperlink{classKParts_1_1ScriptableExtension_a6505327b97b84ba5d5bae54664ee3ba6}{host})
+\item 
+\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$ \hyperlink{classKParts_1_1ScriptableExtension_a6505327b97b84ba5d5bae54664ee3ba6}{host} () const 
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a2e74d0dce5db4528968dc545a73e22d6}{root\+Object} ()
+\item 
+Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a1654d1f14b8f3184c4a2c4e382826aee}{enclosing\+Object} ()
+\end{DoxyCompactItemize}
+\subsection*{Object Operations}
+\label{_amgrp60cb1b923af3b22f2c0b4823d5c6a3c1}%
+ All these methods share the following conventions\+: \begin{DoxyItemize}
+\item Values are passed and returned encoded as defined in \hyperlink{group__ScriptValueTypes}{Script Value Types} \item All methods may return an exception if unsupported \item All callers {\bfseries must} provide an accurate caller\+Principal argument describing which \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} (and hence which K\+Part) they're acting as. This is used to implement {\bfseries security checks}. This is {\bfseries not} the same as the owner of an object. For example, if a plugin is calling an operation on a K\+H\+T\+M\+L\+Part object, then the 'this' parameter would be the object owner, a \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} provided by the K\+H\+T\+M\+L\+Part, while the caller\+Principal would be the \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} of the {\itshape plugin}. The extension is expected to do appropriate cross-\/site scripting checks on this argument if it is acting as a host. \end{DoxyItemize}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23}{Script\+Language} \{ \hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a53f57a3152be4d9428e8ee66c0614882}{E\+C\+M\+A\+Script}, 
+\hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a0609cfd03f0802c4af4ccae88f385f67}{Enum\+Limit} = 0x\+F\+F\+F\+F
+ \}
+\item 
+typedef \hyperlink{classQList}{Q\+List}$<$ Q\+Variant $>$ \hyperlink{classKParts_1_1ScriptableExtension_a6a35540990153f08b6dcf55d4b504c02}{Arg\+List}
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a77efc2bc6776fd1e75b1e1a971eed643}{call\+As\+Function} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const \hyperlink{classKParts_1_1ScriptableExtension_a6a35540990153f08b6dcf55d4b504c02}{Arg\+List} \&args)
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a5fa3ad1c1fe03543b0c03884dc71c8da}{call\+Function\+Reference} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const Q\+String \&f, const \hyperlink{classKParts_1_1ScriptableExtension_a6a35540990153f08b6dcf55d4b504c02}{Arg\+List} \&args)
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a9cb5d813d297719d8ee00fa703ece547}{call\+As\+Constructor} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const \hyperlink{classKParts_1_1ScriptableExtension_a6a35540990153f08b6dcf55d4b504c02}{Arg\+List} \&args)
+\item 
+virtual bool \hyperlink{classKParts_1_1ScriptableExtension_a5f1fce8473702a961d49957c307e7e67}{has\+Property} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const Q\+String \&prop\+Name)
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a90f5b0047ddb0b78096cab68a40c6326}{get} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const Q\+String \&prop\+Name)
+\item 
+virtual bool \hyperlink{classKParts_1_1ScriptableExtension_ad7cbeb6e9c0a92909e83d71e0646b5cd}{put} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const Q\+String \&prop\+Name, const Q\+Variant \&value)
+\item 
+virtual bool \hyperlink{classKParts_1_1ScriptableExtension_a72c9018ac01d931c4218ddbf963f93fb}{remove\+Property} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, const Q\+String \&prop\+Name)
+\item 
+virtual bool \hyperlink{classKParts_1_1ScriptableExtension_a7630a47519df9f1ad5741e8d7cc436c2}{enumerate\+Properties} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 obj\+Id, Q\+String\+List $\ast$result)
+\item 
+virtual bool \hyperlink{classKParts_1_1ScriptableExtension_ac27156b3a945cb5ac69bbdfb18a501e8}{set\+Exception} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, const Q\+String \&message)
+\item 
+virtual Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_ae3ece3d86bd1410a0954e7dafc037d61}{evaluate\+Script} (\hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} $\ast$caller\+Principal, quint64 context\+Object\+Id, const Q\+String \&code, \hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23}{Script\+Language} language=\hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a53f57a3152be4d9428e8ee66c0614882}{E\+C\+M\+A\+Script})
+\item 
+virtual bool \hyperlink{classKParts_1_1ScriptableExtension_adc8ddc26449ab07abdf05dab5fb06af1}{is\+Script\+Language\+Supported} (\hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23}{Script\+Language} lang) const 
+\item 
+virtual void \hyperlink{classKParts_1_1ScriptableExtension_aa9d21d12e60a00fa4adb0a3db0f52cad}{acquire} (quint64 objid)
+\item 
+virtual void \hyperlink{classKParts_1_1ScriptableExtension_a1a06fcb64081a052d29baae2376c371b}{release} (quint64 objid)
+\item 
+static Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a048b779677ccf0e99e90b101281d31bc}{acquire\+Value} (const Q\+Variant \&v)
+\item 
+static Q\+Variant \hyperlink{classKParts_1_1ScriptableExtension_a45af0ab34d52c57452910b6161922c3c}{release\+Value} (const Q\+Variant \&v)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An extension class that permits \hyperlink{namespaceKParts}{K\+Parts} to be scripted (such as when embedded inside a K\+H\+T\+M\+L\+Part) and to access the host's scriptable objects as well.
+
+See \hyperlink{group__ScriptValueTypes}{Script Value Types} for how values are passed to/from various methods here.
+
+\begin{DoxySince}{Since}
+4.\+5 
+\end{DoxySince}
+
+
+Definition at line 44 of file scriptableextension.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classKParts_1_1ScriptableExtension_a6a35540990153f08b6dcf55d4b504c02}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!Arg\+List@{Arg\+List}}
+\index{Arg\+List@{Arg\+List}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{Arg\+List}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Q\+List}$<$Q\+Variant$>$ {\bf K\+Parts\+::\+Scriptable\+Extension\+::\+Arg\+List}}}\label{classKParts_1_1ScriptableExtension_a6a35540990153f08b6dcf55d4b504c02}
+
+
+Definition at line 192 of file scriptableextension.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!Script\+Language@{Script\+Language}}
+\index{Script\+Language@{Script\+Language}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{Script\+Language}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Scriptable\+Extension\+::\+Script\+Language}}}\label{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+C\+M\+A\+Script@{E\+C\+M\+A\+Script}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!E\+C\+M\+A\+Script@{E\+C\+M\+A\+Script}}\item[{\em 
+\hypertarget{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a53f57a3152be4d9428e8ee66c0614882}{E\+C\+M\+A\+Script}\label{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a53f57a3152be4d9428e8ee66c0614882}
+}]\index{Enum\+Limit@{Enum\+Limit}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!Enum\+Limit@{Enum\+Limit}}\item[{\em 
+\hypertarget{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a0609cfd03f0802c4af4ccae88f385f67}{Enum\+Limit}\label{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a0609cfd03f0802c4af4ccae88f385f67}
+}]$<$ also known as Java\+Script \end{description}
+\end{Desc}
+
+
+Definition at line 247 of file scriptableextension.\+h.
+
+
+\begin{DoxyCode}
+247                         \{
+248         \hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a53f57a3152be4d9428e8ee66c0614882}{ECMAScript}, 
+249         \hyperlink{classKParts_1_1ScriptableExtension_ae24e9c2e1e132201ddc092b8b069be23a0609cfd03f0802c4af4ccae88f385f67}{EnumLimit} = 0xFFFF
+250     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1ScriptableExtension_ab5aa7a70fe1b0643b5498529e574ef76}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!Scriptable\+Extension@{Scriptable\+Extension}}
+\index{Scriptable\+Extension@{Scriptable\+Extension}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{Scriptable\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Scriptable\+Extension\+::\+Scriptable\+Extension (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1ScriptableExtension_ab5aa7a70fe1b0643b5498529e574ef76}
+\hypertarget{classKParts_1_1ScriptableExtension_aea7c940a43c9fba7279bc4d3a1959407}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!````~Scriptable\+Extension@{$\sim$\+Scriptable\+Extension}}
+\index{````~Scriptable\+Extension@{$\sim$\+Scriptable\+Extension}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{$\sim$\+Scriptable\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Scriptable\+Extension\+::$\sim$\+Scriptable\+Extension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_aea7c940a43c9fba7279bc4d3a1959407}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1ScriptableExtension_aa9d21d12e60a00fa4adb0a3db0f52cad}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!acquire@{acquire}}
+\index{acquire@{acquire}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{acquire}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Scriptable\+Extension\+::acquire (
+\begin{DoxyParamCaption}
+\item[{quint64}]{objid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_aa9d21d12e60a00fa4adb0a3db0f52cad}
+increases reference count of object {\ttfamily obj\+Id} \hypertarget{classKParts_1_1ScriptableExtension_a048b779677ccf0e99e90b101281d31bc}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!acquire\+Value@{acquire\+Value}}
+\index{acquire\+Value@{acquire\+Value}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{acquire\+Value}]{\setlength{\rightskip}{0pt plus 5cm}static Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::acquire\+Value (
+\begin{DoxyParamCaption}
+\item[{const Q\+Variant \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1ScriptableExtension_a048b779677ccf0e99e90b101281d31bc}
+Helper that calls \hyperlink{classKParts_1_1ScriptableExtension_aa9d21d12e60a00fa4adb0a3db0f52cad}{acquire} on any object or function reference base stored in {\ttfamily v}.
+
+\begin{DoxyReturn}{Returns}
+a copy of the passed in value 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ScriptableExtension_afe1e57b7a4ec5119d0d8eefff3ba6134}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!adapter\+From\+Live\+Connect@{adapter\+From\+Live\+Connect}}
+\index{adapter\+From\+Live\+Connect@{adapter\+From\+Live\+Connect}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{adapter\+From\+Live\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Scriptable\+Extension}$\ast$ K\+Parts\+::\+Scriptable\+Extension\+::adapter\+From\+Live\+Connect (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent\+Obj, }
+\item[{{\bf Live\+Connect\+Extension} $\ast$}]{old\+Api}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1ScriptableExtension_afe1e57b7a4ec5119d0d8eefff3ba6134}
+This returns a bridge object that permits \hyperlink{namespaceKParts}{K\+Parts} implementing the older \hyperlink{classKParts_1_1LiveConnectExtension}{Live\+Connect\+Extension} to be used via the \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} A\+P\+I. The bridge's parent will be the {\ttfamily parent\+Obj}. \hypertarget{classKParts_1_1ScriptableExtension_a9cb5d813d297719d8ee00fa703ece547}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!call\+As\+Constructor@{call\+As\+Constructor}}
+\index{call\+As\+Constructor@{call\+As\+Constructor}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{call\+As\+Constructor}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::call\+As\+Constructor (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const {\bf Arg\+List} \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a9cb5d813d297719d8ee00fa703ece547}
+Try to use the object {\ttfamily obj\+Id} associated with 'this' as a constructor (corresponding to E\+C\+M\+A\+Script's new foo(bar, baz, glarch) expression). \hypertarget{classKParts_1_1ScriptableExtension_a77efc2bc6776fd1e75b1e1a971eed643}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!call\+As\+Function@{call\+As\+Function}}
+\index{call\+As\+Function@{call\+As\+Function}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{call\+As\+Function}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::call\+As\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const {\bf Arg\+List} \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a77efc2bc6776fd1e75b1e1a971eed643}
+Try to use the object {\ttfamily obj\+Id} associated with 'this' as a function. \hypertarget{classKParts_1_1ScriptableExtension_a5fa3ad1c1fe03543b0c03884dc71c8da}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!call\+Function\+Reference@{call\+Function\+Reference}}
+\index{call\+Function\+Reference@{call\+Function\+Reference}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{call\+Function\+Reference}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::call\+Function\+Reference (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const Q\+String \&}]{f, }
+\item[{const {\bf Arg\+List} \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a5fa3ad1c1fe03543b0c03884dc71c8da}
+Try to use a function reference to field {\ttfamily f} of object  as a function \hypertarget{classKParts_1_1ScriptableExtension_a03e2028b730dbe724f27d97ff6422325}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!child\+Object@{child\+Object}}
+\index{child\+Object@{child\+Object}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{child\+Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Scriptable\+Extension}$\ast$ K\+Parts\+::\+Scriptable\+Extension\+::child\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1ScriptableExtension_a03e2028b730dbe724f27d97ff6422325}
+Queries {\ttfamily obj} for a child object which inherits from this \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} class. Convenience method. \hypertarget{classKParts_1_1ScriptableExtension_a1654d1f14b8f3184c4a2c4e382826aee}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!enclosing\+Object@{enclosing\+Object}}
+\index{enclosing\+Object@{enclosing\+Object}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{enclosing\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::enclosing\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ScriptableExtension_a1654d1f14b8f3184c4a2c4e382826aee}
+Returns an object that represents the \hyperlink{classKParts_1_1ScriptableExtension_a6505327b97b84ba5d5bae54664ee3ba6}{host()}'s view of us. For example, if the host is an H\+T\+M\+L part, it would return a \hyperlink{namespaceDOM}{D\+O\+M} node of an $<$object$>$ handled by this part. May be undefined or null
+
+Implemented in terms of object\+For\+Kid \hypertarget{classKParts_1_1ScriptableExtension_a7630a47519df9f1ad5741e8d7cc436c2}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!enumerate\+Properties@{enumerate\+Properties}}
+\index{enumerate\+Properties@{enumerate\+Properties}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{enumerate\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Scriptable\+Extension\+::enumerate\+Properties (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{Q\+String\+List $\ast$}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a7630a47519df9f1ad5741e8d7cc436c2}
+Tries to enumerate all fields of object {\ttfamily obj\+Id} associated with this to {\ttfamily result}. Returns true on success \hypertarget{classKParts_1_1ScriptableExtension_ae3ece3d86bd1410a0954e7dafc037d61}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!evaluate\+Script@{evaluate\+Script}}
+\index{evaluate\+Script@{evaluate\+Script}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{evaluate\+Script}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::evaluate\+Script (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{context\+Object\+Id, }
+\item[{const Q\+String \&}]{code, }
+\item[{{\bf Script\+Language}}]{language = {\ttfamily {\bf E\+C\+M\+A\+Script}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_ae3ece3d86bd1410a0954e7dafc037d61}
+Tries to evaluate a script {\ttfamily code} with the given object as its context. The parameter {\ttfamily language} specifies the language to execute it as. Use is\+Script\+Language\+Supported to check for support. \hypertarget{classKParts_1_1ScriptableExtension_a90f5b0047ddb0b78096cab68a40c6326}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!get@{get}}
+\index{get@{get}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const Q\+String \&}]{prop\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a90f5b0047ddb0b78096cab68a40c6326}
+Tries to get field {\ttfamily prop\+Name} from object {\ttfamily obj\+Id} associated with 'this'. \hypertarget{classKParts_1_1ScriptableExtension_a5f1fce8473702a961d49957c307e7e67}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!has\+Property@{has\+Property}}
+\index{has\+Property@{has\+Property}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{has\+Property}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Scriptable\+Extension\+::has\+Property (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const Q\+String \&}]{prop\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a5f1fce8473702a961d49957c307e7e67}
+Returns true if the object {\ttfamily obj\+Id} associated with 'this' has the property {\ttfamily prop\+Name}. \hypertarget{classKParts_1_1ScriptableExtension_a6505327b97b84ba5d5bae54664ee3ba6}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!host@{host}}
+\index{host@{host}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{host}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scriptable\+Extension}$\ast$ K\+Parts\+::\+Scriptable\+Extension\+::host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ScriptableExtension_a6505327b97b84ba5d5bae54664ee3ba6}
+Returns any registered parent scripting context. May be 0 if set\+Host was not called (or not call yet). \hypertarget{classKParts_1_1ScriptableExtension_adc8ddc26449ab07abdf05dab5fb06af1}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!is\+Script\+Language\+Supported@{is\+Script\+Language\+Supported}}
+\index{is\+Script\+Language\+Supported@{is\+Script\+Language\+Supported}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{is\+Script\+Language\+Supported}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Scriptable\+Extension\+::is\+Script\+Language\+Supported (
+\begin{DoxyParamCaption}
+\item[{{\bf Script\+Language}}]{lang}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_adc8ddc26449ab07abdf05dab5fb06af1}
+returns true if this extension can execute scripts in the given language \hypertarget{classKParts_1_1ScriptableExtension_ad7cbeb6e9c0a92909e83d71e0646b5cd}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!put@{put}}
+\index{put@{put}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Scriptable\+Extension\+::put (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const Q\+String \&}]{prop\+Name, }
+\item[{const Q\+Variant \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_ad7cbeb6e9c0a92909e83d71e0646b5cd}
+Tries to set the field {\ttfamily prop\+Name} from object {\ttfamily obj\+Id} associated with 'this' to {\ttfamily value}. Returns true on success \hypertarget{classKParts_1_1ScriptableExtension_a1a06fcb64081a052d29baae2376c371b}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!release@{release}}
+\index{release@{release}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Scriptable\+Extension\+::release (
+\begin{DoxyParamCaption}
+\item[{quint64}]{objid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a1a06fcb64081a052d29baae2376c371b}
+decreases reference count of object {\ttfamily obj\+Id} \hypertarget{classKParts_1_1ScriptableExtension_a45af0ab34d52c57452910b6161922c3c}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!release\+Value@{release\+Value}}
+\index{release\+Value@{release\+Value}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{release\+Value}]{\setlength{\rightskip}{0pt plus 5cm}static Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::release\+Value (
+\begin{DoxyParamCaption}
+\item[{const Q\+Variant \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1ScriptableExtension_a45af0ab34d52c57452910b6161922c3c}
+Helper that calls \hyperlink{classKParts_1_1ScriptableExtension_a1a06fcb64081a052d29baae2376c371b}{release} on any object or function reference base stored in {\ttfamily v}.
+
+\begin{DoxyReturn}{Returns}
+a copy of the passed in value 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ScriptableExtension_a72c9018ac01d931c4218ddbf963f93fb}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!remove\+Property@{remove\+Property}}
+\index{remove\+Property@{remove\+Property}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{remove\+Property}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Scriptable\+Extension\+::remove\+Property (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{quint64}]{obj\+Id, }
+\item[{const Q\+String \&}]{prop\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a72c9018ac01d931c4218ddbf963f93fb}
+Tries to remove the field d {\ttfamily prop\+Name} from object {\ttfamily obj\+Id} associated with 'this'. Returns true on success \hypertarget{classKParts_1_1ScriptableExtension_a2e74d0dce5db4528968dc545a73e22d6}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!root\+Object@{root\+Object}}
+\index{root\+Object@{root\+Object}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{root\+Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Variant K\+Parts\+::\+Scriptable\+Extension\+::root\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_a2e74d0dce5db4528968dc545a73e22d6}
+Return the root scriptable object of this K\+Part. For example for an H\+T\+M\+L part, it would represent a Window object. May be undefined or null \hypertarget{classKParts_1_1ScriptableExtension_ac27156b3a945cb5ac69bbdfb18a501e8}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!set\+Exception@{set\+Exception}}
+\index{set\+Exception@{set\+Exception}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{set\+Exception}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Scriptable\+Extension\+::set\+Exception (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{caller\+Principal, }
+\item[{const Q\+String \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ScriptableExtension_ac27156b3a945cb5ac69bbdfb18a501e8}
+Tries to raise an exception with given message in this extension's scripting context. Returns true on success \hypertarget{classKParts_1_1ScriptableExtension_ac643fa084835c8fc07abd9072c1a079c}{\index{K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}!set\+Host@{set\+Host}}
+\index{set\+Host@{set\+Host}!K\+Parts\+::\+Scriptable\+Extension@{K\+Parts\+::\+Scriptable\+Extension}}
+\subsubsection[{set\+Host}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Scriptable\+Extension\+::set\+Host (
+\begin{DoxyParamCaption}
+\item[{{\bf Scriptable\+Extension} $\ast$}]{host}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ScriptableExtension_ac643fa084835c8fc07abd9072c1a079c}
+Reports the hosting \hyperlink{classKParts_1_1ScriptableExtension}{Scriptable\+Extension} to a child. It's the responsibility of a parent part to call this method on all of its kids' Scriptable\+Extensions as soon as possible. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{scriptableextension_8h}{scriptableextension.\+h}\end{DoxyCompactItemize}

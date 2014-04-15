@@ -1,0 +1,229 @@
+\hypertarget{classGuiUtils_1_1LatexRenderer}{\section{Gui\+Utils\+:\+:Latex\+Renderer Class Reference}
+\label{classGuiUtils_1_1LatexRenderer}\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}
+}
+
+
+{\ttfamily \#include $<$latexrenderer.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49b}{Error} \{ \\*
+\hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{No\+Error}, 
+\hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bad39bbb9585c97fd7d77cb5da55d79b2e}{Latex\+Not\+Found}, 
+\hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba0c87c33dcb40f302d7cc6d41f022ad2b}{Dvipng\+Not\+Found}, 
+\hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba63514e260dd2c752763af68fcece96eb}{Latex\+Failed}, 
+\\*
+\hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bace3aab0475809e8c07ad37c11f0d9aea}{Dvipng\+Failed}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGuiUtils_1_1LatexRenderer_a979c98d7441eda9404acc091cf8a6fd6}{Latex\+Renderer} ()
+\item 
+\hyperlink{classGuiUtils_1_1LatexRenderer_ae211a4c42e6ab932fc8e2d7c79b9277f}{$\sim$\+Latex\+Renderer} ()
+\item 
+\hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49b}{Error} \hyperlink{classGuiUtils_1_1LatexRenderer_a49c843453726163f49d8d8b7bdb57f8c}{render\+Latex\+In\+Html} (Q\+String \&html, const Q\+Color \&text\+Color, int font\+Size, int resolution, Q\+String \&latex\+Output)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classGuiUtils_1_1LatexRenderer_aa7d63d0c278641e52479f50f8c97c094}{might\+Contain\+Latex} (const Q\+String \&text)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file latexrenderer.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49b}{\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!Error@{Error}}
+\index{Error@{Error}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Gui\+Utils\+::\+Latex\+Renderer\+::\+Error}}}\label{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{No\+Error@{No\+Error}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!No\+Error@{No\+Error}}\item[{\em 
+\hypertarget{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{No\+Error}\label{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}
+}]\index{Latex\+Not\+Found@{Latex\+Not\+Found}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!Latex\+Not\+Found@{Latex\+Not\+Found}}\item[{\em 
+\hypertarget{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bad39bbb9585c97fd7d77cb5da55d79b2e}{Latex\+Not\+Found}\label{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bad39bbb9585c97fd7d77cb5da55d79b2e}
+}]\index{Dvipng\+Not\+Found@{Dvipng\+Not\+Found}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!Dvipng\+Not\+Found@{Dvipng\+Not\+Found}}\item[{\em 
+\hypertarget{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba0c87c33dcb40f302d7cc6d41f022ad2b}{Dvipng\+Not\+Found}\label{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba0c87c33dcb40f302d7cc6d41f022ad2b}
+}]\index{Latex\+Failed@{Latex\+Failed}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!Latex\+Failed@{Latex\+Failed}}\item[{\em 
+\hypertarget{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba63514e260dd2c752763af68fcece96eb}{Latex\+Failed}\label{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba63514e260dd2c752763af68fcece96eb}
+}]\index{Dvipng\+Failed@{Dvipng\+Failed}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!Dvipng\+Failed@{Dvipng\+Failed}}\item[{\em 
+\hypertarget{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bace3aab0475809e8c07ad37c11f0d9aea}{Dvipng\+Failed}\label{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bace3aab0475809e8c07ad37c11f0d9aea}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 28 of file latexrenderer.\+h.
+
+
+\begin{DoxyCode}
+28                \{
+29         \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{NoError},
+30         \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bad39bbb9585c97fd7d77cb5da55d79b2e}{LatexNotFound},
+31         \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba0c87c33dcb40f302d7cc6d41f022ad2b}{DvipngNotFound},
+32         \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba63514e260dd2c752763af68fcece96eb}{LatexFailed},
+33         \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49bace3aab0475809e8c07ad37c11f0d9aea}{DvipngFailed}
+34     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGuiUtils_1_1LatexRenderer_a979c98d7441eda9404acc091cf8a6fd6}{\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!Latex\+Renderer@{Latex\+Renderer}}
+\index{Latex\+Renderer@{Latex\+Renderer}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}
+\subsubsection[{Latex\+Renderer}]{\setlength{\rightskip}{0pt plus 5cm}Gui\+Utils\+::\+Latex\+Renderer\+::\+Latex\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGuiUtils_1_1LatexRenderer_a979c98d7441eda9404acc091cf8a6fd6}
+
+
+Definition at line 30 of file latexrenderer.\+cpp.
+
+
+\begin{DoxyCode}
+31 \{
+32 \}
+\end{DoxyCode}
+\hypertarget{classGuiUtils_1_1LatexRenderer_ae211a4c42e6ab932fc8e2d7c79b9277f}{\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!````~Latex\+Renderer@{$\sim$\+Latex\+Renderer}}
+\index{````~Latex\+Renderer@{$\sim$\+Latex\+Renderer}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}
+\subsubsection[{$\sim$\+Latex\+Renderer}]{\setlength{\rightskip}{0pt plus 5cm}Gui\+Utils\+::\+Latex\+Renderer\+::$\sim$\+Latex\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGuiUtils_1_1LatexRenderer_ae211a4c42e6ab932fc8e2d7c79b9277f}
+
+
+Definition at line 34 of file latexrenderer.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{foreach}(\textcolor{keyword}{const} QString &file, m\_fileList)
+37     \{
+38         QFile::remove(file);
+39     \}
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGuiUtils_1_1LatexRenderer_aa7d63d0c278641e52479f50f8c97c094}{\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!might\+Contain\+Latex@{might\+Contain\+Latex}}
+\index{might\+Contain\+Latex@{might\+Contain\+Latex}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}
+\subsubsection[{might\+Contain\+Latex}]{\setlength{\rightskip}{0pt plus 5cm}bool Gui\+Utils\+::\+Latex\+Renderer\+::might\+Contain\+Latex (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGuiUtils_1_1LatexRenderer_aa7d63d0c278641e52479f50f8c97c094}
+
+
+Definition at line 100 of file latexrenderer.\+cpp.
+
+
+\begin{DoxyCode}
+101 \{
+102     \textcolor{keywordflow}{if}( !text.contains(\textcolor{stringliteral}{"$$"}))
+103         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+104 
+105     \textcolor{comment}{// this searches for $$formula$$ }
+106     QRegExp rg(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)$\(\backslash\)\(\backslash\)$.+\(\backslash\)\(\backslash\)$\(\backslash\)\(\backslash\)$"});
+107     rg.setMinimal(\textcolor{keyword}{true});
+108     \textcolor{keywordflow}{if}( rg.lastIndexIn(text) == -1 )
+109         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+110 
+111     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+112 \}
+\end{DoxyCode}
+\hypertarget{classGuiUtils_1_1LatexRenderer_a49c843453726163f49d8d8b7bdb57f8c}{\index{Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}!render\+Latex\+In\+Html@{render\+Latex\+In\+Html}}
+\index{render\+Latex\+In\+Html@{render\+Latex\+In\+Html}!Gui\+Utils\+::\+Latex\+Renderer@{Gui\+Utils\+::\+Latex\+Renderer}}
+\subsubsection[{render\+Latex\+In\+Html}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Latex\+Renderer\+::\+Error} Gui\+Utils\+::\+Latex\+Renderer\+::render\+Latex\+In\+Html (
+\begin{DoxyParamCaption}
+\item[{Q\+String \&}]{html, }
+\item[{const Q\+Color \&}]{text\+Color, }
+\item[{int}]{font\+Size, }
+\item[{int}]{resolution, }
+\item[{Q\+String \&}]{latex\+Output}
+\end{DoxyParamCaption}
+)}}\label{classGuiUtils_1_1LatexRenderer_a49c843453726163f49d8d8b7bdb57f8c}
+
+
+Definition at line 42 of file latexrenderer.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{if}( !html.contains(\textcolor{stringliteral}{"$$"}))
+45         \textcolor{keywordflow}{return} \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{NoError};
+46 
+47     \textcolor{comment}{// this searches for $$formula$$ }
+48     QRegExp rg(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)$\(\backslash\)\(\backslash\)$.+\(\backslash\)\(\backslash\)$\(\backslash\)\(\backslash\)$"});
+49     rg.setMinimal(\textcolor{keyword}{true});
+50 
+51     \textcolor{keywordtype}{int} pos = 0;
+52 
+53     \hyperlink{classQMap}{QMap<QString, QString>} replaceMap;
+54     \textcolor{keywordflow}{while} (pos >= 0 && pos < html.length())
+55     \{
+56         pos = rg.indexIn(html, pos);
+57 
+58         \textcolor{keywordflow}{if} (pos >= 0 )
+59         \{
+60             \textcolor{keyword}{const} QString match = rg.cap(0);
+61             pos += rg.matchedLength();
+62 
+63             QString formul=match;
+64             \textcolor{comment}{// first remove the $$ delimiters on start and end}
+65             formul.remove(\textcolor{stringliteral}{"$$"});
+66             \textcolor{comment}{// then trim the result, so we can skip totally empty/whitespace-only formulas}
+67             formul = formul.trimmed();
+68             \textcolor{keywordflow}{if} (formul.isEmpty() || !securityCheck(formul))
+69                 \textcolor{keywordflow}{continue};
+70 
+71             \textcolor{comment}{//unescape formula}
+72             formul.replace(\textcolor{stringliteral}{"&gt;"},\textcolor{stringliteral}{">"}).replace(\textcolor{stringliteral}{"&lt;"},\textcolor{stringliteral}{"<"}).replace(\textcolor{stringliteral}{"&amp;"},\textcolor{stringliteral}{"&"}).replace(\textcolor{stringliteral}{"&quot;"},\textcolor{stringliteral}{"\(\backslash\)""}).
+      replace(\textcolor{stringliteral}{"&apos;"},\textcolor{stringliteral}{"\(\backslash\)'"}).replace(\textcolor{stringliteral}{"<br>"},\textcolor{stringliteral}{" "});
+73 
+74             QString fileName;
+75             \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49b}{Error} returnCode = handleLatex(fileName, formul, textColor, fontSize, resolution, 
+      latexOutput);
+76             \textcolor{keywordflow}{if} (returnCode != \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{NoError})
+77                 \textcolor{keywordflow}{return} returnCode;
+78 
+79             replaceMap[match] = fileName;
+80         \}
+81     \}
+82     
+83     \textcolor{keywordflow}{if}(replaceMap.isEmpty()) \textcolor{comment}{//we haven't found any LaTeX strings}
+84         \textcolor{keywordflow}{return} \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{NoError};
+85     
+86     \textcolor{keywordtype}{int} imagePxWidth,imagePxHeight;
+87     \textcolor{keywordflow}{for} (\hyperlink{classQMap}{QMap<QString,QString>::ConstIterator} it = replaceMap.
+      constBegin(); it != replaceMap.constEnd(); ++it)
+88     \{
+89         QImage theImage(*it);
+90         \textcolor{keywordflow}{if}(theImage.isNull())
+91             \textcolor{keywordflow}{continue};
+92         imagePxWidth = theImage.width();
+93         imagePxHeight = theImage.height();
+94         QString escapedLATEX=Qt::escape(it.key()).replace(\textcolor{charliteral}{'\(\backslash\)"'},\textcolor{stringliteral}{"&quot;"});  \textcolor{comment}{//we need  the escape quotes
+       because that string will be in a title="" argument, but not the \(\backslash\)n}
+95         html.replace(it.key(), \textcolor{stringliteral}{" <img width=\(\backslash\)""} + QString::number(imagePxWidth) + \textcolor{stringliteral}{"\(\backslash\)" height=\(\backslash\)""} + 
+      QString::number(imagePxHeight) + \textcolor{stringliteral}{"\(\backslash\)" align=\(\backslash\)"middle\(\backslash\)" src=\(\backslash\)""} + (*it) + \textcolor{stringliteral}{"\(\backslash\)"  alt=\(\backslash\)""} + escapedLATEX +\textcolor{stringliteral}{"\(\backslash\)" title=\(\backslash\)""} +
+       escapedLATEX +\textcolor{stringliteral}{"\(\backslash\)"  /> "});
+96     \}
+97     \textcolor{keywordflow}{return} \hyperlink{classGuiUtils_1_1LatexRenderer_a2cdeccb3a8a7b62e3f78d029ac05d49ba6f7b1049b057be642910dc794d9893b2}{NoError};
+98 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{latexrenderer_8h}{latexrenderer.\+h}\item 
+ui/\hyperlink{latexrenderer_8cpp}{latexrenderer.\+cpp}\end{DoxyCompactItemize}

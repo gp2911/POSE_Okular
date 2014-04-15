@@ -1,0 +1,686 @@
+The power of \hyperlink{namespaceOkular}{Okular} is its extensibility by Generator plugins. This section will describe how to implement your own plugin for a new document type.
+
+\begin{DoxyItemize}
+\item \hyperlink{okular_generators_okular_generators_basic}{A Basic Generator} \item \hyperlink{okular_generators_okular_generators_with_text}{A Generator with Text\+Page support} \item \hyperlink{okular_generators_okular_generators_threaded}{A Generator with Thread support} \item \hyperlink{okular_generators_okular_generators_extended}{An Extended Generator}\end{DoxyItemize}
+\hypertarget{okular_generators_okular_generators_basic}{}\section{A Basic Generator}\label{okular_generators_okular_generators_basic}
+To provide a short overview and don't reimplementing an existing generator we'll work on a Generator for the Magic document format, a non existing, pure virtual format \+:)
+
+Lets assume we have some helper class (Magic\+Document) which provides the following functionality for this document format\+:
+
+\begin{DoxyItemize}
+\item Loading a document \item Retrieving number of pages \item Returning a fixed size picture representation of a page\end{DoxyItemize}
+The class A\+P\+I looks like this
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }MagicDocument
+\{
+    \textcolor{keyword}{public}:
+        MagicDocument();
+        ~MagicDocument();
+
+        \textcolor{keywordtype}{bool} loadDocument( \textcolor{keyword}{const} QString &fileName );
+
+        \textcolor{keywordtype}{int} numberOfPages() \textcolor{keyword}{const};
+
+        QSize \hyperlink{classpageSize}{pageSize}( \textcolor{keywordtype}{int} pageNumber ) \textcolor{keyword}{const};
+
+        QImage pictureOfPage( \textcolor{keywordtype}{int} pageNumber ) \textcolor{keyword}{const};
+
+    \textcolor{keyword}{private}:
+        ...
+\};
+\end{DoxyCode}
+
+
+The methods should be self explaining, load\+Document() loads a document file and returns false on error, number\+Of\+Pages() returns the number of pages, \hyperlink{classpageSize}{page\+Size()} returns the size of the page and picture\+Of\+Page() returns the picture representation of the page.
+
+Our first version of our Generator is a basic one which just provides page pictures to the document class.
+
+The A\+P\+I of the Generator looks like the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "magicdocument.h"}
+
+\textcolor{preprocessor}{#include <okular/core/generator.h>}
+
+\textcolor{keyword}{class }MagicGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}
+\{
+    \textcolor{keyword}{public}:
+        MagicGenerator( QObject *parent, \textcolor{keyword}{const} QVariantList &args );
+        ~MagicGenerator();
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{loadDocument}( \textcolor{keyword}{const} QString &fileName, QVector<Okular::Page*> &pages );
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_abbf00927221e2d2b2b71101f2b7f5732}{canGeneratePixmap}() \textcolor{keyword}{const};
+        \textcolor{keywordtype}{void} \hyperlink{classOkular_1_1Generator_a198cdcd9c27b179562c935342fd457b6}{generatePixmap}( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request );
+
+    \textcolor{keyword}{protected}:
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{doCloseDocument}();
+
+    \textcolor{keyword}{private}:
+        MagicDocument mMagicDocument;
+\};
+\end{DoxyCode}
+
+
+The implementation of the Generator looks like this\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <okular/core/page.h>}
+
+\textcolor{preprocessor}{#include "magicgenerator.h"}
+
+\textcolor{keyword}{static} KAboutData createAboutData()
+\{
+    KAboutData aboutData(...);
+    \textcolor{comment}{// fill the about data}
+    \textcolor{keywordflow}{return} aboutData;
+\}
+
+\hyperlink{generator_8h_a87d954a3809f78e33fb1cb8e2369a05c}{OKULAR\_EXPORT\_PLUGIN}(MagicGenerator, createAboutData())
+
+MagicGenerator::MagicGenerator( QObject *parent, const QVariantList &args )
+    : Okular::Generator( parent, args )
+\{
+\}
+
+MagicGenerator::~MagicGenerator()
+\{
+\}
+
+\textcolor{keywordtype}{bool} MagicGenerator::loadDocument( \textcolor{keyword}{const} QString &fileName, QVector<Okular::Page*> &pages )
+\{
+    \textcolor{keywordflow}{if} ( !mMagicDocument.loadDocument( fileName ) ) \{
+        emit error( i18n( \textcolor{stringliteral}{"Unable to load document"} ), -1 );
+        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+    \}
+
+    pagesVector.resize( mMagicDocument.numberOfPages() );
+
+    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < mMagicDocument.numberOfPages(); ++i ) \{
+      \textcolor{keyword}{const} QSize size = mMagicDocument.pageSize( i );
+
+      \hyperlink{classOkular_1_1Page}{Okular::Page} * page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( i, size.width(), size.height(), 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} );
+      pages[ i ] = page;
+    \}
+
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{bool} MagicGenerator::doCloseDocument()
+\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{bool} MagicGenerator::canGeneratePixmap()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{void} MagicGenerator::generatePixmap( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request )
+\{
+    QImage image = mMagicDocument.pictureOfPage( request->\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() );
+
+    image = image.scaled( request->\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}(), request->\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}(), Qt::IgnoreAspectRatio, 
+      Qt::SmoothTransformation );
+
+    request->\hyperlink{classOkular_1_1PixmapRequest_a83b5e81f2e908e70f3c19a0a3c07fab3}{page}()->\hyperlink{classOkular_1_1Page_ae7e45a6647904b01ebe84930b73f1d79}{setPixmap}( request->id(), \textcolor{keyword}{new} QPixmap( QPixmap::fromImage( image ) ) );
+
+    signalPixmapRequestDone( request );
+\}
+\end{DoxyCode}
+
+
+As you can see implementing a basic Generator is quite easy. The load\+Document() method opens the document file and extracts the number of pages. For every page in the document it adds an \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} object to the pages vector which is passed in as method argument. Each page is initialized with its page number, width, height and initial rotation. These page objects will be stored in the document object and act as a container for the picture representation of the pages. This code is the same for nearly every Generator. On an failure the error() signal can be emitted to inform the user about the issue. This code is the same for nearly every Generator.
+
+In the do\+Close\+Document() method you should close the document and free all resources you have allocated in open\+Document().
+
+Now we come to the picture creation methods. The can\+Generator\+Pixmap() method returns whether the Generator is currently able to handle a new pixmap generation request. For a simple Generator like our one that's always the case as it works linear, however a multithreaded Generator might return {\itshape false} here if it is still waiting for one of its working threads to finish. In this case the document class will try to request the pixmap later again.
+
+The generate\+Pixmap() method does the actual fetching of the picture for a page. The page number, requested width and height of the page is encapsulated in the passed \hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} object. So the task of the Generator is to create a pixmap of the requested page in the requested size and then store this pixmap in the \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} object which is associated with the page request. When this task is finished, the Generator has to call signal\+Pixmap\+Request\+Done() with the page request object as argument. This extra call is needed to allow the Generator to use signals and slots internally and create the pixmap asynchronously.
+
+So now you have the code of a working \hyperlink{namespaceOkular}{Okular} Generator, the next step is to tell \hyperlink{namespaceOkular}{Okular} about the new plugin. Like in other places in K\+D\+E that is done by .desktop files, which are installed to the services directory.
+
+Every Generator needs 3 .desktop files\+:
+
+\begin{DoxyItemize}
+\item libokular\+Generator\+\_\+$<$name$>$.desktop \item okular\+Application\+\_\+$<$name$>$.desktop \item okular$<$name$>$.desktop\end{DoxyItemize}
+where $<$name$>$ should be the name of the document format. So for our Magic Document Generator we create the following 3 files\+:
+
+\begin{DoxyItemize}
+\item libokular\+Generator\+\_\+magic.\+desktop \item okular\+Application\+\_\+magic.\+desktop \item okular\+Magic.\+desktop\end{DoxyItemize}
+with the following content\+:
+
+\begin{DoxyVerb}[Desktop Entry]
+Encoding=UTF-8
+Type=Service
+Name=Magic Document
+Comment=Magic Document backend for okular
+ServiceTypes=okular/Generator
+MimeType=application/x-magic;
+X-KDE-Library=okularGenerator_magic
+X-KDE-Priority=1
+X-KDE-okularAPIVersion=1
+X-KDE-okularHasInternalSettings=false
+\end{DoxyVerb}
+
+
+The first 6 fields are standard .desktop entries, the fields afterwards have a special meaning to \hyperlink{namespaceOkular}{Okular}
+
+\begin{DoxyItemize}
+\item {\bfseries Service\+Type} Must be 'okular/\+Generator' for all \hyperlink{namespaceOkular}{Okular} Generator Plugins \item {\bfseries Mime\+Type} The mimetype or list of mimetypes of the supported document format(s) \item {\bfseries X-\/\+K\+D\+E-\/\+Library} The name of the plugin library \item {\bfseries X-\/\+K\+D\+E-\/\+Priority} When multiple Generators for the same mimetype exists, the one with the highest priority is used \item {\bfseries X-\/\+K\+D\+E-\/okular\+A\+P\+I\+Version} The version of the Generator Plugin A\+P\+I ('1' currently) \item {\bfseries X-\/\+K\+D\+E-\/okular\+Has\+Internal\+Settings} Is 'true' when the Generator provides configuration dialogs\end{DoxyItemize}
+The second .desktop file has the following content\+:
+
+\begin{DoxyVerb}[Desktop Entry]
+Encoding=UTF-8
+MimeType=application/x-magic;
+Terminal=false
+Name=okular
+GenericName=Document Viewer
+Exec=okular %U %i -caption %c
+Icon=okular
+Type=Application
+InitialPreference=7
+Categories=Qt;KDE;Graphics;Viewer;
+NoDisplay=true
+\end{DoxyVerb}
+
+
+You can use the file as it is, you just have to adapt the mimetype. This file is needed to allow \hyperlink{namespaceOkular}{Okular} to handle multiple mimetypes.
+
+The third .desktop file looks like this\+:
+
+\begin{DoxyVerb}[Desktop Entry]
+Encoding=UTF-8
+Icon=okular
+Name=okular
+ServiceTypes=KParts/ReadOnlyPart
+X-KDE-Library=okularpart
+Type=Service
+MimeType=application/x-magic;
+\end{DoxyVerb}
+
+
+You can use the file as it is as well, you just have to adapt the mimetype. This file is needed to allow the \hyperlink{namespaceOkular}{Okular} part to handle multiple mimetypes.
+
+The last piece you need for a complete Generator is a C\+Make\+Lists.\+txt which compiles and installs the Generator. Our C\+Make\+Lists.\+txt looks like the following\+:
+
+\begin{DoxyVerb}macro_optional_find_package(Okular)
+
+include_directories( ${OKULAR_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
+
+########### next target ###############
+
+set( okularGenerator_magic_SRCS generator_magic.cpp )
+
+kde4_add_plugin( okularGenerator_magic ${okularGenerator_magic_SRCS} )
+
+target_link_libraries( okularGenerator_magic ${OKULAR_LIBRARIES} ${KDE4_KDEUI_LIBS} )
+
+install( TARGETS okularGenerator_magic DESTINATION ${PLUGIN_INSTALL_DIR} )
+
+########### install files ###############
+
+install( FILES libokularGenerator_magic.desktop okularMagic.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+install( FILES okularApplication_magic.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+\end{DoxyVerb}
+
+
+The macro\+\_\+optional\+\_\+find\+\_\+package(\+Okular) call is required to make the \$\{O\+K\+U\+L\+A\+R\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+D\+I\+R\} and \$\{O\+K\+U\+L\+A\+R\+\_\+\+L\+I\+B\+R\+A\+R\+I\+E\+S\} variables available.
+
+Now you can compile the Generator plugin and install it. After a restart of \hyperlink{namespaceOkular}{Okular} the new plugin is available and you can open Magic documents.\hypertarget{okular_generators_okular_generators_with_text}{}\section{A Generator with Text\+Page support}\label{okular_generators_okular_generators_with_text}
+In this section we want to extend our Generator to support text search, text extraction and selection as well. As mentioned in \hyperlink{okular_design_okular_design_text_support}{Generators with Text support}, the Generator must provide an \hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} object for every page which contains readable text.
+
+Since we use the helper class Magic\+Document to read the data from the document we have to extend it first, so the new A\+P\+I looks as the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }MagicDocument
+\{
+    \textcolor{keyword}{public}:
+        MagicDocument();
+        ~MagicDocument();
+
+        \textcolor{keywordtype}{bool} loadDocument( \textcolor{keyword}{const} QString &fileName );
+
+        \textcolor{keywordtype}{int} numberOfPages() \textcolor{keyword}{const};
+
+        QSize \hyperlink{classpageSize}{pageSize}( \textcolor{keywordtype}{int} pageNumber ) \textcolor{keyword}{const};
+
+        QImage pictureOfPage( \textcolor{keywordtype}{int} pageNumber ) \textcolor{keyword}{const};
+
+        \textcolor{keyword}{class }TextInfo
+        \{
+            \textcolor{keyword}{public}:
+                \textcolor{keyword}{typedef} \hyperlink{classQList}{QList<TextInfo>} List;
+
+                QChar character;
+                qreal xPos;
+                qreal yPos;
+                qreal width;
+                qreal height;
+        \};
+
+        TextInfo::List textOfPage( \textcolor{keywordtype}{int} pageNumber );
+
+    \textcolor{keyword}{private}:
+        ...
+\};
+\end{DoxyCode}
+
+
+Magic\+Document has the new internal class Text\+Info now, which contains a character and its absolute position on a page. Furthermore Magic\+Document provides a method text\+Of\+Page() which returns a list of all Text\+Info objects for a page.
+
+That's really an optimistic A\+P\+I, in reality it is sometimes quite hard to find out the position of single characters in a document format.
+
+With the extension of our helper class we can continue on extending our Generator now\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "magicdocument.h"}
+
+\textcolor{preprocessor}{#include <okular/core/generator.h>}
+
+\textcolor{keyword}{class }MagicGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}
+\{
+    \textcolor{keyword}{public}:
+        MagicGenerator( QObject *parent, \textcolor{keyword}{const} QVariantList &args );
+        ~MagicGenerator();
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{loadDocument}( \textcolor{keyword}{const} QString &fileName, QVector<Okular::Page*> &pages );
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_abbf00927221e2d2b2b71101f2b7f5732}{canGeneratePixmap}() \textcolor{keyword}{const};
+        \textcolor{keywordtype}{void} \hyperlink{classOkular_1_1Generator_a198cdcd9c27b179562c935342fd457b6}{generatePixmap}( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request );
+
+        \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_a1f41d315daa0d2bd6831e0e7cd48d762}{canGenerateTextPage}() \textcolor{keyword}{const};
+        \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classOkular_1_1Generator_a1e2d8c81ac97ec012098c09047d2ddef}{generateTextPage}( \hyperlink{classOkular_1_1Page}{Okular::Page} *page, \textcolor{keyword}{enum} 
+      \hyperlink{namespaceOkular_aefe2f23519d73b489219060219986007}{Okular::GenerationType} type = \hyperlink{namespaceOkular_aefe2f23519d73b489219060219986007a90d229125a62906242e5b3f5c8923d67}{Okular::Synchronous} );
+
+    \textcolor{keyword}{protected}:
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{doCloseDocument}();
+
+    \textcolor{keyword}{private}:
+        MagicDocument mMagicDocument;
+\};
+\end{DoxyCode}
+
+
+We have extended the Magic\+Generator class by two methods can\+Generate\+Text\+Page() and generate\+Text\+Page(). The first method is equal to can\+Generate\+Pixmap(), it returns whether the Generator is currently able to handle a new text page generation request. For linear Generators that should be always the case, however when the generation is done in a separated worker thread, this method might return {\itshape false}. In this case the document class will try to request the text page later again.
+
+The second method will generate the \hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} object for the passed page. Depending on the capabilities of the Generator and the passed {\itshape type} parameter that is done synchronously or asynchronously.
+
+Let us take a look at the implementation of these methods in our Magic\+Generator\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <okular/core/textpage.h>}
+
+...
+
+MagicGenerator::MagicGenerator( QObject *parent, \textcolor{keyword}{const} QVariantList &args )
+    : \hyperlink{classOkular_1_1Generator}{Okular::Generator}( parent, args )
+\{
+    setFeature( TextExtraction );
+\}
+
+\textcolor{keywordtype}{bool} MagicGenerator::canGenerateTextPage()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{void} MagicGenerator::generateTextPage( \hyperlink{classOkular_1_1Page}{Okular::Page} *page, \textcolor{keyword}{enum} 
+      \hyperlink{namespaceOkular_aefe2f23519d73b489219060219986007}{Okular::GenerationType} )
+\{
+    MagicDocument::TextInfo::List characters = mMagicDocument.textOfPage( page->
+      \hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() );
+    \textcolor{keywordflow}{if} ( characters.isEmpty() )
+        \textcolor{keywordflow}{return};
+
+    \hyperlink{classOkular_1_1TextPage}{Okular::TextPage} *textPage = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextPage}{Okular::TextPage};
+    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < characters.count(); ++i ) \{
+        qreal left = characters[ i ].xPos / page->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}();
+        qreal top = characters[ i ].yPos / page->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+        qreal right = (characters[ i ].xPos + characters[ i ].width) / page->
+      \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}();
+        qreal bottom = (characters[ i ].yPos + characters[ i ].height) / page->
+      \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+
+        textPage->\hyperlink{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}{append}( characters[ i ].character,
+                          \textcolor{keyword}{new} \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( left, top, right, bottom ) );
+    \}
+
+    page->\hyperlink{classOkular_1_1Page_a2853c6369aa8ebe6b0593201ce9cf49e}{setTextPage}( textPage );
+\}
+\end{DoxyCode}
+
+
+As you can see the generate\+Text\+Page method just iterates over the list of characters returned by our Magic\+Document helper class and adds the character and its normalized bounding rect to the \hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} object. At the end the text page is assigned to the page. We don't pay attention to the Generation\+Type parameter here, if your Generator want to use threads, it should check here whether the request shall be done asynchronously or synchronously and start the generation according to that. Additionally we have to tell the \hyperlink{classOkular_1_1Generator}{Okular\+::\+Generator} base class that we support text handling by setting this flag in the constructor.
+
+In this state we can now search, select and extract text from Magic documents.\hypertarget{okular_generators_okular_generators_threaded}{}\section{A Generator with Thread support}\label{okular_generators_okular_generators_threaded}
+Sometimes it makes sense to do the generation of page pictures or text pages asynchronously to improve performance and don't blocking the user interface. This can be done in two ways, either by using signals and slots or by using threads. Both have there pros and cons\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Signals and Slots} 
+\begin{DoxyItemize}
+\item Pro\+: Can be used with backend libraries which are not thread safe 
+\item Con\+: Sometime difficult to implement 
+\end{DoxyItemize}
+\item {\bfseries Threads} 
+\begin{DoxyItemize}
+\item Pro\+: Easy to implement as you can make synchronous calls to the backend libraries 
+\item Con\+: Backend libraries must be thread safe and you must prevent race conditions by using mutexes 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The signal and slots approach can be achieved with a normal Generator by calling \hyperlink{classOkular_1_1Generator_abed0ea73d02be9c4a0afcd920882faf5}{Okular\+::\+Generator\+::signal\+Pixmap\+Request\+Done()} from a slot after pixmap generation has been finished.
+
+When using threads you should use a slightly different A\+P\+I, which hides most of the thread usage, to make implementing as easy as possible.
+
+Let's assume the picture\+Of\+Page() and text\+Of\+Page methods in our Magic\+Document helper class are thread safe, so we can use them in a multithreaded environment. So nothing prevents us from changing the Magic\+Generator to use threads for better performance.
+
+The new Magic\+Generator A\+P\+I looks like the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "magicdocument.h"}
+
+\textcolor{preprocessor}{#include <okular/core/generator.h>}
+
+\textcolor{keyword}{class }MagicGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}
+\{
+    \textcolor{keyword}{public}:
+        MagicGenerator( QObject *parent, \textcolor{keyword}{const} QVariantList &args );
+        ~MagicGenerator();
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{loadDocument}( \textcolor{keyword}{const} QString &fileName, QVector<Okular::Page*> &pages );
+
+    \textcolor{keyword}{protected}:
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{doCloseDocument}();
+
+        \textcolor{keyword}{virtual} QImage \hyperlink{classOkular_1_1Generator_a6712c8d3c2759c3a1fcacbd503d3286e}{image}( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request );
+
+        \textcolor{keyword}{virtual} \hyperlink{classOkular_1_1TextPage}{Okular::TextPage}* \hyperlink{classOkular_1_1Generator_af7915b97ab4b9347fb76babdda212cef}{textPage}( \hyperlink{classOkular_1_1Page}{Okular::Page} *page );
+
+    \textcolor{keyword}{private}:
+        MagicDocument mMagicDocument;
+\};
+\end{DoxyCode}
+
+
+As you can see the can\+Generate\+Pixmap() generate\+Pixmap(), can\+Generate\+Text\+Page() and generate\+Text\+Page() methods have been removed and replaced by the image() and text\+Page() methods.
+
+Before explaining why, we'll take a look at the implementation\+:
+
+
+\begin{DoxyCode}
+MagicGenerator::MagicGenerator( QObject *parent, \textcolor{keyword}{const} QVariantList &args )
+    : Okular::Generator( parent, args )
+\{
+    setFeature( TextExtraction );
+    setFeature( Threaded );
+\}
+
+QImage MagicGenerator::image( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request )
+\{
+    QImage image = mMagicDocument.pictureOfPage( request->\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() );
+
+    \textcolor{keywordflow}{return} image.scaled( request->\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}(), request->\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}(), Qt::IgnoreAspectRatio, 
+      Qt::SmoothTransformation );
+\}
+
+\hyperlink{classOkular_1_1TextPage}{Okular::TextPage}* textPage( \hyperlink{classOkular_1_1Page}{Okular::Page} *page )
+\{
+    MagicDocument::TextInfo::List characters = mMagicDocument.textOfPage( page->
+      \hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() );
+    \textcolor{keywordflow}{if} ( characters.isEmpty() )
+        \textcolor{keywordflow}{return} 0;
+
+    \hyperlink{classOkular_1_1TextPage}{Okular::TextPage} *textPage = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextPage}{Okular::TextPage};
+    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < characters.count(); ++i ) \{
+        qreal left = characters[ i ].xPos / page->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}();
+        qreal top = characters[ i ].yPos / page->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+        qreal right = (characters[ i ].xPos + characters[ i ].width) / page->
+      \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}();
+        qreal bottom = (characters[ i ].yPos + characters[ i ].height) / page->
+      \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+
+        textPage->\hyperlink{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}{append}( characters[ i ].character,
+                          \textcolor{keyword}{new} \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( left, top, right, bottom ) );
+    \}
+
+    \textcolor{keywordflow}{return} textPage;
+\}
+\end{DoxyCode}
+
+
+So the first obviously thing is that both methods return a value instead of modifying the page directly. The reason for this is that both methods are executed in its own thread, so the code executed in them can block as long as it wants, it won't block the G\+U\+I anyway. Additionally we have to tell the \hyperlink{classOkular_1_1Generator}{Okular\+::\+Generator} base class that we can handle threads by setting the flag in the constructor.
+
+With only a small change we made our Magic\+Generator multithreaded now!\hypertarget{okular_generators_okular_generators_extended}{}\section{An Extended Generator}\label{okular_generators_okular_generators_extended}
+Now we want to create a new generator with some additional functionality\+:
+
+\begin{DoxyItemize}
+\item Support for document information (author, creation date etc.) \item Support for a table of content \item Support for printing the document \item Support for exporting the document as text\end{DoxyItemize}
+The new Generator shall be able to handle H\+T\+M\+L documents. We choose this format as example, because we can use Q\+Text\+Document to load, render and print a H\+T\+M\+L page, so a lot of code can be reused.
+
+The A\+P\+I of our H\+T\+M\+L\+Generator looks like the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <QtGui/QTextDocument>}
+
+\textcolor{preprocessor}{#include <okular/core/generator.h>}
+
+\textcolor{keyword}{class }HTMLGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}
+\{
+    \textcolor{keyword}{public}:
+        HTMLGenerator( QObject *parent, \textcolor{keyword}{const} QVariantList &args );
+        ~HTMLGenerator();
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{loadDocument}( \textcolor{keyword}{const} QString &fileName, QVector<Okular::Page*> &pages );
+
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_abbf00927221e2d2b2b71101f2b7f5732}{canGeneratePixmap}() \textcolor{keyword}{const};
+        \textcolor{keywordtype}{void} \hyperlink{classOkular_1_1Generator_a198cdcd9c27b179562c935342fd457b6}{generatePixmap}( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request );
+
+        \textcolor{keyword}{virtual} \textcolor{keyword}{const} \hyperlink{classOkular_1_1DocumentInfo}{Okular::DocumentInfo}* 
+      \hyperlink{classOkular_1_1Generator_a9993dd0a2415499e23d8394e7a447e98}{generateDocumentInfo}();
+
+        \textcolor{keyword}{virtual} \textcolor{keyword}{const} \hyperlink{classOkular_1_1DocumentSynopsis}{Okular::DocumentSynopsis}* 
+      \hyperlink{classOkular_1_1Generator_a1f8b31c19d7a5101cadf3fe3186ab0f1}{generateDocumentSynopsis}();
+
+        \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_aa786d406a1b0db6679a3bc62bbe2dc82}{print}( KPrinter &printer );
+
+        \textcolor{keyword}{virtual} \hyperlink{classQList}{Okular::ExportFormat::List} 
+      \hyperlink{classOkular_1_1Generator_a74280fb193319daab955feac694123ac}{exportFormats}() \textcolor{keyword}{const};
+
+        \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_a9e78f37aafbfdaf04f76f4163c27aa5e}{exportTo}( \textcolor{keyword}{const} QString &fileName, \textcolor{keyword}{const} 
+      \hyperlink{classOkular_1_1ExportFormat}{Okular::ExportFormat} &format );
+
+    \textcolor{keyword}{protected}:
+        \textcolor{keywordtype}{bool} \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{doCloseDocument}();
+
+    \textcolor{keyword}{private}:
+        QTextDocument *mTextDocument;
+        \hyperlink{classOkular_1_1DocumentInfo}{Okular::DocumentInfo} mDocumentInfo;
+        \hyperlink{classOkular_1_1DocumentSynopsis}{Okular::DocumentSynopsis} mDocumentSynopsis;
+\};
+\end{DoxyCode}
+
+
+The Generator doesn't support text search and selection, as the code would be quite complex, we'll show how to do it in the next chapter okular\+\_\+generators\+\_\+textdocument anyway.
+
+As you can see we have 5 new methods in the class\+:
+
+\begin{DoxyItemize}
+\item {\bfseries generate\+Document\+Info()} Creates an \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} (which is infact a Q\+Dom\+Document) which contains document information like author, creation time etc. \item {\bfseries generate\+Document\+Synopsis()} Creates an \hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} (which is a Q\+Dom\+Document as well) which contains the table of content. \item {\bfseries print()} Prints the document to the passed printer. \item {\bfseries export\+Formats()} Returns the supported export formats. \item {\bfseries export\+To()} Exports the document to the given file in the given format.\end{DoxyItemize}
+Now that you know what the methods are supposed to do, let's take a look at the implementation\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <QtCore/QFile>}
+\textcolor{preprocessor}{#include <QtGui/QAbstractTextDocumentLayout>}
+
+\textcolor{preprocessor}{#include <kprinter.h>}
+
+\textcolor{preprocessor}{#include <okular/core/document.h>}
+\textcolor{preprocessor}{#include <okular/core/page.h>}
+
+\textcolor{preprocessor}{#include "htmlgenerator.h"}
+
+\textcolor{keyword}{static} KAboutData createAboutData()
+\{
+    KAboutData aboutData(...);
+    \textcolor{comment}{// fill the about data}
+    \textcolor{keywordflow}{return} aboutData;
+\}
+
+\hyperlink{generator_8h_a87d954a3809f78e33fb1cb8e2369a05c}{OKULAR\_EXPORT\_PLUGIN}(HTMLGenerator, createAboutData())
+
+HTMLGenerator::HTMLGenerator( QObject *parent, const QVariantList &args )
+    : Okular::Generator( parent, args ),
+      mTextDocument( 0 )
+\{
+\}
+
+HTMLGenerator::~HTMLGenerator()
+\{
+    \textcolor{keyword}{delete} mTextDocument;
+\}
+
+\textcolor{keywordtype}{bool} HTMLGenerator::loadDocument( \textcolor{keyword}{const} QString &fileName, QVector<Okular::Page*> &pages )
+\{
+    QFile file( fileName );
+    \textcolor{keywordflow}{if} ( !file.open( QIODevice::ReadOnly ) ) \{
+        emit error( i18n( \textcolor{stringliteral}{"Unable to open file"} ), -1 );
+        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+    \}
+
+    \textcolor{keyword}{const} QString data = QString::fromUtf8( file.readAll() );
+
+    file.close();
+
+    mTextDocument = \textcolor{keyword}{new} QTextDocument;
+    mTextDocument->setHtml( data );
+    mTextDocument->setPageSize( QSizeF( 600, 800 ) );
+
+    pages.resize( mTextDocument->pageCount() );
+
+    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < mTextDocument->pageCount(); ++i ) \{
+      \hyperlink{classOkular_1_1Page}{Okular::Page} * page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( i, 600, 800, 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} );
+      pages[ i ] = page;
+    \}
+
+    mDocumentInfo.set( \textcolor{stringliteral}{"author"}, \textcolor{stringliteral}{"Tobias Koenig"}, i18n( \textcolor{stringliteral}{"Author"} ) );
+    mDocumentInfo.set( \textcolor{stringliteral}{"title"}, \textcolor{stringliteral}{"The Art of Okular Plugin Development"}, i18n( \textcolor{stringliteral}{"Title"} ) );
+
+    \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport = ... \textcolor{comment}{// get the viewport of the chapter}
+
+    QDomElement item = mDocumentSynopsis.createElement( \textcolor{stringliteral}{"Chapter 1"} );
+    item.setAttribute( \textcolor{stringliteral}{"Viewport"}, viewport.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}() );
+    mDocumentSynopsis.appendChild( item );
+
+    viewport = ... \textcolor{comment}{// get the viewport of the subchapter}
+
+    QDomElement childItem = mDocumentSynopsis.createElement( \textcolor{stringliteral}{"SubChapter 1.1"} );
+    childItem.setAttribute( \textcolor{stringliteral}{"Viewport"}, viewport.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}() );
+    item.appendChild( childItem );
+
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{bool} HTMLGenerator::doCloseDocument()
+\{
+    \textcolor{keyword}{delete} mTextDocument;
+    mTextDocument = 0;
+
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{bool} HTMLGenerator::canGeneratePixmap()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+
+\textcolor{keywordtype}{void} HTMLGenerator::generatePixmap( \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest} *request )
+\{
+    QPixmap *pixmap = \textcolor{keyword}{new} QPixmap( request->\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}(), request->\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}() );
+    pixmap->fill( Qt::white );
+
+    QPainter p;
+    p.begin( pixmap );
+
+    qreal width = request->\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}();
+    qreal height = request->\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}();
+
+    p.scale( width / 600, height / 800 );
+
+    \textcolor{keyword}{const} QRect rect( 0, request->\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() * 800, 600, 800 );
+    p.translate( QPoint( 0, request->\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() * -800 ) );
+    d->mDocument->drawContents( &p, rect );
+    p.end();
+
+    request->\hyperlink{classOkular_1_1PixmapRequest_a83b5e81f2e908e70f3c19a0a3c07fab3}{page}()->\hyperlink{classOkular_1_1Page_ae7e45a6647904b01ebe84930b73f1d79}{setPixmap}( request->id(), pixmap );
+
+    signalPixmapRequestDone( request );
+\}
+
+\textcolor{keyword}{const} \hyperlink{classOkular_1_1DocumentInfo}{Okular::DocumentInfo}* HTMLGenerator::generateDocumentInfo()
+\{
+    \textcolor{keywordflow}{return} &mDocumentInfo;
+\}
+
+\textcolor{keyword}{const} \hyperlink{classOkular_1_1DocumentSynopsis}{Okular::DocumentSynopsis}* HTMLGenerator::generateDocumentSynopsis()
+\{
+    \textcolor{keywordflow}{if} ( !mDocumentSynopsis.hasChildNodes() )
+        \textcolor{keywordflow}{return} 0;
+    \textcolor{keywordflow}{else}
+        \textcolor{keywordflow}{return} &mDocumentSynopsis;
+\}
+
+\textcolor{keywordtype}{bool} HTMLGenerator::print( KPrinter &printer )
+\{
+    QPainter p( &printer );
+
+    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < mTextDocument->pageCount(); ++i ) \{
+        \textcolor{keywordflow}{if} ( i != 0 )
+            printer.newPage();
+
+        QRect rect( 0, i * 800, 600, 800 );
+        p.translate( QPoint( 0, i * -800 ) );
+        mTextDocument->drawContents( &p, rect );
+    \}
+\}
+
+\hyperlink{classQList}{Okular::ExportFormat::List} HTMLGenerator::exportFormats()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{Okular::ExportFormat::standardFormat}( 
+      \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{Okular::ExportFormat::PlainText} );
+\}
+
+\textcolor{keywordtype}{bool} HTMLGenerator::exportTo( \textcolor{keyword}{const} QString &fileName, \textcolor{keyword}{const} 
+      \hyperlink{classOkular_1_1ExportFormat}{Okular::ExportFormat} &format )
+\{
+    QFile file( fileName );
+    \textcolor{keywordflow}{if} ( !fileName.open( QIODevice::WriteOnly ) ) \{
+        emit error( i18n( \textcolor{stringliteral}{"Unable to open file"} ), -1 );
+        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+    \}
+
+    \textcolor{keywordflow}{if} ( format.\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}()->name() == QLatin1String( \textcolor{stringliteral}{"text/plain"} ) )
+        file.writeBlock( mTextDocument->toPlainText().toUtf8() );
+
+    file.close();
+
+    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+\}
+\end{DoxyCode}
+
+
+Let's take a closer look at the single methods. In the load\+Document() method we try to open the passed file name and read all the content into the Q\+Text\+Document object. By calling Q\+Text\+Document\+::set\+Page\+Size(), the whole document is divided into pages of the given size. In the next step we create \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} objects for every page in the Q\+Text\+Document and fill the pages vector with them.
+
+Afterwards we fill our \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} object with data. Since extracting the H\+T\+M\+L meta data would need a lot of code we work with static data here. \mbox{[}to be continued\mbox{]} 

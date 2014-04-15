@@ -1,0 +1,157 @@
+\hypertarget{classOkularTTS_1_1Private}{\section{Okular\+T\+T\+S\+:\+:Private Class Reference}
+\label{classOkularTTS_1_1Private}\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkularTTS_1_1Private_a274064058c052cc98923875ae56dc1c9}{Private} (\hyperlink{classOkularTTS}{Okular\+T\+T\+S} $\ast$qq)
+\item 
+void \hyperlink{classOkularTTS_1_1Private_a5e8372e99b2e3fc4a7f8458ac722df24}{setup\+Iface} ()
+\item 
+void \hyperlink{classOkularTTS_1_1Private_a7cedd045a18164ae6d61e40a6bb2b28e}{teardown\+Iface} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkularTTS}{Okular\+T\+T\+S} $\ast$ \hyperlink{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}{q}
+\item 
+\hyperlink{namespaceorg_1_1kde_a660da8eeb8f371be9650137642072d62}{org\+::kde\+::\+K\+Speech} $\ast$ \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech}
+\item 
+Q\+Set$<$ int $>$ \hyperlink{classOkularTTS_1_1Private_aa811af4dafacdfd951476c1359533466}{jobs}
+\item 
+Q\+D\+Bus\+Service\+Watcher \hyperlink{classOkularTTS_1_1Private_a7d356c1fac80113054138b07a96a6c74}{watcher}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file tts.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkularTTS_1_1Private_a274064058c052cc98923875ae56dc1c9}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!Private@{Private}}
+\index{Private@{Private}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+T\+T\+S\+::\+Private\+::\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+T\+T\+S} $\ast$}]{qq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkularTTS_1_1Private_a274064058c052cc98923875ae56dc1c9}
+
+
+Definition at line 25 of file tts.\+cpp.
+
+
+\begin{DoxyCode}
+26         : \hyperlink{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}{q}( qq ), \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech}( 0 )
+27         , \hyperlink{classOkularTTS_1_1Private_a7d356c1fac80113054138b07a96a6c74}{watcher}( \textcolor{stringliteral}{"org.kde.kttsd"}, QDBusConnection::sessionBus(), 
+      QDBusServiceWatcher::WatchForUnregistration )
+28     \{
+29     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkularTTS_1_1Private_a5e8372e99b2e3fc4a7f8458ac722df24}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!setup\+Iface@{setup\+Iface}}
+\index{setup\+Iface@{setup\+Iface}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{setup\+Iface}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+T\+T\+S\+::\+Private\+::setup\+Iface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkularTTS_1_1Private_a5e8372e99b2e3fc4a7f8458ac722df24}
+
+
+Definition at line 40 of file tts.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     \textcolor{keywordflow}{if} ( \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech} )
+43         \textcolor{keywordflow}{return};
+44 
+45     \textcolor{comment}{// If KTTSD not running, start it.}
+46     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered( \textcolor{stringliteral}{"org.kde.kttsd
+      "} );
+47     \textcolor{keywordtype}{bool} kttsdactive = \textcolor{keyword}{false};
+48     \textcolor{keywordflow}{if} ( reply.isValid() )
+49         kttsdactive = reply.value();
+50     \textcolor{keywordflow}{if} ( !kttsdactive )
+51     \{
+52         QString error;
+53         \textcolor{keywordflow}{if} ( KToolInvocation::startServiceByDesktopName( \textcolor{stringliteral}{"kttsd"}, QStringList(), &error ) )
+54         \{
+55             emit \hyperlink{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}{q}->\hyperlink{classOkularTTS_a27379199010d731e732a71dbde72635f}{errorMessage}( i18n( \textcolor{stringliteral}{"Starting Jovie Text-to-Speech service Failed: %1"}, 
+      error ) );
+56         \}
+57         \textcolor{keywordflow}{else}
+58         \{
+59             kttsdactive = \textcolor{keyword}{true};
+60         \}
+61     \}
+62     \textcolor{keywordflow}{if} ( kttsdactive )
+63     \{
+64         \textcolor{comment}{// creating the connection to the kspeech interface}
+65         \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech} = \textcolor{keyword}{new} \hyperlink{namespaceorg_1_1kde_a660da8eeb8f371be9650137642072d62}{org::kde::KSpeech}( \textcolor{stringliteral}{"org.kde.kttsd"}, \textcolor{stringliteral}{"/KSpeech"}, 
+      QDBusConnection::sessionBus() );
+66         \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech}->setParent( \hyperlink{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}{q} );
+67         \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech}->\hyperlink{classOrgKdeKSpeechInterface_a7d483fb8e453eec2e82eb82573eddb9d}{setApplicationName}( \textcolor{stringliteral}{"Okular"} );
+68         connect( \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech}, SIGNAL(jobStateChanged(QString,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+69                  \hyperlink{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}{q}, SLOT(slotJobStateChanged(QString,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})) );
+70     \}
+71 \}
+\end{DoxyCode}
+\hypertarget{classOkularTTS_1_1Private_a7cedd045a18164ae6d61e40a6bb2b28e}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!teardown\+Iface@{teardown\+Iface}}
+\index{teardown\+Iface@{teardown\+Iface}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{teardown\+Iface}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+T\+T\+S\+::\+Private\+::teardown\+Iface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkularTTS_1_1Private_a7cedd045a18164ae6d61e40a6bb2b28e}
+
+
+Definition at line 73 of file tts.\+cpp.
+
+
+\begin{DoxyCode}
+74 \{
+75     \textcolor{keyword}{delete} \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech};
+76     \hyperlink{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{kspeech} = 0;
+77 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkularTTS_1_1Private_aa811af4dafacdfd951476c1359533466}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!jobs@{jobs}}
+\index{jobs@{jobs}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{jobs}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Set$<$ int $>$ Okular\+T\+T\+S\+::\+Private\+::jobs}}\label{classOkularTTS_1_1Private_aa811af4dafacdfd951476c1359533466}
+
+
+Definition at line 36 of file tts.\+cpp.
+
+\hypertarget{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!kspeech@{kspeech}}
+\index{kspeech@{kspeech}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{kspeech}]{\setlength{\rightskip}{0pt plus 5cm}{\bf org\+::kde\+::\+K\+Speech}$\ast$ Okular\+T\+T\+S\+::\+Private\+::kspeech}}\label{classOkularTTS_1_1Private_a4879c95e72003878001912f8f9410403}
+
+
+Definition at line 35 of file tts.\+cpp.
+
+\hypertarget{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!q@{q}}
+\index{q@{q}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+T\+T\+S}$\ast$ Okular\+T\+T\+S\+::\+Private\+::q}}\label{classOkularTTS_1_1Private_afd9d0ce678e2e78ac68b418980e584fa}
+
+
+Definition at line 34 of file tts.\+cpp.
+
+\hypertarget{classOkularTTS_1_1Private_a7d356c1fac80113054138b07a96a6c74}{\index{Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}!watcher@{watcher}}
+\index{watcher@{watcher}!Okular\+T\+T\+S\+::\+Private@{Okular\+T\+T\+S\+::\+Private}}
+\subsubsection[{watcher}]{\setlength{\rightskip}{0pt plus 5cm}Q\+D\+Bus\+Service\+Watcher Okular\+T\+T\+S\+::\+Private\+::watcher}}\label{classOkularTTS_1_1Private_a7d356c1fac80113054138b07a96a6c74}
+
+
+Definition at line 37 of file tts.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{tts_8cpp}{tts.\+cpp}\end{DoxyCompactItemize}

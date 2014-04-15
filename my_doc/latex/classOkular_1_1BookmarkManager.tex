@@ -1,0 +1,888 @@
+\hypertarget{classOkular_1_1BookmarkManager}{\section{Okular\+:\+:Bookmark\+Manager Class Reference}
+\label{classOkular_1_1BookmarkManager}\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+}
+
+
+Bookmarks manager utility.  
+
+
+
+
+{\ttfamily \#include $<$bookmarkmanager.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Bookmark\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1BookmarkManager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBookmarkManager_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a4141e9880af774f72d8e0616ca4a6392}{open\+Url} (const K\+Url \&url)
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a60926c4115be32b182913e56fd709e18}{saved} ()
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_af46858377e563eb8277226eb853a0608}{bookmarks\+Changed} (const K\+Url \&url)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1BookmarkManager_a1069f28ac38e9c854e04a8aec6a32ba5}{$\sim$\+Bookmark\+Manager} ()
+\item 
+K\+Url\+::\+List \hyperlink{classOkular_1_1BookmarkManager_aa97bab16634951bc92dd567208fdca80}{files} () const 
+\item 
+K\+Bookmark\+::\+List \hyperlink{classOkular_1_1BookmarkManager_a35ec51e7751b9bde6bffb9ad339ffdfd}{bookmarks} (const K\+Url \&url) const 
+\item 
+K\+Bookmark\+::\+List \hyperlink{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{bookmarks} () const 
+\item 
+K\+Bookmark\+::\+List \hyperlink{classOkular_1_1BookmarkManager_af65fc427552b4e653ae253a69cc53828}{bookmarks} (int page) const 
+\item 
+K\+Bookmark \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark} (int page) const 
+\item 
+K\+Bookmark \hyperlink{classOkular_1_1BookmarkManager_a3b314eb1e853ca56751a61182fe553d1}{bookmark} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&viewport) const 
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_af277e57ed79d0fce59f00a62f6e0f7b5}{save} () const 
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_adc5509fdb789024dc10bac5c3c1457b2}{add\+Bookmark} (int page)
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a34863b6bfe042e738e14950e4f5c27b8}{add\+Bookmark} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&vp)
+\item 
+bool \hyperlink{classOkular_1_1BookmarkManager_a9f859d109d8a4edb1576ccfcedc84232}{add\+Bookmark} (const K\+Url \&referurl, const \hyperlink{classOkular_1_1DocumentViewport}{Okular\+::\+Document\+Viewport} \&vp, const Q\+String \&title=Q\+String())
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a3e763f31a1595a68b4df6e8419ea47ac}{remove\+Bookmark} (int page)
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_ad9b6b11a42b0522ad80b52303e939fc3}{remove\+Bookmark} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&vp)
+\item 
+int \hyperlink{classOkular_1_1BookmarkManager_a62520293e8c99ae68058fe4d00eb0e6b}{remove\+Bookmark} (const K\+Url \&referurl, const K\+Bookmark \&bm)
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a3279284b0618f5bb49dba8647b6980a4}{remove\+Bookmarks} (const K\+Url \&referurl, const K\+Bookmark\+::\+List \&list)
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a0e57d5f1d5795042686118ac779d85c5}{rename\+Bookmark} (K\+Bookmark $\ast$bm, const Q\+String \&new\+Name)
+\item 
+void \hyperlink{classOkular_1_1BookmarkManager_a99979fe5e87cb15173ac20feb7de352e}{rename\+Bookmark} (const K\+Url \&referurl, const Q\+String \&new\+Name)
+\item 
+Q\+String \hyperlink{classOkular_1_1BookmarkManager_a9b24aecf34aaac007418797bee80f717}{title\+For\+Url} (const K\+Url \&referurl) const 
+\item 
+bool \hyperlink{classOkular_1_1BookmarkManager_a606808f318c721de3e0d4954e7f84a35}{is\+Bookmarked} (int page) const 
+\item 
+bool \hyperlink{classOkular_1_1BookmarkManager_a531ad8e8944468b90d363e628c21c9bd}{is\+Bookmarked} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&viewport) const 
+\item 
+K\+Bookmark \hyperlink{classOkular_1_1BookmarkManager_a0a4f8e3402938f11fc77cf6790b2562b}{next\+Bookmark} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&viewport) const 
+\item 
+K\+Bookmark \hyperlink{classOkular_1_1BookmarkManager_a282c97d867d3f2f9c8d94b8b320ebbfa}{previous\+Bookmark} (const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&viewport) const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ Q\+Action $\ast$ $>$ \hyperlink{classOkular_1_1BookmarkManager_a4fd29f115e61767e9790f3fd5ab3f11f}{actions\+For\+Url} (const K\+Url \&url) const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1BookmarkManager_ac96b60d37bd806132da680e187dc2288}{Private}
+\item 
+class \hyperlink{classOkular_1_1BookmarkManager_a883538034e58fc5c0de7d4e4cab3cef7}{Document}
+\item 
+class \hyperlink{classOkular_1_1BookmarkManager_ad60d3d11afe13773e689a27dbaba5d11}{Document\+Private}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bookmarks manager utility. 
+
+This class is responsible for loading and saving the bookmarks using the proper format, and for working with them (eg querying, adding, removing). 
+
+Definition at line 32 of file bookmarkmanager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1BookmarkManager_a1069f28ac38e9c854e04a8aec6a32ba5}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!````~Bookmark\+Manager@{$\sim$\+Bookmark\+Manager}}
+\index{````~Bookmark\+Manager@{$\sim$\+Bookmark\+Manager}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{$\sim$\+Bookmark\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Bookmark\+Manager\+::$\sim$\+Bookmark\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1BookmarkManager_a1069f28ac38e9c854e04a8aec6a32ba5}
+
+
+Definition at line 148 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+149 \{
+150     \textcolor{keyword}{delete} d;
+151 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1BookmarkManager_a4fd29f115e61767e9790f3fd5ab3f11f}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!actions\+For\+Url@{actions\+For\+Url}}
+\index{actions\+For\+Url@{actions\+For\+Url}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{actions\+For\+Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ Q\+Action $\ast$ $>$ Bookmark\+Manager\+::actions\+For\+Url (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a4fd29f115e61767e9790f3fd5ab3f11f}
+Returns a list of actions for the bookmarks of the specified {\ttfamily url}.
+
+\begin{DoxyNote}{Note}
+the actions will have no parents, so you have to delete them yourself 
+\end{DoxyNote}
+
+
+Definition at line 587 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+588 \{
+589     \hyperlink{classQList}{QList< QAction * >} ret;
+590     KBookmarkGroup group = d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->root();
+591     \textcolor{keywordflow}{for} ( KBookmark bm = group.first(); !bm.isNull(); bm = group.next( bm ) )
+592     \{
+593         \textcolor{keywordflow}{if} ( !bm.isGroup() || urlForGroup( bm ) != url )
+594             \textcolor{keywordflow}{continue};
+595 
+596         KBookmarkGroup group = bm.toGroup();
+597         \textcolor{keywordflow}{for} ( KBookmark b = group.first(); !b.isNull(); b = group.next( b ) )
+598         \{
+599             \textcolor{keywordflow}{if} ( b.isSeparator() || b.isGroup() )
+600                 \textcolor{keywordflow}{continue};
+601 
+602             ret.append( \textcolor{keyword}{new} \hyperlink{classOkularBookmarkAction}{OkularBookmarkAction}( 
+      \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport}( b.url().htmlRef() ), b, d, 0 ) );
+603         \}
+604         \textcolor{keywordflow}{break};
+605     \}
+606     qSort( ret.begin(), ret.end(), okularBookmarkActionLessThan );
+607     \textcolor{keywordflow}{return} ret;
+608 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_adc5509fdb789024dc10bac5c3c1457b2}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!add\+Bookmark@{add\+Bookmark}}
+\index{add\+Bookmark@{add\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{add\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::add\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_adc5509fdb789024dc10bac5c3c1457b2}
+Adds a bookmark for the given {\ttfamily page}. 
+
+Definition at line 385 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+386 \{
+387     \textcolor{keywordflow}{if} ( n >= 0 && n < (\textcolor{keywordtype}{int})d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->\hyperlink{classOkular_1_1DocumentPrivate_a73b852d9a73ffe8061b66dbf9b290f17}{m\_pagesVector}.count() )
+388     \{
+389         \textcolor{keywordflow}{if} ( setPageBookmark( n ) )
+390             \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreachObserver}( notifyPageChanged( n, 
+      \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5}{DocumentObserver::Bookmark} ) );
+391     \}
+392 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a34863b6bfe042e738e14950e4f5c27b8}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!add\+Bookmark@{add\+Bookmark}}
+\index{add\+Bookmark@{add\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{add\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::add\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{vp}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a34863b6bfe042e738e14950e4f5c27b8}
+Adds a bookmark for the given viewport {\ttfamily vp} \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 394 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+395 \{
+396     \hyperlink{classOkular_1_1BookmarkManager_adc5509fdb789024dc10bac5c3c1457b2}{addBookmark}( d->\hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, vp );
+397 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a9f859d109d8a4edb1576ccfcedc84232}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!add\+Bookmark@{add\+Bookmark}}
+\index{add\+Bookmark@{add\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{add\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}bool Bookmark\+Manager\+::add\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{referurl, }
+\item[{const {\bf Okular\+::\+Document\+Viewport} \&}]{vp, }
+\item[{const Q\+String \&}]{title = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a9f859d109d8a4edb1576ccfcedc84232}
+Adds a new bookmark for the {\ttfamily referurl} at the specified viewport {\ttfamily vp}, with an optional {\ttfamily title}.
+
+If no {\ttfamily title} is specified, then {\itshape \#n} will be used. 
+
+Definition at line 399 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+400 \{
+401     \textcolor{keywordflow}{if} ( !referurl.isValid() || !vp.\hyperlink{classOkular_1_1DocumentViewport_a13161b17f2d0b68bf033955f81d41584}{isValid}() )
+402         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+403 
+404     \textcolor{keywordflow}{if} ( vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} < 0 || vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} >= d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->
+      \hyperlink{classOkular_1_1DocumentPrivate_a73b852d9a73ffe8061b66dbf9b290f17}{m\_pagesVector}.count() )
+405         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+406 
+407     KBookmarkGroup thebg;
+408     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( referurl, \textcolor{keyword}{true}, &thebg );
+409     Q\_ASSERT( it != d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() );
+410 
+411     \textcolor{keywordtype}{int} count = 0; \textcolor{comment}{// Number of bookmarks in the current page}
+412     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+413     \textcolor{comment}{// Check if the bookmark already exists}
+414     \textcolor{keywordflow}{for} ( KBookmark bm = thebg.first(); !found && !bm.isNull(); bm = thebg.next( bm ) )
+415     \{
+416         \textcolor{keywordflow}{if} ( bm.isSeparator() || bm.isGroup() )
+417             \textcolor{keywordflow}{continue};
+418 
+419         \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} bmViewport( bm.url().htmlRef() );
+420         \textcolor{keywordflow}{if} ( bmViewport.isValid() && bmViewport.pageNumber == vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} )
+421         \{
+422             ++count;
+423 
+424             \textcolor{keywordflow}{if} ( documentViewportFuzzyCompare( bmViewport, vp ) )
+425                 found = \textcolor{keyword}{true};
+426         \}
+427     \}
+428 
+429     \textcolor{keywordflow}{if} ( found )
+430         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+431 
+432     QString newtitle;
+433     \textcolor{keywordflow}{if} ( title.isEmpty() )
+434     \{
+435         \textcolor{comment}{// if we have no title specified for the new bookmark, then give it the}
+436         \textcolor{comment}{// name '#p' where p is the page number where the bookmark is located.}
+437         \textcolor{comment}{// if there's more than one bookmark per page, give the name '#p-n'}
+438         \textcolor{comment}{// where n is the index of this bookmark among the ones of its page.}
+439         \textcolor{keywordflow}{if} ( count > 0 )
+440             newtitle = QString( \textcolor{stringliteral}{"#%1-%2"} ).arg( vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} + 1 ).arg( count );
+441         \textcolor{keywordflow}{else}
+442             newtitle = QString( \textcolor{stringliteral}{"#%1"} ).arg( vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} + 1 );
+443     \}
+444     \textcolor{keywordflow}{else}
+445         newtitle = title;
+446 
+447     KUrl newurl = referurl;
+448     newurl.setHTMLRef( vp.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}() );
+449     thebg.addBookmark( newtitle, newurl, QString() );
+450     \textcolor{keywordflow}{if} ( referurl == d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->\hyperlink{classOkular_1_1DocumentPrivate_a1a0145bbb16d15c016000a83d0d2ab2b}{m\_url} )
+451     \{
+452         d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[ vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} ]++;
+453         \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreachObserver}( notifyPageChanged( vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber}, 
+      \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5}{DocumentObserver::Bookmark} ) );
+454     \}
+455     d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->emitChanged( thebg );
+456     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+457 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!bookmark@{bookmark}}
+\index{bookmark@{bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{bookmark}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark Bookmark\+Manager\+::bookmark (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}
+Returns the bookmark for the given page of the document \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 292 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+293 \{
+294     \textcolor{keyword}{const} KBookmark::List bmarks = \hyperlink{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{bookmarks}();
+295     \textcolor{keywordflow}{foreach}( \textcolor{keyword}{const} KBookmark &bm, bmarks )
+296     \{
+297         \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+298         \textcolor{keywordflow}{if} ( vp.isValid() && vp.pageNumber == page )
+299         \{
+300             \textcolor{keywordflow}{return} bm;
+301         \}
+302     \}
+303     \textcolor{keywordflow}{return} KBookmark();
+304 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a3b314eb1e853ca56751a61182fe553d1}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!bookmark@{bookmark}}
+\index{bookmark@{bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{bookmark}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark Bookmark\+Manager\+::bookmark (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{viewport}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a3b314eb1e853ca56751a61182fe553d1}
+Returns the bookmark for the given {\ttfamily viewport} of the document \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 306 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+307 \{
+308     \textcolor{keywordflow}{if} ( !viewport.\hyperlink{classOkular_1_1DocumentViewport_a13161b17f2d0b68bf033955f81d41584}{isValid}() || !\hyperlink{classOkular_1_1BookmarkManager_a606808f318c721de3e0d4954e7f84a35}{isBookmarked}( viewport.
+      \hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber} ) )
+309         \textcolor{keywordflow}{return} KBookmark();
+310 
+311     KBookmarkGroup thebg;
+312     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( d->\hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, \textcolor{keyword}{false}, &thebg );
+313     \textcolor{keywordflow}{if} ( it == d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() )
+314         \textcolor{keywordflow}{return} KBookmark();
+315 
+316     \textcolor{keywordflow}{for} ( KBookmark bm = thebg.first(); !bm.isNull(); bm = thebg.next( bm ) )
+317     \{
+318         \textcolor{keywordflow}{if} ( bm.isSeparator() || bm.isGroup() )
+319             \textcolor{keywordflow}{continue};
+320 
+321         \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+322         \textcolor{keywordflow}{if} ( documentViewportFuzzyCompare( vp, viewport ) )
+323         \{
+324             \textcolor{keywordflow}{return} bm;
+325         \}
+326     \}
+327 
+328     \textcolor{keywordflow}{return} KBookmark();
+329 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a35ec51e7751b9bde6bffb9ad339ffdfd}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark\+::\+List Bookmark\+Manager\+::bookmarks (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a35ec51e7751b9bde6bffb9ad339ffdfd}
+Returns the list of bookmarks for the specified {\ttfamily url}. 
+
+Definition at line 248 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+249 \{
+250     KBookmark::List ret;
+251     KBookmarkGroup group = d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->root();
+252     \textcolor{keywordflow}{for} ( KBookmark bm = group.first(); !bm.isNull(); bm = group.next( bm ) )
+253     \{
+254         \textcolor{keywordflow}{if} ( !bm.isGroup() || urlForGroup( bm ) != url )
+255             \textcolor{keywordflow}{continue};
+256 
+257         KBookmarkGroup group = bm.toGroup();
+258         \textcolor{keywordflow}{for} ( KBookmark b = group.first(); !b.isNull(); b = group.next( b ) )
+259         \{
+260             \textcolor{keywordflow}{if} ( b.isSeparator() || b.isGroup() )
+261                 \textcolor{keywordflow}{continue};
+262 
+263             ret.append( b );
+264         \}
+265         \textcolor{keywordflow}{break};
+266     \}
+267 
+268     \textcolor{keywordflow}{return} ret;
+269 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark\+::\+List Bookmark\+Manager\+::bookmarks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}
+Returns the list of bookmarks for document \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 271 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+272 \{
+273     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{bookmarks}( d->\hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url} );
+274 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_af65fc427552b4e653ae253a69cc53828}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!bookmarks@{bookmarks}}
+\index{bookmarks@{bookmarks}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark\+::\+List Bookmark\+Manager\+::bookmarks (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_af65fc427552b4e653ae253a69cc53828}
+Returns the list of bookmarks for the given page of the document \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 276 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+277 \{
+278     \textcolor{keyword}{const} KBookmark::List bmarks = \hyperlink{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{bookmarks}();
+279     KBookmark::List ret;
+280     \textcolor{keywordflow}{foreach}( \textcolor{keyword}{const} KBookmark &bm, bmarks )
+281     \{
+282         \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+283         \textcolor{keywordflow}{if} ( vp.isValid() && vp.pageNumber == page )
+284         \{
+285             ret.append(bm);
+286         \}
+287     \}
+288 
+289     \textcolor{keywordflow}{return} ret;
+290 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_af46858377e563eb8277226eb853a0608}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!bookmarks\+Changed@{bookmarks\+Changed}}
+\index{bookmarks\+Changed@{bookmarks\+Changed}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{bookmarks\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Bookmark\+Manager\+::bookmarks\+Changed (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1BookmarkManager_af46858377e563eb8277226eb853a0608}
+The bookmarks for specified {\ttfamily url} were changed.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+\hypertarget{classOkular_1_1BookmarkManager_aa97bab16634951bc92dd567208fdca80}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!files@{files}}
+\index{files@{files}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{files}]{\setlength{\rightskip}{0pt plus 5cm}K\+Url\+::\+List Bookmark\+Manager\+::files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_aa97bab16634951bc92dd567208fdca80}
+Returns the list of documents with bookmarks. 
+
+Definition at line 234 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+235 \{
+236     KUrl::List ret;
+237     KBookmarkGroup group = d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->root();
+238     \textcolor{keywordflow}{for} ( KBookmark bm = group.first(); !bm.isNull(); bm = group.next( bm ) )
+239     \{
+240         \textcolor{keywordflow}{if} ( bm.isSeparator() || !bm.isGroup() )
+241             \textcolor{keywordflow}{continue};
+242 
+243         ret.append( urlForGroup( bm ) );
+244     \}
+245     \textcolor{keywordflow}{return} ret;
+246 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a606808f318c721de3e0d4954e7f84a35}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!is\+Bookmarked@{is\+Bookmarked}}
+\index{is\+Bookmarked@{is\+Bookmarked}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{is\+Bookmarked}]{\setlength{\rightskip}{0pt plus 5cm}bool Bookmark\+Manager\+::is\+Bookmarked (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a606808f318c721de3e0d4954e7f84a35}
+Returns whether the given {\ttfamily page} is bookmarked. 
+
+Definition at line 689 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+690 \{
+691     \textcolor{keywordflow}{return} d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}.contains( page ) && d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[ page ] > 0;
+692 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a531ad8e8944468b90d363e628c21c9bd}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!is\+Bookmarked@{is\+Bookmarked}}
+\index{is\+Bookmarked@{is\+Bookmarked}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{is\+Bookmarked}]{\setlength{\rightskip}{0pt plus 5cm}bool Bookmark\+Manager\+::is\+Bookmarked (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{viewport}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a531ad8e8944468b90d363e628c21c9bd}
+Return whether the given {\ttfamily viewport} is bookmarked. \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 694 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+695 \{
+696     KBookmark bm = \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark}( viewport );
+697 
+698     \textcolor{keywordflow}{return} !bm.isNull();
+699 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a0a4f8e3402938f11fc77cf6790b2562b}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!next\+Bookmark@{next\+Bookmark}}
+\index{next\+Bookmark@{next\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{next\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark Bookmark\+Manager\+::next\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{viewport}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a0a4f8e3402938f11fc77cf6790b2562b}
+Given a {\ttfamily viewport}, returns the next bookmark \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 701 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+702 \{
+703     KBookmark::List bmarks = \hyperlink{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{bookmarks}();
+704     qSort( bmarks.begin(), bmarks.end(), bookmarkLessThan);
+705 
+706     KBookmark \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark};
+707     \textcolor{keywordflow}{foreach} ( \textcolor{keyword}{const} KBookmark &bm, bmarks )
+708     \{
+709         \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+710         \textcolor{keywordflow}{if} ( viewport < vp )
+711         \{
+712             bookmark = bm;
+713             \textcolor{keywordflow}{break};
+714         \}
+715     \}
+716 
+717     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark};
+718 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a4141e9880af774f72d8e0616ca4a6392}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!open\+Url@{open\+Url}}
+\index{open\+Url@{open\+Url}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{open\+Url}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Bookmark\+Manager\+::open\+Url (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1BookmarkManager_a4141e9880af774f72d8e0616ca4a6392}
+The bookmark manager is requesting to open the specified {\ttfamily url}. \hypertarget{classOkular_1_1BookmarkManager_a282c97d867d3f2f9c8d94b8b320ebbfa}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!previous\+Bookmark@{previous\+Bookmark}}
+\index{previous\+Bookmark@{previous\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{previous\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark Bookmark\+Manager\+::previous\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{viewport}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a282c97d867d3f2f9c8d94b8b320ebbfa}
+Given a {\ttfamily viewport}, returns the previous bookmark \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 720 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+721 \{
+722     KBookmark::List bmarks = \hyperlink{classOkular_1_1BookmarkManager_a770db9f97ee4d9069c0d417017caa4d3}{bookmarks}();
+723     qSort( bmarks.begin(), bmarks.end(), bookmarkLessThan );
+724 
+725     KBookmark \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark};
+726     \textcolor{keywordflow}{for} ( KBookmark::List::const\_iterator it = bmarks.constEnd(); it != bmarks.constBegin(); --it )
+727     \{
+728         KBookmark bm = *(it-1);
+729         \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+730         \textcolor{keywordflow}{if} ( vp < viewport )
+731         \{
+732             bookmark = bm;
+733             \textcolor{keywordflow}{break};
+734         \}
+735     \}
+736 
+737     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark};
+738 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a3e763f31a1595a68b4df6e8419ea47ac}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!remove\+Bookmark@{remove\+Bookmark}}
+\index{remove\+Bookmark@{remove\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{remove\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::remove\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a3e763f31a1595a68b4df6e8419ea47ac}
+Remove a bookmark for the given {\ttfamily page}. 
+
+Definition at line 459 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+460 \{
+461     \textcolor{keywordflow}{if} ( n >= 0 && n < (\textcolor{keywordtype}{int})d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->\hyperlink{classOkular_1_1DocumentPrivate_a73b852d9a73ffe8061b66dbf9b290f17}{m\_pagesVector}.count() )
+462     \{
+463         \textcolor{keywordflow}{if} ( removePageBookmark( n ) )
+464             \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreachObserver}( notifyPageChanged( n, 
+      \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5}{DocumentObserver::Bookmark} ) );
+465     \}
+466 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_ad9b6b11a42b0522ad80b52303e939fc3}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!remove\+Bookmark@{remove\+Bookmark}}
+\index{remove\+Bookmark@{remove\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{remove\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::remove\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Viewport} \&}]{vp}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_ad9b6b11a42b0522ad80b52303e939fc3}
+Remove a bookmark for the given viewport {\ttfamily vp} \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 468 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+469 \{
+470     \textcolor{keywordtype}{int} page = vp.\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber};
+471     \textcolor{keywordflow}{if} ( page >= 0 && page < d->document->m\_pagesVector.count() )
+472     \{
+473         \hyperlink{classOkular_1_1BookmarkManager_a3e763f31a1595a68b4df6e8419ea47ac}{removeBookmark}( d->\hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, \hyperlink{classOkular_1_1BookmarkManager_aeda7ddc73c05fb51f03a031d95cccb9d}{bookmark}( vp ) );
+474     \}
+475 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a62520293e8c99ae68058fe4d00eb0e6b}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!remove\+Bookmark@{remove\+Bookmark}}
+\index{remove\+Bookmark@{remove\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{remove\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}int Bookmark\+Manager\+::remove\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{referurl, }
+\item[{const K\+Bookmark \&}]{bm}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a62520293e8c99ae68058fe4d00eb0e6b}
+Removes the bookmark {\ttfamily bm} for the {\ttfamily referurl} specified. 
+
+Definition at line 513 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+514 \{
+515     \textcolor{keywordflow}{if} ( !referurl.isValid() || bm.isNull() || bm.isGroup() || bm.isSeparator() )
+516         \textcolor{keywordflow}{return} -1;
+517 
+518     \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+519     \textcolor{keywordflow}{if} ( !vp.isValid() )
+520         \textcolor{keywordflow}{return} -1;
+521 
+522     KBookmarkGroup thebg;
+523     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( referurl, \textcolor{keyword}{false}, &thebg );
+524     \textcolor{keywordflow}{if} ( it == d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() )
+525         \textcolor{keywordflow}{return} -1;
+526 
+527     thebg.deleteBookmark( bm );
+528 
+529     \textcolor{keywordflow}{if} ( referurl == d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->\hyperlink{classOkular_1_1DocumentPrivate_a1a0145bbb16d15c016000a83d0d2ab2b}{m\_url} )
+530     \{
+531         d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[ vp.pageNumber ]--;
+532         \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreachObserver}( notifyPageChanged( vp.pageNumber, 
+      \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5}{DocumentObserver::Bookmark} ) );
+533     \}
+534     d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->emitChanged( thebg );
+535 
+536     \textcolor{keywordflow}{return} vp.pageNumber;
+537 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a3279284b0618f5bb49dba8647b6980a4}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!remove\+Bookmarks@{remove\+Bookmarks}}
+\index{remove\+Bookmarks@{remove\+Bookmarks}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{remove\+Bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::remove\+Bookmarks (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{referurl, }
+\item[{const K\+Bookmark\+::\+List \&}]{list}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a3279284b0618f5bb49dba8647b6980a4}
+Removes the bookmarks in {\ttfamily list} for the {\ttfamily referurl} specified.
+
+\begin{DoxyNote}{Note}
+it will remove only the bookmarks which belong to {\ttfamily referurl} 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+11 (K\+D\+E 4.\+5) 
+\end{DoxySince}
+
+
+Definition at line 539 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+540 \{
+541     \textcolor{keywordflow}{if} ( !referurl.isValid() || list.isEmpty() )
+542         \textcolor{keywordflow}{return};
+543 
+544     KBookmarkGroup thebg;
+545     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( referurl, \textcolor{keyword}{false}, &thebg );
+546     \textcolor{keywordflow}{if} ( it == d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() )
+547         \textcolor{keywordflow}{return};
+548 
+549     \textcolor{keyword}{const} QHash<int,int> oldUrlBookmarks = d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks};
+550     \textcolor{keywordtype}{bool} deletedAny = \textcolor{keyword}{false};
+551     \textcolor{keywordflow}{foreach} ( \textcolor{keyword}{const} KBookmark & bm, list )
+552     \{
+553         \textcolor{keywordflow}{if} ( bm.parentGroup() == thebg )
+554         \{
+555             thebg.deleteBookmark( bm );
+556             deletedAny = \textcolor{keyword}{true};
+557 
+558             \hyperlink{classOkular_1_1DocumentViewport}{DocumentViewport} vp( bm.url().htmlRef() );
+559             \textcolor{keywordflow}{if} ( referurl == d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->\hyperlink{classOkular_1_1DocumentPrivate_a1a0145bbb16d15c016000a83d0d2ab2b}{m\_url} )
+560             \{
+561                 d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[ vp.pageNumber ]--;
+562             \}
+563         \}
+564     \}
+565 
+566     \textcolor{keywordflow}{if} ( referurl == d->\hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}->\hyperlink{classOkular_1_1DocumentPrivate_a1a0145bbb16d15c016000a83d0d2ab2b}{m\_url} )
+567     \{
+568         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < qMax( oldUrlBookmarks.size(), d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}.size() ); i++ )
+569         \{
+570             \textcolor{keywordtype}{bool} oldContains = oldUrlBookmarks.contains(i) && oldUrlBookmarks[i] > 0;
+571             \textcolor{keywordtype}{bool} curContains = d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}.contains(i) && d->
+      \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[i] > 0;
+572 
+573             \textcolor{keywordflow}{if} ( oldContains != curContains )
+574             \{
+575                 \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreachObserver}( notifyPageChanged( i, 
+      \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5}{DocumentObserver::Bookmark} ) );
+576             \}
+577             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( oldContains && oldUrlBookmarks[i] != d->\hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[i] )
+578             \{
+579                 \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreachObserver}( notifyPageChanged( i, 
+      \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5}{DocumentObserver::Bookmark} ) );
+580             \}
+581         \}
+582     \}
+583     \textcolor{keywordflow}{if} ( deletedAny )
+584         d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->emitChanged( thebg );
+585 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a0e57d5f1d5795042686118ac779d85c5}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!rename\+Bookmark@{rename\+Bookmark}}
+\index{rename\+Bookmark@{rename\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{rename\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::rename\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{K\+Bookmark $\ast$}]{bm, }
+\item[{const Q\+String \&}]{new\+Name}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a0e57d5f1d5795042686118ac779d85c5}
+Returns the bookmark given bookmark of the document \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 477 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+478 \{
+479     KBookmarkGroup thebg;
+480     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( d->\hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, \textcolor{keyword}{false}, &thebg );
+481     Q\_ASSERT ( it != d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() );
+482     \textcolor{keywordflow}{if} ( it == d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() )
+483         \textcolor{keywordflow}{return};
+484 
+485     bm->setFullText( newName );
+486     d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->emitChanged( thebg );
+487 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a99979fe5e87cb15173ac20feb7de352e}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!rename\+Bookmark@{rename\+Bookmark}}
+\index{rename\+Bookmark@{rename\+Bookmark}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{rename\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::rename\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{referurl, }
+\item[{const Q\+String \&}]{new\+Name}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BookmarkManager_a99979fe5e87cb15173ac20feb7de352e}
+Renames the top-\/level bookmark for the {\ttfamily referurl} specified with the {\ttfamily new\+Name} specified. \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 489 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+490 \{
+491     \textcolor{keywordflow}{if} ( !referurl.isValid() )
+492         \textcolor{keywordflow}{return};
+493 
+494     KBookmarkGroup thebg;
+495     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( referurl, \textcolor{keyword}{false}, &thebg );
+496     Q\_ASSERT ( it != d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() );
+497     \textcolor{keywordflow}{if} ( it == d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() )
+498         \textcolor{keywordflow}{return};
+499 
+500     thebg.setFullText( newName );
+501     d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->emitChanged( thebg );
+502 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_af277e57ed79d0fce59f00a62f6e0f7b5}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!save@{save}}
+\index{save@{save}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void Bookmark\+Manager\+::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_af277e57ed79d0fce59f00a62f6e0f7b5}
+Forces to save the list of bookmarks. 
+
+Definition at line 331 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+332 \{
+333     d->\hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->emitChanged();
+334     emit \textcolor{keyword}{const\_cast<}\hyperlink{classOkular_1_1BookmarkManager}{BookmarkManager}*\textcolor{keyword}{>}( this )->\hyperlink{classOkular_1_1BookmarkManager_a60926c4115be32b182913e56fd709e18}{saved}();
+335 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BookmarkManager_a60926c4115be32b182913e56fd709e18}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!saved@{saved}}
+\index{saved@{saved}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{saved}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Bookmark\+Manager\+::saved (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1BookmarkManager_a60926c4115be32b182913e56fd709e18}
+This signal is emitted whenever bookmarks have been saved. \hypertarget{classOkular_1_1BookmarkManager_a9b24aecf34aaac007418797bee80f717}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!title\+For\+Url@{title\+For\+Url}}
+\index{title\+For\+Url@{title\+For\+Url}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{title\+For\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Bookmark\+Manager\+::title\+For\+Url (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{referurl}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BookmarkManager_a9b24aecf34aaac007418797bee80f717}
+Returns title for the {\ttfamily referurl} \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 504 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+505 \{
+506     KBookmarkGroup thebg;
+507     QHash<KUrl, QString>::iterator it = d->\hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmarkFind}( referurl, \textcolor{keyword}{false}, &thebg );
+508     Q\_ASSERT( it != d->\hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() );
+509 
+510     \textcolor{keywordflow}{return} thebg.fullText();
+511 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classOkular_1_1BookmarkManager_a883538034e58fc5c0de7d4e4cab3cef7}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!Document@{Document}}
+\index{Document@{Document}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{Document}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Document}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1BookmarkManager_a883538034e58fc5c0de7d4e4cab3cef7}
+
+
+Definition at line 196 of file bookmarkmanager.\+h.
+
+\hypertarget{classOkular_1_1BookmarkManager_ad60d3d11afe13773e689a27dbaba5d11}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!Document\+Private@{Document\+Private}}
+\index{Document\+Private@{Document\+Private}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{Document\+Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Document\+Private}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1BookmarkManager_ad60d3d11afe13773e689a27dbaba5d11}
+
+
+Definition at line 197 of file bookmarkmanager.\+h.
+
+\hypertarget{classOkular_1_1BookmarkManager_ac96b60d37bd806132da680e187dc2288}{\index{Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}!Private@{Private}}
+\index{Private@{Private}!Okular\+::\+Bookmark\+Manager@{Okular\+::\+Bookmark\+Manager}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Private}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1BookmarkManager_ac96b60d37bd806132da680e187dc2288}
+
+
+Definition at line 193 of file bookmarkmanager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{bookmarkmanager_8h}{bookmarkmanager.\+h}\item 
+core/\hyperlink{bookmarkmanager_8cpp}{bookmarkmanager.\+cpp}\end{DoxyCompactItemize}

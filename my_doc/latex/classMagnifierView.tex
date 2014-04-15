@@ -1,0 +1,269 @@
+\hypertarget{classMagnifierView}{\section{Magnifier\+View Class Reference}
+\label{classMagnifierView}\index{Magnifier\+View@{Magnifier\+View}}
+}
+
+
+{\ttfamily \#include $<$magnifierview.\+h$>$}
+
+Inheritance diagram for Magnifier\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMagnifierView}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMagnifierView_af0c02107c48c06e1b3aae15431b5ba38}{Magnifier\+View} (\hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document, Q\+Widget $\ast$parent=0)
+\item 
+void \hyperlink{classMagnifierView_a8b266a1bef9a6aba74cc75a1c072ada3}{notify\+Setup} (const Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages, int setup\+Flags)
+\item 
+void \hyperlink{classMagnifierView_ac38c9bbed5738392072ffdd25e6539df}{notify\+Page\+Changed} (int page, int flags)
+\item 
+void \hyperlink{classMagnifierView_af9d41d66249590ae036a9f7a13b13386}{notify\+Current\+Page\+Changed} (int previous, int current)
+\item 
+bool \hyperlink{classMagnifierView_af9c4242a4d8486097b58cebd54d6ef58}{can\+Unload\+Pixmap} (int page) const 
+\item 
+void \hyperlink{classMagnifierView_a5b8c36b96183a500e1d84f6c392408a5}{update\+View} (const \hyperlink{classOkular_1_1NormalizedPoint}{Okular\+::\+Normalized\+Point} \&p, const \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$page)
+\item 
+void \hyperlink{classMagnifierView_a11896de5b6a1ad7001e42f0a2ebca3d2}{move} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMagnifierView_a8bc8b3ee67ad7b768081e4840436d289}{paint\+Event} (Q\+Paint\+Event $\ast$e)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file magnifierview.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMagnifierView_af0c02107c48c06e1b3aae15431b5ba38}{\index{Magnifier\+View@{Magnifier\+View}!Magnifier\+View@{Magnifier\+View}}
+\index{Magnifier\+View@{Magnifier\+View}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{Magnifier\+View}]{\setlength{\rightskip}{0pt plus 5cm}Magnifier\+View\+::\+Magnifier\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classMagnifierView_af0c02107c48c06e1b3aae15431b5ba38}
+
+
+Definition at line 33 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+34   : QWidget(parent)
+35   , m\_document(document)
+36   , m\_page(0)
+37 \{
+38 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMagnifierView_af9c4242a4d8486097b58cebd54d6ef58}{\index{Magnifier\+View@{Magnifier\+View}!can\+Unload\+Pixmap@{can\+Unload\+Pixmap}}
+\index{can\+Unload\+Pixmap@{can\+Unload\+Pixmap}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{can\+Unload\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}bool Magnifier\+View\+::can\+Unload\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMagnifierView_af9c4242a4d8486097b58cebd54d6ef58}
+Returns whether the observer agrees that all pixmaps for the given {\ttfamily page} can be unloaded to improve memory usage.
+
+Returns true per default. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_a6b294d9207a1546eb9fcb7b878d94f20}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 61 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{
+63   \textcolor{keywordflow}{return} (page != m\_current);
+64 \}
+\end{DoxyCode}
+\hypertarget{classMagnifierView_a11896de5b6a1ad7001e42f0a2ebca3d2}{\index{Magnifier\+View@{Magnifier\+View}!move@{move}}
+\index{move@{move}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Magnifier\+View\+::move (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classMagnifierView_a11896de5b6a1ad7001e42f0a2ebca3d2}
+
+
+Definition at line 112 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114   QWidget::move( x, y );
+115   requestPixmap();
+116 \}
+\end{DoxyCode}
+\hypertarget{classMagnifierView_af9d41d66249590ae036a9f7a13b13386}{\index{Magnifier\+View@{Magnifier\+View}!notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}}
+\index{notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{notify\+Current\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Magnifier\+View\+::notify\+Current\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{previous, }
+\item[{int}]{current}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMagnifierView_af9d41d66249590ae036a9f7a13b13386}
+This method is called after the current page of the document has been entered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em previous} & The number of the previous page (is {\ttfamily -\/1} for the initial page change). \\
+\hline
+{\em current} & The number of the current page.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_ae449ca3f3f8aa7dffab61a6b723a1fd8}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 66 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68   Q\_UNUSED(previous);
+69 
+70   \textcolor{keywordflow}{if} (current != m\_current) \{
+71     m\_current = current;
+72     m\_page = m\_pages[current];
+73 
+74     \textcolor{keywordflow}{if} (isVisible()) \{
+75       requestPixmap();
+76       update();
+77     \}
+78   \}
+79 \}
+\end{DoxyCode}
+\hypertarget{classMagnifierView_ac38c9bbed5738392072ffdd25e6539df}{\index{Magnifier\+View@{Magnifier\+View}!notify\+Page\+Changed@{notify\+Page\+Changed}}
+\index{notify\+Page\+Changed@{notify\+Page\+Changed}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{notify\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Magnifier\+View\+::notify\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{page, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMagnifierView_ac38c9bbed5738392072ffdd25e6539df}
+This method is called whenever the content on {\ttfamily page} described by the passed {\ttfamily flags} has been changed. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_abf7600dabd7d6c1e38c950d99f7be595}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 51 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+52 \{
+53   Q\_UNUSED(page);
+54   Q\_UNUSED(flags);
+55 
+56   \textcolor{keywordflow}{if} (isVisible()) \{
+57     update();
+58   \}
+59 \}
+\end{DoxyCode}
+\hypertarget{classMagnifierView_a8b266a1bef9a6aba74cc75a1c072ada3}{\index{Magnifier\+View@{Magnifier\+View}!notify\+Setup@{notify\+Setup}}
+\index{notify\+Setup@{notify\+Setup}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{notify\+Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Magnifier\+View\+::notify\+Setup (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages, }
+\item[{int}]{setup\+Flags}
+\end{DoxyParamCaption}
+)}}\label{classMagnifierView_a8b266a1bef9a6aba74cc75a1c072ada3}
+
+
+Definition at line 40 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42   \textcolor{keywordflow}{if} (!(setupFlags & \hyperlink{classOkular_1_1DocumentObserver_aba00584af99894f95a9650e91f109d40ae599564392c01b22e96eff7602c4dd03}{Okular::DocumentObserver::DocumentChanged})) \{
+43     \textcolor{keywordflow}{return};
+44   \}
+45 
+46   m\_pages = pages;
+47   m\_page = 0;
+48   m\_current = -1;
+49 \}
+\end{DoxyCode}
+\hypertarget{classMagnifierView_a8bc8b3ee67ad7b768081e4840436d289}{\index{Magnifier\+View@{Magnifier\+View}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Magnifier\+View\+::paint\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Paint\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMagnifierView_a8bc8b3ee67ad7b768081e4840436d289}
+
+
+Definition at line 97 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99   Q\_UNUSED(e);
+100 
+101   QPainter p(\textcolor{keyword}{this});
+102 
+103   \textcolor{keywordflow}{if} (m\_page)
+104   \{
+105     QRect where = QRect(0, 0, width(), height());
+106     \hyperlink{classPagePainter_af6d636a41a9b1ebe8954c53bf5e3e6ec}{PagePainter::paintCroppedPageOnPainter}(&p, m\_page, \textcolor{keyword}{this}, 0, 
+      m\_page->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}() * SCALE, m\_page->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}() * SCALE, where, normalizedView(), NULL);
+107   \}
+108 
+109   drawTicks(&p);
+110 \}
+\end{DoxyCode}
+\hypertarget{classMagnifierView_a5b8c36b96183a500e1d84f6c392408a5}{\index{Magnifier\+View@{Magnifier\+View}!update\+View@{update\+View}}
+\index{update\+View@{update\+View}!Magnifier\+View@{Magnifier\+View}}
+\subsubsection[{update\+View}]{\setlength{\rightskip}{0pt plus 5cm}void Magnifier\+View\+::update\+View (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Normalized\+Point} \&}]{p, }
+\item[{const {\bf Okular\+::\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)}}\label{classMagnifierView_a5b8c36b96183a500e1d84f6c392408a5}
+
+
+Definition at line 81 of file magnifierview.\+cpp.
+
+
+\begin{DoxyCode}
+82 \{
+83   m\_viewpoint = p;
+84 
+85   \textcolor{keywordflow}{if} (page != m\_page) \textcolor{comment}{// ok, we are screwed}
+86   \{
+87     m\_page = page;
+88     m\_current = page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}();
+89   \}
+90 
+91   \textcolor{keywordflow}{if} (isVisible()) \{
+92     requestPixmap();
+93     update();
+94   \}
+95 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{magnifierview_8h}{magnifierview.\+h}\item 
+ui/\hyperlink{magnifierview_8cpp}{magnifierview.\+cpp}\end{DoxyCompactItemize}

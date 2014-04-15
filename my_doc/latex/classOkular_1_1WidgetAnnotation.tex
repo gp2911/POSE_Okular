@@ -1,0 +1,213 @@
+\hypertarget{classOkular_1_1WidgetAnnotation}{\section{Okular\+:\+:Widget\+Annotation Class Reference}
+\label{classOkular_1_1WidgetAnnotation}\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+}
+
+
+Widget annotation.  
+
+
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Widget\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1WidgetAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1WidgetAnnotation_a78542decf4fca84bef5e8a8dd7351825}{Widget\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1WidgetAnnotation_acb49f25efc6ebee2161c02d928c4c8ed}{Widget\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+virtual \hyperlink{classOkular_1_1WidgetAnnotation_ab840c2183e571a2489b7ac69319cd385}{$\sim$\+Widget\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1WidgetAnnotation_a68fbdb039e9ce2f7c4a8b1847cf2c205}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1WidgetAnnotation_a2a65f9c21b35c2c7a9abc3cffe94a76f}{store} (Q\+Dom\+Node \&parent\+Node, Q\+Dom\+Document \&document) const 
+\item 
+void \hyperlink{classOkular_1_1WidgetAnnotation_a94c770062f4b768a374a723cc42615e9}{set\+Additional\+Action} (\hyperlink{classOkular_1_1Annotation_aa34152e337b1cb13e9327f37fc295057}{Additional\+Action\+Type} type, \hyperlink{classOkular_1_1Action}{Action} $\ast$action)
+\item 
+\hyperlink{classOkular_1_1Action}{Action} $\ast$ \hyperlink{classOkular_1_1WidgetAnnotation_aed09f3028bbe24d472d2d7cee3bffde1}{additional\+Action} (\hyperlink{classOkular_1_1Annotation_aa34152e337b1cb13e9327f37fc295057}{Additional\+Action\+Type} type) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Widget annotation. 
+
+The widget annotation represents a widget on a page.
+
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Definition at line 1603 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1WidgetAnnotation_a78542decf4fca84bef5e8a8dd7351825}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!Widget\+Annotation@{Widget\+Annotation}}
+\index{Widget\+Annotation@{Widget\+Annotation}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{Widget\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Widget\+Annotation\+::\+Widget\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1WidgetAnnotation_a78542decf4fca84bef5e8a8dd7351825}
+Creates a new widget annotation. 
+
+Definition at line 2892 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2893     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1WidgetAnnotationPrivate}{WidgetAnnotationPrivate}() )
+2894 \{
+2895 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1WidgetAnnotation_acb49f25efc6ebee2161c02d928c4c8ed}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!Widget\+Annotation@{Widget\+Annotation}}
+\index{Widget\+Annotation@{Widget\+Annotation}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{Widget\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Widget\+Annotation\+::\+Widget\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1WidgetAnnotation_acb49f25efc6ebee2161c02d928c4c8ed}
+Creates a new widget annotation from the xml {\ttfamily description} 
+
+Definition at line 2897 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2898     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1WidgetAnnotationPrivate}{WidgetAnnotationPrivate}, node )
+2899 \{
+2900 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1WidgetAnnotation_ab840c2183e571a2489b7ac69319cd385}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!````~Widget\+Annotation@{$\sim$\+Widget\+Annotation}}
+\index{````~Widget\+Annotation@{$\sim$\+Widget\+Annotation}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{$\sim$\+Widget\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Widget\+Annotation\+::$\sim$\+Widget\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1WidgetAnnotation_ab840c2183e571a2489b7ac69319cd385}
+Destroys the widget annotation. 
+
+Definition at line 2902 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2903 \{
+2904 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1WidgetAnnotation_aed09f3028bbe24d472d2d7cee3bffde1}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!additional\+Action@{additional\+Action}}
+\index{additional\+Action@{additional\+Action}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{additional\+Action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action} $\ast$ Widget\+Annotation\+::additional\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Additional\+Action\+Type}}]{type}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1WidgetAnnotation_aed09f3028bbe24d472d2d7cee3bffde1}
+Returns the additional action of the given {\ttfamily type} or {\ttfamily 0} if no action has been defined.
+
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Definition at line 2930 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2931 \{
+2932     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1WidgetAnnotation}{WidgetAnnotation} );
+2933     \textcolor{keywordflow}{if} ( !d->m\_additionalActions.contains( type ) )
+2934         \textcolor{keywordflow}{return} 0;
+2935     \textcolor{keywordflow}{else}
+2936         \textcolor{keywordflow}{return} d->m\_additionalActions.value( type );
+2937 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1WidgetAnnotation_a94c770062f4b768a374a723cc42615e9}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!set\+Additional\+Action@{set\+Additional\+Action}}
+\index{set\+Additional\+Action@{set\+Additional\+Action}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{set\+Additional\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Annotation\+::set\+Additional\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Additional\+Action\+Type}}]{type, }
+\item[{{\bf Action} $\ast$}]{action}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1WidgetAnnotation_a94c770062f4b768a374a723cc42615e9}
+Sets the additional {\ttfamily action} of the given {\ttfamily type}.
+
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Definition at line 2921 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2922 \{
+2923     Q\_D( \hyperlink{classOkular_1_1WidgetAnnotation}{WidgetAnnotation} );
+2924     \textcolor{keywordflow}{if} ( d->m\_additionalActions.contains( type ) )
+2925         \textcolor{keyword}{delete} d->m\_additionalActions.value( type );
+2926 
+2927     d->m\_additionalActions.insert( type, action );
+2928 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1WidgetAnnotation_a2a65f9c21b35c2c7a9abc3cffe94a76f}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Widget\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{parent\+Node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1WidgetAnnotation_a2a65f9c21b35c2c7a9abc3cffe94a76f}
+Stores the widget annotation as xml in {\ttfamily document} under the given {\ttfamily parent\+Node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2906 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2907 \{
+2908     \textcolor{comment}{// recurse to parent objects storing properties}
+2909     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+2910 
+2911     \textcolor{comment}{// create [widget] element}
+2912     QDomElement movieElement = document.createElement( \textcolor{stringliteral}{"widget"} );
+2913     node.appendChild( movieElement );
+2914 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1WidgetAnnotation_a68fbdb039e9ce2f7c4a8b1847cf2c205}{\index{Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Widget\+Annotation@{Okular\+::\+Widget\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Widget\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1WidgetAnnotation_a68fbdb039e9ce2f7c4a8b1847cf2c205}
+Returns the sub type of the widget annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2916 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2917 \{
+2918     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0aa0f6a560b971fe69d18156176258d6c8}{AWidget};
+2919 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

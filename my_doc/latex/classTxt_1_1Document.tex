@@ -1,0 +1,81 @@
+\hypertarget{classTxt_1_1Document}{\section{Txt\+:\+:Document Class Reference}
+\label{classTxt_1_1Document}\index{Txt\+::\+Document@{Txt\+::\+Document}}
+}
+
+
+{\ttfamily \#include $<$document.\+h$>$}
+
+Inheritance diagram for Txt\+:\+:Document\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTxt_1_1Document}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTxt_1_1Document_a6a85de1f3ac9d88c2afd63d92e5e5d37}{Document} (const Q\+String \&file\+Name)
+\item 
+\hyperlink{classTxt_1_1Document_ac2e3f62307dc22baac21ddc10fa1609c}{$\sim$\+Document} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file document.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTxt_1_1Document_a6a85de1f3ac9d88c2afd63d92e5e5d37}{\index{Txt\+::\+Document@{Txt\+::\+Document}!Document@{Document}}
+\index{Document@{Document}!Txt\+::\+Document@{Txt\+::\+Document}}
+\subsubsection[{Document}]{\setlength{\rightskip}{0pt plus 5cm}Document\+::\+Document (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{classTxt_1_1Document_a6a85de1f3ac9d88c2afd63d92e5e5d37}
+
+
+Definition at line 22 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{
+24 \textcolor{preprocessor}{#ifdef TXT\_DEBUG}
+25     kDebug() << \textcolor{stringliteral}{"Opening file"} << fileName;
+26 \textcolor{preprocessor}{#endif}
+27 
+28     QFile plainFile( fileName );
+29     \textcolor{keywordflow}{if} ( !plainFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
+30     \{
+31         kDebug() << \textcolor{stringliteral}{"Can't open file"} << plainFile.fileName();
+32         \textcolor{keywordflow}{return};
+33     \}
+34 
+35     \textcolor{keyword}{const} QByteArray buffer = plainFile.readAll();
+36     setPlainText( toUnicode(buffer) );
+37 \}
+\end{DoxyCode}
+\hypertarget{classTxt_1_1Document_ac2e3f62307dc22baac21ddc10fa1609c}{\index{Txt\+::\+Document@{Txt\+::\+Document}!````~Document@{$\sim$\+Document}}
+\index{````~Document@{$\sim$\+Document}!Txt\+::\+Document@{Txt\+::\+Document}}
+\subsubsection[{$\sim$\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Document\+::$\sim$\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTxt_1_1Document_ac2e3f62307dc22baac21ddc10fa1609c}
+
+
+Definition at line 39 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{
+41 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/txt/\hyperlink{generators_2txt_2document_8h}{document.\+h}\item 
+generators/txt/\hyperlink{generators_2txt_2document_8cpp}{document.\+cpp}\end{DoxyCompactItemize}

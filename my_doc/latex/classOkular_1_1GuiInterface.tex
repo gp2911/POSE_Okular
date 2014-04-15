@@ -1,0 +1,88 @@
+\hypertarget{classOkular_1_1GuiInterface}{\section{Okular\+:\+:Gui\+Interface Class Reference}
+\label{classOkular_1_1GuiInterface}\index{Okular\+::\+Gui\+Interface@{Okular\+::\+Gui\+Interface}}
+}
+
+
+Abstract interface for user interface control.  
+
+
+
+
+{\ttfamily \#include $<$guiinterface.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Gui\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1GuiInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1GuiInterface_a730cd577682b632165b28aef2a59bca0}{$\sim$\+Gui\+Interface} ()
+\item 
+K\+X\+M\+L\+G\+U\+I\+Client $\ast$ \hyperlink{classOkular_1_1GuiInterface_a723b44e54af18ea90a612ee9a51667cc}{gui\+Client} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface for user interface control. 
+
+This interface defines an way to interact with the \hyperlink{namespaceOkular}{Okular} user interface, e.\+g. adding actions in the menus.
+
+How to use it in a custom \hyperlink{classOkular_1_1Generator}{Generator}\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}, \textcolor{keyword}{public} 
+      \hyperlink{classOkular_1_1GuiInterface}{Okular::GuiInterface}
+\{
+    Q\_OBJECT
+    Q\_INTERFACES( \hyperlink{classOkular_1_1GuiInterface}{Okular::GuiInterface} )
+
+    ...
+\};
+\end{DoxyCode}
+ and -\/ of course -\/ implementing its methods. 
+
+Definition at line 39 of file guiinterface.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1GuiInterface_a730cd577682b632165b28aef2a59bca0}{\index{Okular\+::\+Gui\+Interface@{Okular\+::\+Gui\+Interface}!````~Gui\+Interface@{$\sim$\+Gui\+Interface}}
+\index{````~Gui\+Interface@{$\sim$\+Gui\+Interface}!Okular\+::\+Gui\+Interface@{Okular\+::\+Gui\+Interface}}
+\subsubsection[{$\sim$\+Gui\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}virtual Okular\+::\+Gui\+Interface\+::$\sim$\+Gui\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classOkular_1_1GuiInterface_a730cd577682b632165b28aef2a59bca0}
+Destroys the gui interface. 
+
+Definition at line 45 of file guiinterface.\+h.
+
+
+\begin{DoxyCode}
+45 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1GuiInterface_a723b44e54af18ea90a612ee9a51667cc}{\index{Okular\+::\+Gui\+Interface@{Okular\+::\+Gui\+Interface}!gui\+Client@{gui\+Client}}
+\index{gui\+Client@{gui\+Client}!Okular\+::\+Gui\+Interface@{Okular\+::\+Gui\+Interface}}
+\subsubsection[{gui\+Client}]{\setlength{\rightskip}{0pt plus 5cm}K\+X\+M\+L\+G\+U\+I\+Client$\ast$ Okular\+::\+Gui\+Interface\+::gui\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1GuiInterface_a723b44e54af18ea90a612ee9a51667cc}
+This method requests the X\+M\+L G\+U\+I Client provided by the interface. 
+
+Definition at line 50 of file guiinterface.\+h.
+
+
+\begin{DoxyCode}
+50 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{this}; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interfaces/\hyperlink{guiinterface_8h}{guiinterface.\+h}\end{DoxyCompactItemize}

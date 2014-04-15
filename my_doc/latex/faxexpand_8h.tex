@@ -1,0 +1,714 @@
+\hypertarget{faxexpand_8h}{\section{generators/fax/faxexpand.h File Reference}
+\label{faxexpand_8h}\index{generators/fax/faxexpand.\+h@{generators/fax/faxexpand.\+h}}
+}
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Image$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstrip}{strip}
+\item 
+class \hyperlink{classpagenode}{pagenode}
+\item 
+struct \hyperlink{structtabent}{tabent}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}{t32bits}~quint32
+\item 
+\#define \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits}~quint16
+\item 
+\#define \hyperlink{faxexpand_8h_a3399322a1aff84e60bf21593a140ae87}{F\+A\+X\+\_\+\+T\+I\+F\+F}~1
+\item 
+\#define \hyperlink{faxexpand_8h_a19012bfd977a91f41f4fa7604dd83bff}{F\+A\+X\+\_\+\+R\+A\+W}~2
+\item 
+\#define \hyperlink{faxexpand_8h_aab6730a16e62e0e0542b3a5a995fe9aa}{T\+U\+R\+N\+\_\+\+N\+O\+N\+E}~0
+\item 
+\#define \hyperlink{faxexpand_8h_a1b738e35925caf348a9895da204b53c4}{T\+U\+R\+N\+\_\+\+U}~1
+\item 
+\#define \hyperlink{faxexpand_8h_a925cb3fb050d2a91e238e87908752053}{T\+U\+R\+N\+\_\+\+L}~2
+\item 
+\#define \hyperlink{faxexpand_8h_af26faaa7844985d4fa418c650e817534}{T\+U\+R\+N\+\_\+\+M}~4
+\item 
+\#define \hyperlink{faxexpand_8h_a100557aa284f6ba656c4badacf504f18}{S\+\_\+\+Null}~0
+\item 
+\#define \hyperlink{faxexpand_8h_a72b4832f1164c4f3b659dfc742b36481}{S\+\_\+\+Pass}~1
+\item 
+\#define \hyperlink{faxexpand_8h_a88eea109c27daac9c5d2baf219902dc2}{S\+\_\+\+Horiz}~2
+\item 
+\#define \hyperlink{faxexpand_8h_ac38621ef183f0cd4651ec7d3932fb3f1}{S\+\_\+\+V0}~3
+\item 
+\#define \hyperlink{faxexpand_8h_a3315214cb60615e39414fdb9dbb16059}{S\+\_\+\+V\+R}~4
+\item 
+\#define \hyperlink{faxexpand_8h_a76702aad2f0099324e34130e5a6a906a}{S\+\_\+\+V\+L}~5
+\item 
+\#define \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\+\_\+\+Ext}~6
+\item 
+\#define \hyperlink{faxexpand_8h_a2f2c945ef9f17bab25de7b98aa05179e}{S\+\_\+\+Term\+W}~7
+\item 
+\#define \hyperlink{faxexpand_8h_ab3e2b89caaf53cda52846c85422bcd33}{S\+\_\+\+Term\+B}~8
+\item 
+\#define \hyperlink{faxexpand_8h_ae2ed6a7f2592387348a13c59b695e1f0}{S\+\_\+\+Make\+Up\+W}~9
+\item 
+\#define \hyperlink{faxexpand_8h_a2b541757e75c5fdec437f1491846239f}{S\+\_\+\+Make\+Up\+B}~10
+\item 
+\#define \hyperlink{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}{S\+\_\+\+Make\+Up}~11
+\item 
+\#define \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\+\_\+\+E\+O\+L}~12
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum}
+\item 
+typedef void($\ast$ \hyperlink{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}{drawfunc} )(\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} $\ast$run, int linenum, class \hyperlink{classpagenode}{pagenode} $\ast$pn)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{faxexpand_8h_aeb42746dc0810f7e0c39f01d2b04d13e}{M\+Hexpand} (class \hyperlink{classpagenode}{pagenode} $\ast$pn, \hyperlink{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}{drawfunc} df)
+\item 
+void \hyperlink{faxexpand_8h_a399c078426de635b90059068db40156b}{g31expand} (class \hyperlink{classpagenode}{pagenode} $\ast$pn, \hyperlink{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}{drawfunc} df)
+\item 
+void \hyperlink{faxexpand_8h_a51756d52c316fae8e6c349575e0ac049}{g32expand} (class \hyperlink{classpagenode}{pagenode} $\ast$pn, \hyperlink{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}{drawfunc} df)
+\item 
+void \hyperlink{faxexpand_8h_ab7e8fa3f6ef2305f1cd0376a75583777}{g4expand} (class \hyperlink{classpagenode}{pagenode} $\ast$pn, \hyperlink{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}{drawfunc} df)
+\item 
+void \hyperlink{faxexpand_8h_ac37c16fdffc1a2515833c490d6598a07}{fax\+\_\+init\+\_\+tables} (void)
+\item 
+int \hyperlink{faxexpand_8h_a12555bb4850926bcababbcdf1ee78800}{G3count} (class \hyperlink{classpagenode}{pagenode} $\ast$pn, int two\+D)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtabent}{tabent} \hyperlink{faxexpand_8h_a0ad4c2a8447cce6d91852de83ea5e88a}{Main\+Table} \mbox{[}$\,$\mbox{]}
+\item 
+struct \hyperlink{structtabent}{tabent} \hyperlink{faxexpand_8h_a199dff3fc12dcb08e817b7bd861665b8}{White\+Table} \mbox{[}$\,$\mbox{]}
+\item 
+struct \hyperlink{structtabent}{tabent} \hyperlink{faxexpand_8h_a6cc36fd107e2c9eed88b0d131020dff0}{Black\+Table} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{faxexpand_8h_a19012bfd977a91f41f4fa7604dd83bff}{\index{faxexpand.\+h@{faxexpand.\+h}!F\+A\+X\+\_\+\+R\+A\+W@{F\+A\+X\+\_\+\+R\+A\+W}}
+\index{F\+A\+X\+\_\+\+R\+A\+W@{F\+A\+X\+\_\+\+R\+A\+W}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{F\+A\+X\+\_\+\+R\+A\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+X\+\_\+\+R\+A\+W~2}}\label{faxexpand_8h_a19012bfd977a91f41f4fa7604dd83bff}
+
+
+Definition at line 51 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a3399322a1aff84e60bf21593a140ae87}{\index{faxexpand.\+h@{faxexpand.\+h}!F\+A\+X\+\_\+\+T\+I\+F\+F@{F\+A\+X\+\_\+\+T\+I\+F\+F}}
+\index{F\+A\+X\+\_\+\+T\+I\+F\+F@{F\+A\+X\+\_\+\+T\+I\+F\+F}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{F\+A\+X\+\_\+\+T\+I\+F\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+X\+\_\+\+T\+I\+F\+F~1}}\label{faxexpand_8h_a3399322a1aff84e60bf21593a140ae87}
+
+
+Definition at line 50 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+E\+O\+L@{S\+\_\+\+E\+O\+L}}
+\index{S\+\_\+\+E\+O\+L@{S\+\_\+\+E\+O\+L}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+E\+O\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+E\+O\+L~12}}\label{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}
+
+
+Definition at line 96 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Ext@{S\+\_\+\+Ext}}
+\index{S\+\_\+\+Ext@{S\+\_\+\+Ext}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Ext}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Ext~6}}\label{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}
+
+
+Definition at line 90 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a88eea109c27daac9c5d2baf219902dc2}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Horiz@{S\+\_\+\+Horiz}}
+\index{S\+\_\+\+Horiz@{S\+\_\+\+Horiz}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Horiz}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Horiz~2}}\label{faxexpand_8h_a88eea109c27daac9c5d2baf219902dc2}
+
+
+Definition at line 86 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Make\+Up@{S\+\_\+\+Make\+Up}}
+\index{S\+\_\+\+Make\+Up@{S\+\_\+\+Make\+Up}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Make\+Up}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Make\+Up~11}}\label{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}
+
+
+Definition at line 95 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a2b541757e75c5fdec437f1491846239f}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Make\+Up\+B@{S\+\_\+\+Make\+Up\+B}}
+\index{S\+\_\+\+Make\+Up\+B@{S\+\_\+\+Make\+Up\+B}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Make\+Up\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Make\+Up\+B~10}}\label{faxexpand_8h_a2b541757e75c5fdec437f1491846239f}
+
+
+Definition at line 94 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_ae2ed6a7f2592387348a13c59b695e1f0}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Make\+Up\+W@{S\+\_\+\+Make\+Up\+W}}
+\index{S\+\_\+\+Make\+Up\+W@{S\+\_\+\+Make\+Up\+W}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Make\+Up\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Make\+Up\+W~9}}\label{faxexpand_8h_ae2ed6a7f2592387348a13c59b695e1f0}
+
+
+Definition at line 93 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a100557aa284f6ba656c4badacf504f18}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Null@{S\+\_\+\+Null}}
+\index{S\+\_\+\+Null@{S\+\_\+\+Null}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Null}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Null~0}}\label{faxexpand_8h_a100557aa284f6ba656c4badacf504f18}
+
+
+Definition at line 84 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a72b4832f1164c4f3b659dfc742b36481}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Pass@{S\+\_\+\+Pass}}
+\index{S\+\_\+\+Pass@{S\+\_\+\+Pass}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Pass}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Pass~1}}\label{faxexpand_8h_a72b4832f1164c4f3b659dfc742b36481}
+
+
+Definition at line 85 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_ab3e2b89caaf53cda52846c85422bcd33}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Term\+B@{S\+\_\+\+Term\+B}}
+\index{S\+\_\+\+Term\+B@{S\+\_\+\+Term\+B}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Term\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Term\+B~8}}\label{faxexpand_8h_ab3e2b89caaf53cda52846c85422bcd33}
+
+
+Definition at line 92 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a2f2c945ef9f17bab25de7b98aa05179e}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+Term\+W@{S\+\_\+\+Term\+W}}
+\index{S\+\_\+\+Term\+W@{S\+\_\+\+Term\+W}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+Term\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+Term\+W~7}}\label{faxexpand_8h_a2f2c945ef9f17bab25de7b98aa05179e}
+
+
+Definition at line 91 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_ac38621ef183f0cd4651ec7d3932fb3f1}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+V0@{S\+\_\+\+V0}}
+\index{S\+\_\+\+V0@{S\+\_\+\+V0}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+V0}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+V0~3}}\label{faxexpand_8h_ac38621ef183f0cd4651ec7d3932fb3f1}
+
+
+Definition at line 87 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a76702aad2f0099324e34130e5a6a906a}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+V\+L@{S\+\_\+\+V\+L}}
+\index{S\+\_\+\+V\+L@{S\+\_\+\+V\+L}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+V\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+V\+L~5}}\label{faxexpand_8h_a76702aad2f0099324e34130e5a6a906a}
+
+
+Definition at line 89 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a3315214cb60615e39414fdb9dbb16059}{\index{faxexpand.\+h@{faxexpand.\+h}!S\+\_\+\+V\+R@{S\+\_\+\+V\+R}}
+\index{S\+\_\+\+V\+R@{S\+\_\+\+V\+R}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{S\+\_\+\+V\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+\_\+\+V\+R~4}}\label{faxexpand_8h_a3315214cb60615e39414fdb9dbb16059}
+
+
+Definition at line 88 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{\index{faxexpand.\+h@{faxexpand.\+h}!t16bits@{t16bits}}
+\index{t16bits@{t16bits}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{t16bits}]{\setlength{\rightskip}{0pt plus 5cm}\#define t16bits~quint16}}\label{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}
+
+
+Definition at line 30 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}{\index{faxexpand.\+h@{faxexpand.\+h}!t32bits@{t32bits}}
+\index{t32bits@{t32bits}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{t32bits}]{\setlength{\rightskip}{0pt plus 5cm}\#define t32bits~quint32}}\label{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}
+
+
+Definition at line 29 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a925cb3fb050d2a91e238e87908752053}{\index{faxexpand.\+h@{faxexpand.\+h}!T\+U\+R\+N\+\_\+\+L@{T\+U\+R\+N\+\_\+\+L}}
+\index{T\+U\+R\+N\+\_\+\+L@{T\+U\+R\+N\+\_\+\+L}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{T\+U\+R\+N\+\_\+\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+R\+N\+\_\+\+L~2}}\label{faxexpand_8h_a925cb3fb050d2a91e238e87908752053}
+
+
+Definition at line 80 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_af26faaa7844985d4fa418c650e817534}{\index{faxexpand.\+h@{faxexpand.\+h}!T\+U\+R\+N\+\_\+\+M@{T\+U\+R\+N\+\_\+\+M}}
+\index{T\+U\+R\+N\+\_\+\+M@{T\+U\+R\+N\+\_\+\+M}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{T\+U\+R\+N\+\_\+\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+R\+N\+\_\+\+M~4}}\label{faxexpand_8h_af26faaa7844985d4fa418c650e817534}
+
+
+Definition at line 81 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_aab6730a16e62e0e0542b3a5a995fe9aa}{\index{faxexpand.\+h@{faxexpand.\+h}!T\+U\+R\+N\+\_\+\+N\+O\+N\+E@{T\+U\+R\+N\+\_\+\+N\+O\+N\+E}}
+\index{T\+U\+R\+N\+\_\+\+N\+O\+N\+E@{T\+U\+R\+N\+\_\+\+N\+O\+N\+E}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{T\+U\+R\+N\+\_\+\+N\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+R\+N\+\_\+\+N\+O\+N\+E~0}}\label{faxexpand_8h_aab6730a16e62e0e0542b3a5a995fe9aa}
+
+
+Definition at line 78 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_a1b738e35925caf348a9895da204b53c4}{\index{faxexpand.\+h@{faxexpand.\+h}!T\+U\+R\+N\+\_\+\+U@{T\+U\+R\+N\+\_\+\+U}}
+\index{T\+U\+R\+N\+\_\+\+U@{T\+U\+R\+N\+\_\+\+U}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{T\+U\+R\+N\+\_\+\+U}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+U\+R\+N\+\_\+\+U~1}}\label{faxexpand_8h_a1b738e35925caf348a9895da204b53c4}
+
+
+Definition at line 79 of file faxexpand.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}{\index{faxexpand.\+h@{faxexpand.\+h}!drawfunc@{drawfunc}}
+\index{drawfunc@{drawfunc}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{drawfunc}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ drawfunc)({\bf pixnum} $\ast$run, int linenum, class {\bf pagenode} $\ast$pn)}}\label{faxexpand_8h_ac0e224bb80ed597fc5cf7ac628e9ad5c}
+
+
+Definition at line 41 of file faxexpand.\+h.
+
+\hypertarget{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{\index{faxexpand.\+h@{faxexpand.\+h}!pixnum@{pixnum}}
+\index{pixnum@{pixnum}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{pixnum}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf t16bits} {\bf pixnum}}}\label{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}
+
+
+Definition at line 32 of file faxexpand.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{faxexpand_8h_ac37c16fdffc1a2515833c490d6598a07}{\index{faxexpand.\+h@{faxexpand.\+h}!fax\+\_\+init\+\_\+tables@{fax\+\_\+init\+\_\+tables}}
+\index{fax\+\_\+init\+\_\+tables@{fax\+\_\+init\+\_\+tables}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{fax\+\_\+init\+\_\+tables}]{\setlength{\rightskip}{0pt plus 5cm}void fax\+\_\+init\+\_\+tables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{faxexpand_8h_ac37c16fdffc1a2515833c490d6598a07}
+
+
+Definition at line 318 of file faxinit.\+cpp.
+
+
+\begin{DoxyCode}
+319 \{
+320     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} already\_initialized = 0;
+321     \textcolor{keywordflow}{if} (already\_initialized)
+322     \textcolor{keywordflow}{return};
+323 
+324     ++already\_initialized;
+325 
+326     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, Pass, \hyperlink{faxexpand_8h_a72b4832f1164c4f3b659dfc742b36481}{S\_Pass});
+327     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, Horiz, \hyperlink{faxexpand_8h_a88eea109c27daac9c5d2baf219902dc2}{S\_Horiz});
+328     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, V0, \hyperlink{faxexpand_8h_ac38621ef183f0cd4651ec7d3932fb3f1}{S\_V0});
+329     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, VR, \hyperlink{faxexpand_8h_a3315214cb60615e39414fdb9dbb16059}{S\_VR});
+330     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, VL, \hyperlink{faxexpand_8h_a76702aad2f0099324e34130e5a6a906a}{S\_VL});
+331     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, ExtV, \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\_Ext});
+332     FillTable(\hyperlink{faxinit_8cpp_aa1b56a02c3fecdd16ce66dcff80750c0}{MainTable}, 7, EOLV, \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\_EOL});
+333     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, MakeUpW, \hyperlink{faxexpand_8h_ae2ed6a7f2592387348a13c59b695e1f0}{S\_MakeUpW});
+334     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, MakeUp, \hyperlink{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}{S\_MakeUp});
+335     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, TermW, \hyperlink{faxexpand_8h_a2f2c945ef9f17bab25de7b98aa05179e}{S\_TermW});
+336     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, ExtH, \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\_Ext});
+337     FillTable(\hyperlink{faxinit_8cpp_abb41d97b554c6a90844e460b6de4a95f}{WhiteTable}, 12, EOLH, \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\_EOL});
+338     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, MakeUpB, \hyperlink{faxexpand_8h_a2b541757e75c5fdec437f1491846239f}{S\_MakeUpB});
+339     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, MakeUp, \hyperlink{faxexpand_8h_a5f9eca6a1fafd4c12e5446484bf72dae}{S\_MakeUp});
+340     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, TermB, \hyperlink{faxexpand_8h_ab3e2b89caaf53cda52846c85422bcd33}{S\_TermB});
+341     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, ExtH, \hyperlink{faxexpand_8h_a07857f81d4bc5fb49104d5a0edf9eff4}{S\_Ext});
+342     FillTable(\hyperlink{faxinit_8cpp_accd548a4dbbf92cdf19a0699d8bb515a}{BlackTable}, 13, EOLH, \hyperlink{faxexpand_8h_a4636820c7d0102df643ee0eeb904ac44}{S\_EOL});
+343 \}
+\end{DoxyCode}
+\hypertarget{faxexpand_8h_a399c078426de635b90059068db40156b}{\index{faxexpand.\+h@{faxexpand.\+h}!g31expand@{g31expand}}
+\index{g31expand@{g31expand}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{g31expand}]{\setlength{\rightskip}{0pt plus 5cm}void g31expand (
+\begin{DoxyParamCaption}
+\item[{class {\bf pagenode} $\ast$}]{pn, }
+\item[{{\bf drawfunc}}]{df}
+\end{DoxyParamCaption}
+)}}\label{faxexpand_8h_a399c078426de635b90059068db40156b}
+
+
+Definition at line 399 of file faxexpand.\+cpp.
+
+
+\begin{DoxyCode}
+400 \{
+401     \textcolor{keywordtype}{int} a0;         \textcolor{comment}{/* reference element */}
+402     \textcolor{keywordtype}{int} lastx;          \textcolor{comment}{/* copy line width to register */}
+403     \hyperlink{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}{t32bits} BitAcc;      \textcolor{comment}{/* bit accumulator */}
+404     \textcolor{keywordtype}{int} BitsAvail;      \textcolor{comment}{/* # valid bits in BitAcc */}
+405     \textcolor{keywordtype}{int} RunLength;      \textcolor{comment}{/* Length of current run */}
+406     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} *sp;     \textcolor{comment}{/* pointer into compressed data */}
+407     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *pa;           \textcolor{comment}{/* pointer into new line */}
+408     \textcolor{keywordtype}{int} EOLcnt;         \textcolor{comment}{/* number of consecutive EOLs */}
+409     \textcolor{keywordtype}{int} LineNum;        \textcolor{comment}{/* line number */}
+410     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *runs;     \textcolor{comment}{/* list of run lengths */}
+411     \textcolor{keyword}{struct }\hyperlink{structtabent}{tabent} *TabEnt;
+412 
+413     sp = pn->data;
+414     BitAcc = 0;
+415     BitsAvail = 0;
+416     lastx = pn->size.width();
+417     runs = (\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *) malloc(lastx * \textcolor{keyword}{sizeof}(\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum}));
+418     EOLcnt = 0;
+419     \textcolor{keywordflow}{for} (LineNum = 0; LineNum < pn->rowsperstrip; ) \{
+420 \textcolor{preprocessor}{#ifdef DEBUG\_FAX}
+421         fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)nBitAcc=%08lX, BitsAvail = %d\(\backslash\)n"}, BitAcc, BitsAvail);
+422         fprintf(stderr,\textcolor{stringliteral}{"-------------------- %d\(\backslash\)n"}, LineNum);
+423         fflush(stderr);
+424 \textcolor{preprocessor}{#endif}
+425     \textcolor{keywordflow}{if} (EOLcnt == 0)
+426         \textcolor{keywordflow}{while} (!\hyperlink{faxexpand_8cpp_a3b18273c163f8933af84e9709717de57}{EndOfData}(pn)) \{
+427         \textcolor{comment}{/* skip over garbage after a coding error */}
+428         \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(11);
+429         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(11) == 0)
+430             \textcolor{keywordflow}{break};
+431         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);
+432         \}
+433     \textcolor{keywordflow}{for} (EOLcnt = 1; !\hyperlink{faxexpand_8cpp_a3b18273c163f8933af84e9709717de57}{EndOfData}(pn); EOLcnt++) \{
+434         \textcolor{comment}{/* we have seen 11 zeros, which implies EOL,}
+435 \textcolor{comment}{           skip possible fill bits too */}
+436         \textcolor{keywordflow}{while} (1) \{
+437         \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(8);
+438         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(8))
+439             \textcolor{keywordflow}{break};
+440         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(8);
+441         \}
+442         \textcolor{keywordflow}{while} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(1) == 0)
+443         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);
+444         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);      \textcolor{comment}{/* the eol flag */}
+445         \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(11);
+446         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(11))
+447         \textcolor{keywordflow}{break};
+448         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(11);
+449     \}
+450         \textcolor{keywordflow}{if} (EOLcnt > 1 && EOLcnt != 6 && \hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose}) \{
+451             kError() << \textcolor{stringliteral}{"Line "} << LineNum << \textcolor{stringliteral}{": bad RTC ("} << EOLcnt << \textcolor{stringliteral}{" EOLs)\(\backslash\)n"};
+452         \}
+453     \textcolor{keywordflow}{if} (EOLcnt >= 6 || \hyperlink{faxexpand_8cpp_a3b18273c163f8933af84e9709717de57}{EndOfData}(pn)) \{
+454         free(runs);
+455         \textcolor{keywordflow}{return};
+456     \}
+457     RunLength = 0;
+458     pa = runs;
+459     a0 = 0;
+460     EOLcnt = 0;
+461     \hyperlink{faxexpand_8cpp_a9e898ae20a23b0a6c8d1cc06b57b2c33}{expand1d}();
+462     \textcolor{keywordflow}{if} (RunLength)
+463         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+464     \textcolor{keywordflow}{if} (a0 != lastx) \{
+465         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose})
+466                 kWarning() << \textcolor{stringliteral}{"Line "} << LineNum << \textcolor{stringliteral}{": length is "}
+467             << a0 << \textcolor{stringliteral}{" (expected "}<< lastx << \textcolor{stringliteral}{")\(\backslash\)n"};
+468         \textcolor{keywordflow}{while} (a0 > lastx)
+469         a0 -= *--pa;
+470         \textcolor{keywordflow}{if} (a0 < lastx) \{
+471         \textcolor{keywordflow}{if} ((pa - runs) & 1)
+472             \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+473         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(lastx - a0);
+474         \}
+475     \}
+476     (*df)(runs, LineNum++, pn);
+477     \}
+478     free(runs);
+479 \}
+\end{DoxyCode}
+\hypertarget{faxexpand_8h_a51756d52c316fae8e6c349575e0ac049}{\index{faxexpand.\+h@{faxexpand.\+h}!g32expand@{g32expand}}
+\index{g32expand@{g32expand}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{g32expand}]{\setlength{\rightskip}{0pt plus 5cm}void g32expand (
+\begin{DoxyParamCaption}
+\item[{class {\bf pagenode} $\ast$}]{pn, }
+\item[{{\bf drawfunc}}]{df}
+\end{DoxyParamCaption}
+)}}\label{faxexpand_8h_a51756d52c316fae8e6c349575e0ac049}
+
+
+Definition at line 483 of file faxexpand.\+cpp.
+
+
+\begin{DoxyCode}
+484 \{
+485     \textcolor{keywordtype}{int} RunLength;      \textcolor{comment}{/* Length of current run */}
+486     \textcolor{keywordtype}{int} a0;         \textcolor{comment}{/* reference element */}
+487     \textcolor{keywordtype}{int} b1;         \textcolor{comment}{/* next change on previous line */}
+488     \textcolor{keywordtype}{int} lastx = pn->size.width();\textcolor{comment}{/* copy line width to register */}
+489     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *run0, *run1;  \textcolor{comment}{/* run length arrays */}
+490     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *thisrun, *pa, *pb;    \textcolor{comment}{/* pointers into runs */}
+491     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} *sp;     \textcolor{comment}{/* pointer into compressed data */}
+492     \hyperlink{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}{t32bits} BitAcc;      \textcolor{comment}{/* bit accumulator */}
+493     \textcolor{keywordtype}{int} BitsAvail;      \textcolor{comment}{/* # valid bits in BitAcc */}
+494     \textcolor{keywordtype}{int} EOLcnt;         \textcolor{comment}{/* number of consecutive EOLs */}
+495     \textcolor{keywordtype}{int} refline = 0;        \textcolor{comment}{/* 1D encoded reference line */}
+496     \textcolor{keywordtype}{int} LineNum;        \textcolor{comment}{/* line number */}
+497     \textcolor{keyword}{struct }\hyperlink{structtabent}{tabent} *TabEnt;
+498 
+499     sp = pn->data;
+500     BitAcc = 0;
+501     BitsAvail = 0;
+502     \textcolor{comment}{/* allocate space for 2 runlength arrays */}
+503     run0 = (\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *) malloc(2 * ((lastx+5)&~1) * \textcolor{keyword}{sizeof}(\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum}));
+504     run1 = run0 + ((lastx+5)&~1);
+505     run1[0] = lastx;
+506     run1[1] = 0;
+507     EOLcnt = 0;
+508     \textcolor{keywordflow}{for} (LineNum = 0; LineNum < pn->rowsperstrip; ) \{
+509 \textcolor{preprocessor}{#ifdef DEBUG\_FAX}
+510     printf(\textcolor{stringliteral}{"\(\backslash\)nBitAcc=%08lX, BitsAvail = %d\(\backslash\)n"}, BitAcc, BitsAvail);
+511     printf(\textcolor{stringliteral}{"-------------------- %d\(\backslash\)n"}, LineNum);
+512     fflush(stdout);
+513 \textcolor{preprocessor}{#endif}
+514     \textcolor{keywordflow}{if} (EOLcnt == 0)
+515         \textcolor{keywordflow}{while} (!\hyperlink{faxexpand_8cpp_a3b18273c163f8933af84e9709717de57}{EndOfData}(pn)) \{
+516         \textcolor{comment}{/* skip over garbage after a coding error */}
+517         \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(11);
+518         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(11) == 0)
+519             \textcolor{keywordflow}{break};
+520         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);
+521         \}
+522     \textcolor{keywordflow}{for} (EOLcnt = 1; !\hyperlink{faxexpand_8cpp_a3b18273c163f8933af84e9709717de57}{EndOfData}(pn); EOLcnt++) \{
+523         \textcolor{comment}{/* we have seen 11 zeros, which implies EOL,}
+524 \textcolor{comment}{           skip possible fill bits too */}
+525         \textcolor{keywordflow}{while} (1) \{
+526         \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(8);
+527         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(8))
+528             \textcolor{keywordflow}{break};
+529         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(8);
+530         \}
+531         \textcolor{keywordflow}{while} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(1) == 0)
+532         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);
+533         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);      \textcolor{comment}{/* the eol flag */}
+534         \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(12);
+535         refline = \hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(1); \textcolor{comment}{/* 1D / 2D flag */}
+536         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(1);
+537         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(11))
+538         \textcolor{keywordflow}{break};
+539         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(11);
+540     \}
+541     \textcolor{keywordflow}{if} (EOLcnt > 1 && EOLcnt != 6 && \hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose})
+542             kError() << \textcolor{stringliteral}{"Line "} << LineNum << \textcolor{stringliteral}{": bad RTC ("} << EOLcnt << \textcolor{stringliteral}{" EOLs)\(\backslash\)n"};
+543     \textcolor{keywordflow}{if} (EOLcnt >= 6 || \hyperlink{faxexpand_8cpp_a3b18273c163f8933af84e9709717de57}{EndOfData}(pn)) \{
+544         free(run0);
+545         \textcolor{keywordflow}{return};
+546     \}
+547     \textcolor{keywordflow}{if} (LineNum == 0 && refline == 0 && \hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose})
+548             kDebug() << \textcolor{stringliteral}{"First line is 2-D encoded\(\backslash\)n"};
+549     RunLength = 0;
+550     \textcolor{keywordflow}{if} (LineNum & 1) \{
+551         pa = run1;
+552         pb = run0;
+553     \}
+554     \textcolor{keywordflow}{else} \{
+555         pa = run0;
+556         pb = run1;
+557     \}
+558     thisrun = pa;
+559     EOLcnt = 0;
+560     a0 = 0;
+561     b1 = *pb++;
+562 
+563     \textcolor{keywordflow}{if} (refline) \{
+564         \hyperlink{faxexpand_8cpp_a9e898ae20a23b0a6c8d1cc06b57b2c33}{expand1d}();
+565     \}
+566     \textcolor{keywordflow}{else} \{
+567         \hyperlink{faxexpand_8cpp_a8f4cf775ca1e5756baad1dcd8fe26116}{expand2d}(EOL2);
+568     \}
+569     \textcolor{keywordflow}{if} (RunLength)
+570         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+571     \textcolor{keywordflow}{if} (a0 != lastx) \{
+572         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose})
+573                 kWarning() << \textcolor{stringliteral}{"Line "} << LineNum << \textcolor{stringliteral}{": length is "}
+574             << a0 << \textcolor{stringliteral}{" (expected "}<< lastx << \textcolor{stringliteral}{")\(\backslash\)n"};
+575         \textcolor{keywordflow}{while} (a0 > lastx)
+576         a0 -= *--pa;
+577         \textcolor{keywordflow}{if} (a0 < lastx) \{
+578         \textcolor{keywordflow}{if} ((pa - run0) & 1)
+579             \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+580         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(lastx - a0);
+581         \}
+582     \}
+583     \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);    \textcolor{comment}{/* imaginary change at end of line for reference */}
+584     (*df)(thisrun, LineNum++, pn);
+585     \}
+586     free(run0);
+587 \}
+\end{DoxyCode}
+\hypertarget{faxexpand_8h_a12555bb4850926bcababbcdf1ee78800}{\index{faxexpand.\+h@{faxexpand.\+h}!G3count@{G3count}}
+\index{G3count@{G3count}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{G3count}]{\setlength{\rightskip}{0pt plus 5cm}int G3count (
+\begin{DoxyParamCaption}
+\item[{class {\bf pagenode} $\ast$}]{pn, }
+\item[{int}]{two\+D}
+\end{DoxyParamCaption}
+)}}\label{faxexpand_8h_a12555bb4850926bcababbcdf1ee78800}
+
+
+Definition at line 720 of file faxexpand.\+cpp.
+
+
+\begin{DoxyCode}
+721 \{
+722     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} *p = pn->data;
+723     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} *end = p + pn->length/\textcolor{keyword}{sizeof}(*p);
+724     \textcolor{keywordtype}{int} lines = 0;      \textcolor{comment}{/* lines seen so far */}
+725     \textcolor{keywordtype}{int} zeros = 0;      \textcolor{comment}{/* number of consecutive zero bits seen */}
+726     \textcolor{keywordtype}{int} EOLcnt = 0;     \textcolor{comment}{/* number of consecutive EOLs seen */}
+727     \textcolor{keywordtype}{int} empty = 1;      \textcolor{comment}{/* empty line */}
+728     \textcolor{keywordtype}{int} prezeros, postzeros;
+729 
+730     \textcolor{keywordflow}{while} (p < end && EOLcnt < 6) \{
+731     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} bits = *p++;
+732     \hyperlink{faxexpand_8cpp_aba485a0392add91c143252d49a5dd45b}{check}(bits&255);
+733     \textcolor{keywordflow}{if} (twoD && (prezeros + postzeros == 7)) \{
+734         \textcolor{keywordflow}{if} (postzeros || ((bits & 0x100) == 0))
+735         zeros--;
+736     \}
+737     \hyperlink{faxexpand_8cpp_aba485a0392add91c143252d49a5dd45b}{check}(bits>>8);
+738     \textcolor{keywordflow}{if} (twoD && (prezeros + postzeros == 7)) \{
+739         \textcolor{keywordflow}{if} (postzeros || ((p < end) && ((*p & 1) == 0)))
+740         zeros--;
+741     \}
+742     \}
+743     \textcolor{keywordflow}{return} lines - EOLcnt;  \textcolor{comment}{/* don't count trailing EOLs */}
+744 \}
+\end{DoxyCode}
+\hypertarget{faxexpand_8h_ab7e8fa3f6ef2305f1cd0376a75583777}{\index{faxexpand.\+h@{faxexpand.\+h}!g4expand@{g4expand}}
+\index{g4expand@{g4expand}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{g4expand}]{\setlength{\rightskip}{0pt plus 5cm}void g4expand (
+\begin{DoxyParamCaption}
+\item[{class {\bf pagenode} $\ast$}]{pn, }
+\item[{{\bf drawfunc}}]{df}
+\end{DoxyParamCaption}
+)}}\label{faxexpand_8h_ab7e8fa3f6ef2305f1cd0376a75583777}
+
+
+Definition at line 603 of file faxexpand.\+cpp.
+
+
+\begin{DoxyCode}
+604 \{
+605     \textcolor{keywordtype}{int} RunLength;      \textcolor{comment}{/* Length of current run */}
+606     \textcolor{keywordtype}{int} a0;         \textcolor{comment}{/* reference element */}
+607     \textcolor{keywordtype}{int} b1;         \textcolor{comment}{/* next change on previous line */}
+608     \textcolor{keywordtype}{int} lastx = pn->size.width();\textcolor{comment}{/* copy line width to register */}
+609     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *run0, *run1;  \textcolor{comment}{/* run length arrays */}
+610     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *thisrun, *pa, *pb;    \textcolor{comment}{/* pointers into runs */}
+611     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} *sp;     \textcolor{comment}{/* pointer into compressed data */}
+612     \hyperlink{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}{t32bits} BitAcc;      \textcolor{comment}{/* bit accumulator */}
+613     \textcolor{keywordtype}{int} BitsAvail;      \textcolor{comment}{/* # valid bits in BitAcc */}
+614     \textcolor{keywordtype}{int} LineNum;        \textcolor{comment}{/* line number */}
+615     \textcolor{keywordtype}{int} EOLcnt;
+616     \textcolor{keyword}{struct }\hyperlink{structtabent}{tabent} *TabEnt;
+617 
+618     sp = pn->data;
+619     BitAcc = 0;
+620     BitsAvail = 0;
+621     \textcolor{comment}{/* allocate space for 2 runlength arrays */}
+622     run0 = (\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *) malloc(2 * ((lastx+5)&~1) * \textcolor{keyword}{sizeof}(\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum}));
+623     run1 = run0 + ((lastx+5)&~1);
+624     run1[0] = lastx;        \textcolor{comment}{/* initial reference line */}
+625     run1[1] = 0;
+626 
+627     \textcolor{keywordflow}{for} (LineNum = 0; LineNum < pn->rowsperstrip; ) \{
+628 \textcolor{preprocessor}{#ifdef DEBUG\_FAX}
+629     printf(\textcolor{stringliteral}{"\(\backslash\)nBitAcc=%08lX, BitsAvail = %d\(\backslash\)n"}, BitAcc, BitsAvail);
+630     printf(\textcolor{stringliteral}{"-------------------- %d\(\backslash\)n"}, LineNum);
+631     fflush(stdout);
+632 \textcolor{preprocessor}{#endif}
+633     RunLength = 0;
+634     \textcolor{keywordflow}{if} (LineNum & 1) \{
+635         pa = run1;
+636         pb = run0;
+637     \}
+638     \textcolor{keywordflow}{else} \{
+639         pa = run0;
+640         pb = run1;
+641     \}
+642     thisrun = pa;
+643     a0 = 0;
+644     b1 = *pb++;
+645     \hyperlink{faxexpand_8cpp_a8f4cf775ca1e5756baad1dcd8fe26116}{expand2d}(EOFB);
+646     \textcolor{keywordflow}{if} (a0 < lastx) \{
+647         \textcolor{keywordflow}{if} ((pa - run0) & 1)
+648         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+649         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(lastx - a0);
+650     \}
+651     \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);    \textcolor{comment}{/* imaginary change at end of line for reference */}
+652     (*df)(thisrun, LineNum++, pn);
+653     \textcolor{keywordflow}{continue};
+654     EOFB:
+655     \hyperlink{faxexpand_8cpp_a31b0f8f92299cb8727dcce822701ce30}{NeedBits}(13);
+656     \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_ad76ef429faf468b9d16c8592128b7373}{GetBits}(13) != 0x1001 && \hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose})
+657             kError() << \textcolor{stringliteral}{"Bad RTC\(\backslash\)n"};
+658     \textcolor{keywordflow}{break};
+659     \}
+660     free(run0);
+661 \}
+\end{DoxyCode}
+\hypertarget{faxexpand_8h_aeb42746dc0810f7e0c39f01d2b04d13e}{\index{faxexpand.\+h@{faxexpand.\+h}!M\+Hexpand@{M\+Hexpand}}
+\index{M\+Hexpand@{M\+Hexpand}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{M\+Hexpand}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Hexpand (
+\begin{DoxyParamCaption}
+\item[{class {\bf pagenode} $\ast$}]{pn, }
+\item[{{\bf drawfunc}}]{df}
+\end{DoxyParamCaption}
+)}}\label{faxexpand_8h_aeb42746dc0810f7e0c39f01d2b04d13e}
+
+
+Definition at line 346 of file faxexpand.\+cpp.
+
+
+\begin{DoxyCode}
+347 \{
+348     \textcolor{keywordtype}{int} a0;         \textcolor{comment}{/* reference element */}
+349     \textcolor{keywordtype}{int} lastx;          \textcolor{comment}{/* copy line width to register */}
+350     \hyperlink{faxexpand_8h_ad9a3ae0942e0e49005bcf1462c7bc875}{t32bits} BitAcc;      \textcolor{comment}{/* bit accumulator */}
+351     \textcolor{keywordtype}{int} BitsAvail;      \textcolor{comment}{/* # valid bits in BitAcc */}
+352     \textcolor{keywordtype}{int} RunLength;      \textcolor{comment}{/* Length of current run */}
+353     \hyperlink{faxexpand_8h_adbe0cc2e2aa9b9127df55d505f059631}{t16bits} *sp;     \textcolor{comment}{/* pointer into compressed data */}
+354     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *pa;           \textcolor{comment}{/* pointer into new line */}
+355     \textcolor{keywordtype}{int} EOLcnt;         \textcolor{comment}{/* number of consecutive EOLs */}
+356     \textcolor{keywordtype}{int} LineNum;        \textcolor{comment}{/* line number */}
+357     \hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *runs;     \textcolor{comment}{/* list of run lengths */}
+358     \textcolor{keyword}{struct }\hyperlink{structtabent}{tabent} *TabEnt;
+359 
+360     sp = pn->data;
+361     BitAcc = 0;
+362     BitsAvail = 0;
+363     lastx = pn->size.width();
+364     runs = (\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum} *) malloc(lastx * \textcolor{keyword}{sizeof}(\hyperlink{faxexpand_8h_abb85bbcaaab5f47b32c9c44b6b5afc0d}{pixnum}));
+365     \textcolor{keywordflow}{for} (LineNum = 0; LineNum < pn->rowsperstrip; ) \{
+366 \textcolor{preprocessor}{#ifdef DEBUG\_FAX}
+367     printf(\textcolor{stringliteral}{"\(\backslash\)nBitAcc=%08lX, BitsAvail = %d\(\backslash\)n"}, BitAcc, BitsAvail);
+368     printf(\textcolor{stringliteral}{"-------------------- %d\(\backslash\)n"}, LineNum);
+369     fflush(stdout);
+370 \textcolor{preprocessor}{#endif}
+371     RunLength = 0;
+372     pa = runs;
+373     a0 = 0;
+374     EOLcnt = 0;
+375     \textcolor{keywordflow}{if} (BitsAvail & 7)  \textcolor{comment}{/* skip to byte boundary */}
+376         \hyperlink{faxexpand_8cpp_a4cd18b63c38e3e45095d7170b416151f}{ClrBits}(BitsAvail & 7);
+377     \hyperlink{faxexpand_8cpp_a9e898ae20a23b0a6c8d1cc06b57b2c33}{expand1d}();
+378     \textcolor{keywordflow}{if} (RunLength)
+379         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+380     \textcolor{keywordflow}{if} (a0 != lastx) \{
+381         \textcolor{keywordflow}{if} (\hyperlink{faxexpand_8cpp_afe0534ca994b08a0ec5edf614aa48e9c}{verbose})
+382                 kWarning() << \textcolor{stringliteral}{"Line "} << LineNum << \textcolor{stringliteral}{": length is "}
+383             << a0 << \textcolor{stringliteral}{" (expected "}<< lastx << \textcolor{stringliteral}{")\(\backslash\)n"};
+384         \textcolor{keywordflow}{while} (a0 > lastx)
+385         a0 -= *--pa;
+386         \textcolor{keywordflow}{if} (a0 < lastx) \{
+387         \textcolor{keywordflow}{if} ((pa - runs) & 1)
+388             \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(0);
+389         \hyperlink{faxexpand_8cpp_ae202ddfb332c083286badc478d9be98f}{SETVAL}(lastx - a0);
+390         \}
+391     \}
+392     (*df)(runs, LineNum++, pn);
+393     \}
+394     free(runs);
+395 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{faxexpand_8h_a6cc36fd107e2c9eed88b0d131020dff0}{\index{faxexpand.\+h@{faxexpand.\+h}!Black\+Table@{Black\+Table}}
+\index{Black\+Table@{Black\+Table}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{Black\+Table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tabent} Black\+Table\mbox{[}$\,$\mbox{]}}}\label{faxexpand_8h_a6cc36fd107e2c9eed88b0d131020dff0}
+
+
+Definition at line 25 of file faxinit.\+cpp.
+
+\hypertarget{faxexpand_8h_a0ad4c2a8447cce6d91852de83ea5e88a}{\index{faxexpand.\+h@{faxexpand.\+h}!Main\+Table@{Main\+Table}}
+\index{Main\+Table@{Main\+Table}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{Main\+Table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tabent} Main\+Table\mbox{[}$\,$\mbox{]}}}\label{faxexpand_8h_a0ad4c2a8447cce6d91852de83ea5e88a}
+
+
+Definition at line 23 of file faxinit.\+cpp.
+
+\hypertarget{faxexpand_8h_a199dff3fc12dcb08e817b7bd861665b8}{\index{faxexpand.\+h@{faxexpand.\+h}!White\+Table@{White\+Table}}
+\index{White\+Table@{White\+Table}!faxexpand.\+h@{faxexpand.\+h}}
+\subsubsection[{White\+Table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf tabent} White\+Table\mbox{[}$\,$\mbox{]}}}\label{faxexpand_8h_a199dff3fc12dcb08e817b7bd861665b8}
+
+
+Definition at line 24 of file faxinit.\+cpp.
+

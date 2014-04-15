@@ -1,0 +1,71 @@
+\hypertarget{pagepainter_8cpp}{\section{ui/pagepainter.cpp File Reference}
+\label{pagepainter_8cpp}\index{ui/pagepainter.\+cpp@{ui/pagepainter.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}pagepainter.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$qrect.\+h$>$}\\*
+{\ttfamily \#include $<$qpainter.\+h$>$}\\*
+{\ttfamily \#include $<$qpalette.\+h$>$}\\*
+{\ttfamily \#include $<$qpixmap.\+h$>$}\\*
+{\ttfamily \#include $<$qvarlengtharray.\+h$>$}\\*
+{\ttfamily \#include $<$kiconloader.\+h$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$Q\+Application$>$}\\*
+{\ttfamily \#include $<$qimageblitz.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}core/area.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/page.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/page\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/annotations.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}guiutils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}settings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/observer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/tile.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}settings\+\_\+core.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/document\+\_\+p.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pagepainter_8cpp_a32fe52c433b27892263587c64567dc5a}{T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E}~24
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pagepainter_8cpp_a2ce23e0ff96c178c969b09bc2c0b2e48}{K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S} (Q\+Pixmap, busy\+Pixmap,(K\+Icon\+Loader\+::global() -\/$>$load\+Icon(\char`\"{}okular\char`\"{}, K\+Icon\+Loader\+::\+No\+Group, 32, K\+Icon\+Loader\+::\+Default\+State, Q\+String\+List(), 0, true))) inline Q\+Pen build\+Pen(const Okular
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pagepainter_8cpp_a32fe52c433b27892263587c64567dc5a}{\index{pagepainter.\+cpp@{pagepainter.\+cpp}!T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E@{T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E}}
+\index{T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E@{T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E}!pagepainter.\+cpp@{pagepainter.\+cpp}}
+\subsubsection[{T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+X\+T\+A\+N\+N\+O\+T\+A\+T\+I\+O\+N\+\_\+\+I\+C\+O\+N\+S\+I\+Z\+E~24}}\label{pagepainter_8cpp_a32fe52c433b27892263587c64567dc5a}
+
+
+\subsection{Function Documentation}
+\hypertarget{pagepainter_8cpp_a2ce23e0ff96c178c969b09bc2c0b2e48}{\index{pagepainter.\+cpp@{pagepainter.\+cpp}!K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S@{K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S}}
+\index{K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S@{K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S}!pagepainter.\+cpp@{pagepainter.\+cpp}}
+\subsubsection[{K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}K\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+W\+I\+T\+H\+\_\+\+A\+R\+G\+S (
+\begin{DoxyParamCaption}
+\item[{Q\+Pixmap}]{, }
+\item[{busy\+Pixmap}]{, }
+\item[{(K\+Icon\+Loader\+::global() -\/$>$load\+Icon(\char`\"{}okular\char`\"{}, K\+Icon\+Loader\+::\+No\+Group, 32, K\+Icon\+Loader\+::\+Default\+State, Q\+String\+List(), 0, true))}]{}
+\end{DoxyParamCaption}
+) const}}\label{pagepainter_8cpp_a2ce23e0ff96c178c969b09bc2c0b2e48}
+
+
+Definition at line 39 of file pagepainter.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     QPen p(
+46         QBrush( color ),
+47         width,
+48         ann->style().lineStyle() == \hyperlink{classOkular_1_1Annotation_ac60f5de2d449043f9f849f3f081f8a7aaaf72c26f0e585f2512e0c323d7e0c5e9}{Okular::Annotation::Dashed} ? Qt::DashLine : 
+      Qt::SolidLine,
+49         Qt::SquareCap,
+50         Qt::MiterJoin
+51     );
+52     \textcolor{keywordflow}{return} p;
+53 \}
+\end{DoxyCode}

@@ -1,0 +1,110 @@
+\hypertarget{classCheckBoxEdit}{\section{Check\+Box\+Edit Class Reference}
+\label{classCheckBoxEdit}\index{Check\+Box\+Edit@{Check\+Box\+Edit}}
+}
+
+
+{\ttfamily \#include $<$formwidgets.\+h$>$}
+
+Inheritance diagram for Check\+Box\+Edit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCheckBoxEdit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCheckBoxEdit_a0b3c2bc4389a32a8a41b61b7e0698e6c}{Check\+Box\+Edit} (\hyperlink{classOkular_1_1FormFieldButton}{Okular\+::\+Form\+Field\+Button} $\ast$\hyperlink{classCheckBoxEdit_acec5a34a30f87ab0d146ae0532adf288}{button}, Q\+Widget $\ast$parent=0)
+\item 
+void \hyperlink{classCheckBoxEdit_aa529e8646ebcb3d1f675f6ce54b48ada}{set\+Form\+Widgets\+Controller} (\hyperlink{classFormWidgetsController}{Form\+Widgets\+Controller} $\ast$controller)
+\item 
+Q\+Abstract\+Button $\ast$ \hyperlink{classCheckBoxEdit_acec5a34a30f87ab0d146ae0532adf288}{button} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 182 of file formwidgets.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCheckBoxEdit_a0b3c2bc4389a32a8a41b61b7e0698e6c}{\index{Check\+Box\+Edit@{Check\+Box\+Edit}!Check\+Box\+Edit@{Check\+Box\+Edit}}
+\index{Check\+Box\+Edit@{Check\+Box\+Edit}!Check\+Box\+Edit@{Check\+Box\+Edit}}
+\subsubsection[{Check\+Box\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Check\+Box\+Edit\+::\+Check\+Box\+Edit (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Form\+Field\+Button} $\ast$}]{button, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCheckBoxEdit_a0b3c2bc4389a32a8a41b61b7e0698e6c}
+
+
+Definition at line 332 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+333     : QCheckBox( parent ), \hyperlink{classFormWidgetIface_a1737728a2348ae69415008ddb1aa3b9d}{FormWidgetIface}( \textcolor{keyword}{this}, button ), m\_form( button )
+334 \{
+335     setText( m\_form->\hyperlink{classOkular_1_1FormFieldButton_a73098d0def0b5f92cd7efbfb7e273c00}{caption}() );
+336     setEnabled( !m\_form->\hyperlink{classOkular_1_1FormField_ad1636c715682959442f528c72a2f4c0a}{isReadOnly}() );
+337 
+338     setVisible( m\_form->\hyperlink{classOkular_1_1FormField_aee63f77f88a7f8359d9a53de3d07ebe0}{isVisible}() );
+339     setCursor( Qt::ArrowCursor );
+340 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCheckBoxEdit_acec5a34a30f87ab0d146ae0532adf288}{\index{Check\+Box\+Edit@{Check\+Box\+Edit}!button@{button}}
+\index{button@{button}!Check\+Box\+Edit@{Check\+Box\+Edit}}
+\subsubsection[{button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Abstract\+Button $\ast$ Check\+Box\+Edit\+::button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCheckBoxEdit_acec5a34a30f87ab0d146ae0532adf288}
+
+
+Reimplemented from \hyperlink{classFormWidgetIface_afd9eb69f17a3b1d5e970f3cc496ddb17}{Form\+Widget\+Iface}.
+
+
+
+Definition at line 350 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+351 \{
+352     \textcolor{keywordflow}{return} \textcolor{keyword}{this};
+353 \}
+\end{DoxyCode}
+\hypertarget{classCheckBoxEdit_aa529e8646ebcb3d1f675f6ce54b48ada}{\index{Check\+Box\+Edit@{Check\+Box\+Edit}!set\+Form\+Widgets\+Controller@{set\+Form\+Widgets\+Controller}}
+\index{set\+Form\+Widgets\+Controller@{set\+Form\+Widgets\+Controller}!Check\+Box\+Edit@{Check\+Box\+Edit}}
+\subsubsection[{set\+Form\+Widgets\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}void Check\+Box\+Edit\+::set\+Form\+Widgets\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Form\+Widgets\+Controller} $\ast$}]{controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCheckBoxEdit_aa529e8646ebcb3d1f675f6ce54b48ada}
+
+
+Reimplemented from \hyperlink{classFormWidgetIface_a4d3129afff43729fafc4e6b58a4d16fe}{Form\+Widget\+Iface}.
+
+
+
+Definition at line 342 of file formwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+343 \{
+344     \hyperlink{classFormWidgetIface_a4d3129afff43729fafc4e6b58a4d16fe}{FormWidgetIface::setFormWidgetsController}( controller );
+345     \hyperlink{classFormWidgetIface_a2d51d0c5aaf48aad5480551f69f82e9a}{m\_controller}->\hyperlink{classFormWidgetsController_a46b5faee7cd52e35eda20e463ea257ca}{registerRadioButton}( \hyperlink{classCheckBoxEdit_acec5a34a30f87ab0d146ae0532adf288}{button}(), m\_form );
+346     setChecked( m\_form->\hyperlink{classOkular_1_1FormFieldButton_aff17cce65de36b508a3a645747e24c51}{state}() );
+347     connect( \textcolor{keyword}{this}, SIGNAL(stateChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(slotStateChanged(\textcolor{keywordtype}{int})) );
+348 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{formwidgets_8h}{formwidgets.\+h}\item 
+ui/\hyperlink{formwidgets_8cpp}{formwidgets.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,514 @@
+\hypertarget{classPageViewItem}{\section{Page\+View\+Item Class Reference}
+\label{classPageViewItem}\index{Page\+View\+Item@{Page\+View\+Item}}
+}
+
+
+\hyperlink{classPageViewItem}{Page\+View\+Item} represents graphically a page into the \hyperlink{classPageView}{Page\+View}.  
+
+
+
+
+{\ttfamily \#include $<$pageviewutils.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageViewItem_a309d8671e7dc72dcb3e08e7c64886f05}{Page\+View\+Item} (const \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$\hyperlink{classPageViewItem_a5c512d95e5563e8d19d1fb3d93dafc31}{page})
+\item 
+\hyperlink{classPageViewItem_a9636b20b548065c6cd904a16ba4625d3}{$\sim$\+Page\+View\+Item} ()
+\item 
+const \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ \hyperlink{classPageViewItem_a5c512d95e5563e8d19d1fb3d93dafc31}{page} () const 
+\item 
+int \hyperlink{classPageViewItem_ad75aab4c1ffd842bd5d54c0cfe84d1bf}{page\+Number} () const 
+\item 
+double \hyperlink{classPageViewItem_a49bd277d8c33f520df31548ef22373ea}{zoom\+Factor} () const 
+\item 
+bool \hyperlink{classPageViewItem_ae7a4dfa618d0cb56e01075842c67bf9f}{is\+Visible} () const 
+\item 
+Q\+Hash$<$ int, \hyperlink{classFormWidgetIface}{Form\+Widget\+Iface} $\ast$ $>$ \& \hyperlink{classPageViewItem_a24394acf608eed67ef99280f6958258d}{form\+Widgets} ()
+\item 
+Q\+Hash$<$ \hyperlink{classOkular_1_1Movie}{Okular\+::\+Movie} \\*
+$\ast$, \hyperlink{classVideoWidget}{Video\+Widget} $\ast$ $>$ \& \hyperlink{classPageViewItem_a125302408597cab2a58ef2ad309e2912}{video\+Widgets} ()
+\item 
+const \hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \& \hyperlink{classPageViewItem_a587a87792c6c65854b512192274f9c78}{crop} () const 
+\item 
+const Q\+Rect \& \hyperlink{classPageViewItem_aa2c3e988ccbe9ee162b73d7f89ab0d02}{cropped\+Geometry} () const 
+\item 
+int \hyperlink{classPageViewItem_a94c289b7fcbadf14d0b06a68589aa72a}{cropped\+Width} () const 
+\item 
+int \hyperlink{classPageViewItem_a4e74bfd4a2f4afaf8e905c59293b4978}{cropped\+Height} () const 
+\item 
+const Q\+Rect \& \hyperlink{classPageViewItem_a5d2e73a003f65b4e95c0c21b1698f835}{uncropped\+Geometry} () const 
+\item 
+int \hyperlink{classPageViewItem_a240924407ae22bb0489363a6a2d481b9}{uncropped\+Width} () const 
+\item 
+int \hyperlink{classPageViewItem_af1380fce5dc13a72458ef834c720b128}{uncropped\+Height} () const 
+\item 
+double \hyperlink{classPageViewItem_ac8c32541cbae1efd5b4ab54f0a4b4576}{abs\+To\+Page\+X} (double abs\+X) const 
+\item 
+double \hyperlink{classPageViewItem_afdbba9ce015155c0e655efbb23e5d13b}{abs\+To\+Page\+Y} (double abs\+Y) const 
+\item 
+void \hyperlink{classPageViewItem_a9bd1865804399e1c5cf54ee5871f173a}{set\+W\+H\+Z\+C} (int w, int h, double zoom, const \hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \&c)
+\item 
+void \hyperlink{classPageViewItem_a0c23111c6e56e5198b5f25518fb4f9bf}{move\+To} (int x, int y)
+\item 
+void \hyperlink{classPageViewItem_aa5e5ccb0e93d2ab16f6785503ff1ed21}{set\+Visible} (bool visible)
+\item 
+void \hyperlink{classPageViewItem_aae4d30e1d447c96f8fb12ed27316d0f5}{invalidate} ()
+\item 
+bool \hyperlink{classPageViewItem_ae022a536fc5d7fd23a20253b1544ae76}{set\+Form\+Widgets\+Visible} (bool visible)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPageViewItem}{Page\+View\+Item} represents graphically a page into the \hyperlink{classPageView}{Page\+View}. 
+
+It has methods for settings Item's geometry and other visual properties such as the individual zoom factor. 
+
+Definition at line 41 of file pageviewutils.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageViewItem_a309d8671e7dc72dcb3e08e7c64886f05}{\index{Page\+View\+Item@{Page\+View\+Item}!Page\+View\+Item@{Page\+View\+Item}}
+\index{Page\+View\+Item@{Page\+View\+Item}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{Page\+View\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Page\+View\+Item\+::\+Page\+View\+Item (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_a309d8671e7dc72dcb3e08e7c64886f05}
+\hyperlink{classPageViewItem}{Page\+View\+Item} 
+
+Definition at line 45 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+46     : m\_page( page ), m\_zoomFactor( 1.0 ), m\_visible( \textcolor{keyword}{true} ),
+47     m\_formsVisible( \textcolor{keyword}{false} ), m\_crop( 0., 0., 1., 1. )
+48 \{
+49 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a9636b20b548065c6cd904a16ba4625d3}{\index{Page\+View\+Item@{Page\+View\+Item}!````~Page\+View\+Item@{$\sim$\+Page\+View\+Item}}
+\index{````~Page\+View\+Item@{$\sim$\+Page\+View\+Item}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{$\sim$\+Page\+View\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Page\+View\+Item\+::$\sim$\+Page\+View\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_a9636b20b548065c6cd904a16ba4625d3}
+
+
+Definition at line 51 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+52 \{
+53     QHash<int, FormWidgetIface*>::iterator it = m\_formWidgets.begin(), itEnd = m\_formWidgets.end();
+54     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+55         \textcolor{keyword}{delete} *it;
+56     qDeleteAll( m\_videoWidgets );
+57 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageViewItem_ac8c32541cbae1efd5b4ab54f0a4b4576}{\index{Page\+View\+Item@{Page\+View\+Item}!abs\+To\+Page\+X@{abs\+To\+Page\+X}}
+\index{abs\+To\+Page\+X@{abs\+To\+Page\+X}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{abs\+To\+Page\+X}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+View\+Item\+::abs\+To\+Page\+X (
+\begin{DoxyParamCaption}
+\item[{double}]{abs\+X}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_ac8c32541cbae1efd5b4ab54f0a4b4576}
+
+
+Definition at line 109 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+110 \{
+111     \textcolor{keywordflow}{return} ( absX - m\_uncroppedGeometry.left() ) / m\_uncroppedGeometry.width();
+112 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_afdbba9ce015155c0e655efbb23e5d13b}{\index{Page\+View\+Item@{Page\+View\+Item}!abs\+To\+Page\+Y@{abs\+To\+Page\+Y}}
+\index{abs\+To\+Page\+Y@{abs\+To\+Page\+Y}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{abs\+To\+Page\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+View\+Item\+::abs\+To\+Page\+Y (
+\begin{DoxyParamCaption}
+\item[{double}]{abs\+Y}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_afdbba9ce015155c0e655efbb23e5d13b}
+
+
+Definition at line 114 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+115 \{
+116     \textcolor{keywordflow}{return} ( absY - m\_uncroppedGeometry.top() ) / m\_uncroppedGeometry.height();
+117 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a587a87792c6c65854b512192274f9c78}{\index{Page\+View\+Item@{Page\+View\+Item}!crop@{crop}}
+\index{crop@{crop}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{crop}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Normalized\+Rect} \& Page\+View\+Item\+::crop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a587a87792c6c65854b512192274f9c78}
+
+
+Definition at line 99 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+100 \{
+101     \textcolor{keywordflow}{return} m\_crop;
+102 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_aa2c3e988ccbe9ee162b73d7f89ab0d02}{\index{Page\+View\+Item@{Page\+View\+Item}!cropped\+Geometry@{cropped\+Geometry}}
+\index{cropped\+Geometry@{cropped\+Geometry}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{cropped\+Geometry}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Rect \& Page\+View\+Item\+::cropped\+Geometry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_aa2c3e988ccbe9ee162b73d7f89ab0d02}
+
+
+Definition at line 69 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{keywordflow}{return} m\_croppedGeometry;
+72 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a4e74bfd4a2f4afaf8e905c59293b4978}{\index{Page\+View\+Item@{Page\+View\+Item}!cropped\+Height@{cropped\+Height}}
+\index{cropped\+Height@{cropped\+Height}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{cropped\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+View\+Item\+::cropped\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a4e74bfd4a2f4afaf8e905c59293b4978}
+
+
+Definition at line 79 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{return} m\_croppedGeometry.height();
+82 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a94c289b7fcbadf14d0b06a68589aa72a}{\index{Page\+View\+Item@{Page\+View\+Item}!cropped\+Width@{cropped\+Width}}
+\index{cropped\+Width@{cropped\+Width}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{cropped\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+View\+Item\+::cropped\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a94c289b7fcbadf14d0b06a68589aa72a}
+
+
+Definition at line 74 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76     \textcolor{keywordflow}{return} m\_croppedGeometry.width();
+77 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a24394acf608eed67ef99280f6958258d}{\index{Page\+View\+Item@{Page\+View\+Item}!form\+Widgets@{form\+Widgets}}
+\index{form\+Widgets@{form\+Widgets}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{form\+Widgets}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$ int, {\bf Form\+Widget\+Iface} $\ast$ $>$ \& Page\+View\+Item\+::form\+Widgets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_a24394acf608eed67ef99280f6958258d}
+
+
+Definition at line 124 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+125 \{
+126     \textcolor{keywordflow}{return} m\_formWidgets;
+127 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_aae4d30e1d447c96f8fb12ed27316d0f5}{\index{Page\+View\+Item@{Page\+View\+Item}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{invalidate}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Item\+::invalidate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_aae4d30e1d447c96f8fb12ed27316d0f5}
+
+
+Definition at line 188 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+189 \{
+190     m\_croppedGeometry.setRect( 0, 0, 0, 0 );
+191     m\_uncroppedGeometry.setRect( 0, 0, 0, 0 );
+192 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_ae7a4dfa618d0cb56e01075842c67bf9f}{\index{Page\+View\+Item@{Page\+View\+Item}!is\+Visible@{is\+Visible}}
+\index{is\+Visible@{is\+Visible}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{is\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Item\+::is\+Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_ae7a4dfa618d0cb56e01075842c67bf9f}
+
+
+Definition at line 119 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+120 \{
+121     \textcolor{keywordflow}{return} m\_visible;
+122 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a0c23111c6e56e5198b5f25518fb4f9bf}{\index{Page\+View\+Item@{Page\+View\+Item}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Item\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_a0c23111c6e56e5198b5f25518fb4f9bf}
+
+
+Definition at line 158 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+160 \{
+161     m\_croppedGeometry.moveLeft( x );
+162     m\_croppedGeometry.moveTop( y );
+163     m\_uncroppedGeometry.moveLeft( qRound( x - m\_crop.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} * m\_uncroppedGeometry.width() ) );
+164     m\_uncroppedGeometry.moveTop( qRound( y - m\_crop.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} * m\_uncroppedGeometry.height() ) );
+165     QHash<int, FormWidgetIface*>::iterator it = m\_formWidgets.begin(), itEnd = m\_formWidgets.end();
+166     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+167     \{
+168         \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} r = (*it)->rect();
+169         (*it)->moveTo(
+170             qRound( x + m\_uncroppedGeometry.width() * r.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ) + 1,
+171             qRound( y + m\_uncroppedGeometry.height() * r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ) + 1 );
+172     \}
+173     Q\_FOREACH ( \hyperlink{classVideoWidget}{VideoWidget} *vw, m\_videoWidgets )
+174     \{
+175         \textcolor{keyword}{const} \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} r = vw->\hyperlink{classVideoWidget_a44ccb0d6b334ca89f1edfa713137128f}{normGeometry}();
+176         vw->move(
+177             qRound( x + m\_uncroppedGeometry.width() * r.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ) + 1,
+178             qRound( y + m\_uncroppedGeometry.height() * r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ) + 1 );
+179     \}
+180 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a5c512d95e5563e8d19d1fb3d93dafc31}{\index{Page\+View\+Item@{Page\+View\+Item}!page@{page}}
+\index{page@{page}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{page}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Page} $\ast$ Page\+View\+Item\+::page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a5c512d95e5563e8d19d1fb3d93dafc31}
+
+
+Definition at line 59 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     \textcolor{keywordflow}{return} m\_page;
+62 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_ad75aab4c1ffd842bd5d54c0cfe84d1bf}{\index{Page\+View\+Item@{Page\+View\+Item}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+View\+Item\+::page\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_ad75aab4c1ffd842bd5d54c0cfe84d1bf}
+
+
+Definition at line 64 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{return} m\_page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}();
+67 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_ae022a536fc5d7fd23a20253b1544ae76}{\index{Page\+View\+Item@{Page\+View\+Item}!set\+Form\+Widgets\+Visible@{set\+Form\+Widgets\+Visible}}
+\index{set\+Form\+Widgets\+Visible@{set\+Form\+Widgets\+Visible}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{set\+Form\+Widgets\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Item\+::set\+Form\+Widgets\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_ae022a536fc5d7fd23a20253b1544ae76}
+
+
+Definition at line 194 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+195 \{
+196     m\_formsVisible = visible;
+197 
+198     \textcolor{keywordflow}{if} ( !m\_visible )
+199         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+200 
+201     \textcolor{keywordtype}{bool} somehadfocus = \textcolor{keyword}{false};
+202     QHash<int, FormWidgetIface*>::iterator it = m\_formWidgets.begin(), itEnd = m\_formWidgets.end();
+203     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+204     \{
+205         \textcolor{keywordtype}{bool} hadfocus = (*it)->setVisibility( visible );
+206         somehadfocus = somehadfocus || hadfocus;
+207     \}
+208     \textcolor{keywordflow}{return} somehadfocus;
+209 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_aa5e5ccb0e93d2ab16f6785503ff1ed21}{\index{Page\+View\+Item@{Page\+View\+Item}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{set\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Item\+::set\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_aa5e5ccb0e93d2ab16f6785503ff1ed21}
+
+
+Definition at line 182 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+183 \{
+184     \hyperlink{classPageViewItem_ae022a536fc5d7fd23a20253b1544ae76}{setFormWidgetsVisible}( visible && m\_formsVisible );
+185     m\_visible = visible;
+186 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a9bd1865804399e1c5cf54ee5871f173a}{\index{Page\+View\+Item@{Page\+View\+Item}!set\+W\+H\+Z\+C@{set\+W\+H\+Z\+C}}
+\index{set\+W\+H\+Z\+C@{set\+W\+H\+Z\+C}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{set\+W\+H\+Z\+C}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Item\+::set\+W\+H\+Z\+C (
+\begin{DoxyParamCaption}
+\item[{int}]{w, }
+\item[{int}]{h, }
+\item[{double}]{zoom, }
+\item[{const {\bf Okular\+::\+Normalized\+Rect} \&}]{c}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_a9bd1865804399e1c5cf54ee5871f173a}
+
+
+Definition at line 134 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+135 \{
+136     m\_croppedGeometry.setWidth( w );
+137     m\_croppedGeometry.setHeight( h );
+138     m\_zoomFactor = z;
+139     m\_crop = c;
+140     m\_uncroppedGeometry.setWidth( qRound( w / ( c.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - c.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ) ) );
+141     m\_uncroppedGeometry.setHeight( qRound( h / ( c.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - c.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ) ) );
+142     \textcolor{keywordflow}{foreach}(\hyperlink{classFormWidgetIface}{FormWidgetIface} *fwi, m\_formWidgets)
+143     \{
+144         \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} r = fwi->\hyperlink{classFormWidgetIface_aa2355e857516e8ca9135ef27e0f3c7aa}{rect}();
+145         fwi->\hyperlink{classFormWidgetIface_a517cae0d6ae89b18427f986e5e3e6ebb}{setWidthHeight}(
+146             qRound( fabs( r.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - r.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ) * m\_uncroppedGeometry.width() ),
+147             qRound( fabs( r.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ) * m\_uncroppedGeometry.height() ) );
+148     \}
+149     Q\_FOREACH ( \hyperlink{classVideoWidget}{VideoWidget} *vw, m\_videoWidgets )
+150     \{
+151         \textcolor{keyword}{const} \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} r = vw->\hyperlink{classVideoWidget_a44ccb0d6b334ca89f1edfa713137128f}{normGeometry}();
+152         vw->resize(
+153             qRound( fabs( r.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - r.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ) * m\_uncroppedGeometry.width() ),
+154             qRound( fabs( r.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ) * m\_uncroppedGeometry.height() ) );
+155     \}
+156 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a5d2e73a003f65b4e95c0c21b1698f835}{\index{Page\+View\+Item@{Page\+View\+Item}!uncropped\+Geometry@{uncropped\+Geometry}}
+\index{uncropped\+Geometry@{uncropped\+Geometry}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{uncropped\+Geometry}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Rect \& Page\+View\+Item\+::uncropped\+Geometry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a5d2e73a003f65b4e95c0c21b1698f835}
+
+
+Definition at line 84 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+85 \{
+86     \textcolor{keywordflow}{return} m\_uncroppedGeometry;
+87 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_af1380fce5dc13a72458ef834c720b128}{\index{Page\+View\+Item@{Page\+View\+Item}!uncropped\+Height@{uncropped\+Height}}
+\index{uncropped\+Height@{uncropped\+Height}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{uncropped\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+View\+Item\+::uncropped\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_af1380fce5dc13a72458ef834c720b128}
+
+
+Definition at line 94 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+95 \{
+96     \textcolor{keywordflow}{return} m\_uncroppedGeometry.height();
+97 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a240924407ae22bb0489363a6a2d481b9}{\index{Page\+View\+Item@{Page\+View\+Item}!uncropped\+Width@{uncropped\+Width}}
+\index{uncropped\+Width@{uncropped\+Width}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{uncropped\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+View\+Item\+::uncropped\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a240924407ae22bb0489363a6a2d481b9}
+
+
+Definition at line 89 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+90 \{
+91     \textcolor{keywordflow}{return} m\_uncroppedGeometry.width();
+92 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a125302408597cab2a58ef2ad309e2912}{\index{Page\+View\+Item@{Page\+View\+Item}!video\+Widgets@{video\+Widgets}}
+\index{video\+Widgets@{video\+Widgets}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{video\+Widgets}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$ {\bf Okular\+::\+Movie} $\ast$, {\bf Video\+Widget} $\ast$ $>$ \& Page\+View\+Item\+::video\+Widgets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageViewItem_a125302408597cab2a58ef2ad309e2912}
+
+
+Definition at line 129 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+130 \{
+131     \textcolor{keywordflow}{return} m\_videoWidgets;
+132 \}
+\end{DoxyCode}
+\hypertarget{classPageViewItem_a49bd277d8c33f520df31548ef22373ea}{\index{Page\+View\+Item@{Page\+View\+Item}!zoom\+Factor@{zoom\+Factor}}
+\index{zoom\+Factor@{zoom\+Factor}!Page\+View\+Item@{Page\+View\+Item}}
+\subsubsection[{zoom\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+View\+Item\+::zoom\+Factor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewItem_a49bd277d8c33f520df31548ef22373ea}
+
+
+Definition at line 104 of file pageviewutils.\+cpp.
+
+
+\begin{DoxyCode}
+105 \{
+106     \textcolor{keywordflow}{return} m\_zoomFactor;
+107 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{pageviewutils_8h}{pageviewutils.\+h}\item 
+ui/\hyperlink{pageviewutils_8cpp}{pageviewutils.\+cpp}\end{DoxyCompactItemize}

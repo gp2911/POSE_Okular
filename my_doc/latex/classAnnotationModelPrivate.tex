@@ -1,0 +1,351 @@
+\hypertarget{classAnnotationModelPrivate}{\section{Annotation\+Model\+Private Class Reference}
+\label{classAnnotationModelPrivate}\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+}
+Inheritance diagram for Annotation\+Model\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAnnotationModelPrivate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnnotationModelPrivate_a97a20594b53559a17ded1896526b1e5c}{Annotation\+Model\+Private} (\hyperlink{classAnnotationModel}{Annotation\+Model} $\ast$qq)
+\item 
+virtual \hyperlink{classAnnotationModelPrivate_a402da5e1c02288e8b8d9d8cc2216dbac}{$\sim$\+Annotation\+Model\+Private} ()
+\item 
+virtual void \hyperlink{classAnnotationModelPrivate_aad79ea3a4f3222fd7b8aafad27fef5d7}{notify\+Setup} (const Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages, int setup\+Flags)
+\item 
+virtual void \hyperlink{classAnnotationModelPrivate_ac06ad6534d4368be37e97bf27b616e0a}{notify\+Page\+Changed} (int page, int flags)
+\item 
+Q\+Model\+Index \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{index\+For\+Item} (\hyperlink{structAnnItem}{Ann\+Item} $\ast$item) const 
+\item 
+void \hyperlink{classAnnotationModelPrivate_a4b78d9800d1b36e77308009d53b2fdf9}{rebuild\+Tree} (const Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages)
+\item 
+\hyperlink{structAnnItem}{Ann\+Item} $\ast$ \hyperlink{classAnnotationModelPrivate_a082a44f62811ca44738a656492e03916}{find\+Item} (int page, int $\ast$index) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnnotationModel}{Annotation\+Model} $\ast$ \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}
+\item 
+\hyperlink{structAnnItem}{Ann\+Item} $\ast$ \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}
+\item 
+Q\+Pointer$<$ \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $>$ \hyperlink{classAnnotationModelPrivate_ad9d0730baf8663b0c3485d72ac4e05c6}{document}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 54 of file annotationmodel.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAnnotationModelPrivate_a97a20594b53559a17ded1896526b1e5c}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{Annotation\+Model\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Model\+Private\+::\+Annotation\+Model\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation\+Model} $\ast$}]{qq}
+\end{DoxyParamCaption}
+)}}\label{classAnnotationModelPrivate_a97a20594b53559a17ded1896526b1e5c}
+
+
+Definition at line 98 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+99     : \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}( qq ), \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}( \textcolor{keyword}{new} \hyperlink{structAnnItem}{AnnItem} )
+100 \{
+101 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationModelPrivate_a402da5e1c02288e8b8d9d8cc2216dbac}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!````~Annotation\+Model\+Private@{$\sim$\+Annotation\+Model\+Private}}
+\index{````~Annotation\+Model\+Private@{$\sim$\+Annotation\+Model\+Private}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{$\sim$\+Annotation\+Model\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Model\+Private\+::$\sim$\+Annotation\+Model\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotationModelPrivate_a402da5e1c02288e8b8d9d8cc2216dbac}
+
+
+Definition at line 103 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keyword}{delete} \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root};
+106 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAnnotationModelPrivate_a082a44f62811ca44738a656492e03916}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!find\+Item@{find\+Item}}
+\index{find\+Item@{find\+Item}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{find\+Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ann\+Item} $\ast$ Annotation\+Model\+Private\+::find\+Item (
+\begin{DoxyParamCaption}
+\item[{int}]{page, }
+\item[{int $\ast$}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classAnnotationModelPrivate_a082a44f62811ca44738a656492e03916}
+
+
+Definition at line 256 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+257 \{
+258     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.count(); ++i )
+259     \{
+260         \hyperlink{structAnnItem}{AnnItem} *tmp = \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( i );
+261         \textcolor{keywordflow}{if} ( tmp->\hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page} == page )
+262         \{
+263             \textcolor{keywordflow}{if} ( index )
+264                 *index = i;
+265             \textcolor{keywordflow}{return} tmp;
+266         \}
+267     \}
+268     \textcolor{keywordflow}{if} ( index )
+269         *index = -1;
+270     \textcolor{keywordflow}{return} 0;
+271 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!index\+For\+Item@{index\+For\+Item}}
+\index{index\+For\+Item@{index\+For\+Item}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{index\+For\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Model\+Index Annotation\+Model\+Private\+::index\+For\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Ann\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+) const}}\label{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}
+
+
+Definition at line 223 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+224 \{
+225     \textcolor{keywordflow}{if} ( item->\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent} )
+226     \{
+227         \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = item->\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.indexOf( item );
+228         \textcolor{keywordflow}{if} ( \textcolor{keywordtype}{id} >= 0 && id < item->parent->children.count() )
+229            \textcolor{keywordflow}{return} \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->createIndex( \textcolor{keywordtype}{id}, 0, item );
+230     \}
+231     \textcolor{keywordflow}{return} QModelIndex();
+232 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationModelPrivate_ac06ad6534d4368be37e97bf27b616e0a}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!notify\+Page\+Changed@{notify\+Page\+Changed}}
+\index{notify\+Page\+Changed@{notify\+Page\+Changed}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{notify\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+Model\+Private\+::notify\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{page, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotationModelPrivate_ac06ad6534d4368be37e97bf27b616e0a}
+This method is called whenever the content on {\ttfamily page} described by the passed {\ttfamily flags} has been changed. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_abf7600dabd7d6c1e38c950d99f7be595}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 120 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+121 \{
+122     \textcolor{comment}{// we are strictly interested in annotations}
+123     \textcolor{keywordflow}{if} ( !(flags & \hyperlink{classOkular_1_1DocumentObserver_af0e6b09d5fc7ecb673bd4895ef2710dca05bd23206e8303026c0b598095d8552e}{Okular::DocumentObserver::Annotations} ) )
+124         \textcolor{keywordflow}{return};
+125 
+126     \textcolor{keyword}{const} \hyperlink{classQLinkedList}{QLinkedList< Okular::Annotation* >} annots = 
+      filterOutWidgetAnnotations( \hyperlink{classAnnotationModelPrivate_ad9d0730baf8663b0c3485d72ac4e05c6}{document}->page( page )->annotations() );
+127     \textcolor{keywordtype}{int} annItemIndex = -1;
+128     \hyperlink{structAnnItem}{AnnItem} *annItem = \hyperlink{classAnnotationModelPrivate_a082a44f62811ca44738a656492e03916}{findItem}( page, &annItemIndex );
+129     \textcolor{comment}{// case 1: the page has no more annotations}
+130     \textcolor{comment}{//         => remove the branch, if any}
+131     \textcolor{keywordflow}{if} ( annots.isEmpty() )
+132     \{
+133         \textcolor{keywordflow}{if} ( annItem )
+134         \{
+135             \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->beginRemoveRows( \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{indexForItem}( \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root} ), annItemIndex, annItemIndex );
+136             \textcolor{keyword}{delete} \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( annItemIndex );
+137             \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.removeAt( annItemIndex );
+138             \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->endRemoveRows();
+139         \}
+140         \textcolor{keywordflow}{return};
+141     \}
+142     \textcolor{comment}{// case 2: no existing branch}
+143     \textcolor{comment}{//         => add a new branch, and add the annotations for the page}
+144     \textcolor{keywordflow}{if} ( !annItem )
+145     \{
+146         \textcolor{keywordtype}{int} i = 0;
+147         \textcolor{keywordflow}{while} ( i < root->children.count() && \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( i )->page < page ) ++i;
+148 
+149         \hyperlink{structAnnItem}{AnnItem} *annItem = \textcolor{keyword}{new} \hyperlink{structAnnItem}{AnnItem}();
+150         annItem->\hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page} = page;
+151         annItem->\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent} = \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root};
+152         \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->beginInsertRows( \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{indexForItem}( \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root} ), i, i );
+153         annItem->\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.insert( i, annItem );
+154         \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->endInsertRows();
+155         \hyperlink{classQLinkedList}{QLinkedList< Okular::Annotation* >::ConstIterator} 
+      it = annots.begin(), itEnd = annots.end();
+156         \textcolor{keywordtype}{int} newid = 0;
+157         \textcolor{keywordflow}{for} ( ; it != itEnd; ++it, ++newid )
+158         \{
+159             \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->beginInsertRows( \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{indexForItem}( annItem ), newid, newid );
+160             \textcolor{keyword}{new} \hyperlink{structAnnItem}{AnnItem}( annItem, *it );
+161             \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->endInsertRows();
+162         \}
+163         \textcolor{keywordflow}{return};
+164     \}
+165     \textcolor{comment}{// case 3: existing branch, less annotations than items}
+166     \textcolor{comment}{//         => lookup and remove the annotations}
+167     \textcolor{keywordflow}{if} ( annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.count() > annots.count() )
+168     \{
+169         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.count(); i > 0; --i )
+170         \{
+171             \hyperlink{classOkular_1_1Annotation}{Okular::Annotation} *ref = annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( i - 1 )->annotation;
+172             \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+173             \hyperlink{classQLinkedList}{QLinkedList< Okular::Annotation* >::ConstIterator}
+       it = annots.begin(), itEnd = annots.end();
+174             \textcolor{keywordflow}{for} ( ; !found && it != itEnd; ++it )
+175             \{
+176                 \textcolor{keywordflow}{if} ( ( *it ) == ref )
+177                     found = \textcolor{keyword}{true};
+178             \}
+179             \textcolor{keywordflow}{if} ( !found )
+180             \{
+181                 \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->beginRemoveRows( \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{indexForItem}( annItem ), i - 1, i - 1 );
+182                 \textcolor{keyword}{delete} annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( i - 1 );
+183                 annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.removeAt( i - 1 );
+184                 \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->endRemoveRows();
+185             \}
+186         \}
+187         \textcolor{keywordflow}{return};
+188     \}
+189     \textcolor{comment}{// case 4: existing branch, less items than annotations}
+190     \textcolor{comment}{//         => lookup and add annotations if not in the branch}
+191     \textcolor{keywordflow}{if} ( annots.count() > annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.count() )
+192     \{
+193         \hyperlink{classQLinkedList}{QLinkedList< Okular::Annotation* >::ConstIterator} 
+      it = annots.begin(), itEnd = annots.end();
+194         \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+195         \{
+196             \hyperlink{classOkular_1_1Annotation}{Okular::Annotation} *ref = *it;
+197             \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+198             \textcolor{keywordtype}{int} count = annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.count();
+199             \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; !found && i < count; ++i )
+200             \{
+201                 \textcolor{keywordflow}{if} ( ref == annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( i )->annotation )
+202                     found = \textcolor{keyword}{true};
+203             \}
+204             \textcolor{keywordflow}{if} ( !found )
+205             \{
+206                 \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->beginInsertRows( \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{indexForItem}( annItem ), count, count );
+207                 \textcolor{keyword}{new} \hyperlink{structAnnItem}{AnnItem}( annItem, ref );
+208                 \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->endInsertRows();
+209             \}
+210         \}
+211         \textcolor{keywordflow}{return};
+212     \}
+213     \textcolor{comment}{// case 5: the data of some annotation changed}
+214     \textcolor{comment}{// TODO: what do we do in this case?}
+215     \textcolor{comment}{// FIXME: for now, update ALL the annotations for that page}
+216     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.count(); ++i )
+217     \{
+218         QModelIndex index = \hyperlink{classAnnotationModelPrivate_a49c3cbd8328e431324be4fff9ac25926}{indexForItem}( annItem->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.at( i ) );
+219         emit \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->dataChanged( index, index );
+220     \}
+221 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationModelPrivate_aad79ea3a4f3222fd7b8aafad27fef5d7}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!notify\+Setup@{notify\+Setup}}
+\index{notify\+Setup@{notify\+Setup}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{notify\+Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+Model\+Private\+::notify\+Setup (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages, }
+\item[{int}]{setup\+Flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotationModelPrivate_aad79ea3a4f3222fd7b8aafad27fef5d7}
+
+
+Definition at line 108 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+109 \{
+110     \textcolor{keywordflow}{if} ( !( setupFlags & \hyperlink{classOkular_1_1DocumentObserver_aba00584af99894f95a9650e91f109d40ae599564392c01b22e96eff7602c4dd03}{Okular::DocumentObserver::DocumentChanged}
+       ) )
+111         \textcolor{keywordflow}{return};
+112 
+113     qDeleteAll( \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children} );
+114     \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.clear();
+115     \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->reset();
+116 
+117     \hyperlink{classAnnotationModelPrivate_a4b78d9800d1b36e77308009d53b2fdf9}{rebuildTree}( pages );
+118 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationModelPrivate_a4b78d9800d1b36e77308009d53b2fdf9}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!rebuild\+Tree@{rebuild\+Tree}}
+\index{rebuild\+Tree@{rebuild\+Tree}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{rebuild\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+Model\+Private\+::rebuild\+Tree (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages}
+\end{DoxyParamCaption}
+)}}\label{classAnnotationModelPrivate_a4b78d9800d1b36e77308009d53b2fdf9}
+
+
+Definition at line 234 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+235 \{
+236     \textcolor{keywordflow}{if} ( pages.isEmpty() )
+237         \textcolor{keywordflow}{return};
+238 
+239     emit \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->layoutAboutToBeChanged();
+240     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < pages.count(); ++i )
+241     \{
+242         \textcolor{keyword}{const} \hyperlink{classQLinkedList}{QLinkedList< Okular::Annotation* >} annots = 
+      filterOutWidgetAnnotations( pages.at( i )->annotations() );
+243         \textcolor{keywordflow}{if} ( annots.isEmpty() )
+244             \textcolor{keywordflow}{continue};
+245 
+246         \hyperlink{structAnnItem}{AnnItem} *annItem = \textcolor{keyword}{new} \hyperlink{structAnnItem}{AnnItem}( \hyperlink{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{root}, i );
+247         \hyperlink{classQLinkedList}{QLinkedList< Okular::Annotation* >::ConstIterator} 
+      it = annots.begin(), itEnd = annots.end();
+248         \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+249         \{
+250             \textcolor{keyword}{new} \hyperlink{structAnnItem}{AnnItem}( annItem, *it );
+251         \}
+252     \}
+253     emit \hyperlink{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{q}->layoutChanged();
+254 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAnnotationModelPrivate_ad9d0730baf8663b0c3485d72ac4e05c6}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!document@{document}}
+\index{document@{document}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pointer$<$ {\bf Okular\+::\+Document} $>$ Annotation\+Model\+Private\+::document}}\label{classAnnotationModelPrivate_ad9d0730baf8663b0c3485d72ac4e05c6}
+
+
+Definition at line 69 of file annotationmodel.\+cpp.
+
+\hypertarget{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!q@{q}}
+\index{q@{q}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+Model}$\ast$ Annotation\+Model\+Private\+::q}}\label{classAnnotationModelPrivate_a106e8bd7ef602e10239b11d4a775647d}
+
+
+Definition at line 67 of file annotationmodel.\+cpp.
+
+\hypertarget{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}{\index{Annotation\+Model\+Private@{Annotation\+Model\+Private}!root@{root}}
+\index{root@{root}!Annotation\+Model\+Private@{Annotation\+Model\+Private}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ann\+Item}$\ast$ Annotation\+Model\+Private\+::root}}\label{classAnnotationModelPrivate_a35aef72ee0aebe05b6e0fa2c50c19f75}
+
+
+Definition at line 68 of file annotationmodel.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationmodel_8cpp}{annotationmodel.\+cpp}\end{DoxyCompactItemize}

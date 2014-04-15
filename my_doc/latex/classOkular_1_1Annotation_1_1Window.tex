@@ -1,0 +1,342 @@
+\hypertarget{classOkular_1_1Annotation_1_1Window}{\section{Okular\+:\+:Annotation\+:\+:Window Class Reference}
+\label{classOkular_1_1Annotation_1_1Window}\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAnnotation_1_1Window_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Window_a921b3505d40ee03108428c30495b85bd}{Window} ()
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Window_a75ad38e68b05be37d6a7583c78384383}{$\sim$\+Window} ()
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Window_af4a5478f63040dfe9eb04d783457834b}{Window} (const \hyperlink{classOkular_1_1Annotation_1_1Window}{Window} \&other)
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Window}{Window} \& \hyperlink{classOkular_1_1Annotation_1_1Window_ae215f456ad84f2848743e78cb84b51ef}{operator=} (const \hyperlink{classOkular_1_1Annotation_1_1Window}{Window} \&other)
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Window_a8c6602458c602f7cd00ba29255524682}{set\+Flags} (int \hyperlink{classOkular_1_1Annotation_1_1Window_a152ba6007570ecd2d7693e98457a2cda}{flags})
+\item 
+int \hyperlink{classOkular_1_1Annotation_1_1Window_a152ba6007570ecd2d7693e98457a2cda}{flags} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Window_ac61b3d3fdf669cdc2dfe4bed466557b0}{set\+Top\+Left} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&point)
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1Annotation_1_1Window_ab89d3b8dbcd8e0cacf2b66e6dd3c415f}{top\+Left} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Window_ad3f64fb2195e55153d5210cfcfb2748e}{set\+Width} (int \hyperlink{classOkular_1_1Annotation_1_1Window_ae08915fbeec4ec8fdb3393b0c6361222}{width})
+\item 
+int \hyperlink{classOkular_1_1Annotation_1_1Window_ae08915fbeec4ec8fdb3393b0c6361222}{width} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Window_a806d2512feb2b574c2719a344e4eff4b}{set\+Height} (int \hyperlink{classOkular_1_1Annotation_1_1Window_aa5ff598721f33675de9ddc7f4c041347}{height})
+\item 
+int \hyperlink{classOkular_1_1Annotation_1_1Window_aa5ff598721f33675de9ddc7f4c041347}{height} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Window_a9b44e65e008d12400c4cbcdd4d58e60e}{set\+Title} (const Q\+String \&\hyperlink{classOkular_1_1Annotation_1_1Window_a81475fcb0ff6f51a4778228af86ffcba}{title})
+\item 
+Q\+String \hyperlink{classOkular_1_1Annotation_1_1Window_a81475fcb0ff6f51a4778228af86ffcba}{title} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Window_a14857528578516a321a4901c49aaf60f}{set\+Summary} (const Q\+String \&\hyperlink{classOkular_1_1Annotation_1_1Window_ac73101f261e6b4dba054540267073151}{summary})
+\item 
+Q\+String \hyperlink{classOkular_1_1Annotation_1_1Window_ac73101f261e6b4dba054540267073151}{summary} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classOkular_1_1Annotation_1_1Window}{Window} class contains all information about the popup window of the annotation that is used to edit the content and properties. 
+
+Definition at line 440 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a921b3505d40ee03108428c30495b85bd}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!Window@{Window}}
+\index{Window@{Window}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{Window}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+::\+Window\+::\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_a921b3505d40ee03108428c30495b85bd}
+Creates a new window. 
+
+Definition at line 340 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+341     : d( \textcolor{keyword}{new} Private )
+342 \{
+343 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a75ad38e68b05be37d6a7583c78384383}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!````~Window@{$\sim$\+Window}}
+\index{````~Window@{$\sim$\+Window}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{$\sim$\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+::\+Window\+::$\sim$\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_a75ad38e68b05be37d6a7583c78384383}
+Destroys the window. 
+
+Definition at line 345 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+346 \{
+347     \textcolor{keyword}{delete} d;
+348 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_af4a5478f63040dfe9eb04d783457834b}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!Window@{Window}}
+\index{Window@{Window}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{Window}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+::\+Window\+::\+Window (
+\begin{DoxyParamCaption}
+\item[{const {\bf Window} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_af4a5478f63040dfe9eb04d783457834b}
+
+
+Definition at line 350 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+351     : d( \textcolor{keyword}{new} Private )
+352 \{
+353     *d = *other.d;
+354 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a152ba6007570ecd2d7693e98457a2cda}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!flags@{flags}}
+\index{flags@{flags}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}int Annotation\+::\+Window\+::flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Window_a152ba6007570ecd2d7693e98457a2cda}
+Returns the flags of the window. 
+
+Definition at line 369 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+370 \{
+371     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Window_1_1Private_aa2606a2f610c40c5e37ff673fecf58cc}{m\_flags};
+372 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_aa5ff598721f33675de9ddc7f4c041347}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!height@{height}}
+\index{height@{height}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Annotation\+::\+Window\+::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Window_aa5ff598721f33675de9ddc7f4c041347}
+Returns the height of the window. 
+
+Definition at line 399 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+400 \{
+401     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Window_1_1Private_a8cfe2b5dc068db7c9577d59a6eec6777}{m\_height};
+402 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_ae215f456ad84f2848743e78cb84b51ef}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!operator=@{operator=}}
+\index{operator=@{operator=}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Window} \& Annotation\+::\+Window\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Window} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_ae215f456ad84f2848743e78cb84b51ef}
+
+
+Definition at line 356 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+357 \{
+358     \textcolor{keywordflow}{if} ( \textcolor{keyword}{this} != &other )
+359         *d = *other.d;
+360 
+361     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+362 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a8c6602458c602f7cd00ba29255524682}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!set\+Flags@{set\+Flags}}
+\index{set\+Flags@{set\+Flags}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{set\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Window\+::set\+Flags (
+\begin{DoxyParamCaption}
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_a8c6602458c602f7cd00ba29255524682}
+Sets the {\ttfamily flags} of the window. 
+
+Definition at line 364 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+365 \{
+366     d->\hyperlink{classAnnotation_1_1Window_1_1Private_aa2606a2f610c40c5e37ff673fecf58cc}{m\_flags} = \hyperlink{classOkular_1_1Annotation_1_1Window_a152ba6007570ecd2d7693e98457a2cda}{flags};
+367 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a806d2512feb2b574c2719a344e4eff4b}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!set\+Height@{set\+Height}}
+\index{set\+Height@{set\+Height}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{set\+Height}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Window\+::set\+Height (
+\begin{DoxyParamCaption}
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_a806d2512feb2b574c2719a344e4eff4b}
+Sets the {\ttfamily height} of the window. 
+
+Definition at line 394 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+395 \{
+396     d->\hyperlink{classAnnotation_1_1Window_1_1Private_a8cfe2b5dc068db7c9577d59a6eec6777}{m\_height} = \hyperlink{classOkular_1_1Annotation_1_1Window_aa5ff598721f33675de9ddc7f4c041347}{height};
+397 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a14857528578516a321a4901c49aaf60f}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!set\+Summary@{set\+Summary}}
+\index{set\+Summary@{set\+Summary}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{set\+Summary}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Window\+::set\+Summary (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{summary}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_a14857528578516a321a4901c49aaf60f}
+Sets the {\ttfamily summary} of the window. 
+
+Definition at line 414 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+415 \{
+416     d->\hyperlink{classAnnotation_1_1Window_1_1Private_af86162a20b353853fb2105e177ea176c}{m\_summary} = \hyperlink{classOkular_1_1Annotation_1_1Window_ac73101f261e6b4dba054540267073151}{summary};
+417 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a9b44e65e008d12400c4cbcdd4d58e60e}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{set\+Title}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Window\+::set\+Title (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{title}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_a9b44e65e008d12400c4cbcdd4d58e60e}
+Sets the {\ttfamily title} of the window. 
+
+Definition at line 404 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+405 \{
+406     d->\hyperlink{classAnnotation_1_1Window_1_1Private_a6fc5ee6ecc332374e8aa14aa35231479}{m\_title} = \hyperlink{classOkular_1_1Annotation_1_1Window_a81475fcb0ff6f51a4778228af86ffcba}{title};
+407 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_ac61b3d3fdf669cdc2dfe4bed466557b0}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!set\+Top\+Left@{set\+Top\+Left}}
+\index{set\+Top\+Left@{set\+Top\+Left}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{set\+Top\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Window\+::set\+Top\+Left (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{point}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_ac61b3d3fdf669cdc2dfe4bed466557b0}
+Sets the top-\/left {\ttfamily point} of the window. 
+
+Definition at line 374 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+375 \{
+376     d->\hyperlink{classAnnotation_1_1Window_1_1Private_a76b52c687c1f0e188e6f717f1f52717e}{m\_topLeft} = point;
+377 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_ad3f64fb2195e55153d5210cfcfb2748e}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{set\+Width}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Window\+::set\+Width (
+\begin{DoxyParamCaption}
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Window_ad3f64fb2195e55153d5210cfcfb2748e}
+Sets the {\ttfamily width} of the window. 
+
+Definition at line 384 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+385 \{
+386     d->\hyperlink{classAnnotation_1_1Window_1_1Private_ad0a73e95d3ff2d3e702892c375a9efaa}{m\_width} = \hyperlink{classOkular_1_1Annotation_1_1Window_ae08915fbeec4ec8fdb3393b0c6361222}{width};
+387 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_ac73101f261e6b4dba054540267073151}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!summary@{summary}}
+\index{summary@{summary}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{summary}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Annotation\+::\+Window\+::summary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Window_ac73101f261e6b4dba054540267073151}
+Returns the summary of the window. 
+
+Definition at line 419 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+420 \{
+421     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Window_1_1Private_af86162a20b353853fb2105e177ea176c}{m\_summary};
+422 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_a81475fcb0ff6f51a4778228af86ffcba}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!title@{title}}
+\index{title@{title}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Annotation\+::\+Window\+::title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Window_a81475fcb0ff6f51a4778228af86ffcba}
+Returns the title of the window. 
+
+Definition at line 409 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+410 \{
+411     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Window_1_1Private_a6fc5ee6ecc332374e8aa14aa35231479}{m\_title};
+412 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_ab89d3b8dbcd8e0cacf2b66e6dd3c415f}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!top\+Left@{top\+Left}}
+\index{top\+Left@{top\+Left}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{top\+Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Annotation\+::\+Window\+::top\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Window_ab89d3b8dbcd8e0cacf2b66e6dd3c415f}
+Returns the top-\/left point of the window. 
+
+Definition at line 379 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+380 \{
+381     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Window_1_1Private_a76b52c687c1f0e188e6f717f1f52717e}{m\_topLeft};
+382 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Window_ae08915fbeec4ec8fdb3393b0c6361222}{\index{Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}!width@{width}}
+\index{width@{width}!Okular\+::\+Annotation\+::\+Window@{Okular\+::\+Annotation\+::\+Window}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Annotation\+::\+Window\+::width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Window_ae08915fbeec4ec8fdb3393b0c6361222}
+Returns the width of the window. 
+
+Definition at line 389 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+390 \{
+391     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Window_1_1Private_ad0a73e95d3ff2d3e702892c375a9efaa}{m\_width};
+392 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

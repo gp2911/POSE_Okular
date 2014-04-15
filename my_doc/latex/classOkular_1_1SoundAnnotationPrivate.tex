@@ -1,0 +1,152 @@
+\hypertarget{classOkular_1_1SoundAnnotationPrivate}{\section{Okular\+:\+:Sound\+Annotation\+Private Class Reference}
+\label{classOkular_1_1SoundAnnotationPrivate}\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+}
+Inheritance diagram for Okular\+:\+:Sound\+Annotation\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1SoundAnnotationPrivate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1SoundAnnotationPrivate_a0c056725f9237bec33cd987b472a3597}{Sound\+Annotation\+Private} ()
+\item 
+\hyperlink{classOkular_1_1SoundAnnotationPrivate_adb12fec8076ffbdb0069539bd68d5fa9}{$\sim$\+Sound\+Annotation\+Private} ()
+\item 
+virtual void \hyperlink{classOkular_1_1SoundAnnotationPrivate_ae808c4f7990be3e0f55e27ec3ea00ec8}{set\+Annotation\+Properties} (const Q\+Dom\+Node \&node)
+\item 
+virtual \hyperlink{classOkular_1_1AnnotationPrivate}{Annotation\+Private} $\ast$ \hyperlink{classOkular_1_1SoundAnnotationPrivate_ad34db84fe91420930600880b2f640ee6}{get\+New\+Annotation\+Private} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{classOkular_1_1SoundAnnotationPrivate_abb28ae969447ed83b167d0436739e07a}{icon}
+\item 
+\hyperlink{classOkular_1_1Sound}{Sound} $\ast$ \hyperlink{classOkular_1_1SoundAnnotationPrivate_ad2d545e1fae26bc98d931ebb4c21079a}{sound}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1SoundAnnotation}{Sound\+Annotation} \mbox{[}\hyperlink{classOkular_1_1Annotation}{Annotation}\mbox{]} 
+
+Definition at line 2561 of file annotations.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1SoundAnnotationPrivate_a0c056725f9237bec33cd987b472a3597}{\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}!Sound\+Annotation\+Private@{Sound\+Annotation\+Private}}
+\index{Sound\+Annotation\+Private@{Sound\+Annotation\+Private}!Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+\subsubsection[{Sound\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Sound\+Annotation\+Private\+::\+Sound\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1SoundAnnotationPrivate_a0c056725f9237bec33cd987b472a3597}
+
+
+Definition at line 2564 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2565             : \hyperlink{classOkular_1_1AnnotationPrivate_affc5d14076f4606905c3c0cd2f6b9dc1}{AnnotationPrivate}(), \hyperlink{classOkular_1_1SoundAnnotationPrivate_abb28ae969447ed83b167d0436739e07a}{icon}( \textcolor{stringliteral}{"Speaker"} ), \hyperlink{classOkular_1_1SoundAnnotationPrivate_ad2d545e1fae26bc98d931ebb4c21079a}{sound}( 0 )
+2566         \{
+2567         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotationPrivate_adb12fec8076ffbdb0069539bd68d5fa9}{\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}!````~Sound\+Annotation\+Private@{$\sim$\+Sound\+Annotation\+Private}}
+\index{````~Sound\+Annotation\+Private@{$\sim$\+Sound\+Annotation\+Private}!Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+\subsubsection[{$\sim$\+Sound\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Sound\+Annotation\+Private\+::$\sim$\+Sound\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1SoundAnnotationPrivate_adb12fec8076ffbdb0069539bd68d5fa9}
+
+
+Definition at line 2568 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2569         \{
+2570             \textcolor{keyword}{delete} \hyperlink{classOkular_1_1SoundAnnotationPrivate_ad2d545e1fae26bc98d931ebb4c21079a}{sound};
+2571         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1SoundAnnotationPrivate_ad34db84fe91420930600880b2f640ee6}{\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}!get\+New\+Annotation\+Private@{get\+New\+Annotation\+Private}}
+\index{get\+New\+Annotation\+Private@{get\+New\+Annotation\+Private}!Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+\subsubsection[{get\+New\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+Private} $\ast$ Sound\+Annotation\+Private\+::get\+New\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAnnotationPrivate_ad34db84fe91420930600880b2f640ee6}
+
+
+Implements \hyperlink{classOkular_1_1AnnotationPrivate_a4a27afb6108cff892c7bcccd8ba3aafa}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 2599 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2600 \{
+2601     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classOkular_1_1SoundAnnotationPrivate_a0c056725f9237bec33cd987b472a3597}{SoundAnnotationPrivate}();
+2602 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotationPrivate_ae808c4f7990be3e0f55e27ec3ea00ec8}{\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}!set\+Annotation\+Properties@{set\+Annotation\+Properties}}
+\index{set\+Annotation\+Properties@{set\+Annotation\+Properties}!Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+\subsubsection[{set\+Annotation\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}void Sound\+Annotation\+Private\+::set\+Annotation\+Properties (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAnnotationPrivate_ae808c4f7990be3e0f55e27ec3ea00ec8}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_a5fc7b450fa8c7e2717372e7394c3aa39}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 2581 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2582 \{
+2583     \hyperlink{classOkular_1_1AnnotationPrivate_a5fc7b450fa8c7e2717372e7394c3aa39}{Okular::AnnotationPrivate::setAnnotationProperties}(
+      node);
+2584 
+2585     \textcolor{comment}{// loop through the whole children looking for a 'sound' element}
+2586     QDomNode subNode = node.firstChild();
+2587     \textcolor{keywordflow}{while}( subNode.isElement() )
+2588     \{
+2589         QDomElement e = subNode.toElement();
+2590         subNode = subNode.nextSibling();
+2591         \textcolor{keywordflow}{if} ( e.tagName() != \textcolor{stringliteral}{"sound"} )
+2592             \textcolor{keywordflow}{continue};
+2593 
+2594         \textcolor{comment}{// loading complete}
+2595         \textcolor{keywordflow}{break};
+2596     \}
+2597 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1SoundAnnotationPrivate_abb28ae969447ed83b167d0436739e07a}{\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}!icon@{icon}}
+\index{icon@{icon}!Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+\subsubsection[{icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+Sound\+Annotation\+Private\+::icon}}\label{classOkular_1_1SoundAnnotationPrivate_abb28ae969447ed83b167d0436739e07a}
+
+
+Definition at line 2577 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1SoundAnnotationPrivate_ad2d545e1fae26bc98d931ebb4c21079a}{\index{Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}!sound@{sound}}
+\index{sound@{sound}!Okular\+::\+Sound\+Annotation\+Private@{Okular\+::\+Sound\+Annotation\+Private}}
+\subsubsection[{sound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sound}$\ast$ Okular\+::\+Sound\+Annotation\+Private\+::sound}}\label{classOkular_1_1SoundAnnotationPrivate_ad2d545e1fae26bc98d931ebb4c21079a}
+
+
+Definition at line 2578 of file annotations.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

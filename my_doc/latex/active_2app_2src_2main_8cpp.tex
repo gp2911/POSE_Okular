@@ -1,0 +1,60 @@
+\hypertarget{active_2app_2src_2main_8cpp}{\section{active/app/src/main.cpp File Reference}
+\label{active_2app_2src_2main_8cpp}\index{active/app/src/main.\+cpp@{active/app/src/main.\+cpp}}
+}
+{\ttfamily \#include $<$K\+Application$>$}\\*
+{\ttfamily \#include $<$K\+About\+Data$>$}\\*
+{\ttfamily \#include $<$K\+Cmd\+Line\+Args$>$}\\*
+{\ttfamily \#include $<$K\+Debug$>$}\\*
+{\ttfamily \#include $<$K\+D\+E/\+K\+Locale$>$}\\*
+{\ttfamily \#include $<$K\+Config\+Group$>$}\\*
+{\ttfamily \#include \char`\"{}kdeclarativemainwindow.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}kdeclarativeview.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{active_2app_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{active_2app_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{active/app/src/main.\+cpp@{active/app/src/main.\+cpp}!main@{main}}
+\index{main@{main}!active/app/src/main.\+cpp@{active/app/src/main.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{active_2app_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 37 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+38 \{
+39     KAboutData about(\textcolor{stringliteral}{"active-documentviewer"}, 0, ki18n(\textcolor{stringliteral}{"Reader"}), version, ki18n(description),
+40                      KAboutData::License\_GPL, ki18n(\textcolor{stringliteral}{"Copyright 2012 Marco Martin"}), KLocalizedString(), 0, \textcolor{stringliteral}{
+      "mart@kde.org"});
+41                      about.addAuthor( ki18n(\textcolor{stringliteral}{"Marco Martin"}), KLocalizedString(), \textcolor{stringliteral}{"mart@kde.org"} );
+42     about.setProgramIconName(\textcolor{stringliteral}{"okular"});
+43 
+44     KCmdLineArgs::init(argc, argv, &about);
+45 
+46     KCmdLineOptions options;
+47     options.add(\textcolor{stringliteral}{"+[url]"}, ki18n( \textcolor{stringliteral}{"URL of the file to open"} ));
+48 
+49     KCmdLineArgs::addCmdLineOptions(options);
+50     KApplication app;
+51 
+52     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+53 
+54     KGlobal::locale()->insertCatalog(\textcolor{stringliteral}{"org.kde.okular"});
+55     \textcolor{comment}{//kDebug() << "ARGS:" << args << args->count();}
+56 
+57     KDeclarativeMainWindow *mainWindow = \textcolor{keyword}{new} KDeclarativeMainWindow();
+58     mainWindow->declarativeView()->setPackageName(\textcolor{stringliteral}{"org.kde.active.documentviewer"});
+59     mainWindow->show();
+60     args->clear();
+61     \textcolor{keywordflow}{return} app.exec();
+62 \}
+\end{DoxyCode}

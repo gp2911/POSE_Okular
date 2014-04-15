@@ -1,0 +1,240 @@
+\hypertarget{classUnrar}{\section{Unrar Class Reference}
+\label{classUnrar}\index{Unrar@{Unrar}}
+}
+
+
+{\ttfamily \#include $<$unrar.\+h$>$}
+
+Inheritance diagram for Unrar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUnrar}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUnrar_aa20527d252a87bc40925a5afe22dd313}{Unrar} ()
+\item 
+\hyperlink{classUnrar_af688ddc3ffbb9b07bc667c576a4fa008}{$\sim$\+Unrar} ()
+\item 
+bool \hyperlink{classUnrar_ad3e0aa6e1af9ecd001781c24422ca531}{open} (const Q\+String \&file\+Name)
+\item 
+Q\+String\+List \hyperlink{classUnrar_a2d703bdd105451ed726a2ab4d85528cb}{list} ()
+\item 
+Q\+Byte\+Array \hyperlink{classUnrar_a00c273a845fdc6a75286de8d89a2223f}{content\+Of} (const Q\+String \&file\+Name) const 
+\item 
+Q\+I\+O\+Device $\ast$ \hyperlink{classUnrar_a455769d0f1aedf1870eafd19e9c1c76a}{create\+Device} (const Q\+String \&file\+Name) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classUnrar_a2e97c9cb1a32bba23e7df17806668ba2}{is\+Available} ()
+\item 
+static bool \hyperlink{classUnrar_a142581395536a82553f2855962e14055}{is\+Suitable\+Version\+Available} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file unrar.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classUnrar_aa20527d252a87bc40925a5afe22dd313}{\index{Unrar@{Unrar}!Unrar@{Unrar}}
+\index{Unrar@{Unrar}!Unrar@{Unrar}}
+\subsubsection[{Unrar}]{\setlength{\rightskip}{0pt plus 5cm}Unrar\+::\+Unrar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classUnrar_aa20527d252a87bc40925a5afe22dd313}
+Creates a new unrar object. 
+
+Definition at line 92 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+93     : QObject( 0 ), mLoop( 0 ), mTempDir( 0 )
+94 \{
+95 \}
+\end{DoxyCode}
+\hypertarget{classUnrar_af688ddc3ffbb9b07bc667c576a4fa008}{\index{Unrar@{Unrar}!````~Unrar@{$\sim$\+Unrar}}
+\index{````~Unrar@{$\sim$\+Unrar}!Unrar@{Unrar}}
+\subsubsection[{$\sim$\+Unrar}]{\setlength{\rightskip}{0pt plus 5cm}Unrar\+::$\sim$\+Unrar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classUnrar_af688ddc3ffbb9b07bc667c576a4fa008}
+Destroys the unrar object. 
+
+Definition at line 97 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{keyword}{delete} mTempDir;
+100 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classUnrar_a00c273a845fdc6a75286de8d89a2223f}{\index{Unrar@{Unrar}!content\+Of@{content\+Of}}
+\index{content\+Of@{content\+Of}!Unrar@{Unrar}}
+\subsubsection[{content\+Of}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Unrar\+::content\+Of (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+) const}}\label{classUnrar_a00c273a845fdc6a75286de8d89a2223f}
+Returns the content of the file with the given name. 
+
+Definition at line 147 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+148 \{
+149     \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a142581395536a82553f2855962e14055}{isSuitableVersionAvailable}() )
+150         \textcolor{keywordflow}{return} QByteArray();
+151 
+152     QFile file( mTempDir->name() + fileName );
+153     \textcolor{keywordflow}{if} ( !file.open( QIODevice::ReadOnly ) )
+154         \textcolor{keywordflow}{return} QByteArray();
+155 
+156     \textcolor{keywordflow}{return} file.readAll();
+157 \}
+\end{DoxyCode}
+\hypertarget{classUnrar_a455769d0f1aedf1870eafd19e9c1c76a}{\index{Unrar@{Unrar}!create\+Device@{create\+Device}}
+\index{create\+Device@{create\+Device}!Unrar@{Unrar}}
+\subsubsection[{create\+Device}]{\setlength{\rightskip}{0pt plus 5cm}Q\+I\+O\+Device $\ast$ Unrar\+::create\+Device (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+) const}}\label{classUnrar_a455769d0f1aedf1870eafd19e9c1c76a}
+Returns a new device for reading the file with the given name. 
+
+Definition at line 159 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+160 \{
+161     \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a142581395536a82553f2855962e14055}{isSuitableVersionAvailable}() )
+162         \textcolor{keywordflow}{return} 0;
+163 
+164     std::auto\_ptr< QFile> file( \textcolor{keyword}{new} QFile( mTempDir->name() + fileName ) );
+165     \textcolor{keywordflow}{if} ( !file->open( QIODevice::ReadOnly ) )
+166         \textcolor{keywordflow}{return} 0;
+167 
+168     \textcolor{keywordflow}{return} file.release();
+169 \}
+\end{DoxyCode}
+\hypertarget{classUnrar_a2e97c9cb1a32bba23e7df17806668ba2}{\index{Unrar@{Unrar}!is\+Available@{is\+Available}}
+\index{is\+Available@{is\+Available}!Unrar@{Unrar}}
+\subsubsection[{is\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool Unrar\+::is\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classUnrar_a2e97c9cb1a32bba23e7df17806668ba2}
+
+
+Definition at line 171 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+172 \{
+173     \textcolor{keywordflow}{return} helper->kind;
+174 \}
+\end{DoxyCode}
+\hypertarget{classUnrar_a142581395536a82553f2855962e14055}{\index{Unrar@{Unrar}!is\+Suitable\+Version\+Available@{is\+Suitable\+Version\+Available}}
+\index{is\+Suitable\+Version\+Available@{is\+Suitable\+Version\+Available}!Unrar@{Unrar}}
+\subsubsection[{is\+Suitable\+Version\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool Unrar\+::is\+Suitable\+Version\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classUnrar_a142581395536a82553f2855962e14055}
+
+
+Definition at line 176 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+177 \{
+178     \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a2e97c9cb1a32bba23e7df17806668ba2}{isAvailable}() )
+179         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+180 
+181     \textcolor{keywordflow}{return} \textcolor{keyword}{dynamic\_cast<} \hyperlink{classNonFreeUnrarFlavour}{NonFreeUnrarFlavour} * \textcolor{keyword}{>}( helper->kind );
+182 \}
+\end{DoxyCode}
+\hypertarget{classUnrar_a2d703bdd105451ed726a2ab4d85528cb}{\index{Unrar@{Unrar}!list@{list}}
+\index{list@{list}!Unrar@{Unrar}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Unrar\+::list (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classUnrar_a2d703bdd105451ed726a2ab4d85528cb}
+Returns the list of files from the archive. 
+
+Definition at line 124 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+125 \{
+126     mStdOutData.clear();
+127     mStdErrData.clear();
+128 
+129     \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a142581395536a82553f2855962e14055}{isSuitableVersionAvailable}() )
+130         \textcolor{keywordflow}{return} QStringList();
+131 
+132     startSyncProcess( QStringList() << \textcolor{stringliteral}{"lb"} << mFileName );
+133 
+134     \textcolor{keyword}{const} QStringList listFiles = helper->kind->processListing( QString::fromLocal8Bit( mStdOutData ).split
+      ( \textcolor{charliteral}{'\(\backslash\)n'}, QString::SkipEmptyParts ) );
+135     QStringList newList;
+136     Q\_FOREACH ( \textcolor{keyword}{const} QString &f, listFiles ) \{
+137         \textcolor{comment}{// Extract all the files to mTempDir regardless of their path inside the archive}
+138         \textcolor{comment}{// This will break if ever an arvhice with two files with the same name in different subfolders}
+139         QFileInfo fi( f );
+140         \textcolor{keywordflow}{if} ( QFile::exists( mTempDir->name() + fi.fileName() ) ) \{
+141             newList.append( fi.fileName() );
+142         \}
+143     \}
+144     \textcolor{keywordflow}{return} newList;
+145 \}
+\end{DoxyCode}
+\hypertarget{classUnrar_ad3e0aa6e1af9ecd001781c24422ca531}{\index{Unrar@{Unrar}!open@{open}}
+\index{open@{open}!Unrar@{Unrar}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool Unrar\+::open (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{classUnrar_ad3e0aa6e1af9ecd001781c24422ca531}
+Opens given rar archive. Extract the archive to a temporary directory
+
+Definition at line 102 of file unrar.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a142581395536a82553f2855962e14055}{isSuitableVersionAvailable}() )
+105         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+106 
+107     \textcolor{keyword}{delete} mTempDir;
+108     mTempDir = \textcolor{keyword}{new} KTempDir();
+109 
+110     mFileName = fileName;
+111 
+115     mStdOutData.clear();
+116     mStdErrData.clear();
+117 
+118     \textcolor{keywordtype}{int} ret = startSyncProcess( QStringList() << \textcolor{stringliteral}{"e"} << mFileName << mTempDir->name() );
+119     \textcolor{keywordtype}{bool} ok = ret == 0;
+120 
+121     \textcolor{keywordflow}{return} ok;
+122 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/comicbook/\hyperlink{unrar_8h}{unrar.\+h}\item 
+generators/comicbook/\hyperlink{unrar_8cpp}{unrar.\+cpp}\end{DoxyCompactItemize}

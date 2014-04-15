@@ -1,0 +1,153 @@
+\hypertarget{classOkular_1_1BrowseAction}{\section{Okular\+:\+:Browse\+Action Class Reference}
+\label{classOkular_1_1BrowseAction}\index{Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}}
+}
+
+
+{\ttfamily \#include $<$action.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Browse\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1BrowseAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1BrowseAction_a0b61bd5c2c4a9979cafe6b2c9444c8fc}{Browse\+Action} (const Q\+String \&\hyperlink{classOkular_1_1BrowseAction_a02dfb682ec078bd783e125696bd00964}{url})
+\item 
+virtual \hyperlink{classOkular_1_1BrowseAction_a48f8ef6e79f836f56a11c3345bb86fc9}{$\sim$\+Browse\+Action} ()
+\item 
+\hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47}{Action\+Type} \hyperlink{classOkular_1_1BrowseAction_a253991762e61b486d0667dc1619b0f46}{action\+Type} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1BrowseAction_afcc99a984ec0687a4a1f40409d344481}{action\+Tip} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1BrowseAction_a02dfb682ec078bd783e125696bd00964}{url} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The Browse action browses an url by opening a web browser or email client, depedning on the url protocol (e.\+g. http, mailto, etc.). 
+
+Definition at line 226 of file action.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1BrowseAction_a0b61bd5c2c4a9979cafe6b2c9444c8fc}{\index{Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}!Browse\+Action@{Browse\+Action}}
+\index{Browse\+Action@{Browse\+Action}!Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}}
+\subsubsection[{Browse\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Browse\+Action\+::\+Browse\+Action (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1BrowseAction_a0b61bd5c2c4a9979cafe6b2c9444c8fc}
+Creates a new browse action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The url to browse. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+194     : \hyperlink{classOkular_1_1Action}{Action}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1BrowseActionPrivate}{BrowseActionPrivate}( \hyperlink{classOkular_1_1BrowseAction_a02dfb682ec078bd783e125696bd00964}{url} ) )
+195 \{
+196 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BrowseAction_a48f8ef6e79f836f56a11c3345bb86fc9}{\index{Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}!````~Browse\+Action@{$\sim$\+Browse\+Action}}
+\index{````~Browse\+Action@{$\sim$\+Browse\+Action}!Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}}
+\subsubsection[{$\sim$\+Browse\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Browse\+Action\+::$\sim$\+Browse\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1BrowseAction_a48f8ef6e79f836f56a11c3345bb86fc9}
+Destroys the browse action. 
+
+Definition at line 198 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+199 \{
+200 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1BrowseAction_afcc99a984ec0687a4a1f40409d344481}{\index{Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}!action\+Tip@{action\+Tip}}
+\index{action\+Tip@{action\+Tip}!Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}}
+\subsubsection[{action\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Browse\+Action\+::action\+Tip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1BrowseAction_afcc99a984ec0687a4a1f40409d344481}
+Returns the action tip. 
+
+Reimplemented from \hyperlink{classOkular_1_1Action_a359c33818281df712da697c84975952f}{Okular\+::\+Action}.
+
+
+
+Definition at line 207 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+208 \{
+209     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1BrowseAction}{Okular::BrowseAction} );
+210     QString source;
+211     \textcolor{keywordtype}{int} row = 0, col = 0;
+212     \textcolor{keywordflow}{if} ( \hyperlink{namespaceOkular_ad195b608d5b6294feba9a4b095185d23}{extractLilyPondSourceReference}( d->m\_url, &source, &row, &col ) )
+213     \{
+214         \textcolor{keywordflow}{return} \hyperlink{namespaceOkular_ae289fc26cd6cac6abaa2fc5e3418c234}{sourceReferenceToolTip}( source, row, col );
+215     \}
+216     \textcolor{keywordflow}{return} d->m\_url;
+217 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BrowseAction_a253991762e61b486d0667dc1619b0f46}{\index{Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}!action\+Type@{action\+Type}}
+\index{action\+Type@{action\+Type}!Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}}
+\subsubsection[{action\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action\+::\+Action\+Type} Browse\+Action\+::action\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1BrowseAction_a253991762e61b486d0667dc1619b0f46}
+Returns the action type. 
+
+Implements \hyperlink{classOkular_1_1Action_ac4c2ef09b350b4041f8d1cfb261c3234}{Okular\+::\+Action}.
+
+
+
+Definition at line 202 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+203 \{
+204     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47a7b94e3d79ff6813ba8444b1d98ca4756}{Browse};
+205 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1BrowseAction_a02dfb682ec078bd783e125696bd00964}{\index{Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}!url@{url}}
+\index{url@{url}!Okular\+::\+Browse\+Action@{Okular\+::\+Browse\+Action}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Browse\+Action\+::url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1BrowseAction_a02dfb682ec078bd783e125696bd00964}
+Returns the url to browse. 
+
+Definition at line 219 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+220 \{
+221     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1BrowseAction}{Okular::BrowseAction} );
+222     \textcolor{keywordflow}{return} d->m\_url;
+223 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{action_8h}{action.\+h}\item 
+core/\hyperlink{action_8cpp}{action.\+cpp}\end{DoxyCompactItemize}

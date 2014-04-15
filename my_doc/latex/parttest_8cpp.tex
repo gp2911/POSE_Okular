@@ -1,0 +1,69 @@
+\hypertarget{parttest_8cpp}{\section{tests/parttest.cpp File Reference}
+\label{parttest_8cpp}\index{tests/parttest.\+cpp@{tests/parttest.\+cpp}}
+}
+{\ttfamily \#include $<$qtest\+\_\+kde.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../part.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../ui/toc.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$K\+Config\+Dialog$>$}\\*
+{\ttfamily \#include $<$K\+Standard\+Dirs$>$}\\*
+{\ttfamily \#include $<$K\+Temp\+Dir$>$}\\*
+{\ttfamily \#include $<$Q\+Tree\+View$>$}\\*
+{\ttfamily \#include \char`\"{}parttest.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1PartTest}{Okular\+::\+Part\+Test}
+\item 
+class \hyperlink{classOkular_1_1PartThatHijacksQueryClose}{Okular\+::\+Part\+That\+Hijacks\+Query\+Close}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceOkular}{Okular}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{parttest_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{parttest_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{parttest.\+cpp@{parttest.\+cpp}!main@{main}}
+\index{main@{main}!parttest.\+cpp@{parttest.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{parttest_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 163 of file parttest.\+cpp.
+
+
+\begin{DoxyCode}
+164 \{
+165     \textcolor{comment}{// This is QTEST\_KDEMAIN withouth the LC\_ALL set}
+166     setenv(\textcolor{stringliteral}{"LC\_ALL"}, \textcolor{stringliteral}{"en\_US.UTF-8"}, 1);
+167     assert( !QDir::homePath().isEmpty() );
+168     setenv(\textcolor{stringliteral}{"KDEHOME"}, QFile::encodeName( QDir::homePath() + QString::fromLatin1(\textcolor{stringliteral}{"/.kde-unit-test"}) ), 1);
+169     setenv(\textcolor{stringliteral}{"XDG\_DATA\_HOME"}, QFile::encodeName( QDir::homePath() + QString::fromLatin1(\textcolor{stringliteral}{"
+      /.kde-unit-test/xdg/local"}) ), 1);
+170     setenv(\textcolor{stringliteral}{"XDG\_CONFIG\_HOME"}, QFile::encodeName( QDir::homePath() + QString::fromLatin1(\textcolor{stringliteral}{"
+      /.kde-unit-test/xdg/config"}) ), 1);
+171     setenv(\textcolor{stringliteral}{"KDE\_SKIP\_KDERC"}, \textcolor{stringliteral}{"1"}, 1);
+172     unsetenv(\textcolor{stringliteral}{"KDE\_COLOR\_DEBUG"});
+173     QFile::remove(QDir::homePath() + QString::fromLatin1(\textcolor{stringliteral}{"/.kde-unit-test/share/config/qttestrc"})); 
+174     KAboutData aboutData( QByteArray(\textcolor{stringliteral}{"qttest"}), QByteArray(), ki18n(\textcolor{stringliteral}{"KDE Test Program"}), QByteArray(\textcolor{stringliteral}{"
+      version"}) ); 
+175     KComponentData cData(&aboutData);
+176     QApplication app( argc, argv );
+177     app.setApplicationName( QLatin1String(\textcolor{stringliteral}{"qttest"}) );
+178     qRegisterMetaType<KUrl>(); \textcolor{comment}{/*as done by kapplication*/}
+179     qRegisterMetaType<KUrl::List>();
+180     \hyperlink{classOkular_1_1PartTest}{Okular::PartTest} test;
+181     KGlobal::ref(); \textcolor{comment}{/* don't quit qeventloop after closing a mainwindow */}
+182     \textcolor{keywordflow}{return} QTest::qExec( &test, argc, argv );
+183 \}
+\end{DoxyCode}

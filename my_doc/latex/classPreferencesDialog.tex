@@ -1,0 +1,113 @@
+\hypertarget{classPreferencesDialog}{\section{Preferences\+Dialog Class Reference}
+\label{classPreferencesDialog}\index{Preferences\+Dialog@{Preferences\+Dialog}}
+}
+
+
+{\ttfamily \#include $<$preferencesdialog.\+h$>$}
+
+Inheritance diagram for Preferences\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPreferencesDialog}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPreferencesDialog_af70b16898a25b105688cda82ba814a50}{Preferences\+Dialog} (Q\+Widget $\ast$parent, K\+Config\+Skeleton $\ast$config, \hyperlink{namespaceOkular_adbe21e337d65d3f5f07a441180428ba8}{Okular\+::\+Embed\+Mode} embed\+Mode)
+\item 
+void \hyperlink{classPreferencesDialog_a31ca20e39c256b6351684dd8b4073ebe}{switch\+To\+Annotations\+Page} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file preferencesdialog.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPreferencesDialog_af70b16898a25b105688cda82ba814a50}{\index{Preferences\+Dialog@{Preferences\+Dialog}!Preferences\+Dialog@{Preferences\+Dialog}}
+\index{Preferences\+Dialog@{Preferences\+Dialog}!Preferences\+Dialog@{Preferences\+Dialog}}
+\subsubsection[{Preferences\+Dialog}]{\setlength{\rightskip}{0pt plus 5cm}Preferences\+Dialog\+::\+Preferences\+Dialog (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{K\+Config\+Skeleton $\ast$}]{config, }
+\item[{{\bf Okular\+::\+Embed\+Mode}}]{embed\+Mode}
+\end{DoxyParamCaption}
+)}}\label{classPreferencesDialog_af70b16898a25b105688cda82ba814a50}
+
+
+Definition at line 24 of file preferencesdialog.\+cpp.
+
+
+\begin{DoxyCode}
+25     : KConfigDialog( parent, \textcolor{stringliteral}{"preferences"}, skeleton )
+26 \{
+27     setWindowModality( Qt::ApplicationModal );
+28 
+29     m\_general = \textcolor{keyword}{new} \hyperlink{classDlgGeneral}{DlgGeneral}( \textcolor{keyword}{this}, embedMode );
+30     m\_performance = \textcolor{keyword}{new} \hyperlink{classDlgPerformance}{DlgPerformance}( \textcolor{keyword}{this} );
+31     m\_accessibility = \textcolor{keyword}{new} \hyperlink{classDlgAccessibility}{DlgAccessibility}( \textcolor{keyword}{this} );
+32     m\_presentation = 0;
+33     m\_annotations = 0;
+34     m\_annotationsPage = 0;
+35     m\_editor = 0;
+36 \textcolor{preprocessor}{#ifdef OKULAR\_DEBUG\_CONFIGPAGE}
+37     m\_debug = \textcolor{keyword}{new} \hyperlink{classDlgDebug}{DlgDebug}( \textcolor{keyword}{this} );
+38 \textcolor{preprocessor}{#endif}
+39 
+40     addPage( m\_general, i18n(\textcolor{stringliteral}{"General"}), \textcolor{stringliteral}{"okular"}, i18n(\textcolor{stringliteral}{"General Options"}) );
+41     addPage( m\_accessibility, i18n(\textcolor{stringliteral}{"Accessibility"}), \textcolor{stringliteral}{"preferences-desktop-accessibility"}, i18n(\textcolor{stringliteral}{"
+      Accessibility Reading Aids"}) );
+42     addPage( m\_performance, i18n(\textcolor{stringliteral}{"Performance"}), \textcolor{stringliteral}{"preferences-system-performance"}, i18n(\textcolor{stringliteral}{"Performance Tuning
+      "}) );
+43     \textcolor{keywordflow}{if}( embedMode == \hyperlink{namespaceOkular_adbe21e337d65d3f5f07a441180428ba8aebaf7bae8bd4303bad7c4ca29057c472}{Okular::ViewerWidgetMode} )
+44     \{
+45         setCaption( i18n(\textcolor{stringliteral}{"Configure Viewer"}) );
+46     \}
+47     \textcolor{keywordflow}{else}
+48     \{
+49         m\_presentation = \textcolor{keyword}{new} \hyperlink{classDlgPresentation}{DlgPresentation}( \textcolor{keyword}{this} );
+50         m\_annotations = \textcolor{keyword}{new} \hyperlink{classDlgAnnotations}{DlgAnnotations}( \textcolor{keyword}{this} );
+51         m\_editor = \textcolor{keyword}{new} \hyperlink{classDlgEditor}{DlgEditor}( \textcolor{keyword}{this} );
+52         addPage( m\_presentation, i18n(\textcolor{stringliteral}{"Presentation"}), \textcolor{stringliteral}{"view-presentation"},
+53                  i18n(\textcolor{stringliteral}{"Options for Presentation Mode"}) );
+54         m\_annotationsPage = addPage( m\_annotations, i18n(\textcolor{stringliteral}{"Annotations"}),
+55                                      \textcolor{stringliteral}{"draw-freehand"}, i18n(\textcolor{stringliteral}{"Annotation Options"}) );
+56         addPage( m\_editor, i18n(\textcolor{stringliteral}{"Editor"}), \textcolor{stringliteral}{"accessories-text-editor"}, i18n(\textcolor{stringliteral}{"Editor Options"}) );
+57     \}
+58 \textcolor{preprocessor}{#ifdef OKULAR\_DEBUG\_CONFIGPAGE}
+59     addPage( m\_debug, \textcolor{stringliteral}{"Debug"}, \textcolor{stringliteral}{"system-run"}, \textcolor{stringliteral}{"Debug options"} );
+60 \textcolor{preprocessor}{#endif}
+61     setHelp(\textcolor{stringliteral}{"configure"}, \textcolor{stringliteral}{"okular"});
+62 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPreferencesDialog_a31ca20e39c256b6351684dd8b4073ebe}{\index{Preferences\+Dialog@{Preferences\+Dialog}!switch\+To\+Annotations\+Page@{switch\+To\+Annotations\+Page}}
+\index{switch\+To\+Annotations\+Page@{switch\+To\+Annotations\+Page}!Preferences\+Dialog@{Preferences\+Dialog}}
+\subsubsection[{switch\+To\+Annotations\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Preferences\+Dialog\+::switch\+To\+Annotations\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPreferencesDialog_a31ca20e39c256b6351684dd8b4073ebe}
+
+
+Definition at line 64 of file preferencesdialog.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{if} ( m\_annotationsPage )
+67         setCurrentPage( m\_annotationsPage );
+68 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+conf/\hyperlink{preferencesdialog_8h}{preferencesdialog.\+h}\item 
+conf/\hyperlink{preferencesdialog_8cpp}{preferencesdialog.\+cpp}\end{DoxyCompactItemize}

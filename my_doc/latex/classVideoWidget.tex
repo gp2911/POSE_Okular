@@ -1,0 +1,471 @@
+\hypertarget{classVideoWidget}{\section{Video\+Widget Class Reference}
+\label{classVideoWidget}\index{Video\+Widget@{Video\+Widget}}
+}
+
+
+{\ttfamily \#include $<$videowidget.\+h$>$}
+
+Inheritance diagram for Video\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVideoWidget}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVideoWidget_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVideoWidget_a00e08beaa6d8234f0cd3a6ef51e6709c}{play} ()
+\item 
+void \hyperlink{classVideoWidget_a25170452e03c644be15ff4ab4ee0b533}{pause} ()
+\item 
+void \hyperlink{classVideoWidget_a71bd6da5120ab3556d0ac41e905f6e26}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVideoWidget_a1a1da2f3d13d601b3fdebfeecc3335cc}{Video\+Widget} (const \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$annot, \hyperlink{classOkular_1_1Movie}{Okular\+::\+Movie} $\ast$movie, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document, Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{classVideoWidget_a77b8af4076f462cb5db7932e88d46829}{$\sim$\+Video\+Widget} ()
+\item 
+void \hyperlink{classVideoWidget_a38300e6028c19d616fed4b6f9ff441e9}{set\+Norm\+Geometry} (const \hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \&rect)
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \hyperlink{classVideoWidget_a44ccb0d6b334ca89f1edfa713137128f}{norm\+Geometry} () const 
+\item 
+bool \hyperlink{classVideoWidget_a74473d8bebf53f26a6ab985621c84fee}{is\+Playing} () const 
+\item 
+void \hyperlink{classVideoWidget_a90dbdcbaffc7717c7e3b327ad076bc58}{page\+Initialized} ()
+\item 
+void \hyperlink{classVideoWidget_ad7ddc0da1795a191cd53618e71b7b937}{page\+Entered} ()
+\item 
+void \hyperlink{classVideoWidget_a332a8907b98df63648b90f6ae6d42cac}{page\+Left} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classVideoWidget_a416581ebf72ae21a24dce839bec27905}{event\+Filter} (Q\+Object $\ast$object, Q\+Event $\ast$\hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event})
+\item 
+bool \hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event} (Q\+Event $\ast$event)
+\item 
+void \hyperlink{classVideoWidget_a535271277b91deed6d52cb1d11caf80d}{resize\+Event} (Q\+Resize\+Event $\ast$\hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file videowidget.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVideoWidget_a1a1da2f3d13d601b3fdebfeecc3335cc}{\index{Video\+Widget@{Video\+Widget}!Video\+Widget@{Video\+Widget}}
+\index{Video\+Widget@{Video\+Widget}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{Video\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Video\+Widget\+::\+Video\+Widget (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Annotation} $\ast$}]{annot, }
+\item[{{\bf Okular\+::\+Movie} $\ast$}]{movie, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classVideoWidget_a1a1da2f3d13d601b3fdebfeecc3335cc}
+
+
+Definition at line 229 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+230     : QWidget( parent ), d( \textcolor{keyword}{new} Private( movie, document, \textcolor{keyword}{this} ) )
+231 \{
+232     \textcolor{comment}{// do not propagate the mouse events to the parent widget;}
+233     \textcolor{comment}{// they should be tied to this widget, not spread around...}
+234     setAttribute( Qt::WA\_NoMousePropagation );
+235 
+236     \textcolor{comment}{// Setup player page}
+237     QWidget *playerPage = \textcolor{keyword}{new} QWidget;
+238 
+239     QVBoxLayout *mainlay = \textcolor{keyword}{new} QVBoxLayout( playerPage );
+240     mainlay->setMargin( 0 );
+241     mainlay->setSpacing( 0 );
+242 
+243     d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player} = \textcolor{keyword}{new} Phonon::VideoPlayer( Phonon::NoCategory, playerPage );
+244     d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->installEventFilter( playerPage );
+245     mainlay->addWidget( d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player} );
+246 
+247     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar} = \textcolor{keyword}{new} QToolBar( playerPage );
+248     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->setIconSize( QSize( 16, 16 ) );
+249     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->setAutoFillBackground( \textcolor{keyword}{true} );
+250     mainlay->addWidget( d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar} );
+251 
+252     d->\hyperlink{classVideoWidget_1_1Private_a573e20300c27f08b5d9f4bcff46d21ce}{playPauseAction} = \textcolor{keyword}{new} QAction( d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar} );
+253     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->addAction( d->\hyperlink{classVideoWidget_1_1Private_a573e20300c27f08b5d9f4bcff46d21ce}{playPauseAction} );
+254     d->\hyperlink{classVideoWidget_1_1Private_a6f2d55d3df5ed98d793bf208b5128708}{setupPlayPauseAction}( \hyperlink{classVideoWidget_1_1Private_aa685363ecfd1874cfe0a9901cd86ede2a4211aefb1bf1a9dba29b939c6b811d33}{Private::PlayMode} );
+255     d->\hyperlink{classVideoWidget_1_1Private_a1c5aa30fc3d0f10c2cb4f4f76eca14db}{stopAction} = d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->addAction(
+256         KIcon( \textcolor{stringliteral}{"media-playback-stop"} ),
+257         i18nc( \textcolor{stringliteral}{"stop the movie playback"}, \textcolor{stringliteral}{"Stop"} ),
+258         \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWidget_a71bd6da5120ab3556d0ac41e905f6e26}{stop}()) );
+259     d->\hyperlink{classVideoWidget_1_1Private_a1c5aa30fc3d0f10c2cb4f4f76eca14db}{stopAction}->setEnabled( \textcolor{keyword}{false} );
+260     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->addSeparator();
+261     d->\hyperlink{classVideoWidget_1_1Private_a70e31cd6bc6216e372c80b62684f2dcf}{seekSlider} = \textcolor{keyword}{new} Phonon::SeekSlider( d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->mediaObject(), d->
+      \hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar} );
+262     d->\hyperlink{classVideoWidget_1_1Private_ac16af65e0f9a05a84c853a2402c1ce26}{seekSliderAction} = d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->addWidget( d->
+      \hyperlink{classVideoWidget_1_1Private_a70e31cd6bc6216e372c80b62684f2dcf}{seekSlider} );
+263     d->\hyperlink{classVideoWidget_1_1Private_a70e31cd6bc6216e372c80b62684f2dcf}{seekSlider}->setEnabled( \textcolor{keyword}{false} );
+264 
+265     Phonon::SeekSlider *verticalSeekSlider = \textcolor{keyword}{new} Phonon::SeekSlider( d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->mediaObject(), 0 );
+266     verticalSeekSlider->setMaximumHeight( 100 );
+267     d->\hyperlink{classVideoWidget_1_1Private_a638e1c16fe06792667af9d7296d7cc5e}{seekSliderMenuAction} = createToolBarButtonWithWidgetPopup(
+268         d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}, verticalSeekSlider, KIcon( \textcolor{stringliteral}{"player-time"} ) );
+269     d->\hyperlink{classVideoWidget_1_1Private_a638e1c16fe06792667af9d7296d7cc5e}{seekSliderMenuAction}->setVisible( \textcolor{keyword}{false} );
+270 
+271     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->setVisible( movie->\hyperlink{classOkular_1_1Movie_a2b609559fc76b4ccf4aa647db9528be0}{showControls}() );
+272 
+273     connect( d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}, SIGNAL(finished()), \textcolor{keyword}{this}, SLOT(finished()) );
+274     connect( d->\hyperlink{classVideoWidget_1_1Private_a573e20300c27f08b5d9f4bcff46d21ce}{playPauseAction}, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(playOrPause()) );
+275 
+276     d->\hyperlink{classVideoWidget_1_1Private_a11423c5cfafc4c6a7b573b9c4e010a4b}{geom} = annotation->transformedBoundingRectangle();
+277 
+278     \textcolor{comment}{// Setup poster image page}
+279     d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage} = \textcolor{keyword}{new} QLabel;
+280     d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage}->setScaledContents( \textcolor{keyword}{true} );
+281     d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage}->installEventFilter( \textcolor{keyword}{this} );
+282     d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage}->setCursor( Qt::PointingHandCursor );
+283 
+284     d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout} = \textcolor{keyword}{new} QStackedLayout( \textcolor{keyword}{this} );
+285     d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->setMargin( 0 );
+286     d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->setSpacing( 0 );
+287     d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->addWidget( playerPage );
+288     d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->addWidget( d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage} );
+289 
+290 
+291     \textcolor{keywordflow}{if} ( movie->\hyperlink{classOkular_1_1Movie_abbd73c60d6503641c04c945ba00cc809}{showPosterImage}() )
+292     \{
+293         d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->setCurrentIndex( 1 );
+294 
+295         \textcolor{keyword}{const} QImage posterImage = movie->\hyperlink{classOkular_1_1Movie_a5d4159ce41a4e2dc7688f7c507827e2c}{posterImage}();
+296         \textcolor{keywordflow}{if} ( posterImage.isNull() )
+297         \{
+298             d->\hyperlink{classVideoWidget_1_1Private_accc5bdb8687d84aa3e2cf234993c12f5}{takeSnapshot}();
+299         \}
+300         \textcolor{keywordflow}{else}
+301         \{
+302             d->\hyperlink{classVideoWidget_1_1Private_a7c61e05ab9b3b65f7496914e1a630c94}{setPosterImage}( posterImage );
+303         \}
+304     \}
+305     \textcolor{keywordflow}{else}
+306     \{
+307         d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->setCurrentIndex( 0 );
+308     \}
+309 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a77b8af4076f462cb5db7932e88d46829}{\index{Video\+Widget@{Video\+Widget}!````~Video\+Widget@{$\sim$\+Video\+Widget}}
+\index{````~Video\+Widget@{$\sim$\+Video\+Widget}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{$\sim$\+Video\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Video\+Widget\+::$\sim$\+Video\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoWidget_a77b8af4076f462cb5db7932e88d46829}
+
+
+Definition at line 311 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+312 \{
+313     \textcolor{keyword}{delete} d;
+314 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{\index{Video\+Widget@{Video\+Widget}!event@{event}}
+\index{event@{event}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}bool Video\+Widget\+::event (
+\begin{DoxyParamCaption}
+\item[{Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVideoWidget_afdc471d8ae343463a803a8dce835221c}
+
+
+Definition at line 418 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+419 \{
+420     \textcolor{keywordflow}{switch} ( \hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event}->type() )
+421     \{
+422         \textcolor{keywordflow}{case} QEvent::ToolTip:
+423             \textcolor{comment}{// "eat" the help events (= tooltips), avoid parent widgets receiving them}
+424             \textcolor{keyword}{event}->accept();
+425             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+426             \textcolor{keywordflow}{break};
+427         \textcolor{keywordflow}{default}: ;
+428     \}
+429 
+430     \textcolor{keywordflow}{return} QWidget::event( \hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event} );
+431 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a416581ebf72ae21a24dce839bec27905}{\index{Video\+Widget@{Video\+Widget}!event\+Filter@{event\+Filter}}
+\index{event\+Filter@{event\+Filter}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{event\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool Video\+Widget\+::event\+Filter (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{object, }
+\item[{Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVideoWidget_a416581ebf72ae21a24dce839bec27905}
+
+
+Definition at line 381 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+382 \{
+383     \textcolor{keywordflow}{if} ( \textcolor{keywordtype}{object} == d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player} || \textcolor{keywordtype}{object} == d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage} )
+384     \{
+385         \textcolor{keywordflow}{switch} ( \hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event}->type() )
+386         \{
+387             \textcolor{keywordflow}{case} QEvent::MouseButtonPress:
+388             \{
+389                 QMouseEvent * me = \textcolor{keyword}{static\_cast<} QMouseEvent * \textcolor{keyword}{>}( \hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event} );
+390                 \textcolor{keywordflow}{if} ( me->button() == Qt::LeftButton )
+391                 \{
+392                     \textcolor{keywordflow}{if} ( !d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->isPlaying() )
+393                     \{
+394                         \hyperlink{classVideoWidget_a00e08beaa6d8234f0cd3a6ef51e6709c}{play}();
+395                     \}
+396                     \textcolor{keyword}{event}->accept();
+397                 \}
+398             \}
+399             \textcolor{keywordflow}{case} QEvent::Wheel:
+400             \{
+401                 \textcolor{keywordflow}{if} ( \textcolor{keywordtype}{object} == d->\hyperlink{classVideoWidget_1_1Private_a68a1e9357ce7c092b82ae61860d68ed3}{posterImagePage} )
+402                 \{
+403                     QWheelEvent * we = \textcolor{keyword}{static\_cast<} QWheelEvent * \textcolor{keyword}{>}( \hyperlink{classVideoWidget_afdc471d8ae343463a803a8dce835221c}{event} );
+404 
+405                     \textcolor{comment}{// forward wheel events to parent widget}
+406                     QWheelEvent *copy = \textcolor{keyword}{new} QWheelEvent( we->pos(), we->globalPos(), we->delta(), we->
+      buttons(), we->modifiers(), we->orientation() );
+407                     QCoreApplication::postEvent( parentWidget(), copy );
+408                 \}
+409                 \textcolor{keywordflow}{break};
+410             \}
+411             \textcolor{keywordflow}{default}: ;
+412         \}
+413     \}
+414 
+415     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+416 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a74473d8bebf53f26a6ab985621c84fee}{\index{Video\+Widget@{Video\+Widget}!is\+Playing@{is\+Playing}}
+\index{is\+Playing@{is\+Playing}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{is\+Playing}]{\setlength{\rightskip}{0pt plus 5cm}bool Video\+Widget\+::is\+Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVideoWidget_a74473d8bebf53f26a6ab985621c84fee}
+
+
+Definition at line 326 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+327 \{
+328     \textcolor{keywordflow}{return} d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->isPlaying();
+329 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a44ccb0d6b334ca89f1edfa713137128f}{\index{Video\+Widget@{Video\+Widget}!norm\+Geometry@{norm\+Geometry}}
+\index{norm\+Geometry@{norm\+Geometry}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{norm\+Geometry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Normalized\+Rect} Video\+Widget\+::norm\+Geometry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVideoWidget_a44ccb0d6b334ca89f1edfa713137128f}
+
+
+Definition at line 321 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+322 \{
+323     \textcolor{keywordflow}{return} d->\hyperlink{classVideoWidget_1_1Private_a11423c5cfafc4c6a7b573b9c4e010a4b}{geom};
+324 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_ad7ddc0da1795a191cd53618e71b7b937}{\index{Video\+Widget@{Video\+Widget}!page\+Entered@{page\+Entered}}
+\index{page\+Entered@{page\+Entered}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{page\+Entered}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::page\+Entered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoWidget_ad7ddc0da1795a191cd53618e71b7b937}
+This method is called when the page the video widget is located on has been entered. 
+
+Definition at line 336 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+337 \{
+338     \textcolor{keywordflow}{if} ( d->\hyperlink{classVideoWidget_1_1Private_a500f2a0b237f083a573b689a1bb0a90a}{movie}->\hyperlink{classOkular_1_1Movie_abbd73c60d6503641c04c945ba00cc809}{showPosterImage}() )
+339     \{
+340         d->\hyperlink{classVideoWidget_1_1Private_afcb2f757498947705dafb8305e0fb0bc}{pageLayout}->setCurrentIndex( 1 );
+341         show();
+342     \}
+343 
+344     \textcolor{keywordflow}{if} ( d->\hyperlink{classVideoWidget_1_1Private_a500f2a0b237f083a573b689a1bb0a90a}{movie}->\hyperlink{classOkular_1_1Movie_afee77daf9321afaf6c164a464d516940}{autoPlay}() )
+345     \{
+346         show();
+347         QMetaObject::invokeMethod(\textcolor{keyword}{this}, \textcolor{stringliteral}{"play"}, Qt::QueuedConnection);
+348     \}
+349 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a90dbdcbaffc7717c7e3b327ad076bc58}{\index{Video\+Widget@{Video\+Widget}!page\+Initialized@{page\+Initialized}}
+\index{page\+Initialized@{page\+Initialized}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{page\+Initialized}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::page\+Initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoWidget_a90dbdcbaffc7717c7e3b327ad076bc58}
+This method is called when the page the video widget is located on has been initialized. 
+
+Definition at line 331 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+332 \{
+333     hide();
+334 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a332a8907b98df63648b90f6ae6d42cac}{\index{Video\+Widget@{Video\+Widget}!page\+Left@{page\+Left}}
+\index{page\+Left@{page\+Left}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{page\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::page\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoWidget_a332a8907b98df63648b90f6ae6d42cac}
+This method is called when the page the video widget is located on has been left. 
+
+Definition at line 351 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+352 \{
+353     d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->stop();
+354     d->\hyperlink{classVideoWidget_1_1Private_a57b0c44fc74f21e280cfc3ad962406c1}{videoStopped}();
+355 
+356     hide();
+357 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a25170452e03c644be15ff4ab4ee0b533}{\index{Video\+Widget@{Video\+Widget}!pause@{pause}}
+\index{pause@{pause}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWidget_a25170452e03c644be15ff4ab4ee0b533}
+
+
+Definition at line 375 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+376 \{
+377     d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->pause();
+378     d->\hyperlink{classVideoWidget_1_1Private_a6f2d55d3df5ed98d793bf208b5128708}{setupPlayPauseAction}( \hyperlink{classVideoWidget_1_1Private_aa685363ecfd1874cfe0a9901cd86ede2a4211aefb1bf1a9dba29b939c6b811d33}{Private::PlayMode} );
+379 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a00e08beaa6d8234f0cd3a6ef51e6709c}{\index{Video\+Widget@{Video\+Widget}!play@{play}}
+\index{play@{play}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWidget_a00e08beaa6d8234f0cd3a6ef51e6709c}
+
+
+Definition at line 359 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+360 \{
+361     d->\hyperlink{classVideoWidget_1_1Private_a1b6973ec2db407feeaaa362f436440f5}{controlBar}->setVisible( d->\hyperlink{classVideoWidget_1_1Private_a500f2a0b237f083a573b689a1bb0a90a}{movie}->\hyperlink{classOkular_1_1Movie_a2b609559fc76b4ccf4aa647db9528be0}{showControls}() );
+362     d->\hyperlink{classVideoWidget_1_1Private_affa15ed191c16d315167e362e9823466}{load}();
+363     d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->play();
+364     d->\hyperlink{classVideoWidget_1_1Private_a1c5aa30fc3d0f10c2cb4f4f76eca14db}{stopAction}->setEnabled( \textcolor{keyword}{true} );
+365     d->\hyperlink{classVideoWidget_1_1Private_a6f2d55d3df5ed98d793bf208b5128708}{setupPlayPauseAction}( \hyperlink{classVideoWidget_1_1Private_aa685363ecfd1874cfe0a9901cd86ede2aab1e1758af40992f1fd9a0e51758c921}{Private::PauseMode} );
+366 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a535271277b91deed6d52cb1d11caf80d}{\index{Video\+Widget@{Video\+Widget}!resize\+Event@{resize\+Event}}
+\index{resize\+Event@{resize\+Event}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{resize\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::resize\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Resize\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVideoWidget_a535271277b91deed6d52cb1d11caf80d}
+
+
+Definition at line 433 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+434 \{
+435     \textcolor{keyword}{const} QSize &s = \textcolor{keyword}{event}->size();
+436     \textcolor{keywordtype}{int} usedSpace = d->\hyperlink{classVideoWidget_1_1Private_a70e31cd6bc6216e372c80b62684f2dcf}{seekSlider}->geometry().left() + d->\hyperlink{classVideoWidget_1_1Private_a70e31cd6bc6216e372c80b62684f2dcf}{seekSlider}->iconSize().width(
+      );
+437     \textcolor{comment}{// try to give the slider at least 30px of space}
+438     \textcolor{keywordflow}{if} ( s.width() < ( usedSpace + 30 ) )
+439     \{
+440         d->\hyperlink{classVideoWidget_1_1Private_ac16af65e0f9a05a84c853a2402c1ce26}{seekSliderAction}->setVisible( \textcolor{keyword}{false} );
+441         d->\hyperlink{classVideoWidget_1_1Private_a638e1c16fe06792667af9d7296d7cc5e}{seekSliderMenuAction}->setVisible( \textcolor{keyword}{true} );
+442     \}
+443     \textcolor{keywordflow}{else}
+444     \{
+445         d->\hyperlink{classVideoWidget_1_1Private_ac16af65e0f9a05a84c853a2402c1ce26}{seekSliderAction}->setVisible( \textcolor{keyword}{true} );
+446         d->\hyperlink{classVideoWidget_1_1Private_a638e1c16fe06792667af9d7296d7cc5e}{seekSliderMenuAction}->setVisible( \textcolor{keyword}{false} );
+447     \}
+448 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a38300e6028c19d616fed4b6f9ff441e9}{\index{Video\+Widget@{Video\+Widget}!set\+Norm\+Geometry@{set\+Norm\+Geometry}}
+\index{set\+Norm\+Geometry@{set\+Norm\+Geometry}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{set\+Norm\+Geometry}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::set\+Norm\+Geometry (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{classVideoWidget_a38300e6028c19d616fed4b6f9ff441e9}
+
+
+Definition at line 316 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+317 \{
+318     d->\hyperlink{classVideoWidget_1_1Private_a11423c5cfafc4c6a7b573b9c4e010a4b}{geom} = rect;
+319 \}
+\end{DoxyCode}
+\hypertarget{classVideoWidget_a71bd6da5120ab3556d0ac41e905f6e26}{\index{Video\+Widget@{Video\+Widget}!stop@{stop}}
+\index{stop@{stop}!Video\+Widget@{Video\+Widget}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void Video\+Widget\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWidget_a71bd6da5120ab3556d0ac41e905f6e26}
+
+
+Definition at line 368 of file videowidget.\+cpp.
+
+
+\begin{DoxyCode}
+369 \{
+370     d->\hyperlink{classVideoWidget_1_1Private_ad25b2b9ba312490e52b2c21861aceaa1}{player}->stop();
+371     d->\hyperlink{classVideoWidget_1_1Private_a1c5aa30fc3d0f10c2cb4f4f76eca14db}{stopAction}->setEnabled( \textcolor{keyword}{false} );
+372     d->\hyperlink{classVideoWidget_1_1Private_a6f2d55d3df5ed98d793bf208b5128708}{setupPlayPauseAction}( \hyperlink{classVideoWidget_1_1Private_aa685363ecfd1874cfe0a9901cd86ede2a4211aefb1bf1a9dba29b939c6b811d33}{Private::PlayMode} );
+373 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{videowidget_8h}{videowidget.\+h}\item 
+ui/\hyperlink{videowidget_8cpp}{videowidget.\+cpp}\end{DoxyCompactItemize}

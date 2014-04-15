@@ -1,0 +1,248 @@
+\hypertarget{classOkular_1_1GeomAnnotationPrivate}{\section{Okular\+:\+:Geom\+Annotation\+Private Class Reference}
+\label{classOkular_1_1GeomAnnotationPrivate}\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+}
+Inheritance diagram for Okular\+:\+:Geom\+Annotation\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1GeomAnnotationPrivate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1GeomAnnotationPrivate_a1c6b3f2ac89aa90729d48033460edf7f}{Geom\+Annotation\+Private} ()
+\item 
+virtual void \hyperlink{classOkular_1_1GeomAnnotationPrivate_affcf85e3740c0441b784b5d59b268d91}{set\+Annotation\+Properties} (const Q\+Dom\+Node \&node)
+\item 
+virtual \hyperlink{classOkular_1_1AnnotationPrivate}{Annotation\+Private} $\ast$ \hyperlink{classOkular_1_1GeomAnnotationPrivate_af9c31ab57cb28c74d38c9e1a9041569c}{get\+New\+Annotation\+Private} ()
+\item 
+virtual double \hyperlink{classOkular_1_1GeomAnnotationPrivate_af65b6c87ad945de67841b74d4dacefaf}{distance\+Sqr} (double x, double y, double x\+Scale, double y\+Scale)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1GeomAnnotation_a511623ed10a8d1f18cfd5987fadee682}{Geom\+Annotation\+::\+Geom\+Type} \hyperlink{classOkular_1_1GeomAnnotationPrivate_a7a900a31ed0362b56d5e2172df3229dd}{m\+\_\+geom\+Type}
+\item 
+Q\+Color \hyperlink{classOkular_1_1GeomAnnotationPrivate_a78118f508054b9edd36744d8a5c18161}{m\+\_\+geom\+Inner\+Color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1GeomAnnotation}{Geom\+Annotation} \mbox{[}\hyperlink{classOkular_1_1Annotation}{Annotation}\mbox{]} 
+
+Definition at line 1584 of file annotations.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1GeomAnnotationPrivate_a1c6b3f2ac89aa90729d48033460edf7f}{\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}!Geom\+Annotation\+Private@{Geom\+Annotation\+Private}}
+\index{Geom\+Annotation\+Private@{Geom\+Annotation\+Private}!Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+\subsubsection[{Geom\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Geom\+Annotation\+Private\+::\+Geom\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1GeomAnnotationPrivate_a1c6b3f2ac89aa90729d48033460edf7f}
+
+
+Definition at line 1587 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1588             : \hyperlink{classOkular_1_1AnnotationPrivate_affc5d14076f4606905c3c0cd2f6b9dc1}{AnnotationPrivate}(), \hyperlink{classOkular_1_1GeomAnnotationPrivate_a7a900a31ed0362b56d5e2172df3229dd}{m\_geomType}( 
+      \hyperlink{classOkular_1_1GeomAnnotation_a511623ed10a8d1f18cfd5987fadee682a5c7718299cc7aad186005a1bd0c86e9e}{GeomAnnotation::InscribedSquare} )
+1589         \{
+1590         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1GeomAnnotationPrivate_af65b6c87ad945de67841b74d4dacefaf}{\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}!distance\+Sqr@{distance\+Sqr}}
+\index{distance\+Sqr@{distance\+Sqr}!Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+\subsubsection[{distance\+Sqr}]{\setlength{\rightskip}{0pt plus 5cm}double Geom\+Annotation\+Private\+::distance\+Sqr (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1GeomAnnotationPrivate_af65b6c87ad945de67841b74d4dacefaf}
+Determines the distance of the closest point of the annotation to the given point {\ttfamily x} {\ttfamily y} {\ttfamily x\+Scale} {\ttfamily y\+Scale} \begin{DoxySince}{Since}
+0.\+17 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_ab4288200b0dd46f33e4958a64ffac373}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1690 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1691 \{
+1692     \textcolor{keywordtype}{double} distance = 0;
+1693     \textcolor{comment}{//the line thickness is applied unevenly (only on the "inside") - account for this}
+1694     \textcolor{keywordtype}{bool} withinShape = \textcolor{keyword}{false};
+1695     \textcolor{keywordflow}{switch} (\hyperlink{classOkular_1_1GeomAnnotationPrivate_a7a900a31ed0362b56d5e2172df3229dd}{m\_geomType}) \{
+1696         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1GeomAnnotation_a511623ed10a8d1f18cfd5987fadee682a30a6611d755c0404efaf196327194bfc}{GeomAnnotation::InscribedCircle}:
+1697         \{
+1698             \textcolor{comment}{//calculate the center point and focus lengths of the ellipse}
+1699             \textcolor{keyword}{const} \textcolor{keywordtype}{double} centerX = ( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} + \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} ) / 2.0;
+1700             \textcolor{keyword}{const} \textcolor{keywordtype}{double} centerY = ( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} + \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} ) / 2.0;
+1701             \textcolor{keyword}{const} \textcolor{keywordtype}{double} focusX = ( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - centerX);
+1702             \textcolor{keyword}{const} \textcolor{keywordtype}{double} focusY = ( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - centerY);
+1703 
+1704             \textcolor{keyword}{const} \textcolor{keywordtype}{double} focusXSqr = pow( focusX, 2 );
+1705             \textcolor{keyword}{const} \textcolor{keywordtype}{double} focusYSqr = pow( focusY, 2 );
+1706 
+1707             \textcolor{comment}{// to calculate the distance from the ellipse, we will first find the point "projection"}
+1708             \textcolor{comment}{// that lies on the ellipse and is closest to the point (x,y)}
+1709             \textcolor{comment}{// This point can obviously be written as "center + lambda(inputPoint - center)".}
+1710             \textcolor{comment}{// Because the point lies on the ellipse, we know that:}
+1711             \textcolor{comment}{//   1 = ((center.x - projection.x)/focusX)^2 + ((center.y - projection.y)/focusY)^2}
+1712             \textcolor{comment}{// After filling in projection.x = center.x + lambda * (inputPoint.x - center.x)}
+1713             \textcolor{comment}{// and its y-equivalent, we can solve for lambda:}
+1714             \textcolor{keyword}{const} \textcolor{keywordtype}{double} lambda = sqrt( focusXSqr * focusYSqr /
+1715                                  ( focusYSqr * pow( x - centerX, 2 ) + focusXSqr * pow( y - centerY, 2 ) ) 
+      );
+1716 
+1717             \textcolor{comment}{// if the ellipse is filled, we treat all points within as "on" it}
+1718             \textcolor{keywordflow}{if} ( lambda > 1 )
+1719             \{
+1720                 \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1GeomAnnotationPrivate_a78118f508054b9edd36744d8a5c18161}{m\_geomInnerColor}.isValid() )
+1721                     \textcolor{keywordflow}{return} 0;
+1722                 \textcolor{keywordflow}{else}
+1723                     withinShape = \textcolor{keyword}{true};
+1724             \}
+1725 
+1726             \textcolor{comment}{//otherwise we calculate the squared distance from the projected point on the ellipse}
+1727             \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} projection( centerX, centerY );
+1728             projection.x += lambda * ( x - centerX );
+1729             projection.y += lambda * ( y - centerY );
+1730 
+1731             distance = projection.distanceSqr( x, y, xScale, yScale );
+1732             \textcolor{keywordflow}{break};
+1733         \}
+1734 
+1735         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1GeomAnnotation_a511623ed10a8d1f18cfd5987fadee682a5c7718299cc7aad186005a1bd0c86e9e}{GeomAnnotation::InscribedSquare}:
+1736             \textcolor{comment}{//if the square is filled, only check the bounding box}
+1737             \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1GeomAnnotationPrivate_a78118f508054b9edd36744d8a5c18161}{m\_geomInnerColor}.isValid() )
+1738                 \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1AnnotationPrivate_ab4288200b0dd46f33e4958a64ffac373}{AnnotationPrivate::distanceSqr}( x, y, xScale, yScale )
+      ;
+1739 
+1740             \hyperlink{classQLinkedList}{QLinkedList<NormalizedPoint>} edges;
+1741             edges << \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} );
+1742             edges << \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} );
+1743             edges << \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} );
+1744             edges << \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} );
+1745             edges << \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} );
+1746             distance = \hyperlink{classOkular_1_1GeomAnnotationPrivate_af65b6c87ad945de67841b74d4dacefaf}{::distanceSqr}( x, y, xScale, yScale, edges );
+1747 
+1748             \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1AnnotationPrivate_afb3198f13aa201601c71493bd2a32f63}{m\_transformedBoundary}.\hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains}( x, y ) )
+1749                 withinShape = \textcolor{keyword}{true};
+1750 
+1751             \textcolor{keywordflow}{break};
+1752     \}
+1753     \textcolor{keywordflow}{if} ( withinShape )
+1754         distance = strokeDistance( distance, \hyperlink{classOkular_1_1AnnotationPrivate_af49e79222d9e16611c0abd90533bc206}{m\_style}.\hyperlink{classOkular_1_1Annotation_1_1Style_a5a8e23f3a4f95e25f45770937dc82948}{width}() * xScale / 
+      \hyperlink{classOkular_1_1AnnotationPrivate_a2db3806670326880d0d7e6e1986d35f4}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a3350b64842d008c59422f1b4fe6d7243}{m\_width} );
+1755 
+1756     \textcolor{keywordflow}{return} distance;
+1757 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GeomAnnotationPrivate_af9c31ab57cb28c74d38c9e1a9041569c}{\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}!get\+New\+Annotation\+Private@{get\+New\+Annotation\+Private}}
+\index{get\+New\+Annotation\+Private@{get\+New\+Annotation\+Private}!Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+\subsubsection[{get\+New\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+Private} $\ast$ Geom\+Annotation\+Private\+::get\+New\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1GeomAnnotationPrivate_af9c31ab57cb28c74d38c9e1a9041569c}
+
+
+Implements \hyperlink{classOkular_1_1AnnotationPrivate_a4a27afb6108cff892c7bcccd8ba3aafa}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1685 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1686 \{
+1687     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classOkular_1_1GeomAnnotationPrivate_a1c6b3f2ac89aa90729d48033460edf7f}{GeomAnnotationPrivate}();
+1688 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GeomAnnotationPrivate_affcf85e3740c0441b784b5d59b268d91}{\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}!set\+Annotation\+Properties@{set\+Annotation\+Properties}}
+\index{set\+Annotation\+Properties@{set\+Annotation\+Properties}!Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+\subsubsection[{set\+Annotation\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}void Geom\+Annotation\+Private\+::set\+Annotation\+Properties (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1GeomAnnotationPrivate_affcf85e3740c0441b784b5d59b268d91}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_a5fc7b450fa8c7e2717372e7394c3aa39}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1659 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1660 \{
+1661     \hyperlink{classOkular_1_1AnnotationPrivate_a5fc7b450fa8c7e2717372e7394c3aa39}{Okular::AnnotationPrivate::setAnnotationProperties}(
+      node);
+1662     \textcolor{comment}{// loop through the whole children looking for a 'geom' element}
+1663     QDomNode subNode = node.firstChild();
+1664     \textcolor{keywordflow}{while}( subNode.isElement() )
+1665     \{
+1666         QDomElement e = subNode.toElement();
+1667         subNode = subNode.nextSibling();
+1668         \textcolor{keywordflow}{if} ( e.tagName() != \textcolor{stringliteral}{"geom"} )
+1669             \textcolor{keywordflow}{continue};
+1670 
+1671         \textcolor{comment}{// parse the attributes}
+1672         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"type"} ) )
+1673             \hyperlink{classOkular_1_1GeomAnnotationPrivate_a7a900a31ed0362b56d5e2172df3229dd}{m\_geomType} = (\hyperlink{classOkular_1_1GeomAnnotation_a511623ed10a8d1f18cfd5987fadee682}{GeomAnnotation::GeomType})e.attribute( \textcolor{stringliteral}{"type"} ).
+      toInt();
+1674         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"color"} ) )
+1675             \hyperlink{classOkular_1_1GeomAnnotationPrivate_a78118f508054b9edd36744d8a5c18161}{m\_geomInnerColor} = QColor( e.attribute( \textcolor{stringliteral}{"color"} ) );
+1676         \textcolor{comment}{// compatibility}
+1677         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"width"} ) )
+1678             \hyperlink{classOkular_1_1AnnotationPrivate_af49e79222d9e16611c0abd90533bc206}{m\_style}.\hyperlink{classOkular_1_1Annotation_1_1Style_af0643b15b59d282c196f0c6114493d9e}{setWidth}( e.attribute( \textcolor{stringliteral}{"width"} ).toInt() );
+1679 
+1680         \textcolor{comment}{// loading complete}
+1681         \textcolor{keywordflow}{break};
+1682     \}
+1683 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1GeomAnnotationPrivate_a78118f508054b9edd36744d8a5c18161}{\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}!m\+\_\+geom\+Inner\+Color@{m\+\_\+geom\+Inner\+Color}}
+\index{m\+\_\+geom\+Inner\+Color@{m\+\_\+geom\+Inner\+Color}!Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+\subsubsection[{m\+\_\+geom\+Inner\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Okular\+::\+Geom\+Annotation\+Private\+::m\+\_\+geom\+Inner\+Color}}\label{classOkular_1_1GeomAnnotationPrivate_a78118f508054b9edd36744d8a5c18161}
+
+
+Definition at line 1596 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1GeomAnnotationPrivate_a7a900a31ed0362b56d5e2172df3229dd}{\index{Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}!m\+\_\+geom\+Type@{m\+\_\+geom\+Type}}
+\index{m\+\_\+geom\+Type@{m\+\_\+geom\+Type}!Okular\+::\+Geom\+Annotation\+Private@{Okular\+::\+Geom\+Annotation\+Private}}
+\subsubsection[{m\+\_\+geom\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Geom\+Annotation\+::\+Geom\+Type} Okular\+::\+Geom\+Annotation\+Private\+::m\+\_\+geom\+Type}}\label{classOkular_1_1GeomAnnotationPrivate_a7a900a31ed0362b56d5e2172df3229dd}
+
+
+Definition at line 1595 of file annotations.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

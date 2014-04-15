@@ -1,0 +1,96 @@
+\hypertarget{classKParts_1_1PartActivateEvent}{\section{K\+Parts\+:\+:Part\+Activate\+Event Class Reference}
+\label{classKParts_1_1PartActivateEvent}\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+}
+
+
+{\ttfamily \#include $<$event.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Part\+Activate\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKParts_1_1PartActivateEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1PartActivateEvent_a6b2b2b39fc6e8518b74e74f0f5f3947d}{Part\+Activate\+Event} (bool \hyperlink{classKParts_1_1PartActivateEvent_a7d6c164caa76842171eed19df734715b}{activated}, \hyperlink{classKParts_1_1Part}{Part} $\ast$\hyperlink{classKParts_1_1PartActivateEvent_a5588cf3b52a16cc65586a3faf6523117}{part}, Q\+Widget $\ast$\hyperlink{classKParts_1_1PartActivateEvent_ae3ec0f57c3c257eb13e4cf8c5d551f81}{widget})
+\item 
+virtual \hyperlink{classKParts_1_1PartActivateEvent_a070038fad91c9494c6ef4dfd00401f62}{$\sim$\+Part\+Activate\+Event} ()
+\item 
+bool \hyperlink{classKParts_1_1PartActivateEvent_a7d6c164caa76842171eed19df734715b}{activated} () const 
+\item 
+\hyperlink{classKParts_1_1Part}{Part} $\ast$ \hyperlink{classKParts_1_1PartActivateEvent_a5588cf3b52a16cc65586a3faf6523117}{part} () const 
+\item 
+Q\+Widget $\ast$ \hyperlink{classKParts_1_1PartActivateEvent_ae3ec0f57c3c257eb13e4cf8c5d551f81}{widget} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classKParts_1_1PartActivateEvent_ab2b795f3ff5ed09524e0357ee21cf264}{test} (const Q\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This event is sent by the part manager when the active part changes. Each time the active part changes, it will send first a \hyperlink{classKParts_1_1PartActivateEvent}{Part\+Activate\+Event} with activated=false, part=old\+Active\+Part, widget=old\+Active\+Widget and then another \hyperlink{classKParts_1_1PartActivateEvent}{Part\+Activate\+Event} with activated=true, part=new\+Part, widget=new\+Widget. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classKParts_1_1Part_ad848641dbb38a3b2404b2ad554a08fba}{K\+Parts\+::\+Part\+::part\+Activate\+Event} 
+\end{DoxySeeAlso}
+
+
+Definition at line 82 of file event.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1PartActivateEvent_a6b2b2b39fc6e8518b74e74f0f5f3947d}{\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}!Part\+Activate\+Event@{Part\+Activate\+Event}}
+\index{Part\+Activate\+Event@{Part\+Activate\+Event}!K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+\subsubsection[{Part\+Activate\+Event}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Part\+Activate\+Event\+::\+Part\+Activate\+Event (
+\begin{DoxyParamCaption}
+\item[{bool}]{activated, }
+\item[{{\bf Part} $\ast$}]{part, }
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartActivateEvent_a6b2b2b39fc6e8518b74e74f0f5f3947d}
+\hypertarget{classKParts_1_1PartActivateEvent_a070038fad91c9494c6ef4dfd00401f62}{\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}!````~Part\+Activate\+Event@{$\sim$\+Part\+Activate\+Event}}
+\index{````~Part\+Activate\+Event@{$\sim$\+Part\+Activate\+Event}!K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+\subsubsection[{$\sim$\+Part\+Activate\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Part\+Activate\+Event\+::$\sim$\+Part\+Activate\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1PartActivateEvent_a070038fad91c9494c6ef4dfd00401f62}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1PartActivateEvent_a7d6c164caa76842171eed19df734715b}{\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}!activated@{activated}}
+\index{activated@{activated}!K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+\subsubsection[{activated}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Part\+Activate\+Event\+::activated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartActivateEvent_a7d6c164caa76842171eed19df734715b}
+\hypertarget{classKParts_1_1PartActivateEvent_a5588cf3b52a16cc65586a3faf6523117}{\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}!part@{part}}
+\index{part@{part}!K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+\subsubsection[{part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Part}$\ast$ K\+Parts\+::\+Part\+Activate\+Event\+::part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartActivateEvent_a5588cf3b52a16cc65586a3faf6523117}
+\hypertarget{classKParts_1_1PartActivateEvent_ab2b795f3ff5ed09524e0357ee21cf264}{\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}!test@{test}}
+\index{test@{test}!K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+\subsubsection[{test}]{\setlength{\rightskip}{0pt plus 5cm}static bool K\+Parts\+::\+Part\+Activate\+Event\+::test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1PartActivateEvent_ab2b795f3ff5ed09524e0357ee21cf264}
+\hypertarget{classKParts_1_1PartActivateEvent_ae3ec0f57c3c257eb13e4cf8c5d551f81}{\index{K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}!widget@{widget}}
+\index{widget@{widget}!K\+Parts\+::\+Part\+Activate\+Event@{K\+Parts\+::\+Part\+Activate\+Event}}
+\subsubsection[{widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ K\+Parts\+::\+Part\+Activate\+Event\+::widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartActivateEvent_ae3ec0f57c3c257eb13e4cf8c5d551f81}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{event_8h}{event.\+h}\end{DoxyCompactItemize}

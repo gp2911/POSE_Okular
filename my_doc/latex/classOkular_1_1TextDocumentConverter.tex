@@ -1,0 +1,286 @@
+\hypertarget{classOkular_1_1TextDocumentConverter}{\section{Okular\+:\+:Text\+Document\+Converter Class Reference}
+\label{classOkular_1_1TextDocumentConverter}\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+}
+
+
+{\ttfamily \#include $<$textdocumentgenerator.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Text\+Document\+Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.680000cm]{classOkular_1_1TextDocumentConverter}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_ac4f1b668547e87affede3663ea6d8bc6}{add\+Action} (\hyperlink{classOkular_1_1Action}{Action} $\ast$link, int cursor\+Begin, int cursor\+End)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_ab0291a2187c35bda6dd37c78e5642a1b}{add\+Annotation} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation, int cursor\+Begin, int cursor\+End)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_a054a6dbaad659387f26d239aa96d758d}{add\+Title} (int level, const Q\+String \&title, const Q\+Text\+Block \&position)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{add\+Meta\+Data} (const Q\+String \&key, const Q\+String \&value, const Q\+String \&title)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_ac55b8423eefdaa7e4ca7a4d49a5709bb}{add\+Meta\+Data} (\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791}{Document\+Info\+::\+Key} key, const Q\+String \&value)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error} (const Q\+String \&message, int duration)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_a248e15ffea9a2a0fb1b863b29acab608}{warning} (const Q\+String \&message, int duration)
+\item 
+void \hyperlink{classOkular_1_1TextDocumentConverter_a3347d69fea6b76ab2024f56fac977940}{notice} (const Q\+String \&message, int duration)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextDocumentConverter_ac0425522408a3f84f25c2cc085fdac54}{Text\+Document\+Converter} ()
+\item 
+\hyperlink{classOkular_1_1TextDocumentConverter_a83c5a77eec81c9f6ede7484ea5753ce0}{$\sim$\+Text\+Document\+Converter} ()
+\item 
+virtual Q\+Text\+Document $\ast$ \hyperlink{classOkular_1_1TextDocumentConverter_ad05f8bcde0f347c6292968fab331bcef}{convert} (const Q\+String \&file\+Name)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \hyperlink{classOkular_1_1TextDocumentConverter_a5d8709540be1213da6dac78759ce7172}{calculate\+Viewport} (Q\+Text\+Document $\ast$document, const Q\+Text\+Block \&block)
+\item 
+\hyperlink{classOkular_1_1TextDocumentGenerator}{Text\+Document\+Generator} $\ast$ \hyperlink{classOkular_1_1TextDocumentConverter_aaa9e4688148d24be5ade2df14299c759}{generator} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1TextDocumentConverter_a0a259fd10df5d599787dfbe154563772}{Text\+Document\+Generator}
+\item 
+class \hyperlink{classOkular_1_1TextDocumentConverter_a5349ae9a7f4c1aaa74f2727fcbcc2ebf}{Text\+Document\+Generator\+Private}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file textdocumentgenerator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextDocumentConverter_ac0425522408a3f84f25c2cc085fdac54}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!Text\+Document\+Converter@{Text\+Document\+Converter}}
+\index{Text\+Document\+Converter@{Text\+Document\+Converter}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{Text\+Document\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Document\+Converter\+::\+Text\+Document\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentConverter_ac0425522408a3f84f25c2cc085fdac54}
+Creates a new generic converter.
+
+Generic Converter Implementation 
+
+Definition at line 38 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+39     : QObject( 0 ), d\_ptr( \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextDocumentConverterPrivate}{TextDocumentConverterPrivate} )
+40 \{
+41 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentConverter_a83c5a77eec81c9f6ede7484ea5753ce0}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!````~Text\+Document\+Converter@{$\sim$\+Text\+Document\+Converter}}
+\index{````~Text\+Document\+Converter@{$\sim$\+Text\+Document\+Converter}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{$\sim$\+Text\+Document\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Document\+Converter\+::$\sim$\+Text\+Document\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextDocumentConverter_a83c5a77eec81c9f6ede7484ea5753ce0}
+Destroys the generic converter. 
+
+Definition at line 43 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keyword}{delete} d\_ptr;
+46 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextDocumentConverter_ac4f1b668547e87affede3663ea6d8bc6}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!add\+Action@{add\+Action}}
+\index{add\+Action@{add\+Action}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{add\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::add\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Action} $\ast$}]{link, }
+\item[{int}]{cursor\+Begin, }
+\item[{int}]{cursor\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_ac4f1b668547e87affede3663ea6d8bc6}
+Adds a new link object which is located between cursor\+Begin and cursor\+End to the generator. \hypertarget{classOkular_1_1TextDocumentConverter_ab0291a2187c35bda6dd37c78e5642a1b}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!add\+Annotation@{add\+Annotation}}
+\index{add\+Annotation@{add\+Annotation}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{add\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::add\+Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation, }
+\item[{int}]{cursor\+Begin, }
+\item[{int}]{cursor\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_ab0291a2187c35bda6dd37c78e5642a1b}
+Adds a new annotation object which is located between cursor\+Begin and cursor\+End to the generator. \hypertarget{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!add\+Meta\+Data@{add\+Meta\+Data}}
+\index{add\+Meta\+Data@{add\+Meta\+Data}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{add\+Meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::add\+Meta\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+String \&}]{value, }
+\item[{const Q\+String \&}]{title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}
+Adds a set of meta data to the generator. \hypertarget{classOkular_1_1TextDocumentConverter_ac55b8423eefdaa7e4ca7a4d49a5709bb}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!add\+Meta\+Data@{add\+Meta\+Data}}
+\index{add\+Meta\+Data@{add\+Meta\+Data}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{add\+Meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::add\+Meta\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Info\+::\+Key}}]{key, }
+\item[{const Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_ac55b8423eefdaa7e4ca7a4d49a5709bb}
+Adds a set of meta data to the generator.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+\hypertarget{classOkular_1_1TextDocumentConverter_a054a6dbaad659387f26d239aa96d758d}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!add\+Title@{add\+Title}}
+\index{add\+Title@{add\+Title}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{add\+Title}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::add\+Title (
+\begin{DoxyParamCaption}
+\item[{int}]{level, }
+\item[{const Q\+String \&}]{title, }
+\item[{const Q\+Text\+Block \&}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_a054a6dbaad659387f26d239aa96d758d}
+Adds a new title at the given level which is located as position to the generator. \hypertarget{classOkular_1_1TextDocumentConverter_a5d8709540be1213da6dac78759ce7172}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!calculate\+Viewport@{calculate\+Viewport}}
+\index{calculate\+Viewport@{calculate\+Viewport}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{calculate\+Viewport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document\+Viewport} Text\+Document\+Converter\+::calculate\+Viewport (
+\begin{DoxyParamCaption}
+\item[{Q\+Text\+Document $\ast$}]{document, }
+\item[{const Q\+Text\+Block \&}]{block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1TextDocumentConverter_a5d8709540be1213da6dac78759ce7172}
+This method can be used to calculate the viewport for a given text block.
+
+\begin{DoxyNote}{Note}
+This method should be called at the end of the convertion, because it triggers Q\+Text\+Document to do the layout calculation. 
+\end{DoxyNote}
+
+
+Definition at line 48 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{return} TextDocumentUtils::calculateViewport( document, block );
+51 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentConverter_ad05f8bcde0f347c6292968fab331bcef}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!convert@{convert}}
+\index{convert@{convert}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Text\+Document$\ast$ Okular\+::\+Text\+Document\+Converter\+::convert (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1TextDocumentConverter_ad05f8bcde0f347c6292968fab331bcef}
+Returns the generated Q\+Text\+Document object. 
+
+Implemented in \hyperlink{classOOO_1_1Converter_aa63e543977130604de659a4d725ee8bd}{O\+O\+O\+::\+Converter}, \hyperlink{classEpub_1_1Converter_aa63e543977130604de659a4d725ee8bd}{Epub\+::\+Converter}, \hyperlink{classFictionBook_1_1Converter_aa63e543977130604de659a4d725ee8bd}{Fiction\+Book\+::\+Converter}, \hyperlink{classMobi_1_1Converter_aa63e543977130604de659a4d725ee8bd}{Mobi\+::\+Converter}, and \hyperlink{classTxt_1_1Converter_aa63e543977130604de659a4d725ee8bd}{Txt\+::\+Converter}.
+
+\hypertarget{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!error@{error}}
+\index{error@{error}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::error (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}
+This signal should be emitted whenever an error occurred in the converter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message which should be shown to the user. \\
+\hline
+{\em duration} & The time that the message should be shown to the user. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classOkular_1_1TextDocumentConverter_aaa9e4688148d24be5ade2df14299c759}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!generator@{generator}}
+\index{generator@{generator}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{generator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Document\+Generator} $\ast$ Text\+Document\+Converter\+::generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1TextDocumentConverter_aaa9e4688148d24be5ade2df14299c759}
+Returns the generator that owns this converter.
+
+\begin{DoxyNote}{Note}
+May be null if the converter was not created for a generator.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 53 of file textdocumentgenerator.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{return} d\_ptr->\hyperlink{classOkular_1_1TextDocumentConverterPrivate_ad5ad65de1ddc666829e02e12c2bf9c3a}{mParent} ? d\_ptr->\hyperlink{classOkular_1_1TextDocumentConverterPrivate_ad5ad65de1ddc666829e02e12c2bf9c3a}{mParent}->q\_func() : 0;
+56 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextDocumentConverter_a3347d69fea6b76ab2024f56fac977940}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!notice@{notice}}
+\index{notice@{notice}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{notice}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::notice (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_a3347d69fea6b76ab2024f56fac977940}
+This signal should be emitted whenever the user should be noticed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message which should be shown to the user. \\
+\hline
+{\em duration} & The time that the message should be shown to the user. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classOkular_1_1TextDocumentConverter_a248e15ffea9a2a0fb1b863b29acab608}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!warning@{warning}}
+\index{warning@{warning}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{warning}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Text\+Document\+Converter\+::warning (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classOkular_1_1TextDocumentConverter_a248e15ffea9a2a0fb1b863b29acab608}
+This signal should be emitted whenever the user should be warned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message which should be shown to the user. \\
+\hline
+{\em duration} & The time that the message should be shown to the user. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classOkular_1_1TextDocumentConverter_a0a259fd10df5d599787dfbe154563772}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!Text\+Document\+Generator@{Text\+Document\+Generator}}
+\index{Text\+Document\+Generator@{Text\+Document\+Generator}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{Text\+Document\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Text\+Document\+Generator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1TextDocumentConverter_a0a259fd10df5d599787dfbe154563772}
+
+
+Definition at line 33 of file textdocumentgenerator.\+h.
+
+\hypertarget{classOkular_1_1TextDocumentConverter_a5349ae9a7f4c1aaa74f2727fcbcc2ebf}{\index{Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}!Text\+Document\+Generator\+Private@{Text\+Document\+Generator\+Private}}
+\index{Text\+Document\+Generator\+Private@{Text\+Document\+Generator\+Private}!Okular\+::\+Text\+Document\+Converter@{Okular\+::\+Text\+Document\+Converter}}
+\subsubsection[{Text\+Document\+Generator\+Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Text\+Document\+Generator\+Private}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1TextDocumentConverter_a5349ae9a7f4c1aaa74f2727fcbcc2ebf}
+
+
+Definition at line 34 of file textdocumentgenerator.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{textdocumentgenerator_8h}{textdocumentgenerator.\+h}\item 
+core/\hyperlink{textdocumentgenerator_8cpp}{textdocumentgenerator.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\hypertarget{classOkularPlugin}{\section{Okular\+Plugin Class Reference}
+\label{classOkularPlugin}\index{Okular\+Plugin@{Okular\+Plugin}}
+}
+
+
+{\ttfamily \#include $<$okularplugin.\+h$>$}
+
+Inheritance diagram for Okular\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkularPlugin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOkularPlugin_ac6dba43f0757e77e69bba6cf1e2ced28}{register\+Types} (const char $\ast$uri)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file okularplugin.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkularPlugin_ac6dba43f0757e77e69bba6cf1e2ced28}{\index{Okular\+Plugin@{Okular\+Plugin}!register\+Types@{register\+Types}}
+\index{register\+Types@{register\+Types}!Okular\+Plugin@{Okular\+Plugin}}
+\subsubsection[{register\+Types}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+Plugin\+::register\+Types (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{uri}
+\end{DoxyParamCaption}
+)}}\label{classOkularPlugin_ac6dba43f0757e77e69bba6cf1e2ced28}
+
+
+Definition at line 32 of file okularplugin.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{
+34     Q\_ASSERT(uri == QLatin1String(\textcolor{stringliteral}{"org.kde.okular"}));
+35     KGlobal::locale()->insertCatalog(\textcolor{stringliteral}{"org.kde.okular"});
+36     qmlRegisterType<DocumentItem>(uri, 0, 1, \textcolor{stringliteral}{"DocumentItem"});
+37     qmlRegisterType<PageItem>(uri, 0, 1, \textcolor{stringliteral}{"PageItem"});
+38     qmlRegisterType<ThumbnailItem>(uri, 0, 1, \textcolor{stringliteral}{"ThumbnailItem"});
+39 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+active/components/\hyperlink{okularplugin_8h}{okularplugin.\+h}\item 
+active/components/\hyperlink{okularplugin_8cpp}{okularplugin.\+cpp}\end{DoxyCompactItemize}

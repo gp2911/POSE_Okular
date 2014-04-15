@@ -1,0 +1,97 @@
+\hypertarget{structGuiUtilsHelper}{\section{Gui\+Utils\+Helper Struct Reference}
+\label{structGuiUtilsHelper}\index{Gui\+Utils\+Helper@{Gui\+Utils\+Helper}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structGuiUtilsHelper_a4a629b599883f23b16d135d74e72f69a}{Gui\+Utils\+Helper} ()
+\item 
+Q\+Svg\+Renderer $\ast$ \hyperlink{structGuiUtilsHelper_a423bd781fc126be91b84afdadf4d50df}{svg\+Stamps} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ K\+Icon\+Loader $\ast$ $>$ \hyperlink{structGuiUtilsHelper_a0f4974a6fb35b1680415632aa1013fd1}{il}
+\item 
+std\+::auto\+\_\+ptr$<$ Q\+Svg\+Renderer $>$ \hyperlink{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{svg\+Stamp\+File}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file guiutils.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structGuiUtilsHelper_a4a629b599883f23b16d135d74e72f69a}{\index{Gui\+Utils\+Helper@{Gui\+Utils\+Helper}!Gui\+Utils\+Helper@{Gui\+Utils\+Helper}}
+\index{Gui\+Utils\+Helper@{Gui\+Utils\+Helper}!Gui\+Utils\+Helper@{Gui\+Utils\+Helper}}
+\subsubsection[{Gui\+Utils\+Helper}]{\setlength{\rightskip}{0pt plus 5cm}Gui\+Utils\+Helper\+::\+Gui\+Utils\+Helper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structGuiUtilsHelper_a4a629b599883f23b16d135d74e72f69a}
+
+
+Definition at line 32 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+33     \{
+34     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structGuiUtilsHelper_a423bd781fc126be91b84afdadf4d50df}{\index{Gui\+Utils\+Helper@{Gui\+Utils\+Helper}!svg\+Stamps@{svg\+Stamps}}
+\index{svg\+Stamps@{svg\+Stamps}!Gui\+Utils\+Helper@{Gui\+Utils\+Helper}}
+\subsubsection[{svg\+Stamps}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Svg\+Renderer $\ast$ Gui\+Utils\+Helper\+::svg\+Stamps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structGuiUtilsHelper_a423bd781fc126be91b84afdadf4d50df}
+
+
+Definition at line 42 of file guiutils.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{if} ( !\hyperlink{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{svgStampFile}.get() )
+45     \{
+46         \textcolor{keyword}{const} QString stampFile = KStandardDirs::locate( \textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/stamps.svg"} );
+47         \textcolor{keywordflow}{if} ( !stampFile.isEmpty() )
+48         \{
+49             \hyperlink{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{svgStampFile}.reset( \textcolor{keyword}{new} QSvgRenderer( stampFile ) );
+50             \textcolor{keywordflow}{if} ( !\hyperlink{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{svgStampFile}->isValid() )
+51             \{
+52                 \hyperlink{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{svgStampFile}.reset();
+53             \}
+54         \}
+55     \}
+56     \textcolor{keywordflow}{return} \hyperlink{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{svgStampFile}.get();
+57 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structGuiUtilsHelper_a0f4974a6fb35b1680415632aa1013fd1}{\index{Gui\+Utils\+Helper@{Gui\+Utils\+Helper}!il@{il}}
+\index{il@{il}!Gui\+Utils\+Helper@{Gui\+Utils\+Helper}}
+\subsubsection[{il}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$K\+Icon\+Loader $\ast$$>$ Gui\+Utils\+Helper\+::il}}\label{structGuiUtilsHelper_a0f4974a6fb35b1680415632aa1013fd1}
+
+
+Definition at line 38 of file guiutils.\+cpp.
+
+\hypertarget{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}{\index{Gui\+Utils\+Helper@{Gui\+Utils\+Helper}!svg\+Stamp\+File@{svg\+Stamp\+File}}
+\index{svg\+Stamp\+File@{svg\+Stamp\+File}!Gui\+Utils\+Helper@{Gui\+Utils\+Helper}}
+\subsubsection[{svg\+Stamp\+File}]{\setlength{\rightskip}{0pt plus 5cm}std\+::auto\+\_\+ptr$<$ Q\+Svg\+Renderer $>$ Gui\+Utils\+Helper\+::svg\+Stamp\+File}}\label{structGuiUtilsHelper_ab813ae9d515c979bdc124edb8e204aa0}
+
+
+Definition at line 39 of file guiutils.\+cpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{guiutils_8cpp}{guiutils.\+cpp}\end{DoxyCompactItemize}

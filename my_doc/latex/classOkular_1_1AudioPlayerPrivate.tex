@@ -1,0 +1,291 @@
+\hypertarget{classOkular_1_1AudioPlayerPrivate}{\section{Okular\+:\+:Audio\+Player\+Private Class Reference}
+\label{classOkular_1_1AudioPlayerPrivate}\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+}
+
+
+{\ttfamily \#include $<$audioplayer\+\_\+p.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1AudioPlayerPrivate_a3e0f7f2671d482e8a1a7b6bf8249f4ae}{Audio\+Player\+Private} (\hyperlink{classOkular_1_1AudioPlayer}{Audio\+Player} $\ast$qq)
+\item 
+\hyperlink{classOkular_1_1AudioPlayerPrivate_a2e17697e3cf8c16ac3df09d8c16ea98f}{$\sim$\+Audio\+Player\+Private} ()
+\item 
+int \hyperlink{classOkular_1_1AudioPlayerPrivate_a4380d8616ff06dfe750f7828940ccdcc}{new\+Id} () const 
+\item 
+bool \hyperlink{classOkular_1_1AudioPlayerPrivate_a5c0390dceece22f9cbae179df76909ee}{play} (const \hyperlink{classSoundInfo}{Sound\+Info} \&si)
+\item 
+void \hyperlink{classOkular_1_1AudioPlayerPrivate_a85e116f34091a22e04aa60dce6227f23}{stop\+Playings} ()
+\item 
+void \hyperlink{classOkular_1_1AudioPlayerPrivate_a440e5297367c1ffa7f548263a32a700a}{finished} (int)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1AudioPlayer}{Audio\+Player} $\ast$ \hyperlink{classOkular_1_1AudioPlayerPrivate_a6f941dd114ab7795d75c5e9a9c49e480}{q}
+\item 
+Q\+Hash$<$ int, \hyperlink{classPlayData}{Play\+Data} $\ast$ $>$ \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\+\_\+playing}
+\item 
+Q\+Signal\+Mapper \hyperlink{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{m\+\_\+mapper}
+\item 
+K\+Url \hyperlink{classOkular_1_1AudioPlayerPrivate_a086fc9c3cbe263bd8c67a6afa8b7373d}{m\+\_\+current\+Document}
+\item 
+\hyperlink{classOkular_1_1AudioPlayer_ab4aec223fcb227ab5cee9c525f6c5d6e}{Audio\+Player\+::\+State} \hyperlink{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}{m\+\_\+state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file audioplayer\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a3e0f7f2671d482e8a1a7b6bf8249f4ae}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!Audio\+Player\+Private@{Audio\+Player\+Private}}
+\index{Audio\+Player\+Private@{Audio\+Player\+Private}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{Audio\+Player\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Audio\+Player\+Private\+::\+Audio\+Player\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf Audio\+Player} $\ast$}]{qq}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1AudioPlayerPrivate_a3e0f7f2671d482e8a1a7b6bf8249f4ae}
+
+
+Definition at line 87 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+88     : \hyperlink{classOkular_1_1AudioPlayerPrivate_a6f941dd114ab7795d75c5e9a9c49e480}{q}( qq ), \hyperlink{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}{m\_state}( \hyperlink{classOkular_1_1AudioPlayer_ab4aec223fcb227ab5cee9c525f6c5d6ea8aff55f41e3daefa1c9a2268d7df5c3b}{AudioPlayer::StoppedState} )
+89 \{
+90     QObject::connect( &\hyperlink{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{m\_mapper}, SIGNAL(mapped(\textcolor{keywordtype}{int})), \hyperlink{classOkular_1_1AudioPlayerPrivate_a6f941dd114ab7795d75c5e9a9c49e480}{q}, SLOT(\hyperlink{classOkular_1_1AudioPlayerPrivate_a440e5297367c1ffa7f548263a32a700a}{finished}(\textcolor{keywordtype}{int})) );
+91 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a2e17697e3cf8c16ac3df09d8c16ea98f}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!````~Audio\+Player\+Private@{$\sim$\+Audio\+Player\+Private}}
+\index{````~Audio\+Player\+Private@{$\sim$\+Audio\+Player\+Private}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{$\sim$\+Audio\+Player\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Audio\+Player\+Private\+::$\sim$\+Audio\+Player\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1AudioPlayerPrivate_a2e17697e3cf8c16ac3df09d8c16ea98f}
+
+
+Definition at line 93 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+94 \{
+95     \hyperlink{classOkular_1_1AudioPlayerPrivate_a85e116f34091a22e04aa60dce6227f23}{stopPlayings}();
+96 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a440e5297367c1ffa7f548263a32a700a}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!finished@{finished}}
+\index{finished@{finished}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}void Audio\+Player\+Private\+::finished (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1AudioPlayerPrivate_a440e5297367c1ffa7f548263a32a700a}
+
+
+Definition at line 188 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+189 \{
+190     QHash< int, PlayData * >::iterator it = \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.find( \textcolor{keywordtype}{id} );
+191     \textcolor{keywordflow}{if} ( it == \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.end() )
+192         \textcolor{keywordflow}{return};
+193 
+194     \hyperlink{classSoundInfo}{SoundInfo} si = it.value()->m\_info;
+195     \textcolor{comment}{// if the sound must be repeated indefinitely, then start the playback}
+196     \textcolor{comment}{// again, otherwise destroy the PlayData as it's no more useful}
+197     \textcolor{keywordflow}{if} ( si.\hyperlink{classSoundInfo_a659c959da1310b4cfb1705b11b62a15f}{repeat} )
+198     \{
+199         it.value()->play();
+200     \}
+201     \textcolor{keywordflow}{else}
+202     \{
+203         \hyperlink{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{m\_mapper}.removeMappings( it.value()->m\_mediaobject );
+204         \textcolor{keyword}{delete} it.value();
+205         \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.erase( it );
+206         \hyperlink{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}{m\_state} = \hyperlink{classOkular_1_1AudioPlayer_ab4aec223fcb227ab5cee9c525f6c5d6ea8aff55f41e3daefa1c9a2268d7df5c3b}{AudioPlayer::StoppedState};
+207     \}
+208     kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"finished,"} << \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.count();
+209 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a4380d8616ff06dfe750f7828940ccdcc}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!new\+Id@{new\+Id}}
+\index{new\+Id@{new\+Id}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{new\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int Audio\+Player\+Private\+::new\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1AudioPlayerPrivate_a4380d8616ff06dfe750f7828940ccdcc}
+
+
+Definition at line 98 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+99 \{
+100     \textcolor{keywordtype}{int} newid = 0;
+101     QHash< int, PlayData * >::const\_iterator it;
+102     QHash< int, PlayData * >::const\_iterator itEnd = \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.constEnd();
+103     \textcolor{keywordflow}{do}
+104     \{
+105         newid = KRandom::random();
+106         it = \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.constFind( newid );
+107     \} \textcolor{keywordflow}{while} ( it != itEnd );
+108     \textcolor{keywordflow}{return} newid;
+109 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a5c0390dceece22f9cbae179df76909ee}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!play@{play}}
+\index{play@{play}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}bool Audio\+Player\+Private\+::play (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sound\+Info} \&}]{si}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1AudioPlayerPrivate_a5c0390dceece22f9cbae179df76909ee}
+
+
+Definition at line 111 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+112 \{
+113     kDebug() ;
+114     \hyperlink{classPlayData}{PlayData} * data = \textcolor{keyword}{new} \hyperlink{classPlayData}{PlayData}();
+115     data->\hyperlink{classPlayData_a4184644cad89295edf1ec12a86f4d571}{m\_output} = \textcolor{keyword}{new} Phonon::AudioOutput( Phonon::NotificationCategory );
+116     data->\hyperlink{classPlayData_a4184644cad89295edf1ec12a86f4d571}{m\_output}->setVolume( si.\hyperlink{classSoundInfo_aa65ec68c376b1377fab3113460305162}{volume} );
+117     data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject} = \textcolor{keyword}{new} Phonon::MediaObject();
+118     Phonon::createPath(data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}, data->\hyperlink{classPlayData_a4184644cad89295edf1ec12a86f4d571}{m\_output});
+119     data->\hyperlink{classPlayData_a60f9f37739df694ec4c185ec0c7d4666}{m\_info} = si;
+120     \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{false};
+121 
+122     \textcolor{keywordflow}{switch} ( si.\hyperlink{classSoundInfo_a2cacccbf3b0833dcef00458a098dfcc8}{sound}->\hyperlink{classOkular_1_1Sound_a6ad3b22679e6a6db9d69230ce94bf247}{soundType}() )
+123     \{
+124         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Sound_aed586d1d0455f4309b1309b9954d5c04a6b086485afe0876219888635155ab044}{Sound::External}:
+125         \{
+126             QString url = si.\hyperlink{classSoundInfo_a2cacccbf3b0833dcef00458a098dfcc8}{sound}->\hyperlink{classOkular_1_1Sound_a43f2240722f01fae2d962d5f186f0015}{url}();
+127             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"External,"} << url;
+128             \textcolor{keywordflow}{if} ( !url.isEmpty() )
+129             \{
+130                 \textcolor{keywordtype}{int} newid = \hyperlink{classOkular_1_1AudioPlayerPrivate_a4380d8616ff06dfe750f7828940ccdcc}{newId}();
+131                 \hyperlink{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{m\_mapper}.setMapping( data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}, newid );
+132                 KUrl newurl;
+133                 \textcolor{keywordflow}{if} ( KUrl::isRelativeUrl( url ) )
+134                 \{
+135                     newurl = \hyperlink{classOkular_1_1AudioPlayerPrivate_a086fc9c3cbe263bd8c67a6afa8b7373d}{m\_currentDocument};
+136                     newurl.setFileName( url );
+137                 \}
+138                 \textcolor{keywordflow}{else}
+139                 \{
+140                     newurl = url;
+141                 \}
+142                 data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}->setCurrentSource( newurl );
+143                 \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.insert( newid, data );
+144                 valid = \textcolor{keyword}{true};
+145             \}
+146             \textcolor{keywordflow}{break};
+147         \}
+148         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Sound_aed586d1d0455f4309b1309b9954d5c04a60ea85a24b9ea3862fd7a17b3b74952b}{Sound::Embedded}:
+149         \{
+150             QByteArray filedata = si.\hyperlink{classSoundInfo_a2cacccbf3b0833dcef00458a098dfcc8}{sound}->\hyperlink{classOkular_1_1Sound_ae06d3ef59d5d89556e0c43a4f9a1d3e9}{data}();
+151             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"Embedded,"} << filedata.length();
+152             \textcolor{keywordflow}{if} ( !filedata.isEmpty() )
+153             \{
+154                 kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"Mediaobject:"} << data->
+      \hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject};
+155                 \textcolor{keywordtype}{int} newid = \hyperlink{classOkular_1_1AudioPlayerPrivate_a4380d8616ff06dfe750f7828940ccdcc}{newId}();
+156                 \hyperlink{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{m\_mapper}.setMapping( data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}, newid );
+157                 data->\hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer} = \textcolor{keyword}{new} QBuffer();
+158                 data->\hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer}->setData( filedata );
+159                 data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}->setCurrentSource( Phonon::MediaSource( data->
+      \hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer} ) );
+160                 \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.insert( newid, data );
+161                 valid = \textcolor{keyword}{true};
+162             \}
+163             \textcolor{keywordflow}{break};
+164         \}
+165     \}
+166     \textcolor{keywordflow}{if} ( !valid )
+167     \{
+168         \textcolor{keyword}{delete} data;
+169         data = 0;
+170     \}
+171     \textcolor{keywordflow}{if} ( data )
+172     \{
+173         QObject::connect( data->\hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}, SIGNAL(\hyperlink{classOkular_1_1AudioPlayerPrivate_a440e5297367c1ffa7f548263a32a700a}{finished}()), &
+      \hyperlink{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{m\_mapper}, SLOT(map()) );
+174         kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"PLAY"};
+175         data->\hyperlink{classPlayData_afa3a824e496869e93a7935e8ea9bcf29}{play}();
+176         \hyperlink{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}{m\_state} = \hyperlink{classOkular_1_1AudioPlayer_ab4aec223fcb227ab5cee9c525f6c5d6eab5ce6ae3e434b775cda810ad636ff4fc}{AudioPlayer::PlayingState};
+177     \}
+178     \textcolor{keywordflow}{return} valid;
+179 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a85e116f34091a22e04aa60dce6227f23}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!stop\+Playings@{stop\+Playings}}
+\index{stop\+Playings@{stop\+Playings}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{stop\+Playings}]{\setlength{\rightskip}{0pt plus 5cm}void Audio\+Player\+Private\+::stop\+Playings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1AudioPlayerPrivate_a85e116f34091a22e04aa60dce6227f23}
+
+
+Definition at line 181 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+182 \{
+183     qDeleteAll( \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing} );
+184     \hyperlink{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{m\_playing}.clear();
+185     \hyperlink{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}{m\_state} = \hyperlink{classOkular_1_1AudioPlayer_ab4aec223fcb227ab5cee9c525f6c5d6ea8aff55f41e3daefa1c9a2268d7df5c3b}{AudioPlayer::StoppedState};
+186 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a086fc9c3cbe263bd8c67a6afa8b7373d}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!m\+\_\+current\+Document@{m\+\_\+current\+Document}}
+\index{m\+\_\+current\+Document@{m\+\_\+current\+Document}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{m\+\_\+current\+Document}]{\setlength{\rightskip}{0pt plus 5cm}K\+Url Okular\+::\+Audio\+Player\+Private\+::m\+\_\+current\+Document}}\label{classOkular_1_1AudioPlayerPrivate_a086fc9c3cbe263bd8c67a6afa8b7373d}
+
+
+Definition at line 44 of file audioplayer\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!m\+\_\+mapper@{m\+\_\+mapper}}
+\index{m\+\_\+mapper@{m\+\_\+mapper}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{m\+\_\+mapper}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Signal\+Mapper Okular\+::\+Audio\+Player\+Private\+::m\+\_\+mapper}}\label{classOkular_1_1AudioPlayerPrivate_ad5a18424521deef41a95b0781d157821}
+
+
+Definition at line 43 of file audioplayer\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!m\+\_\+playing@{m\+\_\+playing}}
+\index{m\+\_\+playing@{m\+\_\+playing}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{m\+\_\+playing}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$ int, {\bf Play\+Data} $\ast$ $>$ Okular\+::\+Audio\+Player\+Private\+::m\+\_\+playing}}\label{classOkular_1_1AudioPlayerPrivate_adbc0d0a9187f39a4be0d8b0e3d96ce68}
+
+
+Definition at line 42 of file audioplayer\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!m\+\_\+state@{m\+\_\+state}}
+\index{m\+\_\+state@{m\+\_\+state}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{m\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Audio\+Player\+::\+State} Okular\+::\+Audio\+Player\+Private\+::m\+\_\+state}}\label{classOkular_1_1AudioPlayerPrivate_a3efa5829a954428660181e223342a12c}
+
+
+Definition at line 45 of file audioplayer\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1AudioPlayerPrivate_a6f941dd114ab7795d75c5e9a9c49e480}{\index{Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}!q@{q}}
+\index{q@{q}!Okular\+::\+Audio\+Player\+Private@{Okular\+::\+Audio\+Player\+Private}}
+\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Audio\+Player}$\ast$ Okular\+::\+Audio\+Player\+Private\+::q}}\label{classOkular_1_1AudioPlayerPrivate_a6f941dd114ab7795d75c5e9a9c49e480}
+
+
+Definition at line 40 of file audioplayer\+\_\+p.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{audioplayer__p_8h}{audioplayer\+\_\+p.\+h}\item 
+core/\hyperlink{audioplayer_8cpp}{audioplayer.\+cpp}\end{DoxyCompactItemize}

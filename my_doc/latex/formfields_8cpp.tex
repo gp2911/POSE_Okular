@@ -1,0 +1,188 @@
+\hypertarget{formfields_8cpp}{\section{generators/poppler/formfields.cpp File Reference}
+\label{formfields_8cpp}\index{generators/poppler/formfields.\+cpp@{generators/poppler/formfields.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}formfields.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/action.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$poppler-\/qt4.\+h$>$}\\*
+{\ttfamily \#include $<$config-\/okular-\/poppler.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Action}{Okular\+::\+Action} $\ast$ \hyperlink{formfields_8cpp_ac8496a01bf2593a90b5063709cff7d99}{create\+Link\+From\+Poppler\+Link} (const Poppler\+::\+Link $\ast$poppler\+Link)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{formfields_8cpp_ac8496a01bf2593a90b5063709cff7d99}{\index{formfields.\+cpp@{formfields.\+cpp}!create\+Link\+From\+Poppler\+Link@{create\+Link\+From\+Poppler\+Link}}
+\index{create\+Link\+From\+Poppler\+Link@{create\+Link\+From\+Poppler\+Link}!formfields.\+cpp@{formfields.\+cpp}}
+\subsubsection[{create\+Link\+From\+Poppler\+Link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Action}$\ast$ create\+Link\+From\+Poppler\+Link (
+\begin{DoxyParamCaption}
+\item[{const Poppler\+::\+Link $\ast$}]{poppler\+Link}
+\end{DoxyParamCaption}
+)}}\label{formfields_8cpp_ac8496a01bf2593a90b5063709cff7d99}
+Note\+: the function will take ownership of the poppler\+Link object. 
+
+Definition at line 215 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+216 \{
+217     \hyperlink{classOkular_1_1Action}{Okular::Action} *link = 0;
+218     \textcolor{keyword}{const} Poppler::LinkGoto *popplerLinkGoto;
+219     \textcolor{keyword}{const} Poppler::LinkExecute *popplerLinkExecute;
+220     \textcolor{keyword}{const} Poppler::LinkBrowse *popplerLinkBrowse;
+221     \textcolor{keyword}{const} Poppler::LinkAction *popplerLinkAction;
+222     \textcolor{keyword}{const} Poppler::LinkSound *popplerLinkSound;
+223     \textcolor{keyword}{const} Poppler::LinkJavaScript *popplerLinkJS;
+224 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_20}
+225     \textcolor{keyword}{const} Poppler::LinkMovie *popplerLinkMovie;
+226 \textcolor{preprocessor}{#endif}
+227 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+228     \textcolor{keyword}{const} Poppler::LinkRendition *popplerLinkRendition;
+229 \textcolor{preprocessor}{#endif}
+230     \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport;
+231 
+232     \textcolor{keywordtype}{bool} deletePopplerLink = \textcolor{keyword}{true};
+233 
+234     \textcolor{keywordflow}{switch}(popplerLink->linkType())
+235     \{
+236         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_ad8955fd515cc3f63a14cdff6723e6c1ba6969c0e2e87cc779dae8be495740eda6}{Poppler::Link::None}:
+237         \textcolor{keywordflow}{break};
+238 
+239         \textcolor{keywordflow}{case} Poppler::Link::Goto:
+240         \{
+241             popplerLinkGoto = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkGoto *\textcolor{keyword}{>}(popplerLink);
+242             \textcolor{keyword}{const} Poppler::LinkDestination \hyperlink{synctex__parser__utils_8c_a723e06ace24a60ed94dca199595c08d2}{dest} = popplerLinkGoto->destination();
+243             \textcolor{keyword}{const} QString destName = dest.destinationName();
+244             \textcolor{keywordflow}{if} (destName.isEmpty())
+245             \{
+246                 fillViewportFromLinkDestination( viewport, dest );
+247                 link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1GotoAction}{Okular::GotoAction}(popplerLinkGoto->fileName(), viewport);
+248             \}
+249             \textcolor{keywordflow}{else}
+250             \{
+251                 link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1GotoAction}{Okular::GotoAction}(popplerLinkGoto->fileName(), destName);
+252             \}
+253         \}
+254         \textcolor{keywordflow}{break};
+255 
+256         \textcolor{keywordflow}{case} Poppler::Link::Execute:
+257             popplerLinkExecute = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkExecute *\textcolor{keyword}{>}(popplerLink);
+258             link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1ExecuteAction}{Okular::ExecuteAction}( popplerLinkExecute->fileName(), 
+      popplerLinkExecute->parameters() );
+259         \textcolor{keywordflow}{break};
+260 
+261         \textcolor{keywordflow}{case} Poppler::Link::Browse:
+262             popplerLinkBrowse = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkBrowse *\textcolor{keyword}{>}(popplerLink);
+263             link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1BrowseAction}{Okular::BrowseAction}( popplerLinkBrowse->url() );
+264         \textcolor{keywordflow}{break};
+265 
+266         \textcolor{keywordflow}{case} Poppler::Link::Action:
+267             popplerLinkAction = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkAction *\textcolor{keyword}{>}(popplerLink);
+268             link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1DocumentAction}{Okular::DocumentAction}( (
+      \hyperlink{classOkular_1_1DocumentAction_a59b262b16719b9b55005d7c143f9415d}{Okular::DocumentAction::DocumentActionType})popplerLinkAction->
+      actionType() );
+269         \textcolor{keywordflow}{break};
+270 
+271         \textcolor{keywordflow}{case} Poppler::Link::Sound:
+272         \{
+273             popplerLinkSound = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkSound *\textcolor{keyword}{>}(popplerLink);
+274             Poppler::SoundObject *popplerSound = popplerLinkSound->sound();
+275             \hyperlink{classOkular_1_1Sound}{Okular::Sound} *sound = \hyperlink{generator__pdf_8cpp_a7dfbf966808de19f5dca09740d6d459d}{createSoundFromPopplerSound}( 
+      popplerSound );
+276             link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction}( popplerLinkSound->volume(), popplerLinkSound
+      ->synchronous(), popplerLinkSound->repeat(), popplerLinkSound->mix(), sound );
+277         \}
+278         \textcolor{keywordflow}{break};
+279 
+280         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325ac61eb96a387ac39266f6eb71948796ea}{Poppler::Link::JavaScript}:
+281         \{
+282             popplerLinkJS = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkJavaScript *\textcolor{keyword}{>}(popplerLink);
+283             link = \textcolor{keyword}{new} \hyperlink{classOkular_1_1ScriptAction}{Okular::ScriptAction}( 
+      \hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325ac61eb96a387ac39266f6eb71948796ea}{Okular::JavaScript}, popplerLinkJS->script() );
+284         \}
+285         \textcolor{keywordflow}{break};
+286 
+287 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+288         \textcolor{keywordflow}{case} Poppler::Link::Rendition:
+289         \{
+290             deletePopplerLink = \textcolor{keyword}{false}; \textcolor{comment}{// we'll delete it inside resolveMediaLinkReferences() after we have
+       resolved all references}
+291 
+292             popplerLinkRendition = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkRendition *\textcolor{keyword}{>}( popplerLink );
+293 
+294             \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5}{Okular::RenditionAction::OperationType} operation = 
+      \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}{Okular::RenditionAction::None};
+295             \textcolor{keywordflow}{switch} ( popplerLinkRendition->action() )
+296             \{
+297                 \textcolor{keywordflow}{case} Poppler::LinkRendition::NoRendition:
+298                     operation = \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}{Okular::RenditionAction::None};
+299                     \textcolor{keywordflow}{break};
+300                 \textcolor{keywordflow}{case} Poppler::LinkRendition::PlayRendition:
+301                     operation = \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ad64f184845ab51b85d6a2371b5000dee}{Okular::RenditionAction::Play};
+302                     \textcolor{keywordflow}{break};
+303                 \textcolor{keywordflow}{case} Poppler::LinkRendition::StopRendition:
+304                     operation = \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a79f9d68e6cbe8e0a80749b2c76657067}{Okular::RenditionAction::Stop};
+305                     \textcolor{keywordflow}{break};
+306                 \textcolor{keywordflow}{case} Poppler::LinkRendition::PauseRendition:
+307                     operation = \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a8337042e5e7d0d92ca24b4b75da66e0a}{Okular::RenditionAction::Pause};
+308                     \textcolor{keywordflow}{break};
+309                 \textcolor{keywordflow}{case} Poppler::LinkRendition::ResumeRendition:
+310                     operation = \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5aad4b6626db0d0519cd9dbd78f0d48811}{Okular::RenditionAction::Resume};
+311                     \textcolor{keywordflow}{break};
+312             \};
+313 
+314             \hyperlink{classOkular_1_1Movie}{Okular::Movie} *movie = 0;
+315             \textcolor{keywordflow}{if} ( popplerLinkRendition->rendition() )
+316                 movie = createMovieFromPopplerScreen( popplerLinkRendition );
+317 
+318             \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} *renditionAction = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction}( operation, movie, 
+      \hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325ac61eb96a387ac39266f6eb71948796ea}{Okular::JavaScript}, popplerLinkRendition->script() );
+319             renditionAction->\hyperlink{classOkular_1_1Action_afbf20754be0d5b902482a1f704f74f74}{setNativeId}( QVariant::fromValue( popplerLinkRendition ) );
+320             link = renditionAction;
+321         \}
+322         \textcolor{keywordflow}{break};
+323 \textcolor{preprocessor}{#endif}
+324 
+325 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_20}
+326         \textcolor{keywordflow}{case} Poppler::Link::Movie:
+327         \{
+328             deletePopplerLink = \textcolor{keyword}{false}; \textcolor{comment}{// we'll delete it inside resolveMediaLinkReferences() after we have
+       resolved all references}
+329 
+330             popplerLinkMovie = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Poppler::LinkMovie *\textcolor{keyword}{>}( popplerLink );
+331 
+332             \hyperlink{classOkular_1_1MovieAction_ade5698179043c1075b37aa1dc7638331}{Okular::MovieAction::OperationType} operation = 
+      \hyperlink{classOkular_1_1MovieAction_ade5698179043c1075b37aa1dc7638331a4b5f94f7e4ee44aebe6d3a2838182e89}{Okular::MovieAction::Play};
+333             \textcolor{keywordflow}{switch} ( popplerLinkMovie->operation() )
+334             \{
+335                 \textcolor{keywordflow}{case} Poppler::LinkMovie::Play:
+336                     operation = \hyperlink{classOkular_1_1MovieAction_ade5698179043c1075b37aa1dc7638331a4b5f94f7e4ee44aebe6d3a2838182e89}{Okular::MovieAction::Play};
+337                     \textcolor{keywordflow}{break};
+338                 \textcolor{keywordflow}{case} Poppler::LinkMovie::Stop:
+339                     operation = \hyperlink{classOkular_1_1MovieAction_ade5698179043c1075b37aa1dc7638331a368dd1ed322e0906a89a36bcaf746433}{Okular::MovieAction::Stop};
+340                     \textcolor{keywordflow}{break};
+341                 \textcolor{keywordflow}{case} Poppler::LinkMovie::Pause:
+342                     operation = \hyperlink{classOkular_1_1MovieAction_ade5698179043c1075b37aa1dc7638331a4dd1333e70352ea60c08c6e43d9988ed}{Okular::MovieAction::Pause};
+343                     \textcolor{keywordflow}{break};
+344                 \textcolor{keywordflow}{case} Poppler::LinkMovie::Resume:
+345                     operation = \hyperlink{classOkular_1_1MovieAction_ade5698179043c1075b37aa1dc7638331a1240ff2be757441b04f4d63e40b1653c}{Okular::MovieAction::Resume};
+346                     \textcolor{keywordflow}{break};
+347             \};
+348 
+349             \hyperlink{classOkular_1_1MovieAction}{Okular::MovieAction} *movieAction = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1MovieAction}{Okular::MovieAction}( operation );
+350             movieAction->\hyperlink{classOkular_1_1Action_afbf20754be0d5b902482a1f704f74f74}{setNativeId}( QVariant::fromValue( popplerLinkMovie ) );
+351             link = movieAction;
+352         \}
+353         \textcolor{keywordflow}{break};
+354 \textcolor{preprocessor}{#endif}
+355     \}
+356 
+357     \textcolor{keywordflow}{if} ( deletePopplerLink )
+358         \textcolor{keyword}{delete} popplerLink;
+359 
+360     \textcolor{keywordflow}{return} link;
+361 \}
+\end{DoxyCode}

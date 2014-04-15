@@ -1,0 +1,234 @@
+\hypertarget{classOkular_1_1Annotation_1_1Revision}{\section{Okular\+:\+:Annotation\+:\+:Revision Class Reference}
+\label{classOkular_1_1Annotation_1_1Revision}\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAnnotation_1_1Revision_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Revision_a143928cf671b50b7499da6b17ca9870e}{Revision} ()
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Revision_a9931e609cc9c26d9bd80e239ac724eec}{$\sim$\+Revision} ()
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Revision_ae769473f0c798cb30678c24a66b35e2d}{Revision} (const \hyperlink{classOkular_1_1Annotation_1_1Revision}{Revision} \&other)
+\item 
+\hyperlink{classOkular_1_1Annotation_1_1Revision}{Revision} \& \hyperlink{classOkular_1_1Annotation_1_1Revision_abf18bb80dc7a84d7d5d2f62d74fb31aa}{operator=} (const \hyperlink{classOkular_1_1Annotation_1_1Revision}{Revision} \&other)
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Revision_a603e0e104f21d2d9eaa63526c65e38ff}{set\+Annotation} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$\hyperlink{classOkular_1_1Annotation_1_1Revision_ad6ba67028710fbe858e2deeb6b6b2aa4}{annotation})
+\item 
+\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$ \hyperlink{classOkular_1_1Annotation_1_1Revision_ad6ba67028710fbe858e2deeb6b6b2aa4}{annotation} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Revision_a327f88072bfa9e168f7707d074a3fe21}{set\+Scope} (\hyperlink{classOkular_1_1Annotation_a9f71f811fcd4d3524e199e7eee4b6390}{Revision\+Scope} \hyperlink{classOkular_1_1Annotation_1_1Revision_a3eb43b2d5cb012f056f8e87012a3e3c2}{scope})
+\item 
+\hyperlink{classOkular_1_1Annotation_a9f71f811fcd4d3524e199e7eee4b6390}{Revision\+Scope} \hyperlink{classOkular_1_1Annotation_1_1Revision_a3eb43b2d5cb012f056f8e87012a3e3c2}{scope} () const 
+\item 
+void \hyperlink{classOkular_1_1Annotation_1_1Revision_a2ce88a1c549a6823c152e9784bc125b0}{set\+Type} (\hyperlink{classOkular_1_1Annotation_a76de7f3bda49c63bd319763c6ac46bd3}{Revision\+Type} \hyperlink{classOkular_1_1Annotation_1_1Revision_ac0d4eb3d727f3eda5486f314f9ff645e}{type})
+\item 
+\hyperlink{classOkular_1_1Annotation_a76de7f3bda49c63bd319763c6ac46bd3}{Revision\+Type} \hyperlink{classOkular_1_1Annotation_1_1Revision_ac0d4eb3d727f3eda5486f314f9ff645e}{type} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classOkular_1_1Annotation_1_1Revision}{Revision} class contains all information about the revision of the annotation. 
+
+Definition at line 535 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_a143928cf671b50b7499da6b17ca9870e}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!Revision@{Revision}}
+\index{Revision@{Revision}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{Revision}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+::\+Revision\+::\+Revision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_a143928cf671b50b7499da6b17ca9870e}
+Creates a new revision. 
+
+Definition at line 437 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+438     : d( \textcolor{keyword}{new} Private )
+439 \{
+440 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_a9931e609cc9c26d9bd80e239ac724eec}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!````~Revision@{$\sim$\+Revision}}
+\index{````~Revision@{$\sim$\+Revision}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{$\sim$\+Revision}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+::\+Revision\+::$\sim$\+Revision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_a9931e609cc9c26d9bd80e239ac724eec}
+Destroys the revision. 
+
+Definition at line 442 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+443 \{
+444     \textcolor{keyword}{delete} d;
+445 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_ae769473f0c798cb30678c24a66b35e2d}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!Revision@{Revision}}
+\index{Revision@{Revision}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{Revision}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+::\+Revision\+::\+Revision (
+\begin{DoxyParamCaption}
+\item[{const {\bf Revision} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_ae769473f0c798cb30678c24a66b35e2d}
+
+
+Definition at line 447 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+448     : d( \textcolor{keyword}{new} Private )
+449 \{
+450     *d = *other.d;
+451 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_ad6ba67028710fbe858e2deeb6b6b2aa4}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!annotation@{annotation}}
+\index{annotation@{annotation}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation} $\ast$ Annotation\+::\+Revision\+::annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Revision_ad6ba67028710fbe858e2deeb6b6b2aa4}
+Returns the annotation the revision belongs to. 
+
+Definition at line 466 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+467 \{
+468     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Revision_1_1Private_a007aa928e40c95397445d577077d8328}{m\_annotation};
+469 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_abf18bb80dc7a84d7d5d2f62d74fb31aa}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!operator=@{operator=}}
+\index{operator=@{operator=}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Revision} \& Annotation\+::\+Revision\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Revision} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_abf18bb80dc7a84d7d5d2f62d74fb31aa}
+
+
+Definition at line 453 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+454 \{
+455     \textcolor{keywordflow}{if} ( \textcolor{keyword}{this} != &other )
+456         *d = *other.d;
+457 
+458     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+459 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_a3eb43b2d5cb012f056f8e87012a3e3c2}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!scope@{scope}}
+\index{scope@{scope}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{scope}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Revision\+Scope} Annotation\+::\+Revision\+::scope (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Revision_a3eb43b2d5cb012f056f8e87012a3e3c2}
+Returns the scope of the revision. 
+
+Definition at line 476 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+477 \{
+478     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Revision_1_1Private_aac1b9a60c31ba65a3301b3bf8a8c4d0f}{m\_scope};
+479 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_a603e0e104f21d2d9eaa63526c65e38ff}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!set\+Annotation@{set\+Annotation}}
+\index{set\+Annotation@{set\+Annotation}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{set\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Revision\+::set\+Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_a603e0e104f21d2d9eaa63526c65e38ff}
+Sets the {\ttfamily annotation} the revision belongs to. 
+
+Definition at line 461 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+462 \{
+463     d->\hyperlink{classAnnotation_1_1Revision_1_1Private_a007aa928e40c95397445d577077d8328}{m\_annotation} = \hyperlink{classOkular_1_1Annotation_1_1Revision_ad6ba67028710fbe858e2deeb6b6b2aa4}{annotation};
+464 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_a327f88072bfa9e168f7707d074a3fe21}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!set\+Scope@{set\+Scope}}
+\index{set\+Scope@{set\+Scope}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{set\+Scope}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Revision\+::set\+Scope (
+\begin{DoxyParamCaption}
+\item[{{\bf Revision\+Scope}}]{scope}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_a327f88072bfa9e168f7707d074a3fe21}
+Sets the {\ttfamily scope} of the revision. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1Annotation_a9f71f811fcd4d3524e199e7eee4b6390}{Revision\+Scope} 
+\end{DoxySeeAlso}
+
+
+Definition at line 471 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+472 \{
+473     d->\hyperlink{classAnnotation_1_1Revision_1_1Private_aac1b9a60c31ba65a3301b3bf8a8c4d0f}{m\_scope} = \hyperlink{classOkular_1_1Annotation_1_1Revision_a3eb43b2d5cb012f056f8e87012a3e3c2}{scope};
+474 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_a2ce88a1c549a6823c152e9784bc125b0}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{set\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+::\+Revision\+::set\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Revision\+Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Annotation_1_1Revision_a2ce88a1c549a6823c152e9784bc125b0}
+Sets the {\ttfamily type} of the revision. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1Annotation_a76de7f3bda49c63bd319763c6ac46bd3}{Revision\+Type} 
+\end{DoxySeeAlso}
+
+
+Definition at line 481 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+482 \{
+483     d->\hyperlink{classAnnotation_1_1Revision_1_1Private_a2cea518ec5656c3a4e48d18d40bcf7b5}{m\_type} = \hyperlink{classOkular_1_1Annotation_1_1Revision_ac0d4eb3d727f3eda5486f314f9ff645e}{type};
+484 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Annotation_1_1Revision_ac0d4eb3d727f3eda5486f314f9ff645e}{\index{Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}!type@{type}}
+\index{type@{type}!Okular\+::\+Annotation\+::\+Revision@{Okular\+::\+Annotation\+::\+Revision}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Revision\+Type} Annotation\+::\+Revision\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Annotation_1_1Revision_ac0d4eb3d727f3eda5486f314f9ff645e}
+Returns the type of the revision. 
+
+Definition at line 486 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+487 \{
+488     \textcolor{keywordflow}{return} d->\hyperlink{classAnnotation_1_1Revision_1_1Private_a2cea518ec5656c3a4e48d18d40bcf7b5}{m\_type};
+489 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

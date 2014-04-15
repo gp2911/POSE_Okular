@@ -1,0 +1,341 @@
+\hypertarget{classKIMGIOGenerator}{\section{K\+I\+M\+G\+I\+O\+Generator Class Reference}
+\label{classKIMGIOGenerator}\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+kimgio.\+h$>$}
+
+Inheritance diagram for K\+I\+M\+G\+I\+O\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKIMGIOGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKIMGIOGenerator_a9f7c9c6ddea5f552021d55b4522354c1}{K\+I\+M\+G\+I\+O\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+virtual \hyperlink{classKIMGIOGenerator_a889d228f1a5451f37e9dbd24ae166371}{$\sim$\+K\+I\+M\+G\+I\+O\+Generator} ()
+\item 
+bool \hyperlink{classKIMGIOGenerator_a81bb4e1e5f4e658a13d26643969deb4e}{load\+Document} (const Q\+String \&file\+Name, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+bool \hyperlink{classKIMGIOGenerator_ab087aca450c315f9c8ac421eb6695aed}{load\+Document\+From\+Data} (const Q\+Byte\+Array \&file\+Data, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+bool \hyperlink{classKIMGIOGenerator_abc6d7a3445fc9aa1857694b5229a31b9}{print} (Q\+Printer \&printer)
+\item 
+const \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} $\ast$ \hyperlink{classKIMGIOGenerator_af71464335590219ecdef032d6cb7d379}{generate\+Document\+Info} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classKIMGIOGenerator_a9956efbe6b0189b3787454a46ee04c10}{do\+Close\+Document} ()
+\item 
+Q\+Image \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image} (\hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$request)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file generator\+\_\+kimgio.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKIMGIOGenerator_a9f7c9c6ddea5f552021d55b4522354c1}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{K\+I\+M\+G\+I\+O\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}K\+I\+M\+G\+I\+O\+Generator\+::\+K\+I\+M\+G\+I\+O\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classKIMGIOGenerator_a9f7c9c6ddea5f552021d55b4522354c1}
+
+
+Definition at line 51 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+52     : \hyperlink{classOkular_1_1Generator_a9a493b3f23f5d8b34eae9fa7231556f6}{Generator}( parent, args )
+53 \{
+54     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1a4bb4a7fe37342df79c702b4b2aab8a}{ReadRawData} );
+55     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} );
+56     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a5ab094fe848056a0687d8a3c31c7fd4a}{TiledRendering} );
+57     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a7b40b8f6b9e4330bddff3cdf0baf07a9}{PrintNative} );
+58     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0bb6cbe50f2ffb616e25106b2e34c289}{PrintToFile} );
+59 
+60 \textcolor{comment}{/*}
+61 \textcolor{comment}{    setComponentData( *ownComponentData() );}
+62 \textcolor{comment}{}
+63 \textcolor{comment}{    setXMLFile( "gui.rc" );}
+64 \textcolor{comment}{    KAction * kimgio\_test = new KAction( this );}
+65 \textcolor{comment}{    kimgio\_test->setText( "Image test" );}
+66 \textcolor{comment}{    kimgio\_test->setIcon( KIcon( "smiley" ) );}
+67 \textcolor{comment}{    connect( kimgio\_test, SIGNAL(triggered(bool)), this, SLOT(slotTest()) );}
+68 \textcolor{comment}{    actionCollection()->addAction( "kimgio\_test", kimgio\_test );}
+69 \textcolor{comment}{*/}
+70 \}
+\end{DoxyCode}
+\hypertarget{classKIMGIOGenerator_a889d228f1a5451f37e9dbd24ae166371}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!````~K\+I\+M\+G\+I\+O\+Generator@{$\sim$\+K\+I\+M\+G\+I\+O\+Generator}}
+\index{````~K\+I\+M\+G\+I\+O\+Generator@{$\sim$\+K\+I\+M\+G\+I\+O\+Generator}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{$\sim$\+K\+I\+M\+G\+I\+O\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}K\+I\+M\+G\+I\+O\+Generator\+::$\sim$\+K\+I\+M\+G\+I\+O\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKIMGIOGenerator_a889d228f1a5451f37e9dbd24ae166371}
+
+
+Definition at line 72 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKIMGIOGenerator_a9956efbe6b0189b3787454a46ee04c10}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!do\+Close\+Document@{do\+Close\+Document}}
+\index{do\+Close\+Document@{do\+Close\+Document}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{do\+Close\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+I\+M\+G\+I\+O\+Generator\+::do\+Close\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKIMGIOGenerator_a9956efbe6b0189b3787454a46ee04c10}
+This method is called when the document is closed and not used any longer.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{Okular\+::\+Generator}.
+
+
+
+Definition at line 133 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+134 \{
+135     m\_img = QImage();
+136 
+137     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+138 \}
+\end{DoxyCode}
+\hypertarget{classKIMGIOGenerator_af71464335590219ecdef032d6cb7d379}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!generate\+Document\+Info@{generate\+Document\+Info}}
+\index{generate\+Document\+Info@{generate\+Document\+Info}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{generate\+Document\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Info} $\ast$ K\+I\+M\+G\+I\+O\+Generator\+::generate\+Document\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKIMGIOGenerator_af71464335590219ecdef032d6cb7d379}
+Returns the general information object of the document or 0 if no information are available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9993dd0a2415499e23d8394e7a447e98}{Okular\+::\+Generator}.
+
+
+
+Definition at line 189 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+190 \{
+191     \textcolor{keywordflow}{return} &docInfo;
+192 \}
+\end{DoxyCode}
+\hypertarget{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!image@{image}}
+\index{image@{image}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image K\+I\+M\+G\+I\+O\+Generator\+::image (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}
+Returns the image of the page as specified in the passed pixmap {\ttfamily request}.
+
+\begin{DoxyWarning}{Warning}
+this method may be executed in its own separated thread if the \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} is enabled! 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a6712c8d3c2759c3a1fcacbd503d3286e}{Okular\+::\+Generator}.
+
+
+
+Definition at line 140 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+141 \{
+142     \textcolor{comment}{// perform a smooth scaled generation}
+143     \textcolor{keywordflow}{if} ( request->isTile() )
+144     \{
+145         \textcolor{keyword}{const} QRect srcRect = request->normalizedRect().geometry( m\_img.width(), m\_img.height() );
+146         \textcolor{keyword}{const} QRect destRect = request->normalizedRect().geometry( request->width(), request->height() );
+147 
+148         QImage destImg( destRect.size(), QImage::Format\_RGB32 );
+149         destImg.fill( Qt::white );
+150 
+151         QPainter p( &destImg );
+152         p.setRenderHint( QPainter::SmoothPixmapTransform );
+153         p.drawImage( destImg.rect(), m\_img, srcRect );
+154 
+155         \textcolor{keywordflow}{return} destImg;
+156     \}
+157     \textcolor{keywordflow}{else}
+158     \{
+159         \textcolor{keywordtype}{int} width = request->width();
+160         \textcolor{keywordtype}{int} height = request->height();
+161         \textcolor{keywordflow}{if} ( request->page()->rotation() % 2 == 1 )
+162             \hyperlink{htmlextension_8h_a6aa0d61b42274f15f4a693b0c7bea484}{qSwap}( width, height );
+163 
+164         \textcolor{keywordflow}{return} m\_img.scaled( width, height, Qt::IgnoreAspectRatio, Qt::SmoothTransformation );
+165     \}
+166 \}
+\end{DoxyCode}
+\hypertarget{classKIMGIOGenerator_a81bb4e1e5f4e658a13d26643969deb4e}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!load\+Document@{load\+Document}}
+\index{load\+Document@{load\+Document}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{load\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+I\+M\+G\+I\+O\+Generator\+::load\+Document (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKIMGIOGenerator_a81bb4e1e5f4e658a13d26643969deb4e}
+Loads the document with the given {\ttfamily file\+Name} and fills the {\ttfamily pages\+Vector} with the parsed pages.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{Okular\+::\+Generator}.
+
+
+
+Definition at line 76 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keyword}{const} QString mime = KMimeType::findByFileContent(fileName)->name();
+79     \textcolor{keyword}{const} QStringList types = KImageIO::typeForMime(mime);
+80     \textcolor{keyword}{const} QByteArray type = !types.isEmpty() ? types[0].toAscii() : QByteArray();
+81     QImageReader reader( fileName, type );
+82     \textcolor{keywordflow}{if} ( !reader.read( &m\_img ) ) \{
+83         emit \hyperlink{classOkular_1_1Generator_a0f73eaeb88ccb1ecb73814a918244e03}{error}( i18n( \textcolor{stringliteral}{"Unable to load document: %1"}, reader.errorString() ), -1 );
+84         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+85     \}
+86     docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, mime );
+87 
+88     \textcolor{comment}{// Apply transformations dictated by Exif metadata}
+89     KExiv2Iface::KExiv2 exifMetadata;
+90     \textcolor{keywordflow}{if} ( exifMetadata.load( fileName ) ) \{
+91         exifMetadata.rotateExifQImage( m\_img, exifMetadata.getImageOrientation() );
+92     \}
+93 
+94     pagesVector.resize( 1 );
+95 
+96     \hyperlink{classOkular_1_1Page}{Okular::Page} * page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( 0, m\_img.width(), m\_img.height(), 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} );
+97     pagesVector[0] = page;
+98 
+99     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+100 \}
+\end{DoxyCode}
+\hypertarget{classKIMGIOGenerator_ab087aca450c315f9c8ac421eb6695aed}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!load\+Document\+From\+Data@{load\+Document\+From\+Data}}
+\index{load\+Document\+From\+Data@{load\+Document\+From\+Data}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{load\+Document\+From\+Data}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+I\+M\+G\+I\+O\+Generator\+::load\+Document\+From\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{file\+Data, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKIMGIOGenerator_ab087aca450c315f9c8ac421eb6695aed}
+Loads the document from the raw data {\ttfamily file\+Data} and fills the {\ttfamily pages\+Vector} with the parsed pages.
+
+\begin{DoxyNote}{Note}
+the Generator has to have the feature \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1a4bb4a7fe37342df79c702b4b2aab8a}{Read\+Raw\+Data} enabled
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_ad65d9a0e78c500475bb403ab0ffd640c}{Okular\+::\+Generator}.
+
+
+
+Definition at line 102 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keyword}{const} QString mime = KMimeType::findByContent(fileData)->name();
+105     \textcolor{keyword}{const} QStringList types = KImageIO::typeForMime(mime);
+106     \textcolor{keyword}{const} QByteArray type = !types.isEmpty() ? types[0].toAscii() : QByteArray();
+107     
+108     QBuffer buffer;
+109     buffer.setData( fileData );
+110     buffer.open( QIODevice::ReadOnly );
+111 
+112     QImageReader reader( &buffer, type );
+113     \textcolor{keywordflow}{if} ( !reader.read( &m\_img ) ) \{
+114         emit \hyperlink{classOkular_1_1Generator_a0f73eaeb88ccb1ecb73814a918244e03}{error}( i18n( \textcolor{stringliteral}{"Unable to load document: %1"}, reader.errorString() ), -1 );
+115         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+116     \}
+117     docInfo.\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, mime );
+118 
+119     \textcolor{comment}{// Apply transformations dictated by Exif metadata}
+120     KExiv2Iface::KExiv2 exifMetadata;
+121     \textcolor{keywordflow}{if} ( exifMetadata.loadFromData( fileData ) ) \{
+122         exifMetadata.rotateExifQImage( m\_img, exifMetadata.getImageOrientation() );
+123     \}
+124 
+125     pagesVector.resize( 1 );
+126 
+127     \hyperlink{classOkular_1_1Page}{Okular::Page} * page = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( 0, m\_img.width(), m\_img.height(), 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} );
+128     pagesVector[0] = page;
+129 
+130     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+131 \}
+\end{DoxyCode}
+\hypertarget{classKIMGIOGenerator_abc6d7a3445fc9aa1857694b5229a31b9}{\index{K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}!print@{print}}
+\index{print@{print}!K\+I\+M\+G\+I\+O\+Generator@{K\+I\+M\+G\+I\+O\+Generator}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+I\+M\+G\+I\+O\+Generator\+::print (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKIMGIOGenerator_abc6d7a3445fc9aa1857694b5229a31b9}
+This method is called to print the document to the given {\ttfamily printer}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_aa786d406a1b0db6679a3bc62bbe2dc82}{Okular\+::\+Generator}.
+
+
+
+Definition at line 168 of file generator\+\_\+kimgio.\+cpp.
+
+
+\begin{DoxyCode}
+169 \{
+170     QPainter p( &printer );
+171 
+172     QImage \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image}( m\_img );
+173 
+174     \textcolor{keywordflow}{if} ( ( \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image}.width() > printer.width() ) || ( \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image}.height() > printer.height() ) )
+175 
+176         \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image} = \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image}.scaled( printer.width(), printer.height(),
+177                               Qt::KeepAspectRatio, Qt::SmoothTransformation );
+178 
+179     p.drawImage( 0, 0, \hyperlink{classKIMGIOGenerator_a034b210dfc59396b6edda44cf123d252}{image} );
+180 
+181     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+182 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/kimgio/\hyperlink{generator__kimgio_8h}{generator\+\_\+kimgio.\+h}\item 
+generators/kimgio/\hyperlink{generator__kimgio_8cpp}{generator\+\_\+kimgio.\+cpp}\end{DoxyCompactItemize}

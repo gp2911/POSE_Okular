@@ -1,0 +1,417 @@
+\hypertarget{classKTreeViewSearchLine_1_1Private}{\section{K\+Tree\+View\+Search\+Line\+:\+:Private Class Reference}
+\label{classKTreeViewSearchLine_1_1Private}\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKTreeViewSearchLine_1_1Private_a72cdd6023812de4dbdcd4f6df30af236}{Private} (\hyperlink{classKTreeViewSearchLine}{K\+Tree\+View\+Search\+Line} $\ast$\+\_\+parent)
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_a64c412338db91da13121c5f9aa54e5ab}{rows\+Inserted} (const Q\+Model\+Index \&\hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}, int start, int end) const 
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_ade5c23ad56c4d74683a9bca30abf35e7}{tree\+View\+Deleted} (Q\+Object $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View})
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_a90f7407db99ff2b0e90cee93f3b78a08}{slot\+Column\+Activated} (Q\+Action $\ast$action)
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_a5a90bf6ebee7cd929d6e2b8a65784d0a}{slot\+All\+Visible\+Columns} ()
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_a7af91b0447869beb1e46dc82a4f5abd9}{slot\+Case\+Sensitive} ()
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_acd468d1796361a194388313fd119ba6e}{slot\+Regular\+Expression} ()
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_a5e46c84da7f32694b6de94982fb6d53a}{check\+Columns} ()
+\item 
+void \hyperlink{classKTreeViewSearchLine_1_1Private_ae08157a870a33a1ada866e2810ba59a3}{check\+Item\+Parents\+Not\+Visible} (Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View})
+\item 
+bool \hyperlink{classKTreeViewSearchLine_1_1Private_aec44f42e82456b943bfb15ee78a5d3ea}{check\+Item\+Parents\+Visible} (Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View}, const Q\+Model\+Index \&index)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKTreeViewSearchLine}{K\+Tree\+View\+Search\+Line} $\ast$ \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{tree\+Views}
+\item 
+Qt\+::\+Case\+Sensitivity \hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{case\+Sensitive}
+\item 
+bool \hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regular\+Expression}
+\item 
+bool \hyperlink{classKTreeViewSearchLine_1_1Private_ad57ae3ad4ebe425fbc7cb83021246e01}{active\+Search}
+\item 
+bool \hyperlink{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}{keep\+Parents\+Visible}
+\item 
+bool \hyperlink{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{can\+Choose\+Columns}
+\item 
+Q\+String \hyperlink{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{search}
+\item 
+int \hyperlink{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}{queued\+Searches}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{search\+Columns}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file ktreeviewsearchline.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKTreeViewSearchLine_1_1Private_a72cdd6023812de4dbdcd4f6df30af236}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!Private@{Private}}
+\index{Private@{Private}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}K\+Tree\+View\+Search\+Line\+::\+Private\+::\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf K\+Tree\+View\+Search\+Line} $\ast$}]{\+\_\+parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classKTreeViewSearchLine_1_1Private_a72cdd6023812de4dbdcd4f6df30af236}
+
+
+Definition at line 44 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+45       : \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}( \_parent ),
+46         \hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive}( Qt::CaseInsensitive ),
+47         \hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression}( \textcolor{keyword}{false} ),
+48         \hyperlink{classKTreeViewSearchLine_1_1Private_ad57ae3ad4ebe425fbc7cb83021246e01}{activeSearch}( \textcolor{keyword}{false} ),
+49         \hyperlink{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}{keepParentsVisible}( \textcolor{keyword}{true} ),
+50         \hyperlink{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{canChooseColumns}( \textcolor{keyword}{true} ),
+51         \hyperlink{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}{queuedSearches}( 0 )
+52     \{
+53     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKTreeViewSearchLine_1_1Private_a5e46c84da7f32694b6de94982fb6d53a}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!check\+Columns@{check\+Columns}}
+\index{check\+Columns@{check\+Columns}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{check\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::check\+Columns (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_a5e46c84da7f32694b6de94982fb6d53a}
+
+
+Definition at line 183 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+184 \{
+185   \hyperlink{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{canChooseColumns} = \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a6fbd99745faf5915d44244a52610f68c}{canChooseColumnsCheck}();
+186 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_ae08157a870a33a1ada866e2810ba59a3}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!check\+Item\+Parents\+Not\+Visible@{check\+Item\+Parents\+Not\+Visible}}
+\index{check\+Item\+Parents\+Not\+Visible@{check\+Item\+Parents\+Not\+Visible}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{check\+Item\+Parents\+Not\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::check\+Item\+Parents\+Not\+Visible (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_ae08157a870a33a1ada866e2810ba59a3}
+
+
+Definition at line 188 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+189 \{
+190 \textcolor{comment}{// TODO: PORT ME}
+191 \textcolor{preprocessor}{#if 0}
+192   QTreeWidgetItemIterator it( treeWidget );
+193 
+194   \textcolor{keywordflow}{for} ( ; *it; ++it ) \{
+195     QTreeWidgetItem *item = *it;
+196     item->treeWidget()->setItemHidden( item, !\hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a89b1a182dbc3ee70a560a62c607808ee}{itemMatches}( item, 
+      \hyperlink{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{search} ) );
+197   \}
+198 \textcolor{preprocessor}{#endif}
+199 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_aec44f42e82456b943bfb15ee78a5d3ea}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!check\+Item\+Parents\+Visible@{check\+Item\+Parents\+Visible}}
+\index{check\+Item\+Parents\+Visible@{check\+Item\+Parents\+Visible}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{check\+Item\+Parents\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::\+Private\+::check\+Item\+Parents\+Visible (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View, }
+\item[{const Q\+Model\+Index \&}]{index}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_aec44f42e82456b943bfb15ee78a5d3ea}
+Check whether {\ttfamily item}, its siblings and their descendents should be shown. Show or hide the items as necessary.
+
+{\ttfamily item} The list view item to start showing / hiding items at. Typically, this is the first child of another item, or the the first child of the list view. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if an item which should be visible is found, {\ttfamily false} if all items found should be hidden. If this function returns true and {\ttfamily highest\+Hidden\+Parent} was not 0, highest\+Hidden\+Parent will have been shown. 
+\end{DoxyReturn}
+
+
+Definition at line 210 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+211 \{
+212   \textcolor{keywordtype}{bool} childMatch = \textcolor{keyword}{false};
+213   \textcolor{keyword}{const} \textcolor{keywordtype}{int} rowcount = \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->model()->rowCount( index );
+214   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < rowcount; ++i )
+215     childMatch |= \hyperlink{classKTreeViewSearchLine_1_1Private_aec44f42e82456b943bfb15ee78a5d3ea}{checkItemParentsVisible}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}, 
+      \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->model()->index( i, 0, index ) );
+216 
+217   \textcolor{comment}{// Should this item be shown? It should if any children should be, or if it matches.}
+218   \textcolor{keyword}{const} QModelIndex parentindex = index.parent();
+219   \textcolor{keywordflow}{if} ( childMatch || \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a89b1a182dbc3ee70a560a62c607808ee}{itemMatches}( parentindex, index.row(), 
+      \hyperlink{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{search} ) ) \{
+220     \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->setRowHidden( index.row(), parentindex, false );
+221     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+222   \}
+223 
+224   \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->setRowHidden( index.row(), parentindex, true );
+225 
+226   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+227 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_a64c412338db91da13121c5f9aa54e5ab}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!rows\+Inserted@{rows\+Inserted}}
+\index{rows\+Inserted@{rows\+Inserted}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{rows\+Inserted}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::rows\+Inserted (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{parent, }
+\item[{int}]{start, }
+\item[{int}]{end}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_1_1Private_a64c412338db91da13121c5f9aa54e5ab}
+
+
+Definition at line 82 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+83 \{
+84   QAbstractItemModel* model = qobject\_cast<QAbstractItemModel*>( \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->sender() );
+85   \textcolor{keywordflow}{if} ( !model )
+86     \textcolor{keywordflow}{return};
+87 
+88   QTreeView* widget = 0L;
+89   \textcolor{keywordflow}{foreach} ( QTreeView* tree, \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews} )
+90     \textcolor{keywordflow}{if} ( tree->model() == model ) \{
+91       widget = tree;
+92       \textcolor{keywordflow}{break};
+93     \}
+94 
+95   \textcolor{keywordflow}{if} ( !widget )
+96     \textcolor{keywordflow}{return};
+97 
+98   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = start; i <= end; ++i ) \{
+99      widget->setRowHidden( i, parentIndex, !\hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a89b1a182dbc3ee70a560a62c607808ee}{itemMatches}( parentIndex, i, 
+      \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->text() ) );
+100   \}
+101 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_a5a90bf6ebee7cd929d6e2b8a65784d0a}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!slot\+All\+Visible\+Columns@{slot\+All\+Visible\+Columns}}
+\index{slot\+All\+Visible\+Columns@{slot\+All\+Visible\+Columns}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{slot\+All\+Visible\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::slot\+All\+Visible\+Columns (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_a5a90bf6ebee7cd929d6e2b8a65784d0a}
+
+
+Definition at line 148 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+149 \{
+150   \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() )
+151     \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.append( 0 );
+152   \textcolor{keywordflow}{else}
+153     \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.clear();
+154 
+155   \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+156 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_a7af91b0447869beb1e46dc82a4f5abd9}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!slot\+Case\+Sensitive@{slot\+Case\+Sensitive}}
+\index{slot\+Case\+Sensitive@{slot\+Case\+Sensitive}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{slot\+Case\+Sensitive}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::slot\+Case\+Sensitive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_a7af91b0447869beb1e46dc82a4f5abd9}
+
+
+Definition at line 158 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+159 \{
+160   \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive} == Qt::CaseSensitive)
+161     \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}{setCaseSensitivity}( Qt::CaseInsensitive );
+162   \textcolor{keywordflow}{else}
+163     \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}{setCaseSensitivity}( Qt::CaseSensitive );
+164 
+165   \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+166 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_a90f7407db99ff2b0e90cee93f3b78a08}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!slot\+Column\+Activated@{slot\+Column\+Activated}}
+\index{slot\+Column\+Activated@{slot\+Column\+Activated}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{slot\+Column\+Activated}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::slot\+Column\+Activated (
+\begin{DoxyParamCaption}
+\item[{Q\+Action $\ast$}]{action}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_a90f7407db99ff2b0e90cee93f3b78a08}
+
+
+Definition at line 109 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+110 \{
+111   \textcolor{keywordflow}{if} ( !action )
+112     \textcolor{keywordflow}{return};
+113 
+114   \textcolor{keywordtype}{bool} ok;
+115   \textcolor{keywordtype}{int} column = action->data().toInt( &ok );
+116 
+117   \textcolor{keywordflow}{if} ( !ok )
+118     \textcolor{keywordflow}{return};
+119 
+120   \textcolor{keywordflow}{if} ( action->isChecked() ) \{
+121     \textcolor{keywordflow}{if} ( !\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() ) \{
+122       \textcolor{keywordflow}{if} ( !\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.contains( column ) )
+123         \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.append( column );
+124 
+125       \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.count() == \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.first()->header()->count() - 
+      \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.first()->header()->hiddenSectionCount() )
+126         \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.clear();
+127 
+128     \} \textcolor{keywordflow}{else} \{
+129       \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.append( column );
+130     \}
+131   \} \textcolor{keywordflow}{else} \{
+132     \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() ) \{
+133       QHeaderView* \textcolor{keyword}{const} header = \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.first()->header();
+134 
+135       \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < header->count(); i++ ) \{
+136         \textcolor{keywordflow}{if} ( i != column && !header->isSectionHidden( i ) )
+137           \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.append( i );
+138       \}
+139 
+140     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.contains( column ) ) \{
+141       \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.removeAll( column );
+142     \}
+143   \}
+144 
+145   \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+146 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_acd468d1796361a194388313fd119ba6e}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!slot\+Regular\+Expression@{slot\+Regular\+Expression}}
+\index{slot\+Regular\+Expression@{slot\+Regular\+Expression}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{slot\+Regular\+Expression}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::slot\+Regular\+Expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_acd468d1796361a194388313fd119ba6e}
+
+
+Definition at line 168 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+169 \{
+170   \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression} )
+171     \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{setRegularExpression}( \textcolor{keyword}{false} );
+172   \textcolor{keywordflow}{else}
+173     \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{setRegularExpression}( \textcolor{keyword}{true} );
+174 
+175   \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->\hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+176 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_1_1Private_ade5c23ad56c4d74683a9bca30abf35e7}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!tree\+View\+Deleted@{tree\+View\+Deleted}}
+\index{tree\+View\+Deleted@{tree\+View\+Deleted}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{tree\+View\+Deleted}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::\+Private\+::tree\+View\+Deleted (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_1_1Private_ade5c23ad56c4d74683a9bca30abf35e7}
+
+
+Definition at line 103 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105   \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.removeAll( static\_cast<QTreeView *>( \textcolor{keywordtype}{object} ) );
+106   \hyperlink{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{parent}->setEnabled( \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.isEmpty() );
+107 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classKTreeViewSearchLine_1_1Private_ad57ae3ad4ebe425fbc7cb83021246e01}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!active\+Search@{active\+Search}}
+\index{active\+Search@{active\+Search}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{active\+Search}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::\+Private\+::active\+Search}}\label{classKTreeViewSearchLine_1_1Private_ad57ae3ad4ebe425fbc7cb83021246e01}
+
+
+Definition at line 59 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!can\+Choose\+Columns@{can\+Choose\+Columns}}
+\index{can\+Choose\+Columns@{can\+Choose\+Columns}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{can\+Choose\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::\+Private\+::can\+Choose\+Columns}}\label{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}
+
+
+Definition at line 61 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!case\+Sensitive@{case\+Sensitive}}
+\index{case\+Sensitive@{case\+Sensitive}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{case\+Sensitive}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Case\+Sensitivity K\+Tree\+View\+Search\+Line\+::\+Private\+::case\+Sensitive}}\label{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}
+
+
+Definition at line 57 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!keep\+Parents\+Visible@{keep\+Parents\+Visible}}
+\index{keep\+Parents\+Visible@{keep\+Parents\+Visible}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{keep\+Parents\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::\+Private\+::keep\+Parents\+Visible}}\label{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}
+
+
+Definition at line 60 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!parent@{parent}}
+\index{parent@{parent}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\+Tree\+View\+Search\+Line}$\ast$ K\+Tree\+View\+Search\+Line\+::\+Private\+::parent}}\label{classKTreeViewSearchLine_1_1Private_a423d46500ac68a1bd6b552ef18d1ef5a}
+
+
+Definition at line 55 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!queued\+Searches@{queued\+Searches}}
+\index{queued\+Searches@{queued\+Searches}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{queued\+Searches}]{\setlength{\rightskip}{0pt plus 5cm}int K\+Tree\+View\+Search\+Line\+::\+Private\+::queued\+Searches}}\label{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}
+
+
+Definition at line 63 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!regular\+Expression@{regular\+Expression}}
+\index{regular\+Expression@{regular\+Expression}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{regular\+Expression}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::\+Private\+::regular\+Expression}}\label{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}
+
+
+Definition at line 58 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!search@{search}}
+\index{search@{search}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String K\+Tree\+View\+Search\+Line\+::\+Private\+::search}}\label{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}
+
+
+Definition at line 62 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!search\+Columns@{search\+Columns}}
+\index{search\+Columns@{search\+Columns}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{search\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$int$>$ K\+Tree\+View\+Search\+Line\+::\+Private\+::search\+Columns}}\label{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}
+
+
+Definition at line 64 of file ktreeviewsearchline.\+cpp.
+
+\hypertarget{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{\index{K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}!tree\+Views@{tree\+Views}}
+\index{tree\+Views@{tree\+Views}!K\+Tree\+View\+Search\+Line\+::\+Private@{K\+Tree\+View\+Search\+Line\+::\+Private}}
+\subsubsection[{tree\+Views}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$Q\+Tree\+View $\ast$$>$ K\+Tree\+View\+Search\+Line\+::\+Private\+::tree\+Views}}\label{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}
+
+
+Definition at line 56 of file ktreeviewsearchline.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{ktreeviewsearchline_8cpp}{ktreeviewsearchline.\+cpp}\end{DoxyCompactItemize}

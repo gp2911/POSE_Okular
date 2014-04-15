@@ -1,0 +1,109 @@
+\hypertarget{classMockEditor}{\section{Mock\+Editor Class Reference}
+\label{classMockEditor}\index{Mock\+Editor@{Mock\+Editor}}
+}
+Inheritance diagram for Mock\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMockEditor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMockEditor_a8fcc3e4efd66471dd7f074dcdf102bda}{Mock\+Editor} (\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$annot, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$doc)
+\item 
+Q\+String \hyperlink{classMockEditor_a7e31fcc95a4e86917efc668ae330e3a5}{contents} ()
+\item 
+int \hyperlink{classMockEditor_ac81d280b47ea3019c0074ed76157aca7}{cursor\+Pos} ()
+\item 
+int \hyperlink{classMockEditor_ada481b78c1d051dc727b1ce99d3cca7e}{anchor\+Pos} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 50 of file editannotationcontentstest.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMockEditor_a8fcc3e4efd66471dd7f074dcdf102bda}{\index{Mock\+Editor@{Mock\+Editor}!Mock\+Editor@{Mock\+Editor}}
+\index{Mock\+Editor@{Mock\+Editor}!Mock\+Editor@{Mock\+Editor}}
+\subsubsection[{Mock\+Editor}]{\setlength{\rightskip}{0pt plus 5cm}Mock\+Editor\+::\+Mock\+Editor (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{annot, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{doc}
+\end{DoxyParamCaption}
+)}}\label{classMockEditor_a8fcc3e4efd66471dd7f074dcdf102bda}
+
+
+Definition at line 72 of file editannotationcontentstest.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74     m\_annot = annot;
+75     m\_document = doc;
+76     connect( m\_document, SIGNAL(annotationContentsChangedByUndoRedo(
+      \hyperlink{classOkular_1_1Annotation}{Okular::Annotation}*,QString,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+77              \textcolor{keyword}{this}, SLOT(slotAnnotationContentsChangedByUndoRedo(
+      \hyperlink{classOkular_1_1Annotation}{Okular::Annotation}*,QString,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})));
+78     m\_cursorPos = 0;
+79     m\_anchorPos = 0;
+80     m\_contents = annot->\hyperlink{classOkular_1_1Annotation_a3b0c9fcbe9d01e06bfcc7216d0035908}{contents}();
+81 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMockEditor_ada481b78c1d051dc727b1ce99d3cca7e}{\index{Mock\+Editor@{Mock\+Editor}!anchor\+Pos@{anchor\+Pos}}
+\index{anchor\+Pos@{anchor\+Pos}!Mock\+Editor@{Mock\+Editor}}
+\subsubsection[{anchor\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}int Mock\+Editor\+::anchor\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMockEditor_ada481b78c1d051dc727b1ce99d3cca7e}
+
+
+Definition at line 58 of file editannotationcontentstest.\+cpp.
+
+
+\begin{DoxyCode}
+58 \{ \textcolor{keywordflow}{return} m\_anchorPos; \}
+\end{DoxyCode}
+\hypertarget{classMockEditor_a7e31fcc95a4e86917efc668ae330e3a5}{\index{Mock\+Editor@{Mock\+Editor}!contents@{contents}}
+\index{contents@{contents}!Mock\+Editor@{Mock\+Editor}}
+\subsubsection[{contents}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Mock\+Editor\+::contents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMockEditor_a7e31fcc95a4e86917efc668ae330e3a5}
+
+
+Definition at line 56 of file editannotationcontentstest.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{ \textcolor{keywordflow}{return} m\_contents; \}
+\end{DoxyCode}
+\hypertarget{classMockEditor_ac81d280b47ea3019c0074ed76157aca7}{\index{Mock\+Editor@{Mock\+Editor}!cursor\+Pos@{cursor\+Pos}}
+\index{cursor\+Pos@{cursor\+Pos}!Mock\+Editor@{Mock\+Editor}}
+\subsubsection[{cursor\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}int Mock\+Editor\+::cursor\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMockEditor_ac81d280b47ea3019c0074ed76157aca7}
+
+
+Definition at line 57 of file editannotationcontentstest.\+cpp.
+
+
+\begin{DoxyCode}
+57 \{ \textcolor{keywordflow}{return} m\_cursorPos; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/\hyperlink{editannotationcontentstest_8cpp}{editannotationcontentstest.\+cpp}\end{DoxyCompactItemize}

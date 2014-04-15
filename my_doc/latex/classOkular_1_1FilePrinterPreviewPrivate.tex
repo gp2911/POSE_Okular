@@ -1,0 +1,211 @@
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate}{\section{Okular\+:\+:File\+Printer\+Preview\+Private Class Reference}
+\label{classOkular_1_1FilePrinterPreviewPrivate}\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a3b1e623e825f0075856f9e86b16a5b14}{File\+Printer\+Preview\+Private} (\hyperlink{classOkular_1_1FilePrinterPreview}{File\+Printer\+Preview} $\ast$host, const Q\+String \&\+\_\+filename)
+\item 
+void \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab6b3b5a6370f24c37659fd368204e8be}{get\+Part} ()
+\item 
+bool \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a580744cc58ebb9944919312967032fb2}{do\+Preview} ()
+\item 
+void \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a239bacdea4d19ee0a7b3c0c9290ede16}{fail} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FilePrinterPreview}{File\+Printer\+Preview} $\ast$ \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{q}
+\item 
+Q\+Widget $\ast$ \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_acfd3457414768ef0f6e48a4cb96f21cb}{main\+Widget}
+\item 
+Q\+String \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_abcf91fd67cbf07a71e6abb5c94b2e946}{filename}
+\item 
+\hyperlink{classKParts_1_1ReadOnlyPart}{K\+Parts\+::\+Read\+Only\+Part} $\ast$ \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{preview\+Part}
+\item 
+Q\+Widget $\ast$ \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}{fail\+Message}
+\item 
+K\+Shared\+Config\+::\+Ptr \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa6b8b7d0af721ba3f6497c3a954c600b}{config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file fileprinterpreview.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_a3b1e623e825f0075856f9e86b16a5b14}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!File\+Printer\+Preview\+Private@{File\+Printer\+Preview\+Private}}
+\index{File\+Printer\+Preview\+Private@{File\+Printer\+Preview\+Private}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{File\+Printer\+Preview\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+File\+Printer\+Preview\+Private\+::\+File\+Printer\+Preview\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf File\+Printer\+Preview} $\ast$}]{host, }
+\item[{const Q\+String \&}]{\+\_\+filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1FilePrinterPreviewPrivate_a3b1e623e825f0075856f9e86b16a5b14}
+
+
+Definition at line 36 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+37         : \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{q}(host)
+38         , \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_acfd3457414768ef0f6e48a4cb96f21cb}{mainWidget}(\textcolor{keyword}{new} QWidget(host))
+39         , \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart}(0)
+40         , \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}{failMessage}(0)
+41         , \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa6b8b7d0af721ba3f6497c3a954c600b}{config}(KSharedConfig::openConfig(QString::fromLatin1(\textcolor{stringliteral}{"okularrc"})))
+42 
+43     \{
+44         \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_abcf91fd67cbf07a71e6abb5c94b2e946}{filename} = \_filename;
+45     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_a580744cc58ebb9944919312967032fb2}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!do\+Preview@{do\+Preview}}
+\index{do\+Preview@{do\+Preview}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{do\+Preview}]{\setlength{\rightskip}{0pt plus 5cm}bool File\+Printer\+Preview\+Private\+::do\+Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1FilePrinterPreviewPrivate_a580744cc58ebb9944919312967032fb2}
+
+
+Definition at line 93 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+94 \{
+95     \textcolor{keywordflow}{if} (!QFile::exists(\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_abcf91fd67cbf07a71e6abb5c94b2e946}{filename})) \{
+96         kWarning() << \textcolor{stringliteral}{"Nothing was produced to be previewed"};
+97         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+98     \}
+99 
+100     \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab6b3b5a6370f24c37659fd368204e8be}{getPart}();
+101     \textcolor{keywordflow}{if} (!\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart}) \{
+102         \textcolor{comment}{//TODO: error dialog}
+103         kWarning() << \textcolor{stringliteral}{"Could not find a PS viewer for the preview dialog"};
+104         \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a239bacdea4d19ee0a7b3c0c9290ede16}{fail}();
+105         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+106     \} \textcolor{keywordflow}{else} \{
+107         \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{q}->setMainWidget(\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart}->\hyperlink{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{widget}());
+108         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart}->\hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{openUrl}(\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_abcf91fd67cbf07a71e6abb5c94b2e946}{filename});
+109     \}
+110 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_a239bacdea4d19ee0a7b3c0c9290ede16}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!fail@{fail}}
+\index{fail@{fail}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{fail}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Printer\+Preview\+Private\+::fail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1FilePrinterPreviewPrivate_a239bacdea4d19ee0a7b3c0c9290ede16}
+
+
+Definition at line 112 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114     \textcolor{keywordflow}{if} (!\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}{failMessage}) \{
+115         \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}{failMessage} = \textcolor{keyword}{new} QLabel(i18n(\textcolor{stringliteral}{"Could not load print preview part"}), 
+      \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{q});
+116     \}
+117     \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{q}->setMainWidget(\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}{failMessage});
+118 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_ab6b3b5a6370f24c37659fd368204e8be}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!get\+Part@{get\+Part}}
+\index{get\+Part@{get\+Part}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{get\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Printer\+Preview\+Private\+::get\+Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1FilePrinterPreviewPrivate_ab6b3b5a6370f24c37659fd368204e8be}
+
+
+Definition at line 63 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{if} (\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart}) \{
+66         kDebug(500) << \textcolor{stringliteral}{"already got a part"};
+67         \textcolor{keywordflow}{return};
+68     \}
+69     kDebug(500) << \textcolor{stringliteral}{"querying trader for application/ps service"};
+70 
+71     KPluginFactory *factory(0);
+72     KService::List offers =
+73         KMimeTypeTrader::self()->query(\textcolor{stringliteral}{"application/postscript"}, \textcolor{stringliteral}{"KParts/ReadOnlyPart"});
+74 
+75     KService::List::ConstIterator it = offers.constBegin();
+76     \textcolor{keywordflow}{while} (!factory && it != offers.constEnd()) \{
+77         KPluginLoader loader(**it);
+78         factory = loader.factory();
+79         \textcolor{keywordflow}{if} (!factory) \{
+80             kDebug(500) << \textcolor{stringliteral}{"Loading failed:"} << loader.errorString();
+81         \}
+82         ++it;
+83     \}
+84     \textcolor{keywordflow}{if} (factory) \{
+85         kDebug(500) << \textcolor{stringliteral}{"Trying to create a part"};
+86         \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart} = factory->create<\hyperlink{classKParts_1_1ReadOnlyPart}{KParts::ReadOnlyPart}>(
+      \hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{q}, (QVariantList() << \textcolor{stringliteral}{"Print/Preview"}));
+87         \textcolor{keywordflow}{if} (!\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{previewPart}) \{
+88             kDebug(500) << \textcolor{stringliteral}{"Part creation failed"};
+89         \}
+90     \}
+91 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_aa6b8b7d0af721ba3f6497c3a954c600b}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!config@{config}}
+\index{config@{config}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}K\+Shared\+Config\+::\+Ptr Okular\+::\+File\+Printer\+Preview\+Private\+::config}}\label{classOkular_1_1FilePrinterPreviewPrivate_aa6b8b7d0af721ba3f6497c3a954c600b}
+
+
+Definition at line 60 of file fileprinterpreview.\+cpp.
+
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!fail\+Message@{fail\+Message}}
+\index{fail\+Message@{fail\+Message}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{fail\+Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Okular\+::\+File\+Printer\+Preview\+Private\+::fail\+Message}}\label{classOkular_1_1FilePrinterPreviewPrivate_ab0fea736743388ea1d4b80415dee459c}
+
+
+Definition at line 58 of file fileprinterpreview.\+cpp.
+
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_abcf91fd67cbf07a71e6abb5c94b2e946}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!filename@{filename}}
+\index{filename@{filename}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+File\+Printer\+Preview\+Private\+::filename}}\label{classOkular_1_1FilePrinterPreviewPrivate_abcf91fd67cbf07a71e6abb5c94b2e946}
+
+
+Definition at line 55 of file fileprinterpreview.\+cpp.
+
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_acfd3457414768ef0f6e48a4cb96f21cb}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!main\+Widget@{main\+Widget}}
+\index{main\+Widget@{main\+Widget}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{main\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Okular\+::\+File\+Printer\+Preview\+Private\+::main\+Widget}}\label{classOkular_1_1FilePrinterPreviewPrivate_acfd3457414768ef0f6e48a4cb96f21cb}
+
+
+Definition at line 53 of file fileprinterpreview.\+cpp.
+
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!preview\+Part@{preview\+Part}}
+\index{preview\+Part@{preview\+Part}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{preview\+Part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\+Parts\+::\+Read\+Only\+Part}$\ast$ Okular\+::\+File\+Printer\+Preview\+Private\+::preview\+Part}}\label{classOkular_1_1FilePrinterPreviewPrivate_aa4c0056a7613427e946e5eaede65d432}
+
+
+Definition at line 57 of file fileprinterpreview.\+cpp.
+
+\hypertarget{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}{\index{Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}!q@{q}}
+\index{q@{q}!Okular\+::\+File\+Printer\+Preview\+Private@{Okular\+::\+File\+Printer\+Preview\+Private}}
+\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+Printer\+Preview}$\ast$ Okular\+::\+File\+Printer\+Preview\+Private\+::q}}\label{classOkular_1_1FilePrinterPreviewPrivate_a56292691ae86eccc0845583b01002728}
+
+
+Definition at line 51 of file fileprinterpreview.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{fileprinterpreview_8cpp}{fileprinterpreview.\+cpp}\end{DoxyCompactItemize}

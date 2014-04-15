@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['kdjvu',['KDjVu',['../classKDjVu_1_1Page.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::Page::KDjVu()'],['../classKDjVu_1_1Link.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::Link::KDjVu()'],['../classKDjVu_1_1PageLink.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::PageLink::KDjVu()'],['../classKDjVu_1_1UrlLink.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::UrlLink::KDjVu()'],['../classKDjVu_1_1Annotation.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::Annotation::KDjVu()'],['../classKDjVu_1_1TextAnnotation.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::TextAnnotation::KDjVu()'],['../classKDjVu_1_1LineAnnotation.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::LineAnnotation::KDjVu()'],['../classKDjVu_1_1TextEntity.html#a4241ce0336d22245ffdb13dd5cb6edcc',1,'KDjVu::TextEntity::KDjVu()']]]
+];

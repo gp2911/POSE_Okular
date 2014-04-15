@@ -1,0 +1,402 @@
+\hypertarget{classXpsPage}{\section{Xps\+Page Class Reference}
+\label{classXpsPage}\index{Xps\+Page@{Xps\+Page}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+xps.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classXpsPage_a96d35a768de0582d565bf7b4de3b89ba}{Xps\+Page} (\hyperlink{classXpsFile}{Xps\+File} $\ast$file, const Q\+String \&file\+Name)
+\item 
+\hyperlink{classXpsPage_a1fca8c3ea39fe873a974c84a3e013450}{$\sim$\+Xps\+Page} ()
+\item 
+Q\+Size\+F \hyperlink{classXpsPage_ac5e7fcc989660f848e7c30d195c53585}{size} () const 
+\item 
+bool \hyperlink{classXpsPage_a2d3755b9f7869da5fd52cbb9f4799123}{render\+To\+Image} (Q\+Image $\ast$p)
+\item 
+bool \hyperlink{classXpsPage_a51efc63b391591ee524464666de2ba3e}{render\+To\+Painter} (Q\+Painter $\ast$painter)
+\item 
+\hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} $\ast$ \hyperlink{classXpsPage_a6aee6a94650e230c3f84cf75ae4bc55f}{text\+Page} ()
+\item 
+Q\+Image \hyperlink{classXpsPage_ab1afed165c88b931d2877fdda48ba6b2}{load\+Image\+From\+File} (const Q\+String \&filename)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classXpsPage_ad0fe4fbffbab0a0e41d5ac136f260079}{Xps\+Handler}
+\item 
+class \hyperlink{classXpsPage_a1691bf1641e80a5ce07ba96e3c7702e1}{Xps\+Text\+Extraction\+Handler}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 149 of file generator\+\_\+xps.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classXpsPage_a96d35a768de0582d565bf7b4de3b89ba}{\index{Xps\+Page@{Xps\+Page}!Xps\+Page@{Xps\+Page}}
+\index{Xps\+Page@{Xps\+Page}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{Xps\+Page}]{\setlength{\rightskip}{0pt plus 5cm}Xps\+Page\+::\+Xps\+Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+File} $\ast$}]{file, }
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{classXpsPage_a96d35a768de0582d565bf7b4de3b89ba}
+
+
+Definition at line 1403 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1403                                                       : m\_file( file ),
+1404     m\_fileName( fileName ), m\_pageIsRendered(\textcolor{keyword}{false})
+1405 \{
+1406     m\_pageImage = NULL;
+1407 
+1408     \textcolor{comment}{// kDebug(XpsDebug) << "page file name: " << fileName;}
+1409 
+1410     \textcolor{keyword}{const} KZipFileEntry* pageFile = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }KZipFileEntry *\textcolor{keyword}{>}(m\_file->
+      \hyperlink{classXpsFile_a13a633163a15934693b3c65eae2a0c4f}{xpsArchive}()->directory()->entry( fileName ));
+1411 
+1412     QXmlStreamReader xml;
+1413     xml.addData( readFileOrDirectoryParts( pageFile ) );
+1414     \textcolor{keywordflow}{while} ( !xml.atEnd() )
+1415     \{
+1416         xml.readNext();
+1417         \textcolor{keywordflow}{if} ( xml.isStartElement() && ( xml.name() == \textcolor{stringliteral}{"FixedPage"} ) )
+1418         \{
+1419             QXmlStreamAttributes attributes = xml.attributes();
+1420             m\_pageSize.setWidth( attributes.value( \textcolor{stringliteral}{"Width"} ).toString().toDouble() );
+1421             m\_pageSize.setHeight( attributes.value( \textcolor{stringliteral}{"Height"} ).toString().toDouble() );
+1422             \textcolor{keywordflow}{break};
+1423         \}
+1424     \}
+1425     \textcolor{keywordflow}{if} ( xml.error() )
+1426     \{
+1427         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Could not parse XPS page:"} << xml.errorString();
+1428     \}
+1429 \}
+\end{DoxyCode}
+\hypertarget{classXpsPage_a1fca8c3ea39fe873a974c84a3e013450}{\index{Xps\+Page@{Xps\+Page}!````~Xps\+Page@{$\sim$\+Xps\+Page}}
+\index{````~Xps\+Page@{$\sim$\+Xps\+Page}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{$\sim$\+Xps\+Page}]{\setlength{\rightskip}{0pt plus 5cm}Xps\+Page\+::$\sim$\+Xps\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsPage_a1fca8c3ea39fe873a974c84a3e013450}
+
+
+Definition at line 1431 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1432 \{
+1433     \textcolor{keyword}{delete} m\_pageImage;
+1434 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classXpsPage_ab1afed165c88b931d2877fdda48ba6b2}{\index{Xps\+Page@{Xps\+Page}!load\+Image\+From\+File@{load\+Image\+From\+File}}
+\index{load\+Image\+From\+File@{load\+Image\+From\+File}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{load\+Image\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Xps\+Page\+::load\+Image\+From\+File (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classXpsPage_ab1afed165c88b931d2877fdda48ba6b2}
+
+
+Definition at line 1563 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1564 \{
+1565     \textcolor{comment}{// kDebug(XpsDebug) << "image file name: " << fileName;}
+1566 
+1567     \textcolor{keywordflow}{if} ( fileName.at( 0 ) == QLatin1Char( \textcolor{charliteral}{'\{'} ) ) \{
+1568         \textcolor{comment}{// for example: '\{ColorConvertedBitmap /Resources/bla.wdp /Resources/foobar.icc\}'}
+1569         \textcolor{comment}{// TODO: properly read a ColorConvertedBitmap}
+1570         \textcolor{keywordflow}{return} QImage();
+1571     \}
+1572 
+1573     QString absoluteFileName = absolutePath( entryPath( m\_fileName ), fileName );
+1574     \textcolor{keyword}{const} KZipFileEntry* imageFile = loadFile( m\_file->\hyperlink{classXpsFile_a13a633163a15934693b3c65eae2a0c4f}{xpsArchive}(), absoluteFileName, 
+      Qt::CaseInsensitive );
+1575     \textcolor{keywordflow}{if} ( !imageFile ) \{
+1576         \textcolor{comment}{// image not found}
+1577         \textcolor{keywordflow}{return} QImage();
+1578     \}
+1579 
+1580     \textcolor{comment}{/* WORKAROUND:}
+1581 \textcolor{comment}{        XPS standard requires to use 96dpi for images which doesn't have dpi specified (in file). When Qt
+       loads such an image,}
+1582 \textcolor{comment}{        it sets its dpi to qt\_defaultDpi and doesn't allow to find out that it happend.}
+1583 \textcolor{comment}{}
+1584 \textcolor{comment}{        To workaround this I used this procedure: load image, set its dpi to 96, load image again. When dpi
+       isn't set in file,}
+1585 \textcolor{comment}{        dpi set by me stays unchanged.}
+1586 \textcolor{comment}{}
+1587 \textcolor{comment}{        Trolltech task ID: 159527.}
+1588 \textcolor{comment}{}
+1589 \textcolor{comment}{    */}
+1590 
+1591     QImage image;
+1592     QByteArray data = imageFile->data();
+1593 
+1594     QBuffer buffer(&data);
+1595     buffer.open(QBuffer::ReadOnly);
+1596 
+1597     QImageReader reader(&buffer);
+1598     image = reader.read();
+1599 
+1600     image.setDotsPerMeterX(qRound(96 / 0.0254));
+1601     image.setDotsPerMeterY(qRound(96 / 0.0254));
+1602   
+1603     buffer.seek(0);
+1604     reader.setDevice(&buffer);
+1605     reader.read(&image);
+1606 
+1607     \textcolor{keywordflow}{return} image;
+1608 \}
+\end{DoxyCode}
+\hypertarget{classXpsPage_a2d3755b9f7869da5fd52cbb9f4799123}{\index{Xps\+Page@{Xps\+Page}!render\+To\+Image@{render\+To\+Image}}
+\index{render\+To\+Image@{render\+To\+Image}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{render\+To\+Image}]{\setlength{\rightskip}{0pt plus 5cm}bool Xps\+Page\+::render\+To\+Image (
+\begin{DoxyParamCaption}
+\item[{Q\+Image $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{classXpsPage_a2d3755b9f7869da5fd52cbb9f4799123}
+
+
+Definition at line 1436 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1437 \{
+1438 
+1439     \textcolor{keywordflow}{if} ((m\_pageImage == NULL) || (m\_pageImage->size() != p->size())) \{
+1440         \textcolor{keyword}{delete} m\_pageImage;
+1441         m\_pageImage = \textcolor{keyword}{new} QImage( p->size(), QImage::Format\_ARGB32 );
+1442         \textcolor{comment}{// Set one point = one drawing unit. Useful for fonts, because xps specifies font size using
+       drawing units, not points as usual}
+1443         m\_pageImage->setDotsPerMeterX( 2835 );
+1444         m\_pageImage->setDotsPerMeterY( 2835 );
+1445 
+1446         m\_pageIsRendered = \textcolor{keyword}{false};
+1447     \}
+1448     \textcolor{keywordflow}{if} (! m\_pageIsRendered) \{
+1449         m\_pageImage->fill( qRgba( 255, 255, 255, 255 ) );
+1450         QPainter painter( m\_pageImage );
+1451         \hyperlink{classXpsPage_a51efc63b391591ee524464666de2ba3e}{renderToPainter}( &painter );
+1452         m\_pageIsRendered = \textcolor{keyword}{true};
+1453     \}
+1454 
+1455     *p = *m\_pageImage;
+1456 
+1457     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1458 \}
+\end{DoxyCode}
+\hypertarget{classXpsPage_a51efc63b391591ee524464666de2ba3e}{\index{Xps\+Page@{Xps\+Page}!render\+To\+Painter@{render\+To\+Painter}}
+\index{render\+To\+Painter@{render\+To\+Painter}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{render\+To\+Painter}]{\setlength{\rightskip}{0pt plus 5cm}bool Xps\+Page\+::render\+To\+Painter (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter}
+\end{DoxyParamCaption}
+)}}\label{classXpsPage_a51efc63b391591ee524464666de2ba3e}
+
+
+Definition at line 1460 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1461 \{
+1462     \hyperlink{classXpsHandler}{XpsHandler} handler( \textcolor{keyword}{this} );
+1463     handler.m\_painter = painter;
+1464     handler.m\_painter->setWorldTransform(QTransform().scale((qreal)painter->device()->width() / 
+      \hyperlink{classXpsPage_ac5e7fcc989660f848e7c30d195c53585}{size}().width(), (qreal)painter->device()->height() / \hyperlink{classXpsPage_ac5e7fcc989660f848e7c30d195c53585}{size}().height()));
+1465     QXmlSimpleReader parser;
+1466     parser.setContentHandler( &handler );
+1467     parser.setErrorHandler( &handler );
+1468     \textcolor{keyword}{const} KZipFileEntry* pageFile = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }KZipFileEntry *\textcolor{keyword}{>}(m\_file->
+      \hyperlink{classXpsFile_a13a633163a15934693b3c65eae2a0c4f}{xpsArchive}()->directory()->entry( m\_fileName ));
+1469     QByteArray data = readFileOrDirectoryParts( pageFile );
+1470     QBuffer buffer( &data );
+1471     QXmlInputSource source( &buffer );
+1472     \textcolor{keywordtype}{bool} ok = parser.parse( source );
+1473     kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Parse result: "} << ok;
+1474 
+1475     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1476 \}
+\end{DoxyCode}
+\hypertarget{classXpsPage_ac5e7fcc989660f848e7c30d195c53585}{\index{Xps\+Page@{Xps\+Page}!size@{size}}
+\index{size@{size}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size\+F Xps\+Page\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classXpsPage_ac5e7fcc989660f848e7c30d195c53585}
+
+
+Definition at line 1478 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1479 \{
+1480     \textcolor{keywordflow}{return} m\_pageSize;
+1481 \}
+\end{DoxyCode}
+\hypertarget{classXpsPage_a6aee6a94650e230c3f84cf75ae4bc55f}{\index{Xps\+Page@{Xps\+Page}!text\+Page@{text\+Page}}
+\index{text\+Page@{text\+Page}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Text\+Page} $\ast$ Xps\+Page\+::text\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsPage_a6aee6a94650e230c3f84cf75ae4bc55f}
+
+
+Definition at line 1610 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1611 \{
+1612     \textcolor{comment}{// kDebug(XpsDebug) << "Parsing XpsPage, text extraction";}
+1613 
+1614     \hyperlink{classOkular_1_1TextPage}{Okular::TextPage}* \hyperlink{classXpsPage_a6aee6a94650e230c3f84cf75ae4bc55f}{textPage} = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextPage}{Okular::TextPage}();
+1615 
+1616     \textcolor{keyword}{const} KZipFileEntry* pageFile = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }KZipFileEntry *\textcolor{keyword}{>}(m\_file->
+      \hyperlink{classXpsFile_a13a633163a15934693b3c65eae2a0c4f}{xpsArchive}()->directory()->entry( m\_fileName ));
+1617     QXmlStreamReader xml;
+1618     xml.addData( readFileOrDirectoryParts( pageFile ) );
+1619 
+1620     QTransform matrix = QTransform();
+1621     QStack<QTransform> matrices;
+1622     matrices.push( QTransform() );
+1623     \textcolor{keywordtype}{bool} useMatrix = \textcolor{keyword}{false};
+1624     QXmlStreamAttributes glyphsAtts;
+1625 
+1626     \textcolor{keywordflow}{while} ( ! xml.atEnd() ) \{
+1627         xml.readNext();
+1628         \textcolor{keywordflow}{if} ( xml.isStartElement() ) \{
+1629             \textcolor{keywordflow}{if} ( xml.name() == \textcolor{stringliteral}{"Canvas"}) \{
+1630                 matrices.push(matrix);
+1631 
+1632                 QString att = xml.attributes().value( \textcolor{stringliteral}{"RenderTransform"} ).toString();
+1633                 \textcolor{keywordflow}{if} (!att.isEmpty()) \{
+1634                     matrix = parseRscRefMatrix( att ) * matrix;
+1635                 \}
+1636             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((xml.name() == \textcolor{stringliteral}{"Canvas.RenderTransform"}) || (xml.name() == \textcolor{stringliteral}{"Glyphs.RenderTransform"})
+      ) \{
+1637                 useMatrix = \textcolor{keyword}{true};
+1638             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (xml.name() == \textcolor{stringliteral}{"MatrixTransform"}) \{
+1639                 \textcolor{keywordflow}{if} (useMatrix) \{
+1640                     matrix = attsToMatrix( xml.attributes().value(\textcolor{stringliteral}{"Matrix"}).toString() ) * matrix;
+1641                 \}
+1642             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (xml.name() == \textcolor{stringliteral}{"Glyphs"}) \{
+1643                 matrices.push( matrix );
+1644                 glyphsAtts = xml.attributes();
+1645             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (xml.name() == \textcolor{stringliteral}{"Path"}) || (xml.name() == \textcolor{stringliteral}{"Path.Fill"}) || (xml.name() == \textcolor{stringliteral}{"
+      SolidColorBrush"})
+1646                         || (xml.name() == \textcolor{stringliteral}{"ImageBrush"}) ||  (xml.name() == \textcolor{stringliteral}{"ImageBrush.Transform"})
+1647                         || (xml.name() == \textcolor{stringliteral}{"Path.OpacityMask"}) || (xml.name() == \textcolor{stringliteral}{"Path.Data"})
+1648                         || (xml.name() == \textcolor{stringliteral}{"PathGeometry"}) || (xml.name() == \textcolor{stringliteral}{"PathFigure"})
+1649                         || (xml.name() == \textcolor{stringliteral}{"PolyLineSegment"}) ) \{
+1650                 \textcolor{comment}{// those are only graphical - no use in text handling}
+1651             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (xml.name() == \textcolor{stringliteral}{"FixedPage"}) || (xml.name() == \textcolor{stringliteral}{"FixedPage.Resources"}) ) \{
+1652                 \textcolor{comment}{// not useful for text extraction}
+1653             \} \textcolor{keywordflow}{else} \{
+1654                 kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Unhandled element in Text Extraction start: "} << xml.name().
+      toString();
+1655             \}
+1656         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (xml.isEndElement() ) \{
+1657             \textcolor{keywordflow}{if} (xml.name() == \textcolor{stringliteral}{"Canvas"}) \{
+1658                 matrix = matrices.pop();
+1659             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((xml.name() == \textcolor{stringliteral}{"Canvas.RenderTransform"}) || (xml.name() == \textcolor{stringliteral}{"Glyphs.RenderTransform"})
+      ) \{
+1660                 useMatrix = \textcolor{keyword}{false};
+1661             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (xml.name() == \textcolor{stringliteral}{"MatrixTransform"}) \{
+1662                 \textcolor{comment}{// not clear if we need to do anything here yet.}
+1663             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (xml.name() == \textcolor{stringliteral}{"Glyphs"}) \{
+1664                 QString att = glyphsAtts.value( \textcolor{stringliteral}{"RenderTransform"} ).toString();
+1665                 \textcolor{keywordflow}{if} (!att.isEmpty()) \{
+1666                     matrix = parseRscRefMatrix( att ) * matrix;
+1667                 \}
+1668                 QString text = unicodeString( glyphsAtts.value( \textcolor{stringliteral}{"UnicodeString"} ).toString() );
+1669 
+1670                 \textcolor{comment}{// Get font (doesn't work well because qt doesn't allow to load font from file)}
+1671                 QFont font = m\_file->\hyperlink{classXpsFile_a3eaa64c752c7aa845409abb440e9eda0}{getFontByName}( glyphsAtts.value( \textcolor{stringliteral}{"FontUri"} ).toString(),
+1672                                                     glyphsAtts.value(\textcolor{stringliteral}{"FontRenderingEmSize"}).toString().
+      toFloat() * 72 / 96 );
+1673                 QFontMetrics metrics = QFontMetrics( font );
+1674                 \textcolor{comment}{// Origin}
+1675                 QPointF origin( glyphsAtts.value(\textcolor{stringliteral}{"OriginX"}).toString().toDouble(),
+1676                                 glyphsAtts.value(\textcolor{stringliteral}{"OriginY"}).toString().toDouble() );
+1677 
+1678 
+1679                 \textcolor{keywordtype}{int} lastWidth = 0;
+1680                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < text.length(); i++) \{
+1681                     \textcolor{keywordtype}{int} width = metrics.width( text, i + 1 );
+1682 
+1683                     \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} * rect = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( (origin.x() + lastWidth) / m\_pageSize.width(),
+1684                                                                                 (origin.y() - metrics.
+      height()) / m\_pageSize.height(),
+1685                                                                                 (origin.x() + width) / 
+      m\_pageSize.width(),
+1686                                                                                 origin.y() / m\_pageSize.
+      height() );
+1687                     rect->\hyperlink{classOkular_1_1NormalizedRect_ae3bd6448865cb5b1f2b0fb8327d47e9b}{transform}( matrix );
+1688                     textPage->\hyperlink{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}{append}( text.mid(i, 1), rect );
+1689 
+1690                     lastWidth = width;
+1691                 \}
+1692 
+1693                 matrix = matrices.pop();
+1694             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (xml.name() == \textcolor{stringliteral}{"Path"}) || (xml.name() == \textcolor{stringliteral}{"Path.Fill"}) || (xml.name() == \textcolor{stringliteral}{"
+      SolidColorBrush"})
+1695                         || (xml.name() == \textcolor{stringliteral}{"ImageBrush"}) ||  (xml.name() == \textcolor{stringliteral}{"ImageBrush.Transform"})
+1696                         || (xml.name() == \textcolor{stringliteral}{"Path.OpacityMask"}) || (xml.name() == \textcolor{stringliteral}{"Path.Data"})
+1697                         || (xml.name() == \textcolor{stringliteral}{"PathGeometry"}) || (xml.name() == \textcolor{stringliteral}{"PathFigure"})
+1698                         || (xml.name() == \textcolor{stringliteral}{"PolyLineSegment"}) ) \{
+1699                 \textcolor{comment}{// those are only graphical - no use in text handling}
+1700             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (xml.name() == \textcolor{stringliteral}{"FixedPage"}) || (xml.name() == \textcolor{stringliteral}{"FixedPage.Resources"}) ) \{
+1701                 \textcolor{comment}{// not useful for text extraction}
+1702             \} \textcolor{keywordflow}{else} \{
+1703                 kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Unhandled element in Text Extraction end: "} << xml.name().
+      toString();
+1704             \}
+1705         \}
+1706     \}
+1707     \textcolor{keywordflow}{if} ( xml.error() ) \{
+1708         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Error parsing XpsPage text: "} << xml.errorString();
+1709     \}
+1710     \textcolor{keywordflow}{return} \hyperlink{classXpsPage_a6aee6a94650e230c3f84cf75ae4bc55f}{textPage};
+1711 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classXpsPage_ad0fe4fbffbab0a0e41d5ac136f260079}{\index{Xps\+Page@{Xps\+Page}!Xps\+Handler@{Xps\+Handler}}
+\index{Xps\+Handler@{Xps\+Handler}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{Xps\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Xps\+Handler}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classXpsPage_ad0fe4fbffbab0a0e41d5ac136f260079}
+
+
+Definition at line 177 of file generator\+\_\+xps.\+h.
+
+\hypertarget{classXpsPage_a1691bf1641e80a5ce07ba96e3c7702e1}{\index{Xps\+Page@{Xps\+Page}!Xps\+Text\+Extraction\+Handler@{Xps\+Text\+Extraction\+Handler}}
+\index{Xps\+Text\+Extraction\+Handler@{Xps\+Text\+Extraction\+Handler}!Xps\+Page@{Xps\+Page}}
+\subsubsection[{Xps\+Text\+Extraction\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}friend class Xps\+Text\+Extraction\+Handler\hspace{0.3cm}{\ttfamily [friend]}}}\label{classXpsPage_a1691bf1641e80a5ce07ba96e3c7702e1}
+
+
+Definition at line 178 of file generator\+\_\+xps.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/xps/\hyperlink{generator__xps_8h}{generator\+\_\+xps.\+h}\item 
+generators/xps/\hyperlink{generator__xps_8cpp}{generator\+\_\+xps.\+cpp}\end{DoxyCompactItemize}

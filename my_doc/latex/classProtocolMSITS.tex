@@ -1,0 +1,255 @@
+\hypertarget{classProtocolMSITS}{\section{Protocol\+M\+S\+I\+T\+S Class Reference}
+\label{classProtocolMSITS}\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+}
+
+
+{\ttfamily \#include $<$msits.\+h$>$}
+
+Inheritance diagram for Protocol\+M\+S\+I\+T\+S\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProtocolMSITS}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProtocolMSITS_ab517eb94fd0a18fa5a24c8e5db8de42d}{Protocol\+M\+S\+I\+T\+S} (const Q\+Byte\+Array \&, const Q\+Byte\+Array \&)
+\item 
+virtual \hyperlink{classProtocolMSITS_a3c88db8977ae64cd16b0d94bfcb10dea}{$\sim$\+Protocol\+M\+S\+I\+T\+S} ()
+\item 
+virtual void \hyperlink{classProtocolMSITS_af629190845c5bd05e0c0ca4454d1fd9e}{get} (const K\+Url \&)
+\item 
+virtual void \hyperlink{classProtocolMSITS_a2cfbc932826f598d0e32298993d8c37d}{list\+Dir} (const K\+Url \&url)
+\item 
+virtual void \hyperlink{classProtocolMSITS_a33676111f283f65b4f01cc9b468b5234}{stat} (const K\+Url \&url)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file msits.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classProtocolMSITS_ab517eb94fd0a18fa5a24c8e5db8de42d}{\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}!Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}!Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+\subsubsection[{Protocol\+M\+S\+I\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}Protocol\+M\+S\+I\+T\+S\+::\+Protocol\+M\+S\+I\+T\+S (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{pool\+\_\+socket, }
+\item[{const Q\+Byte\+Array \&}]{app\+\_\+socket}
+\end{DoxyParamCaption}
+)}}\label{classProtocolMSITS_ab517eb94fd0a18fa5a24c8e5db8de42d}
+
+
+Definition at line 58 of file msits.\+cpp.
+
+
+\begin{DoxyCode}
+59     : SlaveBase (\textcolor{stringliteral}{"kio\_msits"}, pool\_socket, app\_socket)
+60 \{
+61     m\_chmFile = 0;
+62 \}
+\end{DoxyCode}
+\hypertarget{classProtocolMSITS_a3c88db8977ae64cd16b0d94bfcb10dea}{\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}!````~Protocol\+M\+S\+I\+T\+S@{$\sim$\+Protocol\+M\+S\+I\+T\+S}}
+\index{````~Protocol\+M\+S\+I\+T\+S@{$\sim$\+Protocol\+M\+S\+I\+T\+S}!Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+\subsubsection[{$\sim$\+Protocol\+M\+S\+I\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}Protocol\+M\+S\+I\+T\+S\+::$\sim$\+Protocol\+M\+S\+I\+T\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classProtocolMSITS_a3c88db8977ae64cd16b0d94bfcb10dea}
+
+
+Definition at line 64 of file msits.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{if} ( !m\_chmFile )
+67         \textcolor{keywordflow}{return};
+68 
+69     chm\_close (m\_chmFile);
+70     m\_chmFile = 0;
+71 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classProtocolMSITS_af629190845c5bd05e0c0ca4454d1fd9e}{\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}!get@{get}}
+\index{get@{get}!Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}void Protocol\+M\+S\+I\+T\+S\+::get (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classProtocolMSITS_af629190845c5bd05e0c0ca4454d1fd9e}
+
+
+Definition at line 80 of file msits.\+cpp.
+
+
+\begin{DoxyCode}
+81 \{
+82     QString htmdata, fileName;
+83     chmUnitInfo ui;
+84     QByteArray buf;
+85 
+86     kDebug() << \textcolor{stringliteral}{"kio\_msits::get() "} << url.path();
+87 
+88     \textcolor{keywordflow}{if} ( !parseLoadAndLookup ( url, fileName ) )
+89         \textcolor{keywordflow}{return}; \textcolor{comment}{// error() has been called by parseLoadAndLookup}
+90 
+91     kDebug() << \textcolor{stringliteral}{"kio\_msits::get: parseLoadAndLookup returned "} << fileName;
+92 
+93     \textcolor{keywordflow}{if} ( LCHMUrlFactory::handleFileType( url.path(), htmdata ) )
+94     \{
+95         buf = htmdata.toUtf8();
+96         kDebug() << \textcolor{stringliteral}{"Using special handling for image pages: "} << htmdata;
+97     \}
+98     \textcolor{keywordflow}{else}
+99     \{
+100         \textcolor{keywordflow}{if} ( isDirectory (fileName) )
+101         \{
+102             error( KIO::ERR\_IS\_DIRECTORY, url.prettyUrl() );
+103             \textcolor{keywordflow}{return};
+104         \}
+105 
+106         \textcolor{keywordflow}{if} ( !ResolveObject ( fileName, &ui) )
+107         \{
+108             kDebug() << \textcolor{stringliteral}{"kio\_msits::get: could not resolve filename "} << fileName;
+109             error( KIO::ERR\_DOES\_NOT\_EXIST, url.prettyUrl() );
+110             \textcolor{keywordflow}{return};
+111         \}
+112 
+113         buf.resize( ui.length );
+114 
+115         \textcolor{keywordflow}{if} ( RetrieveObject (&ui, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) buf.data(), 0, ui.length) == 0 )
+116         \{
+117             kDebug() << \textcolor{stringliteral}{"kio\_msits::get: could not retrieve filename "} << fileName;
+118             error( KIO::ERR\_NO\_CONTENT, url.prettyUrl() );
+119             \textcolor{keywordflow}{return};
+120         \}
+121     \}
+122 
+123     totalSize( buf.size() );
+124     KMimeType::Ptr result = KMimeType::findByNameAndContent( fileName, buf );
+125     kDebug() << \textcolor{stringliteral}{"Emitting mimetype "} << result->name();
+126 
+127     mimeType( result->name() );
+128     \hyperlink{structdrawinf_af73f66288002f0a25c7843a534bf1340}{data}( buf );
+129     processedSize( buf.size() );
+130 
+131     finished();
+132 \}
+\end{DoxyCode}
+\hypertarget{classProtocolMSITS_a2cfbc932826f598d0e32298993d8c37d}{\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}!list\+Dir@{list\+Dir}}
+\index{list\+Dir@{list\+Dir}!Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+\subsubsection[{list\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Protocol\+M\+S\+I\+T\+S\+::list\+Dir (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classProtocolMSITS_a2cfbc932826f598d0e32298993d8c37d}
+
+
+Definition at line 260 of file msits.\+cpp.
+
+
+\begin{DoxyCode}
+261 \{
+262     QString filepath;
+263 
+264     kDebug() << \textcolor{stringliteral}{"kio\_msits::listDir (const KUrl& url) "} << url.path();
+265 
+266     \textcolor{keywordflow}{if} ( !parseLoadAndLookup ( url, filepath ) )
+267         \textcolor{keywordflow}{return}; \textcolor{comment}{// error() has been called by parseLoadAndLookup}
+268 
+269     filepath += \textcolor{charliteral}{'/'};
+270 
+271     \textcolor{keywordflow}{if} ( !isDirectory (filepath) )
+272     \{
+273         error(KIO::ERR\_CANNOT\_ENTER\_DIRECTORY, url.path());
+274         \textcolor{keywordflow}{return};
+275     \}
+276 
+277     kDebug() << \textcolor{stringliteral}{"kio\_msits::listDir: enumerating directory "} << filepath;
+278 
+279     QVector<QString> listing;
+280 
+281     \textcolor{keywordflow}{if} ( chm\_enumerate\_dir ( m\_chmFile,
+282                             filepath.toLocal8Bit(),
+283                             CHM\_ENUMERATE\_NORMAL | CHM\_ENUMERATE\_FILES | CHM\_ENUMERATE\_DIRS,
+284                             chmlib\_enumerator,
+285                             &listing ) != 1 )
+286     \{
+287         error(KIO::ERR\_CANNOT\_ENTER\_DIRECTORY, url.path());
+288         \textcolor{keywordflow}{return};
+289     \}
+290 
+291     UDSEntry entry;
+292     \textcolor{keywordtype}{int} striplength = filepath.length();
+293 
+294     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < listing.size(); i++ )
+295     \{
+296         \textcolor{comment}{// Strip the direcroty name}
+297         QString ename = listing[i].mid (striplength);
+298 
+299         \textcolor{keywordflow}{if} ( isDirectory ( ename ) )
+300             app\_dir(entry, ename);
+301         \textcolor{keywordflow}{else}
+302             app\_file(entry, ename, 0);
+303  
+304         listEntry(entry, \textcolor{keyword}{false});
+305     \}
+306 
+307     listEntry(entry, \textcolor{keyword}{true});
+308     finished();
+309 \}
+\end{DoxyCode}
+\hypertarget{classProtocolMSITS_a33676111f283f65b4f01cc9b468b5234}{\index{Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}!stat@{stat}}
+\index{stat@{stat}!Protocol\+M\+S\+I\+T\+S@{Protocol\+M\+S\+I\+T\+S}}
+\subsubsection[{stat}]{\setlength{\rightskip}{0pt plus 5cm}void Protocol\+M\+S\+I\+T\+S\+::stat (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classProtocolMSITS_a33676111f283f65b4f01cc9b468b5234}
+
+
+Definition at line 222 of file msits.\+cpp.
+
+
+\begin{DoxyCode}
+223 \{
+224     QString fileName;
+225     chmUnitInfo ui;
+226 
+227     kDebug() << \textcolor{stringliteral}{"kio\_msits::stat (const KUrl& url) "} << url.path();
+228 
+229     \textcolor{keywordflow}{if} ( !parseLoadAndLookup ( url, fileName ) )
+230         \textcolor{keywordflow}{return}; \textcolor{comment}{// error() has been called by parseLoadAndLookup}
+231 
+232     \textcolor{keywordflow}{if} ( !ResolveObject ( fileName, &ui ) )
+233     \{
+234         error( KIO::ERR\_DOES\_NOT\_EXIST, url.prettyUrl() );
+235         \textcolor{keywordflow}{return};
+236     \}
+237 
+238     kDebug() << \textcolor{stringliteral}{"kio\_msits::stat: adding an entry for "} << fileName;
+239     UDSEntry entry;
+240 
+241     \textcolor{keywordflow}{if} ( isDirectory ( fileName ) )
+242         app\_dir(entry, fileName);
+243     \textcolor{keywordflow}{else}
+244         app\_file(entry, fileName, ui.length);
+245  
+246     statEntry (entry);
+247 
+248     finished();
+249 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/chm/kio-\/msits/\hyperlink{msits_8h}{msits.\+h}\item 
+generators/chm/kio-\/msits/\hyperlink{msits_8cpp}{msits.\+cpp}\end{DoxyCompactItemize}

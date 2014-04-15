@@ -1,0 +1,328 @@
+\hypertarget{classOkular_1_1RenditionAction}{\section{Okular\+:\+:Rendition\+Action Class Reference}
+\label{classOkular_1_1RenditionAction}\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+}
+
+
+{\ttfamily \#include $<$action.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Rendition\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1RenditionAction}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5}{Operation\+Type} \{ \\*
+\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}{None}, 
+\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ad64f184845ab51b85d6a2371b5000dee}{Play}, 
+\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a79f9d68e6cbe8e0a80749b2c76657067}{Stop}, 
+\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a8337042e5e7d0d92ca24b4b75da66e0a}{Pause}, 
+\\*
+\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5aad4b6626db0d0519cd9dbd78f0d48811}{Resume}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1RenditionAction_ab2bef031b4190b9bc0a3ab8196995733}{Rendition\+Action} (\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5}{Operation\+Type} \hyperlink{classOkular_1_1RenditionAction_a3dc5c1ed8fae1f1206db7a7fcc30eb64}{operation}, \hyperlink{classOkular_1_1Movie}{Okular\+::\+Movie} $\ast$\hyperlink{classOkular_1_1RenditionAction_a42a9f31af60ad5647a5784f40dedd406}{movie}, enum \hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325}{Script\+Type} \hyperlink{classOkular_1_1RenditionAction_a66495366865408d8c8c10122186f7fdd}{script\+Type}, const Q\+String \&\hyperlink{classOkular_1_1RenditionAction_aa417843d31585700a4b1d68803ddffb0}{script})
+\item 
+virtual \hyperlink{classOkular_1_1RenditionAction_a59a8924fe97f1b8574667a0a59def2c9}{$\sim$\+Rendition\+Action} ()
+\item 
+\hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47}{Action\+Type} \hyperlink{classOkular_1_1RenditionAction_a4504e129022b92d1a7788888206f8fd0}{action\+Type} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1RenditionAction_a6a4d1c45ec9832dad5b8ceadc56ec393}{action\+Tip} () const 
+\item 
+\hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5}{Operation\+Type} \hyperlink{classOkular_1_1RenditionAction_a3dc5c1ed8fae1f1206db7a7fcc30eb64}{operation} () const 
+\item 
+\hyperlink{classOkular_1_1Movie}{Okular\+::\+Movie} $\ast$ \hyperlink{classOkular_1_1RenditionAction_a42a9f31af60ad5647a5784f40dedd406}{movie} () const 
+\item 
+\hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325}{Script\+Type} \hyperlink{classOkular_1_1RenditionAction_a66495366865408d8c8c10122186f7fdd}{script\+Type} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1RenditionAction_aa417843d31585700a4b1d68803ddffb0}{script} () const 
+\item 
+void \hyperlink{classOkular_1_1RenditionAction_a7e4fd7579b6fb9882409a8f9ddb234c2}{set\+Annotation} (\hyperlink{classOkular_1_1ScreenAnnotation}{Screen\+Annotation} $\ast$\hyperlink{classOkular_1_1RenditionAction_abeb88c54cdac10eb5c4899cea234b6b3}{annotation})
+\item 
+\hyperlink{classOkular_1_1ScreenAnnotation}{Screen\+Annotation} $\ast$ \hyperlink{classOkular_1_1RenditionAction_abeb88c54cdac10eb5c4899cea234b6b3}{annotation} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Rendition action executes an operation on a video or executes some Java\+Script code on activation.
+
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Definition at line 491 of file action.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!Operation\+Type@{Operation\+Type}}
+\index{Operation\+Type@{Operation\+Type}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{Operation\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Rendition\+Action\+::\+Operation\+Type}}}\label{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5}
+Describes the possible operation types. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!None@{None}}\item[{\em 
+\hypertarget{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}{None}\label{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}
+}]Execute only the Java\+Script. \index{Play@{Play}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!Play@{Play}}\item[{\em 
+\hypertarget{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ad64f184845ab51b85d6a2371b5000dee}{Play}\label{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ad64f184845ab51b85d6a2371b5000dee}
+}]Start playing the video. \index{Stop@{Stop}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!Stop@{Stop}}\item[{\em 
+\hypertarget{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a79f9d68e6cbe8e0a80749b2c76657067}{Stop}\label{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a79f9d68e6cbe8e0a80749b2c76657067}
+}]Stop playing the video. \index{Pause@{Pause}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!Pause@{Pause}}\item[{\em 
+\hypertarget{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a8337042e5e7d0d92ca24b4b75da66e0a}{Pause}\label{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a8337042e5e7d0d92ca24b4b75da66e0a}
+}]Pause the video. \index{Resume@{Resume}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!Resume@{Resume}}\item[{\em 
+\hypertarget{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5aad4b6626db0d0519cd9dbd78f0d48811}{Resume}\label{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5aad4b6626db0d0519cd9dbd78f0d48811}
+}]Resume playing the video. \end{description}
+\end{Desc}
+
+
+Definition at line 497 of file action.\+h.
+
+
+\begin{DoxyCode}
+497                            \{
+498             \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}{None},   
+499             \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ad64f184845ab51b85d6a2371b5000dee}{Play},   
+500             \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a79f9d68e6cbe8e0a80749b2c76657067}{Stop},   
+501             \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a8337042e5e7d0d92ca24b4b75da66e0a}{Pause},  
+502             \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5aad4b6626db0d0519cd9dbd78f0d48811}{Resume}  
+503         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1RenditionAction_ab2bef031b4190b9bc0a3ab8196995733}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!Rendition\+Action@{Rendition\+Action}}
+\index{Rendition\+Action@{Rendition\+Action}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{Rendition\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Rendition\+Action\+::\+Rendition\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Operation\+Type}}]{operation, }
+\item[{{\bf Okular\+::\+Movie} $\ast$}]{movie, }
+\item[{enum {\bf Script\+Type}}]{script\+Type, }
+\item[{const Q\+String \&}]{script}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1RenditionAction_ab2bef031b4190b9bc0a3ab8196995733}
+Creates a new rendition action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & The type of operation the action executes. \\
+\hline
+{\em movie} & The movie object the action references. \\
+\hline
+{\em script\+Type} & The type of script the action executes. \\
+\hline
+{\em script} & The actual script the action executes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 486 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+487     : \hyperlink{classOkular_1_1Action}{Action}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1RenditionActionPrivate}{RenditionActionPrivate}( \hyperlink{classOkular_1_1RenditionAction_a3dc5c1ed8fae1f1206db7a7fcc30eb64}{operation}, movie, 
+      \hyperlink{classOkular_1_1RenditionAction_a66495366865408d8c8c10122186f7fdd}{scriptType}, \hyperlink{classOkular_1_1RenditionAction_aa417843d31585700a4b1d68803ddffb0}{script} ) )
+488 \{
+489 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_a59a8924fe97f1b8574667a0a59def2c9}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!````~Rendition\+Action@{$\sim$\+Rendition\+Action}}
+\index{````~Rendition\+Action@{$\sim$\+Rendition\+Action}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{$\sim$\+Rendition\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Rendition\+Action\+::$\sim$\+Rendition\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1RenditionAction_a59a8924fe97f1b8574667a0a59def2c9}
+Destroys the rendition action. 
+
+Definition at line 491 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+492 \{
+493 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1RenditionAction_a6a4d1c45ec9832dad5b8ceadc56ec393}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!action\+Tip@{action\+Tip}}
+\index{action\+Tip@{action\+Tip}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{action\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Rendition\+Action\+::action\+Tip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1RenditionAction_a6a4d1c45ec9832dad5b8ceadc56ec393}
+Returns the action tip. 
+
+Reimplemented from \hyperlink{classOkular_1_1Action_a359c33818281df712da697c84975952f}{Okular\+::\+Action}.
+
+
+
+Definition at line 500 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+501 \{
+502     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+503 
+504     \textcolor{keywordflow}{switch} ( d->m\_operation )
+505     \{
+506       \textcolor{keywordflow}{default}:
+507       \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ac9760ac3379976d5d440034e247f8990}{None}:
+508           \textcolor{keywordflow}{switch} ( d->m\_scriptType )
+509           \{
+510               \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325ac61eb96a387ac39266f6eb71948796ea}{JavaScript}:
+511                   \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"JavaScript Script"} );
+512               \textcolor{keywordflow}{default}:
+513                   \textcolor{keywordflow}{return} QString();
+514           \}
+515       \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5ad64f184845ab51b85d6a2371b5000dee}{Play}:
+516           \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Play movie"} );
+517       \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a79f9d68e6cbe8e0a80749b2c76657067}{Stop}:
+518           \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Stop movie"} );
+519       \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5a8337042e5e7d0d92ca24b4b75da66e0a}{Pause}:
+520           \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Pause movie"} );
+521       \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1RenditionAction_ae036a78aa4d9997df70e856410cbc1a5aad4b6626db0d0519cd9dbd78f0d48811}{Resume}:
+522           \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Resume movie"} );
+523     \}
+524 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_a4504e129022b92d1a7788888206f8fd0}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!action\+Type@{action\+Type}}
+\index{action\+Type@{action\+Type}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{action\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action\+::\+Action\+Type} Rendition\+Action\+::action\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1RenditionAction_a4504e129022b92d1a7788888206f8fd0}
+Returns the action type. 
+
+Implements \hyperlink{classOkular_1_1Action_ac4c2ef09b350b4041f8d1cfb261c3234}{Okular\+::\+Action}.
+
+
+
+Definition at line 495 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+496 \{
+497     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47abb9c459303f1d82e284acada9ba28ee5}{Rendition};
+498 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_abeb88c54cdac10eb5c4899cea234b6b3}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!annotation@{annotation}}
+\index{annotation@{annotation}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen\+Annotation} $\ast$ Rendition\+Action\+::annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RenditionAction_abeb88c54cdac10eb5c4899cea234b6b3}
+Returns the annotation or {\ttfamily 0} if no annotation has been set. 
+
+Definition at line 556 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+557 \{
+558     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+559     \textcolor{keywordflow}{return} d->m\_annotation;
+560 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_a42a9f31af60ad5647a5784f40dedd406}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!movie@{movie}}
+\index{movie@{movie}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{movie}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Movie} $\ast$ Rendition\+Action\+::movie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RenditionAction_a42a9f31af60ad5647a5784f40dedd406}
+Returns the movie object or {\ttfamily 0} if no movie object was set on construction time. 
+
+Definition at line 532 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+533 \{
+534     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+535     \textcolor{keywordflow}{return} d->m\_movie;
+536 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_a3dc5c1ed8fae1f1206db7a7fcc30eb64}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!operation@{operation}}
+\index{operation@{operation}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{operation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rendition\+Action\+::\+Operation\+Type} Rendition\+Action\+::operation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RenditionAction_a3dc5c1ed8fae1f1206db7a7fcc30eb64}
+Returns the operation type. 
+
+Definition at line 526 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+527 \{
+528     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+529     \textcolor{keywordflow}{return} d->m\_operation;
+530 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_aa417843d31585700a4b1d68803ddffb0}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!script@{script}}
+\index{script@{script}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{script}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Rendition\+Action\+::script (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RenditionAction_aa417843d31585700a4b1d68803ddffb0}
+Returns the script code. 
+
+Definition at line 544 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+545 \{
+546     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+547     \textcolor{keywordflow}{return} d->m\_script;
+548 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_a66495366865408d8c8c10122186f7fdd}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!script\+Type@{script\+Type}}
+\index{script\+Type@{script\+Type}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{script\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Script\+Type} Rendition\+Action\+::script\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1RenditionAction_a66495366865408d8c8c10122186f7fdd}
+Returns the type of script. 
+
+Definition at line 538 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+539 \{
+540     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+541     \textcolor{keywordflow}{return} d->m\_scriptType;
+542 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RenditionAction_a7e4fd7579b6fb9882409a8f9ddb234c2}{\index{Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}!set\+Annotation@{set\+Annotation}}
+\index{set\+Annotation@{set\+Annotation}!Okular\+::\+Rendition\+Action@{Okular\+::\+Rendition\+Action}}
+\subsubsection[{set\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void Rendition\+Action\+::set\+Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen\+Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1RenditionAction_a7e4fd7579b6fb9882409a8f9ddb234c2}
+Sets the {\ttfamily annotation} that is associated with the rendition action. 
+
+Definition at line 550 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+551 \{
+552     Q\_D( \hyperlink{classOkular_1_1RenditionAction}{Okular::RenditionAction} );
+553     d->m\_annotation = \hyperlink{classOkular_1_1RenditionAction_abeb88c54cdac10eb5c4899cea234b6b3}{annotation};
+554 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{action_8h}{action.\+h}\item 
+core/\hyperlink{action_8cpp}{action.\+cpp}\end{DoxyCompactItemize}

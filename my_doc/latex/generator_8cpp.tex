@@ -1,0 +1,57 @@
+\hypertarget{generator_8cpp}{\section{core/generator.cpp File Reference}
+\label{generator_8cpp}\index{core/generator.\+cpp@{core/generator.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}generator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}generator\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}observer.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$qeventloop.\+h$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Printer$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$kicon.\+h$>$}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}document.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}document\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}page\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}textpage.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}generator.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1ExportFormatPrivate}{Okular\+::\+Export\+Format\+Private}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Debug \hyperlink{generator_8cpp_a62eb75ebaeb669e348bfde5241dae278}{operator$<$$<$} (Q\+Debug str, const \hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} \&req)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{generator_8cpp_a62eb75ebaeb669e348bfde5241dae278}{\index{generator.\+cpp@{generator.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!generator.\+cpp@{generator.\+cpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Debug operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\+Debug}]{str, }
+\item[{const {\bf Okular\+::\+Pixmap\+Request} \&}]{req}
+\end{DoxyParamCaption}
+)}}\label{generator_8cpp_a62eb75ebaeb669e348bfde5241dae278}
+
+
+Definition at line 634 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+635 \{
+636     QString s = QString( \textcolor{stringliteral}{"PixmapRequest(#%2, %1, %3x%4, page %6, prio %5)"} )
+637         .arg( QString( req.\hyperlink{classOkular_1_1PixmapRequest_a11fee76ef3da1589a28d455519c946a7}{asynchronous}() ? \textcolor{stringliteral}{"async"} : \textcolor{stringliteral}{"sync"} ) )
+638         .arg( (qulonglong)req.\hyperlink{classOkular_1_1PixmapRequest_af7abb325ca484ded40c556cf0ad5b793}{observer}() )
+639         .arg( req.\hyperlink{classOkular_1_1PixmapRequest_a3e82f09b91a52efed7435eeb9903e5fc}{width}() )
+640         .arg( req.\hyperlink{classOkular_1_1PixmapRequest_a782392a2efc6303994c7e0158c76ee06}{height}() )
+641         .arg( req.\hyperlink{classOkular_1_1PixmapRequest_ae6ea9158b7d643d3ace82da2e7231473}{priority}() )
+642         .arg( req.\hyperlink{classOkular_1_1PixmapRequest_a50f959175182137dbb9e2dbd6ddd71aa}{pageNumber}() );
+643     str << qPrintable( s );
+644     \textcolor{keywordflow}{return} str;
+645 \}
+\end{DoxyCode}

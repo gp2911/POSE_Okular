@@ -1,0 +1,265 @@
+\hypertarget{classDVIExport}{\section{D\+V\+I\+Export Class Reference}
+\label{classDVIExport}\index{D\+V\+I\+Export@{D\+V\+I\+Export}}
+}
+
+
+{\ttfamily \#include $<$dviexport.\+h$>$}
+
+Inheritance diagram for D\+V\+I\+Export\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDVIExport}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}{error} (const Q\+String \&message, int duration)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classDVIExport_ae71fe89f41c6842f1cdfdc7e3524c991}{$\sim$\+D\+V\+I\+Export} ()
+\item 
+bool \hyperlink{classDVIExport_a76c99695abb93d11922137496f2ff332}{started} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDVIExport_a126208c08ed676e76ca5442da3c6ae79}{D\+V\+I\+Export} (\hyperlink{classdviRenderer}{dvi\+Renderer} \&parent, Q\+Widget $\ast$parent\+\_\+widget)
+\item 
+void \hyperlink{classDVIExport_a2ebb3589d91eea01fa9a56e6fd1b6aa8}{initialise\+\_\+progress\+\_\+dialog} (int total\+\_\+steps, const Q\+String \&label\+\_\+text, const Q\+String \&whats\+\_\+this\+\_\+text, const Q\+String \&tooltip\+\_\+text)
+\item 
+void \hyperlink{classDVIExport_a3c0314e24108c630ce50b42d2ecfbcce}{start} (const Q\+String \&command, const Q\+String\+List \&args, const Q\+String \&working\+\_\+directory, const Q\+String \&error\+\_\+message)
+\item 
+virtual void \hyperlink{classDVIExport_a3c75bd0cd0c76ba41a146fe0c1ca8121}{abort\+\_\+process\+\_\+impl} ()
+\item 
+virtual void \hyperlink{classDVIExport_a2918458d29eac0e1b19cd988dc62c104}{finished\+\_\+impl} (int exit\+\_\+code)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file dviexport.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDVIExport_ae71fe89f41c6842f1cdfdc7e3524c991}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!````~D\+V\+I\+Export@{$\sim$\+D\+V\+I\+Export}}
+\index{````~D\+V\+I\+Export@{$\sim$\+D\+V\+I\+Export}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{$\sim$\+D\+V\+I\+Export}]{\setlength{\rightskip}{0pt plus 5cm}D\+V\+I\+Export\+::$\sim$\+D\+V\+I\+Export (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDVIExport_ae71fe89f41c6842f1cdfdc7e3524c991}
+
+
+Definition at line 55 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{
+57   \textcolor{keyword}{delete} progress\_;
+58   \textcolor{keyword}{delete} process\_;
+59 \}
+\end{DoxyCode}
+\hypertarget{classDVIExport_a126208c08ed676e76ca5442da3c6ae79}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\index{D\+V\+I\+Export@{D\+V\+I\+Export}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{D\+V\+I\+Export}]{\setlength{\rightskip}{0pt plus 5cm}D\+V\+I\+Export\+::\+D\+V\+I\+Export (
+\begin{DoxyParamCaption}
+\item[{{\bf dvi\+Renderer} \&}]{parent, }
+\item[{Q\+Widget $\ast$}]{parent\+\_\+widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDVIExport_a126208c08ed676e76ca5442da3c6ae79}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & is stored internally in order to inform the parent that the external process has finished and that this variable can be removed from any stores. \\
+\hline
+{\em parent\+\_\+widget} & is parent's (otherwise private) parent\+Widget. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+45   : started\_(\textcolor{keyword}{false}),
+46     process\_(0),
+47     progress\_(0),
+48     parent\_(&parent),
+49     parent\_widget\_(parent\_widget)
+50 \{
+51   connect( \textcolor{keyword}{this}, SIGNAL(\hyperlink{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}{error}(QString,\textcolor{keywordtype}{int})), &parent, SIGNAL(\hyperlink{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}{error}(QString,\textcolor{keywordtype}{int})) );
+52 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDVIExport_a3c75bd0cd0c76ba41a146fe0c1ca8121}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!abort\+\_\+process\+\_\+impl@{abort\+\_\+process\+\_\+impl}}
+\index{abort\+\_\+process\+\_\+impl@{abort\+\_\+process\+\_\+impl}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{abort\+\_\+process\+\_\+impl}]{\setlength{\rightskip}{0pt plus 5cm}void D\+V\+I\+Export\+::abort\+\_\+process\+\_\+impl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDVIExport_a3c75bd0cd0c76ba41a146fe0c1ca8121}
+The real implementation of the abort\+\_\+process() slot that is called when the font\+Process\+Dialog is closed by the user, indicating that the export should be halted. 
+
+Definition at line 115 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+116 \{
+117   \textcolor{keywordflow}{if} (progress\_) \{
+118     \textcolor{comment}{// Explicitly disconnect to prevent a recursive call of abort\_process.}
+119     disconnect(progress\_, SIGNAL(finished()), 0, 0);
+120     \textcolor{keywordflow}{if} (progress\_->isVisible())
+121       progress\_->hide();
+122     \textcolor{keyword}{delete} progress\_;
+123     progress\_ = 0;
+124   \}
+125 
+126   \textcolor{comment}{// deleting process\_ kills the external process itself}
+127   \textcolor{comment}{// if it's still running.}
+128   \textcolor{keyword}{delete} process\_;
+129   process\_ = 0;
+130 \}
+\end{DoxyCode}
+\hypertarget{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!error@{error}}
+\index{error@{error}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void D\+V\+I\+Export\+::error (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}
+\hypertarget{classDVIExport_a2918458d29eac0e1b19cd988dc62c104}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!finished\+\_\+impl@{finished\+\_\+impl}}
+\index{finished\+\_\+impl@{finished\+\_\+impl}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{finished\+\_\+impl}]{\setlength{\rightskip}{0pt plus 5cm}void D\+V\+I\+Export\+::finished\+\_\+impl (
+\begin{DoxyParamCaption}
+\item[{int}]{exit\+\_\+code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDVIExport_a2918458d29eac0e1b19cd988dc62c104}
+The real implementation of the finished() slot that is called when the external process finishes. 
+\begin{DoxyParams}{Parameters}
+{\em exit\+\_\+code} & the exit code retuned by the external process. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+134 \{
+135   \textcolor{keywordflow}{if} (progress\_) \{
+136     \textcolor{comment}{// Explicitly disconnect to prevent a recursive call of abort\_process.}
+137     \textcolor{comment}{//disconnect(progress\_, SIGNAL(finished()), 0, 0);}
+138     \textcolor{keywordflow}{if} (progress\_->isVisible())
+139       progress\_->hide();
+140   \}
+141 
+142   \textcolor{keywordflow}{if} (process\_ && exit\_code != 0)
+143     emit \hyperlink{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}{error}(error\_message\_, -1);
+144   \textcolor{comment}{// Remove this from the store of all export processes.}
+145   parent\_->m\_eventLoop->exit( exit\_code );
+146   parent\_->\hyperlink{classdviRenderer_a91b346176bd12e95a8c962afb425b8e1}{export\_finished}(\textcolor{keyword}{this});
+147 \}
+\end{DoxyCode}
+\hypertarget{classDVIExport_a2ebb3589d91eea01fa9a56e6fd1b6aa8}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!initialise\+\_\+progress\+\_\+dialog@{initialise\+\_\+progress\+\_\+dialog}}
+\index{initialise\+\_\+progress\+\_\+dialog@{initialise\+\_\+progress\+\_\+dialog}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{initialise\+\_\+progress\+\_\+dialog}]{\setlength{\rightskip}{0pt plus 5cm}void D\+V\+I\+Export\+::initialise\+\_\+progress\+\_\+dialog (
+\begin{DoxyParamCaption}
+\item[{int}]{total\+\_\+steps, }
+\item[{const Q\+String \&}]{label\+\_\+text, }
+\item[{const Q\+String \&}]{whats\+\_\+this\+\_\+text, }
+\item[{const Q\+String \&}]{tooltip\+\_\+text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDVIExport_a2ebb3589d91eea01fa9a56e6fd1b6aa8}
+A wrapper around \hyperlink{classfontProgressDialog}{font\+Progress\+Dialog}, also connecting some signals/slots. 
+
+Definition at line 62 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+66 \{
+67   assert(!progress\_);
+68   progress\_ = \textcolor{keyword}{new} \hyperlink{classfontProgressDialog}{fontProgressDialog}(QString(),
+69                                      label\_text,
+70                                      QString(),
+71                                      whats\_this\_text,
+72                                      tooltip\_text,
+73                                      parent\_widget\_,
+74                                      \textcolor{keyword}{false});
+75 
+76   \textcolor{keywordflow}{if} (progress\_) \{
+77     progress\_->\hyperlink{classfontProgressDialog_a6f93e7f3d73d7b90fbad9216f3958b56}{TextLabel2}->setText(i18n(\textcolor{stringliteral}{"Please be patient"}));
+78     progress\_->\hyperlink{classfontProgressDialog_ae58733e20fe7587b28cbf10f26ccd4f9}{setTotalSteps}(total\_steps);
+79     \textcolor{comment}{//connect(progress\_, SIGNAL(finished()), this, SLOT(abort\_process()));}
+80   \}
+81 \}
+\end{DoxyCode}
+\hypertarget{classDVIExport_a3c0314e24108c630ce50b42d2ecfbcce}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!start@{start}}
+\index{start@{start}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void D\+V\+I\+Export\+::start (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{command, }
+\item[{const Q\+String\+List \&}]{args, }
+\item[{const Q\+String \&}]{working\+\_\+directory, }
+\item[{const Q\+String \&}]{error\+\_\+message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDVIExport_a3c0314e24108c630ce50b42d2ecfbcce}
+Spawns the external process having connected slots to the child process's stdin and stdout streams. 
+
+Definition at line 84 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+88 \{
+89   assert(!process\_);
+90 
+91   process\_ = \textcolor{keyword}{new} KProcess;
+92   process\_->setOutputChannelMode(KProcess::MergedChannels);
+93   process\_->setNextOpenMode(QIODevice::Text);
+94   connect(process\_, SIGNAL(readyReadStandardOutput()), \textcolor{keyword}{this}, SLOT(output\_receiver()));
+95   connect(process\_, SIGNAL(finished(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(finished(\textcolor{keywordtype}{int})));
+96 
+97   *process\_ << command << args;
+98 
+99   \textcolor{keywordflow}{if} (!working\_directory.isEmpty())
+100     process\_->setWorkingDirectory(working\_directory);
+101 
+102   error\_message\_ = error\_message;
+103 
+104   process\_->start();
+105   \textcolor{keywordflow}{if} (!process\_->waitForStarted(-1))
+106     kError(kvs::dvi) << command << \textcolor{stringliteral}{" failed to start"} << endl;
+107   \textcolor{keywordflow}{else}
+108     started\_ = \textcolor{keyword}{true};
+109 
+110   \textcolor{keywordflow}{if} (parent\_->m\_eventLoop)
+111      parent\_->m\_eventLoop->exec();
+112 \}
+\end{DoxyCode}
+\hypertarget{classDVIExport_a76c99695abb93d11922137496f2ff332}{\index{D\+V\+I\+Export@{D\+V\+I\+Export}!started@{started}}
+\index{started@{started}!D\+V\+I\+Export@{D\+V\+I\+Export}}
+\subsubsection[{started}]{\setlength{\rightskip}{0pt plus 5cm}bool D\+V\+I\+Export\+::started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDVIExport_a76c99695abb93d11922137496f2ff332}
+{\ttfamily \hyperlink{classDVIExport_a76c99695abb93d11922137496f2ff332}{started()}} Flags whether or not the external process was spawned successfully. Can be used to decide whether to discard the \hyperlink{classDVIExport}{D\+V\+I\+Export} variable, or to store it and await notification that the external process has finished. 
+
+Definition at line 46 of file dviexport.\+h.
+
+
+\begin{DoxyCode}
+46 \{ \textcolor{keywordflow}{return} started\_; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{dviexport_8h}{dviexport.\+h}\item 
+generators/dvi/\hyperlink{dviexport_8cpp}{dviexport.\+cpp}\end{DoxyCompactItemize}

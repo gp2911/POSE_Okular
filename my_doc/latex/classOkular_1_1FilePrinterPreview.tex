@@ -1,0 +1,144 @@
+\hypertarget{classOkular_1_1FilePrinterPreview}{\section{Okular\+:\+:File\+Printer\+Preview Class Reference}
+\label{classOkular_1_1FilePrinterPreview}\index{Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}}
+}
+
+
+{\ttfamily \#include $<$fileprinterpreview.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:File\+Printer\+Preview\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1FilePrinterPreview}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FilePrinterPreview_a9293bd820e3fb2210410e481935421e6}{File\+Printer\+Preview} (const Q\+String \&filename, Q\+Widget $\ast$parent=0)
+\item 
+virtual \hyperlink{classOkular_1_1FilePrinterPreview_a660fd133284f02dd0e367fea78331fe3}{$\sim$\+File\+Printer\+Preview} ()
+\item 
+Q\+Size \hyperlink{classOkular_1_1FilePrinterPreview_ae0ec45b69180e534d9b2688700ef6ec5}{size\+Hint} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOkular_1_1FilePrinterPreview_affa688a826ecafc4b305da26b3d0aa4b}{show\+Event} (Q\+Show\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file fileprinterpreview.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1FilePrinterPreview_a9293bd820e3fb2210410e481935421e6}{\index{Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}!File\+Printer\+Preview@{File\+Printer\+Preview}}
+\index{File\+Printer\+Preview@{File\+Printer\+Preview}!Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}}
+\subsubsection[{File\+Printer\+Preview}]{\setlength{\rightskip}{0pt plus 5cm}File\+Printer\+Preview\+::\+File\+Printer\+Preview (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{filename, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1FilePrinterPreview_a9293bd820e3fb2210410e481935421e6}
+Create a Print Preview dialog for a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em printer} & file to print preview \\
+\hline
+{\em parent} & pointer to the parent widget for the dialog \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+124     : KDialog( parent )
+125     , d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1FilePrinterPreviewPrivate}{FilePrinterPreviewPrivate}( \textcolor{keyword}{this}, filename ) )
+126 \{
+127     kDebug(500) << \textcolor{stringliteral}{"kdeprint: creating preview dialog"};
+128 
+129     \textcolor{comment}{// Set up the dialog}
+130     setCaption(i18n(\textcolor{stringliteral}{"Print Preview"}));
+131     setButtons(KDialog::Close);
+132     button(KDialog::Close)->setAutoDefault(\textcolor{keyword}{false});
+133 
+134     restoreDialogSize(d->\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa6b8b7d0af721ba3f6497c3a954c600b}{config}->group(\textcolor{stringliteral}{"Print Preview"}));
+135 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinterPreview_a660fd133284f02dd0e367fea78331fe3}{\index{Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}!````~File\+Printer\+Preview@{$\sim$\+File\+Printer\+Preview}}
+\index{````~File\+Printer\+Preview@{$\sim$\+File\+Printer\+Preview}!Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}}
+\subsubsection[{$\sim$\+File\+Printer\+Preview}]{\setlength{\rightskip}{0pt plus 5cm}File\+Printer\+Preview\+::$\sim$\+File\+Printer\+Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FilePrinterPreview_a660fd133284f02dd0e367fea78331fe3}
+
+
+Definition at line 137 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+138 \{
+139     KConfigGroup group(d->\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_aa6b8b7d0af721ba3f6497c3a954c600b}{config}->group(\textcolor{stringliteral}{"Print Preview"}));
+140     saveDialogSize(group);
+141 
+142     \textcolor{keyword}{delete} d;
+143 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FilePrinterPreview_affa688a826ecafc4b305da26b3d0aa4b}{\index{Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}!show\+Event@{show\+Event}}
+\index{show\+Event@{show\+Event}!Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}}
+\subsubsection[{show\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Printer\+Preview\+::show\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Show\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinterPreview_affa688a826ecafc4b305da26b3d0aa4b}
+
+
+Definition at line 151 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+152 \{
+153     \textcolor{keywordflow}{if} (!event->spontaneous()) \{
+154         \textcolor{comment}{// being shown for the first time}
+155         \textcolor{keywordflow}{if} (!d->\hyperlink{classOkular_1_1FilePrinterPreviewPrivate_a580744cc58ebb9944919312967032fb2}{doPreview}()) \{
+156             \textcolor{keyword}{event}->accept();
+157             \textcolor{keywordflow}{return};
+158         \}
+159     \}
+160     KDialog::showEvent(event);
+161 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinterPreview_ae0ec45b69180e534d9b2688700ef6ec5}{\index{Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}!size\+Hint@{size\+Hint}}
+\index{size\+Hint@{size\+Hint}!Okular\+::\+File\+Printer\+Preview@{Okular\+::\+File\+Printer\+Preview}}
+\subsubsection[{size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size File\+Printer\+Preview\+::size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1FilePrinterPreview_ae0ec45b69180e534d9b2688700ef6ec5}
+
+
+Definition at line 145 of file fileprinterpreview.\+cpp.
+
+
+\begin{DoxyCode}
+146 \{
+147     \textcolor{comment}{// return a more or less useful window size, if not saved already}
+148     \textcolor{keywordflow}{return} QSize(600, 500);
+149 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{fileprinterpreview_8h}{fileprinterpreview.\+h}\item 
+ui/\hyperlink{fileprinterpreview_8cpp}{fileprinterpreview.\+cpp}\end{DoxyCompactItemize}

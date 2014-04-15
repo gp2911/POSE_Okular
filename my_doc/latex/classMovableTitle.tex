@@ -1,0 +1,245 @@
+\hypertarget{classMovableTitle}{\section{Movable\+Title Class Reference}
+\label{classMovableTitle}\index{Movable\+Title@{Movable\+Title}}
+}
+Inheritance diagram for Movable\+Title\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMovableTitle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMovableTitle_a7e16a2ffdb1390da7703a866f8c313e8}{Movable\+Title} (Q\+Widget $\ast$parent)
+\item 
+virtual bool \hyperlink{classMovableTitle_a89e8506800e8f822069b3f879c7a3a26}{event\+Filter} (Q\+Object $\ast$obj, Q\+Event $\ast$e)
+\item 
+void \hyperlink{classMovableTitle_aad05a10ec583250589f72edca36395ea}{set\+Title} (const Q\+String \&title)
+\item 
+void \hyperlink{classMovableTitle_a9c2ec37093f90e0938fe392d2500d746}{set\+Date} (const Q\+Date\+Time \&dt)
+\item 
+void \hyperlink{classMovableTitle_aa9325778f8f301d2177c91654fbd3681}{set\+Author} (const Q\+String \&author)
+\item 
+void \hyperlink{classMovableTitle_a3bc4b1a5774fb18bd0b16260362d1b0d}{connect\+Option\+Button} (Q\+Object $\ast$recv, const char $\ast$method)
+\item 
+void \hyperlink{classMovableTitle_a5f9d3e74dfc3dd87c663e96ca2b01092}{uncheck\+Latex\+Button} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 59 of file annotwindow.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMovableTitle_a7e16a2ffdb1390da7703a866f8c313e8}{\index{Movable\+Title@{Movable\+Title}!Movable\+Title@{Movable\+Title}}
+\index{Movable\+Title@{Movable\+Title}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{Movable\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Movable\+Title\+::\+Movable\+Title (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMovableTitle_a7e16a2ffdb1390da7703a866f8c313e8}
+
+
+Definition at line 63 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+64       : QWidget( parent )
+65     \{
+66         QVBoxLayout * mainlay = \textcolor{keyword}{new} QVBoxLayout( \textcolor{keyword}{this} );
+67         mainlay->setMargin( 0 );
+68         mainlay->setSpacing( 0 );
+69         \textcolor{comment}{// close button row}
+70         QHBoxLayout * buttonlay = \textcolor{keyword}{new} QHBoxLayout();
+71         mainlay->addLayout( buttonlay );
+72         titleLabel = \textcolor{keyword}{new} QLabel( \textcolor{keyword}{this} );
+73         QFont f = titleLabel->font();
+74         f.setBold( \textcolor{keyword}{true} );
+75         titleLabel->setFont( f );
+76         titleLabel->setCursor( Qt::SizeAllCursor );
+77         buttonlay->addWidget( titleLabel );
+78         dateLabel = \textcolor{keyword}{new} QLabel( \textcolor{keyword}{this} );
+79         dateLabel->setAlignment( Qt::AlignTop | Qt::AlignRight );
+80         f = dateLabel->font();
+81         f.setPointSize( QFontInfo( f ).pointSize() - 2 );
+82         dateLabel->setFont( f );
+83         dateLabel->setCursor( Qt::SizeAllCursor );
+84         buttonlay->addWidget( dateLabel );
+85         \hyperlink{classCloseButton}{CloseButton} * close = \textcolor{keyword}{new} \hyperlink{classCloseButton}{CloseButton}( \textcolor{keyword}{this} );
+86         connect( close, SIGNAL(clicked()), parent, SLOT(close()) );
+87         buttonlay->addWidget( close );
+88         \textcolor{comment}{// option button row}
+89         QHBoxLayout * optionlay = \textcolor{keyword}{new} QHBoxLayout();
+90         mainlay->addLayout( optionlay );
+91         authorLabel = \textcolor{keyword}{new} QLabel( \textcolor{keyword}{this} );
+92         authorLabel->setCursor( Qt::SizeAllCursor );
+93         authorLabel->setSizePolicy( QSizePolicy::Expanding, QSizePolicy::Minimum );
+94         optionlay->addWidget( authorLabel );
+95         optionButton = \textcolor{keyword}{new} QToolButton( \textcolor{keyword}{this} );
+96         QString opttext = i18n( \textcolor{stringliteral}{"Options"} );
+97         optionButton->setText( opttext );
+98         optionButton->setAutoRaise( \textcolor{keyword}{true} );
+99         QSize s = QFontMetrics( optionButton->font() ).boundingRect( opttext ).size() + QSize( 8, 8 );
+100         optionButton->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed );
+101         optionButton->setFixedSize( s );
+102         optionlay->addWidget( optionButton );
+103         \textcolor{comment}{// ### disabled for now}
+104         optionButton->hide();
+105         latexButton = \textcolor{keyword}{new} QToolButton( \textcolor{keyword}{this} );
+106         QHBoxLayout * latexlay = \textcolor{keyword}{new} QHBoxLayout();
+107         QString latextext = i18n ( \textcolor{stringliteral}{"This annotation may contain LaTeX code.\(\backslash\)nClick here to render."} );
+108         latexButton->setText( latextext );
+109         latexButton->setAutoRaise( \textcolor{keyword}{true} );
+110         s = QFontMetrics( latexButton->font() ).boundingRect(0, 0, this->width(), this->height(), 0, 
+      latextext ).\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}() + QSize( 8, 8 );
+111         latexButton->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed );
+112         latexButton->setFixedSize( s );
+113         latexButton->setCheckable( \textcolor{keyword}{true} );
+114         latexButton->setVisible( \textcolor{keyword}{false} );
+115         latexlay->addSpacing( 1 );
+116         latexlay->addWidget( latexButton );
+117         latexlay->addSpacing( 1 );
+118         mainlay->addLayout( latexlay );
+119         connect(latexButton, SIGNAL(clicked(\textcolor{keywordtype}{bool})), parent, SLOT(renderLatex(\textcolor{keywordtype}{bool})));
+120         connect(parent, SIGNAL(containsLatex(\textcolor{keywordtype}{bool})), latexButton, SLOT(setVisible(\textcolor{keywordtype}{bool})));
+121 
+122         titleLabel->installEventFilter( \textcolor{keyword}{this} );
+123         dateLabel->installEventFilter( \textcolor{keyword}{this} );
+124         authorLabel->installEventFilter( \textcolor{keyword}{this} );
+125     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMovableTitle_a3bc4b1a5774fb18bd0b16260362d1b0d}{\index{Movable\+Title@{Movable\+Title}!connect\+Option\+Button@{connect\+Option\+Button}}
+\index{connect\+Option\+Button@{connect\+Option\+Button}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{connect\+Option\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void Movable\+Title\+::connect\+Option\+Button (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{recv, }
+\item[{const char $\ast$}]{method}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMovableTitle_a3bc4b1a5774fb18bd0b16260362d1b0d}
+
+
+Definition at line 167 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+168     \{
+169         connect( optionButton, SIGNAL(clicked()), recv, method );
+170     \}
+\end{DoxyCode}
+\hypertarget{classMovableTitle_a89e8506800e8f822069b3f879c7a3a26}{\index{Movable\+Title@{Movable\+Title}!event\+Filter@{event\+Filter}}
+\index{event\+Filter@{event\+Filter}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{event\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Movable\+Title\+::event\+Filter (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj, }
+\item[{Q\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classMovableTitle_a89e8506800e8f822069b3f879c7a3a26}
+
+
+Definition at line 127 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+128     \{
+129         \textcolor{keywordflow}{if} ( obj != titleLabel && obj != authorLabel && obj != dateLabel )
+130             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+131 
+132         QMouseEvent * me = 0;
+133         \textcolor{keywordflow}{switch} ( e->type() )
+134         \{
+135             \textcolor{keywordflow}{case} QEvent::MouseButtonPress:
+136                 me = (QMouseEvent*)e;
+137                 mousePressPos = me->pos();
+138                 \textcolor{keywordflow}{break};
+139             \textcolor{keywordflow}{case} QEvent::MouseButtonRelease:
+140                 mousePressPos = QPoint();
+141                 \textcolor{keywordflow}{break};
+142             \textcolor{keywordflow}{case} QEvent::MouseMove:
+143                 me = (QMouseEvent*)e;
+144                 parentWidget()->move( me->pos() - mousePressPos + parentWidget()->pos() );
+145                 \textcolor{keywordflow}{break};
+146             \textcolor{keywordflow}{default}:
+147                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+148         \}
+149         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+150     \}
+\end{DoxyCode}
+\hypertarget{classMovableTitle_aa9325778f8f301d2177c91654fbd3681}{\index{Movable\+Title@{Movable\+Title}!set\+Author@{set\+Author}}
+\index{set\+Author@{set\+Author}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{set\+Author}]{\setlength{\rightskip}{0pt plus 5cm}void Movable\+Title\+::set\+Author (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{author}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMovableTitle_aa9325778f8f301d2177c91654fbd3681}
+
+
+Definition at line 162 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+163     \{
+164         authorLabel->setText( QString( \textcolor{stringliteral}{" "} ) + author );
+165     \}
+\end{DoxyCode}
+\hypertarget{classMovableTitle_a9c2ec37093f90e0938fe392d2500d746}{\index{Movable\+Title@{Movable\+Title}!set\+Date@{set\+Date}}
+\index{set\+Date@{set\+Date}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{set\+Date}]{\setlength{\rightskip}{0pt plus 5cm}void Movable\+Title\+::set\+Date (
+\begin{DoxyParamCaption}
+\item[{const Q\+Date\+Time \&}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMovableTitle_a9c2ec37093f90e0938fe392d2500d746}
+
+
+Definition at line 157 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+158     \{
+159         dateLabel->setText( KGlobal::locale()->formatDateTime( dt, KLocale::ShortDate, \textcolor{keyword}{true} ) + \textcolor{charliteral}{' '} );
+160     \}
+\end{DoxyCode}
+\hypertarget{classMovableTitle_aad05a10ec583250589f72edca36395ea}{\index{Movable\+Title@{Movable\+Title}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{set\+Title}]{\setlength{\rightskip}{0pt plus 5cm}void Movable\+Title\+::set\+Title (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMovableTitle_aad05a10ec583250589f72edca36395ea}
+
+
+Definition at line 152 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+153     \{
+154         titleLabel->setText( QString( \textcolor{stringliteral}{" "} ) + title );
+155     \}
+\end{DoxyCode}
+\hypertarget{classMovableTitle_a5f9d3e74dfc3dd87c663e96ca2b01092}{\index{Movable\+Title@{Movable\+Title}!uncheck\+Latex\+Button@{uncheck\+Latex\+Button}}
+\index{uncheck\+Latex\+Button@{uncheck\+Latex\+Button}!Movable\+Title@{Movable\+Title}}
+\subsubsection[{uncheck\+Latex\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void Movable\+Title\+::uncheck\+Latex\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMovableTitle_a5f9d3e74dfc3dd87c663e96ca2b01092}
+
+
+Definition at line 172 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+173     \{
+174         latexButton->setChecked( \textcolor{keyword}{false} );
+175     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotwindow_8cpp}{annotwindow.\+cpp}\end{DoxyCompactItemize}

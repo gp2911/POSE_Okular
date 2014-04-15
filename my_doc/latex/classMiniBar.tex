@@ -1,0 +1,347 @@
+\hypertarget{classMiniBar}{\section{Mini\+Bar Class Reference}
+\label{classMiniBar}\index{Mini\+Bar@{Mini\+Bar}}
+}
+
+
+A widget to display page number and change current page.  
+
+
+
+
+{\ttfamily \#include $<$minibar.\+h$>$}
+
+Inheritance diagram for Mini\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMiniBar}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMiniBar_aa7f6df7b7c07163ee6f5881aaeef3859}{slot\+Change\+Page} ()
+\item 
+void \hyperlink{classMiniBar_aaa949576966820afab03f336d5e1880b}{slot\+Change\+Page} (int page)
+\item 
+void \hyperlink{classMiniBar_a72429bb47003b11b89b50b2c90ecd459}{slot\+Emit\+Next\+Page} ()
+\item 
+void \hyperlink{classMiniBar_a7150ff311d8560c4c1a9b9e18167ce57}{slot\+Emit\+Prev\+Page} ()
+\item 
+void \hyperlink{classMiniBar_a2d142654f341cead1f4495de5e2d43c8}{slot\+Tool\+Bar\+Icon\+Size\+Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMiniBar_a4f0f5d729fbe307f3340263061e50af2}{goto\+Page} ()
+\item 
+void \hyperlink{classMiniBar_ad8052f3639b48607d0b1cdf539eb092f}{prev\+Page} ()
+\item 
+void \hyperlink{classMiniBar_a31fd3c4b7b604c65be9222fe1cec11f7}{next\+Page} ()
+\item 
+void \hyperlink{classMiniBar_abc05e1ff3da3e6f23a3c68db5242f449}{forward\+Key\+Press\+Event} (Q\+Key\+Event $\ast$e)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMiniBar_a0d261c9e2c341637549585d693924ff3}{Mini\+Bar} (Q\+Widget $\ast$parent, \hyperlink{classMiniBarLogic}{Mini\+Bar\+Logic} $\ast$mini\+Bar\+Logic)
+\item 
+\hyperlink{classMiniBar_a0c02ad4502330097618c840602964930}{$\sim$\+Mini\+Bar} ()
+\item 
+void \hyperlink{classMiniBar_a5d16c076f3879a3629a75ec4d05da08a}{change\+Event} (Q\+Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMiniBar_a5829e50433449ff6715750acf8485dec}{Mini\+Bar\+Logic}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A widget to display page number and change current page. 
+
+Definition at line 108 of file minibar.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMiniBar_a0d261c9e2c341637549585d693924ff3}{\index{Mini\+Bar@{Mini\+Bar}!Mini\+Bar@{Mini\+Bar}}
+\index{Mini\+Bar@{Mini\+Bar}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{Mini\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}Mini\+Bar\+::\+Mini\+Bar (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Mini\+Bar\+Logic} $\ast$}]{mini\+Bar\+Logic}
+\end{DoxyParamCaption}
+)}}\label{classMiniBar_a0d261c9e2c341637549585d693924ff3}
+\hyperlink{classMiniBar}{Mini\+Bar} 
+
+Definition at line 154 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+155     : QWidget( parent )
+156     , m\_miniBarLogic( miniBarLogic )
+157     , m\_oldToobarParent( 0 )
+158 \{
+159     setObjectName( QLatin1String( \textcolor{stringliteral}{"miniBar"} ) );
+160     
+161     m\_miniBarLogic->\hyperlink{classMiniBarLogic_a87a87879be36670674541361566b0ed7}{addMiniBar}( \textcolor{keyword}{this} );
+162 
+163     QHBoxLayout * horLayout = \textcolor{keyword}{new} QHBoxLayout( \textcolor{keyword}{this} );
+164 
+165     horLayout->setMargin( 0 );
+166     horLayout->setSpacing( 3 );
+167 
+168     QSize buttonSize( KIconLoader::SizeSmallMedium, KIconLoader::SizeSmallMedium );
+169     \textcolor{comment}{// bottom: left prev\_page button}
+170     m\_prevButton = \textcolor{keyword}{new} \hyperlink{classHoverButton}{HoverButton}( \textcolor{keyword}{this} );
+171     m\_prevButton->setIcon( KIcon( layoutDirection() == Qt::RightToLeft ? \textcolor{stringliteral}{"arrow-right"} : \textcolor{stringliteral}{"arrow-left"} ) );
+172     m\_prevButton->setIconSize( buttonSize );
+173     horLayout->addWidget( m\_prevButton );
+174     \textcolor{comment}{// bottom: left lineEdit (current page box)}
+175     m\_pageNumberEdit = \textcolor{keyword}{new} \hyperlink{classPageNumberEdit}{PageNumberEdit}( \textcolor{keyword}{this} );
+176     horLayout->addWidget( m\_pageNumberEdit );
+177     m\_pageNumberEdit->installEventFilter( \textcolor{keyword}{this} );
+178     \textcolor{comment}{// bottom: left labelWidget (current page label)}
+179     m\_pageLabelEdit = \textcolor{keyword}{new} \hyperlink{classPageLabelEdit}{PageLabelEdit}( \textcolor{keyword}{this} );
+180     horLayout->addWidget(m\_pageLabelEdit);
+181     m\_pageLabelEdit->installEventFilter( \textcolor{keyword}{this} );
+182     \textcolor{comment}{// bottom: left labelWidget (current page label)}
+183     m\_pageNumberLabel = \textcolor{keyword}{new} QLabel( \textcolor{keyword}{this} );
+184     m\_pageNumberLabel->setAlignment( Qt::AlignCenter );
+185     horLayout->addWidget(m\_pageNumberLabel);
+186     \textcolor{comment}{// bottom: central 'of' label}
+187     horLayout->addSpacing(5);
+188     horLayout->addWidget( \textcolor{keyword}{new} QLabel( i18nc( \textcolor{stringliteral}{"Layouted like: '5 [pages] of 10'"}, \textcolor{stringliteral}{"of"} ), \textcolor{keyword}{this} ) );
+189     \textcolor{comment}{// bottom: right button}
+190     m\_pagesButton = \textcolor{keyword}{new} \hyperlink{classHoverButton}{HoverButton}( \textcolor{keyword}{this} );
+191     horLayout->addWidget( m\_pagesButton );
+192     \textcolor{comment}{// bottom: right next\_page button}
+193     m\_nextButton = \textcolor{keyword}{new} \hyperlink{classHoverButton}{HoverButton}( \textcolor{keyword}{this} );
+194     m\_nextButton->setIcon( KIcon( layoutDirection() == Qt::RightToLeft ? \textcolor{stringliteral}{"arrow-left"} : \textcolor{stringliteral}{"arrow-right"} ) );
+195     m\_nextButton->setIconSize( buttonSize );
+196     horLayout->addWidget( m\_nextButton );
+197 
+198     QSizePolicy sp = sizePolicy();
+199     sp.setHorizontalPolicy( QSizePolicy::Fixed );
+200     sp.setVerticalPolicy( QSizePolicy::Fixed );
+201     setSizePolicy( sp );
+202 
+203     \textcolor{comment}{// resize width of widgets}
+204     resizeForPage( 0 );
+205 
+206     \textcolor{comment}{// connect signals from child widgets to internal handlers / signals bouncers}
+207     connect( m\_pageNumberEdit, SIGNAL(returnPressed()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classMiniBar_aa7f6df7b7c07163ee6f5881aaeef3859}{slotChangePage}()) );
+208     connect( m\_pageLabelEdit, SIGNAL(pageNumberChosen(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classMiniBar_aa7f6df7b7c07163ee6f5881aaeef3859}{slotChangePage}(\textcolor{keywordtype}{int})) );
+209     connect( m\_pagesButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classMiniBar_a4f0f5d729fbe307f3340263061e50af2}{gotoPage}()) );
+210     connect( m\_prevButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classMiniBar_ad8052f3639b48607d0b1cdf539eb092f}{prevPage}()) );
+211     connect( m\_nextButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classMiniBar_a31fd3c4b7b604c65be9222fe1cec11f7}{nextPage}()) );
+212 
+213     resize( minimumSizeHint() );
+214 
+215     \textcolor{comment}{// widget starts disabled (will be enabled after opening a document)}
+216     setEnabled( \textcolor{keyword}{false} );
+217 \}
+\end{DoxyCode}
+\hypertarget{classMiniBar_a0c02ad4502330097618c840602964930}{\index{Mini\+Bar@{Mini\+Bar}!````~Mini\+Bar@{$\sim$\+Mini\+Bar}}
+\index{````~Mini\+Bar@{$\sim$\+Mini\+Bar}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{$\sim$\+Mini\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}Mini\+Bar\+::$\sim$\+Mini\+Bar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMiniBar_a0c02ad4502330097618c840602964930}
+
+
+Definition at line 219 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+220 \{
+221     m\_miniBarLogic->\hyperlink{classMiniBarLogic_a770182cc59d80b7e8cabfc8d153c7a79}{removeMiniBar}( \textcolor{keyword}{this} );
+222 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMiniBar_a5d16c076f3879a3629a75ec4d05da08a}{\index{Mini\+Bar@{Mini\+Bar}!change\+Event@{change\+Event}}
+\index{change\+Event@{change\+Event}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{change\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::change\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}\label{classMiniBar_a5d16c076f3879a3629a75ec4d05da08a}
+
+
+Definition at line 224 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+225 \{
+226     \textcolor{keywordflow}{if} ( event->type() == QEvent::ParentChange )
+227     \{
+228         QToolBar *tb = \textcolor{keyword}{dynamic\_cast<}QToolBar*\textcolor{keyword}{>}( parent() );
+229         \textcolor{keywordflow}{if} ( tb != m\_oldToobarParent )
+230         \{
+231             \textcolor{keywordflow}{if} ( m\_oldToobarParent )
+232             \{
+233                 disconnect( m\_oldToobarParent, SIGNAL(iconSizeChanged(QSize)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classMiniBar_a2d142654f341cead1f4495de5e2d43c8}{slotToolBarIconSizeChanged}()));
+234             \}
+235             m\_oldToobarParent = tb;
+236             \textcolor{keywordflow}{if} ( tb )
+237             \{
+238                 connect( tb, SIGNAL(iconSizeChanged(QSize)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classMiniBar_a2d142654f341cead1f4495de5e2d43c8}{slotToolBarIconSizeChanged}()));
+239                 \hyperlink{classMiniBar_a2d142654f341cead1f4495de5e2d43c8}{slotToolBarIconSizeChanged}();
+240             \}
+241         \}
+242     \}
+243 \}
+\end{DoxyCode}
+\hypertarget{classMiniBar_abc05e1ff3da3e6f23a3c68db5242f449}{\index{Mini\+Bar@{Mini\+Bar}!forward\+Key\+Press\+Event@{forward\+Key\+Press\+Event}}
+\index{forward\+Key\+Press\+Event@{forward\+Key\+Press\+Event}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{forward\+Key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::forward\+Key\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Key\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classMiniBar_abc05e1ff3da3e6f23a3c68db5242f449}
+\hypertarget{classMiniBar_a4f0f5d729fbe307f3340263061e50af2}{\index{Mini\+Bar@{Mini\+Bar}!goto\+Page@{goto\+Page}}
+\index{goto\+Page@{goto\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{goto\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::goto\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classMiniBar_a4f0f5d729fbe307f3340263061e50af2}
+\hypertarget{classMiniBar_a31fd3c4b7b604c65be9222fe1cec11f7}{\index{Mini\+Bar@{Mini\+Bar}!next\+Page@{next\+Page}}
+\index{next\+Page@{next\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{next\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::next\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classMiniBar_a31fd3c4b7b604c65be9222fe1cec11f7}
+\hypertarget{classMiniBar_ad8052f3639b48607d0b1cdf539eb092f}{\index{Mini\+Bar@{Mini\+Bar}!prev\+Page@{prev\+Page}}
+\index{prev\+Page@{prev\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{prev\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::prev\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classMiniBar_ad8052f3639b48607d0b1cdf539eb092f}
+\hypertarget{classMiniBar_aa7f6df7b7c07163ee6f5881aaeef3859}{\index{Mini\+Bar@{Mini\+Bar}!slot\+Change\+Page@{slot\+Change\+Page}}
+\index{slot\+Change\+Page@{slot\+Change\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{slot\+Change\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::slot\+Change\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMiniBar_aa7f6df7b7c07163ee6f5881aaeef3859}
+
+
+Definition at line 263 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+264 \{
+265     \textcolor{comment}{// get text from the lineEdit}
+266     \textcolor{keyword}{const} QString pageNumber = m\_pageNumberEdit->text();
+267 
+268     \textcolor{comment}{// convert it to page number and go to that page}
+269     \textcolor{keywordtype}{bool} ok;
+270     \textcolor{keywordtype}{int} number = pageNumber.toInt( &ok ) - 1;
+271     \textcolor{keywordflow}{if} ( ok && number >= 0 && number < (\textcolor{keywordtype}{int})m\_miniBarLogic->\hyperlink{classMiniBarLogic_a6ff154c4a6afc3b7b72d33c408879282}{document}()->
+      \hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}() &&
+272          number != m\_miniBarLogic->\hyperlink{classMiniBarLogic_a24524db1abd64a39da93c33a49d914b5}{currentPage}() )
+273     \{
+274         \hyperlink{classMiniBar_aa7f6df7b7c07163ee6f5881aaeef3859}{slotChangePage}( number );
+275     \}
+276 \}
+\end{DoxyCode}
+\hypertarget{classMiniBar_aaa949576966820afab03f336d5e1880b}{\index{Mini\+Bar@{Mini\+Bar}!slot\+Change\+Page@{slot\+Change\+Page}}
+\index{slot\+Change\+Page@{slot\+Change\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{slot\+Change\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::slot\+Change\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMiniBar_aaa949576966820afab03f336d5e1880b}
+
+
+Definition at line 278 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+279 \{
+280     m\_miniBarLogic->\hyperlink{classMiniBarLogic_a6ff154c4a6afc3b7b72d33c408879282}{document}()->\hyperlink{classOkular_1_1Document_ac3bdbd5137c7fd4d5e960646affc25ec}{setViewportPage}( pageNumber );
+281     m\_pageNumberEdit->clearFocus();
+282     m\_pageLabelEdit->clearFocus();
+283 \}
+\end{DoxyCode}
+\hypertarget{classMiniBar_a72429bb47003b11b89b50b2c90ecd459}{\index{Mini\+Bar@{Mini\+Bar}!slot\+Emit\+Next\+Page@{slot\+Emit\+Next\+Page}}
+\index{slot\+Emit\+Next\+Page@{slot\+Emit\+Next\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{slot\+Emit\+Next\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::slot\+Emit\+Next\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMiniBar_a72429bb47003b11b89b50b2c90ecd459}
+
+
+Definition at line 285 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+286 \{
+287     \textcolor{comment}{// emit signal}
+288     \hyperlink{classMiniBar_a31fd3c4b7b604c65be9222fe1cec11f7}{nextPage}();
+289 \}
+\end{DoxyCode}
+\hypertarget{classMiniBar_a7150ff311d8560c4c1a9b9e18167ce57}{\index{Mini\+Bar@{Mini\+Bar}!slot\+Emit\+Prev\+Page@{slot\+Emit\+Prev\+Page}}
+\index{slot\+Emit\+Prev\+Page@{slot\+Emit\+Prev\+Page}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{slot\+Emit\+Prev\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::slot\+Emit\+Prev\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMiniBar_a7150ff311d8560c4c1a9b9e18167ce57}
+
+
+Definition at line 291 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+292 \{
+293     \textcolor{comment}{// emit signal}
+294     \hyperlink{classMiniBar_ad8052f3639b48607d0b1cdf539eb092f}{prevPage}();
+295 \}
+\end{DoxyCode}
+\hypertarget{classMiniBar_a2d142654f341cead1f4495de5e2d43c8}{\index{Mini\+Bar@{Mini\+Bar}!slot\+Tool\+Bar\+Icon\+Size\+Changed@{slot\+Tool\+Bar\+Icon\+Size\+Changed}}
+\index{slot\+Tool\+Bar\+Icon\+Size\+Changed@{slot\+Tool\+Bar\+Icon\+Size\+Changed}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{slot\+Tool\+Bar\+Icon\+Size\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\+Bar\+::slot\+Tool\+Bar\+Icon\+Size\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMiniBar_a2d142654f341cead1f4495de5e2d43c8}
+
+
+Definition at line 297 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+298 \{
+299     \textcolor{keyword}{const} QSize buttonSize = m\_oldToobarParent->iconSize();
+300     m\_prevButton->setIconSize( buttonSize );
+301     m\_nextButton->setIconSize( buttonSize );
+302 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classMiniBar_a5829e50433449ff6715750acf8485dec}{\index{Mini\+Bar@{Mini\+Bar}!Mini\+Bar\+Logic@{Mini\+Bar\+Logic}}
+\index{Mini\+Bar\+Logic@{Mini\+Bar\+Logic}!Mini\+Bar@{Mini\+Bar}}
+\subsubsection[{Mini\+Bar\+Logic}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Mini\+Bar\+Logic}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classMiniBar_a5829e50433449ff6715750acf8485dec}
+
+
+Definition at line 111 of file minibar.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{minibar_8h}{minibar.\+h}\item 
+ui/\hyperlink{minibar_8cpp}{minibar.\+cpp}\end{DoxyCompactItemize}

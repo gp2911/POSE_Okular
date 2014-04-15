@@ -1,0 +1,723 @@
+\hypertarget{classpageSize}{\section{page\+Size Class Reference}
+\label{classpageSize}\index{page\+Size@{page\+Size}}
+}
+
+
+{\ttfamily \#include $<$page\+Size.\+h$>$}
+
+Inheritance diagram for page\+Size\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpageSize}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpageSize_acca668161756a8e0ae0fea18d06292b5}{set\+Orientation} (int orient)
+\begin{DoxyCompactList}\small\item\em Sets orientation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{size\+Changed} (const \hyperlink{classSimplePageSize}{Simple\+Page\+Size} \&t)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the page sizes changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpageSize_aee12acdd4265fc3715734fbe24cff4c8}{page\+Size} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, initializes the \hyperlink{classpageSize}{page\+Size} with a reasonable default. \end{DoxyCompactList}\item 
+\hyperlink{classpageSize_a12ad5a663012ca69b9e5f433c9ff332e}{page\+Size} (const \hyperlink{classSimplePageSize}{Simple\+Page\+Size} \&)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{classpageSize}{page\+Size} with a \hyperlink{classSimplePageSize}{Simple\+Page\+Size}. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}{page\+Size\+Names} ()
+\begin{DoxyCompactList}\small\item\em List of standard page\+Sizes. \end{DoxyCompactList}\item 
+bool \hyperlink{classpageSize_a64ac04a797c6416e6fe8fb30f7eb6b38}{set\+Page\+Size} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em Set page size by name. \end{DoxyCompactList}\item 
+void \hyperlink{classpageSize_aa7a848d77ae50135e5d49795db0fbb65}{set\+Page\+Size} (const Q\+String \&\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}, const Q\+String \&width\+Units, const Q\+String \&\hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height}, const Q\+String \&height\+Units)
+\begin{DoxyCompactList}\small\item\em Set page size from width and height strings. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classpageSize_a9cdfa8d2bc570ce7ab308bad858e95b6}{set\+Page\+Size} (double width\+\_\+in\+\_\+mm, double height\+\_\+in\+\_\+mm)
+\begin{DoxyCompactList}\small\item\em Set page size. \end{DoxyCompactList}\item 
+\hyperlink{classpageSize}{page\+Size} \& \hyperlink{classpageSize_a1dcae891d98d8fe50e0c53c63fa76130}{operator=} (const \hyperlink{classpageSize}{page\+Size} \&src)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classpageSize_a56c7c5e8cb55631ba45717e55f86c14b}{preferred\+Unit} () const 
+\begin{DoxyCompactList}\small\item\em Preferred unit for the current page size. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classpageSize_a06f628c0af2ee7d93f0cf7a8b07e7b05}{width\+String} (const Q\+String \&unit) const 
+\begin{DoxyCompactList}\small\item\em Returns the page width as a string. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classpageSize_a11875d7200f7d354583e653fe284b570}{height\+String} (const Q\+String \&unit) const 
+\begin{DoxyCompactList}\small\item\em Returns the page height as a string. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classpageSize_a22f33abf19e5ecc3d104ecb5be04e2cf}{format\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Returns a name for the page size, if this is a standard size. \end{DoxyCompactList}\item 
+int \hyperlink{classpageSize_a19307e927d2e43e8153046bb4ede3fd2}{format\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Returns an number for the page size, if this is a standard size. \end{DoxyCompactList}\item 
+int \hyperlink{classpageSize_a6ca490a7f4d0960bda88a1f54f6f9f19}{get\+Orientation} () const 
+\begin{DoxyCompactList}\small\item\em Gets orientation for standard sizes. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classpageSize_adf8864815e606a04c2b969da61194f1e}{serialize} () const 
+\begin{DoxyCompactList}\small\item\em Returns a string that can be read by set\+Page\+Size(\+Q\+String) \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classpageSize_a63800564641eb617aff92a2db297afd1}{description} () const 
+\begin{DoxyCompactList}\small\item\em Returns a textual description of the page size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file page\+Size.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpageSize_aee12acdd4265fc3715734fbe24cff4c8}{\index{page\+Size@{page\+Size}!page\+Size@{page\+Size}}
+\index{page\+Size@{page\+Size}!page\+Size@{page\+Size}}
+\subsubsection[{page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}page\+Size\+::page\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpageSize_aee12acdd4265fc3715734fbe24cff4c8}
+
+
+Default constructor, initializes the \hyperlink{classpageSize}{page\+Size} with a reasonable default. 
+
+The default chosen depends on the locale. At the moment, A4 size is chosen for countries with metric measurement system, and U\+S letter otherwise. 
+
+Definition at line 45 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47   currentSize = defaultPageSize();
+48   \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width});
+49   \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height});
+50 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a12ad5a663012ca69b9e5f433c9ff332e}{\index{page\+Size@{page\+Size}!page\+Size@{page\+Size}}
+\index{page\+Size@{page\+Size}!page\+Size@{page\+Size}}
+\subsubsection[{page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}page\+Size\+::page\+Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Simple\+Page\+Size} \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{classpageSize_a12ad5a663012ca69b9e5f433c9ff332e}
+
+
+Initializes the \hyperlink{classpageSize}{page\+Size} with a \hyperlink{classSimplePageSize}{Simple\+Page\+Size}. 
+
+
+
+Definition at line 53 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55   \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth} = s.\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}();
+56   \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight} = s.\hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height}();
+57 
+58   rectifySizes();
+59   reconstructCurrentSize();
+60 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpageSize_a63800564641eb617aff92a2db297afd1}{\index{page\+Size@{page\+Size}!description@{description}}
+\index{description@{description}!page\+Size@{page\+Size}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String page\+Size\+::description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_a63800564641eb617aff92a2db297afd1}
+
+
+Returns a textual description of the page size. 
+
+
+
+Definition at line 310 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+311 \{
+312   \textcolor{keywordflow}{if} (!\hyperlink{classSimplePageSize_acc614937770417e54201cac058ed19be}{isValid}())
+313     \textcolor{keywordflow}{return} QString();
+314 
+315   QString \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = \textcolor{stringliteral}{" "};
+316   \textcolor{keywordflow}{if} (\hyperlink{classpageSize_a19307e927d2e43e8153046bb4ede3fd2}{formatNumber}() == -1) \{
+317     \textcolor{keywordflow}{if} (KGlobal::locale()-> measureSystem() == KLocale::Metric)
+318       size += QString(\textcolor{stringliteral}{"%1x%2 mm"}).arg(\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}().getLength\_in\_mm(), 0, \textcolor{charliteral}{'f'}, 0).arg(
+      \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height}().getLength\_in\_mm(), 0, \textcolor{charliteral}{'f'}, 0);
+319     \textcolor{keywordflow}{else}
+320       size += QString(\textcolor{stringliteral}{"%1x%2 in"}).arg(\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}().getLength\_in\_inch(), 0, \textcolor{charliteral}{'g'}, 2).arg(
+      \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height}().getLength\_in\_inch(), 0, \textcolor{charliteral}{'g'}, 2);
+321   \} \textcolor{keywordflow}{else} \{
+322     size += \hyperlink{classpageSize_a22f33abf19e5ecc3d104ecb5be04e2cf}{formatName}() + \textcolor{charliteral}{'/'};
+323      \textcolor{keywordflow}{if} (\hyperlink{classpageSize_a6ca490a7f4d0960bda88a1f54f6f9f19}{getOrientation}() == 0)
+324       size += i18n(\textcolor{stringliteral}{"portrait"});
+325     \textcolor{keywordflow}{else}
+326       size += i18n(\textcolor{stringliteral}{"landscape"});
+327   \}
+328   \textcolor{keywordflow}{return} size + \textcolor{charliteral}{' '};
+329 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a22f33abf19e5ecc3d104ecb5be04e2cf}{\index{page\+Size@{page\+Size}!format\+Name@{format\+Name}}
+\index{format\+Name@{format\+Name}!page\+Size@{page\+Size}}
+\subsubsection[{format\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String page\+Size\+::format\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_a22f33abf19e5ecc3d104ecb5be04e2cf}
+
+
+Returns a name for the page size, if this is a standard size. 
+
+\begin{DoxyWarning}{Warning}
+This method does not take care of orientation, e.\+g. it will return \char`\"{}\+D\+I\+N A4\char`\"{} if the page size is either 210x297 or 297x210.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+A name for the current page size, if the format has a name, or Q\+String() otherwise. If the result is not Q\+String(), it is guaranteed to be one of the strings returned by the \hyperlink{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}{page\+Size\+Names()} method. 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+261 \{
+262   \textcolor{keywordflow}{if} (currentSize >= 0)
+263     \textcolor{keywordflow}{return} staticList[currentSize].\hyperlink{structpageSizeItem_aeabfea4a5413a25c81fa32cf0dde3d44}{name};
+264   \textcolor{keywordflow}{else}
+265     \textcolor{keywordflow}{return} QString();
+266 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a19307e927d2e43e8153046bb4ede3fd2}{\index{page\+Size@{page\+Size}!format\+Number@{format\+Number}}
+\index{format\+Number@{format\+Number}!page\+Size@{page\+Size}}
+\subsubsection[{format\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int page\+Size\+::format\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpageSize_a19307e927d2e43e8153046bb4ede3fd2}
+
+
+Returns an number for the page size, if this is a standard size. 
+
+\begin{DoxyWarning}{Warning}
+This method does not take care of orientation, e.\+g. it will return the same value if the page size is either 210x297 or 297x210.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+If the current format is one of the standard sizes, a non-\/negative integer is returned, which is an index to the Q\+String\+List returned by the \hyperlink{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}{page\+Size\+Names()} method. If the current format is none of the standard sizes, -\/1 is returned. 
+\end{DoxyReturn}
+
+
+Definition at line 210 of file page\+Size.\+h.
+
+
+\begin{DoxyCode}
+210 \{\textcolor{keywordflow}{return} currentSize;\}
+\end{DoxyCode}
+\hypertarget{classpageSize_a6ca490a7f4d0960bda88a1f54f6f9f19}{\index{page\+Size@{page\+Size}!get\+Orientation@{get\+Orientation}}
+\index{get\+Orientation@{get\+Orientation}!page\+Size@{page\+Size}}
+\subsubsection[{get\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}int page\+Size\+::get\+Orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_a6ca490a7f4d0960bda88a1f54f6f9f19}
+
+
+Gets orientation for standard sizes. 
+
+If the \hyperlink{classpageSize}{page\+Size} is one of the standard sizes, i.\+e. \hyperlink{classpageSize_a19307e927d2e43e8153046bb4ede3fd2}{format\+Number()} != -\/1, this method can be used to get the orientation. If the \hyperlink{classpageSize}{page\+Size} is not a standard size, this method prints an error message stderr using k\+Error().
+
+\begin{DoxyReturn}{Returns}
+0 for 'portrait', or 1 for 'landscape'. If the size is none of the standard sizes, an undefined value is returned. 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+270 \{
+271   \textcolor{keywordflow}{if} (currentSize == -1) \{
+272     kError(kvs::shell) << \textcolor{stringliteral}{"pageSize::getOrientation: getOrientation called for page format that does not
+       have a name."} << endl;
+273     \textcolor{keywordflow}{return} 0;
+274   \}
+275 
+276   \textcolor{keywordflow}{if} (\hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}() == staticList[currentSize].
+      \hyperlink{structpageSizeItem_a365e5c8b7ceae8e7a28b4a59bf324240}{width})
+277     \textcolor{keywordflow}{return} 0;
+278   \textcolor{keywordflow}{else}
+279     \textcolor{keywordflow}{return} 1;
+280 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a11875d7200f7d354583e653fe284b570}{\index{page\+Size@{page\+Size}!height\+String@{height\+String}}
+\index{height\+String@{height\+String}!page\+Size@{page\+Size}}
+\subsubsection[{height\+String}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String page\+Size\+::height\+String (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{unit}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_a11875d7200f7d354583e653fe284b570}
+
+
+Returns the page height as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The unit in height the page width shall be returned. This must be one of \char`\"{}cm\char`\"{}, \char`\"{}mm\char`\"{} or \char`\"{}in\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string containing a number which gives the page height in the given unit. If the unit is not recognized, the string \char`\"{}-\/-\/\char`\"{} is returned. 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+235 \{
+236   QString answer = \textcolor{stringliteral}{"--"};
+237 
+238   \textcolor{keywordflow}{if} (unit == \textcolor{stringliteral}{"cm"})
+239     answer.setNum(\hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_a988932b7b90b6877fab6cda8b6518ba9}{getLength\_in\_cm}());
+240   \textcolor{keywordflow}{if} (unit == \textcolor{stringliteral}{"mm"})
+241     answer.setNum(\hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}());
+242   \textcolor{keywordflow}{if} (unit == \textcolor{stringliteral}{"in"})
+243     answer.setNum(\hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_afbaef4ba8d8a3e97873ed5cfd20c7dea}{getLength\_in\_inch}());
+244 
+245   \textcolor{keywordflow}{return} answer;
+246 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a1dcae891d98d8fe50e0c53c63fa76130}{\index{page\+Size@{page\+Size}!operator=@{operator=}}
+\index{operator=@{operator=}!page\+Size@{page\+Size}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf page\+Size} \& page\+Size\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf page\+Size} \&}]{src}
+\end{DoxyParamCaption}
+)}}\label{classpageSize_a1dcae891d98d8fe50e0c53c63fa76130}
+
+
+Copy operator. 
+
+This operator will emit the signal \hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{size\+Changed()} if one of the dimensions of $\ast$this and src differ by more than two millimeters. 
+
+Definition at line 176 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+177 \{
+178   \hyperlink{classSimplePageSize}{SimplePageSize} oldPage = *\textcolor{keyword}{this};
+179 
+180   currentSize = src.currentSize;
+181   \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}   = src.\hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth};
+182   \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}  = src.\hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight};
+183 
+184   \textcolor{keywordflow}{if} ( !\hyperlink{classSimplePageSize_acb4b951dcef3b5b94e2c6d1942e833e6}{isNearlyEqual}(oldPage))
+185     emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+186   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+187 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}{\index{page\+Size@{page\+Size}!page\+Size\+Names@{page\+Size\+Names}}
+\index{page\+Size\+Names@{page\+Size\+Names}!page\+Size@{page\+Size}}
+\subsubsection[{page\+Size\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List page\+Size\+::page\+Size\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}
+
+
+List of standard page\+Sizes. 
+
+This method returns the names of standard page\+Sizes, e.\+g. \char`\"{}\+A4\char`\"{}. These can be used, e.\+g., by a Q\+Combo\+Box to let the user choose known sizes. The returned list is also a list of all possible return values of the \hyperlink{classpageSize_a22f33abf19e5ecc3d104ecb5be04e2cf}{format\+Name()} method explained below. If you call \hyperlink{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}{page\+Size\+Names()} more than once, it is guaranteed that the same list of strings will be returned.
+
+\begin{DoxyReturn}{Returns}
+Q\+String\+List that contains 
+\end{DoxyReturn}
+
+
+Definition at line 249 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+250 \{
+251   QStringList names;
+252 
+253   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; staticList[i].\hyperlink{structpageSizeItem_aeabfea4a5413a25c81fa32cf0dde3d44}{name} != 0; i++)
+254     names << staticList[i].name;
+255 
+256   \textcolor{keywordflow}{return} names;
+257 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a56c7c5e8cb55631ba45717e55f86c14b}{\index{page\+Size@{page\+Size}!preferred\+Unit@{preferred\+Unit}}
+\index{preferred\+Unit@{preferred\+Unit}!page\+Size@{page\+Size}}
+\subsubsection[{preferred\+Unit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String page\+Size\+::preferred\+Unit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_a56c7c5e8cb55631ba45717e55f86c14b}
+
+
+Preferred unit for the current page size. 
+
+\begin{DoxyReturn}{Returns}
+The name of the unit, one of \char`\"{}cm\char`\"{}, \char`\"{}mm\char`\"{} or \char`\"{}in\char`\"{}, which is most commonly used with the current page format. For instance, U\+S Letter and U\+S Legal are best given in inches, to avoid very odd numbers. If the page format is unknown, returns a guess based on the current locale. 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+207 \{
+208   \textcolor{keywordflow}{if} (currentSize >= 0)
+209     \textcolor{keywordflow}{return} staticList[currentSize].\hyperlink{structpageSizeItem_ae5589189533a4ce5dc3d3c6a4c430581}{preferredUnit};
+210 
+211   \textcolor{comment}{// User-defined size. Give a preferred unit depening on the locale.}
+212   \textcolor{keywordflow}{if} (KGlobal::locale()-> measureSystem() == KLocale::Metric)
+213     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"mm"};
+214   \textcolor{keywordflow}{else}
+215     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"in"};
+216 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_adf8864815e606a04c2b969da61194f1e}{\index{page\+Size@{page\+Size}!serialize@{serialize}}
+\index{serialize@{serialize}!page\+Size@{page\+Size}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String page\+Size\+::serialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_adf8864815e606a04c2b969da61194f1e}
+
+
+Returns a string that can be read by set\+Page\+Size(\+Q\+String) 
+
+\begin{DoxyReturn}{Returns}
+This method returns a string like \char`\"{}210x297\char`\"{}. The numbers are page width and height in millimeters. The set\+Page\+Size(\+Q\+String) method will understand this output. 
+\end{DoxyReturn}
+
+
+Definition at line 301 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+302 \{
+303   \textcolor{keywordflow}{if} ((currentSize >= 0) && (fabs(staticList[currentSize].\hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height}-
+      \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}()) <= 0.5))
+304     \textcolor{keywordflow}{return} staticList[currentSize].name;
+305   \textcolor{keywordflow}{else}
+306     \textcolor{keywordflow}{return} QString(\textcolor{stringliteral}{"%1x%2"}).arg(\hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}()).arg(
+      \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}());
+307 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_acca668161756a8e0ae0fea18d06292b5}{\index{page\+Size@{page\+Size}!set\+Orientation@{set\+Orientation}}
+\index{set\+Orientation@{set\+Orientation}!page\+Size@{page\+Size}}
+\subsubsection[{set\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}void page\+Size\+::set\+Orientation (
+\begin{DoxyParamCaption}
+\item[{int}]{orient}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classpageSize_acca668161756a8e0ae0fea18d06292b5}
+
+
+Sets orientation. 
+
+If the \hyperlink{classpageSize}{page\+Size} is one of the standard sizes, i.\+e. \hyperlink{classpageSize_a19307e927d2e43e8153046bb4ede3fd2}{format\+Number()} != -\/1, this method can be used to set the orientation. If the \hyperlink{classpageSize}{page\+Size} is not a standard size, this method prints an error message stderr using k\+Error() and does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orient} & 0 sets 'portrait orientation', 1 sets 'landscape' \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 283 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+284 \{
+285   \textcolor{keywordflow}{if} (currentSize == -1) \{
+286     kError(kvs::shell) << \textcolor{stringliteral}{"pageSize::setOrientation: setOrientation called for page format that does not
+       have a name."} << endl;
+287     \textcolor{keywordflow}{return};
+288   \}
+289 
+290   \textcolor{keywordflow}{if} (orient == 1) \{
+291     \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height});
+292     \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width});
+293   \} \textcolor{keywordflow}{else} \{
+294     \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width});
+295     \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].height);
+296   \}
+297   emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+298 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a64ac04a797c6416e6fe8fb30f7eb6b38}{\index{page\+Size@{page\+Size}!set\+Page\+Size@{set\+Page\+Size}}
+\index{set\+Page\+Size@{set\+Page\+Size}!page\+Size@{page\+Size}}
+\subsubsection[{set\+Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}bool page\+Size\+::set\+Page\+Size (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpageSize_a64ac04a797c6416e6fe8fb30f7eb6b38}
+
+
+Set page size by name. 
+
+Acceptable strings are
+
+(1) a name from the list retured by \hyperlink{classpageSize_a074be4f8071c9acf4b54b4cd463f4d7b}{page\+Size\+Names()}, such as \char`\"{}\+D\+I\+N
+    A4\char`\"{}
+
+(2) a string like \char`\"{}500x300\char`\"{}, which describes a page of width 500mm and height 300mm.
+
+(3) a string like \char`\"{}3in, 4 cm\char`\"{}. A number of different units, including \char`\"{}in\char`\"{}, \char`\"{}mm\char`\"{} and \char`\"{}cm\char`\"{}, and a few typographical units are recognized
+
+If the name is not of these types, and error message is printed to stderr using k\+Error() and a default value, which depends on the locale, is set.
+
+In any case, the values will be trimmed so as not to exceed the minima/maxima of 5cm and 50cm, respectively. If the page size found matches one of the standard sizes by an error of no more than 2mm, the standard page size will be set. The signal \hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{size\+Changed()} will always be emitted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string that represents the page size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+'True', if the parameter could be parsed, and 'false' otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65   \textcolor{comment}{// See if we can recognize the string}
+66   QString currentName;
+67   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; staticList[i].\hyperlink{structpageSizeItem_aeabfea4a5413a25c81fa32cf0dde3d44}{name} != 0; i++) \{
+68     currentName = staticList[i].\hyperlink{structpageSizeItem_aeabfea4a5413a25c81fa32cf0dde3d44}{name};
+69     \textcolor{keywordflow}{if} (currentName == name) \{
+70       currentSize = i;
+71       \textcolor{comment}{// Set page width/height accordingly}
+72       \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width});
+73       \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height});
+74       emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+75       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+76     \}
+77   \}
+78 
+79   \textcolor{comment}{// Check if the string contains 'x'. If yes, we assume it is of type}
+80   \textcolor{comment}{// "<number>x<number>". If yes, the first number is interpreted as}
+81   \textcolor{comment}{// the width in mm, the second as the height in mm}
+82   \textcolor{keywordflow}{if} (name.indexOf(\textcolor{charliteral}{'x'}) >= 0) \{
+83     \textcolor{keywordtype}{bool} wok, hok;
+84     \textcolor{keywordtype}{float} pageWidth\_tmp  = name.section(\textcolor{charliteral}{'x'},0,0).toFloat(&wok);
+85     \textcolor{keywordtype}{float} pageHeight\_tmp = name.section(\textcolor{charliteral}{'x'},1,1).toFloat(&hok);
+86     \textcolor{keywordflow}{if} (wok && hok) \{
+87       \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(pageWidth\_tmp);
+88       \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(pageHeight\_tmp);
+89 
+90       rectifySizes();
+91       reconstructCurrentSize();
+92       emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+93       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+94     \}
+95   \}
+96 
+97   \textcolor{comment}{// Check if the string contains ','. If yes, we assume it is of type}
+98   \textcolor{comment}{// "<number><unit>,<number><uni>". The first number is supposed to}
+99   \textcolor{comment}{// be the width, the second the height.}
+100   \textcolor{keywordflow}{if} (name.indexOf(\textcolor{charliteral}{','}) >= 0) \{
+101     \textcolor{keywordtype}{bool} wok, hok;
+102     \textcolor{keywordtype}{float} pageWidth\_tmp  = \hyperlink{classLength_a0831070f01a1220c5741f087e0585373}{Length::convertToMM}(name.section(\textcolor{charliteral}{','},0,0), &wok);
+103     \textcolor{keywordtype}{float} pageHeight\_tmp = \hyperlink{classLength_a0831070f01a1220c5741f087e0585373}{Length::convertToMM}(name.section(\textcolor{charliteral}{','},1,1), &hok);
+104     \textcolor{keywordflow}{if} (wok && hok) \{
+105       \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(pageWidth\_tmp);
+106       \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(pageHeight\_tmp);
+107 
+108       rectifySizes();
+109       reconstructCurrentSize();
+110       emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+111       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+112     \}
+113   \}
+114 
+115   \textcolor{comment}{// Last resource. Set the default, in case the string is}
+116   \textcolor{comment}{// unintelligible to us.}
+117   currentSize = defaultPageSize();
+118   \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].width);
+119   \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(staticList[currentSize].
+      \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height});
+120   kError(kvs::shell) << \textcolor{stringliteral}{"pageSize::setPageSize: could not parse '"} << name << \textcolor{stringliteral}{"'. Using "} << staticList[
+      currentSize].\hyperlink{structpageSizeItem_aeabfea4a5413a25c81fa32cf0dde3d44}{name} << \textcolor{stringliteral}{" as a default."} << endl;
+121   emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+122   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+123 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_aa7a848d77ae50135e5d49795db0fbb65}{\index{page\+Size@{page\+Size}!set\+Page\+Size@{set\+Page\+Size}}
+\index{set\+Page\+Size@{set\+Page\+Size}!page\+Size@{page\+Size}}
+\subsubsection[{set\+Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void page\+Size\+::set\+Page\+Size (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{width, }
+\item[{const Q\+String \&}]{width\+Units, }
+\item[{const Q\+String \&}]{height, }
+\item[{const Q\+String \&}]{height\+Units}
+\end{DoxyParamCaption}
+)}}\label{classpageSize_aa7a848d77ae50135e5d49795db0fbb65}
+
+
+Set page size from width and height strings. 
+
+Sets the page size to \char`\"{}width\char`\"{} and \char`\"{}height\char`\"{}, given in the associated units. Currently, \char`\"{}mm\char`\"{}, \char`\"{}cm\char`\"{} and \char`\"{}in\char`\"{} are supported. If a unit is not recognized, \char`\"{}mm\char`\"{} is siliently assumed, and error message is printed to stderr using k\+Error(). If the page size set matches one of the standard sizes by an error of no more than 2mm, the standard page size will be set. If width or height does not contain a number, the result is an undefined value. However, it is guaranteed in any case that both width and height are between the minimal and maximal possible values, i.\+e. in the range 5..50 cm. If the newly set value differs from the old value by more that 2mm for width or height, the signal \hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{size\+Changed()} will be emitted
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & string that represents the page width as a number, e.\+g., \char`\"{} 300 \char`\"{}\\
+\hline
+{\em width\+Units} & units for the width string. Currently \char`\"{}mm\char`\"{}, \char`\"{}cm\char`\"{} and \char`\"{}in\char`\"{} are allowed.\\
+\hline
+{\em height} & string that represents the page height as a number, e.\+g., \char`\"{} 300 \char`\"{}\\
+\hline
+{\em height\+Units} & units for the height string. Currently \char`\"{}mm\char`\"{}, \char`\"{}cm\char`\"{} and \char`\"{}in\char`\"{} are allowed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+141 \{
+142   \hyperlink{classSimplePageSize}{SimplePageSize} oldPage = *\textcolor{keyword}{this};
+143 
+144   \textcolor{keywordtype}{double} w = \hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}.toFloat();
+145   \textcolor{keywordtype}{double} h = \hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height}.toFloat();
+146 
+147   QString widthUnits = \_widthUnits;
+148   \textcolor{keywordflow}{if} ((widthUnits != \textcolor{stringliteral}{"cm"}) && (widthUnits != \textcolor{stringliteral}{"mm"}) && (widthUnits != \textcolor{stringliteral}{"in"})) \{
+149     kError(kvs::shell) << \textcolor{stringliteral}{"Unrecognized page width unit '"} << widthUnits << \textcolor{stringliteral}{"'. Assuming mm"} << endl;
+150     widthUnits = \textcolor{stringliteral}{"mm"};
+151   \}
+152   \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(w);
+153   \textcolor{keywordflow}{if} (widthUnits == \textcolor{stringliteral}{"cm"})
+154     \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_a4ccc72a3e9be9c00a0901a0c3c31e907}{setLength\_in\_cm}(w);
+155   \textcolor{keywordflow}{if} (widthUnits == \textcolor{stringliteral}{"in"})
+156     \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_af5a9d0ca3a93d6c2c304ca5ac445aa44}{setLength\_in\_inch}(w);
+157 
+158   QString heightUnits = \_heightUnits;
+159   \textcolor{keywordflow}{if} ((heightUnits != \textcolor{stringliteral}{"cm"}) && (heightUnits != \textcolor{stringliteral}{"mm"}) && (heightUnits != \textcolor{stringliteral}{"in"})) \{
+160     kError(kvs::shell) << \textcolor{stringliteral}{"Unrecognized page height unit '"} << widthUnits << \textcolor{stringliteral}{"'. Assuming mm"} << endl;
+161     heightUnits = \textcolor{stringliteral}{"mm"};
+162   \}
+163   \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(h);
+164   \textcolor{keywordflow}{if} (heightUnits == \textcolor{stringliteral}{"cm"})
+165     \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_a4ccc72a3e9be9c00a0901a0c3c31e907}{setLength\_in\_cm}(h);
+166   \textcolor{keywordflow}{if} (heightUnits == \textcolor{stringliteral}{"in"})
+167     \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_af5a9d0ca3a93d6c2c304ca5ac445aa44}{setLength\_in\_inch}(h);
+168 
+169   rectifySizes();
+170   reconstructCurrentSize();
+171   \textcolor{keywordflow}{if} ( !\hyperlink{classSimplePageSize_acb4b951dcef3b5b94e2c6d1942e833e6}{isNearlyEqual}(oldPage))
+172     emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+173 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_a9cdfa8d2bc570ce7ab308bad858e95b6}{\index{page\+Size@{page\+Size}!set\+Page\+Size@{set\+Page\+Size}}
+\index{set\+Page\+Size@{set\+Page\+Size}!page\+Size@{page\+Size}}
+\subsubsection[{set\+Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void page\+Size\+::set\+Page\+Size (
+\begin{DoxyParamCaption}
+\item[{double}]{width\+\_\+in\+\_\+mm, }
+\item[{double}]{height\+\_\+in\+\_\+mm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpageSize_a9cdfa8d2bc570ce7ab308bad858e95b6}
+
+
+Set page size. 
+
+Sets the page size to \char`\"{}width\char`\"{} and \char`\"{}height\char`\"{}, given in millimeter. If the page size set matches one of the standard sizes by an error of no more than 2mm, the standard page size will be set. Values are trimmed so that both width and height are between the minimal and maximal possible values, i.\+e. in the range 5..50 cm. If the newly set value differs from the old value by more that 2mm for width or height, the signal \hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{size\+Changed()} will be emitted
+
+
+\begin{DoxyParams}{Parameters}
+{\em width\+\_\+in\+\_\+mm} & page width in mm\\
+\hline
+{\em height\+\_\+in\+\_\+mm} & page height in mm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+127 \{
+128   \hyperlink{classSimplePageSize}{SimplePageSize} oldPage = *\textcolor{keyword}{this};
+129 
+130   \hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width});
+131   \hyperlink{classSimplePageSize_a0e0bc8a9833d9c276f96e6fda5c64cf7}{pageHeight}.\hyperlink{classLength_ae3aabced262567871a1df58c1a878b60}{setLength\_in\_mm}(\hyperlink{classSimplePageSize_a8df6b43628bff9c8b53f26cc478640c5}{height});
+132 
+133   rectifySizes();
+134   reconstructCurrentSize();
+135   \textcolor{keywordflow}{if} ( !\hyperlink{classSimplePageSize_acb4b951dcef3b5b94e2c6d1942e833e6}{isNearlyEqual}(oldPage))
+136     emit(\hyperlink{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{sizeChanged}(*\textcolor{keyword}{this}));
+137 \}
+\end{DoxyCode}
+\hypertarget{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}{\index{page\+Size@{page\+Size}!size\+Changed@{size\+Changed}}
+\index{size\+Changed@{size\+Changed}!page\+Size@{page\+Size}}
+\subsubsection[{size\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void page\+Size\+::size\+Changed (
+\begin{DoxyParamCaption}
+\item[{const {\bf Simple\+Page\+Size} \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classpageSize_ae49ee59892403f920d614d0c8d9daa5b}
+
+
+Signal emitted when the page sizes changes. 
+
+emitted to indicate that the size changed. Not emitted immediately after construction, when the constructor sets the default size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & a pointer to this \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpageSize_a06f628c0af2ee7d93f0cf7a8b07e7b05}{\index{page\+Size@{page\+Size}!width\+String@{width\+String}}
+\index{width\+String@{width\+String}!page\+Size@{page\+Size}}
+\subsubsection[{width\+String}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String page\+Size\+::width\+String (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{unit}
+\end{DoxyParamCaption}
+) const}}\label{classpageSize_a06f628c0af2ee7d93f0cf7a8b07e7b05}
+
+
+Returns the page width as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The unit in which the page width shall be returned. This must be one of \char`\"{}cm\char`\"{}, \char`\"{}mm\char`\"{} or \char`\"{}in\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string containing a number, e.\+g. \char`\"{}3.\+1415\char`\"{}, which gives the page width in the given unit. If the unit is not recognized, the string \char`\"{}-\/-\/\char`\"{} is returned. 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file page\+Size.\+cpp.
+
+
+\begin{DoxyCode}
+220 \{
+221   QString answer = \textcolor{stringliteral}{"--"};
+222 
+223   \textcolor{keywordflow}{if} (unit == \textcolor{stringliteral}{"cm"})
+224     answer.setNum(\hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_a988932b7b90b6877fab6cda8b6518ba9}{getLength\_in\_cm}());
+225   \textcolor{keywordflow}{if} (unit == \textcolor{stringliteral}{"mm"})
+226     answer.setNum(\hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}());
+227   \textcolor{keywordflow}{if} (unit == \textcolor{stringliteral}{"in"})
+228     answer.setNum(\hyperlink{classSimplePageSize_ad5aa26a1789bd7b20dbca509a50cfcab}{pageWidth}.\hyperlink{classLength_afbaef4ba8d8a3e97873ed5cfd20c7dea}{getLength\_in\_inch}());
+229 
+230   \textcolor{keywordflow}{return} answer;
+231 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{pageSize_8h}{page\+Size.\+h}\item 
+generators/dvi/\hyperlink{pageSize_8cpp}{page\+Size.\+cpp}\end{DoxyCompactItemize}

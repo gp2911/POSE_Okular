@@ -1,0 +1,130 @@
+\hypertarget{classPlayData}{\section{Play\+Data Class Reference}
+\label{classPlayData}\index{Play\+Data@{Play\+Data}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayData_a77c042f74948a19b64a29661c15f0e9c}{Play\+Data} ()
+\item 
+void \hyperlink{classPlayData_afa3a824e496869e93a7935e8ea9bcf29}{play} ()
+\item 
+\hyperlink{classPlayData_ac30e79db7bcd71821f21855242ebeb34}{$\sim$\+Play\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Phonon\+::\+Media\+Object $\ast$ \hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\+\_\+mediaobject}
+\item 
+Phonon\+::\+Audio\+Output $\ast$ \hyperlink{classPlayData_a4184644cad89295edf1ec12a86f4d571}{m\+\_\+output}
+\item 
+Q\+Buffer $\ast$ \hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\+\_\+buffer}
+\item 
+\hyperlink{classSoundInfo}{Sound\+Info} \hyperlink{classPlayData_a60f9f37739df694ec4c185ec0c7d4666}{m\+\_\+info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 55 of file audioplayer.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlayData_a77c042f74948a19b64a29661c15f0e9c}{\index{Play\+Data@{Play\+Data}!Play\+Data@{Play\+Data}}
+\index{Play\+Data@{Play\+Data}!Play\+Data@{Play\+Data}}
+\subsubsection[{Play\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Play\+Data\+::\+Play\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayData_a77c042f74948a19b64a29661c15f0e9c}
+
+
+Definition at line 58 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+59         : \hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}( 0 ), \hyperlink{classPlayData_a4184644cad89295edf1ec12a86f4d571}{m\_output}( 0 ), \hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer}( 0 )
+60     \{
+61     \}
+\end{DoxyCode}
+\hypertarget{classPlayData_ac30e79db7bcd71821f21855242ebeb34}{\index{Play\+Data@{Play\+Data}!````~Play\+Data@{$\sim$\+Play\+Data}}
+\index{````~Play\+Data@{$\sim$\+Play\+Data}!Play\+Data@{Play\+Data}}
+\subsubsection[{$\sim$\+Play\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Play\+Data\+::$\sim$\+Play\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayData_ac30e79db7bcd71821f21855242ebeb34}
+
+
+Definition at line 72 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+73     \{
+74         \hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}->stop();
+75         \textcolor{keyword}{delete} \hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject};
+76         \textcolor{keyword}{delete} \hyperlink{classPlayData_a4184644cad89295edf1ec12a86f4d571}{m\_output};
+77         \textcolor{keyword}{delete} \hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer};
+78     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlayData_afa3a824e496869e93a7935e8ea9bcf29}{\index{Play\+Data@{Play\+Data}!play@{play}}
+\index{play@{play}!Play\+Data@{Play\+Data}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Play\+Data\+::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayData_afa3a824e496869e93a7935e8ea9bcf29}
+
+
+Definition at line 63 of file audioplayer.\+cpp.
+
+
+\begin{DoxyCode}
+64     \{
+65         \textcolor{keywordflow}{if} ( \hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer} )
+66         \{
+67             \hyperlink{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{m\_buffer}->open( QIODevice::ReadOnly );
+68         \}
+69         \hyperlink{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{m\_mediaobject}->play();
+70     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}{\index{Play\+Data@{Play\+Data}!m\+\_\+buffer@{m\+\_\+buffer}}
+\index{m\+\_\+buffer@{m\+\_\+buffer}!Play\+Data@{Play\+Data}}
+\subsubsection[{m\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Buffer$\ast$ Play\+Data\+::m\+\_\+buffer}}\label{classPlayData_ab98af8c9abd9cd1a3b11cfa6d969284a}
+
+
+Definition at line 82 of file audioplayer.\+cpp.
+
+\hypertarget{classPlayData_a60f9f37739df694ec4c185ec0c7d4666}{\index{Play\+Data@{Play\+Data}!m\+\_\+info@{m\+\_\+info}}
+\index{m\+\_\+info@{m\+\_\+info}!Play\+Data@{Play\+Data}}
+\subsubsection[{m\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sound\+Info} Play\+Data\+::m\+\_\+info}}\label{classPlayData_a60f9f37739df694ec4c185ec0c7d4666}
+
+
+Definition at line 83 of file audioplayer.\+cpp.
+
+\hypertarget{classPlayData_a1ba72cd22230406764d16de62c5b32a6}{\index{Play\+Data@{Play\+Data}!m\+\_\+mediaobject@{m\+\_\+mediaobject}}
+\index{m\+\_\+mediaobject@{m\+\_\+mediaobject}!Play\+Data@{Play\+Data}}
+\subsubsection[{m\+\_\+mediaobject}]{\setlength{\rightskip}{0pt plus 5cm}Phonon\+::\+Media\+Object$\ast$ Play\+Data\+::m\+\_\+mediaobject}}\label{classPlayData_a1ba72cd22230406764d16de62c5b32a6}
+
+
+Definition at line 80 of file audioplayer.\+cpp.
+
+\hypertarget{classPlayData_a4184644cad89295edf1ec12a86f4d571}{\index{Play\+Data@{Play\+Data}!m\+\_\+output@{m\+\_\+output}}
+\index{m\+\_\+output@{m\+\_\+output}!Play\+Data@{Play\+Data}}
+\subsubsection[{m\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}Phonon\+::\+Audio\+Output$\ast$ Play\+Data\+::m\+\_\+output}}\label{classPlayData_a4184644cad89295edf1ec12a86f4d571}
+
+
+Definition at line 81 of file audioplayer.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{audioplayer_8cpp}{audioplayer.\+cpp}\end{DoxyCompactItemize}

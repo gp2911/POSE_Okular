@@ -1,0 +1,237 @@
+\hypertarget{classAnnotWindow}{\section{Annot\+Window Class Reference}
+\label{classAnnotWindow}\index{Annot\+Window@{Annot\+Window}}
+}
+
+
+{\ttfamily \#include $<$annotwindow.\+h$>$}
+
+Inheritance diagram for Annot\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAnnotWindow}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAnnotWindow_a920b2483b708366d4f672a8994c6af6c}{contains\+Latex} (bool)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnnotWindow_a125253e7bdaba20eeecadbd6cc37c207}{Annot\+Window} (Q\+Widget $\ast$parent, \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$annot, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document, int page)
+\item 
+\hyperlink{classAnnotWindow_a344457acef95f42f54e4f97502c4deec}{$\sim$\+Annot\+Window} ()
+\item 
+void \hyperlink{classAnnotWindow_ae573e563b95f71d5321227c146b91a1e}{reload\+Info} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAnnotWindow_a029c591d201eae567dedda50bdffc3fe}{show\+Event} (Q\+Show\+Event $\ast$event)
+\item 
+virtual bool \hyperlink{classAnnotWindow_aed45dcb7095782f5d5cabacb1a856379}{event\+Filter} (Q\+Object $\ast$obj, Q\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file annotwindow.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAnnotWindow_a125253e7bdaba20eeecadbd6cc37c207}{\index{Annot\+Window@{Annot\+Window}!Annot\+Window@{Annot\+Window}}
+\index{Annot\+Window@{Annot\+Window}!Annot\+Window@{Annot\+Window}}
+\subsubsection[{Annot\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Annot\+Window\+::\+Annot\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{annot, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{classAnnotWindow_a125253e7bdaba20eeecadbd6cc37c207}
+
+
+Definition at line 188 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+189     : QFrame( parent, Qt::SubWindow ), m\_annot( annot ), m\_document( document ), m\_page( page )
+190 \{
+191     setAutoFillBackground( \textcolor{keyword}{true} );
+192     setFrameStyle( Panel | Raised );
+193     setAttribute( Qt::WA\_DeleteOnClose );
+194 
+195     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} canEditAnnotation = m\_document->\hyperlink{classOkular_1_1Document_acbc3b843b40096c18dbeec805552685a}{canModifyPageAnnotation}( annot );
+196 
+197     textEdit = \textcolor{keyword}{new} KTextEdit( \textcolor{keyword}{this} );
+198     textEdit->setAcceptRichText( \textcolor{keyword}{false} );
+199     textEdit->setPlainText( m\_annot->\hyperlink{classOkular_1_1Annotation_a3b0c9fcbe9d01e06bfcc7216d0035908}{contents}() );
+200     textEdit->installEventFilter( \textcolor{keyword}{this} );
+201     textEdit->setUndoRedoEnabled( \textcolor{keyword}{false} );
+202 
+203     m\_prevCursorPos = textEdit->textCursor().position();
+204     m\_prevAnchorPos = textEdit->textCursor().anchor();
+205 
+206     connect(textEdit, SIGNAL(textChanged()),
+207             \textcolor{keyword}{this},SLOT(slotsaveWindowText()));
+208     connect(textEdit, SIGNAL(cursorPositionChanged()),
+209             \textcolor{keyword}{this},SLOT(slotsaveWindowText()));
+210     connect(textEdit, SIGNAL(aboutToShowContextMenu(QMenu*)),
+211             \textcolor{keyword}{this},SLOT(slotUpdateUndoAndRedoInContextMenu(QMenu*)));
+212     connect(m\_document, SIGNAL(annotationContentsChangedByUndoRedo(
+      \hyperlink{classOkular_1_1Annotation}{Okular::Annotation}*,QString,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+213             \textcolor{keyword}{this}, SLOT(slotHandleContentsChangedByUndoRedo(\hyperlink{classOkular_1_1Annotation}{Okular::Annotation}*,QString,\textcolor{keywordtype}{
+      int},\textcolor{keywordtype}{int})));
+214 
+215     \textcolor{keywordflow}{if} (!canEditAnnotation)
+216         textEdit->setReadOnly(\textcolor{keyword}{true});
+217 
+218     QVBoxLayout * mainlay = \textcolor{keyword}{new} QVBoxLayout( \textcolor{keyword}{this} );
+219     mainlay->setMargin( 2 );
+220     mainlay->setSpacing( 0 );
+221     m\_title = \textcolor{keyword}{new} \hyperlink{classMovableTitle}{MovableTitle}( \textcolor{keyword}{this} );
+222     mainlay->addWidget( m\_title );
+223     mainlay->addWidget( textEdit );
+224     QHBoxLayout * lowerlay = \textcolor{keyword}{new} QHBoxLayout();
+225     mainlay->addLayout( lowerlay );
+226     lowerlay->addItem( \textcolor{keyword}{new} QSpacerItem( 5, 5, QSizePolicy::Expanding, QSizePolicy::Fixed ) );
+227     QSizeGrip * sb = \textcolor{keyword}{new} QSizeGrip( \textcolor{keyword}{this} );
+228     lowerlay->addWidget( sb );
+229 
+230     m\_latexRenderer = \textcolor{keyword}{new} \hyperlink{classGuiUtils_1_1LatexRenderer}{GuiUtils::LatexRenderer}();
+231     emit \hyperlink{classAnnotWindow_a920b2483b708366d4f672a8994c6af6c}{containsLatex}( \hyperlink{classGuiUtils_1_1LatexRenderer_aa7d63d0c278641e52479f50f8c97c094}{GuiUtils::LatexRenderer::mightContainLatex}
+      ( m\_annot->\hyperlink{classOkular_1_1Annotation_a3b0c9fcbe9d01e06bfcc7216d0035908}{contents}() ) );
+232 
+233     m\_title->\hyperlink{classMovableTitle_aad05a10ec583250589f72edca36395ea}{setTitle}( m\_annot->\hyperlink{classOkular_1_1Annotation_a560281f35ace621f48181a7c7977ca7f}{window}().\hyperlink{classOkular_1_1Annotation_1_1Window_ac73101f261e6b4dba054540267073151}{summary}() );
+234     m\_title->\hyperlink{classMovableTitle_a3bc4b1a5774fb18bd0b16260362d1b0d}{connectOptionButton}( \textcolor{keyword}{this}, SLOT(slotOptionBtn()) );
+235 
+236     setGeometry(10,10,300,300 );
+237 
+238     \hyperlink{classAnnotWindow_ae573e563b95f71d5321227c146b91a1e}{reloadInfo}();
+239 \}
+\end{DoxyCode}
+\hypertarget{classAnnotWindow_a344457acef95f42f54e4f97502c4deec}{\index{Annot\+Window@{Annot\+Window}!````~Annot\+Window@{$\sim$\+Annot\+Window}}
+\index{````~Annot\+Window@{$\sim$\+Annot\+Window}!Annot\+Window@{Annot\+Window}}
+\subsubsection[{$\sim$\+Annot\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Annot\+Window\+::$\sim$\+Annot\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAnnotWindow_a344457acef95f42f54e4f97502c4deec}
+
+
+Definition at line 241 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+242 \{
+243     \textcolor{keyword}{delete} m\_latexRenderer;
+244 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAnnotWindow_a920b2483b708366d4f672a8994c6af6c}{\index{Annot\+Window@{Annot\+Window}!contains\+Latex@{contains\+Latex}}
+\index{contains\+Latex@{contains\+Latex}!Annot\+Window@{Annot\+Window}}
+\subsubsection[{contains\+Latex}]{\setlength{\rightskip}{0pt plus 5cm}void Annot\+Window\+::contains\+Latex (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classAnnotWindow_a920b2483b708366d4f672a8994c6af6c}
+\hypertarget{classAnnotWindow_aed45dcb7095782f5d5cabacb1a856379}{\index{Annot\+Window@{Annot\+Window}!event\+Filter@{event\+Filter}}
+\index{event\+Filter@{event\+Filter}!Annot\+Window@{Annot\+Window}}
+\subsubsection[{event\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool Annot\+Window\+::event\+Filter (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj, }
+\item[{Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classAnnotWindow_aed45dcb7095782f5d5cabacb1a856379}
+
+
+Definition at line 269 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+270 \{
+271     \textcolor{keywordflow}{if} ( e->type () == QEvent::ShortcutOverride )
+272     \{
+273         QKeyEvent * keyEvent = \textcolor{keyword}{static\_cast<} QKeyEvent * \textcolor{keyword}{>}( e );
+274         \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_Escape )
+275         \{
+276             close();
+277             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+278         \}
+279     \}
+280     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (e->type() == QEvent::KeyPress)
+281     \{
+282         QKeyEvent *keyEvent = \textcolor{keyword}{static\_cast<}QKeyEvent*\textcolor{keyword}{>}(e);
+283         \textcolor{keywordflow}{if} (keyEvent == QKeySequence::Undo)
+284         \{
+285             m\_document->\hyperlink{classOkular_1_1Document_a2948b7150ebee16ee611734226c5d247}{undo}();
+286             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+287         \}
+288         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (keyEvent == QKeySequence::Redo)
+289         \{
+290             m\_document->\hyperlink{classOkular_1_1Document_a55a775164d34b00f74c4242ed952f676}{redo}();
+291             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+292         \}
+293     \}
+294     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+295 \}
+\end{DoxyCode}
+\hypertarget{classAnnotWindow_ae573e563b95f71d5321227c146b91a1e}{\index{Annot\+Window@{Annot\+Window}!reload\+Info@{reload\+Info}}
+\index{reload\+Info@{reload\+Info}!Annot\+Window@{Annot\+Window}}
+\subsubsection[{reload\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void Annot\+Window\+::reload\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAnnotWindow_ae573e563b95f71d5321227c146b91a1e}
+
+
+Definition at line 246 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+247 \{
+248     \textcolor{keyword}{const} QColor newcolor = m\_annot->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a2c32cb2b41ef8732ddcd3d3dffc20b7d}{color}().isValid() ? m\_annot->
+      \hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a2c32cb2b41ef8732ddcd3d3dffc20b7d}{color}() : Qt::yellow;
+249     \textcolor{keywordflow}{if} ( newcolor != m\_color )
+250     \{
+251         m\_color = newcolor;
+252         setPalette( QPalette( m\_color ) );
+253         QPalette pl = textEdit->palette();
+254         pl.setColor( QPalette::Base, m\_color );
+255         textEdit->setPalette( pl );
+256     \}
+257     m\_title->\hyperlink{classMovableTitle_aa9325778f8f301d2177c91654fbd3681}{setAuthor}( m\_annot->\hyperlink{classOkular_1_1Annotation_a45682b53c24e4f5d41c547d6e109f6a4}{author}() );
+258     m\_title->\hyperlink{classMovableTitle_a9c2ec37093f90e0938fe392d2500d746}{setDate}( m\_annot->\hyperlink{classOkular_1_1Annotation_a4bee8f09724539e15f435b643049f2c1}{modificationDate}() );
+259 \}
+\end{DoxyCode}
+\hypertarget{classAnnotWindow_a029c591d201eae567dedda50bdffc3fe}{\index{Annot\+Window@{Annot\+Window}!show\+Event@{show\+Event}}
+\index{show\+Event@{show\+Event}!Annot\+Window@{Annot\+Window}}
+\subsubsection[{show\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Annot\+Window\+::show\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Show\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classAnnotWindow_a029c591d201eae567dedda50bdffc3fe}
+
+
+Definition at line 261 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+262 \{
+263     QFrame::showEvent( event );
+264 
+265     \textcolor{comment}{// focus the content area by default}
+266     textEdit->setFocus();
+267 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotwindow_8h}{annotwindow.\+h}\item 
+ui/\hyperlink{annotwindow_8cpp}{annotwindow.\+cpp}\end{DoxyCompactItemize}

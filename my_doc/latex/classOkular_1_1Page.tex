@@ -1,0 +1,1515 @@
+\hypertarget{classOkular_1_1Page}{\section{Okular\+:\+:Page Class Reference}
+\label{classOkular_1_1Page}\index{Okular\+::\+Page@{Okular\+::\+Page}}
+}
+
+
+Collector for all the data belonging to a page.  
+
+
+
+
+{\ttfamily \#include $<$page.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7}{Page\+Action} \{ \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}{Opening}, 
+\hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}{Closing}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Page_aaba5892652f77f58826306163e6dd8a1}{Page} (uint \hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}, double \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}, double \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}, \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1Page_ab99c3e1660eb4a87afdb093ae0daf06c}{orientation})
+\item 
+\hyperlink{classOkular_1_1Page_a2341fff1cc032ab6528874175e7dd841}{$\sim$\+Page} ()
+\item 
+int \hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number} () const 
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1Page_ab99c3e1660eb4a87afdb093ae0daf06c}{orientation} () const 
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1Page_a731947e32744bdcda791d22a2dc88726}{rotation} () const 
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1Page_a8cde1b9063d412fc338700026735fe4c}{total\+Orientation} () const 
+\item 
+double \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width} () const 
+\item 
+double \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height} () const 
+\item 
+double \hyperlink{classOkular_1_1Page_a2d7e8570510ab4cea44eed8a37caf671}{ratio} () const 
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1Page_abaa4dd95f6281d3a7773cf1e3a5ae39a}{bounding\+Box} () const 
+\item 
+bool \hyperlink{classOkular_1_1Page_a19690d5696075b6e93a5a6ea578ca09e}{is\+Bounding\+Box\+Known} () const 
+\item 
+void \hyperlink{classOkular_1_1Page_aba284480da607c079dc105f38ffe91ed}{set\+Bounding\+Box} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&bbox)
+\item 
+bool \hyperlink{classOkular_1_1Page_a4c14959c8283b76513d4ba4139634575}{has\+Pixmap} (\hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$observer, int \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}=-\/1, int \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}=-\/1, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect=\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect}()) const 
+\item 
+bool \hyperlink{classOkular_1_1Page_a44163bc0e76204a9d9c42da442ee734a}{has\+Text\+Page} () const 
+\item 
+bool \hyperlink{classOkular_1_1Page_a43e9934eaf7e89f5a8a03b06166c2f35}{has\+Object\+Rect} (double x, double y, double x\+Scale, double y\+Scale) const 
+\item 
+bool \hyperlink{classOkular_1_1Page_a002e372614cada96c47fa7f74b25ce77}{has\+Highlights} (int id=-\/1) const 
+\item 
+bool \hyperlink{classOkular_1_1Page_a278cc1910a6ce74d8b8e1963ae62a579}{has\+Transition} () const 
+\item 
+bool \hyperlink{classOkular_1_1Page_a7e7a1039febaed410867e5b3d30ef6c7}{has\+Annotations} () const 
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1Page_a02f1143ff5c69b04f4b514c04566864f}{find\+Text} (int id, const Q\+String \&\hyperlink{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{text}, \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2}{Search\+Direction} direction, Qt\+::\+Case\+Sensitivity case\+Sensitivity, const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$last\+Rect=0) const 
+\item 
+Q\+String \hyperlink{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{text} (const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$rect=0) const 
+\item 
+Q\+String \hyperlink{classOkular_1_1Page_ab79aac8e44db33759c403caab7fb87ae}{text} (const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$rect, \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}{Text\+Page\+::\+Text\+Area\+Inclusion\+Behaviour} b) const 
+\item 
+\hyperlink{classOkular_1_1TextEntity_a9deacb4422ede69001915b33ca21c023}{Text\+Entity\+::\+List} \hyperlink{classOkular_1_1Page_a7857b61d285bd959fa617a19f25c5f7c}{words} (const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$rect, \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}{Text\+Page\+::\+Text\+Area\+Inclusion\+Behaviour} b) const 
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1Page_a24f42662e569d3b3a2011e8a5cc99e3e}{word\+At} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&p, Q\+String $\ast$word=0) const 
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1Page_a117cec50481eeea1e1ca9881eaeceb9e}{text\+Area} (\hyperlink{classOkular_1_1TextSelection}{Text\+Selection} $\ast$selection) const 
+\item 
+const \hyperlink{classOkular_1_1ObjectRect}{Object\+Rect} $\ast$ \hyperlink{classOkular_1_1Page_ab6a680a31a5d67861013d706d028dde7}{object\+Rect} (\hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16}{Object\+Rect\+::\+Object\+Type} type, double x, double y, double x\+Scale, double y\+Scale) const 
+\item 
+\hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ const \hyperlink{classOkular_1_1ObjectRect}{Object\+Rect} $\ast$ $>$ \hyperlink{classOkular_1_1Page_a501451ef85226267764bda58163a328a}{object\+Rects} (\hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16}{Object\+Rect\+::\+Object\+Type} type, double x, double y, double x\+Scale, double y\+Scale) const 
+\item 
+const \hyperlink{classOkular_1_1ObjectRect}{Object\+Rect} $\ast$ \hyperlink{classOkular_1_1Page_abd20ee862d49cc60be0c3daabfb94cf4}{nearest\+Object\+Rect} (\hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16}{Object\+Rect\+::\+Object\+Type} type, double x, double y, double x\+Scale, double y\+Scale, double $\ast$distance) const 
+\item 
+const \hyperlink{classOkular_1_1PageTransition}{Page\+Transition} $\ast$ \hyperlink{classOkular_1_1Page_a9ca239aa5e2957a354075636086723cb}{transition} () const 
+\item 
+\hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$ $>$ \hyperlink{classOkular_1_1Page_ad82e0f26d5435b5ccfa3d23c359ac23c}{annotations} () const 
+\item 
+const \hyperlink{classOkular_1_1Action}{Action} $\ast$ \hyperlink{classOkular_1_1Page_a960c4dd29f12aaabaa66880c19540203}{page\+Action} (\hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7}{Page\+Action} action) const 
+\item 
+\hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1FormField}{Form\+Field} $\ast$ $>$ \hyperlink{classOkular_1_1Page_a2509e1e2a7f0fe8189970fd9f7d5fe24}{form\+Fields} () const 
+\item 
+void \hyperlink{classOkular_1_1Page_ae7e45a6647904b01ebe84930b73f1d79}{set\+Pixmap} (\hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$observer, Q\+Pixmap $\ast$pixmap, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect=\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect}())
+\item 
+void \hyperlink{classOkular_1_1Page_a2853c6369aa8ebe6b0593201ce9cf49e}{set\+Text\+Page} (\hyperlink{classOkular_1_1TextPage}{Text\+Page} $\ast$\hyperlink{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{text})
+\item 
+void \hyperlink{classOkular_1_1Page_af8c152286039a342f0b547b5efa79b9a}{set\+Object\+Rects} (const \hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1ObjectRect}{Object\+Rect} $\ast$ $>$ \&rects)
+\item 
+void \hyperlink{classOkular_1_1Page_a27f07c4b46c4fd2ed9da0bc7786f60a5}{set\+Source\+References} (const \hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1SourceRefObjectRect}{Source\+Ref\+Object\+Rect} $\ast$ $>$ \&rects)
+\item 
+void \hyperlink{classOkular_1_1Page_aed91ead8670fb0784a95e949804945f8}{set\+Duration} (double seconds)
+\item 
+double \hyperlink{classOkular_1_1Page_aecb470bf27ad1040f55ae2c417063ec5}{duration} () const 
+\item 
+void \hyperlink{classOkular_1_1Page_ab81a90b1fb9d3b52f5df5c2b26ceca27}{set\+Label} (const Q\+String \&\hyperlink{classOkular_1_1Page_ae5cf0e5d2270c6add98bc4d9604e0e65}{label})
+\item 
+Q\+String \hyperlink{classOkular_1_1Page_ae5cf0e5d2270c6add98bc4d9604e0e65}{label} () const 
+\item 
+const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1Page_a8b357ca7010d815f378094a7ba279a33}{text\+Selection} () const 
+\item 
+Q\+Color \hyperlink{classOkular_1_1Page_a976e5f9876ca12676203fce0a6323cc8}{text\+Selection\+Color} () const 
+\item 
+void \hyperlink{classOkular_1_1Page_a8730d8d4d0072467dc9407c7fc177b8a}{add\+Annotation} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation)
+\item 
+bool \hyperlink{classOkular_1_1Page_a4f0217cfbc8986acb9bb398550cd5bc7}{remove\+Annotation} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation)
+\item 
+void \hyperlink{classOkular_1_1Page_a358f19e68e3722c868ee23da44c4f51e}{set\+Transition} (\hyperlink{classOkular_1_1PageTransition}{Page\+Transition} $\ast$\hyperlink{classOkular_1_1Page_a9ca239aa5e2957a354075636086723cb}{transition})
+\item 
+void \hyperlink{classOkular_1_1Page_add2a5b0b8218d36229a208f85b9904db}{set\+Page\+Action} (\hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7}{Page\+Action} action, \hyperlink{classOkular_1_1Action}{Action} $\ast$link)
+\item 
+void \hyperlink{classOkular_1_1Page_a54e2ca469ed94addbdda847f785cbf70}{set\+Form\+Fields} (const \hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1FormField}{Form\+Field} $\ast$ $>$ \&fields)
+\item 
+void \hyperlink{classOkular_1_1Page_a173c54714b3edd09a96175fabd8f756d}{delete\+Pixmap} (\hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$observer)
+\item 
+void \hyperlink{classOkular_1_1Page_a67ec01b2993c3e9e168d49d7829a3d4d}{delete\+Pixmaps} ()
+\item 
+void \hyperlink{classOkular_1_1Page_acb8ef8026db456d308c2658bc479cc4b}{delete\+Rects} ()
+\item 
+void \hyperlink{classOkular_1_1Page_a3684cdc3ad5a51078e8e48cf56594c6d}{delete\+Source\+References} ()
+\item 
+void \hyperlink{classOkular_1_1Page_a63511ffbc3aa919ccdf8ac628ae538f2}{delete\+Annotations} ()
+\item 
+bool \hyperlink{classOkular_1_1Page_adc0913df4b9c04bae5612e9861673bb5}{has\+Tiles\+Manager} (const \hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$observer) const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{classOkular_1_1Tile}{Tile} $>$ \hyperlink{classOkular_1_1Page_a5dea3e142724e8c320b50bba420bd03b}{tiles\+At} (const \hyperlink{classOkular_1_1DocumentObserver}{Document\+Observer} $\ast$observer, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collector for all the data belonging to a page. 
+
+The \hyperlink{classOkular_1_1Page}{Page} class contains pixmaps (referenced using observers id as key), a search page (a class used internally for retrieving text), rect classes (that describe links or other active areas in the current page) and more.
+
+All coordinates are normalized to the page, so \{x,y\} are valid in \mbox{[}0,1\mbox{]} range as long as \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} components.
+
+Note\+: The class takes ownership of all objects. 
+
+Definition at line 49 of file page.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7}{\index{Okular\+::\+Page@{Okular\+::\+Page}!Page\+Action@{Page\+Action}}
+\index{Page\+Action@{Page\+Action}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{Page\+Action}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Page\+::\+Page\+Action}}}\label{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7}
+An action to be executed when particular events happen. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Opening@{Opening}!Okular\+::\+Page@{Okular\+::\+Page}}\index{Okular\+::\+Page@{Okular\+::\+Page}!Opening@{Opening}}\item[{\em 
+\hypertarget{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}{Opening}\label{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}
+}]An action to be executed when the page is \char`\"{}opened\char`\"{}. \index{Closing@{Closing}!Okular\+::\+Page@{Okular\+::\+Page}}\index{Okular\+::\+Page@{Okular\+::\+Page}!Closing@{Closing}}\item[{\em 
+\hypertarget{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}{Closing}\label{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}
+}]An action to be executed when the page is \char`\"{}closed\char`\"{}. \end{description}
+\end{Desc}
+
+
+Definition at line 55 of file page.\+h.
+
+
+\begin{DoxyCode}
+56         \{
+57             \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}{Opening},       
+58             \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}{Closing}        
+59         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1Page_aaba5892652f77f58826306163e6dd8a1}{\index{Okular\+::\+Page@{Okular\+::\+Page}!Page@{Page}}
+\index{Page@{Page}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{Page}]{\setlength{\rightskip}{0pt plus 5cm}Page\+::\+Page (
+\begin{DoxyParamCaption}
+\item[{uint}]{page, }
+\item[{double}]{w, }
+\item[{double}]{h, }
+\item[{{\bf Rotation}}]{o}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_aaba5892652f77f58826306163e6dd8a1}
+Creates a new page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The number of the page in the document. \\
+\hline
+{\em width} & The width of the page. \\
+\hline
+{\em height} & The height of the page. \\
+\hline
+{\em orientation} & The orientation of the page\\
+\hline
+\end{DoxyParams}
+class \hyperlink{classOkular_1_1Page}{Page} 
+
+Definition at line 127 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+128     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1PagePrivate}{PagePrivate}( \textcolor{keyword}{this}, page, w, h, o ) )
+129 \{
+130 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a2341fff1cc032ab6528874175e7dd841}{\index{Okular\+::\+Page@{Okular\+::\+Page}!````~Page@{$\sim$\+Page}}
+\index{````~Page@{$\sim$\+Page}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{$\sim$\+Page}]{\setlength{\rightskip}{0pt plus 5cm}Page\+::$\sim$\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a2341fff1cc032ab6528874175e7dd841}
+Destroys the page. 
+
+Definition at line 132 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+133 \{
+134     \hyperlink{classOkular_1_1Page_a67ec01b2993c3e9e168d49d7829a3d4d}{deletePixmaps}();
+135     \hyperlink{classOkular_1_1Page_acb8ef8026db456d308c2658bc479cc4b}{deleteRects}();
+136     d->\hyperlink{classOkular_1_1PagePrivate_a27af63923ab99c620fb6437e697dd57a}{deleteHighlights}();
+137     \hyperlink{classOkular_1_1Page_a63511ffbc3aa919ccdf8ac628ae538f2}{deleteAnnotations}();
+138     d->\hyperlink{classOkular_1_1PagePrivate_ab500c25ba21b2e1b88d20de10f8acec6}{deleteTextSelections}();
+139     \hyperlink{classOkular_1_1Page_a3684cdc3ad5a51078e8e48cf56594c6d}{deleteSourceReferences}();
+140 
+141     \textcolor{keyword}{delete} d;
+142 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1Page_a8730d8d4d0072467dc9407c7fc177b8a}{\index{Okular\+::\+Page@{Okular\+::\+Page}!add\+Annotation@{add\+Annotation}}
+\index{add\+Annotation@{add\+Annotation}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{add\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::add\+Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a8730d8d4d0072467dc9407c7fc177b8a}
+Adds a new {\ttfamily annotation} to the page. 
+
+Definition at line 631 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+632 \{
+633     \textcolor{comment}{// Generate uniqueName: okular-\{UUID\}}
+634     \textcolor{keywordflow}{if}(annotation->\hyperlink{classOkular_1_1Annotation_a8a86ff8c722014c2296112d0fa703eab}{uniqueName}().isEmpty())
+635     \{
+636         QString uniqueName = \textcolor{stringliteral}{"okular-"} + QUuid::createUuid().toString();
+637         annotation->\hyperlink{classOkular_1_1Annotation_a9a9c80155d92ff897450e4a06f84d7f1}{setUniqueName}( uniqueName );
+638     \}
+639     annotation->d\_ptr->m\_page = d;
+640     m\_annotations.append( annotation );
+641 
+642     \hyperlink{classOkular_1_1AnnotationObjectRect}{AnnotationObjectRect} *rect = \textcolor{keyword}{new} \hyperlink{classOkular_1_1AnnotationObjectRect}{AnnotationObjectRect}( 
+      annotation );
+643 
+644     \textcolor{comment}{// Rotate the annotation on the page.}
+645     \textcolor{keyword}{const} QTransform matrix = d->\hyperlink{classOkular_1_1PagePrivate_a87e2009afc3a1f31a0b03d3a6a359a03}{rotationMatrix}();
+646     annotation->d\_ptr->annotationTransform( matrix );
+647 
+648     m\_rects.append( rect );
+649 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ad82e0f26d5435b5ccfa3d23c359ac23c}{\index{Okular\+::\+Page@{Okular\+::\+Page}!annotations@{annotations}}
+\index{annotations@{annotations}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{annotations}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Linked\+List}$<$ {\bf Annotation} $\ast$ $>$ Page\+::annotations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_ad82e0f26d5435b5ccfa3d23c359ac23c}
+Returns the list of annotations of the page. 
+
+Definition at line 482 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+483 \{
+484     \textcolor{keywordflow}{return} m\_annotations;
+485 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_abaa4dd95f6281d3a7773cf1e3a5ae39a}{\index{Okular\+::\+Page@{Okular\+::\+Page}!bounding\+Box@{bounding\+Box}}
+\index{bounding\+Box@{bounding\+Box}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{bounding\+Box}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Page\+::bounding\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_abaa4dd95f6281d3a7773cf1e3a5ae39a}
+Returns the bounding box of the page content in normalized \mbox{[}0,1\mbox{]} coordinates, in terms of the upright orientation (Rotation0). If it has not been computed yet, returns the full page (i.\+e., (0, 0, 1, 1)). Note that the bounding box may be null if the page is blank.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 179 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+180 \{
+181     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_adf03548582e08ea9cac9944a0962bcf6}{m\_boundingBox};
+182 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a63511ffbc3aa919ccdf8ac628ae538f2}{\index{Okular\+::\+Page@{Okular\+::\+Page}!delete\+Annotations@{delete\+Annotations}}
+\index{delete\+Annotations@{delete\+Annotations}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{delete\+Annotations}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::delete\+Annotations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a63511ffbc3aa919ccdf8ac628ae538f2}
+Deletes all annotations of the page. 
+
+Definition at line 777 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+778 \{
+779     \textcolor{comment}{// delete ObjectRects of type Annotation}
+780     deleteObjectRects( m\_rects, QSet<ObjectRect::ObjectType>() << 
+      \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a7fa3680e4804e223e58ce2dea398345f}{ObjectRect::OAnnotation} );
+781     \textcolor{comment}{// delete all stored annotations}
+782     \hyperlink{classQLinkedList}{QLinkedList< Annotation * >::const\_iterator} aIt = 
+      m\_annotations.begin(), aEnd = m\_annotations.end();
+783     \textcolor{keywordflow}{for} ( ; aIt != aEnd; ++aIt )
+784         \textcolor{keyword}{delete} *aIt;
+785     m\_annotations.clear();
+786 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a173c54714b3edd09a96175fabd8f756d}{\index{Okular\+::\+Page@{Okular\+::\+Page}!delete\+Pixmap@{delete\+Pixmap}}
+\index{delete\+Pixmap@{delete\+Pixmap}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{delete\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::delete\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Observer} $\ast$}]{observer}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a173c54714b3edd09a96175fabd8f756d}
+Deletes the pixmap for the given {\ttfamily observer} 
+
+Definition at line 712 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+713 \{
+714     \hyperlink{classOkular_1_1TilesManager}{TilesManager} *tm = d->\hyperlink{classOkular_1_1PagePrivate_a8eec394b8e7492196e204812d82e89c6}{tilesManager}( observer );
+715     \textcolor{keywordflow}{if} ( tm )
+716     \{
+717         \textcolor{keyword}{delete} tm;
+718         d->\hyperlink{classOkular_1_1PagePrivate_a4735784ca4e23f35a55250e827f62d67}{m\_tilesManagers}.remove(observer);
+719     \}
+720     \textcolor{keywordflow}{else}
+721     \{
+722         \hyperlink{classOkular_1_1PagePrivate_1_1PixmapObject}{PagePrivate::PixmapObject} \textcolor{keywordtype}{object} = d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.take( observer );
+723         \textcolor{keyword}{delete} \textcolor{keywordtype}{object}.m\_pixmap;
+724     \}
+725 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a67ec01b2993c3e9e168d49d7829a3d4d}{\index{Okular\+::\+Page@{Okular\+::\+Page}!delete\+Pixmaps@{delete\+Pixmaps}}
+\index{delete\+Pixmaps@{delete\+Pixmaps}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{delete\+Pixmaps}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::delete\+Pixmaps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a67ec01b2993c3e9e168d49d7829a3d4d}
+Deletes all pixmaps of the page. 
+
+Definition at line 727 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+728 \{
+729     QMapIterator< DocumentObserver*, PagePrivate::PixmapObject > it( d->
+      \hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps} );
+730     \textcolor{keywordflow}{while} ( it.hasNext() ) \{
+731         it.next();
+732         \textcolor{keyword}{delete} it.value().m\_pixmap;
+733     \}
+734 
+735     d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.clear();
+736 
+737     qDeleteAll(d->\hyperlink{classOkular_1_1PagePrivate_a4735784ca4e23f35a55250e827f62d67}{m\_tilesManagers});
+738     d->\hyperlink{classOkular_1_1PagePrivate_a4735784ca4e23f35a55250e827f62d67}{m\_tilesManagers}.clear();
+739 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_acb8ef8026db456d308c2658bc479cc4b}{\index{Okular\+::\+Page@{Okular\+::\+Page}!delete\+Rects@{delete\+Rects}}
+\index{delete\+Rects@{delete\+Rects}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{delete\+Rects}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::delete\+Rects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_acb8ef8026db456d308c2658bc479cc4b}
+Deletes all object rects of the page. 
+
+Definition at line 741 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+742 \{
+743     \textcolor{comment}{// delete ObjectRects of type Link and Image}
+744     QSet<ObjectRect::ObjectType> which;
+745     which << \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a2ad02138861dfdc8bc2a0c29bae5bed2}{ObjectRect::Action} << \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a1384fe70201a84f6c3554a7ca6fc84d2}{ObjectRect::Image};
+746     deleteObjectRects( m\_rects, which );
+747 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a3684cdc3ad5a51078e8e48cf56594c6d}{\index{Okular\+::\+Page@{Okular\+::\+Page}!delete\+Source\+References@{delete\+Source\+References}}
+\index{delete\+Source\+References@{delete\+Source\+References}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{delete\+Source\+References}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::delete\+Source\+References (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a3684cdc3ad5a51078e8e48cf56594c6d}
+Deletes all source reference objects of the page. 
+
+Definition at line 772 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+773 \{
+774     deleteObjectRects( m\_rects, QSet<ObjectRect::ObjectType>() << 
+      \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16abd7dcb9a8d9df2544c535d1a22155f83}{ObjectRect::SourceRef} );
+775 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_aecb470bf27ad1040f55ae2c417063ec5}{\index{Okular\+::\+Page@{Okular\+::\+Page}!duration@{duration}}
+\index{duration@{duration}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+::duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_aecb470bf27ad1040f55ae2c417063ec5}
+Returns the duration in seconds of the page when displayed in presentation mode.
+
+A negative number means that no time is set. 
+
+Definition at line 606 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+607 \{
+608     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a769dbcae7ef3ee39d0f3f39d0022c6e1}{m\_duration};
+609 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a02f1143ff5c69b04f4b514c04566864f}{\index{Okular\+::\+Page@{Okular\+::\+Page}!find\+Text@{find\+Text}}
+\index{find\+Text@{find\+Text}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{find\+Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Page\+::find\+Text (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{const Q\+String \&}]{text, }
+\item[{{\bf Search\+Direction}}]{direction, }
+\item[{Qt\+::\+Case\+Sensitivity}]{case\+Sensitivity, }
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{last\+Rect = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a02f1143ff5c69b04f4b514c04566864f}
+Returns the bounding rect of the text which matches the following criteria or 0 if the search is not successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & An unique id for this search. \\
+\hline
+{\em text} & The search text. \\
+\hline
+{\em direction} & The direction of the search (\hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2}{Search\+Direction}) \\
+\hline
+{\em case\+Sensitivity} & If Qt\+::\+Case\+Sensitive, the search is case sensitive; otherwise the search is case insensitive. \\
+\hline
+{\em last\+Rect} & If 0 (default) the search starts at the beginning of the page, otherwise right/below the coordinates of the given rect. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 288 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+290 \{
+291     \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect}* rect = 0;
+292     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{text}.isEmpty() || !d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} )
+293         \textcolor{keywordflow}{return} rect;
+294 
+295     rect = d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a362d1cde5838e68fdb244c8480054b76}{findText}( \textcolor{keywordtype}{id}, \hyperlink{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{text}, direction, caseSensitivity, lastRect );
+296     \textcolor{keywordflow}{return} rect;
+297 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a2509e1e2a7f0fe8189970fd9f7d5fe24}{\index{Okular\+::\+Page@{Okular\+::\+Page}!form\+Fields@{form\+Fields}}
+\index{form\+Fields@{form\+Fields}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{form\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Linked\+List}$<$ {\bf Form\+Field} $\ast$ $>$ Page\+::form\+Fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a2509e1e2a7f0fe8189970fd9f7d5fe24}
+Returns the list of \hyperlink{classOkular_1_1FormField}{Form\+Field} of the page. 
+
+Definition at line 502 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+503 \{
+504     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a398106cf0b0b54b59dd2bbc625092151}{formfields};
+505 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a7e7a1039febaed410867e5b3d30ef6c7}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Annotations@{has\+Annotations}}
+\index{has\+Annotations@{has\+Annotations}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Annotations}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Annotations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a7e7a1039febaed410867e5b3d30ef6c7}
+Returns whether the page provides annotations. 
+
+Definition at line 283 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+284 \{
+285     \textcolor{keywordflow}{return} !m\_annotations.isEmpty();
+286 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a002e372614cada96c47fa7f74b25ce77}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Highlights@{has\+Highlights}}
+\index{has\+Highlights@{has\+Highlights}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Highlights}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Highlights (
+\begin{DoxyParamCaption}
+\item[{int}]{id = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a002e372614cada96c47fa7f74b25ce77}
+Returns whether the page provides highlighting for the observer with the given {\ttfamily id}. 
+
+Definition at line 262 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+263 \{
+264     \textcolor{comment}{// simple case: have no highlights}
+265     \textcolor{keywordflow}{if} ( m\_highlights.isEmpty() )
+266         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+267     \textcolor{comment}{// simple case: we have highlights and no id to match}
+268     \textcolor{keywordflow}{if} ( s\_id == -1 )
+269         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+270     \textcolor{comment}{// iterate on the highlights list to find an entry by id}
+271     \hyperlink{classQLinkedList}{QLinkedList< HighlightAreaRect * >::const\_iterator} it
+       = m\_highlights.begin(), end = m\_highlights.end();
+272     \textcolor{keywordflow}{for} ( ; it != end; ++it )
+273         \textcolor{keywordflow}{if} ( (*it)->s\_id == s\_id )
+274             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+275     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+276 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a43e9934eaf7e89f5a8a03b06166c2f35}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Object\+Rect@{has\+Object\+Rect}}
+\index{has\+Object\+Rect@{has\+Object\+Rect}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Object\+Rect (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a43e9934eaf7e89f5a8a03b06166c2f35}
+Returns whether the page has an object rect which includes the point ({\ttfamily x}, {\ttfamily y}) at scale ({\ttfamily x\+Scale}, {\ttfamily y\+Scale}). 
+
+Definition at line 249 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+250 \{
+251     \textcolor{keywordflow}{if} ( m\_rects.isEmpty() )
+252         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+253 
+254     \hyperlink{classQLinkedList}{QLinkedList< ObjectRect * >::const\_iterator} it = m\_rects.
+      begin(), end = m\_rects.end();
+255     \textcolor{keywordflow}{for} ( ; it != end; ++it )
+256         \textcolor{keywordflow}{if} ( (*it)->distanceSqr( x, y, xScale, yScale ) < distanceConsideredEqual )
+257             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+258 
+259     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+260 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a4c14959c8283b76513d4ba4139634575}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Pixmap@{has\+Pixmap}}
+\index{has\+Pixmap@{has\+Pixmap}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Observer} $\ast$}]{observer, }
+\item[{int}]{width = {\ttfamily -\/1}, }
+\item[{int}]{height = {\ttfamily -\/1}, }
+\item[{const {\bf Normalized\+Rect} \&}]{rect = {\ttfamily {\bf Normalized\+Rect}()}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a4c14959c8283b76513d4ba4139634575}
+Returns whether the page of size {\ttfamily width} x {\ttfamily height} has a {\ttfamily pixmap} in the region given by {\ttfamily rect} for the given {\ttfamily observer} 
+
+Definition at line 202 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+203 \{
+204     \hyperlink{classOkular_1_1TilesManager}{TilesManager} *tm = d->\hyperlink{classOkular_1_1PagePrivate_a8eec394b8e7492196e204812d82e89c6}{tilesManager}( observer );
+205     \textcolor{keywordflow}{if} ( tm )
+206     \{
+207         \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width} != tm->\hyperlink{classOkular_1_1TilesManager_a88a40f389b20ca54314754aff2392889}{width}() || \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height} != tm->\hyperlink{classOkular_1_1TilesManager_a4a2fc0597872d6cd291630c2e4bf6986}{height}() )
+208         \{
+209             tm->\hyperlink{classOkular_1_1TilesManager_a166c51b55c3a95bd3595be62d986d744}{setSize}( \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}, \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height} );
+210             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+211         \}
+212 
+213         \textcolor{keywordflow}{return} tm->\hyperlink{classOkular_1_1TilesManager_ab0042fc9b9267a15d67d7f2d29471619}{hasPixmap}( rect );
+214     \}
+215 
+216     \hyperlink{classQMap}{QMap< DocumentObserver*, PagePrivate::PixmapObject >::const\_iterator}
+       it = d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.constFind( observer );
+217     \textcolor{keywordflow}{if} ( it == d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.constEnd() )
+218         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+219 
+220     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width} == -1 || \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height} == -1 )
+221         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+222 
+223     \textcolor{keyword}{const} QPixmap *pixmap = it.value().m\_pixmap;
+224 
+225     \textcolor{keywordflow}{return} (pixmap->width() == \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width} && pixmap->height() == \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height});
+226 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a44163bc0e76204a9d9c42da442ee734a}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Text\+Page@{has\+Text\+Page}}
+\index{has\+Text\+Page@{has\+Text\+Page}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Text\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a44163bc0e76204a9d9c42da442ee734a}
+Returns whether the page provides a text page (\hyperlink{classOkular_1_1TextPage}{Text\+Page}). 
+
+Definition at line 228 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+229 \{
+230     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} != 0;
+231 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_adc0913df4b9c04bae5612e9861673bb5}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Tiles\+Manager@{has\+Tiles\+Manager}}
+\index{has\+Tiles\+Manager@{has\+Tiles\+Manager}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Tiles\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Tiles\+Manager (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Observer} $\ast$}]{observer}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_adc0913df4b9c04bae5612e9861673bb5}
+Returns whether pixmaps for the tiled observer are handled by a tile manager.
+
+\begin{DoxySince}{Since}
+0.\+19 (K\+D\+E 4.\+13) 
+\end{DoxySince}
+
+
+Definition at line 993 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+994 \{
+995     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a8eec394b8e7492196e204812d82e89c6}{tilesManager}( observer ) != 0;
+996 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a278cc1910a6ce74d8b8e1963ae62a579}{\index{Okular\+::\+Page@{Okular\+::\+Page}!has\+Transition@{has\+Transition}}
+\index{has\+Transition@{has\+Transition}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{has\+Transition}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::has\+Transition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a278cc1910a6ce74d8b8e1963ae62a579}
+Returns whether the page provides a transition effect. 
+
+Definition at line 278 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+279 \{
+280     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_aed53103e51c46cfa19d908ad17d4dc64}{m\_transition} != 0;
+281 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{\index{Okular\+::\+Page@{Okular\+::\+Page}!height@{height}}
+\index{height@{height}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}
+Returns the height of the page. 
+
+Definition at line 169 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+170 \{
+171     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a767bcd56f261640f129e9ab39b9b0ff6}{m\_height};
+172 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a19690d5696075b6e93a5a6ea578ca09e}{\index{Okular\+::\+Page@{Okular\+::\+Page}!is\+Bounding\+Box\+Known@{is\+Bounding\+Box\+Known}}
+\index{is\+Bounding\+Box\+Known@{is\+Bounding\+Box\+Known}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{is\+Bounding\+Box\+Known}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::is\+Bounding\+Box\+Known (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a19690d5696075b6e93a5a6ea578ca09e}
+Returns whether the bounding box of the page has been computed. Note that even if the bounding box is computed, it may be null if the page is blank.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 184 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+185 \{
+186     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a236fd24cf599e972f7c75867a49f5337}{m\_isBoundingBoxKnown};
+187 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ae5cf0e5d2270c6add98bc4d9604e0e65}{\index{Okular\+::\+Page@{Okular\+::\+Page}!label@{label}}
+\index{label@{label}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Page\+::label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_ae5cf0e5d2270c6add98bc4d9604e0e65}
+Returns the label of the page, or a null string if not set. 
+
+Definition at line 616 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+617 \{
+618     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_adbe1a6d7fd7b290f9db98aac52b0f205}{m\_label};
+619 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_abd20ee862d49cc60be0c3daabfb94cf4}{\index{Okular\+::\+Page@{Okular\+::\+Page}!nearest\+Object\+Rect@{nearest\+Object\+Rect}}
+\index{nearest\+Object\+Rect@{nearest\+Object\+Rect}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{nearest\+Object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Object\+Rect} $\ast$ Page\+::nearest\+Object\+Rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\+Rect\+::\+Object\+Type}}]{type, }
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale, }
+\item[{double $\ast$}]{distance}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_abd20ee862d49cc60be0c3daabfb94cf4}
+Returns the object rect of the given {\ttfamily type} which is nearest to the point ({\ttfamily x}, {\ttfamily y}) at scale ({\ttfamily x\+Scale}, {\ttfamily y\+Scale}).
+
+\begin{DoxySince}{Since}
+0.\+8.\+2 (K\+D\+E 4.\+2.\+2) 
+\end{DoxySince}
+
+
+Definition at line 453 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+454 \{
+455     \hyperlink{classOkular_1_1ObjectRect}{ObjectRect} * res = 0;
+456     \textcolor{keywordtype}{double} minDistance = std::numeric\_limits<double>::max();
+457 
+458     \hyperlink{classQLinkedList}{QLinkedList< ObjectRect * >::const\_iterator} it = m\_rects.
+      constBegin(), end = m\_rects.constEnd();
+459     \textcolor{keywordflow}{for} ( ; it != end; ++it )
+460     \{
+461         \textcolor{keywordflow}{if} ( (*it)->objectType() == type )
+462         \{
+463             \textcolor{keywordtype}{double} d = (*it)->distanceSqr( x, y, xScale, yScale );
+464             \textcolor{keywordflow}{if} ( d < minDistance )
+465             \{
+466                 res = (*it);
+467                 minDistance = d;
+468             \}
+469         \}
+470     \}
+471 
+472     \textcolor{keywordflow}{if} ( distance )
+473         *distance = minDistance;
+474     \textcolor{keywordflow}{return} res;
+475 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{\index{Okular\+::\+Page@{Okular\+::\+Page}!number@{number}}
+\index{number@{number}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+::number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}
+Returns the number of the page in the document. 
+
+Definition at line 144 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+145 \{
+146     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a449baffebfd4db332b181cb2e644ab5e}{m\_number};
+147 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ab6a680a31a5d67861013d706d028dde7}{\index{Okular\+::\+Page@{Okular\+::\+Page}!object\+Rect@{object\+Rect}}
+\index{object\+Rect@{object\+Rect}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Object\+Rect} $\ast$ Page\+::object\+Rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\+Rect\+::\+Object\+Type}}]{type, }
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_ab6a680a31a5d67861013d706d028dde7}
+Returns the object rect of the given {\ttfamily type} which is at point ({\ttfamily x}, {\ttfamily y}) at scale ({\ttfamily x\+Scale}, {\ttfamily y\+Scale}). 
+
+Definition at line 421 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+422 \{
+423     \textcolor{comment}{// Walk list in reverse order so that annotations in the foreground are preferred}
+424     QLinkedListIterator< ObjectRect * > it( m\_rects );
+425     it.toBack();
+426     \textcolor{keywordflow}{while} ( it.hasPrevious() )
+427     \{
+428         \textcolor{keyword}{const} \hyperlink{classOkular_1_1ObjectRect}{ObjectRect} *objrect = it.previous();
+429         \textcolor{keywordflow}{if} ( ( objrect->\hyperlink{classOkular_1_1ObjectRect_a1c61e4737530a2c15ad93c8764917a14}{objectType}() == type ) && objrect->\hyperlink{classOkular_1_1ObjectRect_a9e1f6727b141e7cb86529dbc55120e81}{distanceSqr}( x, y, xScale, 
+      yScale ) < distanceConsideredEqual )
+430             \textcolor{keywordflow}{return} objrect;
+431     \}
+432 
+433     \textcolor{keywordflow}{return} 0;
+434 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a501451ef85226267764bda58163a328a}{\index{Okular\+::\+Page@{Okular\+::\+Page}!object\+Rects@{object\+Rects}}
+\index{object\+Rects@{object\+Rects}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{object\+Rects}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Linked\+List}$<$ const {\bf Object\+Rect} $\ast$ $>$ Page\+::object\+Rects (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\+Rect\+::\+Object\+Type}}]{type, }
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a501451ef85226267764bda58163a328a}
+Returns all object rects of the given {\ttfamily type} which are at point ({\ttfamily x}, {\ttfamily y}) at scale ({\ttfamily x\+Scale}, {\ttfamily y\+Scale}). \begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Definition at line 436 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+437 \{
+438     \hyperlink{classQLinkedList}{QLinkedList< const ObjectRect * >} result;
+439 
+440     QLinkedListIterator< ObjectRect * > it( m\_rects );
+441     it.toBack();
+442     \textcolor{keywordflow}{while} ( it.hasPrevious() )
+443     \{
+444         \textcolor{keyword}{const} \hyperlink{classOkular_1_1ObjectRect}{ObjectRect} *objrect = it.previous();
+445         \textcolor{keywordflow}{if} ( ( objrect->\hyperlink{classOkular_1_1ObjectRect_a1c61e4737530a2c15ad93c8764917a14}{objectType}() == type ) && objrect->\hyperlink{classOkular_1_1ObjectRect_a9e1f6727b141e7cb86529dbc55120e81}{distanceSqr}( x, y, xScale, 
+      yScale ) < distanceConsideredEqual )
+446             result.append( objrect );
+447     \}
+448 
+449     \textcolor{keywordflow}{return} result;
+450 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ab99c3e1660eb4a87afdb093ae0daf06c}{\index{Okular\+::\+Page@{Okular\+::\+Page}!orientation@{orientation}}
+\index{orientation@{orientation}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{orientation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Page\+::orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_ab99c3e1660eb4a87afdb093ae0daf06c}
+Returns the orientation of the page as defined by the document. 
+
+Definition at line 149 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+150 \{
+151     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a942827926c5eaa9ca5a022aa48187e1d}{m\_orientation};
+152 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a960c4dd29f12aaabaa66880c19540203}{\index{Okular\+::\+Page@{Okular\+::\+Page}!page\+Action@{page\+Action}}
+\index{page\+Action@{page\+Action}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{page\+Action}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Action} $\ast$ Page\+::page\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\+Action}}]{action}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a960c4dd29f12aaabaa66880c19540203}
+Returns the \hyperlink{classOkular_1_1Action}{Action} object which is associated with the given page {\ttfamily action} or 0 if no page action is set. 
+
+Definition at line 487 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+488 \{
+489     \textcolor{keywordflow}{switch} ( action )
+490     \{
+491         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}{Page::Opening}:
+492             \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a403a6221308ea39b4bac82be56f43711}{m\_openingAction};
+493             \textcolor{keywordflow}{break};
+494         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}{Page::Closing}:
+495             \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a02392b2b37c1f72ff9d82d418b3da795}{m\_closingAction};
+496             \textcolor{keywordflow}{break};
+497     \}
+498 
+499     \textcolor{keywordflow}{return} 0;
+500 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a2d7e8570510ab4cea44eed8a37caf671}{\index{Okular\+::\+Page@{Okular\+::\+Page}!ratio@{ratio}}
+\index{ratio@{ratio}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{ratio}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+::ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a2d7e8570510ab4cea44eed8a37caf671}
+Returns the ration (height / width) of the page. 
+
+Definition at line 174 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+175 \{
+176     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a767bcd56f261640f129e9ab39b9b0ff6}{m\_height} / d->\hyperlink{classOkular_1_1PagePrivate_a3350b64842d008c59422f1b4fe6d7243}{m\_width};
+177 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a4f0217cfbc8986acb9bb398550cd5bc7}{\index{Okular\+::\+Page@{Okular\+::\+Page}!remove\+Annotation@{remove\+Annotation}}
+\index{remove\+Annotation@{remove\+Annotation}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{remove\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+::remove\+Annotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a4f0217cfbc8986acb9bb398550cd5bc7}
+Removes the {\ttfamily annotation} from the page. 
+
+Definition at line 651 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+652 \{
+653     \textcolor{keywordflow}{if} ( !d->\hyperlink{classOkular_1_1PagePrivate_ab08c9b47d5e631b19dd2d5c85360d351}{m\_doc}->\hyperlink{classOkular_1_1DocumentPrivate_ac921eda41c014869ffec96ecc569c713}{m\_parent}->\hyperlink{classOkular_1_1Document_a77f5c38224da847413dbe51c5e24ed08}{canRemovePageAnnotation}(annotation) )
+654         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+655 
+656     \hyperlink{classQLinkedList}{QLinkedList< Annotation * >::iterator} aIt = m\_annotations.begin(),
+       aEnd = m\_annotations.end();
+657     \textcolor{keywordflow}{for} ( ; aIt != aEnd; ++aIt )
+658     \{
+659         \textcolor{keywordflow}{if}((*aIt) && (*aIt)->uniqueName()==annotation->\hyperlink{classOkular_1_1Annotation_a8a86ff8c722014c2296112d0fa703eab}{uniqueName}())
+660         \{
+661             \textcolor{keywordtype}{int} rectfound = \textcolor{keyword}{false};
+662             \hyperlink{classQLinkedList}{QLinkedList< ObjectRect * >::iterator} it = m\_rects.begin()
+      , end = m\_rects.end();
+663             \textcolor{keywordflow}{for} ( ; it != end && !rectfound; ++it )
+664                 \textcolor{keywordflow}{if} ( ( (*it)->objectType() == \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a7fa3680e4804e223e58ce2dea398345f}{ObjectRect::OAnnotation} ) && ( (*it)->
+      object() == (*aIt) ) )
+665                 \{
+666                     \textcolor{keyword}{delete} *it;
+667                     it = m\_rects.erase( it );
+668                     rectfound = \textcolor{keyword}{true};
+669                 \}
+670             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"removed annotation:"} << annotation->
+      \hyperlink{classOkular_1_1Annotation_a8a86ff8c722014c2296112d0fa703eab}{uniqueName}();
+671             annotation->d\_ptr->m\_page = 0;
+672             m\_annotations.erase( aIt );
+673             \textcolor{keywordflow}{break};
+674         \}
+675     \}
+676 
+677     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+678 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a731947e32744bdcda791d22a2dc88726}{\index{Okular\+::\+Page@{Okular\+::\+Page}!rotation@{rotation}}
+\index{rotation@{rotation}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Page\+::rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a731947e32744bdcda791d22a2dc88726}
+Returns the rotation of the page as defined by the user. 
+
+Definition at line 154 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+155 \{
+156     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a1560700ffacd812bbe962a21dc11be26}{m\_rotation};
+157 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_aba284480da607c079dc105f38ffe91ed}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Bounding\+Box@{set\+Bounding\+Box}}
+\index{set\+Bounding\+Box@{set\+Bounding\+Box}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Bounding\+Box}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Bounding\+Box (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{bbox}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_aba284480da607c079dc105f38ffe91ed}
+Sets the bounding box of the page content in normalized \mbox{[}0,1\mbox{]} coordinates, in terms of the upright orientation (Rotation0). (This does not inform the document's observers, call Document\+::\+Set\+Page\+Bounding\+Box instead if you want that.)
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 189 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+190 \{
+191     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1PagePrivate_a236fd24cf599e972f7c75867a49f5337}{m\_isBoundingBoxKnown} && d->\hyperlink{classOkular_1_1PagePrivate_adf03548582e08ea9cac9944a0962bcf6}{m\_boundingBox} == bbox )
+192         \textcolor{keywordflow}{return};
+193 
+194     \textcolor{comment}{// Allow tiny rounding errors (happens during rotation)}
+195     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} epsilon = 0.00001;
+196     Q\_ASSERT( bbox.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} >= -epsilon && bbox.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} >= -epsilon && bbox.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} <= 1 + epsilon && 
+      bbox.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} <= 1 + epsilon );
+197 
+198     d->\hyperlink{classOkular_1_1PagePrivate_adf03548582e08ea9cac9944a0962bcf6}{m\_boundingBox} = bbox & \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}( 0., 0., 1., 1. );
+199     d->\hyperlink{classOkular_1_1PagePrivate_a236fd24cf599e972f7c75867a49f5337}{m\_isBoundingBoxKnown} = \textcolor{keyword}{true};
+200 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_aed91ead8670fb0784a95e949804945f8}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Duration@{set\+Duration}}
+\index{set\+Duration@{set\+Duration}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Duration (
+\begin{DoxyParamCaption}
+\item[{double}]{seconds}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_aed91ead8670fb0784a95e949804945f8}
+Sets the duration of the page to {\ttfamily seconds} when displayed in presentation mode.
+
+Setting a negative number disables the duration. 
+
+Definition at line 601 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+602 \{
+603     d->\hyperlink{classOkular_1_1PagePrivate_a769dbcae7ef3ee39d0f3f39d0022c6e1}{m\_duration} = seconds;
+604 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a54e2ca469ed94addbdda847f785cbf70}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Form\+Fields@{set\+Form\+Fields}}
+\index{set\+Form\+Fields@{set\+Form\+Fields}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Form\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Form\+Fields (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+Linked\+List}$<$ {\bf Form\+Field} $\ast$ $>$ \&}]{fields}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a54e2ca469ed94addbdda847f785cbf70}
+Sets {\ttfamily fields} as list of \hyperlink{classOkular_1_1FormField}{Form\+Field} of the page. 
+
+Definition at line 701 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+702 \{
+703     qDeleteAll( d->\hyperlink{classOkular_1_1PagePrivate_a398106cf0b0b54b59dd2bbc625092151}{formfields} );
+704     d->\hyperlink{classOkular_1_1PagePrivate_a398106cf0b0b54b59dd2bbc625092151}{formfields} = fields;
+705     \hyperlink{classQLinkedList}{QLinkedList< FormField * >::const\_iterator} it = d->
+      \hyperlink{classOkular_1_1PagePrivate_a398106cf0b0b54b59dd2bbc625092151}{formfields}.begin(), itEnd = d->\hyperlink{classOkular_1_1PagePrivate_a398106cf0b0b54b59dd2bbc625092151}{formfields}.end();
+706     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+707     \{
+708         (*it)->d\_ptr->setDefault();
+709     \}
+710 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ab81a90b1fb9d3b52f5df5c2b26ceca27}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Label@{set\+Label}}
+\index{set\+Label@{set\+Label}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Label (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{label}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_ab81a90b1fb9d3b52f5df5c2b26ceca27}
+Sets the labels for the page to {\ttfamily label} . 
+
+Definition at line 611 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+612 \{
+613     d->\hyperlink{classOkular_1_1PagePrivate_adbe1a6d7fd7b290f9db98aac52b0f205}{m\_label} = \hyperlink{classOkular_1_1Page_ae5cf0e5d2270c6add98bc4d9604e0e65}{label};
+614 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_af8c152286039a342f0b547b5efa79b9a}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Object\+Rects@{set\+Object\+Rects}}
+\index{set\+Object\+Rects@{set\+Object\+Rects}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Object\+Rects}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Object\+Rects (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+Linked\+List}$<$ {\bf Object\+Rect} $\ast$ $>$ \&}]{rects}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_af8c152286039a342f0b547b5efa79b9a}
+Sets the list of object {\ttfamily rects} of the page. Rotate the object rects of the page.
+
+Definition at line 554 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+555 \{
+556     QSet<ObjectRect::ObjectType> which;
+557     which << \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a2ad02138861dfdc8bc2a0c29bae5bed2}{ObjectRect::Action} << \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a1384fe70201a84f6c3554a7ca6fc84d2}{ObjectRect::Image};
+558     deleteObjectRects( m\_rects, which );
+559 
+563     \textcolor{keyword}{const} QTransform matrix = d->\hyperlink{classOkular_1_1PagePrivate_a87e2009afc3a1f31a0b03d3a6a359a03}{rotationMatrix}();
+564 
+565     \hyperlink{classQLinkedList}{QLinkedList< ObjectRect * >::const\_iterator} objectIt = rects
+      .begin(), end = rects.end();
+566     \textcolor{keywordflow}{for} ( ; objectIt != end; ++objectIt )
+567         (*objectIt)->transform( matrix );
+568 
+569     m\_rects << rects;
+570 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_add2a5b0b8218d36229a208f85b9904db}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Page\+Action@{set\+Page\+Action}}
+\index{set\+Page\+Action@{set\+Page\+Action}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Page\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Page\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\+Action}}]{action, }
+\item[{{\bf Action} $\ast$}]{link}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_add2a5b0b8218d36229a208f85b9904db}
+Sets the {\ttfamily link} object for the given page {\ttfamily action}. 
+
+Definition at line 686 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+687 \{
+688     \textcolor{keywordflow}{switch} ( action )
+689     \{
+690         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7adbcb6b79c0b2118ed23a0d1c89391f87}{Page::Opening}:
+691             \textcolor{keyword}{delete} d->\hyperlink{classOkular_1_1PagePrivate_a403a6221308ea39b4bac82be56f43711}{m\_openingAction};
+692             d->\hyperlink{classOkular_1_1PagePrivate_a403a6221308ea39b4bac82be56f43711}{m\_openingAction} = link;
+693             \textcolor{keywordflow}{break};
+694         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1Page_a6a8e241cdb604d5c90d5f80b169788f7ae9b42d3ddb97cc7f889104c73c686f80}{Page::Closing}:
+695             \textcolor{keyword}{delete} d->\hyperlink{classOkular_1_1PagePrivate_a02392b2b37c1f72ff9d82d418b3da795}{m\_closingAction};
+696             d->\hyperlink{classOkular_1_1PagePrivate_a02392b2b37c1f72ff9d82d418b3da795}{m\_closingAction} = link;
+697             \textcolor{keywordflow}{break};
+698     \}
+699 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ae7e45a6647904b01ebe84930b73f1d79}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Pixmap@{set\+Pixmap}}
+\index{set\+Pixmap@{set\+Pixmap}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Observer} $\ast$}]{observer, }
+\item[{Q\+Pixmap $\ast$}]{pixmap, }
+\item[{const {\bf Normalized\+Rect} \&}]{rect = {\ttfamily {\bf Normalized\+Rect}()}}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_ae7e45a6647904b01ebe84930b73f1d79}
+Sets the region described by {\ttfamily rect} with {\ttfamily pixmap} for the given {\ttfamily observer}. If {\ttfamily rect} is not set (default) the {\ttfamily pixmap} is set to the entire page. 
+
+Definition at line 507 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+508 \{
+509     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1PagePrivate_a1560700ffacd812bbe962a21dc11be26}{m\_rotation} == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} ) \{
+510         \hyperlink{classOkular_1_1TilesManager}{TilesManager} *tm = d->\hyperlink{classOkular_1_1PagePrivate_a8eec394b8e7492196e204812d82e89c6}{tilesManager}( observer );
+511         \textcolor{keywordflow}{if} ( tm )
+512         \{
+513             tm->\hyperlink{classOkular_1_1TilesManager_ad7d59e5d6f4a9744ecd98f052b260b79}{setPixmap}( pixmap, rect );
+514             \textcolor{keyword}{delete} pixmap;
+515             \textcolor{keywordflow}{return};
+516         \}
+517 
+518         \hyperlink{classQMap}{QMap< DocumentObserver*, PagePrivate::PixmapObject >::iterator}
+       it = d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.find( observer );
+519         \textcolor{keywordflow}{if} ( it != d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.end() )
+520         \{
+521             \textcolor{keyword}{delete} it.value().m\_pixmap;
+522         \}
+523         \textcolor{keywordflow}{else}
+524         \{
+525             it = d->\hyperlink{classOkular_1_1PagePrivate_aa24cb69b4eb47c8798c1b06a88f93b6c}{m\_pixmaps}.insert( observer, 
+      \hyperlink{classOkular_1_1PagePrivate_1_1PixmapObject}{PagePrivate::PixmapObject}() );
+526         \}
+527         it.value().m\_pixmap = pixmap;
+528         it.value().m\_rotation = d->\hyperlink{classOkular_1_1PagePrivate_a1560700ffacd812bbe962a21dc11be26}{m\_rotation};
+529     \} \textcolor{keywordflow}{else} \{
+530         \hyperlink{classOkular_1_1RotationJob}{RotationJob} *job = \textcolor{keyword}{new} \hyperlink{classOkular_1_1RotationJob}{RotationJob}( pixmap->toImage(), 
+      \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0}, d->\hyperlink{classOkular_1_1PagePrivate_a1560700ffacd812bbe962a21dc11be26}{m\_rotation}, observer );
+531         job->\hyperlink{classOkular_1_1RotationJob_addceb19a418c8de1c00c23c421253eb0}{setPage}( d );
+532         job->\hyperlink{classOkular_1_1RotationJob_a6b8b2159a1482c7887d83942e8f8a6b4}{setRect}( \hyperlink{classOkular_1_1TilesManager_a8b508663bb7da186b67078143853a458}{TilesManager::toRotatedRect}( rect, d->
+      \hyperlink{classOkular_1_1PagePrivate_a1560700ffacd812bbe962a21dc11be26}{m\_rotation} ) );
+533         d->\hyperlink{classOkular_1_1PagePrivate_ab08c9b47d5e631b19dd2d5c85360d351}{m\_doc}->\hyperlink{classOkular_1_1DocumentPrivate_a0764e01a78ed52ece9229f50300522f1}{m\_pageController}->\hyperlink{classOkular_1_1PageController_a85c06a553751b2a8639167a871ac7abf}{addRotationJob}(job);
+534 
+535         \textcolor{keyword}{delete} pixmap;
+536     \}
+537 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a27f07c4b46c4fd2ed9da0bc7786f60a5}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Source\+References@{set\+Source\+References}}
+\index{set\+Source\+References@{set\+Source\+References}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Source\+References}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Source\+References (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+Linked\+List}$<$ {\bf Source\+Ref\+Object\+Rect} $\ast$ $>$ \&}]{rects}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a27f07c4b46c4fd2ed9da0bc7786f60a5}
+Sets the list of source reference objects {\ttfamily rects}. 
+
+Definition at line 594 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+595 \{
+596     \hyperlink{classOkular_1_1Page_a3684cdc3ad5a51078e8e48cf56594c6d}{deleteSourceReferences}();
+597     \textcolor{keywordflow}{foreach}( \hyperlink{classOkular_1_1SourceRefObjectRect}{SourceRefObjectRect} * rect, refRects )
+598         m\_rects << rect;
+599 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a2853c6369aa8ebe6b0593201ce9cf49e}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Text\+Page@{set\+Text\+Page}}
+\index{set\+Text\+Page@{set\+Text\+Page}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Text\+Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Page} $\ast$}]{text}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a2853c6369aa8ebe6b0593201ce9cf49e}
+Sets the {\ttfamily text} page. Correct text order for before text selection
+
+Definition at line 539 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+540 \{
+541     \textcolor{keyword}{delete} d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text};
+542 
+543     d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} = textPage;
+544     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} )
+545     \{
+546         d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page} = d;
+550         d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->d->\hyperlink{classOkular_1_1TextPagePrivate_afccad0af04791e12ac8e1cbe4dd64811}{correctTextOrder}();
+551     \}
+552 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a358f19e68e3722c868ee23da44c4f51e}{\index{Okular\+::\+Page@{Okular\+::\+Page}!set\+Transition@{set\+Transition}}
+\index{set\+Transition@{set\+Transition}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{set\+Transition}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+::set\+Transition (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\+Transition} $\ast$}]{transition}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Page_a358f19e68e3722c868ee23da44c4f51e}
+Sets the page {\ttfamily transition} effect. 
+
+Definition at line 680 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+681 \{
+682     \textcolor{keyword}{delete} d->\hyperlink{classOkular_1_1PagePrivate_aed53103e51c46cfa19d908ad17d4dc64}{m\_transition};
+683     d->\hyperlink{classOkular_1_1PagePrivate_aed53103e51c46cfa19d908ad17d4dc64}{m\_transition} = \hyperlink{classOkular_1_1Page_a9ca239aa5e2957a354075636086723cb}{transition};
+684 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{\index{Okular\+::\+Page@{Okular\+::\+Page}!text@{text}}
+\index{text@{text}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Page\+::text (
+\begin{DoxyParamCaption}
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{rect = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}
+Returns the page text (or part of it). \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{Text\+Page\+::text()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 299 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+300 \{
+301     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Page_a11ab0f2abe5c1e760c046a33fd5393f3}{text}( area, \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{TextPage::AnyPixelTextAreaInclusionBehaviour}
+       );
+302 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_ab79aac8e44db33759c403caab7fb87ae}{\index{Okular\+::\+Page@{Okular\+::\+Page}!text@{text}}
+\index{text@{text}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Page\+::text (
+\begin{DoxyParamCaption}
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{rect, }
+\item[{{\bf Text\+Page\+::\+Text\+Area\+Inclusion\+Behaviour}}]{b}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_ab79aac8e44db33759c403caab7fb87ae}
+Returns the page text (or part of it). \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{Text\+Page\+::text()} 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+0.\+10 (K\+D\+E 4.\+4) 
+\end{DoxySince}
+
+
+Definition at line 304 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+305 \{
+306     QString ret;
+307 
+308     \textcolor{keywordflow}{if} ( !d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} )
+309         \textcolor{keywordflow}{return} ret;
+310 
+311     \textcolor{keywordflow}{if} ( area )
+312     \{
+313         \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect} rotatedArea = *area;
+314         rotatedArea.\hyperlink{classOkular_1_1RegularArea_a38570778d6e7f984a3b3b7724e69ab10}{transform}( d->\hyperlink{classOkular_1_1PagePrivate_a87e2009afc3a1f31a0b03d3a6a359a03}{rotationMatrix}().inverted() );
+315 
+316         ret = d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}( &rotatedArea, b );
+317     \}
+318     \textcolor{keywordflow}{else}
+319         ret = d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}( 0, b );
+320 
+321     \textcolor{keywordflow}{return} ret;
+322 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a117cec50481eeea1e1ca9881eaeceb9e}{\index{Okular\+::\+Page@{Okular\+::\+Page}!text\+Area@{text\+Area}}
+\index{text\+Area@{text\+Area}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{text\+Area}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Page\+::text\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Selection} $\ast$}]{selection}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a117cec50481eeea1e1ca9881eaeceb9e}
+Returns the rectangular area of the given {\ttfamily selection}. 
+
+Definition at line 241 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+242 \{
+243     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} )
+244         \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a5dba636c3d91b59e6782700eba2efadf}{textArea}( selection );
+245 
+246     \textcolor{keywordflow}{return} 0;
+247 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a8b357ca7010d815f378094a7ba279a33}{\index{Okular\+::\+Page@{Okular\+::\+Page}!text\+Selection@{text\+Selection}}
+\index{text\+Selection@{text\+Selection}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{text\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Regular\+Area\+Rect} $\ast$ Page\+::text\+Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a8b357ca7010d815f378094a7ba279a33}
+Returns the current text selection. 
+
+Definition at line 621 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+622 \{
+623     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a98312e1819fa37a313852accd9bd47f8}{m\_textSelections};
+624 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a976e5f9876ca12676203fce0a6323cc8}{\index{Okular\+::\+Page@{Okular\+::\+Page}!text\+Selection\+Color@{text\+Selection\+Color}}
+\index{text\+Selection\+Color@{text\+Selection\+Color}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{text\+Selection\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Page\+::text\+Selection\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a976e5f9876ca12676203fce0a6323cc8}
+Returns the color of the current text selection, or an invalid color if no text selection has been set. 
+
+Definition at line 626 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+627 \{
+628     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a98312e1819fa37a313852accd9bd47f8}{m\_textSelections} ? d->\hyperlink{classOkular_1_1PagePrivate_a98312e1819fa37a313852accd9bd47f8}{m\_textSelections}->
+      \hyperlink{classOkular_1_1HighlightAreaRect_aef57c61c5378267bd566824ce391727d}{color} : QColor();
+629 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a5dea3e142724e8c320b50bba420bd03b}{\index{Okular\+::\+Page@{Okular\+::\+Page}!tiles\+At@{tiles\+At}}
+\index{tiles\+At@{tiles\+At}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{tiles\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ {\bf Tile} $>$ Page\+::tiles\+At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document\+Observer} $\ast$}]{observer, }
+\item[{const {\bf Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a5dea3e142724e8c320b50bba420bd03b}
+Returns a list of all tiles intersecting with {\ttfamily rect}.
+
+The list contains only tiles with a pixmap
+
+\begin{DoxySince}{Since}
+0.\+19 (K\+D\+E 4.\+13) 
+\end{DoxySince}
+
+
+Definition at line 998 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+999 \{
+1000     \hyperlink{classOkular_1_1TilesManager}{TilesManager} *tm = d->\hyperlink{classOkular_1_1PagePrivate_a4735784ca4e23f35a55250e827f62d67}{m\_tilesManagers}.value( observer );
+1001     \textcolor{keywordflow}{if} ( tm )
+1002         \textcolor{keywordflow}{return} tm->\hyperlink{classOkular_1_1TilesManager_a11cc64225aa62df9d25e294ce71e4dcf}{tilesAt}( rect, \hyperlink{classOkular_1_1TilesManager_a89f92ae8fdfb530b5625343876f63e29acc56878534ab2362809b89ccbf69d031}{TilesManager::PixmapTile} );
+1003     \textcolor{keywordflow}{else}
+1004         \textcolor{keywordflow}{return} \hyperlink{classQList}{QList<Tile>}();
+1005 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a8cde1b9063d412fc338700026735fe4c}{\index{Okular\+::\+Page@{Okular\+::\+Page}!total\+Orientation@{total\+Orientation}}
+\index{total\+Orientation@{total\+Orientation}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{total\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Page\+::total\+Orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a8cde1b9063d412fc338700026735fe4c}
+Returns the total orientation which is the original orientation plus the user defined rotation. 
+
+Definition at line 159 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+160 \{
+161     \textcolor{keywordflow}{return} (\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation})( ( (int)d->\hyperlink{classOkular_1_1PagePrivate_a942827926c5eaa9ca5a022aa48187e1d}{m\_orientation} + (\textcolor{keywordtype}{int})d->
+      \hyperlink{classOkular_1_1PagePrivate_a1560700ffacd812bbe962a21dc11be26}{m\_rotation} ) % 4 );
+162 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a9ca239aa5e2957a354075636086723cb}{\index{Okular\+::\+Page@{Okular\+::\+Page}!transition@{transition}}
+\index{transition@{transition}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{transition}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Page\+Transition} $\ast$ Page\+::transition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a9ca239aa5e2957a354075636086723cb}
+Returns the transition effect of the page or 0 if no transition effect is set (see \hyperlink{classOkular_1_1Page_a278cc1910a6ce74d8b8e1963ae62a579}{has\+Transition()}). 
+
+Definition at line 477 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+478 \{
+479     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_aed53103e51c46cfa19d908ad17d4dc64}{m\_transition};
+480 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{\index{Okular\+::\+Page@{Okular\+::\+Page}!width@{width}}
+\index{width@{width}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}double Page\+::width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}
+Returns the width of the page. 
+
+Definition at line 164 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+165 \{
+166     \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a3350b64842d008c59422f1b4fe6d7243}{m\_width};
+167 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a24f42662e569d3b3a2011e8a5cc99e3e}{\index{Okular\+::\+Page@{Okular\+::\+Page}!word\+At@{word\+At}}
+\index{word\+At@{word\+At}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{word\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Page\+::word\+At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{p, }
+\item[{Q\+String $\ast$}]{word = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a24f42662e569d3b3a2011e8a5cc99e3e}
+Returns the area and text of the word at the given point Note that ownership of the returned area belongs to the caller. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextPage_a95ed81e55002e36860bbb7c39f34a36f}{Text\+Page\+::word\+At()} 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 233 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+234 \{
+235     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} )
+236         \textcolor{keywordflow}{return} d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a95ed81e55002e36860bbb7c39f34a36f}{wordAt}( p, word );
+237 
+238     \textcolor{keywordflow}{return} 0;
+239 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Page_a7857b61d285bd959fa617a19f25c5f7c}{\index{Okular\+::\+Page@{Okular\+::\+Page}!words@{words}}
+\index{words@{words}!Okular\+::\+Page@{Okular\+::\+Page}}
+\subsubsection[{words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Entity\+::\+List} Page\+::words (
+\begin{DoxyParamCaption}
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{rect, }
+\item[{{\bf Text\+Page\+::\+Text\+Area\+Inclusion\+Behaviour}}]{b}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Page_a7857b61d285bd959fa617a19f25c5f7c}
+Returns the page text (or part of it) including the bounding rectangles. Note that ownership of the contents of the returned list belongs to the caller. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}{Text\+Page\+::words()} 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 324 of file page.\+cpp.
+
+
+\begin{DoxyCode}
+325 \{
+326     \hyperlink{classQList}{TextEntity::List} ret;
+327 
+328     \textcolor{keywordflow}{if} ( !d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text} )
+329         \textcolor{keywordflow}{return} ret;
+330 
+331     \textcolor{keywordflow}{if} ( area )
+332     \{
+333         \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect} rotatedArea = *area;
+334         rotatedArea.\hyperlink{classOkular_1_1RegularArea_a38570778d6e7f984a3b3b7724e69ab10}{transform}( d->\hyperlink{classOkular_1_1PagePrivate_a87e2009afc3a1f31a0b03d3a6a359a03}{rotationMatrix}().inverted() );
+335 
+336         ret = d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}{words}( &rotatedArea, b );
+337     \}
+338     \textcolor{keywordflow}{else}
+339         ret = d->\hyperlink{classOkular_1_1PagePrivate_a4cec09776018bc9ba579c2621dc0dbb6}{m\_text}->\hyperlink{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}{words}( 0, b );
+340 
+341     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ret.length(); ++i)
+342     \{
+343         \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextEntity}{TextEntity} * orig = ret[i];
+344         ret[i] = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextEntity}{TextEntity}( orig->\hyperlink{classOkular_1_1TextEntity_a401ca5d9c54d5e25bd3c8a7ce7b7092b}{text}(), \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}(orig->\hyperlink{classOkular_1_1TextEntity_abfd46cc1666c7af2c86a976916942a28}{transformedArea} ( d->
+      \hyperlink{classOkular_1_1PagePrivate_a87e2009afc3a1f31a0b03d3a6a359a03}{rotationMatrix}() )) );
+345         \textcolor{keyword}{delete} orig;
+346     \}
+347 
+348     \textcolor{keywordflow}{return} ret;
+349 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{page_8h}{page.\+h}\item 
+core/\hyperlink{page_8cpp}{page.\+cpp}\end{DoxyCompactItemize}

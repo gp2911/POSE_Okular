@@ -1,0 +1,204 @@
+\hypertarget{classLineAnnotationWidget}{\section{Line\+Annotation\+Widget Class Reference}
+\label{classLineAnnotationWidget}\index{Line\+Annotation\+Widget@{Line\+Annotation\+Widget}}
+}
+
+
+{\ttfamily \#include $<$annotationwidgets.\+h$>$}
+
+Inheritance diagram for Line\+Annotation\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classLineAnnotationWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLineAnnotationWidget_a528018c048420a205b8ea284a469ee90}{Line\+Annotation\+Widget} (\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+virtual void \hyperlink{classLineAnnotationWidget_a31b65c29b709f901c8b706ab2de42846}{apply\+Changes} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Q\+Widget $\ast$ \hyperlink{classLineAnnotationWidget_ae034334b44224792130e0677510a1f65}{create\+Style\+Widget} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 139 of file annotationwidgets.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLineAnnotationWidget_a528018c048420a205b8ea284a469ee90}{\index{Line\+Annotation\+Widget@{Line\+Annotation\+Widget}!Line\+Annotation\+Widget@{Line\+Annotation\+Widget}}
+\index{Line\+Annotation\+Widget@{Line\+Annotation\+Widget}!Line\+Annotation\+Widget@{Line\+Annotation\+Widget}}
+\subsubsection[{Line\+Annotation\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Line\+Annotation\+Widget\+::\+Line\+Annotation\+Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{classLineAnnotationWidget_a528018c048420a205b8ea284a469ee90}
+
+
+Definition at line 367 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+368     : \hyperlink{classAnnotationWidget_a1152e99260c24acde30e2742a07af2ef}{AnnotationWidget}( ann )
+369 \{
+370     m\_lineAnn = \textcolor{keyword}{static\_cast<} \hyperlink{classOkular_1_1LineAnnotation}{Okular::LineAnnotation} * \textcolor{keyword}{>}( ann );
+371     \textcolor{keywordflow}{if} ( m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a93369ba26234da72308372df8e6c3a77}{linePoints}().count() == 2 )
+372         m\_lineType = 0; \textcolor{comment}{// line}
+373     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a5d2d587e08762b48ded428be2e390e79}{lineClosed}() )
+374         m\_lineType = 1; \textcolor{comment}{// polygon}
+375     \textcolor{keywordflow}{else}
+376         m\_lineType = 2; \textcolor{comment}{// polyline}
+377 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLineAnnotationWidget_a31b65c29b709f901c8b706ab2de42846}{\index{Line\+Annotation\+Widget@{Line\+Annotation\+Widget}!apply\+Changes@{apply\+Changes}}
+\index{apply\+Changes@{apply\+Changes}!Line\+Annotation\+Widget@{Line\+Annotation\+Widget}}
+\subsubsection[{apply\+Changes}]{\setlength{\rightskip}{0pt plus 5cm}void Line\+Annotation\+Widget\+::apply\+Changes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLineAnnotationWidget_a31b65c29b709f901c8b706ab2de42846}
+
+
+Reimplemented from \hyperlink{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}{Annotation\+Widget}.
+
+
+
+Definition at line 458 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+459 \{
+460     \hyperlink{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}{AnnotationWidget::applyChanges}();
+461     \textcolor{keywordflow}{if} ( m\_lineType == 0 )
+462     \{
+463         m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_ae91d934170b3ffd0b488c6a646a31e4e}{setLineLeadingForwardPoint}( m\_spinLL->value() );
+464         m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a1990502f6bd88b4c95955003ce7af9b0}{setLineLeadingBackwardPoint}( m\_spinLLE->value() );
+465     \}
+466     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( m\_lineType == 1 )
+467     \{
+468         \textcolor{keywordflow}{if} ( !m\_useColor->isChecked() )
+469         \{
+470             m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_ae5959ad2b144411d304ff790805f65ab}{setLineInnerColor}( QColor() );
+471         \}
+472         \textcolor{keywordflow}{else}
+473         \{
+474             m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_ae5959ad2b144411d304ff790805f65ab}{setLineInnerColor}( m\_innerColor->color() );
+475         \}
+476     \}
+477     m\_lineAnn->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_af0643b15b59d282c196f0c6114493d9e}{setWidth}( m\_spinSize->value() );
+478 \}
+\end{DoxyCode}
+\hypertarget{classLineAnnotationWidget_ae034334b44224792130e0677510a1f65}{\index{Line\+Annotation\+Widget@{Line\+Annotation\+Widget}!create\+Style\+Widget@{create\+Style\+Widget}}
+\index{create\+Style\+Widget@{create\+Style\+Widget}!Line\+Annotation\+Widget@{Line\+Annotation\+Widget}}
+\subsubsection[{create\+Style\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Line\+Annotation\+Widget\+::create\+Style\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classLineAnnotationWidget_ae034334b44224792130e0677510a1f65}
+
+
+Reimplemented from \hyperlink{classAnnotationWidget_a4b0926d20f0b26deb5b6a4e75f78fac3}{Annotation\+Widget}.
+
+
+
+Definition at line 379 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+380 \{
+381     QWidget * widget = \textcolor{keyword}{new} QWidget();
+382     QVBoxLayout * lay = \textcolor{keyword}{new} QVBoxLayout( widget );
+383     lay->setMargin( 0 );
+384     \textcolor{keywordflow}{if} ( m\_lineType == 0 )
+385     \{
+386         QGroupBox * gb = \textcolor{keyword}{new} QGroupBox( widget );
+387         lay->addWidget( gb );
+388         gb->setTitle( i18n( \textcolor{stringliteral}{"Line Extensions"} ) );
+389         QGridLayout * gridlay = \textcolor{keyword}{new} QGridLayout( gb );
+390         QLabel * tmplabel = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"Leader Line Length:"} ), gb );
+391         gridlay->addWidget( tmplabel, 0, 0, Qt::AlignRight );
+392         m\_spinLL = \textcolor{keyword}{new} QDoubleSpinBox( gb );
+393         gridlay->addWidget( m\_spinLL, 0, 1 );
+394         tmplabel->setBuddy( m\_spinLL );
+395         tmplabel = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"Leader Line Extensions Length:"} ), gb );
+396         gridlay->addWidget( tmplabel, 1, 0, Qt::AlignRight );
+397         m\_spinLLE = \textcolor{keyword}{new} QDoubleSpinBox( gb );
+398         gridlay->addWidget( m\_spinLLE, 1, 1 );
+399         tmplabel->setBuddy( m\_spinLLE );
+400     \}
+401 
+402     QGroupBox * gb2 = \textcolor{keyword}{new} QGroupBox( widget );
+403     lay->addWidget( gb2 );
+404     gb2->setTitle( i18n( \textcolor{stringliteral}{"Style"} ) );
+405     QGridLayout * gridlay2 = \textcolor{keyword}{new} QGridLayout( gb2 );
+406     QLabel * tmplabel2 = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"&Size:"} ), gb2 );
+407     gridlay2->addWidget( tmplabel2, 0, 0, Qt::AlignRight );
+408     m\_spinSize = \textcolor{keyword}{new} QDoubleSpinBox( gb2 );
+409     gridlay2->addWidget( m\_spinSize, 0, 1 );
+410     tmplabel2->setBuddy( m\_spinSize );
+411 
+412     \textcolor{keywordflow}{if} ( m\_lineType == 1 )
+413     \{
+414         m\_useColor = \textcolor{keyword}{new} QCheckBox( i18n( \textcolor{stringliteral}{"Inner color:"} ), gb2 );
+415         gridlay2->addWidget( m\_useColor, 1, 0 );
+416         m\_innerColor = \textcolor{keyword}{new} KColorButton( gb2 );
+417         gridlay2->addWidget( m\_innerColor, 1, 1 );
+418     \}
+419 
+420     \textcolor{keywordflow}{if} ( m\_lineType == 0 )
+421     \{
+422         m\_spinLL->setRange( -500, 500 );
+423         m\_spinLL->setValue( m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a5ea35b2ee68172d9cf183d8778e34edb}{lineLeadingForwardPoint}() );
+424         m\_spinLLE->setRange( 0, 500 );
+425         m\_spinLLE->setValue( m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a6a492d6aadd6d9ee879f85c5f24e99a0}{lineLeadingBackwardPoint}() );
+426     \}
+427     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( m\_lineType == 1 )
+428     \{
+429         m\_innerColor->setColor( m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a240bcd7154afdf61c526295134abdc0f}{lineInnerColor}() );
+430         \textcolor{keywordflow}{if} ( m\_lineAnn->\hyperlink{classOkular_1_1LineAnnotation_a240bcd7154afdf61c526295134abdc0f}{lineInnerColor}().isValid() )
+431         \{
+432             m\_useColor->setChecked( \textcolor{keyword}{true} );
+433         \}
+434         \textcolor{keywordflow}{else}
+435         \{
+436             m\_innerColor->setEnabled( \textcolor{keyword}{false} );
+437         \}
+438     \}
+439     m\_spinSize->setRange( 1, 100 );
+440     m\_spinSize->setValue( m\_lineAnn->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a5a8e23f3a4f95e25f45770937dc82948}{width}() );
+441 
+442     \textcolor{keywordflow}{if} ( m\_lineType == 0 )
+443     \{
+444         connect( m\_spinLL, SIGNAL(valueChanged(\textcolor{keywordtype}{double})), \textcolor{keyword}{this}, SIGNAL(
+      \hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+445         connect( m\_spinLLE, SIGNAL(valueChanged(\textcolor{keywordtype}{double})), \textcolor{keyword}{this}, SIGNAL(
+      \hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+446     \}
+447     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( m\_lineType == 1 )
+448     \{
+449         connect( m\_innerColor, SIGNAL(changed(QColor)), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+450         connect( m\_useColor, SIGNAL(toggled(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+451         connect( m\_useColor, SIGNAL(toggled(\textcolor{keywordtype}{bool})), m\_innerColor, SLOT(setEnabled(\textcolor{keywordtype}{bool})) );
+452     \}
+453     connect( m\_spinSize, SIGNAL(valueChanged(\textcolor{keywordtype}{double})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+454 
+455     \textcolor{keywordflow}{return} widget;
+456 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationwidgets_8h}{annotationwidgets.\+h}\item 
+ui/\hyperlink{annotationwidgets_8cpp}{annotationwidgets.\+cpp}\end{DoxyCompactItemize}

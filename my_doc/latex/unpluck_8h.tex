@@ -1,0 +1,1218 @@
+\hypertarget{unpluck_8h}{\section{generators/plucker/unpluck/unpluck.h File Reference}
+\label{unpluck_8h}\index{generators/plucker/unpluck/unpluck.\+h@{generators/plucker/unpluck/unpluck.\+h}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structplkr__DBHandle__s}{plkr\+\_\+\+D\+B\+Handle\+\_\+s}
+\item 
+struct \hyperlink{struct__plkr__CategoryName}{\+\_\+plkr\+\_\+\+Category\+Name}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E}(v)~(((v)$>$$>$3) \& 0x1\+F)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structplkr__DBHandle__s}{plkr\+\_\+\+D\+B\+Handle\+\_\+s} $\ast$ \hyperlink{unpluck_8h_a74fbfe35b87f9a4c762e6a099cb849d5}{plkr\+\_\+\+D\+B\+Handle}
+\item 
+typedef struct \hyperlink{struct__plkr__CategoryName}{\+\_\+plkr\+\_\+\+Category\+Name} $\ast$ \hyperlink{unpluck_8h_a705714ac742bd9800de81b487a71de96}{plkr\+\_\+\+Category\+List}
+\item 
+typedef struct \hyperlink{structplkr__Document__s}{plkr\+\_\+\+Document\+\_\+s} \hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{plkr\+\_\+\+Data\+Record\+Type} \{ \\*
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a571c71bbb146f2641a43d28fd0fa2d72}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T} = 0, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a2a7d1fcd3aee05f31ab3dae95e80786c}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D} = 1, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a915947dc0290a72e53232e7510f0089d}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E} = 2, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4afcce1912d935010a0ea86191d02dd461}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D} = 3, 
+\\*
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a58255e36532891f943049de4e73b874f}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+A\+I\+L\+T\+O} = 4, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a72e6ac9344a1c68eea838dfff264b6a1}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+I\+N\+D\+E\+X} = 5, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ae416fdedd0b9797472fc3da93ad54704}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S} = 6, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4aad8fc977517323ff1a8002971a72ac72}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D} = 7, 
+\\*
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a773bbcfb0e61598c263af380daac7379}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+B\+O\+O\+K\+M\+A\+R\+K\+S} = 8, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af18c865d5c6cf21133611dfe8d93ec97}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y} = 9, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4adc6307f7681f7c75c72d6165e40994a1}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A} = 10, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af4bdbd93bc8afebb94ac3f01505a56f6}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+G\+L\+Y\+P\+H\+P\+A\+G\+E} = 11, 
+\\*
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a237c287b77d5d1d5c336b7368e1c585e}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+F\+O\+N\+T\+\_\+\+P\+A\+G\+E} = 12, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4acf5827d1415cba7509cf8fbf6febfeac}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E} = 13, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a000e69b41bb0ccfeb1e7554e7e4b5dac}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D} = 14, 
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a517449c7f52381e1efa349c8330c7d06}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+I\+M\+A\+G\+E} = 15, 
+\\*
+\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E} = 0x\+F\+F\+F\+F
+ \}
+\item 
+enum \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70}{plkr\+\_\+\+Text\+Function\+Codes} \{ \\*
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab249cb33c0916d1bc8ba4edce85daa32}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+L\+I\+N\+K} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x0\+A), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab55971a63b5e191cb7e8f84646b9d82a}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+F\+O\+N\+T} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x11), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abb863b8ecbff491373437ddf68c9149d}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x1\+A), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a85ef09904716e032991de8126d3020b2}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+M\+A\+R\+G\+I\+N\+S} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x22), 
+\\*
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a024b19df37284b8c954c06bd8b5b96f1}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+A\+L\+I\+G\+N} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x29), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70aac0293b03c7b50109d5a4599a494f1e0}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+H\+R\+U\+L\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x33), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a7ed23f5b2444b445db19753355b3201f}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+N\+E\+W\+L\+I\+N\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x38), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a462e15c07a65123a4c99f95f3458d4e2}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+I\+T\+A\+L\+I\+C} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x40), 
+\\*
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a8085e7f1d6bfe2a9218992435879a492}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+I\+T\+A\+L\+I\+C} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x48), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab4126aec9ad863478a40a0d8c7157ff0}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+C\+O\+L\+O\+R} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x53), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a0daff9d35fd1bbf3e57276b48d4f14d7}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E2} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x5\+C), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abfd24ec71e2a077225b76342f80bbef9}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+U\+L\+I\+N\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x60), 
+\\*
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70afbdbafb4b990d93b640f9eaec8b1c485}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+U\+L\+I\+N\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x68), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a354124161fb40d6087e37441886d862b}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+S\+T\+R\+I\+K\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x70), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a51e0753133b1cc9232ada7fdc3ec1612}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+S\+T\+R\+I\+K\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x78), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a948b766b60c8374c00d7ebd8d06f2a51}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+U\+C\+H\+A\+R} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x83), 
+\\*
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2c1d8af6064e46992910f03c7341f72d}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+G\+L\+Y\+P\+H} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x88), 
+\hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2b38b0f5dbae31a2317395f6a78f137f}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+T\+A\+B\+L\+E} = P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E (0x90)
+ \}
+\item 
+enum \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25}{plkr\+\_\+\+Font\+Styles} \{ \\*
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a5699c429e6a049efecdd09457147d093}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R} = 0, 
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a8269aa13670d9273ce432cf45f485ec9}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H1} = 1, 
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a2266538ee98e179ff48dbf77e22e0366}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H2} = 2, 
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25aecd5a145d0099b9f57fa0d983117907d}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H3} = 3, 
+\\*
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a9e72e5f57665bb0d8e23b12826e2ce0d}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H4} = 4, 
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a90609344a7d8bbf61bb32b4c327d4ea9}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H5} = 5, 
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a4920f7d95bf9633f0cf99b045c087a6d}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H6} = 6, 
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a415c3214f256e392b22a96aba891176c}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R\+B\+O\+L\+D} = 7, 
+\\*
+\hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a31f88c492c098882b9166b172fd18efd}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+F\+I\+X\+E\+D\+W\+I\+D\+T\+H} = 8
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$ \hyperlink{unpluck_8h_a6162c359b085bfbb99d9ff393f8421bf}{plkr\+\_\+\+Open\+D\+B\+File} (char $\ast$)
+\item 
+\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$ \hyperlink{unpluck_8h_a93cea8de27e108703f5dc63881ab9022}{plkr\+\_\+\+Open\+Doc} (\hyperlink{unpluck_8h_a74fbfe35b87f9a4c762e6a099cb849d5}{plkr\+\_\+\+D\+B\+Handle})
+\item 
+void \hyperlink{unpluck_8h_a6d2952cb1a14b98c857063e4139784e3}{plkr\+\_\+\+Close\+Doc} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+int \hyperlink{unpluck_8h_ae7792c590b7a94d908aedfae8a149cc0}{plkr\+\_\+\+Copy\+Record\+Bytes} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int, unsigned char $\ast$, int, \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{plkr\+\_\+\+Data\+Record\+Type} $\ast$)
+\item 
+int \hyperlink{unpluck_8h_a71b270b021bcdb55b5909ae66083e415}{plkr\+\_\+\+Get\+Uid\+For\+Index} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int)
+\item 
+unsigned char $\ast$ \hyperlink{unpluck_8h_afa51c9fd57b2235f29dd42714653528f}{plkr\+\_\+\+Get\+Record\+Bytes} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int, int $\ast$, \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{plkr\+\_\+\+Data\+Record\+Type} $\ast$)
+\item 
+char $\ast$ \hyperlink{unpluck_8h_a99fd20ad60517f503b00968f00d33656}{plkr\+\_\+\+Get\+Record\+U\+R\+L} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int record\+\_\+index)
+\item 
+int \hyperlink{unpluck_8h_a4f41ed44c6e84757e607b3e1df8ced46}{plkr\+\_\+\+Get\+Home\+Record\+I\+D} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+char $\ast$ \hyperlink{unpluck_8h_a6632699c64aa677efcca9d85f5eea1d3}{plkr\+\_\+\+Get\+Name} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+char $\ast$ \hyperlink{unpluck_8h_a5a0f79571b5dec76cdb2bca1e4ae0166}{plkr\+\_\+\+Get\+Title} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+char $\ast$ \hyperlink{unpluck_8h_ac422689ffe6984c02b7294a30bf59627}{plkr\+\_\+\+Get\+Author} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+int \hyperlink{unpluck_8h_a0a1e2b4319457a06ae863751047c0656}{plkr\+\_\+\+Get\+Default\+Charset} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+unsigned long \hyperlink{unpluck_8h_a749e7d2e7b5f85ee18ef925b50dccb40}{plkr\+\_\+\+Get\+Publication\+Time} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+int \hyperlink{unpluck_8h_a8dfd949fd8536b5876f76beed049c52a}{plkr\+\_\+\+Get\+Record\+Count} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+int \hyperlink{unpluck_8h_aaa39fe1098bda75489d39b5cbe384c83}{plkr\+\_\+\+Get\+Max\+Record\+Size} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+\hyperlink{unpluck_8h_a705714ac742bd9800de81b487a71de96}{plkr\+\_\+\+Category\+List} \hyperlink{unpluck_8h_a620064cf36e07fb5a410b9281e333b71}{plkr\+\_\+\+Get\+Default\+Categories} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$)
+\item 
+int \hyperlink{unpluck_8h_a58d318cfe662d00dd286a6e3cf6f5f8c}{plkr\+\_\+\+Has\+Record\+With\+I\+D} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int)
+\item 
+int \hyperlink{unpluck_8h_a079e75f951f014e0ae833c23885d4817}{plkr\+\_\+\+Get\+Record\+Type} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int)
+\item 
+int \hyperlink{unpluck_8h_aa2087ed9abaf702993b36cf66ff82753}{plkr\+\_\+\+Get\+Record\+Charset} (\hyperlink{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{plkr\+\_\+\+Document} $\ast$, int)
+\item 
+int \hyperlink{unpluck_8h_a2023391f584489f13ef8d784ad061960}{plkr\+\_\+\+Show\+Messages} (int)
+\item 
+char $\ast$ \hyperlink{unpluck_8h_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\+\_\+\+Get\+Config\+String} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, char $\ast$default\+\_\+value)
+\item 
+long int \hyperlink{unpluck_8h_a64ac2d15f29c5cf6f38a9773e103c6b3}{plkr\+\_\+\+Get\+Config\+Int} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, long int default\+\_\+value)
+\item 
+double \hyperlink{unpluck_8h_a0e4e459acf2eef69b6dae7ed49326a7b}{plkr\+\_\+\+Get\+Config\+Float} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, double default\+\_\+value)
+\item 
+int \hyperlink{unpluck_8h_a5a546e9c1b2e9bf56cec849e2fe2b5bb}{plkr\+\_\+\+Get\+Config\+Boolean} (char $\ast$section\+\_\+name, char $\ast$option\+\_\+name, int default\+\_\+value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{unpluck_8h_a6141070d89983084faf481e267814ba9}{\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E@{P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E}}
+\index{P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E@{P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+K\+R\+\_\+\+F\+C\+\_\+\+C\+O\+D\+E(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~(((v)$>$$>$3) \& 0x1\+F)}}\label{unpluck_8h_a6141070d89983084faf481e267814ba9}
+
+
+Definition at line 91 of file unpluck.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{unpluck_8h_a705714ac742bd9800de81b487a71de96}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Category\+List@{plkr\+\_\+\+Category\+List}}
+\index{plkr\+\_\+\+Category\+List@{plkr\+\_\+\+Category\+List}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Category\+List}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+plkr\+\_\+\+Category\+Name} $\ast$ {\bf plkr\+\_\+\+Category\+List}}}\label{unpluck_8h_a705714ac742bd9800de81b487a71de96}
+\hypertarget{unpluck_8h_a74fbfe35b87f9a4c762e6a099cb849d5}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+D\+B\+Handle@{plkr\+\_\+\+D\+B\+Handle}}
+\index{plkr\+\_\+\+D\+B\+Handle@{plkr\+\_\+\+D\+B\+Handle}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+D\+B\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf plkr\+\_\+\+D\+B\+Handle\+\_\+s}$\ast$ {\bf plkr\+\_\+\+D\+B\+Handle}}}\label{unpluck_8h_a74fbfe35b87f9a4c762e6a099cb849d5}
+
+
+Definition at line 30 of file unpluck.\+h.
+
+\hypertarget{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Document@{plkr\+\_\+\+Document}}
+\index{plkr\+\_\+\+Document@{plkr\+\_\+\+Document}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Document}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf plkr\+\_\+\+Document\+\_\+s} {\bf plkr\+\_\+\+Document}}}\label{unpluck_8h_a693dc907f8df7998a38f41a4e3512e2c}
+
+
+Definition at line 131 of file unpluck.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Data\+Record\+Type@{plkr\+\_\+\+Data\+Record\+Type}}
+\index{plkr\+\_\+\+Data\+Record\+Type@{plkr\+\_\+\+Data\+Record\+Type}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Data\+Record\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf plkr\+\_\+\+Data\+Record\+Type}}}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a571c71bbb146f2641a43d28fd0fa2d72}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a571c71bbb146f2641a43d28fd0fa2d72}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a2a7d1fcd3aee05f31ab3dae95e80786c}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+T\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a2a7d1fcd3aee05f31ab3dae95e80786c}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a915947dc0290a72e53232e7510f0089d}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a915947dc0290a72e53232e7510f0089d}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4afcce1912d935010a0ea86191d02dd461}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4afcce1912d935010a0ea86191d02dd461}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+A\+I\+L\+T\+O@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+A\+I\+L\+T\+O}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+A\+I\+L\+T\+O@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+A\+I\+L\+T\+O}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a58255e36532891f943049de4e73b874f}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+A\+I\+L\+T\+O}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a58255e36532891f943049de4e73b874f}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+I\+N\+D\+E\+X@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+I\+N\+D\+E\+X}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+I\+N\+D\+E\+X@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+I\+N\+D\+E\+X}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a72e6ac9344a1c68eea838dfff264b6a1}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+I\+N\+D\+E\+X}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a72e6ac9344a1c68eea838dfff264b6a1}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ae416fdedd0b9797472fc3da93ad54704}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ae416fdedd0b9797472fc3da93ad54704}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4aad8fc977517323ff1a8002971a72ac72}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+L\+I\+N\+K\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4aad8fc977517323ff1a8002971a72ac72}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+B\+O\+O\+K\+M\+A\+R\+K\+S@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+B\+O\+O\+K\+M\+A\+R\+K\+S}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+B\+O\+O\+K\+M\+A\+R\+K\+S@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+B\+O\+O\+K\+M\+A\+R\+K\+S}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a773bbcfb0e61598c263af380daac7379}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+B\+O\+O\+K\+M\+A\+R\+K\+S}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a773bbcfb0e61598c263af380daac7379}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af18c865d5c6cf21133611dfe8d93ec97}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+C\+A\+T\+E\+G\+O\+R\+Y}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af18c865d5c6cf21133611dfe8d93ec97}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4adc6307f7681f7c75c72d6165e40994a1}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+D\+A\+T\+A}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4adc6307f7681f7c75c72d6165e40994a1}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+G\+L\+Y\+P\+H\+P\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+G\+L\+Y\+P\+H\+P\+A\+G\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+G\+L\+Y\+P\+H\+P\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+G\+L\+Y\+P\+H\+P\+A\+G\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af4bdbd93bc8afebb94ac3f01505a56f6}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+G\+L\+Y\+P\+H\+P\+A\+G\+E}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af4bdbd93bc8afebb94ac3f01505a56f6}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+F\+O\+N\+T\+\_\+\+P\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+F\+O\+N\+T\+\_\+\+P\+A\+G\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+F\+O\+N\+T\+\_\+\+P\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+F\+O\+N\+T\+\_\+\+P\+A\+G\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a237c287b77d5d1d5c336b7368e1c585e}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+F\+O\+N\+T\+\_\+\+P\+A\+G\+E}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a237c287b77d5d1d5c336b7368e1c585e}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4acf5827d1415cba7509cf8fbf6febfeac}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4acf5827d1415cba7509cf8fbf6febfeac}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a000e69b41bb0ccfeb1e7554e7e4b5dac}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+E\+D}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a000e69b41bb0ccfeb1e7554e7e4b5dac}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+I\+M\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+I\+M\+A\+G\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+I\+M\+A\+G\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+I\+M\+A\+G\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a517449c7f52381e1efa349c8330c7d06}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+M\+U\+L\+T\+I\+I\+M\+A\+G\+E}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a517449c7f52381e1efa349c8330c7d06}
+}]\index{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E@{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}{P\+L\+K\+R\+\_\+\+D\+R\+T\+Y\+P\+E\+\_\+\+N\+O\+N\+E}\label{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 69 of file unpluck.\+h.
+
+
+\begin{DoxyCode}
+69              \{
+70     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a571c71bbb146f2641a43d28fd0fa2d72}{PLKR\_DRTYPE\_TEXT} = 0,
+71     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a2a7d1fcd3aee05f31ab3dae95e80786c}{PLKR\_DRTYPE\_TEXT\_COMPRESSED} = 1,
+72     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a915947dc0290a72e53232e7510f0089d}{PLKR\_DRTYPE\_IMAGE} = 2,
+73     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4afcce1912d935010a0ea86191d02dd461}{PLKR\_DRTYPE\_IMAGE\_COMPRESSED} = 3,
+74     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a58255e36532891f943049de4e73b874f}{PLKR\_DRTYPE\_MAILTO} = 4,
+75     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a72e6ac9344a1c68eea838dfff264b6a1}{PLKR\_DRTYPE\_LINKS\_INDEX} = 5,
+76     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ae416fdedd0b9797472fc3da93ad54704}{PLKR\_DRTYPE\_LINKS} = 6,
+77     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4aad8fc977517323ff1a8002971a72ac72}{PLKR\_DRTYPE\_LINKS\_COMPRESSED} = 7,
+78     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a773bbcfb0e61598c263af380daac7379}{PLKR\_DRTYPE\_BOOKMARKS} = 8,
+79     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af18c865d5c6cf21133611dfe8d93ec97}{PLKR\_DRTYPE\_CATEGORY} = 9,
+80     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4adc6307f7681f7c75c72d6165e40994a1}{PLKR\_DRTYPE\_METADATA} = 10,
+81     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4af4bdbd93bc8afebb94ac3f01505a56f6}{PLKR\_DRTYPE\_GLYPHPAGE} = 11,
+82     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a237c287b77d5d1d5c336b7368e1c585e}{PLKR\_DRTYPE\_FONT\_PAGE} = 12,
+83     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4acf5827d1415cba7509cf8fbf6febfeac}{PLKR\_DRTYPE\_TABLE} = 13,
+84     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a000e69b41bb0ccfeb1e7554e7e4b5dac}{PLKR\_DRTYPE\_TABLE\_COMPRESSED} = 14,
+85     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a517449c7f52381e1efa349c8330c7d06}{PLKR\_DRTYPE\_MULTIIMAGE} = 15,
+86 
+87     \textcolor{comment}{/* this record type is not used in the Plucker DB */}
+88     \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}{PLKR\_DRTYPE\_NONE} = 0xFFFF
+89 \} \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{plkr\_DataRecordType};
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Font\+Styles@{plkr\+\_\+\+Font\+Styles}}
+\index{plkr\+\_\+\+Font\+Styles@{plkr\+\_\+\+Font\+Styles}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Font\+Styles}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf plkr\+\_\+\+Font\+Styles}}}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a5699c429e6a049efecdd09457147d093}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a5699c429e6a049efecdd09457147d093}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H1@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H1}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H1@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H1}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a8269aa13670d9273ce432cf45f485ec9}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H1}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a8269aa13670d9273ce432cf45f485ec9}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H2@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H2}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H2@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H2}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a2266538ee98e179ff48dbf77e22e0366}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H2}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a2266538ee98e179ff48dbf77e22e0366}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H3@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H3}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H3@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H3}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25aecd5a145d0099b9f57fa0d983117907d}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H3}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25aecd5a145d0099b9f57fa0d983117907d}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H4@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H4}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H4@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H4}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a9e72e5f57665bb0d8e23b12826e2ce0d}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H4}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a9e72e5f57665bb0d8e23b12826e2ce0d}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H5@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H5}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H5@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H5}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a90609344a7d8bbf61bb32b4c327d4ea9}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H5}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a90609344a7d8bbf61bb32b4c327d4ea9}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H6@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H6}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H6@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H6}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a4920f7d95bf9633f0cf99b045c087a6d}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+H6}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a4920f7d95bf9633f0cf99b045c087a6d}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R\+B\+O\+L\+D@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R\+B\+O\+L\+D}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R\+B\+O\+L\+D@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R\+B\+O\+L\+D}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a415c3214f256e392b22a96aba891176c}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+R\+E\+G\+U\+L\+A\+R\+B\+O\+L\+D}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a415c3214f256e392b22a96aba891176c}
+}]\index{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+F\+I\+X\+E\+D\+W\+I\+D\+T\+H@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+F\+I\+X\+E\+D\+W\+I\+D\+T\+H}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+F\+I\+X\+E\+D\+W\+I\+D\+T\+H@{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+F\+I\+X\+E\+D\+W\+I\+D\+T\+H}}\item[{\em 
+\hypertarget{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a31f88c492c098882b9166b172fd18efd}{P\+L\+K\+R\+\_\+\+F\+O\+N\+T\+\_\+\+F\+I\+X\+E\+D\+W\+I\+D\+T\+H}\label{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a31f88c492c098882b9166b172fd18efd}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 114 of file unpluck.\+h.
+
+
+\begin{DoxyCode}
+114              \{
+115     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a5699c429e6a049efecdd09457147d093}{PLKR\_FONT\_REGULAR} = 0,
+116     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a8269aa13670d9273ce432cf45f485ec9}{PLKR\_FONT\_H1} = 1,
+117     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a2266538ee98e179ff48dbf77e22e0366}{PLKR\_FONT\_H2} = 2,
+118     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25aecd5a145d0099b9f57fa0d983117907d}{PLKR\_FONT\_H3} = 3,
+119     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a9e72e5f57665bb0d8e23b12826e2ce0d}{PLKR\_FONT\_H4} = 4,
+120     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a90609344a7d8bbf61bb32b4c327d4ea9}{PLKR\_FONT\_H5} = 5,
+121     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a4920f7d95bf9633f0cf99b045c087a6d}{PLKR\_FONT\_H6} = 6,
+122     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a415c3214f256e392b22a96aba891176c}{PLKR\_FONT\_REGULARBOLD} = 7,
+123     \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25a31f88c492c098882b9166b172fd18efd}{PLKR\_FONT\_FIXEDWIDTH} = 8
+124 \} \hyperlink{unpluck_8h_a8c2cdece523fbf3201febd90d5453c25}{plkr\_FontStyles};
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Text\+Function\+Codes@{plkr\+\_\+\+Text\+Function\+Codes}}
+\index{plkr\+\_\+\+Text\+Function\+Codes@{plkr\+\_\+\+Text\+Function\+Codes}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Text\+Function\+Codes}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf plkr\+\_\+\+Text\+Function\+Codes}}}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+L\+I\+N\+K@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+L\+I\+N\+K}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+L\+I\+N\+K@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+L\+I\+N\+K}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab249cb33c0916d1bc8ba4edce85daa32}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+L\+I\+N\+K}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab249cb33c0916d1bc8ba4edce85daa32}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+F\+O\+N\+T@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+F\+O\+N\+T}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+F\+O\+N\+T@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+F\+O\+N\+T}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab55971a63b5e191cb7e8f84646b9d82a}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+F\+O\+N\+T}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab55971a63b5e191cb7e8f84646b9d82a}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abb863b8ecbff491373437ddf68c9149d}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abb863b8ecbff491373437ddf68c9149d}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+M\+A\+R\+G\+I\+N\+S@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+M\+A\+R\+G\+I\+N\+S}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+M\+A\+R\+G\+I\+N\+S@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+M\+A\+R\+G\+I\+N\+S}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a85ef09904716e032991de8126d3020b2}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+M\+A\+R\+G\+I\+N\+S}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a85ef09904716e032991de8126d3020b2}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+A\+L\+I\+G\+N@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+A\+L\+I\+G\+N}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+A\+L\+I\+G\+N@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+A\+L\+I\+G\+N}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a024b19df37284b8c954c06bd8b5b96f1}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+A\+L\+I\+G\+N}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a024b19df37284b8c954c06bd8b5b96f1}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+H\+R\+U\+L\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+H\+R\+U\+L\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+H\+R\+U\+L\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+H\+R\+U\+L\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70aac0293b03c7b50109d5a4599a494f1e0}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+H\+R\+U\+L\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70aac0293b03c7b50109d5a4599a494f1e0}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+N\+E\+W\+L\+I\+N\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+N\+E\+W\+L\+I\+N\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+N\+E\+W\+L\+I\+N\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+N\+E\+W\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a7ed23f5b2444b445db19753355b3201f}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+N\+E\+W\+L\+I\+N\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a7ed23f5b2444b445db19753355b3201f}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+I\+T\+A\+L\+I\+C@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+I\+T\+A\+L\+I\+C}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+I\+T\+A\+L\+I\+C@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+I\+T\+A\+L\+I\+C}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a462e15c07a65123a4c99f95f3458d4e2}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+I\+T\+A\+L\+I\+C}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a462e15c07a65123a4c99f95f3458d4e2}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+I\+T\+A\+L\+I\+C@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+I\+T\+A\+L\+I\+C}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+I\+T\+A\+L\+I\+C@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+I\+T\+A\+L\+I\+C}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a8085e7f1d6bfe2a9218992435879a492}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+I\+T\+A\+L\+I\+C}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a8085e7f1d6bfe2a9218992435879a492}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+C\+O\+L\+O\+R@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+C\+O\+L\+O\+R}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+C\+O\+L\+O\+R@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+C\+O\+L\+O\+R}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab4126aec9ad863478a40a0d8c7157ff0}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+C\+O\+L\+O\+R}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab4126aec9ad863478a40a0d8c7157ff0}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E2@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E2}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E2@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E2}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a0daff9d35fd1bbf3e57276b48d4f14d7}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+I\+M\+A\+G\+E2}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a0daff9d35fd1bbf3e57276b48d4f14d7}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+U\+L\+I\+N\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+U\+L\+I\+N\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+U\+L\+I\+N\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+U\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abfd24ec71e2a077225b76342f80bbef9}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+U\+L\+I\+N\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abfd24ec71e2a077225b76342f80bbef9}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+U\+L\+I\+N\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+U\+L\+I\+N\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+U\+L\+I\+N\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+U\+L\+I\+N\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70afbdbafb4b990d93b640f9eaec8b1c485}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+U\+L\+I\+N\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70afbdbafb4b990d93b640f9eaec8b1c485}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+S\+T\+R\+I\+K\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+S\+T\+R\+I\+K\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+S\+T\+R\+I\+K\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+S\+T\+R\+I\+K\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a354124161fb40d6087e37441886d862b}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+B\+S\+T\+R\+I\+K\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a354124161fb40d6087e37441886d862b}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+S\+T\+R\+I\+K\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+S\+T\+R\+I\+K\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+S\+T\+R\+I\+K\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+S\+T\+R\+I\+K\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a51e0753133b1cc9232ada7fdc3ec1612}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+E\+S\+T\+R\+I\+K\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a51e0753133b1cc9232ada7fdc3ec1612}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+U\+C\+H\+A\+R@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+U\+C\+H\+A\+R}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+U\+C\+H\+A\+R@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+U\+C\+H\+A\+R}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a948b766b60c8374c00d7ebd8d06f2a51}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+U\+C\+H\+A\+R}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a948b766b60c8374c00d7ebd8d06f2a51}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+G\+L\+Y\+P\+H@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+G\+L\+Y\+P\+H}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+G\+L\+Y\+P\+H@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+G\+L\+Y\+P\+H}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2c1d8af6064e46992910f03c7341f72d}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+G\+L\+Y\+P\+H}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2c1d8af6064e46992910f03c7341f72d}
+}]\index{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+T\+A\+B\+L\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+T\+A\+B\+L\+E}!unpluck.\+h@{unpluck.\+h}}\index{unpluck.\+h@{unpluck.\+h}!P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+T\+A\+B\+L\+E@{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+T\+A\+B\+L\+E}}\item[{\em 
+\hypertarget{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2b38b0f5dbae31a2317395f6a78f137f}{P\+L\+K\+R\+\_\+\+T\+F\+C\+\_\+\+T\+A\+B\+L\+E}\label{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2b38b0f5dbae31a2317395f6a78f137f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 93 of file unpluck.\+h.
+
+
+\begin{DoxyCode}
+93              \{
+94     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab249cb33c0916d1bc8ba4edce85daa32}{PLKR\_TFC\_LINK} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x0A),        \textcolor{comment}{/* page or span link start or end 
+      */}
+95     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab55971a63b5e191cb7e8f84646b9d82a}{PLKR\_TFC\_FONT} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x11),        \textcolor{comment}{/* set font */}
+96     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abb863b8ecbff491373437ddf68c9149d}{PLKR\_TFC\_IMAGE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x1A),       \textcolor{comment}{/* embedded image */}
+97     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a85ef09904716e032991de8126d3020b2}{PLKR\_TFC\_MARGINS} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x22),     \textcolor{comment}{/* set left and right margins 
+      */}
+98     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a024b19df37284b8c954c06bd8b5b96f1}{PLKR\_TFC\_ALIGN} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x29),       \textcolor{comment}{/* set text alignment */}
+99     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70aac0293b03c7b50109d5a4599a494f1e0}{PLKR\_TFC\_HRULE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x33),       \textcolor{comment}{/* horizontal rule */}
+100     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a7ed23f5b2444b445db19753355b3201f}{PLKR\_TFC\_NEWLINE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x38),     \textcolor{comment}{/* start new line */}
+101     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a462e15c07a65123a4c99f95f3458d4e2}{PLKR\_TFC\_BITALIC} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x40),     \textcolor{comment}{/* begin italic text */}
+102     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a8085e7f1d6bfe2a9218992435879a492}{PLKR\_TFC\_EITALIC} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x48),     \textcolor{comment}{/* end italic text */}
+103     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70ab4126aec9ad863478a40a0d8c7157ff0}{PLKR\_TFC\_COLOR} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x53),       \textcolor{comment}{/* set text color */}
+104     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a0daff9d35fd1bbf3e57276b48d4f14d7}{PLKR\_TFC\_IMAGE2} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x5C),      \textcolor{comment}{/* double embedded image */}
+105     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70abfd24ec71e2a077225b76342f80bbef9}{PLKR\_TFC\_BULINE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x60),      \textcolor{comment}{/* begin underline text */}
+106     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70afbdbafb4b990d93b640f9eaec8b1c485}{PLKR\_TFC\_EULINE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x68),      \textcolor{comment}{/* end underline text */}
+107     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a354124161fb40d6087e37441886d862b}{PLKR\_TFC\_BSTRIKE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x70),     \textcolor{comment}{/* begin struck-through text */}
+108     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a51e0753133b1cc9232ada7fdc3ec1612}{PLKR\_TFC\_ESTRIKE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x78),     \textcolor{comment}{/* end struck-through text */}
+109     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a948b766b60c8374c00d7ebd8d06f2a51}{PLKR\_TFC\_UCHAR} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x83),       \textcolor{comment}{/* 16 or 32 bit Unicode character
+       */}
+110     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2c1d8af6064e46992910f03c7341f72d}{PLKR\_TFC\_GLYPH} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x88),       \textcolor{comment}{/* glyph run */}
+111     \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70a2b38b0f5dbae31a2317395f6a78f137f}{PLKR\_TFC\_TABLE} = \hyperlink{unpluck_8h_a6141070d89983084faf481e267814ba9}{PLKR\_FC\_CODE} (0x90)        \textcolor{comment}{/* table data */}
+112 \} \hyperlink{unpluck_8h_a851d58d0c6513824c9c30d865d453e70}{plkr\_TextFunctionCodes};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{unpluck_8h_a6d2952cb1a14b98c857063e4139784e3}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Close\+Doc@{plkr\+\_\+\+Close\+Doc}}
+\index{plkr\+\_\+\+Close\+Doc@{plkr\+\_\+\+Close\+Doc}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Close\+Doc}]{\setlength{\rightskip}{0pt plus 5cm}void plkr\+\_\+\+Close\+Doc (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a6d2952cb1a14b98c857063e4139784e3}
+
+
+Definition at line 879 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+882 \{
+883     \textcolor{keywordflow}{if} (doc == NULL) \{
+884         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Attempt to free NULL doc"});
+885     \}
+886     \textcolor{keywordflow}{else} \{
+887         FreePluckerDoc (doc);
+888     \}
+889 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_ae7792c590b7a94d908aedfae8a149cc0}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Copy\+Record\+Bytes@{plkr\+\_\+\+Copy\+Record\+Bytes}}
+\index{plkr\+\_\+\+Copy\+Record\+Bytes@{plkr\+\_\+\+Copy\+Record\+Bytes}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Copy\+Record\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Copy\+Record\+Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{int}]{, }
+\item[{{\bf plkr\+\_\+\+Data\+Record\+Type} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_ae7792c590b7a94d908aedfae8a149cc0}
+
+
+Definition at line 1003 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1009   \{
+1010     \hyperlink{structplkr__DataRecord__s}{plkr\_DataRecord}*  record;
+1011     \textcolor{keywordtype}{int}               output\_size;
+1012 
+1013     \textcolor{keywordflow}{if} (!FindRecordByIndex (doc, record\_index))
+1014         \textcolor{keywordflow}{return} 0;
+1015 
+1016     \textcolor{keywordflow}{if} (!GetUncompressedRecord (doc, doc->handle, record\_index,
+1017                                 output\_buffer, output\_buffer\_size,
+1018                                 \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}{PLKR\_DRTYPE\_NONE}, NULL, &output\_size,
+1019                                 &record))
+1020         \textcolor{keywordflow}{return} 0;
+1021     \textcolor{keywordflow}{else} \{
+1022         *type = record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type};
+1023         \textcolor{keywordflow}{return} output\_size;
+1024     \}
+1025 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_ac422689ffe6984c02b7294a30bf59627}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Author@{plkr\+\_\+\+Get\+Author}}
+\index{plkr\+\_\+\+Get\+Author@{plkr\+\_\+\+Get\+Author}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Author}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ plkr\+\_\+\+Get\+Author (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_ac422689ffe6984c02b7294a30bf59627}
+
+
+Definition at line 1080 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1083 \{
+1084     \textcolor{keywordflow}{return} doc->author;
+1085 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a5a546e9c1b2e9bf56cec849e2fe2b5bb}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Config\+Boolean@{plkr\+\_\+\+Get\+Config\+Boolean}}
+\index{plkr\+\_\+\+Get\+Config\+Boolean@{plkr\+\_\+\+Get\+Config\+Boolean}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+Boolean}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Config\+Boolean (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{int}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a5a546e9c1b2e9bf56cec849e2fe2b5bb}
+
+
+Definition at line 373 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+378 \{
+379     \textcolor{keywordtype}{char}*  svalue = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (section\_name, option\_name, NULL);
+380 
+381     \textcolor{keywordflow}{if} (svalue == NULL)
+382         \textcolor{keywordflow}{return} default\_value;
+383 
+384     \textcolor{keywordflow}{if} ((strcmp (svalue, \textcolor{stringliteral}{"1"}) == 0) ||
+385         (strcmp (svalue, \textcolor{stringliteral}{"true"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"TRUE"}) == 0) ||
+386         (strcmp (svalue, \textcolor{stringliteral}{"on"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"ON"}) == 0) ||
+387         (strcmp (svalue, \textcolor{stringliteral}{"t"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"T"}) == 0)
+388         || (strcmp (svalue, \textcolor{stringliteral}{"True"}) == 0))
+389         \textcolor{keywordflow}{return} 1;
+390 
+391     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((strcmp (svalue, \textcolor{stringliteral}{"0"}) == 0) || (strcmp (svalue, \textcolor{stringliteral}{"false"}) == 0)
+392              || (strcmp (svalue, \textcolor{stringliteral}{"FALSE"}) == 0)
+393              || (strcmp (svalue, \textcolor{stringliteral}{"off"}) == 0)
+394              || (strcmp (svalue, \textcolor{stringliteral}{"OFF"}) == 0)
+395              || (strcmp (svalue, \textcolor{stringliteral}{"F"}) == 0)
+396              || (strcmp (svalue, \textcolor{stringliteral}{"F"}) == 0)
+397              || (strcmp (svalue, \textcolor{stringliteral}{"False"}) == 0))
+398         \textcolor{keywordflow}{return} 0;
+399 
+400     \textcolor{keywordflow}{else} \{
+401         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad boolean value string '%s' for option %s:%s"},
+402                        svalue, (section\_name ? section\_name : \textcolor{stringliteral}{"default"}),
+403                        option\_name);
+404         \textcolor{keywordflow}{return} default\_value;
+405     \}
+406 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a0e4e459acf2eef69b6dae7ed49326a7b}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Config\+Float@{plkr\+\_\+\+Get\+Config\+Float}}
+\index{plkr\+\_\+\+Get\+Config\+Float@{plkr\+\_\+\+Get\+Config\+Float}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+Float}]{\setlength{\rightskip}{0pt plus 5cm}double plkr\+\_\+\+Get\+Config\+Float (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{double}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a0e4e459acf2eef69b6dae7ed49326a7b}
+
+
+Definition at line 347 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+352 \{
+353     \textcolor{keywordtype}{char}*   svalue = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (section\_name, option\_name, NULL);
+354     \textcolor{keywordtype}{char}*   endptr;
+355     \textcolor{keywordtype}{double}  value;
+356 
+357     \textcolor{keywordflow}{if} (svalue == NULL)
+358         \textcolor{keywordflow}{return} default\_value;
+359 
+360     value = strtod (svalue, &endptr);
+361     \textcolor{keywordflow}{if} (*endptr != 0) \{
+362         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad float value string '%s' for option %s:%s"},
+363                        svalue, (section\_name ? section\_name : \textcolor{stringliteral}{"default"}),
+364                        option\_name);
+365         \textcolor{keywordflow}{return} default\_value;
+366     \}
+367     \textcolor{keywordflow}{else} \{
+368         \textcolor{keywordflow}{return} value;
+369     \}
+370 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a64ac2d15f29c5cf6f38a9773e103c6b3}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Config\+Int@{plkr\+\_\+\+Get\+Config\+Int}}
+\index{plkr\+\_\+\+Get\+Config\+Int@{plkr\+\_\+\+Get\+Config\+Int}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+Int}]{\setlength{\rightskip}{0pt plus 5cm}long int plkr\+\_\+\+Get\+Config\+Int (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{long int}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a64ac2d15f29c5cf6f38a9773e103c6b3}
+
+
+Definition at line 321 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+326 \{
+327     \textcolor{keywordtype}{char}*     svalue = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (section\_name, option\_name, NULL);
+328     \textcolor{keywordtype}{char}*     endptr;
+329     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int}  value;
+330 
+331     \textcolor{keywordflow}{if} (svalue == NULL)
+332         \textcolor{keywordflow}{return} default\_value;
+333 
+334     value = strtol (svalue, &endptr, 0);
+335     \textcolor{keywordflow}{if} (*endptr != 0) \{
+336         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad int value string '%s' for option %s:%s"},
+337                        svalue, (section\_name ? section\_name : \textcolor{stringliteral}{"default"}),
+338                        option\_name);
+339         \textcolor{keywordflow}{return} default\_value;
+340     \}
+341     \textcolor{keywordflow}{else} \{
+342         \textcolor{keywordflow}{return} value;
+343     \}
+344 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_afa8ab8d30fb9cef098abdf08fcf37151}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Config\+String@{plkr\+\_\+\+Get\+Config\+String}}
+\index{plkr\+\_\+\+Get\+Config\+String@{plkr\+\_\+\+Get\+Config\+String}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Config\+String}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ plkr\+\_\+\+Get\+Config\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{section\+\_\+name, }
+\item[{char $\ast$}]{option\+\_\+name, }
+\item[{char $\ast$}]{default\+\_\+value}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_afa8ab8d30fb9cef098abdf08fcf37151}
+
+
+Definition at line 280 of file config.\+cpp.
+
+
+\begin{DoxyCode}
+285 \{
+286     \textcolor{keywordtype}{char}*       value = NULL;
+287     \hyperlink{structHashTable}{HashTable}*  section;
+288 
+289     \textcolor{keywordflow}{if} (\hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable} == NULL)
+290         InitializeConfigInfo ();
+291 
+292     \textcolor{keywordflow}{if} (\hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable} == NULL)
+293         \textcolor{keywordflow}{return} default\_value;
+294 
+295     \textcolor{keywordflow}{if} (section\_name != NULL) \{
+296         \textcolor{keywordflow}{if} ((section =
+297              (\hyperlink{structHashTable}{HashTable} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (
+      \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable},
+298                                               section\_name)) != NULL)
+299             value = (\textcolor{keywordtype}{char} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (section, option\_name);
+300     \}
+301     \textcolor{keywordflow}{if} (value == NULL && ((section\_name == NULL)
+302                           || (strcmp (section\_name, \textcolor{stringliteral}{"default"}) != 0))) \{
+303         \textcolor{keywordflow}{if} ((section =
+304              (\hyperlink{structHashTable}{HashTable} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (
+      \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable},
+305                                               \hyperlink{config_8cpp_a4689212d5a549893cabb9d7782eecfb6}{STRINGIFY} (OS\_SECTION\_NAME)))
+306             != NULL)
+307             value = (\textcolor{keywordtype}{char} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (section, option\_name);
+308     \}
+309     \textcolor{keywordflow}{if} (value == NULL && ((section\_name == NULL)
+310                           || (strcmp (section\_name, \textcolor{stringliteral}{"default"}) != 0))) \{
+311         \textcolor{keywordflow}{if} ((section =
+312              (\hyperlink{structHashTable}{HashTable} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (
+      \hyperlink{config_8cpp_ac8463c73a988234bd6274364540a655b}{SectionsTable},
+313                                               \textcolor{stringliteral}{"default"})) != NULL)
+314             value = (\textcolor{keywordtype}{char} *) \hyperlink{unpluckint_8h_ada2a33bd7930a2ddf654ee3982cdc946}{\_plkr\_FindInTable} (section, option\_name);
+315     \}
+316 
+317     \textcolor{keywordflow}{return} ((value == NULL) ? default\_value : value);
+318 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a620064cf36e07fb5a410b9281e333b71}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Default\+Categories@{plkr\+\_\+\+Get\+Default\+Categories}}
+\index{plkr\+\_\+\+Get\+Default\+Categories@{plkr\+\_\+\+Get\+Default\+Categories}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Default\+Categories}]{\setlength{\rightskip}{0pt plus 5cm}{\bf plkr\+\_\+\+Category\+List} plkr\+\_\+\+Get\+Default\+Categories (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a620064cf36e07fb5a410b9281e333b71}
+
+
+Definition at line 1107 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1110 \{
+1111     \textcolor{keywordflow}{return} doc->default\_categories;
+1112 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a0a1e2b4319457a06ae863751047c0656}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Default\+Charset@{plkr\+\_\+\+Get\+Default\+Charset}}
+\index{plkr\+\_\+\+Get\+Default\+Charset@{plkr\+\_\+\+Get\+Default\+Charset}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Default\+Charset}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Default\+Charset (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a0a1e2b4319457a06ae863751047c0656}
+
+
+Definition at line 1088 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1091 \{
+1092     \textcolor{keywordflow}{return} doc->default\_charset\_mibenum;
+1093 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a4f41ed44c6e84757e607b3e1df8ced46}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Home\+Record\+I\+D@{plkr\+\_\+\+Get\+Home\+Record\+I\+D}}
+\index{plkr\+\_\+\+Get\+Home\+Record\+I\+D@{plkr\+\_\+\+Get\+Home\+Record\+I\+D}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Home\+Record\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Home\+Record\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a4f41ed44c6e84757e607b3e1df8ced46}
+
+
+Definition at line 1056 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1059 \{
+1060     \textcolor{keywordflow}{return} doc->home\_record\_uid;
+1061 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_aaa39fe1098bda75489d39b5cbe384c83}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Max\+Record\+Size@{plkr\+\_\+\+Get\+Max\+Record\+Size}}
+\index{plkr\+\_\+\+Get\+Max\+Record\+Size@{plkr\+\_\+\+Get\+Max\+Record\+Size}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Max\+Record\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Max\+Record\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_aaa39fe1098bda75489d39b5cbe384c83}
+
+
+Definition at line 1123 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1126 \{
+1127     \textcolor{keywordflow}{return} doc->max\_record\_size;
+1128 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a6632699c64aa677efcca9d85f5eea1d3}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Name@{plkr\+\_\+\+Get\+Name}}
+\index{plkr\+\_\+\+Get\+Name@{plkr\+\_\+\+Get\+Name}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ plkr\+\_\+\+Get\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a6632699c64aa677efcca9d85f5eea1d3}
+
+
+Definition at line 1064 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1067 \{
+1068     \textcolor{keywordflow}{return} doc->name;
+1069 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a749e7d2e7b5f85ee18ef925b50dccb40}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Publication\+Time@{plkr\+\_\+\+Get\+Publication\+Time}}
+\index{plkr\+\_\+\+Get\+Publication\+Time@{plkr\+\_\+\+Get\+Publication\+Time}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Publication\+Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long plkr\+\_\+\+Get\+Publication\+Time (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a749e7d2e7b5f85ee18ef925b50dccb40}
+
+
+Definition at line 1096 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1099 \{
+1100     \textcolor{keywordflow}{if} (doc->publication\_time)
+1101         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}) doc->publication\_time;
+1102     \textcolor{keywordflow}{else}
+1103         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}) doc->creation\_time;
+1104 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_afa51c9fd57b2235f29dd42714653528f}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Record\+Bytes@{plkr\+\_\+\+Get\+Record\+Bytes}}
+\index{plkr\+\_\+\+Get\+Record\+Bytes@{plkr\+\_\+\+Get\+Record\+Bytes}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Record\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ plkr\+\_\+\+Get\+Record\+Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{, }
+\item[{int $\ast$}]{, }
+\item[{{\bf plkr\+\_\+\+Data\+Record\+Type} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_afa51c9fd57b2235f29dd42714653528f}
+
+
+Definition at line 1029 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1034   \{
+1035     \hyperlink{structplkr__DataRecord__s}{plkr\_DataRecord}*  record;
+1036     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*    buf;
+1037 
+1038     \textcolor{keywordflow}{if} (!FindRecordByIndex (doc, record\_index))
+1039         \textcolor{keywordflow}{return} NULL;
+1040 
+1041     \textcolor{keywordflow}{if} (!GetUncompressedRecord (doc, doc->handle, record\_index,
+1042                                 NULL, 0, \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}{PLKR\_DRTYPE\_NONE},
+1043                                 &buf, \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}, &record))
+1044         \textcolor{keywordflow}{return} NULL;
+1045     \textcolor{keywordflow}{else} \{
+1046         \textcolor{keywordflow}{if} (!record->\hyperlink{structplkr__DataRecord__s_af2a33cffa3aff9f346678b89727beb52}{cache}) \{
+1047             record->\hyperlink{structplkr__DataRecord__s_af2a33cffa3aff9f346678b89727beb52}{cache} = buf;
+1048             record->\hyperlink{structplkr__DataRecord__s_a78134dc5aa0e23c86e5299ea6ca9f4b2}{cached\_size} = *\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size};
+1049         \}
+1050         *type = record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type};
+1051         \textcolor{keywordflow}{return} buf;
+1052     \}
+1053 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_aa2087ed9abaf702993b36cf66ff82753}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Record\+Charset@{plkr\+\_\+\+Get\+Record\+Charset}}
+\index{plkr\+\_\+\+Get\+Record\+Charset@{plkr\+\_\+\+Get\+Record\+Charset}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Record\+Charset}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Record\+Charset (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_aa2087ed9abaf702993b36cf66ff82753}
+
+
+Definition at line 1167 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1171 \{
+1172     \hyperlink{structplkr__DataRecord__s}{plkr\_DataRecord}*  r;
+1173 
+1174     r = FindRecordByIndex (doc, record\_index);
+1175     \textcolor{keywordflow}{if} (r && ((r->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} == \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a2a7d1fcd3aee05f31ab3dae95e80786c}{PLKR\_DRTYPE\_TEXT\_COMPRESSED})
+1176               || (r->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} == \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a571c71bbb146f2641a43d28fd0fa2d72}{PLKR\_DRTYPE\_TEXT}))) \{
+1177         \textcolor{keywordflow}{if} (r->\hyperlink{structplkr__DataRecord__s_aeb1516d92695e1a446bef9e5385a0b72}{charset\_mibenum} == 0)
+1178             \textcolor{keywordflow}{return} doc->default\_charset\_mibenum;
+1179         \textcolor{keywordflow}{else}
+1180             \textcolor{keywordflow}{return} r->\hyperlink{structplkr__DataRecord__s_aeb1516d92695e1a446bef9e5385a0b72}{charset\_mibenum};
+1181     \}
+1182     \textcolor{keywordflow}{else}
+1183         \textcolor{keywordflow}{return} 0;
+1184 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a8dfd949fd8536b5876f76beed049c52a}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Record\+Count@{plkr\+\_\+\+Get\+Record\+Count}}
+\index{plkr\+\_\+\+Get\+Record\+Count@{plkr\+\_\+\+Get\+Record\+Count}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Record\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Record\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a8dfd949fd8536b5876f76beed049c52a}
+
+
+Definition at line 1115 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1118 \{
+1119     \textcolor{keywordflow}{return} doc->nrecords;
+1120 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a079e75f951f014e0ae833c23885d4817}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Record\+Type@{plkr\+\_\+\+Get\+Record\+Type}}
+\index{plkr\+\_\+\+Get\+Record\+Type@{plkr\+\_\+\+Get\+Record\+Type}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Record\+Type}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Record\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a079e75f951f014e0ae833c23885d4817}
+
+
+Definition at line 1152 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1156 \{
+1157     \hyperlink{structplkr__DataRecord__s}{plkr\_DataRecord}*  r;
+1158 
+1159     r = FindRecordByIndex (doc, record\_index);
+1160     \textcolor{keywordflow}{if} (r)
+1161         \textcolor{keywordflow}{return} r->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type};
+1162     \textcolor{keywordflow}{else}
+1163         \textcolor{keywordflow}{return} \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4ac35262788e05b005a46ee8154a7a6a7b}{PLKR\_DRTYPE\_NONE};
+1164 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a99fd20ad60517f503b00968f00d33656}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Record\+U\+R\+L@{plkr\+\_\+\+Get\+Record\+U\+R\+L}}
+\index{plkr\+\_\+\+Get\+Record\+U\+R\+L@{plkr\+\_\+\+Get\+Record\+U\+R\+L}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Record\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ plkr\+\_\+\+Get\+Record\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{record\+\_\+index}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a99fd20ad60517f503b00968f00d33656}
+
+
+Definition at line 1131 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1135 \{
+1136     \textcolor{keywordflow}{if} (record\_index < 1 || record\_index > doc->nurls)
+1137         \textcolor{keywordflow}{return} NULL;
+1138     \textcolor{keywordflow}{else}
+1139         \textcolor{keywordflow}{return} (doc->urls[record\_index - 1]);
+1140 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a5a0f79571b5dec76cdb2bca1e4ae0166}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Title@{plkr\+\_\+\+Get\+Title}}
+\index{plkr\+\_\+\+Get\+Title@{plkr\+\_\+\+Get\+Title}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Title}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ plkr\+\_\+\+Get\+Title (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a5a0f79571b5dec76cdb2bca1e4ae0166}
+
+
+Definition at line 1072 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1075 \{
+1076     \textcolor{keywordflow}{return} doc->title;
+1077 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a71b270b021bcdb55b5909ae66083e415}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Get\+Uid\+For\+Index@{plkr\+\_\+\+Get\+Uid\+For\+Index}}
+\index{plkr\+\_\+\+Get\+Uid\+For\+Index@{plkr\+\_\+\+Get\+Uid\+For\+Index}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Get\+Uid\+For\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Get\+Uid\+For\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a71b270b021bcdb55b5909ae66083e415}
+
+
+Definition at line 870 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+874 \{
+875     \textcolor{keywordflow}{return} doc->records[ record\_index ].uid;
+876 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a58d318cfe662d00dd286a6e3cf6f5f8c}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Has\+Record\+With\+I\+D@{plkr\+\_\+\+Has\+Record\+With\+I\+D}}
+\index{plkr\+\_\+\+Has\+Record\+With\+I\+D@{plkr\+\_\+\+Has\+Record\+With\+I\+D}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Has\+Record\+With\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Has\+Record\+With\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+Document} $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a58d318cfe662d00dd286a6e3cf6f5f8c}
+
+
+Definition at line 1143 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+1147 \{
+1148     \textcolor{keywordflow}{return} (FindRecordByIndex (doc, record\_index) != NULL);
+1149 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a6162c359b085bfbb99d9ff393f8421bf}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Open\+D\+B\+File@{plkr\+\_\+\+Open\+D\+B\+File}}
+\index{plkr\+\_\+\+Open\+D\+B\+File@{plkr\+\_\+\+Open\+D\+B\+File}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Open\+D\+B\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf plkr\+\_\+\+Document}$\ast$ plkr\+\_\+\+Open\+D\+B\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a6162c359b085bfbb99d9ff393f8421bf}
+
+
+Definition at line 965 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+968 \{
+969     \hyperlink{structplkr__DBHandle__s}{plkr\_DBHandle}   handle;
+970     \hyperlink{structplkr__Document__s}{plkr\_Document}*  doc;
+971     \textcolor{keywordtype}{int}             fp;
+972 
+973 \textcolor{preprocessor}{#if !defined(WIN32)}
+974     fp = open (filename, O\_RDONLY);
+975 \textcolor{preprocessor}{#else}
+976     fp = open (filename, O\_RDONLY | O\_BINARY);
+977 \textcolor{preprocessor}{#endif}
+978     \textcolor{keywordflow}{if} (fp < 0) \{
+979         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Can't open file %s"}, filename);
+980         \textcolor{keywordflow}{return} NULL;
+981     \}
+982     handle = (\hyperlink{unpluck_8h_a74fbfe35b87f9a4c762e6a099cb849d5}{plkr\_DBHandle}) malloc (\textcolor{keyword}{sizeof} (*handle));
+983     handle->\hyperlink{structplkr__DBHandle__s_a8524d7cbaf5756ba6af798cbfa84e77f}{dbprivate} = fp;
+984     handle->\hyperlink{structplkr__DBHandle__s_aca1e04dbcb61b099a145d7771c951fa2}{seek} = FpSeek;
+985     handle->\hyperlink{structplkr__DBHandle__s_a0ab0715537eb77ede37a911b6593be9d}{read} = FpRead;
+986     handle->\hyperlink{structplkr__DBHandle__s_a5040a81f7438fbb5a987e825a3e3df63}{free} = FpFree;
+987     handle->\hyperlink{structplkr__DBHandle__s_abbdac090fcc71fa8fc750ae06f442776}{size} = FpSize;
+988     doc = \hyperlink{unpluck_8cpp_a663a4e5c393266cbb1cfd41c46b57616}{plkr\_OpenDoc} (handle);
+989     \textcolor{keywordflow}{if} (doc == NULL)
+990         close (fp);
+991     \textcolor{keywordflow}{return} doc;
+992 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a93cea8de27e108703f5dc63881ab9022}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Open\+Doc@{plkr\+\_\+\+Open\+Doc}}
+\index{plkr\+\_\+\+Open\+Doc@{plkr\+\_\+\+Open\+Doc}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Open\+Doc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf plkr\+\_\+\+Document}$\ast$ plkr\+\_\+\+Open\+Doc (
+\begin{DoxyParamCaption}
+\item[{{\bf plkr\+\_\+\+D\+B\+Handle}}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a93cea8de27e108703f5dc63881ab9022}
+
+
+Definition at line 623 of file unpluck.\+cpp.
+
+
+\begin{DoxyCode}
+626 \{
+627     \hyperlink{structReservedRecordEntry}{ReservedRecordEntry}  reserved[\hyperlink{unpluckint_8h_aa0b0779992ee63e5b90b143aaa2dcc01}{MAX\_RESERVED}];
+628     \hyperlink{structplkr__DataRecord__s}{plkr\_DataRecord}*     record;
+629     \hyperlink{structplkr__Document__s}{plkr\_Document}*       newdoc;
+630     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}        utilbuf[128];
+631     \textcolor{keyword}{static} \textcolor{keywordtype}{char}          id\_stamp[9] = \textcolor{stringliteral}{"DataPlkr"};
+632     \textcolor{keywordtype}{int}                  i;
+633     \textcolor{keywordtype}{int}                  nreserved;
+634     \textcolor{keywordtype}{int}                  records\_size;
+635     \textcolor{keywordtype}{int}                  compression;
+636 
+637 
+638     \textcolor{keywordflow}{if} (!handle->seek (handle, 0) ||
+639         (handle->read (handle, utilbuf, \textcolor{keyword}{sizeof} (utilbuf), 78) != 78)) \{
+640         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad read of DB header"});
+641         \textcolor{keywordflow}{return} NULL;
+642     \}
+643 
+644     \textcolor{comment}{/* check for type stamp */}
+645     \textcolor{keywordflow}{if} (strncmp ((\textcolor{keywordtype}{char} *) (utilbuf + 60), id\_stamp, 8) != 0) \{
+646         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad magic number"});
+647         \textcolor{keywordflow}{return} NULL;
+648     \}
+649 
+650     \textcolor{comment}{/* check for version 1 */}
+651     i = (utilbuf[34] << 8) + utilbuf[35];
+652     \textcolor{keywordflow}{if} (i != 1) \{
+653         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Not version 1 of Plucker format; version %d"}, i);
+654         \textcolor{keywordflow}{return} NULL;
+655     \}
+656 
+657     \textcolor{comment}{/* get the title, creation time, and last modification time from header */}
+658     newdoc = (\hyperlink{structplkr__Document__s}{plkr\_Document} *) malloc (\textcolor{keyword}{sizeof} (\hyperlink{structplkr__Document__s}{plkr\_Document}));
+659     memset (newdoc, 0, \textcolor{keyword}{sizeof} (\hyperlink{structplkr__Document__s}{plkr\_Document}));
+660     newdoc->\hyperlink{structplkr__Document__s_a40733c5478612b5565a4e0155a01bdc6}{name} = (\textcolor{keywordtype}{char}*)\hyperlink{unpluckint_8h_a1be042165603e16fc2aacd92929321e1}{\_plkr\_strndup} ((\textcolor{keywordtype}{char}*)utilbuf, \hyperlink{unpluckint_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN} (strlen ((\textcolor{keywordtype}{char}*)utilbuf), 
+      32));
+661     newdoc->\hyperlink{structplkr__Document__s_a0c43dd82cb77cbf9f5d879e521e1d4ee}{creation\_time} = (time\_t) ((utilbuf[36] << 24) +
+662                                       (utilbuf[37] << 16) +
+663                                       (utilbuf[38] << 8) +
+664                                       utilbuf[39] - \hyperlink{unpluckint_8h_a324bd288b42b2aa412811df53ca4f07d}{PLKR\_TIMEADJUST});
+665     newdoc->\hyperlink{structplkr__Document__s_ab595a6fc74557f08e01385622469183f}{modification\_time} = (time\_t) ((utilbuf[40] << 24) +
+666                                           (utilbuf[41] << 16) +
+667                                           (utilbuf[42] << 8) +
+668                                           utilbuf[43] - \hyperlink{unpluckint_8h_a324bd288b42b2aa412811df53ca4f07d}{PLKR\_TIMEADJUST});
+669     newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords} = (utilbuf[76] << 8) + utilbuf[77];
+670 
+671     \textcolor{comment}{/* Now read the record-list to find out where the records are */}
+672     records\_size = \textcolor{keyword}{sizeof} (\hyperlink{unpluckint_8h_a50cfb039ab6227812a2ee8b8c105ef87}{plkr\_DataRecord}) * newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords};
+673     newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records} = (\hyperlink{structplkr__DataRecord__s}{plkr\_DataRecord} *) malloc (records\_size);
+674     memset (newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}, 0, records\_size);
+675     \textcolor{keywordflow}{for} (i = 0; i < newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords}; i++) \{
+676         \textcolor{keywordflow}{if} (handle->read (handle, utilbuf, sizeof (utilbuf), 8) != 8) \{
+677             \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad read of record list"});
+678             FreePluckerDoc (newdoc);
+679             \textcolor{keywordflow}{return} NULL;
+680         \}
+681         newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[i].\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset} =
+682             (utilbuf[0] << 24) + (utilbuf[1] << 16) + (utilbuf[2] << 8) +
+683             utilbuf[3];
+684     \}
+685 
+686     \textcolor{comment}{/* process the index record */}
+687     \textcolor{keywordflow}{if} (!handle->seek (handle, newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[0].\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset}) ||
+688         (handle->read (handle, utilbuf, \textcolor{keyword}{sizeof} (utilbuf), 6) != 6)) \{
+689         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad read of index record"});
+690         FreePluckerDoc (newdoc);
+691         \textcolor{keywordflow}{return} NULL;
+692     \}
+693     \textcolor{keywordflow}{if} ((utilbuf[0] << 8) + utilbuf[1] != 1) \{
+694         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"index record has bad UID %d"},
+695                        (utilbuf[0] << 8) + utilbuf[1]);
+696         FreePluckerDoc (newdoc);
+697         \textcolor{keywordflow}{return} NULL;
+698     \}
+699     newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[0].\hyperlink{structplkr__DataRecord__s_afd7b53eef587427617f90ec51d69fbeb}{uid} = 1;
+700     compression = (utilbuf[2] << 8) + utilbuf[3];
+701     \textcolor{keywordflow}{if} (compression == \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1aaf1b8213f013aac5d019463b89300045}{PLKR\_COMPRESSION\_DOC})
+702         newdoc->\hyperlink{structplkr__Document__s_aee6a7d3edd70fee86668477c05a45bd1}{compression} = \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1aaf1b8213f013aac5d019463b89300045}{PLKR\_COMPRESSION\_DOC};
+703     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (compression == \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1ac9bc2c67365532c8641e520c4b0c0ea1}{PLKR\_COMPRESSION\_ZLIB})
+704         newdoc->\hyperlink{structplkr__Document__s_aee6a7d3edd70fee86668477c05a45bd1}{compression} = \hyperlink{unpluckint_8h_a75c86a2bd8e62f0c036a6389a1157ea1ac9bc2c67365532c8641e520c4b0c0ea1}{PLKR\_COMPRESSION\_ZLIB};
+705     \textcolor{keywordflow}{else} \{
+706         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Unknown compression type %d"}, compression);
+707         FreePluckerDoc (newdoc);
+708         \textcolor{keywordflow}{return} NULL;
+709     \}
+710     nreserved = (utilbuf[4] << 8) + utilbuf[5];
+711     \textcolor{keywordflow}{if} (nreserved > \hyperlink{unpluckint_8h_aa0b0779992ee63e5b90b143aaa2dcc01}{MAX\_RESERVED}) \{
+712         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Too many reserved records (%d) for software"},
+713                        nreserved);
+714         FreePluckerDoc (newdoc);
+715         \textcolor{keywordflow}{return} NULL;
+716     \}
+717     \textcolor{keywordflow}{for} (i = 0; i < nreserved; i++) \{
+718         \textcolor{keywordflow}{if} (handle->read (handle, utilbuf, sizeof (utilbuf), 4) != 4) \{
+719             \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad read of reserved record list"});
+720             FreePluckerDoc (newdoc);
+721             \textcolor{keywordflow}{return} NULL;
+722         \}
+723         reserved[i].\hyperlink{structReservedRecordEntry_a7f036e9a8868e13e35b3932178dcee00}{name} = (\hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08}{ReservedRecordName})( (utilbuf[0] << 8) + utilbuf[1] );
+724         reserved[i].\hyperlink{structReservedRecordEntry_a584205e972ca4b5f9c25b4f38eb04eae}{uid} = (utilbuf[2] << 8) + utilbuf[3];
+725     \}
+726 
+727     \textcolor{comment}{/* OK, now process the data records */}
+728     newdoc->\hyperlink{structplkr__Document__s_af5e11a562c37e9684e4930b776170f85}{max\_record\_size} = 0;
+729     \textcolor{keywordflow}{for} (i = 1; i < newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords}; i++) \{
+730         record = newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records} + i;
+731         \textcolor{keywordflow}{if} (!handle->seek (handle, record->\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset}) ||
+732             (handle->read (handle, utilbuf, \textcolor{keyword}{sizeof} (utilbuf), 8) != 8)) \{
+733             \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Can't read header of record %d"}, i);
+734             FreePluckerDoc (newdoc);
+735             \textcolor{keywordflow}{return} NULL;
+736         \}
+737         newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[i - 1].\hyperlink{structplkr__DataRecord__s_ac15867fee863318b96e3f9d27a1784e6}{size} =
+738             record->\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset} - newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[i - 1].\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset};
+739         record->\hyperlink{structplkr__DataRecord__s_afd7b53eef587427617f90ec51d69fbeb}{uid} = (utilbuf[0] << 8) + utilbuf[1];
+740         record->\hyperlink{structplkr__DataRecord__s_a13979f89593b2b7c5eff61004025cacd}{nparagraphs} = (utilbuf[2] << 8) + utilbuf[3];
+741         record->\hyperlink{structplkr__DataRecord__s_a5c602d9d4b060310b9d1eda5bac08f59}{uncompressed\_size} = (utilbuf[4] << 8) + utilbuf[5];
+742         record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} = (\hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{plkr\_DataRecordType})utilbuf[6];
+743         newdoc->\hyperlink{structplkr__Document__s_af5e11a562c37e9684e4930b776170f85}{max\_record\_size} =
+744             \hyperlink{unpluckint_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX} (newdoc->\hyperlink{structplkr__Document__s_af5e11a562c37e9684e4930b776170f85}{max\_record\_size}, record->
+      \hyperlink{structplkr__DataRecord__s_a5c602d9d4b060310b9d1eda5bac08f59}{uncompressed\_size});
+745     \}
+746     \textcolor{comment}{/* To get the size of the last record we subtract its offset from the total size of the DB. */}
+747     \textcolor{keywordflow}{if} ((i = handle->size (handle)) == 0) \{
+748         \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Can't obtain size of DB"});
+749         FreePluckerDoc (newdoc);
+750         \textcolor{keywordflow}{return} NULL;
+751     \};
+752     record = newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records} + (newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords} - 1);
+753     record->\hyperlink{structplkr__DataRecord__s_ac15867fee863318b96e3f9d27a1784e6}{size} = i - record->\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset};
+754     \textcolor{comment}{/* make sure the uncompressed size is set, now that we know the record sizes */}
+755     \textcolor{keywordflow}{for} (i = 0; i < newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords}; i++) \{
+756         record = newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records} + i;
+757         \textcolor{keywordflow}{if} (record->\hyperlink{structplkr__DataRecord__s_a5c602d9d4b060310b9d1eda5bac08f59}{uncompressed\_size} == 0) \{
+758             \textcolor{keywordflow}{if} (record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} == \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4aad8fc977517323ff1a8002971a72ac72}{PLKR\_DRTYPE\_LINKS\_COMPRESSED} ||
+759                 record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} == \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a2a7d1fcd3aee05f31ab3dae95e80786c}{PLKR\_DRTYPE\_TEXT\_COMPRESSED} ||
+760                 record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} == \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4a000e69b41bb0ccfeb1e7554e7e4b5dac}{PLKR\_DRTYPE\_TABLE\_COMPRESSED} ||
+761                 record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type} == \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4afcce1912d935010a0ea86191d02dd461}{PLKR\_DRTYPE\_IMAGE\_COMPRESSED}) \{
+762                 \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Bad uncompressed size 0 in record uid %d"},
+763                                record->\hyperlink{structplkr__DataRecord__s_afd7b53eef587427617f90ec51d69fbeb}{uid});
+764                 FreePluckerDoc (newdoc);
+765                 \textcolor{keywordflow}{return} NULL;
+766             \}
+767             \textcolor{keywordflow}{else} \{
+768                 record->\hyperlink{structplkr__DataRecord__s_a5c602d9d4b060310b9d1eda5bac08f59}{uncompressed\_size} = record->\hyperlink{structplkr__DataRecord__s_ac15867fee863318b96e3f9d27a1784e6}{size} - 8;
+769             \}
+770         \}
+771 \textcolor{preprocessor}{#ifdef DEBUGOPEN}
+772         \{
+773             \textcolor{keyword}{static} \textcolor{keywordtype}{char} *types[] =
+774                 \{ \textcolor{stringliteral}{"TEXT"}, \textcolor{stringliteral}{"TEXTC"}, \textcolor{stringliteral}{"IMAGE"}, \textcolor{stringliteral}{"IMAGEC"}, \textcolor{stringliteral}{"MAILTO"},
+775                 \textcolor{stringliteral}{"URLINDEX"}, \textcolor{stringliteral}{"URLS"}, \textcolor{stringliteral}{"URLSC"}, \textcolor{stringliteral}{"BOOKMARKS"}, \textcolor{stringliteral}{"CATEGORIES"},
+776                 \textcolor{stringliteral}{"METADATA"}
+777             \};
+778             \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message}
+779                 (\textcolor{stringliteral}{"%3d:  type=%10s, offset=%07x, size=%5d, uncompressed\_size=%5d"},
+780                  record->\hyperlink{structplkr__DataRecord__s_afd7b53eef587427617f90ec51d69fbeb}{uid},
+781                  types[\hyperlink{unpluckint_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}
+782                        (record->\hyperlink{structplkr__DataRecord__s_a75431a1f26dc15418437086487724ff6}{type}, sizeof (types) / \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char} *))],
+783                  record->\hyperlink{structplkr__DataRecord__s_a913726cb8132eca067843510b8ff0b95}{offset}, record->\hyperlink{structplkr__DataRecord__s_ac15867fee863318b96e3f9d27a1784e6}{size}, record->
+      \hyperlink{structplkr__DataRecord__s_a5c602d9d4b060310b9d1eda5bac08f59}{uncompressed\_size});
+784         \}
+785 \textcolor{preprocessor}{#endif}
+786     \}
+787 
+788     \textcolor{comment}{/* find the reserved records */}
+789 
+790     \textcolor{comment}{/* do metadata first, to find out whether we need an owner\_id key */}
+791     \textcolor{keywordflow}{for} (i = 0; i < nreserved; i++) \{
+792         \textcolor{keywordflow}{if} (reserved[i].name == \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a94e006cc3c975bf3074337d7c64efd83}{PLKR\_METADATA\_NAME}) \{
+793             newdoc->\hyperlink{structplkr__Document__s_a19ab77ee9af9fe9a77aa06713b84a750}{metadata\_record\_uid} = reserved[i].\hyperlink{structReservedRecordEntry_a584205e972ca4b5f9c25b4f38eb04eae}{uid};
+794             \textcolor{keywordflow}{if} (!ParseMetadata (newdoc, handle)) \{
+795                 \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Error parsing metadata record"});
+796                 FreePluckerDoc (newdoc);
+797                 \textcolor{keywordflow}{return} NULL;
+798             \}
+799         \}
+800     \}
+801 
+802     \textcolor{keywordflow}{if} (newdoc->\hyperlink{structplkr__Document__s_a5527d32cc4c4f3694a36fdcd96744905}{owner\_id\_required}) \{
+803 
+804         \textcolor{comment}{/* we need to set up the owner-id key before uncompressing}
+805 \textcolor{comment}{           any records... */}
+806 
+807         \textcolor{keywordtype}{char} *owner\_id = \hyperlink{config_8cpp_afa8ab8d30fb9cef098abdf08fcf37151}{plkr\_GetConfigString} (NULL, \textcolor{stringliteral}{"owner\_id"}, NULL);
+808 
+809         \textcolor{keywordflow}{if} (owner\_id != NULL) \{
+810             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} crc;
+811             \textcolor{keywordtype}{int} owner\_id\_len = strlen (owner\_id);
+812             crc = crc32 (0L, NULL, 0);
+813             crc = crc32 (crc, (\textcolor{keyword}{const} Bytef*)owner\_id, owner\_id\_len);
+814             \textcolor{keywordflow}{for} (i = 0; i < 10; i++) \{
+815                 crc = crc32 (crc, (\textcolor{keyword}{const} Bytef*)owner\_id, owner\_id\_len);
+816                 newdoc->\hyperlink{structplkr__Document__s_a7d7964829f29daa29f9d535723d638dc}{owner\_id\_key}[(i * 4) + 0] = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})((crc >> 24) & 0xFF);
+817                 newdoc->\hyperlink{structplkr__Document__s_a7d7964829f29daa29f9d535723d638dc}{owner\_id\_key}[(i * 4) + 1] = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})((crc >> 16) & 0xFF);
+818                 newdoc->\hyperlink{structplkr__Document__s_a7d7964829f29daa29f9d535723d638dc}{owner\_id\_key}[(i * 4) + 2] = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})((crc >> 8) & 0xFF);
+819                 newdoc->\hyperlink{structplkr__Document__s_a7d7964829f29daa29f9d535723d638dc}{owner\_id\_key}[(i * 4) + 3] = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})(crc & 0xFF);
+820             \}
+821         \}
+822         \textcolor{keywordflow}{else} \{
+823             \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Document requires owner-id to open"});
+824             FreePluckerDoc (newdoc);
+825             \textcolor{keywordflow}{return} NULL;
+826         \}
+827     \}
+828 
+829     \textcolor{comment}{/* now do the rest of the reserved records */}
+830 
+831     \textcolor{keywordflow}{for} (i = 0; i < nreserved; i++) \{
+832         \textcolor{keywordflow}{if} (reserved[i].name == \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08aae4e0fc7e0b3e82441db10dd79ea031a}{PLKR\_HOME\_NAME})
+833             newdoc->\hyperlink{structplkr__Document__s_a855d2555348d33aa63c23324fca29775}{home\_record\_uid} = reserved[i].\hyperlink{structReservedRecordEntry_a584205e972ca4b5f9c25b4f38eb04eae}{uid};
+834         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reserved[i].name == \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08a08d2098d87813305760ffb943e6a6894}{PLKR\_DEFAULT\_CATEGORY\_NAME}) \{
+835             newdoc->\hyperlink{structplkr__Document__s_aa5adb5548f84752427b973f322f153ec}{default\_category\_record\_uid} = reserved[i].
+      \hyperlink{structReservedRecordEntry_a584205e972ca4b5f9c25b4f38eb04eae}{uid};
+836             \textcolor{keywordflow}{if} (!ParseCategories (newdoc, handle)) \{
+837                 \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Error parsing default-categories record"});
+838                 FreePluckerDoc (newdoc);
+839                 \textcolor{keywordflow}{return} NULL;
+840             \}
+841         \}
+842         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reserved[i].name == \hyperlink{unpluckint_8h_acd51e45c8e2b63cd1e42d5dda69c1d08af5747d5e9aaaed2e8f7b1140faf57cf8}{PLKR\_URLS\_INDEX\_NAME}) \{
+843             newdoc->\hyperlink{structplkr__Document__s_af14f8f1e3c2eea6814bc94aff2ec428c}{urls\_index\_record\_uid} = reserved[i].\hyperlink{structReservedRecordEntry_a584205e972ca4b5f9c25b4f38eb04eae}{uid};
+844             \textcolor{keywordflow}{if} (!ParseURLs (newdoc, handle)) \{
+845                 \hyperlink{unpluckint_8h_a2966ae6d90817fa1522a5675380aada5}{\_plkr\_message} (\textcolor{stringliteral}{"Error parsing URLs records"});
+846                 FreePluckerDoc (newdoc);
+847                 \textcolor{keywordflow}{return} NULL;
+848             \}
+849         \}
+850     \}
+851 
+852     newdoc->\hyperlink{structplkr__Document__s_ae1a048bf4797c696d6313c1e08ce3577}{handle} = handle;
+853 
+854 \textcolor{preprocessor}{#ifdef DEBUGOPEN}
+855     \textcolor{comment}{/* test the record fetch by fetching them! */}
+856     \textcolor{keywordflow}{for} (i = 1; i < newdoc->\hyperlink{structplkr__Document__s_a133abbdd399b433991b5e561339990f7}{nrecords}; i++) \{
+857         \hyperlink{unpluck_8h_a2d3cdee2c160741b8a217b97e14b08b4}{plkr\_DataRecordType} type;
+858         \textcolor{keywordtype}{int} n;
+859         printf (\textcolor{stringliteral}{"==============================================\(\backslash\)n"}
+860                 \textcolor{stringliteral}{"record %3d (%d bytes)\(\backslash\)n"}, newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[i].\hyperlink{structplkr__DataRecord__s_afd7b53eef587427617f90ec51d69fbeb}{uid},
+861                 newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[i].\hyperlink{structplkr__DataRecord__s_ac15867fee863318b96e3f9d27a1784e6}{size});
+862         (void) \hyperlink{unpluck_8cpp_adbedc945ce6c9be1f34fd5cd770a3b24}{plkr\_GetRecordBytes} (newdoc, newdoc->\hyperlink{structplkr__Document__s_a5cebe36965c1e730ac63af3a075df34a}{records}[i].
+      \hyperlink{structplkr__DataRecord__s_afd7b53eef587427617f90ec51d69fbeb}{uid}, &n,
+863                                     &type);
+864     \}
+865 \textcolor{preprocessor}{#endif}
+866 
+867     \textcolor{keywordflow}{return} newdoc;
+868 \}
+\end{DoxyCode}
+\hypertarget{unpluck_8h_a2023391f584489f13ef8d784ad061960}{\index{unpluck.\+h@{unpluck.\+h}!plkr\+\_\+\+Show\+Messages@{plkr\+\_\+\+Show\+Messages}}
+\index{plkr\+\_\+\+Show\+Messages@{plkr\+\_\+\+Show\+Messages}!unpluck.\+h@{unpluck.\+h}}
+\subsubsection[{plkr\+\_\+\+Show\+Messages}]{\setlength{\rightskip}{0pt plus 5cm}int plkr\+\_\+\+Show\+Messages (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{unpluck_8h_a2023391f584489f13ef8d784ad061960}
+
+
+Definition at line 73 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+76 \{
+77     \textcolor{keywordtype}{int}  oldval = ShowMessages;
+78 
+79     ShowMessages = val;
+80     \textcolor{keywordflow}{return} oldval;
+81 \}
+\end{DoxyCode}

@@ -1,0 +1,143 @@
+\hypertarget{classPDFOptionsPage}{\section{P\+D\+F\+Options\+Page Class Reference}
+\label{classPDFOptionsPage}\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+}
+Inheritance diagram for P\+D\+F\+Options\+Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPDFOptionsPage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPDFOptionsPage_a58813c1bda06cac38b2b5345ae72c73a}{P\+D\+F\+Options\+Page} ()
+\item 
+bool \hyperlink{classPDFOptionsPage_a478f0da9e79a657695bd295731117ca8}{print\+Annots} ()
+\item 
+void \hyperlink{classPDFOptionsPage_a128180edfc87a8ed6e4eddc8eda75b0a}{set\+Print\+Annots} (bool \hyperlink{classPDFOptionsPage_a478f0da9e79a657695bd295731117ca8}{print\+Annots})
+\item 
+bool \hyperlink{classPDFOptionsPage_ad4c9dba5c3de4933f9e1c9c23070bbfe}{print\+Force\+Raster} ()
+\item 
+void \hyperlink{classPDFOptionsPage_a33425467cf1082c6843664442b3e117e}{set\+Print\+Force\+Raster} (bool force\+Raster)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 73 of file generator\+\_\+pdf.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPDFOptionsPage_a58813c1bda06cac38b2b5345ae72c73a}{\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}!P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}!P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+\subsubsection[{P\+D\+F\+Options\+Page}]{\setlength{\rightskip}{0pt plus 5cm}P\+D\+F\+Options\+Page\+::\+P\+D\+F\+Options\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPDFOptionsPage_a58813c1bda06cac38b2b5345ae72c73a}
+
+
+Definition at line 76 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+77        \{
+78            setWindowTitle( i18n( \textcolor{stringliteral}{"PDF Options"} ) );
+79            QVBoxLayout *layout = \textcolor{keyword}{new} QVBoxLayout(\textcolor{keyword}{this});
+80            m\_printAnnots = \textcolor{keyword}{new} QCheckBox(i18n(\textcolor{stringliteral}{"Print annotations"}), \textcolor{keyword}{this});
+81            m\_printAnnots->setToolTip(i18n(\textcolor{stringliteral}{"Include annotations in the printed document"}));
+82            m\_printAnnots->setWhatsThis(i18n(\textcolor{stringliteral}{"Includes annotations in the printed document. You can disable
+       this if you want to print the original unannotated document."}));
+83            layout->addWidget(m\_printAnnots);
+84            m\_forceRaster = \textcolor{keyword}{new} QCheckBox(i18n(\textcolor{stringliteral}{"Force rasterization"}), \textcolor{keyword}{this});
+85            m\_forceRaster->setToolTip(i18n(\textcolor{stringliteral}{"Rasterize into an image before printing"}));
+86            m\_forceRaster->setWhatsThis(i18n(\textcolor{stringliteral}{"Forces the rasterization of each page into an image before
+       printing it. This usually gives somewhat worse results, but is useful when printing documents that appear to
+       print incorrectly."}));
+87            layout->addWidget(m\_forceRaster);
+88            layout->addStretch(1);
+89 
+90 \textcolor{preprocessor}{#if defined(Q\_WS\_WIN) || !defined(HAVE\_POPPLER\_0\_20)}
+91            m\_printAnnots->setVisible( \textcolor{keyword}{false} );
+92 \textcolor{preprocessor}{#endif}
+93            \hyperlink{classPDFOptionsPage_a128180edfc87a8ed6e4eddc8eda75b0a}{setPrintAnnots}( \textcolor{keyword}{true} ); \textcolor{comment}{// Default value}
+94        \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPDFOptionsPage_a478f0da9e79a657695bd295731117ca8}{\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}!print\+Annots@{print\+Annots}}
+\index{print\+Annots@{print\+Annots}!P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+\subsubsection[{print\+Annots}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Options\+Page\+::print\+Annots (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPDFOptionsPage_a478f0da9e79a657695bd295731117ca8}
+
+
+Definition at line 96 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+97        \{
+98            \textcolor{keywordflow}{return} m\_printAnnots->isChecked();
+99        \}
+\end{DoxyCode}
+\hypertarget{classPDFOptionsPage_ad4c9dba5c3de4933f9e1c9c23070bbfe}{\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}!print\+Force\+Raster@{print\+Force\+Raster}}
+\index{print\+Force\+Raster@{print\+Force\+Raster}!P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+\subsubsection[{print\+Force\+Raster}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+D\+F\+Options\+Page\+::print\+Force\+Raster (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPDFOptionsPage_ad4c9dba5c3de4933f9e1c9c23070bbfe}
+
+
+Definition at line 106 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+107        \{
+108            \textcolor{keywordflow}{return} m\_forceRaster->isChecked();
+109        \}
+\end{DoxyCode}
+\hypertarget{classPDFOptionsPage_a128180edfc87a8ed6e4eddc8eda75b0a}{\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}!set\+Print\+Annots@{set\+Print\+Annots}}
+\index{set\+Print\+Annots@{set\+Print\+Annots}!P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+\subsubsection[{set\+Print\+Annots}]{\setlength{\rightskip}{0pt plus 5cm}void P\+D\+F\+Options\+Page\+::set\+Print\+Annots (
+\begin{DoxyParamCaption}
+\item[{bool}]{print\+Annots}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPDFOptionsPage_a128180edfc87a8ed6e4eddc8eda75b0a}
+
+
+Definition at line 101 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+102        \{
+103            m\_printAnnots->setChecked( \hyperlink{classPDFOptionsPage_a478f0da9e79a657695bd295731117ca8}{printAnnots} );
+104        \}
+\end{DoxyCode}
+\hypertarget{classPDFOptionsPage_a33425467cf1082c6843664442b3e117e}{\index{P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}!set\+Print\+Force\+Raster@{set\+Print\+Force\+Raster}}
+\index{set\+Print\+Force\+Raster@{set\+Print\+Force\+Raster}!P\+D\+F\+Options\+Page@{P\+D\+F\+Options\+Page}}
+\subsubsection[{set\+Print\+Force\+Raster}]{\setlength{\rightskip}{0pt plus 5cm}void P\+D\+F\+Options\+Page\+::set\+Print\+Force\+Raster (
+\begin{DoxyParamCaption}
+\item[{bool}]{force\+Raster}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPDFOptionsPage_a33425467cf1082c6843664442b3e117e}
+
+
+Definition at line 111 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+112        \{
+113            m\_forceRaster->setChecked( forceRaster );
+114        \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/poppler/\hyperlink{generator__pdf_8cpp}{generator\+\_\+pdf.\+cpp}\end{DoxyCompactItemize}

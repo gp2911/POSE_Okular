@@ -1,0 +1,262 @@
+\hypertarget{classKParts_1_1ReadWritePart}{\section{K\+Parts\+:\+:Read\+Write\+Part Class Reference}
+\label{classKParts_1_1ReadWritePart}\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+}
+
+
+{\ttfamily \#include $<$part.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Read\+Write\+Part\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classKParts_1_1ReadWritePart}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1ReadWritePart_a3d3c236bfa46585c595eb8fca1f8b50a}{set\+Modified} ()
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_afcd2d898594f129e47ac4505c2ae5cd0}{save} ()
+\item 
+bool \hyperlink{classKParts_1_1ReadWritePart_a3c27f7fb8ee9636e2c9d6b5cd6328e49}{wait\+Save\+Complete} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1ReadWritePart_adb7caee3c74e13b22dd922f67a68f830}{sig\+Query\+Close} (bool $\ast$handled, bool $\ast$abort\+Closing)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1ReadWritePart_a5444a248f62fa73ab6461dbbaed30054}{Read\+Write\+Part} (Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classKParts_1_1ReadWritePart_a05e99804f15b4b8941fd026481cc74b2}{$\sim$\+Read\+Write\+Part} ()
+\item 
+bool \hyperlink{classKParts_1_1ReadWritePart_a1f77bd8acc3596f59cd07fa7918dafb1}{is\+Read\+Write} () const 
+\item 
+virtual void \hyperlink{classKParts_1_1ReadWritePart_a5b8c2d4b35739c882dc67f0acf8096c2}{set\+Read\+Write} (bool readwrite=true)
+\item 
+bool \hyperlink{classKParts_1_1ReadWritePart_a61acb87afb71c5cd7dcce295693e22e4}{is\+Modified} () const 
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_acdf38bc8da8b88a6ba38f9a3129d0c77}{query\+Close} ()
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{close\+Url} ()
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_ac9d11b897ccf15ada8d15dd55eae3e3f}{close\+Url} (bool prompt\+To\+Save)
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_a5b10d70c83095f525b92fa5c9b554826}{save\+As} (const K\+Url \&\hyperlink{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{url})
+\item 
+virtual void \hyperlink{classKParts_1_1ReadWritePart_ae8171d17ef8cf7f51a0607fa8a5df7d0}{set\+Modified} (bool modified)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_a599af24081c3dc1c261c04dce1de4f41}{save\+File} ()=0
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadWritePart_affb719d6b8951cb1f3986b92db9527fe}{save\+To\+Url} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for an \char`\"{}editor\char`\"{} part.
+
+This class handles network transparency for you. Anything that can open a U\+R\+L, allow modifications, and save (to the same U\+R\+L or a different one).
+
+A read-\/write part can be set to read-\/only mode, using \hyperlink{classKParts_1_1ReadWritePart_a5b8c2d4b35739c882dc67f0acf8096c2}{set\+Read\+Write()}.
+
+\hyperlink{classKParts_1_1Part}{Part} writers \+: Any part inheriting \hyperlink{classKParts_1_1ReadWritePart}{Read\+Write\+Part} should check is\+Read\+Write before allowing any action that modifies the part. The part probably wants to reimplement set\+Read\+Write, disable those actions. Don't forget to call the parent set\+Read\+Write. 
+
+Definition at line 739 of file part.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1ReadWritePart_a5444a248f62fa73ab6461dbbaed30054}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!Read\+Write\+Part@{Read\+Write\+Part}}
+\index{Read\+Write\+Part@{Read\+Write\+Part}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{Read\+Write\+Part}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Read\+Write\+Part\+::\+Read\+Write\+Part (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classKParts_1_1ReadWritePart_a5444a248f62fa73ab6461dbbaed30054}
+Constructor See parent constructor for instructions. \hypertarget{classKParts_1_1ReadWritePart_a05e99804f15b4b8941fd026481cc74b2}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!````~Read\+Write\+Part@{$\sim$\+Read\+Write\+Part}}
+\index{````~Read\+Write\+Part@{$\sim$\+Read\+Write\+Part}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{$\sim$\+Read\+Write\+Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Read\+Write\+Part\+::$\sim$\+Read\+Write\+Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_a05e99804f15b4b8941fd026481cc74b2}
+Destructor Applications using a \hyperlink{classKParts_1_1ReadWritePart}{Read\+Write\+Part} should make sure, before destroying it, to call \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{close\+Url()}. In K\+Main\+Window\+::query\+Close(), for instance, they should allow closing only if the return value of \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{close\+Url()} was true. This allows to cancel. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!close\+Url@{close\+Url}}
+\index{close\+Url@{close\+Url}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{close\+Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::close\+Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}
+Called when closing the current url (e.\+g. document), for instance when switching to another url (note that \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\+Url()} calls it automatically in this case).
+
+If the current U\+R\+L is not fully loaded yet, aborts loading.
+
+If \hyperlink{classKParts_1_1ReadWritePart_a61acb87afb71c5cd7dcce295693e22e4}{is\+Modified()}, \hyperlink{classKParts_1_1ReadWritePart_acdf38bc8da8b88a6ba38f9a3129d0c77}{query\+Close()} will be called.
+
+\begin{DoxyReturn}{Returns}
+false on cancel 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classKParts_1_1ReadOnlyPart_a1df069c3c0503f529dc9f0d7007f144d}{K\+Parts\+::\+Read\+Only\+Part}.
+
+
+
+Reimplemented in \hyperlink{classOkular_1_1Part_a580d15b57647e05bf4b5d7674efc4dee}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1ReadWritePart_ac9d11b897ccf15ada8d15dd55eae3e3f}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!close\+Url@{close\+Url}}
+\index{close\+Url@{close\+Url}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{close\+Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::close\+Url (
+\begin{DoxyParamCaption}
+\item[{bool}]{prompt\+To\+Save}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_ac9d11b897ccf15ada8d15dd55eae3e3f}
+Call this method instead of the above if you need control if the save prompt is shown. For example, if you call \hyperlink{classKParts_1_1ReadWritePart_acdf38bc8da8b88a6ba38f9a3129d0c77}{query\+Close()} from K\+Main\+Window\+::query\+Close(), you would not want to prompt again when closing the url.
+
+Equivalent to prompt\+To\+Save ? \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{close\+Url()} \+: \hyperlink{classKParts_1_1ReadOnlyPart_a1df069c3c0503f529dc9f0d7007f144d}{Read\+Only\+Part\+::close\+Url()} 
+
+Reimplemented in \hyperlink{classOkular_1_1Part_ad4dc22f57f47a936614c58c352603a2a}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1ReadWritePart_a61acb87afb71c5cd7dcce295693e22e4}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!is\+Modified@{is\+Modified}}
+\index{is\+Modified@{is\+Modified}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{is\+Modified}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Read\+Write\+Part\+::is\+Modified (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ReadWritePart_a61acb87afb71c5cd7dcce295693e22e4}
+\begin{DoxyReturn}{Returns}
+true if the document has been modified. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ReadWritePart_a1f77bd8acc3596f59cd07fa7918dafb1}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!is\+Read\+Write@{is\+Read\+Write}}
+\index{is\+Read\+Write@{is\+Read\+Write}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{is\+Read\+Write}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Read\+Write\+Part\+::is\+Read\+Write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ReadWritePart_a1f77bd8acc3596f59cd07fa7918dafb1}
+\begin{DoxyReturn}{Returns}
+true if the part is in read-\/write mode 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ReadWritePart_acdf38bc8da8b88a6ba38f9a3129d0c77}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!query\+Close@{query\+Close}}
+\index{query\+Close@{query\+Close}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{query\+Close}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::query\+Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_acdf38bc8da8b88a6ba38f9a3129d0c77}
+If the document has been modified, ask the user to save changes. This method is meant to be called from K\+Main\+Window\+::query\+Close(). It will also be called from \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{close\+Url()}.
+
+\begin{DoxyReturn}{Returns}
+true if \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{close\+Url()} can be called without the user losing important data, false if the user chooses to cancel. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classOkular_1_1Part_a198e4caf3a79cea6e57be6e4b187152c}{Okular\+::\+Part}, and \hyperlink{classOkular_1_1PartThatHijacksQueryClose_acfbda56186d6f962dc8c9aa48eb935a8}{Okular\+::\+Part\+That\+Hijacks\+Query\+Close}.
+
+\hypertarget{classKParts_1_1ReadWritePart_afcd2d898594f129e47ac4505c2ae5cd0}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!save@{save}}
+\index{save@{save}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classKParts_1_1ReadWritePart_afcd2d898594f129e47ac4505c2ae5cd0}
+Save the file in the location from which it was opened. You can connect this to the \char`\"{}save\char`\"{} action. Calls \hyperlink{classKParts_1_1ReadWritePart_a599af24081c3dc1c261c04dce1de4f41}{save\+File()} and \hyperlink{classKParts_1_1ReadWritePart_affb719d6b8951cb1f3986b92db9527fe}{save\+To\+Url()}, no need to reimplement. \hypertarget{classKParts_1_1ReadWritePart_a5b10d70c83095f525b92fa5c9b554826}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{save\+As}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::save\+As (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_a5b10d70c83095f525b92fa5c9b554826}
+Save the file to a new location.
+
+Calls \hyperlink{classKParts_1_1ReadWritePart_afcd2d898594f129e47ac4505c2ae5cd0}{save()}, no need to reimplement 
+
+Reimplemented in \hyperlink{classOkular_1_1Part_a9041f15a5267877bc062131810811804}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1ReadWritePart_a599af24081c3dc1c261c04dce1de4f41}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!save\+File@{save\+File}}
+\index{save\+File@{save\+File}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{save\+File}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::save\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classKParts_1_1ReadWritePart_a599af24081c3dc1c261c04dce1de4f41}
+Save to a local file. You need to implement it, to save to the local file. The framework takes care of re-\/uploading afterwards.
+
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. On failure the function should inform the user about the problem with an appropriate message box. Standard error messages can be constructed using K\+I\+O\+::build\+Error\+String() in combination with the error codes defined in kio/global.\+h 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classOkular_1_1Part_a92ed6a6fe1b4ab3c417bb96403a9eef0}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1ReadWritePart_affb719d6b8951cb1f3986b92db9527fe}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!save\+To\+Url@{save\+To\+Url}}
+\index{save\+To\+Url@{save\+To\+Url}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{save\+To\+Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Read\+Write\+Part\+::save\+To\+Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_affb719d6b8951cb1f3986b92db9527fe}
+Save the file.
+
+Uploads the file, if {\ttfamily url} is remote. This will emit \hyperlink{classKParts_1_1ReadOnlyPart_a1839e6f2741b7fca77cd4b04b5acdc6d}{started()}, and either \hyperlink{classKParts_1_1ReadOnlyPart_a7dbe7a0dd64ed631d7d7fc763167de31}{completed()} or \hyperlink{classKParts_1_1ReadOnlyPart_ab1083f7c30e868d66e1f326b94851d8c}{canceled()}, in case you want to provide feedback. \begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ReadWritePart_ae8171d17ef8cf7f51a0607fa8a5df7d0}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!set\+Modified@{set\+Modified}}
+\index{set\+Modified@{set\+Modified}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{set\+Modified}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Read\+Write\+Part\+::set\+Modified (
+\begin{DoxyParamCaption}
+\item[{bool}]{modified}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_ae8171d17ef8cf7f51a0607fa8a5df7d0}
+Sets the modified flag of the part. \hypertarget{classKParts_1_1ReadWritePart_a3d3c236bfa46585c595eb8fca1f8b50a}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!set\+Modified@{set\+Modified}}
+\index{set\+Modified@{set\+Modified}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{set\+Modified}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Read\+Write\+Part\+::set\+Modified (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKParts_1_1ReadWritePart_a3d3c236bfa46585c595eb8fca1f8b50a}
+Call \hyperlink{classKParts_1_1ReadWritePart_a3d3c236bfa46585c595eb8fca1f8b50a}{set\+Modified()} whenever the contents get modified. This is a slot for convenience, since it simply calls set\+Modified(true), so that you can connect it to a signal, like text\+Changed(). \hypertarget{classKParts_1_1ReadWritePart_a5b8c2d4b35739c882dc67f0acf8096c2}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!set\+Read\+Write@{set\+Read\+Write}}
+\index{set\+Read\+Write@{set\+Read\+Write}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{set\+Read\+Write}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Read\+Write\+Part\+::set\+Read\+Write (
+\begin{DoxyParamCaption}
+\item[{bool}]{readwrite = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1ReadWritePart_a5b8c2d4b35739c882dc67f0acf8096c2}
+Changes the behavior of this part to readonly or readwrite. 
+\begin{DoxyParams}{Parameters}
+{\em readwrite} & set to true to enable readwrite mode \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classOkular_1_1Part_ae601c6c0ee3208c77233facdab9b0c9f}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1ReadWritePart_adb7caee3c74e13b22dd922f67a68f830}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!sig\+Query\+Close@{sig\+Query\+Close}}
+\index{sig\+Query\+Close@{sig\+Query\+Close}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{sig\+Query\+Close}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Read\+Write\+Part\+::sig\+Query\+Close (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{handled, }
+\item[{bool $\ast$}]{abort\+Closing}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKParts_1_1ReadWritePart_adb7caee3c74e13b22dd922f67a68f830}
+set handled to true, if you don't want the default handling set abort\+Closing to true, if you handled the request, but for any reason don't want to allow closing the document \hypertarget{classKParts_1_1ReadWritePart_a3c27f7fb8ee9636e2c9d6b5cd6328e49}{\index{K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}!wait\+Save\+Complete@{wait\+Save\+Complete}}
+\index{wait\+Save\+Complete@{wait\+Save\+Complete}!K\+Parts\+::\+Read\+Write\+Part@{K\+Parts\+::\+Read\+Write\+Part}}
+\subsubsection[{wait\+Save\+Complete}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Read\+Write\+Part\+::wait\+Save\+Complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKParts_1_1ReadWritePart_a3c27f7fb8ee9636e2c9d6b5cd6328e49}
+Waits for any pending upload job to finish and returns whether the last \hyperlink{classKParts_1_1ReadWritePart_afcd2d898594f129e47ac4505c2ae5cd0}{save()} action was successful. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{usr_2include_2kparts_2part_8h}{part.\+h}\end{DoxyCompactItemize}

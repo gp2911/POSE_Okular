@@ -1,0 +1,104 @@
+\hypertarget{classOkular_1_1JSField}{\section{Okular\+:\+:J\+S\+Field Class Reference}
+\label{classOkular_1_1JSField}\index{Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}}
+}
+
+
+{\ttfamily \#include $<$kjs\+\_\+field\+\_\+p.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classOkular_1_1JSField_ace84f08296b09eb8ae38cf633c8d0853}{init\+Type} (K\+J\+S\+Context $\ast$ctx)
+\item 
+static K\+J\+S\+Object \hyperlink{classOkular_1_1JSField_a7eee1b5f5ae2e318297c951e174fd120}{wrap\+Field} (K\+J\+S\+Context $\ast$ctx, \hyperlink{classOkular_1_1FormField}{Form\+Field} $\ast$field, \hyperlink{classOkular_1_1Page}{Page} $\ast$page)
+\item 
+static void \hyperlink{classOkular_1_1JSField_a1efefb5cc993ef2d2c04b8cf9330524f}{clear\+Cached\+Fields} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file kjs\+\_\+field\+\_\+p.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1JSField_a1efefb5cc993ef2d2c04b8cf9330524f}{\index{Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}!clear\+Cached\+Fields@{clear\+Cached\+Fields}}
+\index{clear\+Cached\+Fields@{clear\+Cached\+Fields}!Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}}
+\subsubsection[{clear\+Cached\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}void J\+S\+Field\+::clear\+Cached\+Fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSField_a1efefb5cc993ef2d2c04b8cf9330524f}
+
+
+Definition at line 224 of file kjs\+\_\+field.\+cpp.
+
+
+\begin{DoxyCode}
+225 \{
+226     \textcolor{keywordflow}{if} ( g\_fieldCache.exists() )
+227     \{
+228         g\_fieldCache->clear();
+229     \}
+230 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1JSField_ace84f08296b09eb8ae38cf633c8d0853}{\index{Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}!init\+Type@{init\+Type}}
+\index{init\+Type@{init\+Type}!Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}}
+\subsubsection[{init\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void J\+S\+Field\+::init\+Type (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSField_ace84f08296b09eb8ae38cf633c8d0853}
+
+
+Definition at line 198 of file kjs\+\_\+field.\+cpp.
+
+
+\begin{DoxyCode}
+199 \{
+200     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} initialized = \textcolor{keyword}{false};
+201     \textcolor{keywordflow}{if} ( initialized )
+202         \textcolor{keywordflow}{return};
+203     initialized = \textcolor{keyword}{true};
+204 
+205     \textcolor{keywordflow}{if} ( !g\_fieldProto )
+206         g\_fieldProto = \textcolor{keyword}{new} KJSPrototype();
+207 
+208     g\_fieldProto->defineProperty( ctx, \textcolor{stringliteral}{"doc"}, fieldGetDoc );
+209     g\_fieldProto->defineProperty( ctx, \textcolor{stringliteral}{"name"}, fieldGetName );
+210     g\_fieldProto->defineProperty( ctx, \textcolor{stringliteral}{"readonly"},
+211                                   fieldGetReadOnly, fieldSetReadOnly );
+212     g\_fieldProto->defineProperty( ctx, \textcolor{stringliteral}{"type"}, fieldGetType );
+213     g\_fieldProto->defineProperty( ctx, \textcolor{stringliteral}{"value"}, fieldGetValue, fieldSetValue );
+214 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1JSField_a7eee1b5f5ae2e318297c951e174fd120}{\index{Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}!wrap\+Field@{wrap\+Field}}
+\index{wrap\+Field@{wrap\+Field}!Okular\+::\+J\+S\+Field@{Okular\+::\+J\+S\+Field}}
+\subsubsection[{wrap\+Field}]{\setlength{\rightskip}{0pt plus 5cm}K\+J\+S\+Object J\+S\+Field\+::wrap\+Field (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx, }
+\item[{{\bf Form\+Field} $\ast$}]{field, }
+\item[{{\bf Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSField_a7eee1b5f5ae2e318297c951e174fd120}
+
+
+Definition at line 216 of file kjs\+\_\+field.\+cpp.
+
+
+\begin{DoxyCode}
+217 \{
+218     \textcolor{comment}{// ### cache unique wrapper}
+219     KJSObject f = g\_fieldProto->constructObject( ctx, field );
+220     f.setProperty( ctx, \textcolor{stringliteral}{"page"}, page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() );
+221     \textcolor{keywordflow}{return} f;
+222 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/script/\hyperlink{kjs__field__p_8h}{kjs\+\_\+field\+\_\+p.\+h}\item 
+core/script/\hyperlink{kjs__field_8cpp}{kjs\+\_\+field.\+cpp}\end{DoxyCompactItemize}

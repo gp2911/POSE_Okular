@@ -1,0 +1,561 @@
+\hypertarget{classfontPool}{\section{font\+Pool Class Reference}
+\label{classfontPool}\index{font\+Pool@{font\+Pool}}
+}
+
+
+{\ttfamily \#include $<$fontpool.\+h$>$}
+
+Inheritance diagram for font\+Pool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfontPool}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfontPool_a46fecbc3b61af504c2327a1df7d76fdd}{locate\+Fonts} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfontPool_a145afc74f19639a06f430f5b46c32de2}{error} (const Q\+String \&message, int duration)
+\item 
+void \hyperlink{classfontPool_ac5b869c2a60a349b48a2a200076becad}{warning} (const Q\+String \&message, int duration)
+\item 
+void \hyperlink{classfontPool_a8e52df73be76d4af8d026516b0e3ec56}{notice} (const Q\+String \&message, int duration)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfontPool_aeb05a0cfb54be95ad4ae4f94ddaa7c9a}{font\+Pool} (bool use\+Font\+Hinting)
+\item 
+\hyperlink{classfontPool_a1a4746ec2f95fa187bd8429428a88cf3}{$\sim$font\+Pool} ()
+\item 
+void \hyperlink{classfontPool_a98ed808399831f691074452592c18dd9}{set\+Parameters} (bool use\+Font\+Hints)
+\item 
+void \hyperlink{classfontPool_aced1a76b1ac1ff2fd362a969c32b6367}{set\+Extra\+Search\+Path} (const Q\+String \&path)
+\item 
+Q\+String \hyperlink{classfontPool_a4b82e285217fedd027a24d1c984085fa}{get\+Extra\+Search\+Path} () const 
+\item 
+void \hyperlink{classfontPool_afad41a07fac9f365f5ed2e76a148092d}{set\+Display\+Resolution} (double \+\_\+display\+Resolution\+\_\+in\+\_\+dpi)
+\item 
+void \hyperlink{classfontPool_a2460a35758f22529c57bf50e2ca94918}{set\+C\+Mper\+D\+V\+Iunit} (double C\+Mper\+D\+V\+I)
+\item 
+double \hyperlink{classfontPool_ad6d4251db24c98e141c0f37528795377}{get\+C\+Mper\+D\+V\+Iunit} () const 
+\item 
+bool \hyperlink{classfontPool_a4e382694df3497e5a3455cba7ac65ad5}{get\+Use\+Font\+Hints} () const 
+\item 
+\hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$ \hyperlink{classfontPool_adb8e0a00f9f51edf69a2e0e7d4541323}{appendx} (const Q\+String \&fontname, quint32 checksum, quint32 scale, double enlargement)
+\item 
+void \hyperlink{classfontPool_a96eda62e201cf0d15fbd122213d5e83a}{mark\+\_\+fonts\+\_\+as\+\_\+unused} ()
+\item 
+void \hyperlink{classfontPool_a492b3663e4fc78b17d732ba00d5ea10d}{release\+\_\+fonts} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$ $>$ \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{font\+List}
+\item 
+bool \hyperlink{classfontPool_af02ca5badcfd15a93f871606867909b7}{Q\+Pixmap\+Supports\+Alpha}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A list of fonts and a compilation of utility functions
+
+This class holds a list of fonts and is able to perform a number of functions on each of the fonts. The main use of this class is that it is able to control a concurrently running \char`\"{}kpsewhich\char`\"{} program which is used to locate and load the fonts.
+
+\begin{DoxyAuthor}{Author}
+Stefan Kebekus \href{mailto:kebekus@kde.org}{\tt kebekus@kde.\+org} 
+\end{DoxyAuthor}
+
+
+Definition at line 37 of file fontpool.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfontPool_aeb05a0cfb54be95ad4ae4f94ddaa7c9a}{\index{font\+Pool@{font\+Pool}!font\+Pool@{font\+Pool}}
+\index{font\+Pool@{font\+Pool}!font\+Pool@{font\+Pool}}
+\subsubsection[{font\+Pool}]{\setlength{\rightskip}{0pt plus 5cm}font\+Pool\+::font\+Pool (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\+Font\+Hinting}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_aeb05a0cfb54be95ad4ae4f94ddaa7c9a}
+
+
+Definition at line 36 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+37   :  progress(\textcolor{stringliteral}{"fontgen"},  \textcolor{comment}{// Chapter in the documentation for help.}
+38               i18n(\textcolor{stringliteral}{"Okular is currently generating bitmap fonts..."}),
+39               i18n(\textcolor{stringliteral}{"Aborts the font generation. Do not do this."}),
+40               i18n(\textcolor{stringliteral}{"Okular is currently generating bitmap fonts which are needed to display your document. 
+      "}
+41                    \textcolor{stringliteral}{"For this, Okular uses a number of external programs, such as MetaFont. You can find "}
+42                    \textcolor{stringliteral}{"the output of these programs later in the document info dialog."}),
+43               i18n(\textcolor{stringliteral}{"Okular is generating fonts. Please wait."}),
+44               0)
+45 \{
+46 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+47   kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::fontPool() called"};
+48 \textcolor{preprocessor}{#endif}
+49 
+50   setObjectName( QLatin1String(\textcolor{stringliteral}{"Font Pool"} ));
+51 
+52   displayResolution\_in\_dpi = 100.0; \textcolor{comment}{// A not-too-bad-default}
+53   useFontHints             = useFontHinting;
+54   CMperDVIunit             = 0;
+55   extraSearchPath.clear();
+56 
+57 \textcolor{preprocessor}{#ifdef HAVE\_FREETYPE}
+58   \textcolor{comment}{// Initialize the Freetype Library}
+59   \textcolor{keywordflow}{if} ( FT\_Init\_FreeType( &FreeType\_library ) != 0 ) \{
+60     kError(kvs::dvi) << \textcolor{stringliteral}{"Cannot load the FreeType library. KDVI proceeds without FreeType support."} << endl
+      ;
+61     FreeType\_could\_be\_loaded = \textcolor{keyword}{false};
+62   \} \textcolor{keywordflow}{else}
+63     FreeType\_could\_be\_loaded = \textcolor{keyword}{true};
+64 \textcolor{preprocessor}{#endif}
+65 
+66   \textcolor{comment}{// If PK fonts are generated, the kpsewhich command will re-route}
+67   \textcolor{comment}{// the output of MetaFont into its stderr. Here we make sure this}
+68   \textcolor{comment}{// output is intercepted and parsed.}
+69   connect(&kpsewhich\_, SIGNAL(readyReadStandardError()),
+70           \textcolor{keyword}{this}, SLOT(mf\_output\_receiver()));
+71 
+72   \textcolor{comment}{// Check if the QT library supports the alpha channel of}
+73   \textcolor{comment}{// QImages. Experiments show that --depending of the configuration}
+74   \textcolor{comment}{// of QT at compile and runtime or the availability of the XFt}
+75   \textcolor{comment}{// extension, alpha channels are either supported, or silently}
+76   \textcolor{comment}{// ignored.}
+77   QImage start(1, 1, QImage::Format\_ARGB32); \textcolor{comment}{// Generate a 1x1 image, black with alpha=0x10}
+78   quint32 *destScanLine = (quint32 *)start.scanLine(0);
+79   *destScanLine = 0x80000000;
+80   QPixmap intermediate = QPixmap::fromImage(start);
+81   QPixmap \hyperlink{synctex__parser__utils_8c_a723e06ace24a60ed94dca199595c08d2}{dest}(1,1);
+82   \hyperlink{synctex__parser__utils_8c_a723e06ace24a60ed94dca199595c08d2}{dest}.fill(Qt::white);
+83   QPainter paint( &\hyperlink{synctex__parser__utils_8c_a723e06ace24a60ed94dca199595c08d2}{dest} );
+84   paint.drawPixmap(0, 0, intermediate);
+85   paint.end();
+86   start = \hyperlink{synctex__parser__utils_8c_a723e06ace24a60ed94dca199595c08d2}{dest}.toImage().convertToFormat(QImage::Format\_ARGB32);
+87   quint8 result = *(start.scanLine(0)) & 0xff;
+88 
+89   \textcolor{keywordflow}{if} ((result == 0xff) || (result == 0x00)) \{
+90 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+91     kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::fontPool(): QPixmap does not support the alpha channel"};
+92 \textcolor{preprocessor}{#endif}
+93     \hyperlink{classfontPool_af02ca5badcfd15a93f871606867909b7}{QPixmapSupportsAlpha} = \textcolor{keyword}{false};
+94   \} \textcolor{keywordflow}{else} \{
+95 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+96     kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::fontPool(): QPixmap supports the alpha channel"};
+97 \textcolor{preprocessor}{#endif}
+98     \hyperlink{classfontPool_af02ca5badcfd15a93f871606867909b7}{QPixmapSupportsAlpha} = \textcolor{keyword}{true};
+99   \}
+100 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_a1a4746ec2f95fa187bd8429428a88cf3}{\index{font\+Pool@{font\+Pool}!````~font\+Pool@{$\sim$font\+Pool}}
+\index{````~font\+Pool@{$\sim$font\+Pool}!font\+Pool@{font\+Pool}}
+\subsubsection[{$\sim$font\+Pool}]{\setlength{\rightskip}{0pt plus 5cm}font\+Pool\+::$\sim$font\+Pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_a1a4746ec2f95fa187bd8429428a88cf3}
+
+
+Definition at line 103 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+106   kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::~fontPool() called"};
+107 \textcolor{preprocessor}{#endif}
+108 
+109   \textcolor{comment}{// need to manually clear the fonts \_before\_ freetype gets unloaded}
+110   qDeleteAll(\hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList});
+111   \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.clear();
+112 
+113 \textcolor{preprocessor}{#ifdef HAVE\_FREETYPE}
+114   \textcolor{keywordflow}{if} (FreeType\_could\_be\_loaded == \textcolor{keyword}{true})
+115     FT\_Done\_FreeType( FreeType\_library );
+116 \textcolor{preprocessor}{#endif}
+117 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfontPool_adb8e0a00f9f51edf69a2e0e7d4541323}{\index{font\+Pool@{font\+Pool}!appendx@{appendx}}
+\index{appendx@{appendx}!font\+Pool@{font\+Pool}}
+\subsubsection[{appendx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Te\+X\+Font\+Definition} $\ast$ font\+Pool\+::appendx (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{fontname, }
+\item[{quint32}]{checksum, }
+\item[{quint32}]{scale, }
+\item[{double}]{enlargement}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_adb8e0a00f9f51edf69a2e0e7d4541323}
+
+
+Definition at line 136 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+137 \{
+138   \textcolor{comment}{// Reuse font if possible: check if a font with that name and}
+139   \textcolor{comment}{// natural resolution is already in the fontpool, and use that, if}
+140   \textcolor{comment}{// possible.}
+141   \hyperlink{classQList}{QList<TeXFontDefinition*>::iterator} it\_fontp = 
+      \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.begin();
+142   \textcolor{keywordflow}{for} (; it\_fontp != \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.end(); ++it\_fontp) \{
+143     \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *\hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp} = *it\_fontp;
+144     \textcolor{keywordflow}{if} ((fontname == fontp->\hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname}) && ( (int)(enlargement*1000.0+0.5)) == (\textcolor{keywordtype}{int})(fontp->
+      \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement}*1000.0+0.5)) \{
+145       \textcolor{comment}{// if font is already in the list}
+146       fontp->\hyperlink{classTeXFontDefinition_af481c09afa81fabb899ae5c005212371}{mark\_as\_used}();
+147       \textcolor{keywordflow}{return} \hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp};
+148     \}
+149   \}
+150 
+151   \textcolor{comment}{// If font doesn't exist yet, we have to generate a new font.}
+152 
+153   \textcolor{keywordtype}{double} displayResolution = displayResolution\_in\_dpi;
+154 
+155   \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *fontp = \textcolor{keyword}{new} \hyperlink{classTeXFontDefinition}{TeXFontDefinition}(fontname, 
+      displayResolution*enlargement, checksum, scale, \textcolor{keyword}{this}, enlargement);
+156   \textcolor{keywordflow}{if} (fontp == 0) \{
+157     kError(kvs::dvi) << \textcolor{stringliteral}{"Could not allocate memory for a font structure"};
+158     exit(0);
+159   \}
+160   \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.append(fontp);
+161 
+162 \textcolor{preprocessor}{#ifdef PERFORMANCE\_MEASUREMENT}
+163   fontPoolTimer.start();
+164   fontPoolTimerFlag = \textcolor{keyword}{false};
+165 \textcolor{preprocessor}{#endif}
+166 
+167   \textcolor{comment}{// Now start kpsewhich/MetaFont, etc. if necessary}
+168   \textcolor{keywordflow}{return} \hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp};
+169 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_a145afc74f19639a06f430f5b46c32de2}{\index{font\+Pool@{font\+Pool}!error@{error}}
+\index{error@{error}!font\+Pool@{font\+Pool}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::error (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classfontPool_a145afc74f19639a06f430f5b46c32de2}
+Passed through to the top-\/level kpart. \hypertarget{classfontPool_ad6d4251db24c98e141c0f37528795377}{\index{font\+Pool@{font\+Pool}!get\+C\+Mper\+D\+V\+Iunit@{get\+C\+Mper\+D\+V\+Iunit}}
+\index{get\+C\+Mper\+D\+V\+Iunit@{get\+C\+Mper\+D\+V\+Iunit}!font\+Pool@{font\+Pool}}
+\subsubsection[{get\+C\+Mper\+D\+V\+Iunit}]{\setlength{\rightskip}{0pt plus 5cm}double font\+Pool\+::get\+C\+Mper\+D\+V\+Iunit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfontPool_ad6d4251db24c98e141c0f37528795377}
+
+
+Definition at line 69 of file fontpool.\+h.
+
+
+\begin{DoxyCode}
+69 \{\textcolor{keywordflow}{return} CMperDVIunit;\}
+\end{DoxyCode}
+\hypertarget{classfontPool_a4b82e285217fedd027a24d1c984085fa}{\index{font\+Pool@{font\+Pool}!get\+Extra\+Search\+Path@{get\+Extra\+Search\+Path}}
+\index{get\+Extra\+Search\+Path@{get\+Extra\+Search\+Path}!font\+Pool@{font\+Pool}}
+\subsubsection[{get\+Extra\+Search\+Path}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String font\+Pool\+::get\+Extra\+Search\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfontPool_a4b82e285217fedd027a24d1c984085fa}
+Returns the path that is set as the current working directory for the kpsewhich command, so that kpsewhich will find fonts that are stored in the D\+V\+I file's directory. 
+
+Definition at line 62 of file fontpool.\+h.
+
+
+\begin{DoxyCode}
+62 \{\textcolor{keywordflow}{return} extraSearchPath;\}
+\end{DoxyCode}
+\hypertarget{classfontPool_a4e382694df3497e5a3455cba7ac65ad5}{\index{font\+Pool@{font\+Pool}!get\+Use\+Font\+Hints@{get\+Use\+Font\+Hints}}
+\index{get\+Use\+Font\+Hints@{get\+Use\+Font\+Hints}!font\+Pool@{font\+Pool}}
+\subsubsection[{get\+Use\+Font\+Hints}]{\setlength{\rightskip}{0pt plus 5cm}bool font\+Pool\+::get\+Use\+Font\+Hints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfontPool_a4e382694df3497e5a3455cba7ac65ad5}
+
+
+Definition at line 72 of file fontpool.\+h.
+
+
+\begin{DoxyCode}
+72 \{\textcolor{keywordflow}{return} useFontHints;\}
+\end{DoxyCode}
+\hypertarget{classfontPool_a46fecbc3b61af504c2327a1df7d76fdd}{\index{font\+Pool@{font\+Pool}!locate\+Fonts@{locate\+Fonts}}
+\index{locate\+Fonts@{locate\+Fonts}!font\+Pool@{font\+Pool}}
+\subsubsection[{locate\+Fonts}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::locate\+Fonts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classfontPool_a46fecbc3b61af504c2327a1df7d76fdd}
+
+
+Definition at line 193 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+194 \{
+195   kpsewhichOutput.clear();
+196 
+197   \textcolor{comment}{// First, we try and find those fonts which exist on disk}
+198   \textcolor{comment}{// already. If virtual fonts are found, they will add new fonts to}
+199   \textcolor{comment}{// the list of fonts whose font files need to be located, so that we}
+200   \textcolor{comment}{// repeat the lookup.}
+201   \textcolor{keywordtype}{bool} vffound;
+202   \textcolor{keywordflow}{do} \{
+203     vffound = \textcolor{keyword}{false};
+204     \hyperlink{classfontPool_a46fecbc3b61af504c2327a1df7d76fdd}{locateFonts}(\textcolor{keyword}{false}, \textcolor{keyword}{false}, &vffound);
+205   \} \textcolor{keywordflow}{while}(vffound);
+206 
+207   \textcolor{comment}{// If still not all fonts are found, look again, this time with}
+208   \textcolor{comment}{// on-demand generation of PK fonts enabled.}
+209   \textcolor{keywordflow}{if} (!areFontsLocated())
+210     \hyperlink{classfontPool_a46fecbc3b61af504c2327a1df7d76fdd}{locateFonts}(\textcolor{keyword}{true}, \textcolor{keyword}{false});
+211 
+212   \textcolor{comment}{// If still not all fonts are found, we look for TFM files as a last}
+213   \textcolor{comment}{// resort, so that we can at least draw filled rectangles for}
+214   \textcolor{comment}{// characters.}
+215   \textcolor{keywordflow}{if} (!areFontsLocated())
+216     \hyperlink{classfontPool_a46fecbc3b61af504c2327a1df7d76fdd}{locateFonts}(\textcolor{keyword}{false}, \textcolor{keyword}{true});
+217 
+218   \textcolor{comment}{// If still not all fonts are found, we give up. We mark all fonts}
+219   \textcolor{comment}{// as 'located', so that we won't look for them any more, and}
+220   \textcolor{comment}{// present an error message to the user.}
+221   \textcolor{keywordflow}{if} (!areFontsLocated()) \{
+222     markFontsAsLocated();
+223     emit \hyperlink{classfontPool_a145afc74f19639a06f430f5b46c32de2}{error}(i18n(\textcolor{stringliteral}{"Okular was not able to locate all the font files "}
+224                     \textcolor{stringliteral}{"which are necessary to display the current DVI file. "}
+225                     \textcolor{stringliteral}{"Your document might be unreadable.\(\backslash\)n"}
+226                     \textcolor{stringliteral}{"PATH: %1\(\backslash\)nkpswhich: %2"}, getenv(\textcolor{stringliteral}{"PATH"}), kpsewhichOutput), -1);
+227   \}
+228 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_a96eda62e201cf0d15fbd122213d5e83a}{\index{font\+Pool@{font\+Pool}!mark\+\_\+fonts\+\_\+as\+\_\+unused@{mark\+\_\+fonts\+\_\+as\+\_\+unused}}
+\index{mark\+\_\+fonts\+\_\+as\+\_\+unused@{mark\+\_\+fonts\+\_\+as\+\_\+unused}!font\+Pool@{font\+Pool}}
+\subsubsection[{mark\+\_\+fonts\+\_\+as\+\_\+unused}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::mark\+\_\+fonts\+\_\+as\+\_\+unused (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_a96eda62e201cf0d15fbd122213d5e83a}
+
+
+Definition at line 426 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+427 \{
+428 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+429   kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::mark\_fonts\_as\_unused() called"};
+430 \textcolor{preprocessor}{#endif}
+431 
+432   \hyperlink{classQList}{QList<TeXFontDefinition*>::iterator} it\_fontp = 
+      \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.begin();
+433   \textcolor{keywordflow}{for} (; it\_fontp != \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.end(); ++it\_fontp) \{
+434     \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *\hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp} = *it\_fontp;
+435     fontp->\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} &= ~\hyperlink{classTeXFontDefinition}{TeXFontDefinition}::FONT\_IN\_USE;
+436   \}
+437 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_a8e52df73be76d4af8d026516b0e3ec56}{\index{font\+Pool@{font\+Pool}!notice@{notice}}
+\index{notice@{notice}!font\+Pool@{font\+Pool}}
+\subsubsection[{notice}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::notice (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classfontPool_a8e52df73be76d4af8d026516b0e3ec56}
+\hypertarget{classfontPool_a492b3663e4fc78b17d732ba00d5ea10d}{\index{font\+Pool@{font\+Pool}!release\+\_\+fonts@{release\+\_\+fonts}}
+\index{release\+\_\+fonts@{release\+\_\+fonts}!font\+Pool@{font\+Pool}}
+\subsubsection[{release\+\_\+fonts}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::release\+\_\+fonts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_a492b3663e4fc78b17d732ba00d5ea10d}
+This methods removes all fonts from the fontpool (and thus from memory) which are labeled \char`\"{}not in use\char`\"{}. For explanation, see the mark\+\_\+fonts\+\_\+as\+\_\+unused method. 
+
+Definition at line 440 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+441 \{
+442 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+443   kDebug(kvs::dvi) << \textcolor{stringliteral}{"Release\_fonts"};
+444 \textcolor{preprocessor}{#endif}
+445 
+446   QMutableListIterator<TeXFontDefinition*> it\_fontp(\hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList});
+447   \textcolor{keywordflow}{while} (it\_fontp.hasNext()) \{
+448     \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *\hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp} = it\_fontp.next();
+449     \textcolor{keywordflow}{if} ((fontp->\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE}) != 
+      \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE}) \{
+450       \textcolor{keyword}{delete} \hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp};
+451       it\_fontp.remove();
+452     \}
+453   \}
+454 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_a2460a35758f22529c57bf50e2ca94918}{\index{font\+Pool@{font\+Pool}!set\+C\+Mper\+D\+V\+Iunit@{set\+C\+Mper\+D\+V\+Iunit}}
+\index{set\+C\+Mper\+D\+V\+Iunit@{set\+C\+Mper\+D\+V\+Iunit}!font\+Pool@{font\+Pool}}
+\subsubsection[{set\+C\+Mper\+D\+V\+Iunit}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::set\+C\+Mper\+D\+V\+Iunit (
+\begin{DoxyParamCaption}
+\item[{double}]{C\+Mper\+D\+V\+I}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_a2460a35758f22529c57bf50e2ca94918}
+Sets the number of centimeters per D\+V\+I unit. 
+
+Definition at line 363 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+364 \{
+365 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+366   kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::setCMperDVIunit( "} << \_CMperDVI << \textcolor{stringliteral}{" )"};
+367 \textcolor{preprocessor}{#endif}
+368 
+369   \textcolor{keywordflow}{if} (CMperDVIunit == \_CMperDVI)
+370     \textcolor{keywordflow}{return};
+371 
+372   CMperDVIunit = \_CMperDVI;
+373 
+374   \hyperlink{classQList}{QList<TeXFontDefinition*>::iterator} it\_fontp = 
+      \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.begin();
+375   \textcolor{keywordflow}{for} (; it\_fontp != \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.end(); ++it\_fontp) \{
+376     \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *\hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp} = *it\_fontp;
+377     fontp->\hyperlink{classTeXFontDefinition_a676ff9093ae228647162138963d2c1cc}{setDisplayResolution}(displayResolution\_in\_dpi * fontp->
+      \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement});
+378   \}
+379 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_afad41a07fac9f365f5ed2e76a148092d}{\index{font\+Pool@{font\+Pool}!set\+Display\+Resolution@{set\+Display\+Resolution}}
+\index{set\+Display\+Resolution@{set\+Display\+Resolution}!font\+Pool@{font\+Pool}}
+\subsubsection[{set\+Display\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::set\+Display\+Resolution (
+\begin{DoxyParamCaption}
+\item[{double}]{\+\_\+display\+Resolution\+\_\+in\+\_\+dpi}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_afad41a07fac9f365f5ed2e76a148092d}
+Sets the resolution of the output device. 
+
+Definition at line 382 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+383 \{
+384 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+385   kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::setDisplayResolution( displayResolution\_in\_dpi="} << 
+      \_displayResolution\_in\_dpi << \textcolor{stringliteral}{" ) called"};
+386 \textcolor{preprocessor}{#endif}
+387 
+388   \textcolor{comment}{// Ignore minute changes by less than 2 DPI. The difference would}
+389   \textcolor{comment}{// hardly be visible anyway. That saves a lot of re-painting,}
+390   \textcolor{comment}{// e.g. when the user resizes the window, and a flickery mouse}
+391   \textcolor{comment}{// changes the window size by 1 pixel all the time.}
+392   \textcolor{keywordflow}{if} ( fabs(displayResolution\_in\_dpi - \_displayResolution\_in\_dpi) <= 2.0 ) \{
+393 \textcolor{preprocessor}{#ifdef DEBUG\_FONTPOOL}
+394     kDebug(kvs::dvi) << \textcolor{stringliteral}{"fontPool::setDisplayResolution(...): resolution wasn't changed. Aborting."};
+395 \textcolor{preprocessor}{#endif}
+396     \textcolor{keywordflow}{return};
+397   \}
+398 
+399   displayResolution\_in\_dpi = \_displayResolution\_in\_dpi;
+400   \textcolor{keywordtype}{double} displayResolution = displayResolution\_in\_dpi;
+401 
+402   \hyperlink{classQList}{QList<TeXFontDefinition*>::iterator} it\_fontp = 
+      \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.begin();
+403   \textcolor{keywordflow}{for} (; it\_fontp != \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.end(); ++it\_fontp) \{
+404     \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *\hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp} = *it\_fontp;
+405     fontp->\hyperlink{classTeXFontDefinition_a676ff9093ae228647162138963d2c1cc}{setDisplayResolution}(displayResolution * fontp->
+      \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement});
+406   \}
+407 
+408   \textcolor{comment}{// Do something that causes re-rendering of the dvi-window}
+409   \textcolor{comment}{/*@@@@}
+410 \textcolor{comment}{  emit fonts\_have\_been\_loaded(this);}
+411 \textcolor{comment}{  */}
+412 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_aced1a76b1ac1ff2fd362a969c32b6367}{\index{font\+Pool@{font\+Pool}!set\+Extra\+Search\+Path@{set\+Extra\+Search\+Path}}
+\index{set\+Extra\+Search\+Path@{set\+Extra\+Search\+Path}!font\+Pool@{font\+Pool}}
+\subsubsection[{set\+Extra\+Search\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::set\+Extra\+Search\+Path (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfontPool_aced1a76b1ac1ff2fd362a969c32b6367}
+Sets the D\+V\+I file's path. This information is used to set the current working directory for the kpsewhich command, so that kpsewhich will find fonts that are stored in the D\+V\+I file's directory. 
+
+Definition at line 57 of file fontpool.\+h.
+
+
+\begin{DoxyCode}
+57 \{extraSearchPath = path;\}
+\end{DoxyCode}
+\hypertarget{classfontPool_a98ed808399831f691074452592c18dd9}{\index{font\+Pool@{font\+Pool}!set\+Parameters@{set\+Parameters}}
+\index{set\+Parameters@{set\+Parameters}!font\+Pool@{font\+Pool}}
+\subsubsection[{set\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::set\+Parameters (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\+Font\+Hints}
+\end{DoxyParamCaption}
+)}}\label{classfontPool_a98ed808399831f691074452592c18dd9}
+Method used to set the Metafont\+Mode for the P\+K font files. This data is used when loading fonts. Currently, a change here will be applied only to those font which were not yet loaded ---expect funny results when changing the data in the mid-\/work. 
+
+Definition at line 120 of file fontpool.\+cpp.
+
+
+\begin{DoxyCode}
+121 \{
+122   \textcolor{comment}{// Check if glyphs need to be cleared}
+123   \textcolor{keywordflow}{if} (\_useFontHints != useFontHints) \{
+124     \textcolor{keywordtype}{double} displayResolution = displayResolution\_in\_dpi;
+125     \hyperlink{classQList}{QList<TeXFontDefinition*>::iterator} it\_fontp = 
+      \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.begin();
+126     \textcolor{keywordflow}{for} (; it\_fontp != \hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList}.end(); ++it\_fontp) \{
+127       \hyperlink{classTeXFontDefinition}{TeXFontDefinition} *\hyperlink{structdrawinf_a4a6ec248b5b071099ddf9b5e4f0255e2}{fontp} = *it\_fontp;
+128       fontp->\hyperlink{classTeXFontDefinition_a676ff9093ae228647162138963d2c1cc}{setDisplayResolution}(displayResolution * fontp->
+      \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement});
+129     \}
+130   \}
+131 
+132   useFontHints = \_useFontHints;
+133 \}
+\end{DoxyCode}
+\hypertarget{classfontPool_ac5b869c2a60a349b48a2a200076becad}{\index{font\+Pool@{font\+Pool}!warning@{warning}}
+\index{warning@{warning}!font\+Pool@{font\+Pool}}
+\subsubsection[{warning}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Pool\+::warning (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classfontPool_ac5b869c2a60a349b48a2a200076becad}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{\index{font\+Pool@{font\+Pool}!font\+List@{font\+List}}
+\index{font\+List@{font\+List}!font\+Pool@{font\+Pool}}
+\subsubsection[{font\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Te\+X\+Font\+Definition}$\ast$$>$ font\+Pool\+::font\+List}}\label{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}
+
+
+Definition at line 82 of file fontpool.\+h.
+
+\hypertarget{classfontPool_af02ca5badcfd15a93f871606867909b7}{\index{font\+Pool@{font\+Pool}!Q\+Pixmap\+Supports\+Alpha@{Q\+Pixmap\+Supports\+Alpha}}
+\index{Q\+Pixmap\+Supports\+Alpha@{Q\+Pixmap\+Supports\+Alpha}!font\+Pool@{font\+Pool}}
+\subsubsection[{Q\+Pixmap\+Supports\+Alpha}]{\setlength{\rightskip}{0pt plus 5cm}bool font\+Pool\+::\+Q\+Pixmap\+Supports\+Alpha}}\label{classfontPool_af02ca5badcfd15a93f871606867909b7}
+This flag is set during the construction of the \hyperlink{classfontPool}{font\+Pool} object. It indicates if the Q\+T library supports the alpha channel of pixmaps. Experiments show that --depending of the configuration of Q\+T at compile and runtime or the availability of the X\+Ft extension, alpha channels are either supported, or silently converted to 1-\/bit masks. The redering routines in the \hyperlink{classTeXFont}{Te\+X\+Font} implementation use this flag to choose the appropriated drawing routines for the different setups. 
+
+Definition at line 124 of file fontpool.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{fontpool_8h}{fontpool.\+h}\item 
+generators/dvi/\hyperlink{fontpool_8cpp}{fontpool.\+cpp}\end{DoxyCompactItemize}

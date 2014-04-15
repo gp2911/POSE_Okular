@@ -1,0 +1,196 @@
+\hypertarget{classOkular_1_1MovieAnnotation}{\section{Okular\+:\+:Movie\+Annotation Class Reference}
+\label{classOkular_1_1MovieAnnotation}\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+}
+
+
+\hyperlink{classOkular_1_1Movie}{Movie} annotation.  
+
+
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Movie\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1MovieAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1MovieAnnotation_ae7391212e5bf4af61eee7fb5cdb23e6c}{Movie\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1MovieAnnotation_aa0942a64837166156b138ee258fc7f59}{Movie\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+virtual \hyperlink{classOkular_1_1MovieAnnotation_a6b9043b5eddba53386475c555f57a6d8}{$\sim$\+Movie\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1Movie}{Movie} $\ast$ \hyperlink{classOkular_1_1MovieAnnotation_a1fc38e32a1704351c3e5916031be0267}{movie} () const 
+\item 
+void \hyperlink{classOkular_1_1MovieAnnotation_a76ea2ec20c8d441f1b9e2ce6f1eaf21f}{set\+Movie} (\hyperlink{classOkular_1_1Movie}{Movie} $\ast$\hyperlink{classOkular_1_1MovieAnnotation_a1fc38e32a1704351c3e5916031be0267}{movie})
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1MovieAnnotation_aca5a1de7a784bb12f321cd16ffa5a0cb}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1MovieAnnotation_a5ec4a8d3b4ba3fdd08256590d7124238}{store} (Q\+Dom\+Node \&parent\+Node, Q\+Dom\+Document \&document) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1Movie}{Movie} annotation. 
+
+The movie annotation represents a movie to be played when activated.
+
+\begin{DoxySince}{Since}
+0.\+8 (K\+D\+E 4.\+2) 
+\end{DoxySince}
+
+
+Definition at line 1488 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1MovieAnnotation_ae7391212e5bf4af61eee7fb5cdb23e6c}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!Movie\+Annotation@{Movie\+Annotation}}
+\index{Movie\+Annotation@{Movie\+Annotation}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{Movie\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Movie\+Annotation\+::\+Movie\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1MovieAnnotation_ae7391212e5bf4af61eee7fb5cdb23e6c}
+Creates a new movie annotation. 
+
+Definition at line 2701 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2702     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1MovieAnnotationPrivate}{MovieAnnotationPrivate}() )
+2703 \{
+2704 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1MovieAnnotation_aa0942a64837166156b138ee258fc7f59}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!Movie\+Annotation@{Movie\+Annotation}}
+\index{Movie\+Annotation@{Movie\+Annotation}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{Movie\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Movie\+Annotation\+::\+Movie\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1MovieAnnotation_aa0942a64837166156b138ee258fc7f59}
+Creates a new movie annotation from the xml {\ttfamily description} 
+
+Definition at line 2706 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2707     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1MovieAnnotationPrivate}{MovieAnnotationPrivate}(), node )
+2708 \{
+2709 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1MovieAnnotation_a6b9043b5eddba53386475c555f57a6d8}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!````~Movie\+Annotation@{$\sim$\+Movie\+Annotation}}
+\index{````~Movie\+Annotation@{$\sim$\+Movie\+Annotation}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{$\sim$\+Movie\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Movie\+Annotation\+::$\sim$\+Movie\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1MovieAnnotation_a6b9043b5eddba53386475c555f57a6d8}
+Destroys the movie annotation. 
+
+Definition at line 2711 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2712 \{
+2713 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1MovieAnnotation_a1fc38e32a1704351c3e5916031be0267}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!movie@{movie}}
+\index{movie@{movie}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{movie}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Movie} $\ast$ Movie\+Annotation\+::movie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1MovieAnnotation_a1fc38e32a1704351c3e5916031be0267}
+Gets the movie object. 
+
+Definition at line 2730 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2731 \{
+2732     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1MovieAnnotation}{MovieAnnotation} );
+2733     \textcolor{keywordflow}{return} d->movie;
+2734 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1MovieAnnotation_a76ea2ec20c8d441f1b9e2ce6f1eaf21f}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!set\+Movie@{set\+Movie}}
+\index{set\+Movie@{set\+Movie}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{set\+Movie}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+Annotation\+::set\+Movie (
+\begin{DoxyParamCaption}
+\item[{{\bf Movie} $\ast$}]{movie}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1MovieAnnotation_a76ea2ec20c8d441f1b9e2ce6f1eaf21f}
+Sets the new {\ttfamily movie} object. 
+
+Definition at line 2736 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2737 \{
+2738     Q\_D( \hyperlink{classOkular_1_1MovieAnnotation}{MovieAnnotation} );
+2739     d->movie = \hyperlink{classOkular_1_1MovieAnnotation_a1fc38e32a1704351c3e5916031be0267}{movie};
+2740 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1MovieAnnotation_a5ec4a8d3b4ba3fdd08256590d7124238}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{parent\+Node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1MovieAnnotation_a5ec4a8d3b4ba3fdd08256590d7124238}
+Stores the movie annotation as xml in {\ttfamily document} under the given {\ttfamily parent\+Node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2715 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2716 \{
+2717     \textcolor{comment}{// recurse to parent objects storing properties}
+2718     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+2719 
+2720     \textcolor{comment}{// create [movie] element}
+2721     QDomElement movieElement = document.createElement( \textcolor{stringliteral}{"movie"} );
+2722     node.appendChild( movieElement );
+2723 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1MovieAnnotation_aca5a1de7a784bb12f321cd16ffa5a0cb}{\index{Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Movie\+Annotation@{Okular\+::\+Movie\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Movie\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1MovieAnnotation_aca5a1de7a784bb12f321cd16ffa5a0cb}
+Returns the sub type of the movie annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2725 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2726 \{
+2727     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a711a9d706a86b55f0799e944fb2750e6}{AMovie};
+2728 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

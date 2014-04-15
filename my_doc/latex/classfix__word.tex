@@ -1,0 +1,91 @@
+\hypertarget{classfix__word}{\section{fix\+\_\+word Class Reference}
+\label{classfix__word}\index{fix\+\_\+word@{fix\+\_\+word}}
+}
+
+
+{\ttfamily \#include $<$Te\+X\+Font\+\_\+\+T\+F\+M.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classfix__word_ad89580f8ed2589de98018f9bd50ea9f7}{from\+I\+N\+T32} (qint32 val)
+\item 
+void \hyperlink{classfix__word_a7bba9d6cd8527149cbac372929b5d443}{from\+Double} (double val)
+\item 
+double \hyperlink{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{to\+Double} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+qint32 \hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfix__word_a7bba9d6cd8527149cbac372929b5d443}{\index{fix\+\_\+word@{fix\+\_\+word}!from\+Double@{from\+Double}}
+\index{from\+Double@{from\+Double}!fix\+\_\+word@{fix\+\_\+word}}
+\subsubsection[{from\+Double}]{\setlength{\rightskip}{0pt plus 5cm}void fix\+\_\+word\+::from\+Double (
+\begin{DoxyParamCaption}
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfix__word_a7bba9d6cd8527149cbac372929b5d443}
+
+
+Definition at line 18 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+h.
+
+
+\begin{DoxyCode}
+18 \{\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value} = (qint32)(val * (1<<20) + 0.5);\}
+\end{DoxyCode}
+\hypertarget{classfix__word_ad89580f8ed2589de98018f9bd50ea9f7}{\index{fix\+\_\+word@{fix\+\_\+word}!from\+I\+N\+T32@{from\+I\+N\+T32}}
+\index{from\+I\+N\+T32@{from\+I\+N\+T32}!fix\+\_\+word@{fix\+\_\+word}}
+\subsubsection[{from\+I\+N\+T32}]{\setlength{\rightskip}{0pt plus 5cm}void fix\+\_\+word\+::from\+I\+N\+T32 (
+\begin{DoxyParamCaption}
+\item[{qint32}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfix__word_ad89580f8ed2589de98018f9bd50ea9f7}
+
+
+Definition at line 17 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+h.
+
+
+\begin{DoxyCode}
+17 \{\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value} = val;\}
+\end{DoxyCode}
+\hypertarget{classfix__word_a6d960fb9bf343763b687a04cc3af1215}{\index{fix\+\_\+word@{fix\+\_\+word}!to\+Double@{to\+Double}}
+\index{to\+Double@{to\+Double}!fix\+\_\+word@{fix\+\_\+word}}
+\subsubsection[{to\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double fix\+\_\+word\+::to\+Double (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfix__word_a6d960fb9bf343763b687a04cc3af1215}
+
+
+Definition at line 19 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+h.
+
+
+\begin{DoxyCode}
+19 \{\textcolor{keywordflow}{return} (\textcolor{keywordtype}{double}(\hyperlink{classfix__word_af0db00b285e54bf5c2da670519149dc0}{value})) / (double(1<<20));\}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classfix__word_af0db00b285e54bf5c2da670519149dc0}{\index{fix\+\_\+word@{fix\+\_\+word}!value@{value}}
+\index{value@{value}!fix\+\_\+word@{fix\+\_\+word}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}qint32 fix\+\_\+word\+::value}}\label{classfix__word_af0db00b285e54bf5c2da670519149dc0}
+
+
+Definition at line 21 of file Te\+X\+Font\+\_\+\+T\+F\+M.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{TeXFont__TFM_8h}{Te\+X\+Font\+\_\+\+T\+F\+M.\+h}\end{DoxyCompactItemize}

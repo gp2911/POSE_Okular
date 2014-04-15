@@ -1,0 +1,58 @@
+\hypertarget{translateannotationtest_8cpp}{\section{tests/translateannotationtest.cpp File Reference}
+\label{translateannotationtest_8cpp}\index{tests/translateannotationtest.\+cpp@{tests/translateannotationtest.\+cpp}}
+}
+{\ttfamily \#include $<$qtest\+\_\+kde.\+h$>$}\\*
+{\ttfamily \#include $<$kmimetype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../settings\+\_\+core.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/annotations.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/document.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}testingutils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}translateannotationtest.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTranslateAnnotationTest}{Translate\+Annotation\+Test}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1LineAnnotation}{Okular\+::\+Line\+Annotation} $\ast$ \hyperlink{translateannotationtest_8cpp_a90fc308615ae95d33e89af7309b56528}{get\+New\+Line\+Annotation} (double start\+X, double start\+Y, double end\+X, double end\+Y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{translateannotationtest_8cpp_a90fc308615ae95d33e89af7309b56528}{\index{translateannotationtest.\+cpp@{translateannotationtest.\+cpp}!get\+New\+Line\+Annotation@{get\+New\+Line\+Annotation}}
+\index{get\+New\+Line\+Annotation@{get\+New\+Line\+Annotation}!translateannotationtest.\+cpp@{translateannotationtest.\+cpp}}
+\subsubsection[{get\+New\+Line\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Line\+Annotation}$\ast$ get\+New\+Line\+Annotation (
+\begin{DoxyParamCaption}
+\item[{double}]{start\+X, }
+\item[{double}]{start\+Y, }
+\item[{double}]{end\+X, }
+\item[{double}]{end\+Y}
+\end{DoxyParamCaption}
+)}}\label{translateannotationtest_8cpp_a90fc308615ae95d33e89af7309b56528}
+
+
+Definition at line 17 of file translateannotationtest.\+cpp.
+
+
+\begin{DoxyCode}
+18 \{
+19     \hyperlink{classOkular_1_1LineAnnotation}{Okular::LineAnnotation} *line = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1LineAnnotation}{Okular::LineAnnotation};
+20     line->\hyperlink{classOkular_1_1LineAnnotation_a8d55187d06930ee5abe8cb0737826b9e}{setLinePoints}( \hyperlink{classQLinkedList}{QLinkedList< Okular::NormalizedPoint >}
+      ()
+21     << \hyperlink{classOkular_1_1NormalizedPoint}{Okular::NormalizedPoint}( startX, startY )
+22     << \hyperlink{classOkular_1_1NormalizedPoint}{Okular::NormalizedPoint}( endX, endY )
+23     );
+24 
+25     \textcolor{keywordtype}{double} left = qMin(startX, endX);
+26     \textcolor{keywordtype}{double} top = qMin(startY, endY);
+27     \textcolor{keywordtype}{double} right = qMax(startX, endX);
+28     \textcolor{keywordtype}{double} bottom = qMax(startY, endY);
+29 
+30     line->\hyperlink{classOkular_1_1Annotation_a6977075c78f130b71ddbbda924480f38}{setBoundingRectangle}( \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}(left, top,
+       right, bottom) );
+31     \textcolor{keywordflow}{return} line;
+32 \}
+\end{DoxyCode}

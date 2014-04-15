@@ -1,0 +1,88 @@
+\hypertarget{classFictionBookGenerator}{\section{Fiction\+Book\+Generator Class Reference}
+\label{classFictionBookGenerator}\index{Fiction\+Book\+Generator@{Fiction\+Book\+Generator}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+fb.\+h$>$}
+
+Inheritance diagram for Fiction\+Book\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classFictionBookGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFictionBookGenerator_a0b7b22506b1c11e57bfa6e10933d959c}{Fiction\+Book\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+void \hyperlink{classFictionBookGenerator_ab88be7d5d552061f08f931cf2d70c248}{add\+Pages} (K\+Config\+Dialog $\ast$dlg)
+\begin{DoxyCompactList}\small\item\em Does nothing by default. You need to reimplement it in your generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file generator\+\_\+fb.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFictionBookGenerator_a0b7b22506b1c11e57bfa6e10933d959c}{\index{Fiction\+Book\+Generator@{Fiction\+Book\+Generator}!Fiction\+Book\+Generator@{Fiction\+Book\+Generator}}
+\index{Fiction\+Book\+Generator@{Fiction\+Book\+Generator}!Fiction\+Book\+Generator@{Fiction\+Book\+Generator}}
+\subsubsection[{Fiction\+Book\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Fiction\+Book\+Generator\+::\+Fiction\+Book\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classFictionBookGenerator_a0b7b22506b1c11e57bfa6e10933d959c}
+
+
+Definition at line 36 of file generator\+\_\+fb.\+cpp.
+
+
+\begin{DoxyCode}
+37     : \hyperlink{classOkular_1_1TextDocumentGenerator}{Okular::TextDocumentGenerator}( \textcolor{keyword}{new} 
+      \hyperlink{classFictionBook_1_1Converter}{FictionBook::Converter}, \textcolor{stringliteral}{"okular\_fictionbook\_generator\_settings"}, parent, args )
+38 \{
+39 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFictionBookGenerator_ab88be7d5d552061f08f931cf2d70c248}{\index{Fiction\+Book\+Generator@{Fiction\+Book\+Generator}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!Fiction\+Book\+Generator@{Fiction\+Book\+Generator}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void Fiction\+Book\+Generator\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dlg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFictionBookGenerator_ab88be7d5d552061f08f931cf2d70c248}
+
+
+Does nothing by default. You need to reimplement it in your generator. 
+
+
+
+Reimplemented from \hyperlink{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}{Okular\+::\+Text\+Document\+Generator}.
+
+
+
+Definition at line 41 of file generator\+\_\+fb.\+cpp.
+
+
+\begin{DoxyCode}
+42 \{
+43     \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Okular::TextDocumentSettingsWidget} *widget = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Okular::TextDocumentSettingsWidget}();
+44 
+45     dlg->addPage( widget, \hyperlink{classOkular_1_1TextDocumentGenerator_a776f1b9f38f55fdf086e022388ee4e36}{generalSettings}(), i18n(\textcolor{stringliteral}{"FictionBook"}), \textcolor{stringliteral}{"
+      application-x-fictionbook+xml"}, i18n(\textcolor{stringliteral}{"FictionBook Backend Configuration"}) );
+46 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/fictionbook/\hyperlink{generator__fb_8h}{generator\+\_\+fb.\+h}\item 
+generators/fictionbook/\hyperlink{generator__fb_8cpp}{generator\+\_\+fb.\+cpp}\end{DoxyCompactItemize}

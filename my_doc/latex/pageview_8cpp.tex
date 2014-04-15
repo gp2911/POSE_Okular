@@ -1,0 +1,99 @@
+\hypertarget{pageview_8cpp}{\section{ui/pageview.cpp File Reference}
+\label{pageview_8cpp}\index{ui/pageview.\+cpp@{ui/pageview.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}pageview.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$qcursor.\+h$>$}\\*
+{\ttfamily \#include $<$qevent.\+h$>$}\\*
+{\ttfamily \#include $<$qimage.\+h$>$}\\*
+{\ttfamily \#include $<$qpainter.\+h$>$}\\*
+{\ttfamily \#include $<$qtimer.\+h$>$}\\*
+{\ttfamily \#include $<$qset.\+h$>$}\\*
+{\ttfamily \#include $<$qscrollbar.\+h$>$}\\*
+{\ttfamily \#include $<$qtooltip.\+h$>$}\\*
+{\ttfamily \#include $<$qapplication.\+h$>$}\\*
+{\ttfamily \#include $<$qclipboard.\+h$>$}\\*
+{\ttfamily \#include $<$kaction.\+h$>$}\\*
+{\ttfamily \#include $<$kactionmenu.\+h$>$}\\*
+{\ttfamily \#include $<$kstandardaction.\+h$>$}\\*
+{\ttfamily \#include $<$kactioncollection.\+h$>$}\\*
+{\ttfamily \#include $<$kmenu.\+h$>$}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$kfiledialog.\+h$>$}\\*
+{\ttfamily \#include $<$kglobal.\+h$>$}\\*
+{\ttfamily \#include $<$kglobalsettings.\+h$>$}\\*
+{\ttfamily \#include $<$kinputdialog.\+h$>$}\\*
+{\ttfamily \#include $<$kselectaction.\+h$>$}\\*
+{\ttfamily \#include $<$ktoggleaction.\+h$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$kdeversion.\+h$>$}\\*
+{\ttfamily \#include $<$kmessagebox.\+h$>$}\\*
+{\ttfamily \#include $<$kicon.\+h$>$}\\*
+{\ttfamily \#include $<$kurifilter.\+h$>$}\\*
+{\ttfamily \#include $<$kstringhandler.\+h$>$}\\*
+{\ttfamily \#include $<$ktoolinvocation.\+h$>$}\\*
+{\ttfamily \#include $<$krun.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}formwidgets.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pageviewutils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pagepainter.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/annotations.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}annotwindow.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}guiutils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}annotationpopup.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pageviewannotator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}priorities.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}toolaction.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tts.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}videowidget.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/action.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/area.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/document\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/form.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/page.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/misc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/generator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/movie.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/audioplayer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/sourcereference.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/tile.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}settings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}settings\+\_\+core.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}url\+\_\+utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}magnifierview.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pageview.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structTableSelectionPart}{Table\+Selection\+Part}
+\item 
+class \hyperlink{classPageViewPrivate}{Page\+View\+Private}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pageview_8cpp_a4cec0467f9d945fd6a0027c3c339c725}{A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N}(text, name, id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pageview_8cpp_a4cec0467f9d945fd6a0027c3c339c725}{\index{pageview.\+cpp@{pageview.\+cpp}!A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N@{A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N}}
+\index{A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N@{A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N}!pageview.\+cpp@{pageview.\+cpp}}
+\subsubsection[{A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+V\+I\+E\+W\+M\+O\+D\+E\+\_\+\+A\+C\+T\+I\+O\+N(
+\begin{DoxyParamCaption}
+\item[{}]{text, }
+\item[{}]{name, }
+\item[{}]{id}
+\end{DoxyParamCaption}
+)}}\label{pageview_8cpp_a4cec0467f9d945fd6a0027c3c339c725}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+    KAction *vm = \textcolor{keyword}{new} KAction( text, d->aViewMode->menu() ); \(\backslash\)
+    vm->setCheckable( \textcolor{keyword}{true} ); \(\backslash\)
+    vm->setData( qVariantFromValue( \textcolor{keywordtype}{id} ) ); \(\backslash\)
+    d->aViewMode->addAction( vm ); \(\backslash\)
+    ac->addAction( name, vm ); \(\backslash\)
+    vmGroup->addAction( vm ); \(\backslash\)
+\} \textcolor{keywordflow}{while}( 0 )
+\end{DoxyCode}

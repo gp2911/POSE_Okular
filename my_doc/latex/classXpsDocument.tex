@@ -1,0 +1,248 @@
+\hypertarget{classXpsDocument}{\section{Xps\+Document Class Reference}
+\label{classXpsDocument}\index{Xps\+Document@{Xps\+Document}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+xps.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classXpsDocument_ae6450ff5a6b7cf03ec51baf31ad9ef84}{Xps\+Document} (\hyperlink{classXpsFile}{Xps\+File} $\ast$file, const Q\+String \&file\+Name)
+\item 
+\hyperlink{classXpsDocument_ab66a43f95429d49f4b496812be4c403f}{$\sim$\+Xps\+Document} ()
+\item 
+int \hyperlink{classXpsDocument_adbf38217ae901944dba86da5be8d1508}{num\+Pages} () const 
+\item 
+\hyperlink{classXpsPage}{Xps\+Page} $\ast$ \hyperlink{classXpsDocument_af6444d5bca4ad1b5b7de6e9b92221991}{page} (int page\+Num) const 
+\item 
+bool \hyperlink{classXpsDocument_a518ade49f3d7ba2a1386ecf8afa681e9}{has\+Document\+Structure} ()
+\item 
+const \hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} $\ast$ \hyperlink{classXpsDocument_aeefc7485c975da20d5f6269c1014b2ea}{document\+Structure} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents one of the (perhaps the only) documents in an \hyperlink{classXpsFile}{Xps\+File} 
+
+Definition at line 184 of file generator\+\_\+xps.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classXpsDocument_ae6450ff5a6b7cf03ec51baf31ad9ef84}{\index{Xps\+Document@{Xps\+Document}!Xps\+Document@{Xps\+Document}}
+\index{Xps\+Document@{Xps\+Document}!Xps\+Document@{Xps\+Document}}
+\subsubsection[{Xps\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Xps\+Document\+::\+Xps\+Document (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+File} $\ast$}]{file, }
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{classXpsDocument_ae6450ff5a6b7cf03ec51baf31ad9ef84}
+
+
+Definition at line 1790 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1790                                                               : m\_file(file), m\_haveDocumentStructure( \textcolor{keyword}{
+      false} ), m\_docStructure( 0 )
+1791 \{
+1792     kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"document file name: "} << fileName;
+1793 
+1794     \textcolor{keyword}{const} KArchiveEntry* documentEntry = file->\hyperlink{classXpsFile_a13a633163a15934693b3c65eae2a0c4f}{xpsArchive}()->directory()->entry( fileName );
+1795     QString documentFilePath = fileName;
+1796     \textcolor{keyword}{const} QString documentEntryPath = entryPath( fileName );
+1797 
+1798     QXmlStreamReader docXml;
+1799     docXml.addData( readFileOrDirectoryParts( documentEntry, &documentFilePath ) );
+1800     \textcolor{keywordflow}{while}( !docXml.atEnd() ) \{
+1801         docXml.readNext();
+1802         \textcolor{keywordflow}{if} ( docXml.isStartElement() ) \{
+1803             \textcolor{keywordflow}{if} ( docXml.name() == \textcolor{stringliteral}{"PageContent"} ) \{
+1804                 QString pagePath = docXml.attributes().value(\textcolor{stringliteral}{"Source"}).toString();
+1805                 kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Page Path: "} << pagePath;
+1806                 \hyperlink{classXpsPage}{XpsPage} *\hyperlink{classXpsDocument_af6444d5bca4ad1b5b7de6e9b92221991}{page} = \textcolor{keyword}{new} \hyperlink{classXpsPage}{XpsPage}( file, absolutePath( documentFilePath, 
+      pagePath ) );
+1807                 m\_pages.append(page);
+1808             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( docXml.name() == \textcolor{stringliteral}{"PageContent.LinkTargets"} ) \{
+1809                 \textcolor{comment}{// do nothing - wait for the real LinkTarget elements}
+1810             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( docXml.name() == \textcolor{stringliteral}{"LinkTarget"} ) \{
+1811                 QString targetName = docXml.attributes().value( \textcolor{stringliteral}{"Name"} ).toString();
+1812                 \textcolor{keywordflow}{if} ( ! targetName.isEmpty() ) \{
+1813                     m\_docStructurePageMap[ targetName ] = m\_pages.count() - 1;
+1814                 \}
+1815             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( docXml.name() == \textcolor{stringliteral}{"FixedDocument"} ) \{
+1816                 \textcolor{comment}{// we just ignore this - it is just a container}
+1817             \} \textcolor{keywordflow}{else} \{
+1818                 kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Unhandled entry in FixedDocument: "} << docXml.name().toString(
+      );
+1819             \}
+1820         \}
+1821     \}
+1822     \textcolor{keywordflow}{if} ( docXml.error() ) \{
+1823         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Could not parse main XPS document file: "} << docXml.errorString();
+1824     \}
+1825 
+1826     \textcolor{comment}{// There might be a relationships entry for this document - typically used to tell us where to find the}
+1827     \textcolor{comment}{// content structure description}
+1828 
+1829     \textcolor{comment}{// We should be able to find this using a reference from some other part of the document, but I can't
+       see it.}
+1830     \textcolor{keyword}{const} \textcolor{keywordtype}{int} slashPosition = fileName.lastIndexOf( \textcolor{charliteral}{'/'} );
+1831     \textcolor{keyword}{const} QString documentRelationshipFile = absolutePath( documentEntryPath, \textcolor{stringliteral}{"\_rels/"} + fileName.mid( 
+      slashPosition + 1 ) + \textcolor{stringliteral}{".rels"} );
+1832 
+1833     \textcolor{keyword}{const} KZipFileEntry* relFile = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }KZipFileEntry *\textcolor{keyword}{>}(file->
+      \hyperlink{classXpsFile_a13a633163a15934693b3c65eae2a0c4f}{xpsArchive}()->directory()->entry(documentRelationshipFile));
+1834 
+1835     QString documentStructureFile;
+1836     \textcolor{keywordflow}{if} ( relFile ) \{
+1837         QXmlStreamReader xml;
+1838         xml.addData( readFileOrDirectoryParts( relFile ) );
+1839         \textcolor{keywordflow}{while} ( !xml.atEnd() )
+1840         \{
+1841             xml.readNext();
+1842             \textcolor{keywordflow}{if} ( xml.isStartElement() && ( xml.name() == \textcolor{stringliteral}{"Relationship"} ) ) \{
+1843                 QXmlStreamAttributes attributes = xml.attributes();
+1844                 \textcolor{keywordflow}{if} ( attributes.value( \textcolor{stringliteral}{"Type"} ).toString() == \textcolor{stringliteral}{"
+      http://schemas.microsoft.com/xps/2005/06/documentstructure"} ) \{
+1845                     documentStructureFile  = attributes.value( \textcolor{stringliteral}{"Target"} ).toString();
+1846                 \} \textcolor{keywordflow}{else} \{
+1847                     kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Unknown document relationships element: "}
+1848                                      << attributes.value( \textcolor{stringliteral}{"Type"} ).toString() << \textcolor{stringliteral}{" : "}
+1849                                      << attributes.value( \textcolor{stringliteral}{"Target"} ).toString() << endl;
+1850                 \}
+1851             \}
+1852         \}
+1853         \textcolor{keywordflow}{if} ( xml.error() ) \{
+1854             kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Could not parse XPS page relationships file ( "}
+1855                              << documentRelationshipFile
+1856                              << \textcolor{stringliteral}{" ) - "} << xml.errorString() << endl;
+1857         \}
+1858     \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{// the page relationship file didn't exist in the zipfile}
+1859         \textcolor{comment}{// this isn't fatal}
+1860         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Could not open Document relationship file from "} << 
+      documentRelationshipFile;
+1861     \}
+1862 
+1863     \textcolor{keywordflow}{if} ( ! documentStructureFile.isEmpty() )
+1864     \{
+1865         \textcolor{comment}{// kDebug(XpsDebug) << "Document structure filename: " << documentStructureFile;}
+1866         \textcolor{comment}{// make the document path absolute}
+1867         documentStructureFile = absolutePath( documentEntryPath, documentStructureFile );
+1868         \textcolor{comment}{// kDebug(XpsDebug) << "Document structure absolute path: " << documentStructureFile;}
+1869         parseDocumentStructure( documentStructureFile );
+1870     \}
+1871 
+1872 \}
+\end{DoxyCode}
+\hypertarget{classXpsDocument_ab66a43f95429d49f4b496812be4c403f}{\index{Xps\+Document@{Xps\+Document}!````~Xps\+Document@{$\sim$\+Xps\+Document}}
+\index{````~Xps\+Document@{$\sim$\+Xps\+Document}!Xps\+Document@{Xps\+Document}}
+\subsubsection[{$\sim$\+Xps\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Xps\+Document\+::$\sim$\+Xps\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsDocument_ab66a43f95429d49f4b496812be4c403f}
+
+
+Definition at line 1874 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1875 \{
+1876     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < m\_pages.size(); i++) \{
+1877         \textcolor{keyword}{delete} m\_pages.at( i );
+1878     \}
+1879     m\_pages.clear();
+1880 
+1881     \textcolor{keywordflow}{if} ( m\_docStructure )
+1882         \textcolor{keyword}{delete} m\_docStructure;
+1883 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classXpsDocument_aeefc7485c975da20d5f6269c1014b2ea}{\index{Xps\+Document@{Xps\+Document}!document\+Structure@{document\+Structure}}
+\index{document\+Structure@{document\+Structure}!Xps\+Document@{Xps\+Document}}
+\subsubsection[{document\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Synopsis} $\ast$ Xps\+Document\+::document\+Structure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsDocument_aeefc7485c975da20d5f6269c1014b2ea}
+the document structure for this document, if available 
+
+Definition at line 1780 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1781 \{
+1782     \textcolor{keywordflow}{return} m\_docStructure;
+1783 \}
+\end{DoxyCode}
+\hypertarget{classXpsDocument_a518ade49f3d7ba2a1386ecf8afa681e9}{\index{Xps\+Document@{Xps\+Document}!has\+Document\+Structure@{has\+Document\+Structure}}
+\index{has\+Document\+Structure@{has\+Document\+Structure}!Xps\+Document@{Xps\+Document}}
+\subsubsection[{has\+Document\+Structure}]{\setlength{\rightskip}{0pt plus 5cm}bool Xps\+Document\+::has\+Document\+Structure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsDocument_a518ade49f3d7ba2a1386ecf8afa681e9}
+whether this document has a Document Structure 
+
+Definition at line 1785 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1786 \{
+1787     \textcolor{keywordflow}{return} m\_haveDocumentStructure;
+1788 \}
+\end{DoxyCode}
+\hypertarget{classXpsDocument_adbf38217ae901944dba86da5be8d1508}{\index{Xps\+Document@{Xps\+Document}!num\+Pages@{num\+Pages}}
+\index{num\+Pages@{num\+Pages}!Xps\+Document@{Xps\+Document}}
+\subsubsection[{num\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}int Xps\+Document\+::num\+Pages (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classXpsDocument_adbf38217ae901944dba86da5be8d1508}
+the total number of pages in this document 
+
+Definition at line 1885 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1886 \{
+1887     \textcolor{keywordflow}{return} m\_pages.size();
+1888 \}
+\end{DoxyCode}
+\hypertarget{classXpsDocument_af6444d5bca4ad1b5b7de6e9b92221991}{\index{Xps\+Document@{Xps\+Document}!page@{page}}
+\index{page@{page}!Xps\+Document@{Xps\+Document}}
+\subsubsection[{page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Xps\+Page} $\ast$ Xps\+Document\+::page (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Num}
+\end{DoxyParamCaption}
+) const}}\label{classXpsDocument_af6444d5bca4ad1b5b7de6e9b92221991}
+obtain a certain page from this document
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+Num} & the number of the page to return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+page numbers are zero based -\/ they run from 0 to \hyperlink{classXpsDocument_adbf38217ae901944dba86da5be8d1508}{num\+Pages()} -\/ 1 
+\end{DoxyNote}
+
+
+Definition at line 1890 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1891 \{
+1892     \textcolor{keywordflow}{return} m\_pages.at(pageNum);
+1893 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/xps/\hyperlink{generator__xps_8h}{generator\+\_\+xps.\+h}\item 
+generators/xps/\hyperlink{generator__xps_8cpp}{generator\+\_\+xps.\+cpp}\end{DoxyCompactItemize}

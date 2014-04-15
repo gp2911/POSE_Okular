@@ -1,0 +1,266 @@
+\hypertarget{classOkular_1_1FormField}{\section{Okular\+:\+:Form\+Field Class Reference}
+\label{classOkular_1_1FormField}\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+}
+
+
+The base interface of a form field.  
+
+
+
+
+{\ttfamily \#include $<$form.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Form\+Field\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classOkular_1_1FormField}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cf}{Field\+Type} \{ \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa8c2253f3712ab5b8f221ac945be8a3a2}{Form\+Button}, 
+\hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa46c90a3f76b54ce41f6b07b78a3bd394}{Form\+Text}, 
+\hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa77c671816ffafa08e36800e93fceb51d}{Form\+Choice}, 
+\hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfaf961396de9c7fc19fcd4dda366a6c707}{Form\+Signature}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1FormField_ae415bd326ee72a16f11b4cdef8c7b69d}{$\sim$\+Form\+Field} ()
+\item 
+\hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cf}{Field\+Type} \hyperlink{classOkular_1_1FormField_a35d03786e3e37e783c43f1206c5a7842}{type} () const 
+\item 
+virtual \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1FormField_a76014a9315921056764c72dd17b81339}{rect} () const =0
+\item 
+virtual int \hyperlink{classOkular_1_1FormField_a88ae3d04b4fbe5fd0fedeb068b3d5071}{id} () const =0
+\item 
+virtual Q\+String \hyperlink{classOkular_1_1FormField_a8eed821c6f1b957610fd275930c8f7cf}{name} () const =0
+\item 
+virtual Q\+String \hyperlink{classOkular_1_1FormField_a32a3eed7310ff961cc2d748135d4173b}{ui\+Name} () const =0
+\item 
+virtual bool \hyperlink{classOkular_1_1FormField_ad1636c715682959442f528c72a2f4c0a}{is\+Read\+Only} () const 
+\item 
+virtual bool \hyperlink{classOkular_1_1FormField_aee63f77f88a7f8359d9a53de3d07ebe0}{is\+Visible} () const 
+\item 
+\hyperlink{classOkular_1_1Action}{Action} $\ast$ \hyperlink{classOkular_1_1FormField_a97f9f6b3bdfb5043dda743e6d4bc72e5}{activation\+Action} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOkular_1_1FormField_a39a5161a282d40bc88a1633e93655c50}{set\+Activation\+Action} (\hyperlink{classOkular_1_1Action}{Action} $\ast$action)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base interface of a form field. 
+
+This is the very basic interface to represent a field in a form.
+
+This is not meant to be used as a direct base for the form fields in a document, but its abstract subclasses are. 
+
+Definition at line 36 of file form.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cf}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!Field\+Type@{Field\+Type}}
+\index{Field\+Type@{Field\+Type}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{Field\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Form\+Field\+::\+Field\+Type}}}\label{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cf}
+The types of form field. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Form\+Button@{Form\+Button}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!Form\+Button@{Form\+Button}}\item[{\em 
+\hypertarget{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa8c2253f3712ab5b8f221ac945be8a3a2}{Form\+Button}\label{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa8c2253f3712ab5b8f221ac945be8a3a2}
+}]A \char`\"{}button\char`\"{}. See \hyperlink{classOkular_1_1FormFieldButton_a4b03fd77132be17273c8f4ebbd247186}{Form\+Field\+Button\+::\+Button\+Type}. \index{Form\+Text@{Form\+Text}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!Form\+Text@{Form\+Text}}\item[{\em 
+\hypertarget{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa46c90a3f76b54ce41f6b07b78a3bd394}{Form\+Text}\label{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa46c90a3f76b54ce41f6b07b78a3bd394}
+}]A field of variable text. See \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671ba}{Form\+Field\+Text\+::\+Text\+Type}. \index{Form\+Choice@{Form\+Choice}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!Form\+Choice@{Form\+Choice}}\item[{\em 
+\hypertarget{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa77c671816ffafa08e36800e93fceb51d}{Form\+Choice}\label{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa77c671816ffafa08e36800e93fceb51d}
+}]A choice field. See \hyperlink{classOkular_1_1FormFieldChoice_a40b3939793e805c34303dff8262a17b3}{Form\+Field\+Choice\+::\+Choice\+Type}. \index{Form\+Signature@{Form\+Signature}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!Form\+Signature@{Form\+Signature}}\item[{\em 
+\hypertarget{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfaf961396de9c7fc19fcd4dda366a6c707}{Form\+Signature}\label{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfaf961396de9c7fc19fcd4dda366a6c707}
+}]A signature. \end{description}
+\end{Desc}
+
+
+Definition at line 47 of file form.\+h.
+
+
+\begin{DoxyCode}
+48         \{
+49             \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa8c2253f3712ab5b8f221ac945be8a3a2}{FormButton},      
+50             \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa46c90a3f76b54ce41f6b07b78a3bd394}{FormText},        
+51             \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa77c671816ffafa08e36800e93fceb51d}{FormChoice},      
+52             \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfaf961396de9c7fc19fcd4dda366a6c707}{FormSignature}    
+53         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1FormField_ae415bd326ee72a16f11b4cdef8c7b69d}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!````~Form\+Field@{$\sim$\+Form\+Field}}
+\index{````~Form\+Field@{$\sim$\+Form\+Field}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{$\sim$\+Form\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Form\+Field\+::$\sim$\+Form\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormField_ae415bd326ee72a16f11b4cdef8c7b69d}
+
+
+Definition at line 42 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keyword}{delete} d\_ptr;
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FormField_a97f9f6b3bdfb5043dda743e6d4bc72e5}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!activation\+Action@{activation\+Action}}
+\index{activation\+Action@{activation\+Action}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{activation\+Action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action} $\ast$ Form\+Field\+::activation\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1FormField_a97f9f6b3bdfb5043dda743e6d4bc72e5}
+
+
+Definition at line 63 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{
+65     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1FormField}{FormField} );
+66     \textcolor{keywordflow}{return} d->m\_activateAction;
+67 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormField_a88ae3d04b4fbe5fd0fedeb068b3d5071}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!id@{id}}
+\index{id@{id}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Okular\+::\+Form\+Field\+::id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormField_a88ae3d04b4fbe5fd0fedeb068b3d5071}
+The I\+D of the field. 
+
+Implemented in \hyperlink{classPopplerFormFieldChoice_a7efc9a9971d4b4af1568262225534d07}{Poppler\+Form\+Field\+Choice}, \hyperlink{classPopplerFormFieldText_ac6039f6801a6db67be2543f2d9a4c24f}{Poppler\+Form\+Field\+Text}, and \hyperlink{classPopplerFormFieldButton_a4bb5f676195a1e62368db43439a13288}{Poppler\+Form\+Field\+Button}.
+
+\hypertarget{classOkular_1_1FormField_ad1636c715682959442f528c72a2f4c0a}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!is\+Read\+Only@{is\+Read\+Only}}
+\index{is\+Read\+Only@{is\+Read\+Only}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{is\+Read\+Only}]{\setlength{\rightskip}{0pt plus 5cm}bool Form\+Field\+::is\+Read\+Only (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormField_ad1636c715682959442f528c72a2f4c0a}
+Whether the field is read-\/only. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldChoice_ac13b2cfa4bff848e21a577b5671016c1}{Poppler\+Form\+Field\+Choice}, \hyperlink{classPopplerFormFieldText_a4846eab782ad4869edac932f4a0ef9de}{Poppler\+Form\+Field\+Text}, and \hyperlink{classPopplerFormFieldButton_a7644837298cd51f3fe935733f2f4a461}{Poppler\+Form\+Field\+Button}.
+
+
+
+Definition at line 53 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+56 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormField_aee63f77f88a7f8359d9a53de3d07ebe0}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!is\+Visible@{is\+Visible}}
+\index{is\+Visible@{is\+Visible}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{is\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Form\+Field\+::is\+Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormField_aee63f77f88a7f8359d9a53de3d07ebe0}
+Whether this form field is visible. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldChoice_a7b297c4acd9e262a3123c62a8740d042}{Poppler\+Form\+Field\+Choice}, \hyperlink{classPopplerFormFieldText_a3ca915ea23ad96b9a77a2eeb36bcaa39}{Poppler\+Form\+Field\+Text}, and \hyperlink{classPopplerFormFieldButton_a5dda8c1f6ec320482523889ad0e0ea53}{Poppler\+Form\+Field\+Button}.
+
+
+
+Definition at line 58 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+61 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormField_a8eed821c6f1b957610fd275930c8f7cf}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!name@{name}}
+\index{name@{name}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String Okular\+::\+Form\+Field\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormField_a8eed821c6f1b957610fd275930c8f7cf}
+The internal name of the field, to be used when referring to the field in eg scripts. 
+
+Implemented in \hyperlink{classPopplerFormFieldChoice_ac1eb32851e00f9a18f6f0f791e85d6ad}{Poppler\+Form\+Field\+Choice}, \hyperlink{classPopplerFormFieldText_a25ba5c843850a89de48c5e9536bd3d5c}{Poppler\+Form\+Field\+Text}, and \hyperlink{classPopplerFormFieldButton_ac00d336c131761fdd0f88252ec58e20d}{Poppler\+Form\+Field\+Button}.
+
+\hypertarget{classOkular_1_1FormField_a76014a9315921056764c72dd17b81339}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!rect@{rect}}
+\index{rect@{rect}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{rect}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Normalized\+Rect} Okular\+::\+Form\+Field\+::rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormField_a76014a9315921056764c72dd17b81339}
+The bouding rect of the field, in normalized coordinates. 
+
+Implemented in \hyperlink{classPopplerFormFieldChoice_a95b88f2ec5d489c12ad16f91eeff28ee}{Poppler\+Form\+Field\+Choice}, \hyperlink{classPopplerFormFieldText_a613a015b6d8456d910bb233de44f8282}{Poppler\+Form\+Field\+Text}, and \hyperlink{classPopplerFormFieldButton_a5231bf41abeeb08bafe8e117abcbed2d}{Poppler\+Form\+Field\+Button}.
+
+\hypertarget{classOkular_1_1FormField_a39a5161a282d40bc88a1633e93655c50}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!set\+Activation\+Action@{set\+Activation\+Action}}
+\index{set\+Activation\+Action@{set\+Activation\+Action}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{set\+Activation\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void Form\+Field\+::set\+Activation\+Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Action} $\ast$}]{action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FormField_a39a5161a282d40bc88a1633e93655c50}
+
+
+Definition at line 69 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{
+71     Q\_D( \hyperlink{classOkular_1_1FormField}{FormField} );
+72     \textcolor{keyword}{delete} d->m\_activateAction;
+73     d->m\_activateAction = action;
+74 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormField_a35d03786e3e37e783c43f1206c5a7842}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!type@{type}}
+\index{type@{type}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Form\+Field\+::\+Field\+Type} Form\+Field\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1FormField_a35d03786e3e37e783c43f1206c5a7842}
+The type of the field. 
+
+Definition at line 47 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1FormField}{FormField} );
+50     \textcolor{keywordflow}{return} d->m\_type;
+51 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormField_a32a3eed7310ff961cc2d748135d4173b}{\index{Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}!ui\+Name@{ui\+Name}}
+\index{ui\+Name@{ui\+Name}!Okular\+::\+Form\+Field@{Okular\+::\+Form\+Field}}
+\subsubsection[{ui\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String Okular\+::\+Form\+Field\+::ui\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormField_a32a3eed7310ff961cc2d748135d4173b}
+The visible name of the field, to be used in the user interface (eg in error messages, etc). 
+
+Implemented in \hyperlink{classPopplerFormFieldChoice_ae92267230146194ee31fedcf9e997f36}{Poppler\+Form\+Field\+Choice}, \hyperlink{classPopplerFormFieldText_a240433926716b251cd71d75ccfa07a98}{Poppler\+Form\+Field\+Text}, and \hyperlink{classPopplerFormFieldButton_a4ee3c08869be9c136d4670b26c480be0}{Poppler\+Form\+Field\+Button}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{form_8h}{form.\+h}\item 
+core/\hyperlink{form_8cpp}{form.\+cpp}\end{DoxyCompactItemize}

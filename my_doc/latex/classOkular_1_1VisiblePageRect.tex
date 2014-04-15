@@ -1,0 +1,84 @@
+\hypertarget{classOkular_1_1VisiblePageRect}{\section{Okular\+:\+:Visible\+Page\+Rect Class Reference}
+\label{classOkular_1_1VisiblePageRect}\index{Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}}
+}
+
+
+An area of a specified page.  
+
+
+
+
+{\ttfamily \#include $<$document.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1VisiblePageRect_a33dbf112dcdab44a0d2d8073eab5fc4f}{Visible\+Page\+Rect} (int \hyperlink{classOkular_1_1VisiblePageRect_a773c60aae736669b6e09701998d45bb9}{page\+Number}=-\/1, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rectangle=\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect}())
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classOkular_1_1VisiblePageRect_a773c60aae736669b6e09701998d45bb9}{page\+Number}
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1VisiblePageRect_a66142566f9a0db1119d95bf84ff537ba}{rect}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An area of a specified page. 
+
+Definition at line 1231 of file document.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1VisiblePageRect_a33dbf112dcdab44a0d2d8073eab5fc4f}{\index{Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}!Visible\+Page\+Rect@{Visible\+Page\+Rect}}
+\index{Visible\+Page\+Rect@{Visible\+Page\+Rect}!Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}}
+\subsubsection[{Visible\+Page\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Visible\+Page\+Rect\+::\+Visible\+Page\+Rect (
+\begin{DoxyParamCaption}
+\item[{int}]{page\+Number = {\ttfamily -\/1}, }
+\item[{const {\bf Normalized\+Rect} \&}]{rectangle = {\ttfamily {\bf Normalized\+Rect}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1VisiblePageRect_a33dbf112dcdab44a0d2d8073eab5fc4f}
+Creates a new visible page rectangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+Number} & The page number where the rectangle is located. \\
+\hline
+{\em rectangle} & The rectangle in normalized coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4860 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+4861     : \hyperlink{classOkular_1_1VisiblePageRect_a773c60aae736669b6e09701998d45bb9}{pageNumber}( page ), \hyperlink{classOkular_1_1VisiblePageRect_a66142566f9a0db1119d95bf84ff537ba}{rect}( rectangle )
+4862 \{
+4863 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1VisiblePageRect_a773c60aae736669b6e09701998d45bb9}{\index{Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Visible\+Page\+Rect\+::page\+Number}}\label{classOkular_1_1VisiblePageRect_a773c60aae736669b6e09701998d45bb9}
+The page number where the rectangle is located. 
+
+Definition at line 1245 of file document.\+h.
+
+\hypertarget{classOkular_1_1VisiblePageRect_a66142566f9a0db1119d95bf84ff537ba}{\index{Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}!rect@{rect}}
+\index{rect@{rect}!Okular\+::\+Visible\+Page\+Rect@{Okular\+::\+Visible\+Page\+Rect}}
+\subsubsection[{rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Okular\+::\+Visible\+Page\+Rect\+::rect}}\label{classOkular_1_1VisiblePageRect_a66142566f9a0db1119d95bf84ff537ba}
+The rectangle in normalized coordinates. 
+
+Definition at line 1250 of file document.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{core_2document_8h}{document.\+h}\item 
+core/\hyperlink{core_2document_8cpp}{document.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\hypertarget{classCloseButton}{\section{Close\+Button Class Reference}
+\label{classCloseButton}\index{Close\+Button@{Close\+Button}}
+}
+Inheritance diagram for Close\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCloseButton}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCloseButton_a51839d4283758bd7221bafe64d08073b}{Close\+Button} (Q\+Widget $\ast$parent=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file annotwindow.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCloseButton_a51839d4283758bd7221bafe64d08073b}{\index{Close\+Button@{Close\+Button}!Close\+Button@{Close\+Button}}
+\index{Close\+Button@{Close\+Button}!Close\+Button@{Close\+Button}}
+\subsubsection[{Close\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Close\+Button\+::\+Close\+Button (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCloseButton_a51839d4283758bd7221bafe64d08073b}
+
+
+Definition at line 46 of file annotwindow.\+cpp.
+
+
+\begin{DoxyCode}
+47       : QPushButton( parent )
+48     \{
+49         setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed );
+50         QSize \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = QSize( 14, 14 ).expandedTo( QApplication::globalStrut() );
+51         setFixedSize( size );
+52         setIcon( style()->standardIcon( QStyle::SP\_DockWidgetCloseButton ) );
+53         setIconSize( size );
+54         setToolTip( i18n( \textcolor{stringliteral}{"Close this note"} ) );
+55     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotwindow_8cpp}{annotwindow.\+cpp}\end{DoxyCompactItemize}

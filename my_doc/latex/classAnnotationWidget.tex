@@ -1,0 +1,324 @@
+\hypertarget{classAnnotationWidget}{\section{Annotation\+Widget Class Reference}
+\label{classAnnotationWidget}\index{Annotation\+Widget@{Annotation\+Widget}}
+}
+
+
+{\ttfamily \#include $<$annotationwidgets.\+h$>$}
+
+Inheritance diagram for Annotation\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{classAnnotationWidget}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{data\+Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnnotationWidget_a1152e99260c24acde30e2742a07af2ef}{Annotation\+Widget} (\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+virtual \hyperlink{classAnnotationWidget_ae86eb3b8adca8b5227e908fab444802f}{$\sim$\+Annotation\+Widget} ()
+\item 
+virtual \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Okular\+::\+Annotation\+::\+Sub\+Type} \hyperlink{classAnnotationWidget_a8c837e08592e4cb54829d53e267f5cfc}{annotation\+Type} () const 
+\item 
+Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_a57411e4d54dde346c8ed57c99da56666}{appearance\+Widget} ()
+\item 
+Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_a0d1cb7d9a0f518140abecc82aa1e8449}{extra\+Widget} ()
+\item 
+virtual void \hyperlink{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}{apply\+Changes} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_a10702d6e6fd3df11a494c495165b8524}{create\+Appearance\+Widget} ()
+\item 
+virtual Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_a4b0926d20f0b26deb5b6a4e75f78fac3}{create\+Style\+Widget} ()
+\item 
+virtual Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_ab46dbe69c6723a640048a75f6bf47423}{create\+Extra\+Widget} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\+\_\+ann}
+\item 
+Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{m\+\_\+appearance\+Widget}
+\item 
+Q\+Widget $\ast$ \hyperlink{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{m\+\_\+extra\+Widget}
+\item 
+K\+Color\+Button $\ast$ \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\+\_\+color\+Bn}
+\item 
+K\+Int\+Num\+Input $\ast$ \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\+\_\+opacity}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 69 of file annotationwidgets.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAnnotationWidget_a1152e99260c24acde30e2742a07af2ef}{\index{Annotation\+Widget@{Annotation\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\index{Annotation\+Widget@{Annotation\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{Annotation\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Widget\+::\+Annotation\+Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{classAnnotationWidget_a1152e99260c24acde30e2742a07af2ef}
+
+
+Definition at line 158 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+159     : QObject(), \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\_ann}( ann ), \hyperlink{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{m\_appearanceWidget}( 0 ), 
+      \hyperlink{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{m\_extraWidget}( 0 )
+160 \{
+161 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_ae86eb3b8adca8b5227e908fab444802f}{\index{Annotation\+Widget@{Annotation\+Widget}!````~Annotation\+Widget@{$\sim$\+Annotation\+Widget}}
+\index{````~Annotation\+Widget@{$\sim$\+Annotation\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{$\sim$\+Annotation\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Widget\+::$\sim$\+Annotation\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotationWidget_ae86eb3b8adca8b5227e908fab444802f}
+
+
+Definition at line 163 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+164 \{
+165 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAnnotationWidget_a8c837e08592e4cb54829d53e267f5cfc}{\index{Annotation\+Widget@{Annotation\+Widget}!annotation\+Type@{annotation\+Type}}
+\index{annotation\+Type@{annotation\+Type}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{annotation\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Annotation\+::\+Sub\+Type} Annotation\+Widget\+::annotation\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotationWidget_a8c837e08592e4cb54829d53e267f5cfc}
+
+
+Definition at line 167 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+168 \{
+169     \textcolor{keywordflow}{return} \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\_ann}->\hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{subType}();
+170 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_a57411e4d54dde346c8ed57c99da56666}{\index{Annotation\+Widget@{Annotation\+Widget}!appearance\+Widget@{appearance\+Widget}}
+\index{appearance\+Widget@{appearance\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{appearance\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Annotation\+Widget\+::appearance\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAnnotationWidget_a57411e4d54dde346c8ed57c99da56666}
+
+
+Definition at line 172 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+173 \{
+174     \textcolor{keywordflow}{if} ( \hyperlink{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{m\_appearanceWidget} )
+175         \textcolor{keywordflow}{return} \hyperlink{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{m\_appearanceWidget};
+176 
+177     \hyperlink{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{m\_appearanceWidget} = \hyperlink{classAnnotationWidget_a10702d6e6fd3df11a494c495165b8524}{createAppearanceWidget}();
+178     \textcolor{keywordflow}{return} \hyperlink{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{m\_appearanceWidget};
+179 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}{\index{Annotation\+Widget@{Annotation\+Widget}!apply\+Changes@{apply\+Changes}}
+\index{apply\+Changes@{apply\+Changes}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{apply\+Changes}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+Widget\+::apply\+Changes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}
+
+
+Reimplemented in \hyperlink{classInkAnnotationWidget_a531cf1b8d9d7765f2b9aadc862e2d0e3}{Ink\+Annotation\+Widget}, \hyperlink{classCaretAnnotationWidget_ace74af8590fa2bae736aa3ab6f2ca862}{Caret\+Annotation\+Widget}, \hyperlink{classFileAttachmentAnnotationWidget_a38fef39135d564be132754fcc4dbdf79}{File\+Attachment\+Annotation\+Widget}, \hyperlink{classGeomAnnotationWidget_a188cb69dbb5fdd20620e1c75522c9bc4}{Geom\+Annotation\+Widget}, \hyperlink{classHighlightAnnotationWidget_a10838667b738e48983922d4c281a0410}{Highlight\+Annotation\+Widget}, \hyperlink{classLineAnnotationWidget_a31b65c29b709f901c8b706ab2de42846}{Line\+Annotation\+Widget}, \hyperlink{classStampAnnotationWidget_aabddf86c8df2d97e5f3e4d1ad9ae36f5}{Stamp\+Annotation\+Widget}, and \hyperlink{classTextAnnotationWidget_ae0b433d806d3e939300acbc2480be586}{Text\+Annotation\+Widget}.
+
+
+
+Definition at line 190 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+191 \{
+192     \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\_ann}->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a1c916cd50a0a4114188136d47943ef00}{setColor}( \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\_colorBn}->color() );
+193     \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\_ann}->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a5bf0bdd3bf954271ed4ba831316a7ee7}{setOpacity}( (\textcolor{keywordtype}{double})\hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity}->value() / 100.0 );
+194 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_a10702d6e6fd3df11a494c495165b8524}{\index{Annotation\+Widget@{Annotation\+Widget}!create\+Appearance\+Widget@{create\+Appearance\+Widget}}
+\index{create\+Appearance\+Widget@{create\+Appearance\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{create\+Appearance\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Annotation\+Widget\+::create\+Appearance\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotationWidget_a10702d6e6fd3df11a494c495165b8524}
+
+
+Definition at line 196 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+197 \{
+198     QWidget * widget = \textcolor{keyword}{new} QWidget();
+199     QGridLayout * gridlayout = \textcolor{keyword}{new} QGridLayout( widget );
+200 
+201     QLabel * tmplabel = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"&Color:"} ), widget );
+202     gridlayout->addWidget( tmplabel, 0, 0, Qt::AlignRight );
+203     \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\_colorBn} = \textcolor{keyword}{new} KColorButton( widget );
+204     \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\_colorBn}->setColor( \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\_ann}->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a2c32cb2b41ef8732ddcd3d3dffc20b7d}{color}() );
+205     tmplabel->setBuddy( \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\_colorBn} );
+206     gridlayout->addWidget( \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\_colorBn}, 0, 1 );
+207 
+208     tmplabel = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"&Opacity:"} ), widget );
+209     gridlayout->addWidget( tmplabel, 1, 0, Qt::AlignRight );
+210     \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity} = \textcolor{keyword}{new} KIntNumInput( widget );
+211     \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity}->setRange( 0, 100 );
+212     \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity}->setValue( (\textcolor{keywordtype}{int})( \hyperlink{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{m\_ann}->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_abb17b057d91f128793b3fa3d4b556a45}{opacity}() * 100 ) );
+213     \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity}->setSuffix( i18nc( \textcolor{stringliteral}{"Suffix for the opacity level, eg '80 %'"}, \textcolor{stringliteral}{" %"} ) );
+214     tmplabel->setBuddy( \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity} );
+215     gridlayout->addWidget( \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity}, 1, 1 );
+216 
+217     QWidget * styleWidget = \hyperlink{classAnnotationWidget_a4b0926d20f0b26deb5b6a4e75f78fac3}{createStyleWidget}();
+218     \textcolor{keywordflow}{if} ( styleWidget )
+219         gridlayout->addWidget( styleWidget, 2, 0, 1, 2 );
+220 
+221     gridlayout->addItem( \textcolor{keyword}{new} QSpacerItem( 5, 5, QSizePolicy::Fixed, QSizePolicy::MinimumExpanding ), 3, 0 )
+      ;
+222 
+223     connect( \hyperlink{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{m\_colorBn}, SIGNAL(changed(QColor)), \textcolor{keyword}{this}, SIGNAL(
+      \hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+224     connect( \hyperlink{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{m\_opacity}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SIGNAL(
+      \hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+225 
+226     \textcolor{keywordflow}{return} widget;
+227 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_ab46dbe69c6723a640048a75f6bf47423}{\index{Annotation\+Widget@{Annotation\+Widget}!create\+Extra\+Widget@{create\+Extra\+Widget}}
+\index{create\+Extra\+Widget@{create\+Extra\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{create\+Extra\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Annotation\+Widget\+::create\+Extra\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classAnnotationWidget_ab46dbe69c6723a640048a75f6bf47423}
+
+
+Reimplemented in \hyperlink{classFileAttachmentAnnotationWidget_a07cbdc3d89b1f92c54baab1a4551627f}{File\+Attachment\+Annotation\+Widget}.
+
+
+
+Definition at line 234 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+235 \{
+236     \textcolor{keywordflow}{return} 0;
+237 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_a4b0926d20f0b26deb5b6a4e75f78fac3}{\index{Annotation\+Widget@{Annotation\+Widget}!create\+Style\+Widget@{create\+Style\+Widget}}
+\index{create\+Style\+Widget@{create\+Style\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{create\+Style\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Annotation\+Widget\+::create\+Style\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classAnnotationWidget_a4b0926d20f0b26deb5b6a4e75f78fac3}
+
+
+Reimplemented in \hyperlink{classInkAnnotationWidget_a747041049c853793b8ef2d86a192d866}{Ink\+Annotation\+Widget}, \hyperlink{classCaretAnnotationWidget_a1de63a32fcebc687453ce9525604f02c}{Caret\+Annotation\+Widget}, \hyperlink{classFileAttachmentAnnotationWidget_ab48428e35499d975f3a758d111711db8}{File\+Attachment\+Annotation\+Widget}, \hyperlink{classGeomAnnotationWidget_a2ae78739fb17d4f05bcc584265ed246f}{Geom\+Annotation\+Widget}, \hyperlink{classHighlightAnnotationWidget_a95a625155164522bb33b98e466d4e957}{Highlight\+Annotation\+Widget}, \hyperlink{classLineAnnotationWidget_ae034334b44224792130e0677510a1f65}{Line\+Annotation\+Widget}, \hyperlink{classStampAnnotationWidget_ac941b293f5c4bafb413a5dd08d7d0654}{Stamp\+Annotation\+Widget}, and \hyperlink{classTextAnnotationWidget_a2139c36fddba889da7fef68a6febef61}{Text\+Annotation\+Widget}.
+
+
+
+Definition at line 229 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+230 \{
+231     \textcolor{keywordflow}{return} 0;
+232 \}
+\end{DoxyCode}
+\hypertarget{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{\index{Annotation\+Widget@{Annotation\+Widget}!data\+Changed@{data\+Changed}}
+\index{data\+Changed@{data\+Changed}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{data\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+Widget\+::data\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}
+\hypertarget{classAnnotationWidget_a0d1cb7d9a0f518140abecc82aa1e8449}{\index{Annotation\+Widget@{Annotation\+Widget}!extra\+Widget@{extra\+Widget}}
+\index{extra\+Widget@{extra\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{extra\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Annotation\+Widget\+::extra\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAnnotationWidget_a0d1cb7d9a0f518140abecc82aa1e8449}
+
+
+Definition at line 181 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+182 \{
+183     \textcolor{keywordflow}{if} ( \hyperlink{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{m\_extraWidget} )
+184         \textcolor{keywordflow}{return} \hyperlink{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{m\_extraWidget};
+185 
+186     \hyperlink{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{m\_extraWidget} = \hyperlink{classAnnotationWidget_ab46dbe69c6723a640048a75f6bf47423}{createExtraWidget}();
+187     \textcolor{keywordflow}{return} \hyperlink{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{m\_extraWidget};
+188 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}{\index{Annotation\+Widget@{Annotation\+Widget}!m\+\_\+ann@{m\+\_\+ann}}
+\index{m\+\_\+ann@{m\+\_\+ann}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{m\+\_\+ann}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Annotation}$\ast$ Annotation\+Widget\+::m\+\_\+ann\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotationWidget_a6b7e6688554d24cfea509b139b3ecedc}
+
+
+Definition at line 94 of file annotationwidgets.\+h.
+
+\hypertarget{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}{\index{Annotation\+Widget@{Annotation\+Widget}!m\+\_\+appearance\+Widget@{m\+\_\+appearance\+Widget}}
+\index{m\+\_\+appearance\+Widget@{m\+\_\+appearance\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{m\+\_\+appearance\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Annotation\+Widget\+::m\+\_\+appearance\+Widget\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotationWidget_a5ab466a198ca0a99fd2e0fd0ace527b2}
+
+
+Definition at line 95 of file annotationwidgets.\+h.
+
+\hypertarget{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}{\index{Annotation\+Widget@{Annotation\+Widget}!m\+\_\+color\+Bn@{m\+\_\+color\+Bn}}
+\index{m\+\_\+color\+Bn@{m\+\_\+color\+Bn}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{m\+\_\+color\+Bn}]{\setlength{\rightskip}{0pt plus 5cm}K\+Color\+Button$\ast$ Annotation\+Widget\+::m\+\_\+color\+Bn\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotationWidget_a39083eda5b61826f4b48a787361b9dfc}
+
+
+Definition at line 97 of file annotationwidgets.\+h.
+
+\hypertarget{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}{\index{Annotation\+Widget@{Annotation\+Widget}!m\+\_\+extra\+Widget@{m\+\_\+extra\+Widget}}
+\index{m\+\_\+extra\+Widget@{m\+\_\+extra\+Widget}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{m\+\_\+extra\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Annotation\+Widget\+::m\+\_\+extra\+Widget\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotationWidget_abd0a469cc5f14e5e73243f405b5d3649}
+
+
+Definition at line 96 of file annotationwidgets.\+h.
+
+\hypertarget{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}{\index{Annotation\+Widget@{Annotation\+Widget}!m\+\_\+opacity@{m\+\_\+opacity}}
+\index{m\+\_\+opacity@{m\+\_\+opacity}!Annotation\+Widget@{Annotation\+Widget}}
+\subsubsection[{m\+\_\+opacity}]{\setlength{\rightskip}{0pt plus 5cm}K\+Int\+Num\+Input$\ast$ Annotation\+Widget\+::m\+\_\+opacity\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAnnotationWidget_a234fb5913752d6e4462084b217f3ff6c}
+
+
+Definition at line 98 of file annotationwidgets.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationwidgets_8h}{annotationwidgets.\+h}\item 
+ui/\hyperlink{annotationwidgets_8cpp}{annotationwidgets.\+cpp}\end{DoxyCompactItemize}

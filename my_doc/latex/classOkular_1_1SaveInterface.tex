@@ -1,0 +1,158 @@
+\hypertarget{classOkular_1_1SaveInterface}{\section{Okular\+:\+:Save\+Interface Class Reference}
+\label{classOkular_1_1SaveInterface}\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}
+}
+
+
+Abstract interface for saving.  
+
+
+
+
+{\ttfamily \#include $<$saveinterface.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Save\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1SaveInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399}{Save\+Option} \{ \hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399afbd2f94c91a2abc35712e702480a068d}{No\+Option} = 0, 
+\hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399a595c02ea3ea3f3c841cdf3b7a0824d68}{Save\+Changes} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1SaveInterface_aa5bbe978abb42a9672463ce3eccf1d1e}{$\sim$\+Save\+Interface} ()
+\item 
+virtual bool \hyperlink{classOkular_1_1SaveInterface_a8015ceb5e3b6dffc5f7cd620a82fdc16}{supports\+Option} (\hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399}{Save\+Option} option) const =0
+\item 
+virtual bool \hyperlink{classOkular_1_1SaveInterface_a5a417719832a6c6fc245e305b6b64268}{save} (const Q\+String \&file\+Name, Save\+Options options, Q\+String $\ast$error\+Text)=0
+\item 
+virtual \hyperlink{classOkular_1_1AnnotationProxy}{Annotation\+Proxy} $\ast$ \hyperlink{classOkular_1_1SaveInterface_a1fdb82695d9758e9e68ab0129bf16237}{annotation\+Proxy} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface for saving. 
+
+This interface defines a way to save (or help saving) the document opened by the \hyperlink{classOkular_1_1Generator}{Generator}.
+
+How to use it in a custom \hyperlink{classOkular_1_1Generator}{Generator}\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}, \textcolor{keyword}{public} 
+      \hyperlink{classOkular_1_1SaveInterface}{Okular::SaveInterface}
+\{
+    Q\_OBJECT
+    Q\_INTERFACES( \hyperlink{classOkular_1_1SaveInterface}{Okular::SaveInterface} )
+
+    ...
+\};
+\end{DoxyCode}
+ and -\/ of course -\/ implementing its methods. 
+
+Definition at line 39 of file saveinterface.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399}{\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!Save\+Option@{Save\+Option}}
+\index{Save\+Option@{Save\+Option}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}
+\subsubsection[{Save\+Option}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Save\+Interface\+::\+Save\+Option}}}\label{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399}
+The possible options for the saving. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{No\+Option@{No\+Option}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!No\+Option@{No\+Option}}\item[{\em 
+\hypertarget{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399afbd2f94c91a2abc35712e702480a068d}{No\+Option}\label{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399afbd2f94c91a2abc35712e702480a068d}
+}]\index{Save\+Changes@{Save\+Changes}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!Save\+Changes@{Save\+Changes}}\item[{\em 
+\hypertarget{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399a595c02ea3ea3f3c841cdf3b7a0824d68}{Save\+Changes}\label{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399a595c02ea3ea3f3c841cdf3b7a0824d68}
+}]The possibility to save with the current changes to the document. \end{description}
+\end{Desc}
+
+
+Definition at line 45 of file saveinterface.\+h.
+
+
+\begin{DoxyCode}
+46         \{
+47             \hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399afbd2f94c91a2abc35712e702480a068d}{NoOption} = 0,
+48             \hyperlink{classOkular_1_1SaveInterface_ada9624051ff917ec66ca12b6d6684399a595c02ea3ea3f3c841cdf3b7a0824d68}{SaveChanges} = 1        
+49         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1SaveInterface_aa5bbe978abb42a9672463ce3eccf1d1e}{\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!````~Save\+Interface@{$\sim$\+Save\+Interface}}
+\index{````~Save\+Interface@{$\sim$\+Save\+Interface}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}
+\subsubsection[{$\sim$\+Save\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}virtual Okular\+::\+Save\+Interface\+::$\sim$\+Save\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classOkular_1_1SaveInterface_aa5bbe978abb42a9672463ce3eccf1d1e}
+Destroys the save interface. 
+
+Definition at line 55 of file saveinterface.\+h.
+
+
+\begin{DoxyCode}
+55 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1SaveInterface_a1fdb82695d9758e9e68ab0129bf16237}{\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!annotation\+Proxy@{annotation\+Proxy}}
+\index{annotation\+Proxy@{annotation\+Proxy}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}
+\subsubsection[{annotation\+Proxy}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Annotation\+Proxy}$\ast$ Okular\+::\+Save\+Interface\+::annotation\+Proxy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1SaveInterface_a1fdb82695d9758e9e68ab0129bf16237}
+Returns the annotation proxy. Generators can return N\+U\+L\+L if native annotations are not supported.
+
+\begin{DoxyNote}{Note}
+Returning N\+U\+L\+L is equivalent to returning an \hyperlink{classOkular_1_1AnnotationProxy}{Annotation\+Proxy} that doesn't support any capability. 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Implemented in \hyperlink{classPDFGenerator_ade566b79f079689dcddef87ae5faf1d5}{P\+D\+F\+Generator}.
+
+\hypertarget{classOkular_1_1SaveInterface_a5a417719832a6c6fc245e305b6b64268}{\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!save@{save}}
+\index{save@{save}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Okular\+::\+Save\+Interface\+::save (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Save\+Options}]{options, }
+\item[{Q\+String $\ast$}]{error\+Text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1SaveInterface_a5a417719832a6c6fc245e305b6b64268}
+Save to the specified {\ttfamily file\+Name} with the specified {\ttfamily options}. 
+
+Implemented in \hyperlink{classPDFGenerator_abf4927ecbbffacb3eefd8aeff58c0a62}{P\+D\+F\+Generator}.
+
+\hypertarget{classOkular_1_1SaveInterface_a8015ceb5e3b6dffc5f7cd620a82fdc16}{\index{Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}!supports\+Option@{supports\+Option}}
+\index{supports\+Option@{supports\+Option}!Okular\+::\+Save\+Interface@{Okular\+::\+Save\+Interface}}
+\subsubsection[{supports\+Option}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Okular\+::\+Save\+Interface\+::supports\+Option (
+\begin{DoxyParamCaption}
+\item[{{\bf Save\+Option}}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1SaveInterface_a8015ceb5e3b6dffc5f7cd620a82fdc16}
+Query for the supported saving options.
+
+\begin{DoxyNote}{Note}
+No\+Option is never queried 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classPDFGenerator_ad1da694c1f5836ac61c26ec50a80b2c8}{P\+D\+F\+Generator}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interfaces/\hyperlink{saveinterface_8h}{saveinterface.\+h}\end{DoxyCompactItemize}

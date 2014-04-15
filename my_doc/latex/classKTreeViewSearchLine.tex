@@ -1,0 +1,905 @@
+\hypertarget{classKTreeViewSearchLine}{\section{K\+Tree\+View\+Search\+Line Class Reference}
+\label{classKTreeViewSearchLine}\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+}
+
+
+{\ttfamily \#include $<$ktreeviewsearchline.\+h$>$}
+
+Inheritance diagram for K\+Tree\+View\+Search\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKTreeViewSearchLine}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classKTreeViewSearchLine_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{add\+Tree\+View} (Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View})
+\item 
+void \hyperlink{classKTreeViewSearchLine_a9dd82793007329e80d8bc4e10235563c}{remove\+Tree\+View} (Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View})
+\item 
+virtual void \hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{update\+Search} (const Q\+String \&pattern=Q\+String())
+\item 
+void \hyperlink{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}{set\+Case\+Sensitivity} (Qt\+::\+Case\+Sensitivity \hyperlink{classKTreeViewSearchLine_ac71c42af94b282cc2ec6ea34dde396e7}{case\+Sensitivity})
+\item 
+void \hyperlink{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{set\+Regular\+Expression} (bool value)
+\item 
+void \hyperlink{classKTreeViewSearchLine_afe2c3183ded8a131e43e972987467366}{set\+Keep\+Parents\+Visible} (bool value)
+\item 
+void \hyperlink{classKTreeViewSearchLine_acad44d3d3a453c6aadc10f054d950f12}{set\+Search\+Columns} (const \hyperlink{classQList}{Q\+List}$<$ int $>$ \&columns)
+\item 
+void \hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{set\+Tree\+View} (Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View})
+\item 
+void \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{set\+Tree\+Views} (const \hyperlink{classQList}{Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ \&\hyperlink{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}{tree\+Views})
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKTreeViewSearchLine_ad280351217308b67e8cce9f961f52104}{search\+Options\+Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKTreeViewSearchLine_a52555313b7e29b386982eafa34a7668d}{K\+Tree\+View\+Search\+Line} (Q\+Widget $\ast$parent=0, Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View}=0)
+\item 
+\hyperlink{classKTreeViewSearchLine_affbeea1f6b2347c6f8437ca2e650c5a7}{K\+Tree\+View\+Search\+Line} (Q\+Widget $\ast$parent, const \hyperlink{classQList}{Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ \&\hyperlink{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}{tree\+Views})
+\item 
+virtual \hyperlink{classKTreeViewSearchLine_a910e3a86fe735396ed94769ce38c5a02}{$\sim$\+K\+Tree\+View\+Search\+Line} ()
+\item 
+Qt\+::\+Case\+Sensitivity \hyperlink{classKTreeViewSearchLine_ac71c42af94b282cc2ec6ea34dde396e7}{case\+Sensitivity} () const 
+\item 
+bool \hyperlink{classKTreeViewSearchLine_a3a275ebab6667bfe8652918794ec415e}{regular\+Expression} () const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classKTreeViewSearchLine_af89acb03898864f73c6c1f84fe7c2af5}{search\+Columns} () const 
+\item 
+bool \hyperlink{classKTreeViewSearchLine_a0977f573dcb6455d3fd5e3e289394f50}{keep\+Parents\+Visible} () const 
+\item 
+Q\+Tree\+View $\ast$ \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View} () const 
+\item 
+\hyperlink{classQList}{Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ \hyperlink{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}{tree\+Views} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}{queue\+Search} (const Q\+String \&search)
+\item 
+void \hyperlink{classKTreeViewSearchLine_ae5c751d7a5ba907f8222acca97ac0925}{activate\+Search} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classKTreeViewSearchLine_a89b1a182dbc3ee70a560a62c607808ee}{item\+Matches} (const Q\+Model\+Index \&item, int row, const Q\+String \&pattern) const 
+\item 
+virtual void \hyperlink{classKTreeViewSearchLine_acc7b16be8bca22303bdb06f340bbff97}{context\+Menu\+Event} (Q\+Context\+Menu\+Event $\ast$)
+\item 
+virtual void \hyperlink{classKTreeViewSearchLine_a0a17e83a54dd07ed391dc34f0442710f}{update\+Search} (Q\+Tree\+View $\ast$\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View})
+\item 
+virtual void \hyperlink{classKTreeViewSearchLine_a5ebe1beb6643386651a0bde66561c420}{connect\+Tree\+View} (Q\+Tree\+View $\ast$)
+\item 
+virtual void \hyperlink{classKTreeViewSearchLine_a7b95b3369617c600159d2f5a5ea2e203}{disconnect\+Tree\+View} (Q\+Tree\+View $\ast$)
+\item 
+virtual bool \hyperlink{classKTreeViewSearchLine_a6fbd99745faf5915d44244a52610f68c}{can\+Choose\+Columns\+Check} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Qt\+::\+Case\+Sensitivity \hyperlink{classKTreeViewSearchLine_aae0f956eff2d0d6cd9d883a646a33da8}{case\+Sensitity}
+\item 
+bool \hyperlink{classKTreeViewSearchLine_a51e8d818d4b5541f1d6e50552ba1cf6c}{keep\+Parents\+Visible}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class makes it easy to add a search line for filtering the items in listviews based on a simple text search.
+
+No changes to the application other than instantiating this class with appropriate Q\+Tree\+Views should be needed. 
+
+Definition at line 38 of file ktreeviewsearchline.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKTreeViewSearchLine_a52555313b7e29b386982eafa34a7668d}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{K\+Tree\+View\+Search\+Line}]{\setlength{\rightskip}{0pt plus 5cm}K\+Tree\+View\+Search\+Line\+::\+K\+Tree\+View\+Search\+Line (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{Q\+Tree\+View $\ast$}]{tree\+View = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classKTreeViewSearchLine_a52555313b7e29b386982eafa34a7668d}
+Constructs a \hyperlink{classKTreeViewSearchLine}{K\+Tree\+View\+Search\+Line} with {\itshape tree\+View} being the Q\+Tree\+View to be filtered.
+
+If {\itshape tree\+View} is null then the widget will be disabled until listviews are set with \hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{set\+Tree\+View()}, \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{set\+Tree\+Views()} or added with \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{add\+Tree\+View()}. 
+
+Definition at line 234 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+235   : KLineEdit( parent ), d( \textcolor{keyword}{new} Private( \textcolor{keyword}{this} ) )
+236 \{
+237   connect( \textcolor{keyword}{this}, SIGNAL(textChanged(QString)),
+238            \textcolor{keyword}{this}, SLOT(\hyperlink{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}{queueSearch}(QString)) );
+239 
+240   setClearButtonShown( \textcolor{keyword}{true} );
+241   \hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{setTreeView}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+242 
+243   \textcolor{keywordflow}{if} ( !\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} ) \{
+244       setEnabled( \textcolor{keyword}{false} );
+245   \}
+246 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_affbeea1f6b2347c6f8437ca2e650c5a7}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{K\+Tree\+View\+Search\+Line}]{\setlength{\rightskip}{0pt plus 5cm}K\+Tree\+View\+Search\+Line\+::\+K\+Tree\+View\+Search\+Line (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{const {\bf Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ \&}]{tree\+Views}
+\end{DoxyParamCaption}
+)}}\label{classKTreeViewSearchLine_affbeea1f6b2347c6f8437ca2e650c5a7}
+Constructs a \hyperlink{classKTreeViewSearchLine}{K\+Tree\+View\+Search\+Line} with {\itshape tree\+Views} being the list of pointers to Q\+Tree\+Views to be filtered.
+
+If {\itshape tree\+Views} is empty then the widget will be disabled until listviews are set with \hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{set\+Tree\+View()}, \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{set\+Tree\+Views()} or added with \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{add\+Tree\+View()}. 
+
+Definition at line 248 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+250   : KLineEdit( parent ), d( \textcolor{keyword}{new} Private( \textcolor{keyword}{this} ) )
+251 \{
+252   connect( \textcolor{keyword}{this}, SIGNAL(textChanged(QString)),
+253            \textcolor{keyword}{this}, SLOT(\hyperlink{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}{queueSearch}(QString)) );
+254 
+255   setClearButtonShown( \textcolor{keyword}{true} );
+256   \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{setTreeViews}( treeViews );
+257 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a910e3a86fe735396ed94769ce38c5a02}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!````~K\+Tree\+View\+Search\+Line@{$\sim$\+K\+Tree\+View\+Search\+Line}}
+\index{````~K\+Tree\+View\+Search\+Line@{$\sim$\+K\+Tree\+View\+Search\+Line}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{$\sim$\+K\+Tree\+View\+Search\+Line}]{\setlength{\rightskip}{0pt plus 5cm}K\+Tree\+View\+Search\+Line\+::$\sim$\+K\+Tree\+View\+Search\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_a910e3a86fe735396ed94769ce38c5a02}
+Destroys the \hyperlink{classKTreeViewSearchLine}{K\+Tree\+View\+Search\+Line}. 
+
+Definition at line 259 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+260 \{
+261   \textcolor{keyword}{delete} d;
+262 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKTreeViewSearchLine_ae5c751d7a5ba907f8222acca97ac0925}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!activate\+Search@{activate\+Search}}
+\index{activate\+Search@{activate\+Search}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{activate\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::activate\+Search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKTreeViewSearchLine_ae5c751d7a5ba907f8222acca97ac0925}
+When the timer started with \hyperlink{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}{queue\+Search()} expires this slot is called. If there has been another timer started then this slot does nothing. However if there are no other pending searches this starts the list view search.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}{queue\+Search()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 585 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+586 \{
+587   --(d->\hyperlink{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}{queuedSearches});
+588 
+589   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}{queuedSearches} == 0 )
+590     \hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}( d->\hyperlink{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{search} );
+591 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!add\+Tree\+View@{add\+Tree\+View}}
+\index{add\+Tree\+View@{add\+Tree\+View}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{add\+Tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::add\+Tree\+View (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}
+Adds a Q\+Tree\+View to the list of listviews filtered by this search line. If {\itshape tree\+View} is null then the widget will be disabled.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View()}, \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{set\+Tree\+Views()}, \hyperlink{classKTreeViewSearchLine_a9dd82793007329e80d8bc4e10235563c}{remove\+Tree\+View()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 305 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+306 \{
+307   \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} ) \{
+308     \hyperlink{classKTreeViewSearchLine_a5ebe1beb6643386651a0bde66561c420}{connectTreeView}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+309 
+310     d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.append( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+311     setEnabled( !d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.isEmpty() );
+312 
+313     d->\hyperlink{classKTreeViewSearchLine_1_1Private_a5e46c84da7f32694b6de94982fb6d53a}{checkColumns}();
+314   \}
+315 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a6fbd99745faf5915d44244a52610f68c}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!can\+Choose\+Columns\+Check@{can\+Choose\+Columns\+Check}}
+\index{can\+Choose\+Columns\+Check@{can\+Choose\+Columns\+Check}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{can\+Choose\+Columns\+Check}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::can\+Choose\+Columns\+Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_a6fbd99745faf5915d44244a52610f68c}
+Checks columns in all listviews and decides whether choosing columns to filter on makes any sense.
+
+Returns false if either of the following is true\+:
+\begin{DoxyItemize}
+\item there are no listviews connected,
+\item the listviews have different numbers of columns,
+\item the listviews have only one column,
+\item the listviews differ in column labels.
+\end{DoxyItemize}
+
+Otherwise it returns true.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_acad44d3d3a453c6aadc10f054d950f12}{set\+Search\+Columns()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 534 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+535 \{
+536   \textcolor{comment}{// This is true if either of the following is true:}
+537 
+538   \textcolor{comment}{// there are no listviews connected}
+539   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.isEmpty() )
+540     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+541 
+542   \textcolor{keyword}{const} QTreeView *first = d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.first();
+543 
+544   \textcolor{keyword}{const} \textcolor{keywordtype}{int} numcols = first->model()->columnCount();
+545   \textcolor{comment}{// the listviews have only one column,}
+546   \textcolor{keywordflow}{if} ( numcols < 2 )
+547     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+548 
+549   QStringList headers;
+550   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < numcols; ++i )
+551     headers.append( first->header()->model()->headerData( i, Qt::Horizontal, Qt::DisplayRole ).toString() )
+      ;
+552 
+553   \hyperlink{classQList}{QList<QTreeView *>::ConstIterator} it = d->
+      \hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.constBegin();
+554   \textcolor{keywordflow}{for} ( ++it \textcolor{comment}{/* skip the first one */}; it != d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.constEnd(); ++it ) \{
+555     \textcolor{comment}{// the listviews have different numbers of columns,}
+556     \textcolor{keywordflow}{if} ( (*it)->model()->columnCount() != numcols )
+557       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+558 
+559     \textcolor{comment}{// the listviews differ in column labels.}
+560     QStringList::ConstIterator jt;
+561     \textcolor{keywordtype}{int} i;
+562     \textcolor{keywordflow}{for} ( i = 0, jt = headers.constBegin(); i < numcols; ++i, ++jt ) \{
+563       Q\_ASSERT( jt != headers.constEnd() );
+564 
+565       \textcolor{keywordflow}{if} ( (*it)->header()->model()->headerData( i, Qt::Horizontal, Qt::DisplayRole ).toString() != *jt )
+566         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+567     \}
+568   \}
+569 
+570   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+571 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_ac71c42af94b282cc2ec6ea34dde396e7}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!case\+Sensitivity@{case\+Sensitivity}}
+\index{case\+Sensitivity@{case\+Sensitivity}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{case\+Sensitivity}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Case\+Sensitivity K\+Tree\+View\+Search\+Line\+::case\+Sensitivity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_ac71c42af94b282cc2ec6ea34dde396e7}
+Returns true if the search is case sensitive. This defaults to false.
+
+\begin{DoxySeeAlso}{See Also}
+set\+Case\+Sensitive() 
+\end{DoxySeeAlso}
+
+
+Definition at line 264 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+265 \{
+266   \textcolor{keywordflow}{return} d->\hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive};
+267 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a5ebe1beb6643386651a0bde66561c420}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!connect\+Tree\+View@{connect\+Tree\+View}}
+\index{connect\+Tree\+View@{connect\+Tree\+View}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{connect\+Tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::connect\+Tree\+View (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_a5ebe1beb6643386651a0bde66561c420}
+Connects signals of this listview to the appropriate slots of the search line. 
+
+Definition at line 516 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+517 \{
+518   connect( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}, SIGNAL(destroyed(QObject*)),
+519            \textcolor{keyword}{this}, SLOT(treeViewDeleted(QObject*)) );
+520 
+521   connect( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->model(), SIGNAL(rowsInserted(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+522            \textcolor{keyword}{this}, SLOT(rowsInserted(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})) );
+523 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_acc7b16be8bca22303bdb06f340bbff97}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!context\+Menu\+Event@{context\+Menu\+Event}}
+\index{context\+Menu\+Event@{context\+Menu\+Event}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{context\+Menu\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::context\+Menu\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Context\+Menu\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_acc7b16be8bca22303bdb06f340bbff97}
+Re-\/implemented for internal reasons. A\+P\+I not affected. 
+
+Definition at line 456 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+457 \{
+458   QMenu *popup = KLineEdit::createStandardContextMenu();
+459 
+460   popup->addSeparator();
+461   QMenu *optionsSubMenu = popup->addMenu( i18n(\textcolor{stringliteral}{"Search Options"}) );
+462   QAction* caseSensitiveAction = optionsSubMenu->addAction( i18nc(\textcolor{stringliteral}{"Enable case sensitive search in the side
+       navigation panels"}, \textcolor{stringliteral}{"Case Sensitive"}), \textcolor{keyword}{this}, SLOT(slotCaseSensitive()) );
+463   caseSensitiveAction->setCheckable( \textcolor{keyword}{true} );
+464   caseSensitiveAction->setChecked( d->\hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive} );
+465   QAction* regularExpressionAction = optionsSubMenu->addAction( i18nc(\textcolor{stringliteral}{"Enable regular expression search in
+       the side navigation panels"}, \textcolor{stringliteral}{"Regular Expression"}), \textcolor{keyword}{this}, SLOT(slotRegularExpression()) );
+466   regularExpressionAction->setCheckable( \textcolor{keyword}{true} );
+467   regularExpressionAction->setChecked( d->\hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression} );
+468 
+469   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{canChooseColumns} ) \{
+470     popup->addSeparator();
+471     QMenu *subMenu = popup->addMenu( i18n(\textcolor{stringliteral}{"Search Columns"}) );
+472 
+473     QAction* allVisibleColumnsAction = subMenu->addAction( i18n(\textcolor{stringliteral}{"All Visible Columns"}),
+474                                                            \textcolor{keyword}{this}, SLOT(slotAllVisibleColumns()) );
+475     allVisibleColumnsAction->setCheckable( \textcolor{keyword}{true} );
+476     allVisibleColumnsAction->setChecked( !d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.count() );
+477     subMenu->addSeparator();
+478 
+479     \textcolor{keywordtype}{bool} allColumnsAreSearchColumns = \textcolor{keyword}{true};
+480 
+481     QActionGroup* group = \textcolor{keyword}{new} QActionGroup( popup );
+482     group->setExclusive( \textcolor{keyword}{false} );
+483     connect( group, SIGNAL(triggered(QAction*)), SLOT(slotColumnActivated(QAction*)) );
+484 
+485     QHeaderView* \textcolor{keyword}{const} header = d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.first()->header();
+486     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} j = 0; j < header->count(); j++ ) \{
+487       \textcolor{keywordtype}{int} i = header->logicalIndex( j );
+488 
+489       \textcolor{keywordflow}{if} ( header->isSectionHidden( i ) )
+490         \textcolor{keywordflow}{continue};
+491 
+492       QString columnText = header->model()->headerData( i, Qt::Horizontal, Qt::DisplayRole ).toString();
+493       QAction* columnAction = subMenu->addAction( qvariant\_cast<QIcon>( header->model()->headerData( i, 
+      Qt::Horizontal, Qt::DecorationRole ) ), columnText );
+494       columnAction->setCheckable( \textcolor{keyword}{true} );
+495       columnAction->setChecked( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() || d->
+      \hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.contains( i ) );
+496       columnAction->setData( i );
+497       columnAction->setActionGroup( group );
+498 
+499       \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() || d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.indexOf( i ) != -1 )
+500         columnAction->setChecked( \textcolor{keyword}{true} );
+501       \textcolor{keywordflow}{else}
+502         allColumnsAreSearchColumns = \textcolor{keyword}{false};
+503     \}
+504 
+505     allVisibleColumnsAction->setChecked( allColumnsAreSearchColumns );
+506 
+507     \textcolor{comment}{// searchColumnsMenuActivated() relies on one possible "all" representation}
+508     \textcolor{keywordflow}{if} ( allColumnsAreSearchColumns && !d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() )
+509       d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.clear();
+510   \}
+511 
+512   popup->exec( event->globalPos() );
+513   \textcolor{keyword}{delete} popup;
+514 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a7b95b3369617c600159d2f5a5ea2e203}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!disconnect\+Tree\+View@{disconnect\+Tree\+View}}
+\index{disconnect\+Tree\+View@{disconnect\+Tree\+View}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{disconnect\+Tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::disconnect\+Tree\+View (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_a7b95b3369617c600159d2f5a5ea2e203}
+Disconnects signals of a listviews from the search line. 
+
+Definition at line 525 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+526 \{
+527   disconnect( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}, SIGNAL(destroyed(QObject*)),
+528               \textcolor{keyword}{this}, SLOT(treeViewDeleted(QObject*)) );
+529 
+530   disconnect( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->model(), SIGNAL(rowsInserted(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+531               \textcolor{keyword}{this}, SLOT(rowsInserted(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})) );
+532 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a89b1a182dbc3ee70a560a62c607808ee}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!item\+Matches@{item\+Matches}}
+\index{item\+Matches@{item\+Matches}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{item\+Matches}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::item\+Matches (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{item, }
+\item[{int}]{row, }
+\item[{const Q\+String \&}]{pattern}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_a89b1a182dbc3ee70a560a62c607808ee}
+Returns true if {\itshape item} matches the search {\itshape pattern}. This will be evaluated based on the value of case\+Sensitive(). This can be overridden in subclasses to implement more complicated matching schemes. 
+
+Definition at line 422 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+423 \{
+424   \textcolor{keywordflow}{if} ( pattern.isEmpty() )
+425     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+426 
+427   \textcolor{keywordflow}{if} ( !index.isValid() )
+428     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+429 
+430   \textcolor{comment}{// Contruct a regular expression object with the right options.}
+431   QRegExp expression = QRegExp( pattern,
+432       d->\hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive} ? Qt::CaseSensitive : Qt::CaseInsensitive,
+433       d->\hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression} ? QRegExp::RegExp : QRegExp::FixedString );
+434 
+435   \textcolor{comment}{// If the search column list is populated, search just the columns}
+436   \textcolor{comment}{// specifified.  If it is empty default to searching all of the columns.}
+437 
+438   \textcolor{keyword}{const} \textcolor{keywordtype}{int} columncount = index.model()->columnCount( index );
+439   \textcolor{keywordflow}{if} ( !d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.isEmpty() ) \{
+440     \hyperlink{classQList}{QList<int>::ConstIterator} it = d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.constBegin();
+441     \textcolor{keywordflow}{for} ( ; it != d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns}.constEnd(); ++it ) \{
+442       \textcolor{keywordflow}{if} ( *it < columncount &&
+443           expression.indexIn( index.child( row, *it ).data( Qt::DisplayRole ).toString() ) >= 0 )
+444         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+445     \}
+446   \} \textcolor{keywordflow}{else} \{
+447     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < columncount; ++i) \{
+448       \textcolor{keywordflow}{if} ( expression.indexIn( index.child( row, i ).data( Qt::DisplayRole ).toString() ) >= 0 )
+449         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+450     \}
+451   \}
+452 
+453   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+454 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a0977f573dcb6455d3fd5e3e289394f50}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!keep\+Parents\+Visible@{keep\+Parents\+Visible}}
+\index{keep\+Parents\+Visible@{keep\+Parents\+Visible}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{keep\+Parents\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::keep\+Parents\+Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_a0977f573dcb6455d3fd5e3e289394f50}
+If this is true (the default) then the parents of matched items will also be shown.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_afe2c3183ded8a131e43e972987467366}{set\+Keep\+Parents\+Visible()} 
+\end{DoxySeeAlso}
+\hypertarget{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!queue\+Search@{queue\+Search}}
+\index{queue\+Search@{queue\+Search}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{queue\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::queue\+Search (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{search}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKTreeViewSearchLine_ac5b16cea6e18087ed94e29a3abde9416}
+When keys are pressed a new search string is created and a timer is activated. The most recent search is activated when this timer runs out if another key has not yet been pressed.
+
+This method makes 
+\begin{DoxyParams}{Parameters}
+{\em search} & the most recent search and starts the timer.\\
+\hline
+\end{DoxyParams}
+Together with \hyperlink{classKTreeViewSearchLine_ae5c751d7a5ba907f8222acca97ac0925}{activate\+Search()} this makes it such that searches are not started until there is a short break in the users typing.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_ae5c751d7a5ba907f8222acca97ac0925}{activate\+Search()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 577 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+578 \{
+579   d->\hyperlink{classKTreeViewSearchLine_1_1Private_a58af968b763733896e97cd2097fd1b6e}{queuedSearches}++;
+580   d->\hyperlink{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{search} = search;
+581 
+582   QTimer::singleShot( 200, \textcolor{keyword}{this}, SLOT(\hyperlink{classKTreeViewSearchLine_ae5c751d7a5ba907f8222acca97ac0925}{activateSearch}()) );
+583 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a3a275ebab6667bfe8652918794ec415e}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!regular\+Expression@{regular\+Expression}}
+\index{regular\+Expression@{regular\+Expression}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{regular\+Expression}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::regular\+Expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_a3a275ebab6667bfe8652918794ec415e}
+Returns true if the search is a regular expression search. This defaults to false.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{set\+Regular\+Expression()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 269 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+270 \{
+271   \textcolor{keywordflow}{return} d->\hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression};
+272 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a9dd82793007329e80d8bc4e10235563c}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!remove\+Tree\+View@{remove\+Tree\+View}}
+\index{remove\+Tree\+View@{remove\+Tree\+View}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{remove\+Tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::remove\+Tree\+View (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_a9dd82793007329e80d8bc4e10235563c}
+Removes a Q\+Tree\+View from the list of listviews filtered by this search line. Does nothing if {\itshape tree\+View} is 0 or is not filtered by the quick search line.
+
+\begin{DoxySeeAlso}{See Also}
+list\+Vew(), \hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{set\+Tree\+View()}, \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{add\+Tree\+View()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 317 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+318 \{
+319   \textcolor{keywordflow}{if} ( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} ) \{
+320     \textcolor{keywordtype}{int} index = d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.indexOf( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+321 
+322     \textcolor{keywordflow}{if} ( index != -1 ) \{
+323       d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.removeAt( index );
+324       d->\hyperlink{classKTreeViewSearchLine_1_1Private_a5e46c84da7f32694b6de94982fb6d53a}{checkColumns}();
+325 
+326       \hyperlink{classKTreeViewSearchLine_a7b95b3369617c600159d2f5a5ea2e203}{disconnectTreeView}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+327 
+328       setEnabled( !d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.isEmpty() );
+329     \}
+330   \}
+331 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_af89acb03898864f73c6c1f84fe7c2af5}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!search\+Columns@{search\+Columns}}
+\index{search\+Columns@{search\+Columns}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{search\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ int $>$ K\+Tree\+View\+Search\+Line\+::search\+Columns (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_af89acb03898864f73c6c1f84fe7c2af5}
+Returns the current list of columns that will be searched. If the returned list is empty all visible columns will be searched.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_acad44d3d3a453c6aadc10f054d950f12}{set\+Search\+Columns} 
+\end{DoxySeeAlso}
+
+
+Definition at line 274 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+275 \{
+276   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{canChooseColumns} )
+277     \textcolor{keywordflow}{return} d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns};
+278   \textcolor{keywordflow}{else}
+279     \textcolor{keywordflow}{return} \hyperlink{classQList}{QList<int>}();
+280 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_ad280351217308b67e8cce9f961f52104}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!search\+Options\+Changed@{search\+Options\+Changed}}
+\index{search\+Options\+Changed@{search\+Options\+Changed}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{search\+Options\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::search\+Options\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKTreeViewSearchLine_ad280351217308b67e8cce9f961f52104}
+This signal is emitted when search options have been changed. It is emitted so that users of this class can choose to save the search options to the settings. \hypertarget{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!set\+Case\+Sensitivity@{set\+Case\+Sensitivity}}
+\index{set\+Case\+Sensitivity@{set\+Case\+Sensitivity}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{set\+Case\+Sensitivity}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::set\+Case\+Sensitivity (
+\begin{DoxyParamCaption}
+\item[{Qt\+::\+Case\+Sensitivity}]{case\+Sensitivity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}
+Make the search case sensitive or case insensitive.
+
+\begin{DoxySeeAlso}{See Also}
+case\+Senstivity() 
+\end{DoxySeeAlso}
+
+
+Definition at line 365 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+366 \{
+367   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive} != caseSensitive ) \{
+368     d->\hyperlink{classKTreeViewSearchLine_1_1Private_ac529094933f7a304381f4f51831138d7}{caseSensitive} = caseSensitive;
+369     \hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+370     emit \hyperlink{classKTreeViewSearchLine_ad280351217308b67e8cce9f961f52104}{searchOptionsChanged}();
+371   \}
+372 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_afe2c3183ded8a131e43e972987467366}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!set\+Keep\+Parents\+Visible@{set\+Keep\+Parents\+Visible}}
+\index{set\+Keep\+Parents\+Visible@{set\+Keep\+Parents\+Visible}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{set\+Keep\+Parents\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::set\+Keep\+Parents\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_afe2c3183ded8a131e43e972987467366}
+When a search is active on a list that's organized into a tree view if a parent or ancesestor of an item is does not match the search then it will be hidden and as such so too will any children that match.
+
+If this is set to true (the default) then the parents of matching items will be shown.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_a51e8d818d4b5541f1d6e50552ba1cf6c}{keep\+Parents\+Visible} 
+\end{DoxySeeAlso}
+
+
+Definition at line 383 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+384 \{
+385   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}{keepParentsVisible} != visible ) \{
+386     d->\hyperlink{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}{keepParentsVisible} = visible;
+387     \hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+388   \}
+389 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!set\+Regular\+Expression@{set\+Regular\+Expression}}
+\index{set\+Regular\+Expression@{set\+Regular\+Expression}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{set\+Regular\+Expression}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::set\+Regular\+Expression (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}
+Make the search a regular expression search or not.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_a3a275ebab6667bfe8652918794ec415e}{regular\+Expression()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 374 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+375 \{
+376   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression} != value ) \{
+377     d->\hyperlink{classKTreeViewSearchLine_1_1Private_ab02ea0ecfae43ab59884906e98e1468e}{regularExpression} = value;
+378     \hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}();
+379     emit \hyperlink{classKTreeViewSearchLine_ad280351217308b67e8cce9f961f52104}{searchOptionsChanged}();
+380   \}
+381 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_acad44d3d3a453c6aadc10f054d950f12}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!set\+Search\+Columns@{set\+Search\+Columns}}
+\index{set\+Search\+Columns@{set\+Search\+Columns}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{set\+Search\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::set\+Search\+Columns (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+List}$<$ int $>$ \&}]{columns}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_acad44d3d3a453c6aadc10f054d950f12}
+Sets the list of columns to be searched. The default is to search all, visible columns which can be restored by passing {\itshape columns} as an empty list. If listviews to be filtered have different numbers or labels of columns this method has no effect.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_af89acb03898864f73c6c1f84fe7c2af5}{search\+Columns} 
+\end{DoxySeeAlso}
+
+
+Definition at line 391 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+392 \{
+393   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a4b7cae206d347905d89dff317c22a87c}{canChooseColumns} )
+394     d->\hyperlink{classKTreeViewSearchLine_1_1Private_a2e8b3ddf8c1f4a5812f863eda57188d6}{searchColumns} = columns;
+395 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!set\+Tree\+View@{set\+Tree\+View}}
+\index{set\+Tree\+View@{set\+Tree\+View}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{set\+Tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::set\+Tree\+View (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}
+Sets the Q\+Tree\+View that is filtered by this search line, replacing any previously filtered listviews. If {\itshape tree\+View} is null then the widget will be disabled.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View()}, \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{set\+Tree\+Views()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 397 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+398 \{
+399   \hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{setTreeViews}( \hyperlink{classQList}{QList<QTreeView *>}() );
+400   \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{addTreeView}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+401 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!set\+Tree\+Views@{set\+Tree\+Views}}
+\index{set\+Tree\+Views@{set\+Tree\+Views}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{set\+Tree\+Views}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::set\+Tree\+Views (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ \&}]{tree\+Views}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}
+Sets Q\+Tree\+Views that are filtered by this search line, replacing any previously filtered listviews. If {\itshape tree\+Views} is empty then the widget will be disabled.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}{tree\+Views()}, \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{add\+Tree\+View()}, \hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{set\+Tree\+View()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 403 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+404 \{
+405   \textcolor{keywordflow}{foreach} ( QTreeView* \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}, d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews} )
+406     \hyperlink{classKTreeViewSearchLine_a7b95b3369617c600159d2f5a5ea2e203}{disconnectTreeView}( treeView );
+407 
+408   d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews} = \hyperlink{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}{treeViews};
+409 
+410   \textcolor{keywordflow}{foreach} ( QTreeView* treeView, d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews} )
+411     \hyperlink{classKTreeViewSearchLine_a5ebe1beb6643386651a0bde66561c420}{connectTreeView}( treeView );
+412 
+413   d->\hyperlink{classKTreeViewSearchLine_1_1Private_a5e46c84da7f32694b6de94982fb6d53a}{checkColumns}();
+414 
+415   setEnabled( !d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.isEmpty() );
+416 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!tree\+View@{tree\+View}}
+\index{tree\+View@{tree\+View}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tree\+View $\ast$ K\+Tree\+View\+Search\+Line\+::tree\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}
+Returns the listview that is currently filtered by the search. If there are multiple listviews filtered, it returns 0.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_ad70ac8b6652c842b370c6cb1fa6ff9d5}{set\+Tree\+View()}, \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 287 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+288 \{
+289   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.count() == 1 )
+290     \textcolor{keywordflow}{return} d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews}.first();
+291   \textcolor{keywordflow}{else}
+292     \textcolor{keywordflow}{return} 0;
+293 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!tree\+Views@{tree\+Views}}
+\index{tree\+Views@{tree\+Views}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{tree\+Views}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ Q\+Tree\+View $\ast$ $>$ K\+Tree\+View\+Search\+Line\+::tree\+Views (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKTreeViewSearchLine_a0f522902ce6754fd223f7ce1814a2a94}
+Returns the list of pointers to listviews that are currently filtered by the search.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classKTreeViewSearchLine_a07e5c0f6fee577a40694f861a6a34cc2}{set\+Tree\+Views()}, \hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{add\+Tree\+View()}, \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{tree\+View()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 295 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+296 \{
+297   \textcolor{keywordflow}{return} d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews};
+298 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!update\+Search@{update\+Search}}
+\index{update\+Search@{update\+Search}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{update\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::update\+Search (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{pattern = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}
+Updates search to only make visible the items that match {\itshape pattern}. If {\itshape s} is null then the line edit's text will be used. 
+
+Definition at line 333 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+334 \{
+335   d->\hyperlink{classKTreeViewSearchLine_1_1Private_aff7b4392b7cf091307c4e62c69556929}{search} = pattern.isNull() ? text() : pattern;
+336 
+337   \textcolor{keywordflow}{foreach} ( QTreeView* \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}, d->\hyperlink{classKTreeViewSearchLine_1_1Private_a1cc9fa46d2d3b371f075b8beea071555}{treeViews} )
+338     \hyperlink{classKTreeViewSearchLine_a8645880536c6669ab2919ddce52aedf8}{updateSearch}( treeView );
+339 \}
+\end{DoxyCode}
+\hypertarget{classKTreeViewSearchLine_a0a17e83a54dd07ed391dc34f0442710f}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!update\+Search@{update\+Search}}
+\index{update\+Search@{update\+Search}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{update\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Tree\+View\+Search\+Line\+::update\+Search (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+View $\ast$}]{tree\+View}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKTreeViewSearchLine_a0a17e83a54dd07ed391dc34f0442710f}
+Updates search to only make visible appropriate items in {\itshape tree\+View}. If {\itshape tree\+View} is null then nothing is done. 
+
+Definition at line 341 of file ktreeviewsearchline.\+cpp.
+
+
+\begin{DoxyCode}
+342 \{
+343   \textcolor{keywordflow}{if} ( !\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} || !\hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->model()->rowCount() )
+344     \textcolor{keywordflow}{return};
+345 
+346 
+347   \textcolor{comment}{// If there's a selected item that is visible, make sure that it's visible}
+348   \textcolor{comment}{// when the search changes too (assuming that it still matches).}
+349 
+350   QModelIndex currentIndex = \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->currentIndex();
+351 
+352   \textcolor{keywordtype}{bool} wasUpdateEnabled = \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->updatesEnabled();
+353   \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->setUpdatesEnabled( \textcolor{keyword}{false} );
+354   \textcolor{keywordflow}{if} ( d->\hyperlink{classKTreeViewSearchLine_1_1Private_adc388c2942a71f2ef94b21ef6edd1f2f}{keepParentsVisible} )
+355     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->model()->rowCount(); ++i )
+356       d->\hyperlink{classKTreeViewSearchLine_1_1Private_aec44f42e82456b943bfb15ee78a5d3ea}{checkItemParentsVisible}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}, 
+      \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->rootIndex() );
+357   \textcolor{keywordflow}{else}
+358     d->\hyperlink{classKTreeViewSearchLine_1_1Private_ae08157a870a33a1ada866e2810ba59a3}{checkItemParentsNotVisible}( \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView} );
+359   \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->setUpdatesEnabled( wasUpdateEnabled );
+360 
+361   \textcolor{keywordflow}{if} ( currentIndex.isValid() )
+362     \hyperlink{classKTreeViewSearchLine_aeeec1dac59277de847c59fbad49d53b6}{treeView}->scrollTo( currentIndex );
+363 \}
+\end{DoxyCode}
+
+
+\subsection{Property Documentation}
+\hypertarget{classKTreeViewSearchLine_aae0f956eff2d0d6cd9d883a646a33da8}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!case\+Sensitity@{case\+Sensitity}}
+\index{case\+Sensitity@{case\+Sensitity}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{case\+Sensitity}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Case\+Sensitivity K\+Tree\+View\+Search\+Line\+::case\+Sensitity\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classKTreeViewSearchLine_aae0f956eff2d0d6cd9d883a646a33da8}
+
+
+Definition at line 42 of file ktreeviewsearchline.\+h.
+
+\hypertarget{classKTreeViewSearchLine_a51e8d818d4b5541f1d6e50552ba1cf6c}{\index{K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}!keep\+Parents\+Visible@{keep\+Parents\+Visible}}
+\index{keep\+Parents\+Visible@{keep\+Parents\+Visible}!K\+Tree\+View\+Search\+Line@{K\+Tree\+View\+Search\+Line}}
+\subsubsection[{keep\+Parents\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Tree\+View\+Search\+Line\+::keep\+Parents\+Visible\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}}\label{classKTreeViewSearchLine_a51e8d818d4b5541f1d6e50552ba1cf6c}
+
+
+Definition at line 43 of file ktreeviewsearchline.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{ktreeviewsearchline_8h}{ktreeviewsearchline.\+h}\item 
+ui/\hyperlink{ktreeviewsearchline_8cpp}{ktreeviewsearchline.\+cpp}\end{DoxyCompactItemize}

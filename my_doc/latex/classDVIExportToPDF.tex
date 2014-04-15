@@ -1,0 +1,117 @@
+\hypertarget{classDVIExportToPDF}{\section{D\+V\+I\+Export\+To\+P\+D\+F Class Reference}
+\label{classDVIExportToPDF}\index{D\+V\+I\+Export\+To\+P\+D\+F@{D\+V\+I\+Export\+To\+P\+D\+F}}
+}
+
+
+{\ttfamily \#include $<$dviexport.\+h$>$}
+
+Inheritance diagram for D\+V\+I\+Export\+To\+P\+D\+F\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDVIExportToPDF}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDVIExportToPDF_a0cdc8ca30eb105257b68c9962e803c72}{D\+V\+I\+Export\+To\+P\+D\+F} (\hyperlink{classdviRenderer}{dvi\+Renderer} \&parent, Q\+Widget $\ast$parent\+\_\+widget)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 106 of file dviexport.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDVIExportToPDF_a0cdc8ca30eb105257b68c9962e803c72}{\index{D\+V\+I\+Export\+To\+P\+D\+F@{D\+V\+I\+Export\+To\+P\+D\+F}!D\+V\+I\+Export\+To\+P\+D\+F@{D\+V\+I\+Export\+To\+P\+D\+F}}
+\index{D\+V\+I\+Export\+To\+P\+D\+F@{D\+V\+I\+Export\+To\+P\+D\+F}!D\+V\+I\+Export\+To\+P\+D\+F@{D\+V\+I\+Export\+To\+P\+D\+F}}
+\subsubsection[{D\+V\+I\+Export\+To\+P\+D\+F}]{\setlength{\rightskip}{0pt plus 5cm}D\+V\+I\+Export\+To\+P\+D\+F\+::\+D\+V\+I\+Export\+To\+P\+D\+F (
+\begin{DoxyParamCaption}
+\item[{{\bf dvi\+Renderer} \&}]{parent, }
+\item[{Q\+Widget $\ast$}]{parent\+\_\+widget}
+\end{DoxyParamCaption}
+)}}\label{classDVIExportToPDF_a0cdc8ca30eb105257b68c9962e803c72}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & is stored internally in order to inform the parent that the external process has finished. \\
+\hline
+{\em parent\+\_\+widget} & is passed to all Qt widgets. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 161 of file dviexport.\+cpp.
+
+
+\begin{DoxyCode}
+162   : \hyperlink{classDVIExport_a126208c08ed676e76ca5442da3c6ae79}{DVIExport}(parent, parent\_widget)
+163 \{
+164   \textcolor{comment}{// Neither of these should happen. Paranoia checks.}
+165   \textcolor{keywordflow}{if} (!parent.\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile})
+166     \textcolor{keywordflow}{return};
+167   \textcolor{keyword}{const} \hyperlink{classdvifile}{dvifile}& dvi = *(parent.\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile});
+168 
+169   \textcolor{keyword}{const} QFileInfo input(dvi.\hyperlink{classdvifile_a1c0fe420231e71f256b5db367b7e1178}{filename});
+170   \textcolor{keywordflow}{if} (!input.exists() || !input.isReadable())
+171     \textcolor{keywordflow}{return};
+172 
+173   \textcolor{keywordflow}{if} (KStandardDirs::findExe(\textcolor{stringliteral}{"dvipdfm"}).isEmpty()) \{
+174     emit \hyperlink{classDVIExport_af4dc2cb358975a05b15c145fbe8d4e8f}{error}(i18n(\textcolor{stringliteral}{"Okular could not locate the program 'dvipdfm' on your computer. This program is "}
+175                     \textcolor{stringliteral}{"essential for the export function to work. You can, however, convert "}
+176                     \textcolor{stringliteral}{"the DVI-file to PDF using the print function of Okular, but that will often "}
+177                     \textcolor{stringliteral}{"produce documents which print okay, but are of inferior quality if viewed in "}
+178                     \textcolor{stringliteral}{"Acrobat Reader. It may be wise to upgrade to a more recent version of your "}
+179                     \textcolor{stringliteral}{"TeX distribution which includes the 'dvipdfm' program.\(\backslash\)n"}
+180                     \textcolor{stringliteral}{"Hint to the perplexed system administrator: Okular uses the PATH environment variable 
+      "}
+181                     \textcolor{stringliteral}{"when looking for programs."}), -1);
+182     \textcolor{keywordflow}{return};
+183   \}
+184 
+185   \textcolor{comment}{// Generate a suggestion for a reasonable file name}
+186   \textcolor{keyword}{const} QString suggested\_name = dvi.\hyperlink{classdvifile_a1c0fe420231e71f256b5db367b7e1178}{filename}.left(dvi.\hyperlink{classdvifile_a1c0fe420231e71f256b5db367b7e1178}{filename}.indexOf(\textcolor{stringliteral}{"."})) + \textcolor{stringliteral}{".pdf"};
+187   \textcolor{keyword}{const} QString output\_name = KFileDialog::getSaveFileName(suggested\_name, i18n(\textcolor{stringliteral}{"*.pdf|Portable Document
+       Format (*.pdf)"}), parent\_widget, i18n(\textcolor{stringliteral}{"Export File As"}));
+188   \textcolor{keywordflow}{if} (output\_name.isEmpty())
+189     \textcolor{keywordflow}{return};
+190 
+191   \textcolor{keyword}{const} QFileInfo output(output\_name);
+192   \textcolor{keywordflow}{if} (!output.exists()) \{
+193     \textcolor{keyword}{const} \textcolor{keywordtype}{int} result =
+194       KMessageBox::warningContinueCancel(parent\_widget,
+195                                          i18n(\textcolor{stringliteral}{"The file %1\(\backslash\)nexists. Do you want to overwrite it?"}, 
+      output\_name),
+196                                          i18n(\textcolor{stringliteral}{"Overwrite File"}),
+197                                          KGuiItem( i18n(\textcolor{stringliteral}{"Overwrite"}) ));
+198     \textcolor{keywordflow}{if} (result == KMessageBox::Cancel)
+199       \textcolor{keywordflow}{return};
+200   \}
+201 
+202   \hyperlink{classDVIExport_a2ebb3589d91eea01fa9a56e6fd1b6aa8}{initialise\_progress\_dialog}(dvi.\hyperlink{classdvifile_a71577dbd82a462b855abc96be3b369c5}{total\_pages},
+203                              i18n(\textcolor{stringliteral}{"Using dvipdfm to export the file to PDF"}),
+204                              i18n(\textcolor{stringliteral}{"Okular is currently using the external program 'dvipdfm' to "}
+205                                   \textcolor{stringliteral}{"convert your DVI-file to PDF. Sometimes that can take "}
+206                                   \textcolor{stringliteral}{"a while because dvipdfm needs to generate its own bitmap fonts "}
+207                                   \textcolor{stringliteral}{"Please be patient."}),
+208                              i18n(\textcolor{stringliteral}{"Waiting for dvipdfm to finish..."}) );
+209 
+210   \hyperlink{classDVIExport_a3c0314e24108c630ce50b42d2ecfbcce}{start}(\textcolor{stringliteral}{"dvipdfm"},
+211         QStringList() << \textcolor{stringliteral}{"-o"}
+212                       << output\_name
+213                       << dvi.\hyperlink{classdvifile_a1c0fe420231e71f256b5db367b7e1178}{filename},
+214         QFileInfo(dvi.\hyperlink{classdvifile_a1c0fe420231e71f256b5db367b7e1178}{filename}).absolutePath(),
+215         i18n(\textcolor{stringliteral}{"<qt>The external program 'dvipdfm', which was used to export the file, reported an error. "}
+216              \textcolor{stringliteral}{"You might wish to look at the <strong>document info dialog</strong> which you will "}
+217              \textcolor{stringliteral}{"find in the File-Menu for a precise error report.</qt>"}));
+218 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{dviexport_8h}{dviexport.\+h}\item 
+generators/dvi/\hyperlink{dviexport_8cpp}{dviexport.\+cpp}\end{DoxyCompactItemize}

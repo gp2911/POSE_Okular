@@ -1,0 +1,126 @@
+\hypertarget{classOkular_1_1RemoveAnnotationCommand}{\section{Okular\+:\+:Remove\+Annotation\+Command Class Reference}
+\label{classOkular_1_1RemoveAnnotationCommand}\index{Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}}
+}
+
+
+{\ttfamily \#include $<$documentcommands\+\_\+p.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Remove\+Annotation\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1RemoveAnnotationCommand}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1RemoveAnnotationCommand_afae53ca780ed1b912d062d5ef6a2adaf}{Remove\+Annotation\+Command} (\hyperlink{classOkular_1_1DocumentPrivate}{Okular\+::\+Document\+Private} $\ast$doc, \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$annotation, int page\+Number)
+\item 
+virtual \hyperlink{classOkular_1_1RemoveAnnotationCommand_a9edd75f4c4ea6c339dfb25bb44182016}{$\sim$\+Remove\+Annotation\+Command} ()
+\item 
+virtual void \hyperlink{classOkular_1_1RemoveAnnotationCommand_aafc8d02122ce0ad625e28b6ed26850c9}{undo} ()
+\item 
+virtual void \hyperlink{classOkular_1_1RemoveAnnotationCommand_a7fa570db25ec3087c4b8dfa26a78708b}{redo} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 45 of file documentcommands\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1RemoveAnnotationCommand_afae53ca780ed1b912d062d5ef6a2adaf}{\index{Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}!Remove\+Annotation\+Command@{Remove\+Annotation\+Command}}
+\index{Remove\+Annotation\+Command@{Remove\+Annotation\+Command}!Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}}
+\subsubsection[{Remove\+Annotation\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Remove\+Annotation\+Command\+::\+Remove\+Annotation\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Document\+Private} $\ast$}]{doc, }
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{annotation, }
+\item[{int}]{page\+Number}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1RemoveAnnotationCommand_afae53ca780ed1b912d062d5ef6a2adaf}
+
+
+Definition at line 91 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+92  : m\_docPriv( doc ),
+93    m\_annotation( annotation ),
+94    m\_pageNumber( pageNumber ),
+95    m\_done( \textcolor{keyword}{false} )
+96 \{
+97     setText( i18nc( \textcolor{stringliteral}{"Remove an annotation from the page"}, \textcolor{stringliteral}{"remove annotation"} ) );
+98 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RemoveAnnotationCommand_a9edd75f4c4ea6c339dfb25bb44182016}{\index{Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}!````~Remove\+Annotation\+Command@{$\sim$\+Remove\+Annotation\+Command}}
+\index{````~Remove\+Annotation\+Command@{$\sim$\+Remove\+Annotation\+Command}!Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}}
+\subsubsection[{$\sim$\+Remove\+Annotation\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Remove\+Annotation\+Command\+::$\sim$\+Remove\+Annotation\+Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1RemoveAnnotationCommand_a9edd75f4c4ea6c339dfb25bb44182016}
+
+
+Definition at line 100 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+101 \{
+102     \textcolor{keywordflow}{if} ( m\_done )
+103     \{
+104         \textcolor{keyword}{delete} m\_annotation;
+105     \}
+106 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1RemoveAnnotationCommand_a7fa570db25ec3087c4b8dfa26a78708b}{\index{Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}!redo@{redo}}
+\index{redo@{redo}!Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}}
+\subsubsection[{redo}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Remove\+Annotation\+Command\+::redo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1RemoveAnnotationCommand_a7fa570db25ec3087c4b8dfa26a78708b}
+
+
+Definition at line 115 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+115                                   \{
+116     \hyperlink{namespaceOkular_a1e0f22fec5a200bd3b1835b7bfd95172}{moveViewportIfBoundingRectNotFullyVisible}( m\_annotation->
+      \hyperlink{classOkular_1_1Annotation_a450fbd08aeb31262a33a628b4ab0dd42}{boundingRectangle}(), m\_docPriv, m\_pageNumber );
+117     m\_docPriv->\hyperlink{classOkular_1_1DocumentPrivate_a52fc440677b41a7717bff1cec9593d33}{performRemovePageAnnotation}( m\_pageNumber, m\_annotation );
+118     m\_done = \textcolor{keyword}{true};
+119 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1RemoveAnnotationCommand_aafc8d02122ce0ad625e28b6ed26850c9}{\index{Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}!undo@{undo}}
+\index{undo@{undo}!Okular\+::\+Remove\+Annotation\+Command@{Okular\+::\+Remove\+Annotation\+Command}}
+\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Remove\+Annotation\+Command\+::undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1RemoveAnnotationCommand_aafc8d02122ce0ad625e28b6ed26850c9}
+
+
+Definition at line 108 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+109 \{
+110     \hyperlink{namespaceOkular_a1e0f22fec5a200bd3b1835b7bfd95172}{moveViewportIfBoundingRectNotFullyVisible}( m\_annotation->
+      \hyperlink{classOkular_1_1Annotation_a450fbd08aeb31262a33a628b4ab0dd42}{boundingRectangle}(), m\_docPriv, m\_pageNumber );
+111     m\_docPriv->\hyperlink{classOkular_1_1DocumentPrivate_a374e55b575f2386536cd438bd2338b33}{performAddPageAnnotation}( m\_pageNumber,  m\_annotation );
+112     m\_done = \textcolor{keyword}{false};
+113 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{documentcommands__p_8h}{documentcommands\+\_\+p.\+h}\item 
+core/\hyperlink{documentcommands_8cpp}{documentcommands.\+cpp}\end{DoxyCompactItemize}

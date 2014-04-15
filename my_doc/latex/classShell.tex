@@ -1,0 +1,372 @@
+\hypertarget{classShell}{\section{Shell Class Reference}
+\label{classShell}\index{Shell@{Shell}}
+}
+
+
+Application \hyperlink{classShell}{Shell}.  
+
+
+
+
+{\ttfamily \#include $<$shell.\+h$>$}
+
+Inheritance diagram for Shell\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classShell}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classShell_a119b423d292c96ce85c7bb76f17763de}{slot\+Quit} ()
+\item 
+Q\+\_\+\+S\+C\+R\+I\+P\+T\+A\+B\+L\+E Q\+\_\+\+N\+O\+R\+E\+P\+L\+Y void \hyperlink{classShell_a852473cac38370ff621a443bd01b160d}{try\+Raise} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classShell_a1cce8d294c75c214e6c49adf7f8092bb}{restore\+Document} (const K\+Config\+Group \&group)
+\item 
+void \hyperlink{classShell_a17730ee41db08e7aed9bda4699c0e333}{save\+Document\+Restore\+Info} (K\+Config\+Group \&group)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classShell_a6a764e14c2d3dba247ad7dcf57cdb966}{Shell} (K\+Cmd\+Line\+Args $\ast$args=0, int arg\+Index=-\/1)
+\item 
+virtual \hyperlink{classShell_a95f78f499b3dfd9c83f4099cf90ef3df}{$\sim$\+Shell} ()
+\item 
+Q\+Size \hyperlink{classShell_a7d578e81ff2d7dcc08e91d1f7e342010}{size\+Hint} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classShell_a254d2b914100085489b8f967c9c1fb2f}{save\+Properties} (K\+Config\+Group \&)
+\item 
+void \hyperlink{classShell_afb988ebfb213d431cc21f2e1ec10735d}{read\+Properties} (const K\+Config\+Group \&)
+\item 
+void \hyperlink{classShell_a34428d8cacb14d2f8a507e63076a319d}{read\+Settings} ()
+\item 
+void \hyperlink{classShell_a95fbb886102b4b1b16b63b9719fcb19b}{write\+Settings} ()
+\item 
+void \hyperlink{classShell_a8c1c9763fce4e6316ceac51d3184bf43}{set\+Full\+Screen} (bool)
+\item 
+bool \hyperlink{classShell_a91c67c1f178630000a95f0c0e3f4e8f6}{query\+Close} ()
+\item 
+void \hyperlink{classShell_ad8e5ea98f2f35b313175f3b306acb598}{show\+Event} (Q\+Show\+Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Application \hyperlink{classShell}{Shell}. 
+
+This is the application \char`\"{}\+Shell\char`\"{}. It has a menubar and a toolbar but relies on the \char`\"{}\+Part\char`\"{} to do all the real work.
+
+\begin{DoxyAuthor}{Author}
+Wilco Greven \href{mailto:greven@kde.org}{\tt greven@kde.\+org} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Definition at line 45 of file shell.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classShell_a6a764e14c2d3dba247ad7dcf57cdb966}{\index{Shell@{Shell}!Shell@{Shell}}
+\index{Shell@{Shell}!Shell@{Shell}}
+\subsubsection[{Shell}]{\setlength{\rightskip}{0pt plus 5cm}Shell\+::\+Shell (
+\begin{DoxyParamCaption}
+\item[{K\+Cmd\+Line\+Args $\ast$}]{args = {\ttfamily 0}, }
+\item[{int}]{arg\+Index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classShell_a6a764e14c2d3dba247ad7dcf57cdb966}
+Constructor 
+
+Definition at line 61 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+62   : \hyperlink{classKParts_1_1MainWindow}{KParts::MainWindow}(), m\_args(args), m\_menuBarWasShown(\textcolor{keyword}{true}), m\_toolBarWasShown(\textcolor{keyword}{true})
+63 \textcolor{preprocessor}{#ifdef KActivities\_FOUND}
+64     , m\_activityResource(0)
+65 \textcolor{preprocessor}{#endif}
+66 \{
+67   \textcolor{keywordflow}{if} (m\_args && argIndex != -1)
+68   \{
+69     m\_openUrl = \hyperlink{namespaceShellUtils_a6ef2e7befd7842610901b2b31e8ecb70}{ShellUtils::urlFromArg}(m\_args->arg(argIndex),
+70         \hyperlink{namespaceShellUtils_ab05242bcac02b689462792c2a31e74e5}{ShellUtils::qfileExistFunc}(), m\_args->getOption(\textcolor{stringliteral}{"page"}));
+71   \}
+72   init();
+73 \}
+\end{DoxyCode}
+\hypertarget{classShell_a95f78f499b3dfd9c83f4099cf90ef3df}{\index{Shell@{Shell}!````~Shell@{$\sim$\+Shell}}
+\index{````~Shell@{$\sim$\+Shell}!Shell@{Shell}}
+\subsubsection[{$\sim$\+Shell}]{\setlength{\rightskip}{0pt plus 5cm}Shell\+::$\sim$\+Shell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classShell_a95f78f499b3dfd9c83f4099cf90ef3df}
+Default Destructor 
+
+Definition at line 160 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+161 \{
+162     \textcolor{keywordflow}{if}( !m\_tabs.empty() )
+163     \{
+164         \hyperlink{classShell_a95fbb886102b4b1b16b63b9719fcb19b}{writeSettings}();
+165         \textcolor{keywordflow}{for}( \hyperlink{classQList}{QList<TabState>::iterator} it = m\_tabs.begin(); it != m\_tabs.end(); ++
+      it )
+166         \{
+167            it->part->closeUrl( \textcolor{keyword}{false} );
+168         \}
+169     \}
+170     \textcolor{keywordflow}{if} ( m\_args )
+171         m\_args->clear();
+172 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classShell_a91c67c1f178630000a95f0c0e3f4e8f6}{\index{Shell@{Shell}!query\+Close@{query\+Close}}
+\index{query\+Close@{query\+Close}!Shell@{Shell}}
+\subsubsection[{query\+Close}]{\setlength{\rightskip}{0pt plus 5cm}bool Shell\+::query\+Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_a91c67c1f178630000a95f0c0e3f4e8f6}
+
+
+Definition at line 447 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+448 \{
+449     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < m\_tabs.size(); ++i )
+450     \{
+451         \hyperlink{classKParts_1_1ReadWritePart}{KParts::ReadWritePart}* \textcolor{keyword}{const} part = m\_tabs[i].part;
+452 
+453         \textcolor{comment}{// To resolve confusion about multiple modified docs, switch to relevant tab}
+454         \textcolor{keywordflow}{if}( part->\hyperlink{classKParts_1_1ReadWritePart_a61acb87afb71c5cd7dcce295693e22e4}{isModified}() )
+455             setActiveTab( i );
+456 
+457         \textcolor{keywordflow}{if}( !part->\hyperlink{classKParts_1_1ReadWritePart_acdf38bc8da8b88a6ba38f9a3129d0c77}{queryClose}() )
+458            \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+459     \}
+460     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+461 \}
+\end{DoxyCode}
+\hypertarget{classShell_afb988ebfb213d431cc21f2e1ec10735d}{\index{Shell@{Shell}!read\+Properties@{read\+Properties}}
+\index{read\+Properties@{read\+Properties}!Shell@{Shell}}
+\subsubsection[{read\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::read\+Properties (
+\begin{DoxyParamCaption}
+\item[{const K\+Config\+Group \&}]{group}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_afb988ebfb213d431cc21f2e1ec10735d}
+This method is called when this app is restored. The K\+Config object points to the session management config file that was saved with \hyperlink{classShell_a254d2b914100085489b8f967c9c1fb2f}{save\+Properties} 
+
+Definition at line 306 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+307 \{
+308   \textcolor{comment}{// the 'config' object points to the session managed}
+309   \textcolor{comment}{// config file.  this function is automatically called whenever}
+310   \textcolor{comment}{// the app is being restored.  read in here whatever you wrote}
+311   \textcolor{comment}{// in 'saveProperties'}
+312     emit \hyperlink{classShell_a1cce8d294c75c214e6c49adf7f8092bb}{restoreDocument}(group);
+313 \}
+\end{DoxyCode}
+\hypertarget{classShell_a34428d8cacb14d2f8a507e63076a319d}{\index{Shell@{Shell}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!Shell@{Shell}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::read\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_a34428d8cacb14d2f8a507e63076a319d}
+
+
+Definition at line 237 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+238 \{
+239     m\_recent->loadEntries( KGlobal::config()->group( \textcolor{stringliteral}{"Recent Files"} ) );
+240     m\_recent->setEnabled( \textcolor{keyword}{true} ); \textcolor{comment}{// force enabling}
+241 
+242     \textcolor{keyword}{const} KConfigGroup group = KGlobal::config()->group( \textcolor{stringliteral}{"Desktop Entry"} );
+243     \textcolor{keywordtype}{bool} fullScreen = group.readEntry( \textcolor{stringliteral}{"FullScreen"}, \textcolor{keyword}{false} );
+244     \hyperlink{classShell_a8c1c9763fce4e6316ceac51d3184bf43}{setFullScreen}( fullScreen );
+245     
+246     \textcolor{keywordflow}{if} (fullScreen)
+247     \{
+248         m\_menuBarWasShown = group.readEntry( shouldShowMenuBarComingFromFullScreen, \textcolor{keyword}{true} );
+249         m\_toolBarWasShown = group.readEntry( shouldShowToolBarComingFromFullScreen, \textcolor{keyword}{true} );
+250     \}
+251 \}
+\end{DoxyCode}
+\hypertarget{classShell_a1cce8d294c75c214e6c49adf7f8092bb}{\index{Shell@{Shell}!restore\+Document@{restore\+Document}}
+\index{restore\+Document@{restore\+Document}!Shell@{Shell}}
+\subsubsection[{restore\+Document}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::restore\+Document (
+\begin{DoxyParamCaption}
+\item[{const K\+Config\+Group \&}]{group}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classShell_a1cce8d294c75c214e6c49adf7f8092bb}
+\hypertarget{classShell_a17730ee41db08e7aed9bda4699c0e333}{\index{Shell@{Shell}!save\+Document\+Restore\+Info@{save\+Document\+Restore\+Info}}
+\index{save\+Document\+Restore\+Info@{save\+Document\+Restore\+Info}!Shell@{Shell}}
+\subsubsection[{save\+Document\+Restore\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::save\+Document\+Restore\+Info (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Group \&}]{group}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classShell_a17730ee41db08e7aed9bda4699c0e333}
+\hypertarget{classShell_a254d2b914100085489b8f967c9c1fb2f}{\index{Shell@{Shell}!save\+Properties@{save\+Properties}}
+\index{save\+Properties@{save\+Properties}!Shell@{Shell}}
+\subsubsection[{save\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::save\+Properties (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Group \&}]{group}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_a254d2b914100085489b8f967c9c1fb2f}
+This method is called when it is time for the app to save its properties for session management purposes. 
+
+Definition at line 298 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+299 \{
+300   \textcolor{comment}{// the 'config' object points to the session managed}
+301   \textcolor{comment}{// config file.  anything you write here will be available}
+302   \textcolor{comment}{// later when this app is restored}
+303     emit \hyperlink{classShell_a17730ee41db08e7aed9bda4699c0e333}{saveDocumentRestoreInfo}(group);
+304 \}
+\end{DoxyCode}
+\hypertarget{classShell_a8c1c9763fce4e6316ceac51d3184bf43}{\index{Shell@{Shell}!set\+Full\+Screen@{set\+Full\+Screen}}
+\index{set\+Full\+Screen@{set\+Full\+Screen}!Shell@{Shell}}
+\subsubsection[{set\+Full\+Screen}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::set\+Full\+Screen (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\+Full\+Screen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_a8c1c9763fce4e6316ceac51d3184bf43}
+
+
+Definition at line 392 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+393 \{
+394     \textcolor{keywordflow}{if}( useFullScreen )
+395         setWindowState( windowState() | Qt::WindowFullScreen ); \textcolor{comment}{// set}
+396     \textcolor{keywordflow}{else}
+397         setWindowState( windowState() & ~Qt::WindowFullScreen ); \textcolor{comment}{// reset}
+398 \}
+\end{DoxyCode}
+\hypertarget{classShell_ad8e5ea98f2f35b313175f3b306acb598}{\index{Shell@{Shell}!show\+Event@{show\+Event}}
+\index{show\+Event@{show\+Event}!Shell@{Shell}}
+\subsubsection[{show\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::show\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Show\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_ad8e5ea98f2f35b313175f3b306acb598}
+
+
+Definition at line 400 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+401 \{
+402     \textcolor{keywordflow}{if} (m\_showMenuBarAction)
+403         m\_showMenuBarAction->setChecked( menuBar()->isVisible() );
+404 
+405     KParts::MainWindow::showEvent(e);
+406 \}
+\end{DoxyCode}
+\hypertarget{classShell_a7d578e81ff2d7dcc08e91d1f7e342010}{\index{Shell@{Shell}!size\+Hint@{size\+Hint}}
+\index{size\+Hint@{size\+Hint}!Shell@{Shell}}
+\subsubsection[{size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Shell\+::size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classShell_a7d578e81ff2d7dcc08e91d1f7e342010}
+
+
+Definition at line 442 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+443 \{
+444     \textcolor{keywordflow}{return} QApplication::desktop()->availableGeometry( \textcolor{keyword}{this} ).size() * 0.75;
+445 \}
+\end{DoxyCode}
+\hypertarget{classShell_a119b423d292c96ce85c7bb76f17763de}{\index{Shell@{Shell}!slot\+Quit@{slot\+Quit}}
+\index{slot\+Quit@{slot\+Quit}!Shell@{Shell}}
+\subsubsection[{slot\+Quit}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::slot\+Quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classShell_a119b423d292c96ce85c7bb76f17763de}
+
+
+Definition at line 378 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+379 \{
+380     close();
+381 \}
+\end{DoxyCode}
+\hypertarget{classShell_a852473cac38370ff621a443bd01b160d}{\index{Shell@{Shell}!try\+Raise@{try\+Raise}}
+\index{try\+Raise@{try\+Raise}!Shell@{Shell}}
+\subsubsection[{try\+Raise}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::try\+Raise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classShell_a852473cac38370ff621a443bd01b160d}
+
+
+Definition at line 383 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+384 \{
+385     \textcolor{keywordflow}{if} (m\_unique)
+386     \{
+387         KWindowSystem::forceActiveWindow( window()->effectiveWinId() );
+388     \}
+389 \}
+\end{DoxyCode}
+\hypertarget{classShell_a95fbb886102b4b1b16b63b9719fcb19b}{\index{Shell@{Shell}!write\+Settings@{write\+Settings}}
+\index{write\+Settings@{write\+Settings}!Shell@{Shell}}
+\subsubsection[{write\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}void Shell\+::write\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classShell_a95fbb886102b4b1b16b63b9719fcb19b}
+
+
+Definition at line 253 of file shell.\+cpp.
+
+
+\begin{DoxyCode}
+254 \{
+255     m\_recent->saveEntries( KGlobal::config()->group( \textcolor{stringliteral}{"Recent Files"} ) );
+256     KConfigGroup group = KGlobal::config()->group( \textcolor{stringliteral}{"Desktop Entry"} );
+257     group.writeEntry( \textcolor{stringliteral}{"FullScreen"}, m\_fullScreenAction->isChecked() );
+258     \textcolor{keywordflow}{if} (m\_fullScreenAction->isChecked())
+259     \{
+260         group.writeEntry( shouldShowMenuBarComingFromFullScreen, m\_menuBarWasShown );
+261         group.writeEntry( shouldShowToolBarComingFromFullScreen, m\_toolBarWasShown );
+262     \}
+263     KGlobal::config()->sync();
+264 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shell/\hyperlink{shell_8h}{shell.\+h}\item 
+shell/\hyperlink{shell_8cpp}{shell.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,357 @@
+\hypertarget{classBookmarkManager_1_1Private}{\section{Okular\+:\+:Bookmark\+Manager\+:\+:Private Class Reference}
+\label{classBookmarkManager_1_1Private}\index{Okular\+::\+Bookmark\+Manager\+::\+Private@{Okular\+::\+Bookmark\+Manager\+::\+Private}}
+}
+Inheritance diagram for Okular\+:\+:Bookmark\+Manager\+:\+:Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBookmarkManager_1_1Private}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBookmarkManager_1_1Private_af96bac7307a75b78d1f7b2b4b727d1c9}{Private} (\hyperlink{classOkular_1_1BookmarkManager}{Bookmark\+Manager} $\ast$qq)
+\item 
+\hyperlink{classBookmarkManager_1_1Private_a2e89b9fcb39b5ede9957e464f3e40e00}{$\sim$\+Private} ()
+\item 
+virtual Q\+String \hyperlink{classBookmarkManager_1_1Private_a9d8a29de51d3cbdd0ffe2bcca282aa33}{current\+Url} () const 
+\item 
+virtual Q\+String \hyperlink{classBookmarkManager_1_1Private_a5a2c0e82699076f1277174f11d4da435}{current\+Title} () const 
+\item 
+virtual bool \hyperlink{classBookmarkManager_1_1Private_aae70c0e4e227fb4c3c447d5557463b5f}{enable\+Option} (Bookmark\+Option option) const 
+\item 
+virtual void \hyperlink{classBookmarkManager_1_1Private_a5826a4c88f1e43102574f90ce5d8a06e}{open\+Bookmark} (const K\+Bookmark \&bm, Qt\+::\+Mouse\+Buttons, Qt\+::\+Keyboard\+Modifiers)
+\item 
+Q\+Hash$<$ K\+Url, Q\+String $>$\+::iterator \hyperlink{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{bookmark\+Find} (const K\+Url \&\hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, bool do\+Create, K\+Bookmark\+Group $\ast$result=0)
+\item 
+void \hyperlink{classBookmarkManager_1_1Private_a6e4c4ee95b1ea582207648a499e6f285}{\+\_\+o\+\_\+changed} (const Q\+String \&group\+Address, const Q\+String \&caller)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1BookmarkManager}{Bookmark\+Manager} $\ast$ \hyperlink{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{q}
+\item 
+K\+Url \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}
+\item 
+Q\+Hash$<$ int, int $>$ \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{url\+Bookmarks}
+\item 
+\hyperlink{classOkular_1_1DocumentPrivate}{Document\+Private} $\ast$ \hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}
+\item 
+Q\+String \hyperlink{classBookmarkManager_1_1Private_a9df93b157b356c3381caf65de2adeb25}{file}
+\item 
+K\+Bookmark\+Manager $\ast$ \hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}
+\item 
+Q\+Hash$<$ K\+Url, Q\+String $>$ \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{known\+Files}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 92 of file bookmarkmanager.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBookmarkManager_1_1Private_af96bac7307a75b78d1f7b2b4b727d1c9}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!Private@{Private}}
+\index{Private@{Private}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Bookmark\+Manager\+::\+Private\+::\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf Bookmark\+Manager} $\ast$}]{qq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBookmarkManager_1_1Private_af96bac7307a75b78d1f7b2b4b727d1c9}
+
+
+Definition at line 95 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+96             : KBookmarkOwner(), \hyperlink{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{q}( qq ), \hyperlink{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{document}( 0 ), \hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}( 0 )
+97         \{
+98         \}
+\end{DoxyCode}
+\hypertarget{classBookmarkManager_1_1Private_a2e89b9fcb39b5ede9957e464f3e40e00}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!````~Private@{$\sim$\+Private}}
+\index{````~Private@{$\sim$\+Private}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{$\sim$\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Bookmark\+Manager\+::\+Private\+::$\sim$\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBookmarkManager_1_1Private_a2e89b9fcb39b5ede9957e464f3e40e00}
+
+
+Definition at line 100 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+101         \{
+102             \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.clear();
+103             \textcolor{comment}{// no need to delete the manager, it's automatically done by KBookmarkManager}
+104             \textcolor{comment}{// delete manager;}
+105         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBookmarkManager_1_1Private_a6e4c4ee95b1ea582207648a499e6f285}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!\+\_\+o\+\_\+changed@{\+\_\+o\+\_\+changed}}
+\index{\+\_\+o\+\_\+changed@{\+\_\+o\+\_\+changed}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{\+\_\+o\+\_\+changed}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Bookmark\+Manager\+::\+Private\+::\+\_\+o\+\_\+changed (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{group\+Address, }
+\item[{const Q\+String \&}]{caller}
+\end{DoxyParamCaption}
+)}}\label{classBookmarkManager_1_1Private_a6e4c4ee95b1ea582207648a499e6f285}
+
+
+Definition at line 176 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+177 \{
+178     Q\_UNUSED( caller );
+179     \textcolor{keywordflow}{if} ( groupAddress.isEmpty() )
+180         \textcolor{keywordflow}{return};
+181 
+182     KUrl referurl;
+183     \textcolor{comment}{// first, try to find the bookmark group whom change notification was just received}
+184     QHash<KUrl, QString>::iterator it = \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.begin(), itEnd = 
+      \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end();
+185     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+186     \{
+187         \textcolor{keywordflow}{if} ( it.value() == groupAddress )
+188         \{
+189             referurl = it.key();
+190             \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.erase( it );
+191             \textcolor{keywordflow}{break};
+192         \}
+193     \}
+194     \textcolor{keywordflow}{if} ( !referurl.isValid() )
+195     \{
+196         \textcolor{keyword}{const} KBookmark bm = \hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->findByAddress( groupAddress );
+197         \textcolor{comment}{// better be safe than sorry}
+198         \textcolor{keywordflow}{if} ( bm.isNull() )
+199             \textcolor{keywordflow}{return};
+200         Q\_ASSERT( bm.isGroup() );
+201         referurl = urlForGroup( bm );
+202     \}
+203     Q\_ASSERT( referurl.isValid() );
+204     emit \hyperlink{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{q}->\hyperlink{classOkular_1_1BookmarkManager_af46858377e563eb8277226eb853a0608}{bookmarksChanged}( referurl );
+205     \textcolor{comment}{// case for the url representing the current document}
+206     \textcolor{comment}{// (this might happen if the same document is open in another place;}
+207     \textcolor{comment}{// in such case, make really sure to be in sync)}
+208     \textcolor{keywordflow}{if} ( referurl == \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url} )
+209     \{
+210         \textcolor{comment}{// save the old bookmarks for the current url}
+211         \textcolor{keyword}{const} QHash<int,int> oldUrlBookmarks = \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks};
+212         \textcolor{comment}{// set the same url again, so we reload the information we have about it}
+213         \hyperlink{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{q}->setUrl( referurl );
+214         \textcolor{comment}{// then notify the observers about the changes in the bookmarks}
+215         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < qMax( oldUrlBookmarks.size(), \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}.size() ); i++ )
+216         \{
+217             \textcolor{keywordtype}{bool} oldContains = oldUrlBookmarks.contains(i) && oldUrlBookmarks[i] > 0;
+218             \textcolor{keywordtype}{bool} curContains = \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}.contains(i) && 
+      \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[i] > 0;
+219 
+220             \textcolor{keywordflow}{if} ( oldContains != curContains )
+221             \{
+222                 \hyperlink{bookmarkmanager_8cpp_a213572010703f4fcbc3229b09d665d3c}{foreachObserverD}( notifyPageChanged( i, DocumentObserver::Bookmark ) );
+223             \}
+224             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( oldContains && oldUrlBookmarks[i] != \hyperlink{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{urlBookmarks}[i] )
+225             \{
+226                 \hyperlink{bookmarkmanager_8cpp_a213572010703f4fcbc3229b09d665d3c}{foreachObserverD}( notifyPageChanged( i, DocumentObserver::Bookmark ) );
+227             \}
+228 
+229         \}
+230     \}
+231     emit \hyperlink{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{q}->\hyperlink{classOkular_1_1BookmarkManager_a60926c4115be32b182913e56fd709e18}{saved}();
+232 \}
+\end{DoxyCode}
+\hypertarget{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!bookmark\+Find@{bookmark\+Find}}
+\index{bookmark\+Find@{bookmark\+Find}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{bookmark\+Find}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$ K\+Url, Q\+String $>$\+::iterator Okular\+::\+Bookmark\+Manager\+::\+Private\+::bookmark\+Find (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{bool}]{do\+Create, }
+\item[{K\+Bookmark\+Group $\ast$}]{result = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classBookmarkManager_1_1Private_ae01a437da3410e1459293530bae155de}
+
+
+Definition at line 337 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+338 \{
+339     QHash<KUrl, QString>::iterator it = \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.find( \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url} );
+340     \textcolor{keywordflow}{if} ( it == \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.end() )
+341     \{
+342         \textcolor{comment}{// if the url we want to add a new entry for is not in the hash of the}
+343         \textcolor{comment}{// known files, then first try to find the file among the top-level}
+344         \textcolor{comment}{// "folder" names}
+345         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+346         KBookmarkGroup root = \hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->root();
+347         \textcolor{keywordflow}{for} ( KBookmark bm = root.first(); !found && !bm.isNull(); bm = root.next( bm ) )
+348         \{
+349             \textcolor{keywordflow}{if} ( bm.isSeparator() || !bm.isGroup() )
+350                 \textcolor{keywordflow}{continue};
+351 
+352             KUrl tmpurl( urlForGroup( bm ) );
+353             \textcolor{keywordflow}{if} ( tmpurl == \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url} )
+354             \{
+355                 \textcolor{comment}{// got it! place it the hash of known files}
+356                 KBookmarkGroup bg = bm.toGroup();
+357                 it = \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.insert( \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, bg.address() );
+358                 found = \textcolor{keyword}{true};
+359                 \textcolor{keywordflow}{if} ( result )
+360                     *result = bg;
+361                 \textcolor{keywordflow}{break};
+362             \}
+363         \}
+364         \textcolor{keywordflow}{if} ( !found && doCreate )
+365         \{
+366             \textcolor{comment}{// folder not found :(}
+367             \textcolor{comment}{// then, in a single step create a new folder and add it in our cache :)}
+368             QString purl = \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.isLocalFile() ? \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.toLocalFile() : \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.prettyUrl();
+369             KBookmarkGroup newbg = root.createNewFolder( purl );
+370             newbg.setUrl( \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url} );
+371             it = \hyperlink{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{knownFiles}.insert( \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}, newbg.address() );
+372             \textcolor{keywordflow}{if} ( result )
+373                 *result = newbg;
+374         \}
+375     \}
+376     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( result )
+377     \{
+378         \textcolor{keyword}{const} KBookmark bm = \hyperlink{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{manager}->findByAddress( it.value() );
+379         Q\_ASSERT( bm.isGroup() );
+380         *result = bm.toGroup();
+381     \}
+382     \textcolor{keywordflow}{return} it;
+383 \}
+\end{DoxyCode}
+\hypertarget{classBookmarkManager_1_1Private_a5a2c0e82699076f1277174f11d4da435}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!current\+Title@{current\+Title}}
+\index{current\+Title@{current\+Title}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{current\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+Bookmark\+Manager\+::\+Private\+::current\+Title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBookmarkManager_1_1Private_a5a2c0e82699076f1277174f11d4da435}
+
+
+Definition at line 159 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+160 \{
+161     \textcolor{keywordflow}{return} \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.isLocalFile() ? \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.toLocalFile() : \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.prettyUrl();
+162 \}
+\end{DoxyCode}
+\hypertarget{classBookmarkManager_1_1Private_a9d8a29de51d3cbdd0ffe2bcca282aa33}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!current\+Url@{current\+Url}}
+\index{current\+Url@{current\+Url}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{current\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+Bookmark\+Manager\+::\+Private\+::current\+Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBookmarkManager_1_1Private_a9d8a29de51d3cbdd0ffe2bcca282aa33}
+
+
+Definition at line 154 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+155 \{
+156     \textcolor{keywordflow}{return} \hyperlink{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{url}.prettyUrl();
+157 \}
+\end{DoxyCode}
+\hypertarget{classBookmarkManager_1_1Private_aae70c0e4e227fb4c3c447d5557463b5f}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!enable\+Option@{enable\+Option}}
+\index{enable\+Option@{enable\+Option}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{enable\+Option}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Bookmark\+Manager\+::\+Private\+::enable\+Option (
+\begin{DoxyParamCaption}
+\item[{Bookmark\+Option}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBookmarkManager_1_1Private_aae70c0e4e227fb4c3c447d5557463b5f}
+
+
+Definition at line 164 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+165 \{
+166     Q\_UNUSED( option )
+167     return false;
+168 \}
+\end{DoxyCode}
+\hypertarget{classBookmarkManager_1_1Private_a5826a4c88f1e43102574f90ce5d8a06e}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!open\+Bookmark@{open\+Bookmark}}
+\index{open\+Bookmark@{open\+Bookmark}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{open\+Bookmark}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Bookmark\+Manager\+::\+Private\+::open\+Bookmark (
+\begin{DoxyParamCaption}
+\item[{const K\+Bookmark \&}]{bm, }
+\item[{Qt\+::\+Mouse\+Buttons}]{, }
+\item[{Qt\+::\+Keyboard\+Modifiers}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBookmarkManager_1_1Private_a5826a4c88f1e43102574f90ce5d8a06e}
+
+
+Definition at line 170 of file bookmarkmanager.\+cpp.
+
+
+\begin{DoxyCode}
+171 \{
+172     emit \hyperlink{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{q}->\hyperlink{classOkular_1_1BookmarkManager_a4141e9880af774f72d8e0616ca4a6392}{openUrl}( bm.url() );
+173 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!document@{document}}
+\index{document@{document}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document\+Private}$\ast$ Okular\+::\+Bookmark\+Manager\+::\+Private\+::document}}\label{classBookmarkManager_1_1Private_a308b94ea2abb1e9c630fc534ec403903}
+
+
+Definition at line 120 of file bookmarkmanager.\+cpp.
+
+\hypertarget{classBookmarkManager_1_1Private_a9df93b157b356c3381caf65de2adeb25}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!file@{file}}
+\index{file@{file}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+Bookmark\+Manager\+::\+Private\+::file}}\label{classBookmarkManager_1_1Private_a9df93b157b356c3381caf65de2adeb25}
+
+
+Definition at line 121 of file bookmarkmanager.\+cpp.
+
+\hypertarget{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!known\+Files@{known\+Files}}
+\index{known\+Files@{known\+Files}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{known\+Files}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$K\+Url, Q\+String$>$ Okular\+::\+Bookmark\+Manager\+::\+Private\+::known\+Files}}\label{classBookmarkManager_1_1Private_ad4ef503c3bf977fc59f04ea5c89b2968}
+
+
+Definition at line 123 of file bookmarkmanager.\+cpp.
+
+\hypertarget{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!manager@{manager}}
+\index{manager@{manager}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{manager}]{\setlength{\rightskip}{0pt plus 5cm}K\+Bookmark\+Manager$\ast$ Okular\+::\+Bookmark\+Manager\+::\+Private\+::manager}}\label{classBookmarkManager_1_1Private_a18a0825534de4ad364d428c740e3692f}
+
+
+Definition at line 122 of file bookmarkmanager.\+cpp.
+
+\hypertarget{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!q@{q}}
+\index{q@{q}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bookmark\+Manager}$\ast$ Okular\+::\+Bookmark\+Manager\+::\+Private\+::q}}\label{classBookmarkManager_1_1Private_af306f5f96c025b5b5131bdd769575cb7}
+
+
+Definition at line 117 of file bookmarkmanager.\+cpp.
+
+\hypertarget{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!url@{url}}
+\index{url@{url}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}K\+Url Okular\+::\+Bookmark\+Manager\+::\+Private\+::url}}\label{classBookmarkManager_1_1Private_a76891cf0a4b6713612876ee2eceee94d}
+
+
+Definition at line 118 of file bookmarkmanager.\+cpp.
+
+\hypertarget{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}{\index{Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}!url\+Bookmarks@{url\+Bookmarks}}
+\index{url\+Bookmarks@{url\+Bookmarks}!Bookmark\+Manager\+::\+Private@{Bookmark\+Manager\+::\+Private}}
+\subsubsection[{url\+Bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$int,int$>$ Okular\+::\+Bookmark\+Manager\+::\+Private\+::url\+Bookmarks}}\label{classBookmarkManager_1_1Private_a1c8a7ef1c0aa4ec956125cedf1cc9c04}
+
+
+Definition at line 119 of file bookmarkmanager.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{bookmarkmanager_8cpp}{bookmarkmanager.\+cpp}\end{DoxyCompactItemize}

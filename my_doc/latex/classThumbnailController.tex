@@ -1,0 +1,76 @@
+\hypertarget{classThumbnailController}{\section{Thumbnail\+Controller Class Reference}
+\label{classThumbnailController}\index{Thumbnail\+Controller@{Thumbnail\+Controller}}
+}
+
+
+A toolbar that sets \hyperlink{classThumbnailList}{Thumbnail\+List} properties when clicking on items.  
+
+
+
+
+{\ttfamily \#include $<$thumbnaillist.\+h$>$}
+
+Inheritance diagram for Thumbnail\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classThumbnailController}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classThumbnailController_a3e7a753f6d179134aaa9897371f95d12}{Thumbnail\+Controller} (Q\+Widget $\ast$parent, \hyperlink{classThumbnailList}{Thumbnail\+List} $\ast$thumbnail\+List)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A toolbar that sets \hyperlink{classThumbnailList}{Thumbnail\+List} properties when clicking on items. 
+
+This class is the small toolbar that resides in the bottom of the \hyperlink{classThumbnailsBox}{Thumbnails\+Box} container (below \hyperlink{classThumbnailList}{Thumbnail\+List} and the Search\+Line) and emits signals whenever a button is pressed. A click action results in invoking some method (or slot) in \hyperlink{classThumbnailList}{Thumbnail\+List}. 
+
+Definition at line 100 of file thumbnaillist.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classThumbnailController_a3e7a753f6d179134aaa9897371f95d12}{\index{Thumbnail\+Controller@{Thumbnail\+Controller}!Thumbnail\+Controller@{Thumbnail\+Controller}}
+\index{Thumbnail\+Controller@{Thumbnail\+Controller}!Thumbnail\+Controller@{Thumbnail\+Controller}}
+\subsubsection[{Thumbnail\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}Thumbnail\+Controller\+::\+Thumbnail\+Controller (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Thumbnail\+List} $\ast$}]{thumbnail\+List}
+\end{DoxyParamCaption}
+)}}\label{classThumbnailController_a3e7a753f6d179134aaa9897371f95d12}
+
+
+Definition at line 994 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+995     : QToolBar( parent )
+996 \{
+997     setObjectName( QLatin1String( \textcolor{stringliteral}{"ThumbsControlBar"} ) );
+998     \textcolor{comment}{// change toolbar appearance}
+999     setIconSize( QSize( 16, 16 ) );
+1000     setMovable( \textcolor{keyword}{false} );
+1001     QSizePolicy sp = sizePolicy();
+1002     sp.setVerticalPolicy( QSizePolicy::Minimum );
+1003     setSizePolicy( sp );
+1004 
+1005     \textcolor{comment}{// insert a togglebutton [show only bookmarked pages]}
+1006     \textcolor{comment}{//insertSeparator();}
+1007     QAction * showBoomarkOnlyAction = addAction(
+1008         KIcon( \textcolor{stringliteral}{"bookmarks"} ), i18n( \textcolor{stringliteral}{"Show bookmarked pages only"} ) );
+1009     showBoomarkOnlyAction->setCheckable( \textcolor{keyword}{true} );
+1010     connect( showBoomarkOnlyAction, SIGNAL(toggled(\textcolor{keywordtype}{bool})), list, SLOT(slotFilterBookmarks(\textcolor{keywordtype}{bool})) );
+1011     showBoomarkOnlyAction->setChecked( \hyperlink{classOkular_1_1Settings_ac76b4ff74c6e07ef55d076c6eaa0a030}{Okular::Settings::filterBookmarks}()
+       );
+1012     \textcolor{comment}{//insertLineSeparator();}
+1013 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{thumbnaillist_8h}{thumbnaillist.\+h}\item 
+ui/\hyperlink{thumbnaillist_8cpp}{thumbnaillist.\+cpp}\end{DoxyCompactItemize}

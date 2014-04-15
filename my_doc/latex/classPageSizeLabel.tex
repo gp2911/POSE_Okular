@@ -1,0 +1,190 @@
+\hypertarget{classPageSizeLabel}{\section{Page\+Size\+Label Class Reference}
+\label{classPageSizeLabel}\index{Page\+Size\+Label@{Page\+Size\+Label}}
+}
+
+
+A widget to display page size.  
+
+
+
+
+{\ttfamily \#include $<$pagesizelabel.\+h$>$}
+
+Inheritance diagram for Page\+Size\+Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPageSizeLabel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageSizeLabel_a7e8aa6c797efc102918e609aaee75e7a}{Page\+Size\+Label} (Q\+Widget $\ast$parent, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document)
+\item 
+\hyperlink{classPageSizeLabel_af538105f0ac576f0d8505fdf6411e02d}{$\sim$\+Page\+Size\+Label} ()
+\item 
+Q\+Widget $\ast$ \hyperlink{classPageSizeLabel_a360709d07f63423e0ede2e6572b4aaf1}{anti\+Widget} ()
+\item 
+void \hyperlink{classPageSizeLabel_a2c093e6519c7c6efa95252ab5a5c613a}{notify\+Setup} (const Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages, int setup\+Flags)
+\item 
+void \hyperlink{classPageSizeLabel_a67ef64ec40dfd0d45410ab7efa250427}{notify\+Current\+Page\+Changed} (int previous, int current)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A widget to display page size. 
+
+Definition at line 24 of file pagesizelabel.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageSizeLabel_a7e8aa6c797efc102918e609aaee75e7a}{\index{Page\+Size\+Label@{Page\+Size\+Label}!Page\+Size\+Label@{Page\+Size\+Label}}
+\index{Page\+Size\+Label@{Page\+Size\+Label}!Page\+Size\+Label@{Page\+Size\+Label}}
+\subsubsection[{Page\+Size\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Size\+Label\+::\+Page\+Size\+Label (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document}
+\end{DoxyParamCaption}
+)}}\label{classPageSizeLabel_a7e8aa6c797efc102918e609aaee75e7a}
+
+
+Definition at line 14 of file pagesizelabel.\+cpp.
+
+
+\begin{DoxyCode}
+15     : QLabel( parent ), m\_document( document ),
+16     m\_antiWidget( NULL )
+17 \{
+18 \}
+\end{DoxyCode}
+\hypertarget{classPageSizeLabel_af538105f0ac576f0d8505fdf6411e02d}{\index{Page\+Size\+Label@{Page\+Size\+Label}!````~Page\+Size\+Label@{$\sim$\+Page\+Size\+Label}}
+\index{````~Page\+Size\+Label@{$\sim$\+Page\+Size\+Label}!Page\+Size\+Label@{Page\+Size\+Label}}
+\subsubsection[{$\sim$\+Page\+Size\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Size\+Label\+::$\sim$\+Page\+Size\+Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageSizeLabel_af538105f0ac576f0d8505fdf6411e02d}
+
+
+Definition at line 20 of file pagesizelabel.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22     m\_document->\hyperlink{classOkular_1_1Document_a2d704dea2ab28c846e58443ac38841f2}{removeObserver}( \textcolor{keyword}{this} );
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageSizeLabel_a360709d07f63423e0ede2e6572b4aaf1}{\index{Page\+Size\+Label@{Page\+Size\+Label}!anti\+Widget@{anti\+Widget}}
+\index{anti\+Widget@{anti\+Widget}!Page\+Size\+Label@{Page\+Size\+Label}}
+\subsubsection[{anti\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Page\+Size\+Label\+::anti\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageSizeLabel_a360709d07f63423e0ede2e6572b4aaf1}
+
+
+Definition at line 25 of file pagesizelabel.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{if} (!m\_antiWidget)
+28     \{
+29         m\_antiWidget = \textcolor{keyword}{new} QWidget(qobject\_cast<QWidget*>(parent()));
+30         m\_antiWidget->resize(0, 0);
+31     \}
+32     \textcolor{keywordflow}{return} m\_antiWidget;
+33 \}
+\end{DoxyCode}
+\hypertarget{classPageSizeLabel_a67ef64ec40dfd0d45410ab7efa250427}{\index{Page\+Size\+Label@{Page\+Size\+Label}!notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}}
+\index{notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}!Page\+Size\+Label@{Page\+Size\+Label}}
+\subsubsection[{notify\+Current\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Size\+Label\+::notify\+Current\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{previous, }
+\item[{int}]{current}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageSizeLabel_a67ef64ec40dfd0d45410ab7efa250427}
+This method is called after the current page of the document has been entered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em previous} & The number of the previous page (is {\ttfamily -\/1} for the initial page change). \\
+\hline
+{\em current} & The number of the current page.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_ae449ca3f3f8aa7dffab61a6b723a1fd8}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 58 of file pagesizelabel.\+cpp.
+
+
+\begin{DoxyCode}
+59 \{
+60     Q\_UNUSED( previousPage )
+61 
+62     if (isVisible())
+63     \{
+64         \textcolor{comment}{// if the document is opened}
+65         \textcolor{keywordflow}{if} ( m\_document->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}() > 0 )
+66         \{
+67             setText( m\_document->\hyperlink{classOkular_1_1Document_a4dab280eb08b17c40feefe6bd2e46886}{pageSizeString}( currentPage ) );
+68             m\_antiWidget->setFixedSize( sizeHint() );
+69         \}
+70    \}
+71 \}
+\end{DoxyCode}
+\hypertarget{classPageSizeLabel_a2c093e6519c7c6efa95252ab5a5c613a}{\index{Page\+Size\+Label@{Page\+Size\+Label}!notify\+Setup@{notify\+Setup}}
+\index{notify\+Setup@{notify\+Setup}!Page\+Size\+Label@{Page\+Size\+Label}}
+\subsubsection[{notify\+Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Size\+Label\+::notify\+Setup (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages, }
+\item[{int}]{setup\+Flags}
+\end{DoxyParamCaption}
+)}}\label{classPageSizeLabel_a2c093e6519c7c6efa95252ab5a5c613a}
+
+
+Definition at line 35 of file pagesizelabel.\+cpp.
+
+
+\begin{DoxyCode}
+36 \{
+37     \textcolor{comment}{// only process data when document changes}
+38     \textcolor{keywordflow}{if} ( !( setupFlags & \hyperlink{classOkular_1_1DocumentObserver_aba00584af99894f95a9650e91f109d40ae599564392c01b22e96eff7602c4dd03}{Okular::DocumentObserver::DocumentChanged}
+       ) )
+39         \textcolor{keywordflow}{return};
+40 
+41     \textcolor{comment}{// if document is closed or all pages have size hide widget}
+42     \textcolor{keywordtype}{int} pages = pageVector.count();
+43     \textcolor{keywordflow}{if} ( pages < 1 || m\_document->allPagesSize().isValid() )
+44     \{
+45         hide();
+46         \textcolor{keywordflow}{if} ( m\_antiWidget )
+47             m\_antiWidget->hide();
+48         \textcolor{keywordflow}{return};
+49     \}
+50     \textcolor{keywordflow}{else}
+51     \{
+52         show();
+53         \textcolor{keywordflow}{if} ( m\_antiWidget )
+54             m\_antiWidget->show();
+55     \}
+56 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{pagesizelabel_8h}{pagesizelabel.\+h}\item 
+ui/\hyperlink{pagesizelabel_8cpp}{pagesizelabel.\+cpp}\end{DoxyCompactItemize}

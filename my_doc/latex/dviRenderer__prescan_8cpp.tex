@@ -1,0 +1,76 @@
+\hypertarget{dviRenderer__prescan_8cpp}{\section{generators/dvi/dvi\+Renderer\+\_\+prescan.cpp File Reference}
+\label{dviRenderer__prescan_8cpp}\index{generators/dvi/dvi\+Renderer\+\_\+prescan.\+cpp@{generators/dvi/dvi\+Renderer\+\_\+prescan.\+cpp}}
+}
+{\ttfamily \#include $<$config.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}dvi\+Renderer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dvi.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dvi\+File.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}kvs\+\_\+debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}prebookmark.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}psgs.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Te\+X\+Font.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$kmimetype.\+h$>$}\\*
+{\ttfamily \#include $<$kprocess.\+h$>$}\\*
+{\ttfamily \#include $<$Q\+Application$>$}\\*
+{\ttfamily \#include $<$Q\+Dir$>$}\\*
+{\ttfamily \#include $<$Q\+File\+Info$>$}\\*
+{\ttfamily \#include $<$Q\+Image$>$}\\*
+{\ttfamily \#include $<$Q\+Paint\+Device$>$}\\*
+{\ttfamily \#include $<$Q\+Progress\+Bar$>$}\\*
+{\ttfamily \#include $<$Q\+Text\+Stream$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dviRenderer__prescan_8cpp_af625280aa85641cf0c71ffee7d5e4519}{parse\+\_\+special\+\_\+argument} (const Q\+String \&strg, const char $\ast$argument\+\_\+name, int $\ast$variable)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Painter \hyperlink{dviRenderer__prescan_8cpp_a6362dd7615e293fa820a97a0d6c0359a}{fore\+Ground\+Paint}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{dviRenderer__prescan_8cpp_af625280aa85641cf0c71ffee7d5e4519}{\index{dvi\+Renderer\+\_\+prescan.\+cpp@{dvi\+Renderer\+\_\+prescan.\+cpp}!parse\+\_\+special\+\_\+argument@{parse\+\_\+special\+\_\+argument}}
+\index{parse\+\_\+special\+\_\+argument@{parse\+\_\+special\+\_\+argument}!dvi\+Renderer\+\_\+prescan.\+cpp@{dvi\+Renderer\+\_\+prescan.\+cpp}}
+\subsubsection[{parse\+\_\+special\+\_\+argument}]{\setlength{\rightskip}{0pt plus 5cm}void parse\+\_\+special\+\_\+argument (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{strg, }
+\item[{const char $\ast$}]{argument\+\_\+name, }
+\item[{int $\ast$}]{variable}
+\end{DoxyParamCaption}
+)}}\label{dviRenderer__prescan_8cpp_af625280aa85641cf0c71ffee7d5e4519}
+
+
+Definition at line 286 of file special.\+cpp.
+
+
+\begin{DoxyCode}
+287 \{
+288   \textcolor{keywordtype}{int} index = strg.indexOf(argument\_name);
+289   \textcolor{keywordflow}{if} (index >= 0) \{
+290     QString tmp = strg.mid(index + strlen(argument\_name));
+291     index = tmp.indexOf(\textcolor{charliteral}{' '});
+292     \textcolor{keywordflow}{if} (index >= 0)
+293       tmp.truncate(index);
+294 
+295     \textcolor{keywordtype}{bool} OK;
+296     \textcolor{keywordtype}{float} \textcolor{keyword}{const} tmp\_float = tmp.toFloat(&OK);
+297 
+298     \textcolor{keywordflow}{if} (OK)
+299       *variable = int(tmp\_float+0.5);
+300     \textcolor{keywordflow}{else}
+301       \textcolor{comment}{// Maybe we should open a dialog here.}
+302       kError(kvs::dvi) << i18n(\textcolor{stringliteral}{"Malformed parameter in the epsf special command.\(\backslash\)n"}
+303                                    \textcolor{stringliteral}{"Expected a float to follow %1 in %2"},
+304                                argument\_name, strg) << endl;
+305   \}
+306 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{dviRenderer__prescan_8cpp_a6362dd7615e293fa820a97a0d6c0359a}{\index{dvi\+Renderer\+\_\+prescan.\+cpp@{dvi\+Renderer\+\_\+prescan.\+cpp}!fore\+Ground\+Paint@{fore\+Ground\+Paint}}
+\index{fore\+Ground\+Paint@{fore\+Ground\+Paint}!dvi\+Renderer\+\_\+prescan.\+cpp@{dvi\+Renderer\+\_\+prescan.\+cpp}}
+\subsubsection[{fore\+Ground\+Paint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Painter fore\+Ground\+Paint}}\label{dviRenderer__prescan_8cpp_a6362dd7615e293fa820a97a0d6c0359a}

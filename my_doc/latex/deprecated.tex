@@ -1,0 +1,41 @@
+
+\begin{DoxyRefList}
+\item[\label{deprecated__deprecated000005}%
+\hypertarget{deprecated__deprecated000005}{}%
+Member \hyperlink{classKParts_1_1BrowserRun_a548576ed0ee79c29f1b68d16922ae6bd}{K\+Parts\+:\+:Browser\+Run\+:\+:ask\+Embed\+Or\+Save} (const K\+Url \&url, const Q\+String \&mime\+Type, const Q\+String \&suggested\+File\+Name=Q\+String(), int flags=0)]use Browser\+Open\+Or\+Save\+Question 
+\begin{DoxyCode}
+BrowserOpenOrSaveQuestion dlg(parent, url, mimeType, suggestedFileName);
+\textcolor{keyword}{const} BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave(flags);
+\textcolor{comment}{// Important: returns Embed now, not Open!}
+\end{DoxyCode}
+  
+\item[\label{deprecated__deprecated000004}%
+\hypertarget{deprecated__deprecated000004}{}%
+Member \hyperlink{classKParts_1_1BrowserRun_a240c17aac1cd740315731916f0616723}{K\+Parts\+:\+:Browser\+Run\+:\+:ask\+Save} (const K\+Url \&url, K\+Service\+::\+Ptr offer, const Q\+String \&mime\+Type, const Q\+String \&suggested\+File\+Name=Q\+String())]use Browser\+Open\+Or\+Save\+Question 
+\begin{DoxyCode}
+BrowserOpenOrSaveQuestion dlg(parent, url, mimeType, suggestedFileName);
+\textcolor{keyword}{const} BrowserOpenOrSaveQuestion::Result res = dlg.askOpenOrSave();
+\end{DoxyCode}
+  
+\item[\label{deprecated__deprecated000006}%
+\hypertarget{deprecated__deprecated000006}{}%
+Member \hyperlink{namespaceKParts_1_1ComponentFactory_a912a99f55a6cd314f0519bdc8b6b53be}{K\+Parts\+:\+:Component\+Factory\+:\+:create\+Part\+Instance\+From\+Factory} (\hyperlink{classKParts_1_1Factory}{K\+Parts\+::\+Factory} $\ast$factory, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List())]use K\+Plugin\+Factory\+::create instead 
+\item[\label{deprecated__deprecated000008}%
+\hypertarget{deprecated__deprecated000008}{}%
+Member \hyperlink{namespaceKParts_1_1ComponentFactory_aaa10d0b82f1e3de6e36eae47b8c8aa17}{K\+Parts\+:\+:Component\+Factory\+:\+:create\+Part\+Instance\+From\+Query} (const Q\+String \&mime\+Type, const Q\+String \&constraint, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List(), int $\ast$error=0)]use K\+Mime\+Type\+Trader\+::create\+Part\+Instance\+From\+Query instead 
+\item[\label{deprecated__deprecated000007}%
+\hypertarget{deprecated__deprecated000007}{}%
+Member \hyperlink{namespaceKParts_1_1ComponentFactory_a85bb410165e80f12e79a45c2e3ab39ce}{K\+Parts\+:\+:Component\+Factory\+:\+:create\+Part\+Instance\+From\+Service} (const K\+Service\+::\+Ptr \&service, Q\+Widget $\ast$parent\+Widget=0, Q\+Object $\ast$parent=0, const Q\+String\+List \&args=Q\+String\+List(), int $\ast$error=0)]use K\+Service\+::create\+Instance instead  
+\item[\label{deprecated__deprecated000009}%
+\hypertarget{deprecated__deprecated000009}{}%
+Member \hyperlink{classKParts_1_1MainWindow_ad157c37ff711ecd0784569acb2582e07}{K\+Parts\+:\+:Main\+Window\+:\+:Main\+Window} (Q\+Widget $\ast$parent, const char $\ast$name=0, Qt\+::\+Window\+Flags f=K\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+N\+D\+O\+W\+F\+L\+A\+G\+S)], remove the name argument and use set\+Object\+Name instead  
+\item[\label{deprecated__deprecated000001}%
+\hypertarget{deprecated__deprecated000001}{}%
+Member \hyperlink{classOkular_1_1TextDocumentGenerator_a68b20e4b484a9353574ce2073606f23b}{Okular\+:\+:Text\+Document\+Generator\+:\+:Text\+Document\+Generator} (Text\+Document\+Converter $\ast$converter, Q\+Object $\ast$parent, const Q\+Variant\+List \&args)]use the one with config\+Name 
+\item[\label{deprecated__deprecated000002}%
+\hypertarget{deprecated__deprecated000002}{}%
+Member \hyperlink{classOkular_1_1Utils_a63b8636c3289528b1e5922b08ee55661}{Okular\+:\+:Utils\+:\+:real\+Dpi\+X} ()]Can not work with multi-\/monitor configurations  
+\item[\label{deprecated__deprecated000003}%
+\hypertarget{deprecated__deprecated000003}{}%
+Member \hyperlink{classOkular_1_1Utils_ab04cf7a89a0de943cddc5fa5b9389cd2}{Okular\+:\+:Utils\+:\+:real\+Dpi\+Y} ()]Can not work with multi-\/monitor configurations 
+\end{DoxyRefList}

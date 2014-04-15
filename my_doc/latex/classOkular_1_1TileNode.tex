@@ -1,0 +1,157 @@
+\hypertarget{classOkular_1_1TileNode}{\section{Okular\+:\+:Tile\+Node Class Reference}
+\label{classOkular_1_1TileNode}\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+}
+
+
+{\ttfamily \#include $<$tilesmanager\+\_\+p.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TileNode_a348695ff38ca8d29cbd1bb9f72206c30}{Tile\+Node} ()
+\item 
+bool \hyperlink{classOkular_1_1TileNode_a2e8451a76338513fc71653e763d0262f}{is\+Valid} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}
+\item 
+Q\+Pixmap $\ast$ \hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation}
+\item 
+bool \hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty}
+\item 
+double \hyperlink{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}{distance}
+\item 
+\hyperlink{classOkular_1_1TileNode}{Tile\+Node} $\ast$ \hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}
+\item 
+int \hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{n\+Tiles}
+\item 
+\hyperlink{classOkular_1_1TileNode}{Tile\+Node} $\ast$ \hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Node in the quadtree structure used by the tiles manager to store tiles.
+
+Except for the first level, the tiles manager stores tiles in a quadtree structure. Each node stores the pixmap of a tile and its location on the page. There's a limit on the size of the pixmaps (T\+I\+L\+E\+S\+\_\+\+M\+A\+X\+S\+I\+Z\+E, defined in \hyperlink{tilesmanager_8cpp}{tilesmanager.\+cpp}), and tiles that are bigger than that value are split into four children tiles, which are stored as children of the original tile. If children tiles are still too big, they are recursively split again. If the zoom level changes and a big tile goes below the limit, it is merged back into a leaf tile. 
+
+Definition at line 34 of file tilesmanager\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TileNode_a348695ff38ca8d29cbd1bb9f72206c30}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!Tile\+Node@{Tile\+Node}}
+\index{Tile\+Node@{Tile\+Node}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{Tile\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Tile\+Node\+::\+Tile\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TileNode_a348695ff38ca8d29cbd1bb9f72206c30}
+
+
+Definition at line 631 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+632     : \hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}( 0 )
+633     , \hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation}( \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} )
+634     , \hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} ( \textcolor{keyword}{true} )
+635     , \hyperlink{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}{distance}( -1 )
+636     , \hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}( 0 )
+637     , \hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}( 0 )
+638     , \hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent}( 0 )
+639 \{
+640 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TileNode_a2e8451a76338513fc71653e763d0262f}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Tile\+Node\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TileNode_a2e8451a76338513fc71653e763d0262f}
+
+
+Definition at line 642 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+643 \{
+644     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} && !\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty};
+645 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!dirty@{dirty}}
+\index{dirty@{dirty}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{dirty}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Tile\+Node\+::dirty}}\label{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}
+Whether the tile needs to be repainted (after a zoom or rotation) If a tile doesn't have a pixmap but all its children are updated (dirty = false), the parent tile is also considered updated. 
+
+Definition at line 70 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!distance@{distance}}
+\index{distance@{distance}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Tile\+Node\+::distance}}\label{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}
+Distance between the tile and the viewport. This is used by the evicting algorithm. 
+
+Definition at line 76 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!n\+Tiles@{n\+Tiles}}
+\index{n\+Tiles@{n\+Tiles}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{n\+Tiles}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Tile\+Node\+::n\+Tiles}}\label{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}
+
+
+Definition at line 84 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!parent@{parent}}
+\index{parent@{parent}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+Node}$\ast$ Okular\+::\+Tile\+Node\+::parent}}\label{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}
+
+
+Definition at line 85 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!pixmap@{pixmap}}
+\index{pixmap@{pixmap}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pixmap$\ast$ Okular\+::\+Tile\+Node\+::pixmap}}\label{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}
+Associated pixmap or N\+U\+L\+L if not present
+
+For each node, it is guaranteed that there's no more than one pixmap along the path from the root to the node itself. In fact, it is very frequent that a leaf node has no pixmap and one of its ancestors has. Such a situation shows, for example, when the parent tile still has a dirty tile from a previous lower zoom level. 
+
+Definition at line 55 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!rect@{rect}}
+\index{rect@{rect}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Okular\+::\+Tile\+Node\+::rect}}\label{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}
+Location on the page in normalized coords 
+
+Definition at line 44 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!rotation@{rotation}}
+\index{rotation@{rotation}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Okular\+::\+Tile\+Node\+::rotation}}\label{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}
+Rotation of this individual tile.
+
+A rotation to the page does not immediately rotates the pixmaps in cache. This operation happens when pixmaps are going to be used. 
+
+Definition at line 63 of file tilesmanager\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{\index{Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}!tiles@{tiles}}
+\index{tiles@{tiles}!Okular\+::\+Tile\+Node@{Okular\+::\+Tile\+Node}}
+\subsubsection[{tiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+Node}$\ast$ Okular\+::\+Tile\+Node\+::tiles}}\label{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}
+Children tiles When a tile is split into multiple tiles, they're added as children. n\+Tiles can be either 0 (in leaf tiles) or 4 (in split tiles). 
+
+Definition at line 83 of file tilesmanager\+\_\+p.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{tilesmanager__p_8h}{tilesmanager\+\_\+p.\+h}\item 
+core/\hyperlink{tilesmanager_8cpp}{tilesmanager.\+cpp}\end{DoxyCompactItemize}

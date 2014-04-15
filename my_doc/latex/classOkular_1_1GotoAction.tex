@@ -1,0 +1,237 @@
+\hypertarget{classOkular_1_1GotoAction}{\section{Okular\+:\+:Goto\+Action Class Reference}
+\label{classOkular_1_1GotoAction}\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+}
+
+
+{\ttfamily \#include $<$action.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Goto\+Action\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1GotoAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1GotoAction_a65baec5f3c64a4b526650776e6fa6421}{Goto\+Action} (const Q\+String \&\hyperlink{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}{file\+Name}, const \hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \&viewport)
+\item 
+\hyperlink{classOkular_1_1GotoAction_ac4c31003ac8061fc2555e5c25412be1a}{Goto\+Action} (const Q\+String \&\hyperlink{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}{file\+Name}, const Q\+String \&named\+Destination)
+\item 
+virtual \hyperlink{classOkular_1_1GotoAction_ad670c3d223d550c579820d30cc6c08b0}{$\sim$\+Goto\+Action} ()
+\item 
+\hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47}{Action\+Type} \hyperlink{classOkular_1_1GotoAction_a5ae91d07286ee731939b4392e787443f}{action\+Type} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1GotoAction_aea68a11af6da8cb45c59a139f5bc3c15}{action\+Tip} () const 
+\item 
+bool \hyperlink{classOkular_1_1GotoAction_ace11529e3cc9ddb1f1706dd906b23f45}{is\+External} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}{file\+Name} () const 
+\item 
+\hyperlink{classOkular_1_1DocumentViewport}{Document\+Viewport} \hyperlink{classOkular_1_1GotoAction_a98c99e66d65f81da1b25004ae6c13236}{dest\+Viewport} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1GotoAction_a261f49a00494e690f18dc5a0d89ee6e1}{destination\+Name} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The Goto action changes the viewport to another page or loads an external document. 
+
+Definition at line 115 of file action.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1GotoAction_a65baec5f3c64a4b526650776e6fa6421}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!Goto\+Action@{Goto\+Action}}
+\index{Goto\+Action@{Goto\+Action}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{Goto\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Goto\+Action\+::\+Goto\+Action (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{const {\bf Document\+Viewport} \&}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1GotoAction_a65baec5f3c64a4b526650776e6fa6421}
+Creates a new goto action.
+
+{\ttfamily file\+Name} The name of an external file that shall be loaded. {\ttfamily viewport} The target viewport information of the current document. 
+
+Definition at line 84 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+85     : \hyperlink{classOkular_1_1Action}{Action}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1GotoActionPrivate}{GotoActionPrivate}( \hyperlink{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}{fileName}, viewport ) )
+86 \{
+87 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_ac4c31003ac8061fc2555e5c25412be1a}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!Goto\+Action@{Goto\+Action}}
+\index{Goto\+Action@{Goto\+Action}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{Goto\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Goto\+Action\+::\+Goto\+Action (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{const Q\+String \&}]{named\+Destination}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1GotoAction_ac4c31003ac8061fc2555e5c25412be1a}
+Creates a new goto action.
+
+{\ttfamily file\+Name} The name of an external file that shall be loaded. {\ttfamily named\+Destination} The target named destination for the target document.
+
+\begin{DoxySince}{Since}
+0.\+9 (K\+D\+E 4.\+3) 
+\end{DoxySince}
+
+
+Definition at line 89 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+90     : \hyperlink{classOkular_1_1Action}{Action}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1GotoActionPrivate}{GotoActionPrivate}( \hyperlink{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}{fileName}, namedDestination ) )
+91 \{
+92 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_ad670c3d223d550c579820d30cc6c08b0}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!````~Goto\+Action@{$\sim$\+Goto\+Action}}
+\index{````~Goto\+Action@{$\sim$\+Goto\+Action}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{$\sim$\+Goto\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Goto\+Action\+::$\sim$\+Goto\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1GotoAction_ad670c3d223d550c579820d30cc6c08b0}
+Destroys the goto action. 
+
+Definition at line 94 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+95 \{
+96 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1GotoAction_aea68a11af6da8cb45c59a139f5bc3c15}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!action\+Tip@{action\+Tip}}
+\index{action\+Tip@{action\+Tip}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{action\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Goto\+Action\+::action\+Tip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1GotoAction_aea68a11af6da8cb45c59a139f5bc3c15}
+Returns the action tip. 
+
+Reimplemented from \hyperlink{classOkular_1_1Action_a359c33818281df712da697c84975952f}{Okular\+::\+Action}.
+
+
+
+Definition at line 103 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1GotoAction}{GotoAction} );
+106     \textcolor{keywordflow}{return} d->m\_extFileName.isEmpty() ? ( d->m\_vp.isValid() ? i18n( \textcolor{stringliteral}{"Go to page %1"}, d->m\_vp.pageNumber + 1
+       ) : \textcolor{stringliteral}{""} ) :
+107                                      i18n(\textcolor{stringliteral}{"Open external file"});
+108 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_a5ae91d07286ee731939b4392e787443f}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!action\+Type@{action\+Type}}
+\index{action\+Type@{action\+Type}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{action\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action\+::\+Action\+Type} Goto\+Action\+::action\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1GotoAction_a5ae91d07286ee731939b4392e787443f}
+Returns the action type. 
+
+Implements \hyperlink{classOkular_1_1Action_ac4c2ef09b350b4041f8d1cfb261c3234}{Okular\+::\+Action}.
+
+
+
+Definition at line 98 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+99 \{
+100     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Action_abe474735af30ea76105595533df9ec47a3561c8768d2c750b59fbed36c41f336d}{Goto};
+101 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_a261f49a00494e690f18dc5a0d89ee6e1}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!destination\+Name@{destination\+Name}}
+\index{destination\+Name@{destination\+Name}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{destination\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Goto\+Action\+::destination\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1GotoAction_a261f49a00494e690f18dc5a0d89ee6e1}
+Returns the document named destination the goto action points to.
+
+\begin{DoxySince}{Since}
+0.\+9 (K\+D\+E 4.\+3) 
+\end{DoxySince}
+
+
+Definition at line 128 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+129 \{
+130     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1GotoAction}{GotoAction} );
+131     \textcolor{keywordflow}{return} d->m\_dest;
+132 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_a98c99e66d65f81da1b25004ae6c13236}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!dest\+Viewport@{dest\+Viewport}}
+\index{dest\+Viewport@{dest\+Viewport}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{dest\+Viewport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document\+Viewport} Goto\+Action\+::dest\+Viewport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1GotoAction_a98c99e66d65f81da1b25004ae6c13236}
+Returns the document viewport the goto action points to. 
+
+Definition at line 122 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+123 \{
+124     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1GotoAction}{GotoAction} );
+125     \textcolor{keywordflow}{return} d->m\_vp;
+126 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Goto\+Action\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1GotoAction_a310a286fa9e6e3cae3417d7d537274b1}
+Returns the filename of the external document. 
+
+Definition at line 116 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+117 \{
+118     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1GotoAction}{GotoAction} );
+119     \textcolor{keywordflow}{return} d->m\_extFileName;
+120 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1GotoAction_ace11529e3cc9ddb1f1706dd906b23f45}{\index{Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}!is\+External@{is\+External}}
+\index{is\+External@{is\+External}!Okular\+::\+Goto\+Action@{Okular\+::\+Goto\+Action}}
+\subsubsection[{is\+External}]{\setlength{\rightskip}{0pt plus 5cm}bool Goto\+Action\+::is\+External (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1GotoAction_ace11529e3cc9ddb1f1706dd906b23f45}
+Returns whether the goto action points to an external document. 
+
+Definition at line 110 of file action.\+cpp.
+
+
+\begin{DoxyCode}
+111 \{
+112     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1GotoAction}{GotoAction} );
+113     \textcolor{keywordflow}{return} !d->m\_extFileName.isEmpty();
+114 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{action_8h}{action.\+h}\item 
+core/\hyperlink{action_8cpp}{action.\+cpp}\end{DoxyCompactItemize}

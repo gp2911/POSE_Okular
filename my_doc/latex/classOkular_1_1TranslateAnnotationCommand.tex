@@ -1,0 +1,208 @@
+\hypertarget{classOkular_1_1TranslateAnnotationCommand}{\section{Okular\+:\+:Translate\+Annotation\+Command Class Reference}
+\label{classOkular_1_1TranslateAnnotationCommand}\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+}
+
+
+{\ttfamily \#include $<$documentcommands\+\_\+p.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Translate\+Annotation\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1TranslateAnnotationCommand}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TranslateAnnotationCommand_a6c050bf1966133d8ada48cb379467467}{Translate\+Annotation\+Command} (\hyperlink{classOkular_1_1DocumentPrivate}{Okular\+::\+Document\+Private} $\ast$doc\+Priv, \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$annotation, int page\+Number, const \hyperlink{classOkular_1_1NormalizedPoint}{Okular\+::\+Normalized\+Point} \&delta, bool complete\+Drag)
+\item 
+virtual void \hyperlink{classOkular_1_1TranslateAnnotationCommand_a59c237814c185186169297a6e9d65d97}{undo} ()
+\item 
+virtual void \hyperlink{classOkular_1_1TranslateAnnotationCommand_aab3d9984fbad79778c1e6fdbfaa760d9}{redo} ()
+\item 
+virtual int \hyperlink{classOkular_1_1TranslateAnnotationCommand_a94f5fa2fe78eb0b174c56bba536f9034}{id} () const 
+\item 
+virtual bool \hyperlink{classOkular_1_1TranslateAnnotationCommand_a08c608b44726771f15a14d754d2b03b6}{merge\+With} (const Q\+Undo\+Command $\ast$uc)
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Okular\+::\+Normalized\+Point} \hyperlink{classOkular_1_1TranslateAnnotationCommand_aa72dd06b02d8f54e358aef6749666b42}{minus\+Delta} ()
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \hyperlink{classOkular_1_1TranslateAnnotationCommand_a17f23b2efa81ea8a62a3b7e1d5040b5c}{translate\+Bounding\+Rectangle} (const \hyperlink{classOkular_1_1NormalizedPoint}{Okular\+::\+Normalized\+Point} \&delta)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 79 of file documentcommands\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_a6c050bf1966133d8ada48cb379467467}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!Translate\+Annotation\+Command@{Translate\+Annotation\+Command}}
+\index{Translate\+Annotation\+Command@{Translate\+Annotation\+Command}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{Translate\+Annotation\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Translate\+Annotation\+Command\+::\+Translate\+Annotation\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Document\+Private} $\ast$}]{doc\+Priv, }
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{annotation, }
+\item[{int}]{page\+Number, }
+\item[{const {\bf Okular\+::\+Normalized\+Point} \&}]{delta, }
+\item[{bool}]{complete\+Drag}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TranslateAnnotationCommand_a6c050bf1966133d8ada48cb379467467}
+
+
+Definition at line 150 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+155  : m\_docPriv( docPriv ),
+156    m\_annotation( annotation ),
+157    m\_pageNumber( pageNumber ),
+158    m\_delta( delta ),
+159    m\_completeDrag( completeDrag )
+160 \{
+161     setText( i18nc( \textcolor{stringliteral}{"Translate an annotation's position on the page"}, \textcolor{stringliteral}{"translate annotation"} ) );
+162 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_a94f5fa2fe78eb0b174c56bba536f9034}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!id@{id}}
+\index{id@{id}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Translate\+Annotation\+Command\+::id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TranslateAnnotationCommand_a94f5fa2fe78eb0b174c56bba536f9034}
+
+
+Definition at line 178 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+179 \{
+180     \textcolor{keywordflow}{return} 1;
+181 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_a08c608b44726771f15a14d754d2b03b6}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!merge\+With@{merge\+With}}
+\index{merge\+With@{merge\+With}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{merge\+With}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Translate\+Annotation\+Command\+::merge\+With (
+\begin{DoxyParamCaption}
+\item[{const Q\+Undo\+Command $\ast$}]{uc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TranslateAnnotationCommand_a08c608b44726771f15a14d754d2b03b6}
+
+
+Definition at line 183 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+184 \{
+185     \hyperlink{classOkular_1_1TranslateAnnotationCommand_a6c050bf1966133d8ada48cb379467467}{TranslateAnnotationCommand} *tuc = (
+      \hyperlink{classOkular_1_1TranslateAnnotationCommand_a6c050bf1966133d8ada48cb379467467}{TranslateAnnotationCommand}*)uc;
+186 
+187     \textcolor{keywordflow}{if} ( tuc->m\_annotation != m\_annotation )
+188         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+189 
+190     \textcolor{keywordflow}{if} ( m\_completeDrag )
+191     \{
+192         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+193     \}
+194     m\_delta = \hyperlink{classOkular_1_1NormalizedPoint}{Okular::NormalizedPoint}( tuc->m\_delta.x + m\_delta.
+      \hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, tuc->m\_delta.y + m\_delta.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} );
+195     m\_completeDrag = tuc->m\_completeDrag;
+196     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+197 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_aa72dd06b02d8f54e358aef6749666b42}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!minus\+Delta@{minus\+Delta}}
+\index{minus\+Delta@{minus\+Delta}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{minus\+Delta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Normalized\+Point} Okular\+::\+Translate\+Annotation\+Command\+::minus\+Delta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TranslateAnnotationCommand_aa72dd06b02d8f54e358aef6749666b42}
+
+
+Definition at line 199 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+200 \{
+201     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{Okular::NormalizedPoint}( -m\_delta.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, -m\_delta.
+      \hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} );
+202 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_aab3d9984fbad79778c1e6fdbfaa760d9}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!redo@{redo}}
+\index{redo@{redo}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{redo}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Translate\+Annotation\+Command\+::redo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TranslateAnnotationCommand_aab3d9984fbad79778c1e6fdbfaa760d9}
+
+
+Definition at line 171 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+172 \{
+173     \hyperlink{namespaceOkular_a1e0f22fec5a200bd3b1835b7bfd95172}{moveViewportIfBoundingRectNotFullyVisible}(
+      \hyperlink{classOkular_1_1TranslateAnnotationCommand_a17f23b2efa81ea8a62a3b7e1d5040b5c}{translateBoundingRectangle}( m\_delta ), m\_docPriv, m\_pageNumber );
+174     m\_annotation->\hyperlink{classOkular_1_1Annotation_ae0ef33b85b6049645b7a94fd97984d52}{translate}( m\_delta );
+175     m\_docPriv->\hyperlink{classOkular_1_1DocumentPrivate_ac6a83ec146be14eee48aa70ac02f7350}{performModifyPageAnnotation}( m\_pageNumber,  m\_annotation, \textcolor{keyword}{true} );
+176 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_a17f23b2efa81ea8a62a3b7e1d5040b5c}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!translate\+Bounding\+Rectangle@{translate\+Bounding\+Rectangle}}
+\index{translate\+Bounding\+Rectangle@{translate\+Bounding\+Rectangle}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{translate\+Bounding\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Normalized\+Rect} Okular\+::\+Translate\+Annotation\+Command\+::translate\+Bounding\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Normalized\+Point} \&}]{delta}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TranslateAnnotationCommand_a17f23b2efa81ea8a62a3b7e1d5040b5c}
+
+
+Definition at line 204 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+205 \{
+206     \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} annotBoundingRect = m\_annotation->
+      \hyperlink{classOkular_1_1Annotation_a450fbd08aeb31262a33a628b4ab0dd42}{boundingRectangle}();
+207     \textcolor{keywordtype}{double} left = qMin<double>( annotBoundingRect.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, annotBoundingRect.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} + delta.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} );
+208     \textcolor{keywordtype}{double} right = qMax<double>( annotBoundingRect.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, annotBoundingRect.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} + delta.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} );
+209     \textcolor{keywordtype}{double} top = qMin<double>( annotBoundingRect.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, annotBoundingRect.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} + delta.
+      \hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} );
+210     \textcolor{keywordtype}{double} bottom = qMax<double>( annotBoundingRect.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}, annotBoundingRect.
+      \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} + delta.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} );
+211     \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect} boundingRect( left, top, right, bottom );
+212     \textcolor{keywordflow}{return} boundingRect;
+213 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TranslateAnnotationCommand_a59c237814c185186169297a6e9d65d97}{\index{Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}!undo@{undo}}
+\index{undo@{undo}!Okular\+::\+Translate\+Annotation\+Command@{Okular\+::\+Translate\+Annotation\+Command}}
+\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Translate\+Annotation\+Command\+::undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TranslateAnnotationCommand_a59c237814c185186169297a6e9d65d97}
+
+
+Definition at line 164 of file documentcommands.\+cpp.
+
+
+\begin{DoxyCode}
+165 \{
+166     \hyperlink{namespaceOkular_a1e0f22fec5a200bd3b1835b7bfd95172}{moveViewportIfBoundingRectNotFullyVisible}(
+      \hyperlink{classOkular_1_1TranslateAnnotationCommand_a17f23b2efa81ea8a62a3b7e1d5040b5c}{translateBoundingRectangle}(  \hyperlink{classOkular_1_1TranslateAnnotationCommand_aa72dd06b02d8f54e358aef6749666b42}{minusDelta}() ), m\_docPriv, m\_pageNumber );
+167     m\_annotation->\hyperlink{classOkular_1_1Annotation_ae0ef33b85b6049645b7a94fd97984d52}{translate}( \hyperlink{classOkular_1_1TranslateAnnotationCommand_aa72dd06b02d8f54e358aef6749666b42}{minusDelta}() );
+168     m\_docPriv->\hyperlink{classOkular_1_1DocumentPrivate_ac6a83ec146be14eee48aa70ac02f7350}{performModifyPageAnnotation}( m\_pageNumber,  m\_annotation, \textcolor{keyword}{true} );
+169 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{documentcommands__p_8h}{documentcommands\+\_\+p.\+h}\item 
+core/\hyperlink{documentcommands_8cpp}{documentcommands.\+cpp}\end{DoxyCompactItemize}

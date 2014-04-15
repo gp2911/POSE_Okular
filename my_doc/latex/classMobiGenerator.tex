@@ -1,0 +1,105 @@
+\hypertarget{classMobiGenerator}{\section{Mobi\+Generator Class Reference}
+\label{classMobiGenerator}\index{Mobi\+Generator@{Mobi\+Generator}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+mobi.\+h$>$}
+
+Inheritance diagram for Mobi\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classMobiGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMobiGenerator_a83e6e0dc4aaaa80b6983c8c789ab7759}{Mobi\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+\hyperlink{classMobiGenerator_ada857de9101306dde2cf7726acbfe081}{$\sim$\+Mobi\+Generator} ()
+\item 
+void \hyperlink{classMobiGenerator_a5121681db8b40d64c87cfc184fdbbf3a}{add\+Pages} (K\+Config\+Dialog $\ast$dlg)
+\begin{DoxyCompactList}\small\item\em Does nothing by default. You need to reimplement it in your generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file generator\+\_\+mobi.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMobiGenerator_a83e6e0dc4aaaa80b6983c8c789ab7759}{\index{Mobi\+Generator@{Mobi\+Generator}!Mobi\+Generator@{Mobi\+Generator}}
+\index{Mobi\+Generator@{Mobi\+Generator}!Mobi\+Generator@{Mobi\+Generator}}
+\subsubsection[{Mobi\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Mobi\+Generator\+::\+Mobi\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classMobiGenerator_a83e6e0dc4aaaa80b6983c8c789ab7759}
+
+
+Definition at line 35 of file generator\+\_\+mobi.\+cpp.
+
+
+\begin{DoxyCode}
+36 : \hyperlink{classOkular_1_1TextDocumentGenerator}{Okular::TextDocumentGenerator}( \textcolor{keyword}{new} 
+      \hyperlink{classMobi_1_1Converter}{Mobi::Converter}, \textcolor{stringliteral}{"okular\_mobi\_generator\_settings"}, parent, args )
+37 \{
+38 \}
+\end{DoxyCode}
+\hypertarget{classMobiGenerator_ada857de9101306dde2cf7726acbfe081}{\index{Mobi\+Generator@{Mobi\+Generator}!````~Mobi\+Generator@{$\sim$\+Mobi\+Generator}}
+\index{````~Mobi\+Generator@{$\sim$\+Mobi\+Generator}!Mobi\+Generator@{Mobi\+Generator}}
+\subsubsection[{$\sim$\+Mobi\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Mobi\+Generator\+::$\sim$\+Mobi\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMobiGenerator_ada857de9101306dde2cf7726acbfe081}
+
+
+Definition at line 17 of file generator\+\_\+mobi.\+h.
+
+
+\begin{DoxyCode}
+17 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMobiGenerator_a5121681db8b40d64c87cfc184fdbbf3a}{\index{Mobi\+Generator@{Mobi\+Generator}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!Mobi\+Generator@{Mobi\+Generator}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void Mobi\+Generator\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dlg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMobiGenerator_a5121681db8b40d64c87cfc184fdbbf3a}
+
+
+Does nothing by default. You need to reimplement it in your generator. 
+
+
+
+Reimplemented from \hyperlink{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}{Okular\+::\+Text\+Document\+Generator}.
+
+
+
+Definition at line 40 of file generator\+\_\+mobi.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Okular::TextDocumentSettingsWidget} *widget = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Okular::TextDocumentSettingsWidget}();
+43 
+44     dlg->addPage( widget, \hyperlink{classOkular_1_1TextDocumentGenerator_a776f1b9f38f55fdf086e022388ee4e36}{generalSettings}(), i18n(\textcolor{stringliteral}{"Mobipocket"}), \textcolor{stringliteral}{"
+      application-x-mobipocket-ebook"}, i18n(\textcolor{stringliteral}{"Mobipocket Backend Configuration"}) );
+45 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/mobipocket/\hyperlink{generator__mobi_8h}{generator\+\_\+mobi.\+h}\item 
+generators/mobipocket/\hyperlink{generator__mobi_8cpp}{generator\+\_\+mobi.\+cpp}\end{DoxyCompactItemize}

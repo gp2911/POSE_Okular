@@ -1,0 +1,118 @@
+\hypertarget{classOkular_1_1Scripter}{\section{Okular\+:\+:Scripter Class Reference}
+\label{classOkular_1_1Scripter}\index{Okular\+::\+Scripter@{Okular\+::\+Scripter}}
+}
+
+
+{\ttfamily \#include $<$scripter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Scripter_ae3c28370795e4bf8e8300a8d3b7bf54d}{$\sim$\+Scripter} ()
+\item 
+Q\+String \hyperlink{classOkular_1_1Scripter_a9d1b55529ba63006f42f2322e9da9e18}{execute} (\hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325}{Script\+Type} type, const Q\+String \&script)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkular_1_1Scripter_a883538034e58fc5c0de7d4e4cab3cef7}{Document}
+\item 
+class \hyperlink{classOkular_1_1Scripter_ad60d3d11afe13773e689a27dbaba5d11}{Document\+Private}
+\item 
+class \hyperlink{classOkular_1_1Scripter_a016d502d2a5f11cbf0243d2376e9a1a4}{Scripter\+Private}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file scripter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1Scripter_ae3c28370795e4bf8e8300a8d3b7bf54d}{\index{Okular\+::\+Scripter@{Okular\+::\+Scripter}!````~Scripter@{$\sim$\+Scripter}}
+\index{````~Scripter@{$\sim$\+Scripter}!Okular\+::\+Scripter@{Okular\+::\+Scripter}}
+\subsubsection[{$\sim$\+Scripter}]{\setlength{\rightskip}{0pt plus 5cm}Scripter\+::$\sim$\+Scripter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Scripter_ae3c28370795e4bf8e8300a8d3b7bf54d}
+
+
+Definition at line 41 of file scripter.\+cpp.
+
+
+\begin{DoxyCode}
+42 \{
+43     \textcolor{keyword}{delete} d;
+44 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1Scripter_a9d1b55529ba63006f42f2322e9da9e18}{\index{Okular\+::\+Scripter@{Okular\+::\+Scripter}!execute@{execute}}
+\index{execute@{execute}!Okular\+::\+Scripter@{Okular\+::\+Scripter}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Scripter\+::execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Script\+Type}}]{type, }
+\item[{const Q\+String \&}]{script}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Scripter_a9d1b55529ba63006f42f2322e9da9e18}
+
+
+Definition at line 46 of file scripter.\+cpp.
+
+
+\begin{DoxyCode}
+47 \{
+48     kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"executing the script:"};
+49 \textcolor{preprocessor}{#if 0}
+50     \textcolor{keywordflow}{if} ( script.length() < 1000 )
+51         qDebug() << script;
+52     \textcolor{keywordflow}{else}
+53         qDebug() << script.left( 1000 ) << \textcolor{stringliteral}{"[...]"};
+54 \textcolor{preprocessor}{#endif}
+55     \textcolor{keywordflow}{switch} ( type )
+56     \{
+57         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_a061f34ff835b2d2142fef28bcfd09325ac61eb96a387ac39266f6eb71948796ea}{JavaScript}:
+58             \textcolor{keywordflow}{if} ( !d->\hyperlink{classOkular_1_1ScripterPrivate_a6e9f75481e8e1fe57efbffccd08a2077}{m\_kjs} )
+59             \{
+60                 d->\hyperlink{classOkular_1_1ScripterPrivate_a6e9f75481e8e1fe57efbffccd08a2077}{m\_kjs} = \textcolor{keyword}{new} \hyperlink{classOkular_1_1ExecutorKJS}{ExecutorKJS}( d->\hyperlink{classOkular_1_1ScripterPrivate_ada92eacd9472f54bfa575c84bd69db8e}{m\_doc} );
+61             \}
+62             d->\hyperlink{classOkular_1_1ScripterPrivate_a6e9f75481e8e1fe57efbffccd08a2077}{m\_kjs}->\hyperlink{classOkular_1_1ExecutorKJS_a924bb38932f94df09cc865f72413ffe6}{execute}( script );
+63             \textcolor{keywordflow}{break};
+64     \}
+65     \textcolor{keywordflow}{return} QString();
+66 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classOkular_1_1Scripter_a883538034e58fc5c0de7d4e4cab3cef7}{\index{Okular\+::\+Scripter@{Okular\+::\+Scripter}!Document@{Document}}
+\index{Document@{Document}!Okular\+::\+Scripter@{Okular\+::\+Scripter}}
+\subsubsection[{Document}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Document}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1Scripter_a883538034e58fc5c0de7d4e4cab3cef7}
+
+
+Definition at line 26 of file scripter.\+h.
+
+\hypertarget{classOkular_1_1Scripter_ad60d3d11afe13773e689a27dbaba5d11}{\index{Okular\+::\+Scripter@{Okular\+::\+Scripter}!Document\+Private@{Document\+Private}}
+\index{Document\+Private@{Document\+Private}!Okular\+::\+Scripter@{Okular\+::\+Scripter}}
+\subsubsection[{Document\+Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Document\+Private}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1Scripter_ad60d3d11afe13773e689a27dbaba5d11}
+
+
+Definition at line 27 of file scripter.\+h.
+
+\hypertarget{classOkular_1_1Scripter_a016d502d2a5f11cbf0243d2376e9a1a4}{\index{Okular\+::\+Scripter@{Okular\+::\+Scripter}!Scripter\+Private@{Scripter\+Private}}
+\index{Scripter\+Private@{Scripter\+Private}!Okular\+::\+Scripter@{Okular\+::\+Scripter}}
+\subsubsection[{Scripter\+Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Scripter\+Private}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classOkular_1_1Scripter_a016d502d2a5f11cbf0243d2376e9a1a4}
+
+
+Definition at line 35 of file scripter.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{scripter_8h}{scripter.\+h}\item 
+core/\hyperlink{scripter_8cpp}{scripter.\+cpp}\end{DoxyCompactItemize}

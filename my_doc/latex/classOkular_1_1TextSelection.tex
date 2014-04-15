@@ -1,0 +1,253 @@
+\hypertarget{classOkular_1_1TextSelection}{\section{Okular\+:\+:Text\+Selection Class Reference}
+\label{classOkular_1_1TextSelection}\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+}
+
+
+Wrapper around the information needed to generate the selection area There are two assumptions inside this class\+:  
+
+
+
+
+{\ttfamily \#include $<$misc.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTextSelection_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextSelection_ace1428a15bd991b7b0e106a75f6577a6}{Text\+Selection} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&\hyperlink{classOkular_1_1TextSelection_a267da63c1d52368f7289d4c84bff979e}{start}, const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&\hyperlink{classOkular_1_1TextSelection_a8bb728b7561aaedc7b22c073ca382539}{end})
+\item 
+\hyperlink{classOkular_1_1TextSelection_a3ff2aa22f47a11b6adbfe56d9a4001f1}{$\sim$\+Text\+Selection} ()
+\item 
+void \hyperlink{classOkular_1_1TextSelection_a8bb728b7561aaedc7b22c073ca382539}{end} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&point)
+\item 
+void \hyperlink{classOkular_1_1TextSelection_ad08b6ea009ecb7b66ec749a45456eea4}{it\+E} (int pos)
+\item 
+void \hyperlink{classOkular_1_1TextSelection_ac5e0850038239d3a053071965fa7733b}{it\+B} (int pos)
+\item 
+int \hyperlink{classOkular_1_1TextSelection_af41e7724bdf0d455205ae2c4d5378751}{direction} () const 
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1TextSelection_a267da63c1d52368f7289d4c84bff979e}{start} () const 
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1TextSelection_a8f0bfdceca5f9b8f93d0c95649d588aa}{end} () const 
+\item 
+int \hyperlink{classOkular_1_1TextSelection_a57fd041a05a30ea82da4cca2803a6794}{it\+B} () const 
+\item 
+int \hyperlink{classOkular_1_1TextSelection_ae4c699cffc468e7ff6fc4ec714e97fba}{it\+E} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper around the information needed to generate the selection area There are two assumptions inside this class\+: 
+
+
+\begin{DoxyEnumerate}
+\item the start never changes, one instance of this class is used for one selection, therefore the start of the selection will not change, only end and direction of the selection will change. By direction we mean the direction in which the end moves in relation to the start, forward selection is when end is after the start, backward when its before.
+\item The following changes might appear during selection\+: a. the end moves without changing the direction (it can move up and down but not past the start)\+: only it\+E will be updated b. the end moves with changing the direction then it\+B becomes it\+E if the previous direction was forward or it\+E becomes it\+B
+\item Internally it that is related to the start cursor is always at it\mbox{[}0\mbox{]} while it related to end is it\mbox{[}1\mbox{]}, transition between meanings (it\+B/it\+E) is done with dir modifier; 
+\end{DoxyEnumerate}
+
+Definition at line 36 of file misc.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextSelection_ace1428a15bd991b7b0e106a75f6577a6}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!Text\+Selection@{Text\+Selection}}
+\index{Text\+Selection@{Text\+Selection}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{Text\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Selection\+::\+Text\+Selection (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{start, }
+\item[{const {\bf Normalized\+Point} \&}]{end}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextSelection_ace1428a15bd991b7b0e106a75f6577a6}
+Creates a new text selection with the given {\ttfamily start} and {\ttfamily end} point. 
+
+Definition at line 26 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+27     : d( \textcolor{keyword}{new} Private )
+28 \{
+29     \textcolor{keywordflow}{if} (b.y-a.y<0 || (b.y-a.y==0 && b.x-a.x <0))
+30         d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} = 1;
+31     \textcolor{keywordflow}{else}
+32         d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} = 0;
+33 
+34     d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[0] = a;
+35     d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[1] = b;
+36     d->\hyperlink{classTextSelection_1_1Private_a6799836d63bfdf108cf1c52f1cf53933}{it}[d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} % 2] = -1;
+37     d->\hyperlink{classTextSelection_1_1Private_a6799836d63bfdf108cf1c52f1cf53933}{it}[(d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} + 1) % 2] = -1;
+38 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_a3ff2aa22f47a11b6adbfe56d9a4001f1}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!````~Text\+Selection@{$\sim$\+Text\+Selection}}
+\index{````~Text\+Selection@{$\sim$\+Text\+Selection}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{$\sim$\+Text\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Selection\+::$\sim$\+Text\+Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextSelection_a3ff2aa22f47a11b6adbfe56d9a4001f1}
+Destroys the text selection. 
+
+Definition at line 40 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     \textcolor{keyword}{delete} d;
+43 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextSelection_af41e7724bdf0d455205ae2c4d5378751}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!direction@{direction}}
+\index{direction@{direction}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Selection\+::direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextSelection_af41e7724bdf0d455205ae2c4d5378751}
+Returns the direction of the selection. 
+
+Definition at line 66 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction};
+69 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_a8bb728b7561aaedc7b22c073ca382539}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!end@{end}}
+\index{end@{end}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Selection\+::end (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{point}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextSelection_a8bb728b7561aaedc7b22c073ca382539}
+Changes the end point of the selection to the given {\ttfamily point}. 
+
+Definition at line 45 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47   \textcolor{comment}{// changing direction as in 2b , assuming the bool->int conversion is correct}
+48   \textcolor{keywordtype}{int} dir1 = d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction};
+49   d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} = (p.y - d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[0].\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} < 0 || (p.y - d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[0].\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} == 0 && p.x - d->
+      \hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[0].\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} < 0));
+50   \textcolor{keywordflow}{if} (d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} != dir1)
+51     kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"changing direction in selection"};
+52 
+53   d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[1] = p;
+54 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_a8f0bfdceca5f9b8f93d0c95649d588aa}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!end@{end}}
+\index{end@{end}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Text\+Selection\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextSelection_a8f0bfdceca5f9b8f93d0c95649d588aa}
+Returns the end point of the selection. 
+
+Definition at line 76 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keywordflow}{return} d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[(d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} + 1) % 2];
+79 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_ac5e0850038239d3a053071965fa7733b}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!it\+B@{it\+B}}
+\index{it\+B@{it\+B}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{it\+B}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Selection\+::it\+B (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextSelection_ac5e0850038239d3a053071965fa7733b}
+
+
+Definition at line 61 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{
+63     d->\hyperlink{classTextSelection_1_1Private_a6799836d63bfdf108cf1c52f1cf53933}{it}[(d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction}) % 2] = p;
+64 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_a57fd041a05a30ea82da4cca2803a6794}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!it\+B@{it\+B}}
+\index{it\+B@{it\+B}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{it\+B}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Selection\+::it\+B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextSelection_a57fd041a05a30ea82da4cca2803a6794}
+
+
+Definition at line 81 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+82 \{
+83     \textcolor{keywordflow}{return} d->\hyperlink{classTextSelection_1_1Private_a6799836d63bfdf108cf1c52f1cf53933}{it}[d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} % 2];
+84 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_ad08b6ea009ecb7b66ec749a45456eea4}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!it\+E@{it\+E}}
+\index{it\+E@{it\+E}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{it\+E}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Selection\+::it\+E (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextSelection_ad08b6ea009ecb7b66ec749a45456eea4}
+
+
+Definition at line 56 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+57 \{
+58     d->\hyperlink{classTextSelection_1_1Private_a6799836d63bfdf108cf1c52f1cf53933}{it}[(d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} + 1) % 2] = p;
+59 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_ae4c699cffc468e7ff6fc4ec714e97fba}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!it\+E@{it\+E}}
+\index{it\+E@{it\+E}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{it\+E}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Selection\+::it\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextSelection_ae4c699cffc468e7ff6fc4ec714e97fba}
+
+
+Definition at line 86 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+87 \{
+88     \textcolor{keywordflow}{return} d->\hyperlink{classTextSelection_1_1Private_a6799836d63bfdf108cf1c52f1cf53933}{it}[(d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} + 1) % 2];
+89 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextSelection_a267da63c1d52368f7289d4c84bff979e}{\index{Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}!start@{start}}
+\index{start@{start}!Okular\+::\+Text\+Selection@{Okular\+::\+Text\+Selection}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Text\+Selection\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextSelection_a267da63c1d52368f7289d4c84bff979e}
+Returns the start point of the selection. 
+
+Definition at line 71 of file misc.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordflow}{return} d->\hyperlink{classTextSelection_1_1Private_afce96f4d37bf8b8846242be404eff4ef}{cur}[d->\hyperlink{classTextSelection_1_1Private_a66ca75a24063e09202470d53637479d4}{direction} % 2];
+74 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{misc_8h}{misc.\+h}\item 
+core/\hyperlink{misc_8cpp}{misc.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\hypertarget{generator__ghostview_8cpp}{\section{generators/spectre/generator\+\_\+ghostview.cpp File Reference}
+\label{generator__ghostview_8cpp}\index{generators/spectre/generator\+\_\+ghostview.\+cpp@{generators/spectre/generator\+\_\+ghostview.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}generator\+\_\+ghostview.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$qfile.\+h$>$}\\*
+{\ttfamily \#include $<$qpainter.\+h$>$}\\*
+{\ttfamily \#include $<$qpixmap.\+h$>$}\\*
+{\ttfamily \#include $<$qsize.\+h$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Printer$>$}\\*
+{\ttfamily \#include $<$kaboutdata.\+h$>$}\\*
+{\ttfamily \#include $<$kconfigdialog.\+h$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$kmimetype.\+h$>$}\\*
+{\ttfamily \#include $<$ktemporaryfile.\+h$>$}\\*
+{\ttfamily \#include $<$core/document.\+h$>$}\\*
+{\ttfamily \#include $<$core/page.\+h$>$}\\*
+{\ttfamily \#include $<$core/fileprinter.\+h$>$}\\*
+{\ttfamily \#include $<$core/utils.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}ui\+\_\+gssettingswidget.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gssettings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rendererthread.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}generator\+\_\+ghostview.\+moc\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{generator__ghostview_8cpp_acb0d59c7215bd6dbfc06df3c15723d63}{S\+E\+T\+\_\+\+H\+I\+N\+T}(hintname, hintdefvalue, hintvar)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{generator__ghostview_8cpp_acb0d59c7215bd6dbfc06df3c15723d63}{\index{generator\+\_\+ghostview.\+cpp@{generator\+\_\+ghostview.\+cpp}!S\+E\+T\+\_\+\+H\+I\+N\+T@{S\+E\+T\+\_\+\+H\+I\+N\+T}}
+\index{S\+E\+T\+\_\+\+H\+I\+N\+T@{S\+E\+T\+\_\+\+H\+I\+N\+T}!generator\+\_\+ghostview.\+cpp@{generator\+\_\+ghostview.\+cpp}}
+\subsubsection[{S\+E\+T\+\_\+\+H\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+H\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{hintname, }
+\item[{}]{hintdefvalue, }
+\item[{}]{hintvar}
+\end{DoxyParamCaption}
+)}}\label{generator__ghostview_8cpp_acb0d59c7215bd6dbfc06df3c15723d63}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+    bool newhint = documentMetaData(hintname, hintdefvalue).toBool(); \(\backslash\)
+    if (newhint != cache\_##hintvar) \(\backslash\)
+    \{ \(\backslash\)
+        cache\_##hintvar = newhint; \(\backslash\)
+        changed = \textcolor{keyword}{true}; \(\backslash\)
+    \} \(\backslash\)
+\}
+\end{DoxyCode}

@@ -1,0 +1,96 @@
+\hypertarget{classOkular_1_1JSDocument}{\section{Okular\+:\+:J\+S\+Document Class Reference}
+\label{classOkular_1_1JSDocument}\index{Okular\+::\+J\+S\+Document@{Okular\+::\+J\+S\+Document}}
+}
+
+
+{\ttfamily \#include $<$kjs\+\_\+document\+\_\+p.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classOkular_1_1JSDocument_ae92be5dbec2b428add0d7a7f4ddea8a4}{init\+Type} (K\+J\+S\+Context $\ast$ctx)
+\item 
+static K\+J\+S\+Global\+Object \hyperlink{classOkular_1_1JSDocument_a5b8bec0c48be01d9cd25561b09067074}{wrap\+Document} (\hyperlink{classOkular_1_1DocumentPrivate}{Document\+Private} $\ast$doc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file kjs\+\_\+document\+\_\+p.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1JSDocument_ae92be5dbec2b428add0d7a7f4ddea8a4}{\index{Okular\+::\+J\+S\+Document@{Okular\+::\+J\+S\+Document}!init\+Type@{init\+Type}}
+\index{init\+Type@{init\+Type}!Okular\+::\+J\+S\+Document@{Okular\+::\+J\+S\+Document}}
+\subsubsection[{init\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void J\+S\+Document\+::init\+Type (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSDocument_ae92be5dbec2b428add0d7a7f4ddea8a4}
+
+
+Definition at line 247 of file kjs\+\_\+document.\+cpp.
+
+
+\begin{DoxyCode}
+248 \{
+249     assert( g\_docProto );
+250 
+251     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} initialized = \textcolor{keyword}{false};
+252     \textcolor{keywordflow}{if} ( initialized )
+253         \textcolor{keywordflow}{return};
+254     initialized = \textcolor{keyword}{true};
+255 
+256     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"numPages"}, docGetNumPages );
+257     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"pageNum"}, docGetPageNum, docSetPageNum );
+258     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"documentFileName"}, docGetDocumentFileName );
+259     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"filesize"}, docGetFilesize );
+260     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"path"}, docGetPath );
+261     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"URL"}, docGetURL );
+262     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"permStatusReady"}, docGetPermStatusReady );
+263     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"dataObjects"}, docGetDataObjects );
+264     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"external"}, docGetExternal );
+265 
+266     \textcolor{comment}{// info properties}
+267     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"info"}, docGetInfo );
+268     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"author"}, docGetAuthor );
+269     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"creator"}, docGetCreator );
+270     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"keywords"}, docGetKeywords );
+271     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"producer"}, docGetProducer );
+272     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"title"}, docGetTitle );
+273     g\_docProto->defineProperty( ctx, \textcolor{stringliteral}{"subject"}, docGetSubject );
+274 
+275     g\_docProto->defineFunction( ctx, \textcolor{stringliteral}{"getField"}, docGetField );
+276     g\_docProto->defineFunction( ctx, \textcolor{stringliteral}{"getPageLabel"}, docGetPageLabel );
+277     g\_docProto->defineFunction( ctx, \textcolor{stringliteral}{"getPageRotation"}, docGetPageRotation );
+278     g\_docProto->defineFunction( ctx, \textcolor{stringliteral}{"gotoNamedDest"}, docGotoNamedDest );
+279     g\_docProto->defineFunction( ctx, \textcolor{stringliteral}{"syncAnnotScan"}, docSyncAnnotScan );
+280 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1JSDocument_a5b8bec0c48be01d9cd25561b09067074}{\index{Okular\+::\+J\+S\+Document@{Okular\+::\+J\+S\+Document}!wrap\+Document@{wrap\+Document}}
+\index{wrap\+Document@{wrap\+Document}!Okular\+::\+J\+S\+Document@{Okular\+::\+J\+S\+Document}}
+\subsubsection[{wrap\+Document}]{\setlength{\rightskip}{0pt plus 5cm}K\+J\+S\+Global\+Object J\+S\+Document\+::wrap\+Document (
+\begin{DoxyParamCaption}
+\item[{{\bf Document\+Private} $\ast$}]{doc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSDocument_a5b8bec0c48be01d9cd25561b09067074}
+
+
+Definition at line 282 of file kjs\+\_\+document.\+cpp.
+
+
+\begin{DoxyCode}
+283 \{
+284     \textcolor{keywordflow}{if} ( !g\_docProto )
+285         g\_docProto = \textcolor{keyword}{new} KJSPrototype();
+286     \textcolor{keywordflow}{return} g\_docProto->constructGlobalObject( doc );
+287 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/script/\hyperlink{kjs__document__p_8h}{kjs\+\_\+document\+\_\+p.\+h}\item 
+core/script/\hyperlink{kjs__document_8cpp}{kjs\+\_\+document.\+cpp}\end{DoxyCompactItemize}

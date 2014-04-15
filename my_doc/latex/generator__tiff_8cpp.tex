@@ -1,0 +1,210 @@
+\hypertarget{generator__tiff_8cpp}{\section{generators/tiff/generator\+\_\+tiff.cpp File Reference}
+\label{generator__tiff_8cpp}\index{generators/tiff/generator\+\_\+tiff.\+cpp@{generators/tiff/generator\+\_\+tiff.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}generator\+\_\+tiff.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$qbuffer.\+h$>$}\\*
+{\ttfamily \#include $<$qdatetime.\+h$>$}\\*
+{\ttfamily \#include $<$qfile.\+h$>$}\\*
+{\ttfamily \#include $<$qfileinfo.\+h$>$}\\*
+{\ttfamily \#include $<$qimage.\+h$>$}\\*
+{\ttfamily \#include $<$qlist.\+h$>$}\\*
+{\ttfamily \#include $<$qpainter.\+h$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Printer$>$}\\*
+{\ttfamily \#include $<$kaboutdata.\+h$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$kglobal.\+h$>$}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$core/document.\+h$>$}\\*
+{\ttfamily \#include $<$core/page.\+h$>$}\\*
+{\ttfamily \#include $<$core/fileprinter.\+h$>$}\\*
+{\ttfamily \#include $<$core/utils.\+h$>$}\\*
+{\ttfamily \#include $<$tiff.\+h$>$}\\*
+{\ttfamily \#include $<$tiffio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}generator\+\_\+tiff.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTIFFGenerator_1_1Private}{T\+I\+F\+F\+Generator\+::\+Private}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{generator__tiff_8cpp_af7bb191952f35bdc0ca779ad2d0391fa}{Tiff\+Debug}~4714
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tsize\+\_\+t \hyperlink{generator__tiff_8cpp_aad2e71f2082c46fa303090ac01bbccf0}{okular\+\_\+tiff\+Read\+Proc} (thandle\+\_\+t handle, tdata\+\_\+t buf, tsize\+\_\+t \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size})
+\item 
+tsize\+\_\+t \hyperlink{generator__tiff_8cpp_aac5ebdd91991967ee03eeda816462b39}{okular\+\_\+tiff\+Write\+Proc} (thandle\+\_\+t handle, tdata\+\_\+t buf, tsize\+\_\+t \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size})
+\item 
+toff\+\_\+t \hyperlink{generator__tiff_8cpp_a497acad3cdb833c4301aeb9eeb257838}{okular\+\_\+tiff\+Seek\+Proc} (thandle\+\_\+t handle, toff\+\_\+t offset, int whence)
+\item 
+int \hyperlink{generator__tiff_8cpp_ab93c12879d0dfe3d09d547ca7af6b4dd}{okular\+\_\+tiff\+Close\+Proc} (thandle\+\_\+t handle)
+\item 
+toff\+\_\+t \hyperlink{generator__tiff_8cpp_a4fdaf6909f12e9a83102c96c02307319}{okular\+\_\+tiff\+Size\+Proc} (thandle\+\_\+t handle)
+\item 
+int \hyperlink{generator__tiff_8cpp_a0a052daa66788da702a5e87e9d9efc90}{okular\+\_\+tiff\+Map\+Proc} (thandle\+\_\+t, tdata\+\_\+t $\ast$, toff\+\_\+t $\ast$)
+\item 
+void \hyperlink{generator__tiff_8cpp_a4b4947e30d6fc0472fce0c91286ea6df}{okular\+\_\+tiff\+Unmap\+Proc} (thandle\+\_\+t, tdata\+\_\+t, toff\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{generator__tiff_8cpp_af7bb191952f35bdc0ca779ad2d0391fa}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!Tiff\+Debug@{Tiff\+Debug}}
+\index{Tiff\+Debug@{Tiff\+Debug}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{Tiff\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}\#define Tiff\+Debug~4714}}\label{generator__tiff_8cpp_af7bb191952f35bdc0ca779ad2d0391fa}
+
+
+Definition at line 34 of file generator\+\_\+tiff.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{generator__tiff_8cpp_ab93c12879d0dfe3d09d547ca7af6b4dd}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Close\+Proc@{okular\+\_\+tiff\+Close\+Proc}}
+\index{okular\+\_\+tiff\+Close\+Proc@{okular\+\_\+tiff\+Close\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Close\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}int okular\+\_\+tiff\+Close\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{handle}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_ab93c12879d0dfe3d09d547ca7af6b4dd}
+
+
+Definition at line 67 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+68 \{
+69     Q\_UNUSED( handle )
+70     return 0;
+71 \}
+\end{DoxyCode}
+\hypertarget{generator__tiff_8cpp_a0a052daa66788da702a5e87e9d9efc90}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Map\+Proc@{okular\+\_\+tiff\+Map\+Proc}}
+\index{okular\+\_\+tiff\+Map\+Proc@{okular\+\_\+tiff\+Map\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Map\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}int okular\+\_\+tiff\+Map\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{, }
+\item[{tdata\+\_\+t $\ast$}]{, }
+\item[{toff\+\_\+t $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_a0a052daa66788da702a5e87e9d9efc90}
+
+
+Definition at line 79 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{return} 0;
+82 \}
+\end{DoxyCode}
+\hypertarget{generator__tiff_8cpp_aad2e71f2082c46fa303090ac01bbccf0}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Read\+Proc@{okular\+\_\+tiff\+Read\+Proc}}
+\index{okular\+\_\+tiff\+Read\+Proc@{okular\+\_\+tiff\+Read\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Read\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}tsize\+\_\+t okular\+\_\+tiff\+Read\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{handle, }
+\item[{tdata\+\_\+t}]{buf, }
+\item[{tsize\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_aad2e71f2082c46fa303090ac01bbccf0}
+
+
+Definition at line 36 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{
+38     QIODevice * device = \textcolor{keyword}{static\_cast<} QIODevice * \textcolor{keyword}{>}( handle );
+39     \textcolor{keywordflow}{return} device->isReadable() ? device->read( static\_cast< char * >( buf ), 
+      \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} ) : -1;
+40 \}
+\end{DoxyCode}
+\hypertarget{generator__tiff_8cpp_a497acad3cdb833c4301aeb9eeb257838}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Seek\+Proc@{okular\+\_\+tiff\+Seek\+Proc}}
+\index{okular\+\_\+tiff\+Seek\+Proc@{okular\+\_\+tiff\+Seek\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Seek\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}toff\+\_\+t okular\+\_\+tiff\+Seek\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{handle, }
+\item[{toff\+\_\+t}]{offset, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_a497acad3cdb833c4301aeb9eeb257838}
+
+
+Definition at line 48 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{
+50     QIODevice * device = \textcolor{keyword}{static\_cast<} QIODevice * \textcolor{keyword}{>}( handle );
+51     \textcolor{keywordflow}{switch} ( whence )
+52     \{
+53         \textcolor{keywordflow}{case} SEEK\_SET:
+54             device->seek( offset );
+55             \textcolor{keywordflow}{break};
+56         \textcolor{keywordflow}{case} SEEK\_CUR:
+57             device->seek( device->pos() + offset );
+58             \textcolor{keywordflow}{break};
+59         \textcolor{keywordflow}{case} SEEK\_END:
+60             device->seek( device->size() + offset );
+61             \textcolor{keywordflow}{break};
+62     \}
+63 
+64     \textcolor{keywordflow}{return} device->pos();
+65 \}
+\end{DoxyCode}
+\hypertarget{generator__tiff_8cpp_a4fdaf6909f12e9a83102c96c02307319}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Size\+Proc@{okular\+\_\+tiff\+Size\+Proc}}
+\index{okular\+\_\+tiff\+Size\+Proc@{okular\+\_\+tiff\+Size\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Size\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}toff\+\_\+t okular\+\_\+tiff\+Size\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{handle}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_a4fdaf6909f12e9a83102c96c02307319}
+
+
+Definition at line 73 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+74 \{
+75     QIODevice * device = \textcolor{keyword}{static\_cast<} QIODevice * \textcolor{keyword}{>}( handle );
+76     \textcolor{keywordflow}{return} device->size();
+77 \}
+\end{DoxyCode}
+\hypertarget{generator__tiff_8cpp_a4b4947e30d6fc0472fce0c91286ea6df}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Unmap\+Proc@{okular\+\_\+tiff\+Unmap\+Proc}}
+\index{okular\+\_\+tiff\+Unmap\+Proc@{okular\+\_\+tiff\+Unmap\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Unmap\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}void okular\+\_\+tiff\+Unmap\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{, }
+\item[{tdata\+\_\+t}]{, }
+\item[{toff\+\_\+t}]{}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_a4b4947e30d6fc0472fce0c91286ea6df}
+
+
+Definition at line 84 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+85 \{
+86 \}
+\end{DoxyCode}
+\hypertarget{generator__tiff_8cpp_aac5ebdd91991967ee03eeda816462b39}{\index{generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}!okular\+\_\+tiff\+Write\+Proc@{okular\+\_\+tiff\+Write\+Proc}}
+\index{okular\+\_\+tiff\+Write\+Proc@{okular\+\_\+tiff\+Write\+Proc}!generator\+\_\+tiff.\+cpp@{generator\+\_\+tiff.\+cpp}}
+\subsubsection[{okular\+\_\+tiff\+Write\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}tsize\+\_\+t okular\+\_\+tiff\+Write\+Proc (
+\begin{DoxyParamCaption}
+\item[{thandle\+\_\+t}]{handle, }
+\item[{tdata\+\_\+t}]{buf, }
+\item[{tsize\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{generator__tiff_8cpp_aac5ebdd91991967ee03eeda816462b39}
+
+
+Definition at line 42 of file generator\+\_\+tiff.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{
+44     QIODevice * device = \textcolor{keyword}{static\_cast<} QIODevice * \textcolor{keyword}{>}( handle );
+45     \textcolor{keywordflow}{return} device->write( static\_cast< char * >( buf ), \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} );
+46 \}
+\end{DoxyCode}

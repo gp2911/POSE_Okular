@@ -1,0 +1,97 @@
+\hypertarget{classfontEncoding}{\section{font\+Encoding Class Reference}
+\label{classfontEncoding}\index{font\+Encoding@{font\+Encoding}}
+}
+
+
+{\ttfamily \#include $<$font\+Encoding.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfontEncoding_a2c8b660e87dc1ef111639689ae2de64d}{font\+Encoding} (const Q\+String \&enc\+Name)
+\item 
+bool \hyperlink{classfontEncoding_a7d8f02901f8a855b48ed24a323d7035e}{is\+Valid} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{classfontEncoding_adfed214174b34402c6f775d13781edf0}{encoding\+Full\+Name}
+\item 
+Q\+String \hyperlink{classfontEncoding_a57d30426a088ea90d8645031fea6ef06}{glyph\+Name\+Vector} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the contents of a font encoding file, e.\+g. \char`\"{}8r.\+enc\char`\"{}
+
+Explanation of font encodings\+: Te\+X was designed to only use Meta\+Font fonts. A D\+V\+I file referres to a Meta\+Font font by giving an at-\/most-\/8-\/character name, such as 'cmr10'. The D\+V\+I previewer would then locate the associated P\+K font file (e.\+g. cmr10.\+600pk), load it, and retrieve the character shaped.
+
+Today Te\+X is also used to access Type1 and True\+Type fonts, which it was never designed to do. As in the case of Meta\+Font font, the D\+V\+I file specifies the name of a font, e.\+g. 'rpbkd', and the D\+V\+I previewer finds the associated font file 'ubkd8a.\+pfb' by means of a map file (see \hyperlink{fontMap_8h}{font\+Map.\+h}). The font map file also specifies an encoding (e.\+g. '8r', to be found in a file '8r.\+enc'). Font encodings are necessary because Te\+X can only use the first 256 characters of a font, while modern Post\+Script fonts often contain more.
+
+In a Post\+Script font, glyphs can often be accessed in two ways\+:
+
+(a) by an integer, the 'glyph index', which need not be positive. Glyph indices can be found in every font.
+
+(b) by the name of the glyph, such as 'A', 'plusminus' or 'ogonek'. Note\+: Not all fonts contain glyph names, and if a font contains glyph names, they are not always reliable.
+
+An encoding file is essentially a list of 256 names of glyphs that Te\+X wishes to use from a certain font. If the font contains more than 256 glyphs, Te\+X is still limited to use at most 256 glyphs. If more glyphs are required, Te\+X can probably use the same font under a different name and with a different encoding ---the map file (\hyperlink{fontMap_8h}{font\+Map.\+h}) can probably see to that.
+
+Summing up\+: this class contains 256 glyph names read from an encoding file during the construction of this class.
+
+\begin{DoxyAuthor}{Author}
+Stefan Kebekus \href{mailto:kebekus@kde.org}{\tt kebekus@kde.\+org} 
+\end{DoxyAuthor}
+
+
+Definition at line 58 of file font\+Encoding.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classfontEncoding_a2c8b660e87dc1ef111639689ae2de64d}{\index{font\+Encoding@{font\+Encoding}!font\+Encoding@{font\+Encoding}}
+\index{font\+Encoding@{font\+Encoding}!font\+Encoding@{font\+Encoding}}
+\subsubsection[{font\+Encoding}]{\setlength{\rightskip}{0pt plus 5cm}font\+Encoding\+::font\+Encoding (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{enc\+Name}
+\end{DoxyParamCaption}
+)}}\label{classfontEncoding_a2c8b660e87dc1ef111639689ae2de64d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfontEncoding_a7d8f02901f8a855b48ed24a323d7035e}{\index{font\+Encoding@{font\+Encoding}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!font\+Encoding@{font\+Encoding}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool font\+Encoding\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfontEncoding_a7d8f02901f8a855b48ed24a323d7035e}
+
+
+Definition at line 78 of file font\+Encoding.\+h.
+
+
+\begin{DoxyCode}
+78 \{\textcolor{keywordflow}{return} \_isValid;\}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classfontEncoding_adfed214174b34402c6f775d13781edf0}{\index{font\+Encoding@{font\+Encoding}!encoding\+Full\+Name@{encoding\+Full\+Name}}
+\index{encoding\+Full\+Name@{encoding\+Full\+Name}!font\+Encoding@{font\+Encoding}}
+\subsubsection[{encoding\+Full\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String font\+Encoding\+::encoding\+Full\+Name}}\label{classfontEncoding_adfed214174b34402c6f775d13781edf0}
+
+
+Definition at line 69 of file font\+Encoding.\+h.
+
+\hypertarget{classfontEncoding_a57d30426a088ea90d8645031fea6ef06}{\index{font\+Encoding@{font\+Encoding}!glyph\+Name\+Vector@{glyph\+Name\+Vector}}
+\index{glyph\+Name\+Vector@{glyph\+Name\+Vector}!font\+Encoding@{font\+Encoding}}
+\subsubsection[{glyph\+Name\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String font\+Encoding\+::glyph\+Name\+Vector\mbox{[}256\mbox{]}}}\label{classfontEncoding_a57d30426a088ea90d8645031fea6ef06}
+
+
+Definition at line 74 of file font\+Encoding.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{fontEncoding_8h}{font\+Encoding.\+h}\end{DoxyCompactItemize}

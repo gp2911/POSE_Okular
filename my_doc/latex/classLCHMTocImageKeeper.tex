@@ -1,0 +1,83 @@
+\hypertarget{classLCHMTocImageKeeper}{\section{L\+C\+H\+M\+Toc\+Image\+Keeper Class Reference}
+\label{classLCHMTocImageKeeper}\index{L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}}
+}
+
+
+This class is used to retrieve the book \hyperlink{classTOC}{T\+O\+C} icons associated with images.  
+
+
+
+
+{\ttfamily \#include $<$libchmtocimage.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLCHMTocImageKeeper_a01156f772f00f951017ac9a6d971535f}{L\+C\+H\+M\+Toc\+Image\+Keeper} ()
+\item 
+const Q\+Pixmap $\ast$ \hyperlink{classLCHMTocImageKeeper_aab7292a21ce3907ba28eecd62e5f3dc7}{get\+Image} (int id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to retrieve the book \hyperlink{classTOC}{T\+O\+C} icons associated with images. 
+
+Definition at line 30 of file libchmtocimage.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLCHMTocImageKeeper_a01156f772f00f951017ac9a6d971535f}{\index{L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}!L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}}
+\index{L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}!L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}}
+\subsubsection[{L\+C\+H\+M\+Toc\+Image\+Keeper}]{\setlength{\rightskip}{0pt plus 5cm}L\+C\+H\+M\+Toc\+Image\+Keeper\+::\+L\+C\+H\+M\+Toc\+Image\+Keeper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLCHMTocImageKeeper_a01156f772f00f951017ac9a6d971535f}
+
+
+Definition at line 2095 of file libchmtocimage.\+cpp.
+
+
+\begin{DoxyCode}
+2096 \{
+2097     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < \hyperlink{namespaceLCHMBookIcons_aa8a657bb1bcac77ff0c2b590a1cd8e2e}{LCHMBookIcons::MAX\_BUILTIN\_ICONS}; i++ )
+2098     \{
+2099         \textcolor{keyword}{const} \hyperlink{structpng__memory__image__t}{png\_memory\_image\_t} * image = png\_image\_bookarray + i;
+2100         
+2101         \textcolor{keywordflow}{if} ( !m\_images[i].loadFromData ((\textcolor{keyword}{const} uchar*)image->\hyperlink{structpng__memory__image__t_aaf89dc2f8917531a87f05428ff5a1462}{data}, image->
+      \hyperlink{structpng__memory__image__t_a3fd33d4e8209b1e66139911332c7c78f}{size}, \textcolor{stringliteral}{"PNG"}) )
+2102             qFatal ( \textcolor{stringliteral}{"Could not load image %d"}, i );
+2103     \}
+2104 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLCHMTocImageKeeper_aab7292a21ce3907ba28eecd62e5f3dc7}{\index{L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}!get\+Image@{get\+Image}}
+\index{get\+Image@{get\+Image}!L\+C\+H\+M\+Toc\+Image\+Keeper@{L\+C\+H\+M\+Toc\+Image\+Keeper}}
+\subsubsection[{get\+Image}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Pixmap $\ast$ L\+C\+H\+M\+Toc\+Image\+Keeper\+::get\+Image (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{classLCHMTocImageKeeper_aab7292a21ce3907ba28eecd62e5f3dc7}
+
+
+Definition at line 2106 of file libchmtocimage.\+cpp.
+
+
+\begin{DoxyCode}
+2107 \{
+2108     \textcolor{keywordflow}{if} ( id < 0 || id > \hyperlink{namespaceLCHMBookIcons_aa8a657bb1bcac77ff0c2b590a1cd8e2e}{LCHMBookIcons::MAX\_BUILTIN\_ICONS} )
+2109         qFatal(\textcolor{stringliteral}{"LCHMTocImageKeeper::getImage: requested image id (%d) is out of range (%d)"}, \textcolor{keywordtype}{id},  
+      LCHMBookIcons::MAX\_BUILTIN\_ICONS );
+2110     
+2111     \textcolor{keywordflow}{return} &m\_images[id];
+2112 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/chm/lib/\hyperlink{libchmtocimage_8h}{libchmtocimage.\+h}\item 
+generators/chm/lib/\hyperlink{libchmtocimage_8cpp}{libchmtocimage.\+cpp}\end{DoxyCompactItemize}

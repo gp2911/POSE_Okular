@@ -1,0 +1,335 @@
+\hypertarget{classPageGroupProxyModel}{\section{Page\+Group\+Proxy\+Model Class Reference}
+\label{classPageGroupProxyModel}\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+}
+
+
+{\ttfamily \#include $<$annotationproxymodels.\+h$>$}
+
+Inheritance diagram for Page\+Group\+Proxy\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPageGroupProxyModel}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPageGroupProxyModel_add8e095d3e6ff7517b2ae96aebc636c4}{group\+By\+Page} (bool value)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageGroupProxyModel_a5ec21d44066b02b15a05e823625d4af9}{Page\+Group\+Proxy\+Model} (Q\+Object $\ast$\hyperlink{classPageGroupProxyModel_a2c0c75afdf7af4ba81eb54c685881297}{parent}=0)
+\item 
+virtual int \hyperlink{classPageGroupProxyModel_aa1cc463f5add3674fdc60d3412a9dda1}{column\+Count} (const Q\+Model\+Index \&parent\+Index) const 
+\item 
+virtual int \hyperlink{classPageGroupProxyModel_a0533049256d9b6974d7e163f0e8ac192}{row\+Count} (const Q\+Model\+Index \&parent\+Index) const 
+\item 
+virtual Q\+Model\+Index \hyperlink{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{index} (int row, int column, const Q\+Model\+Index \&parent\+Index=Q\+Model\+Index()) const 
+\item 
+virtual Q\+Model\+Index \hyperlink{classPageGroupProxyModel_a2c0c75afdf7af4ba81eb54c685881297}{parent} (const Q\+Model\+Index \&\hyperlink{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{index}) const 
+\item 
+virtual Q\+Model\+Index \hyperlink{classPageGroupProxyModel_a6599c15a04c0943574ed7a0be85fe623}{map\+From\+Source} (const Q\+Model\+Index \&source\+Index) const 
+\item 
+virtual Q\+Model\+Index \hyperlink{classPageGroupProxyModel_aa27b8c666eb1cbbf817c7512eb6365f2}{map\+To\+Source} (const Q\+Model\+Index \&proxy\+Index) const 
+\item 
+virtual void \hyperlink{classPageGroupProxyModel_a74886d438455adbaf72c0face4baf655}{set\+Source\+Model} (Q\+Abstract\+Item\+Model $\ast$model)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A proxy model which either groups the annotations by pages or shows them all as list. 
+
+Definition at line 58 of file annotationproxymodels.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageGroupProxyModel_a5ec21d44066b02b15a05e823625d4af9}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{Page\+Group\+Proxy\+Model}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Group\+Proxy\+Model\+::\+Page\+Group\+Proxy\+Model (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classPageGroupProxyModel_a5ec21d44066b02b15a05e823625d4af9}
+Creates a new page group proxy model.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+69   : QAbstractProxyModel( \hyperlink{classPageGroupProxyModel_a2c0c75afdf7af4ba81eb54c685881297}{parent} ),
+70     mGroupByPage( \textcolor{keyword}{false} )
+71 \{
+72 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageGroupProxyModel_aa1cc463f5add3674fdc60d3412a9dda1}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{column\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Group\+Proxy\+Model\+::column\+Count (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{parent\+Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_aa1cc463f5add3674fdc60d3412a9dda1}
+
+
+Definition at line 74 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76   \textcolor{comment}{// For top-level and second level we have always only one column}
+77   \textcolor{keywordflow}{if} ( mGroupByPage ) \{
+78     \textcolor{keywordflow}{if} ( parentIndex.isValid() ) \{
+79       \textcolor{keywordflow}{if} ( parentIndex.parent().isValid() )
+80         \textcolor{keywordflow}{return} 0;
+81       \textcolor{keywordflow}{else} \{
+82         \textcolor{keywordflow}{return} 1; \textcolor{comment}{// second-level}
+83       \}
+84     \} \textcolor{keywordflow}{else} \{
+85       \textcolor{keywordflow}{return} 1; \textcolor{comment}{// top-level}
+86     \}
+87   \} \textcolor{keywordflow}{else} \{
+88     \textcolor{keywordflow}{if} ( !parentIndex.isValid() ) \textcolor{comment}{// top-level}
+89       \textcolor{keywordflow}{return} 1;
+90     \textcolor{keywordflow}{else}
+91       \textcolor{keywordflow}{return} 0;
+92   \}
+93   \textcolor{keywordflow}{return} 1;
+94 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_add8e095d3e6ff7517b2ae96aebc636c4}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!group\+By\+Page@{group\+By\+Page}}
+\index{group\+By\+Page@{group\+By\+Page}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{group\+By\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Group\+Proxy\+Model\+::group\+By\+Page (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classPageGroupProxyModel_add8e095d3e6ff7517b2ae96aebc636c4}
+Sets whether the proxy model shall group the annotations by page. 
+
+Definition at line 249 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+250 \{
+251   \textcolor{keywordflow}{if} ( mGroupByPage == value )
+252     \textcolor{keywordflow}{return};
+253 
+254   mGroupByPage = value;
+255 
+256   rebuildIndexes();
+257 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!index@{index}}
+\index{index@{index}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Model\+Index Page\+Group\+Proxy\+Model\+::index (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{const Q\+Model\+Index \&}]{parent\+Index = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}
+
+
+Definition at line 116 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+117 \{
+118   \textcolor{keywordflow}{if} ( row < 0 || column != 0 )
+119     \textcolor{keywordflow}{return} QModelIndex();
+120 
+121   \textcolor{keywordflow}{if} ( mGroupByPage ) \{
+122     \textcolor{keywordflow}{if} ( parentIndex.isValid() ) \{
+123       \textcolor{keywordflow}{if} ( parentIndex.row() >= 0 && parentIndex.row() < mTreeIndexes.count()
+124            && row < mTreeIndexes[ parentIndex.row() ].second.count() )
+125         \textcolor{keywordflow}{return} createIndex( row, column, qint32( parentIndex.row() + 1 ) );
+126       \textcolor{keywordflow}{else}
+127         \textcolor{keywordflow}{return} QModelIndex();
+128     \} \textcolor{keywordflow}{else} \{
+129       \textcolor{keywordflow}{if} ( row < mTreeIndexes.count() )
+130         \textcolor{keywordflow}{return} createIndex( row, column, 0 );
+131       \textcolor{keywordflow}{else}
+132         \textcolor{keywordflow}{return} QModelIndex();
+133     \}
+134   \} \textcolor{keywordflow}{else} \{
+135     \textcolor{keywordflow}{if} ( row < mIndexes.count() )
+136       \textcolor{keywordflow}{return} createIndex( row, column, mixIndex( parentIndex.row(), parentIndex.column() ) );
+137     \textcolor{keywordflow}{else}
+138       \textcolor{keywordflow}{return} QModelIndex();
+139   \}
+140 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_a6599c15a04c0943574ed7a0be85fe623}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!map\+From\+Source@{map\+From\+Source}}
+\index{map\+From\+Source@{map\+From\+Source}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{map\+From\+Source}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Model\+Index Page\+Group\+Proxy\+Model\+::map\+From\+Source (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{source\+Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_a6599c15a04c0943574ed7a0be85fe623}
+
+
+Definition at line 155 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+156 \{
+157   \textcolor{keywordflow}{if} ( mGroupByPage ) \{
+158     \textcolor{keywordflow}{if} ( sourceIndex.parent().isValid() ) \{
+159       \textcolor{keywordflow}{return} \hyperlink{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{index}( sourceIndex.row(), sourceIndex.column(), sourceIndex.parent() );
+160     \} \textcolor{keywordflow}{else} \{
+161       \textcolor{keywordflow}{return} \hyperlink{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{index}( sourceIndex.row(), sourceIndex.column() );
+162     \}
+163   \} \textcolor{keywordflow}{else} \{
+164     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < mIndexes.count(); ++i ) \{
+165       \textcolor{keywordflow}{if} ( mIndexes[ i ] == sourceIndex )
+166         \textcolor{keywordflow}{return} \hyperlink{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{index}( i, 0 );
+167     \}
+168 
+169     \textcolor{keywordflow}{return} QModelIndex();
+170   \}
+171 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_aa27b8c666eb1cbbf817c7512eb6365f2}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!map\+To\+Source@{map\+To\+Source}}
+\index{map\+To\+Source@{map\+To\+Source}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{map\+To\+Source}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Model\+Index Page\+Group\+Proxy\+Model\+::map\+To\+Source (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{proxy\+Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_aa27b8c666eb1cbbf817c7512eb6365f2}
+
+
+Definition at line 173 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+174 \{
+175   \textcolor{keywordflow}{if} ( !proxyIndex.isValid() )
+176     \textcolor{keywordflow}{return} QModelIndex();
+177 
+178   \textcolor{keywordflow}{if} ( mGroupByPage ) \{
+179     \textcolor{keywordflow}{if} ( proxyIndex.internalId() == 0 ) \{
+180 
+181       \textcolor{keywordflow}{if} ( proxyIndex.row() >= mTreeIndexes.count() || proxyIndex.row() < 0 )
+182         \textcolor{keywordflow}{return} QModelIndex();
+183 
+184       \textcolor{keywordflow}{return} mTreeIndexes[ proxyIndex.row() ].first;
+185     \} \textcolor{keywordflow}{else} \{
+186       \textcolor{keywordflow}{if} ( proxyIndex.internalId() - 1 >= mTreeIndexes.count() ||
+187            proxyIndex.row() >= mTreeIndexes[ proxyIndex.internalId() - 1 ].second.count() )
+188         \textcolor{keywordflow}{return} QModelIndex();
+189 
+190       \textcolor{keywordflow}{return} mTreeIndexes[ proxyIndex.internalId() - 1 ].second[ proxyIndex.row() ];
+191     \}
+192   \} \textcolor{keywordflow}{else} \{
+193     \textcolor{keywordflow}{if} ( proxyIndex.column() > 0 || proxyIndex.row() >= mIndexes.count() )
+194       \textcolor{keywordflow}{return} QModelIndex();
+195     \textcolor{keywordflow}{else} \{
+196       \textcolor{keywordflow}{return} mIndexes[ proxyIndex.row() ];
+197     \}
+198   \}
+199 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_a2c0c75afdf7af4ba81eb54c685881297}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!parent@{parent}}
+\index{parent@{parent}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Model\+Index Page\+Group\+Proxy\+Model\+::parent (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_a2c0c75afdf7af4ba81eb54c685881297}
+
+
+Definition at line 142 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+143 \{
+144   \textcolor{keywordflow}{if} ( mGroupByPage ) \{
+145     \textcolor{keywordflow}{if} ( idx.internalId() == 0 ) \textcolor{comment}{// top-level}
+146       \textcolor{keywordflow}{return} QModelIndex();
+147     \textcolor{keywordflow}{else}
+148       \textcolor{keywordflow}{return} \hyperlink{classPageGroupProxyModel_a35de5fed8fc5a267609c9a9c08a81437}{index}( idx.internalId() - 1, idx.column() );
+149   \} \textcolor{keywordflow}{else} \{
+150     \textcolor{comment}{// We have only top-level items}
+151     \textcolor{keywordflow}{return} QModelIndex();
+152   \}
+153 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_a0533049256d9b6974d7e163f0e8ac192}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{row\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Page\+Group\+Proxy\+Model\+::row\+Count (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{parent\+Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_a0533049256d9b6974d7e163f0e8ac192}
+
+
+Definition at line 96 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+97 \{
+98   \textcolor{keywordflow}{if} ( mGroupByPage ) \{
+99     \textcolor{keywordflow}{if} ( parentIndex.isValid() ) \{
+100       \textcolor{keywordflow}{if} ( parentIndex.parent().isValid() )
+101         \textcolor{keywordflow}{return} 0;
+102       \textcolor{keywordflow}{else} \{
+103         \textcolor{keywordflow}{return} mTreeIndexes[ parentIndex.row() ].second.count(); \textcolor{comment}{// second-level}
+104       \}
+105     \} \textcolor{keywordflow}{else} \{
+106       \textcolor{keywordflow}{return} mTreeIndexes.count(); \textcolor{comment}{// top-level}
+107     \}
+108   \} \textcolor{keywordflow}{else} \{
+109     \textcolor{keywordflow}{if} ( !parentIndex.isValid() ) \textcolor{comment}{// top-level}
+110       \textcolor{keywordflow}{return} mIndexes.count();
+111     \textcolor{keywordflow}{else}
+112       \textcolor{keywordflow}{return} 0;
+113   \}
+114 \}
+\end{DoxyCode}
+\hypertarget{classPageGroupProxyModel_a74886d438455adbaf72c0face4baf655}{\index{Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}!set\+Source\+Model@{set\+Source\+Model}}
+\index{set\+Source\+Model@{set\+Source\+Model}!Page\+Group\+Proxy\+Model@{Page\+Group\+Proxy\+Model}}
+\subsubsection[{set\+Source\+Model}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Group\+Proxy\+Model\+::set\+Source\+Model (
+\begin{DoxyParamCaption}
+\item[{Q\+Abstract\+Item\+Model $\ast$}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageGroupProxyModel_a74886d438455adbaf72c0face4baf655}
+
+
+Definition at line 201 of file annotationproxymodels.\+cpp.
+
+
+\begin{DoxyCode}
+202 \{
+203   \textcolor{keywordflow}{if} ( sourceModel() ) \{
+204     disconnect( sourceModel(), SIGNAL(layoutChanged()), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+205     disconnect( sourceModel(), SIGNAL(modelReset()), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+206     disconnect( sourceModel(), SIGNAL(rowsInserted(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+207     disconnect( sourceModel(), SIGNAL(rowsRemoved(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+208   \}
+209 
+210   QAbstractProxyModel::setSourceModel( model );
+211 
+212   connect( sourceModel(), SIGNAL(layoutChanged()), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+213   connect( sourceModel(), SIGNAL(modelReset()), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+214   connect( sourceModel(), SIGNAL(rowsInserted(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+215   connect( sourceModel(), SIGNAL(rowsRemoved(QModelIndex,\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(rebuildIndexes()) );
+216 
+217   rebuildIndexes();
+218 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationproxymodels_8h}{annotationproxymodels.\+h}\item 
+ui/\hyperlink{annotationproxymodels_8cpp}{annotationproxymodels.\+cpp}\end{DoxyCompactItemize}

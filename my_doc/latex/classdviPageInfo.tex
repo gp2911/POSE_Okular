@@ -1,0 +1,193 @@
+\hypertarget{classdviPageInfo}{\section{dvi\+Page\+Info Class Reference}
+\label{classdviPageInfo}\index{dvi\+Page\+Info@{dvi\+Page\+Info}}
+}
+
+
+{\ttfamily \#include $<$dvi\+Page\+Info.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdviPageInfo_a58a37f38097f55a3c91bfe3ed2dd6eb3}{dvi\+Page\+Info} ()
+\item 
+\hyperlink{classdviPageInfo_a0fd799a9ccc4c04025102dbd510d3112}{dvi\+Page\+Info} (const \hyperlink{classdviPageInfo}{dvi\+Page\+Info} \&dvipi)
+\item 
+virtual \hyperlink{classdviPageInfo_adbfb1f58aa28d6aa8253c4b7a6fd35b9}{$\sim$dvi\+Page\+Info} ()
+\item 
+virtual void \hyperlink{classdviPageInfo_a5c63192fc84da2a3797aba458bccbad9}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Image \hyperlink{classdviPageInfo_a2e14764bd0da8f668fdae66527e35db6}{img}
+\item 
+int \hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width}
+\item 
+int \hyperlink{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}{height}
+\item 
+double \hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution}
+\item 
+\hyperlink{classPageNumber}{Page\+Number} \hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{page\+Number}
+\item 
+Q\+Vector$<$ \hyperlink{classHyperlink}{Hyperlink} $>$ \hyperlink{classdviPageInfo_ae3d8b5ce976b2df5c29244577362bb4f}{source\+Hyper\+Link\+List}
+\begin{DoxyCompactList}\small\item\em List of source hyperlinks. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{classHyperlink}{Hyperlink} $>$ \hyperlink{classdviPageInfo_a1e95c1ee9212ccad20661ed1c141e84e}{hyper\+Link\+List}
+\begin{DoxyCompactList}\small\item\em Hyperlinks on the document page. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{classTextBox}{Text\+Box} $>$ \hyperlink{classdviPageInfo_a4ba07c38e31cd25fc4987e79cd0968e2}{text\+Box\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file dvi\+Page\+Info.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdviPageInfo_a58a37f38097f55a3c91bfe3ed2dd6eb3}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\index{dvi\+Page\+Info@{dvi\+Page\+Info}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{dvi\+Page\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dvi\+Page\+Info\+::dvi\+Page\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdviPageInfo_a58a37f38097f55a3c91bfe3ed2dd6eb3}
+
+
+Definition at line 20 of file dvi\+Page\+Info.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22     \hyperlink{classdviPageInfo_ae3d8b5ce976b2df5c29244577362bb4f}{sourceHyperLinkList}.reserve(200);
+23 \}
+\end{DoxyCode}
+\hypertarget{classdviPageInfo_a0fd799a9ccc4c04025102dbd510d3112}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\index{dvi\+Page\+Info@{dvi\+Page\+Info}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{dvi\+Page\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dvi\+Page\+Info\+::dvi\+Page\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf dvi\+Page\+Info} \&}]{dvipi}
+\end{DoxyParamCaption}
+)}}\label{classdviPageInfo_a0fd799a9ccc4c04025102dbd510d3112}
+
+
+Definition at line 12 of file dvi\+Page\+Info.\+cpp.
+
+
+\begin{DoxyCode}
+13 \{
+14     \hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width} = dvipi.\hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width}; 
+15     \hyperlink{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}{height} = dvipi.\hyperlink{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}{height};
+16     \hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution} = dvipi.\hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution};
+17     \hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{pageNumber} = dvipi.\hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{pageNumber};
+18 \}
+\end{DoxyCode}
+\hypertarget{classdviPageInfo_adbfb1f58aa28d6aa8253c4b7a6fd35b9}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!````~dvi\+Page\+Info@{$\sim$dvi\+Page\+Info}}
+\index{````~dvi\+Page\+Info@{$\sim$dvi\+Page\+Info}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{$\sim$dvi\+Page\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dvi\+Page\+Info\+::$\sim$dvi\+Page\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdviPageInfo_adbfb1f58aa28d6aa8253c4b7a6fd35b9}
+
+
+Definition at line 25 of file dvi\+Page\+Info.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{
+27 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdviPageInfo_a5c63192fc84da2a3797aba458bccbad9}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!clear@{clear}}
+\index{clear@{clear}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dvi\+Page\+Info\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdviPageInfo_a5c63192fc84da2a3797aba458bccbad9}
+
+
+Definition at line 29 of file dvi\+Page\+Info.\+cpp.
+
+
+\begin{DoxyCode}
+30 \{
+31     \hyperlink{classdviPageInfo_ae3d8b5ce976b2df5c29244577362bb4f}{sourceHyperLinkList}.clear();
+32 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!height@{height}}
+\index{height@{height}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int dvi\+Page\+Info\+::height}}\label{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}
+
+
+Definition at line 24 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_a1e95c1ee9212ccad20661ed1c141e84e}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!hyper\+Link\+List@{hyper\+Link\+List}}
+\index{hyper\+Link\+List@{hyper\+Link\+List}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{hyper\+Link\+List}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<${\bf Hyperlink}$>$ dvi\+Page\+Info\+::hyper\+Link\+List}}\label{classdviPageInfo_a1e95c1ee9212ccad20661ed1c141e84e}
+
+
+Hyperlinks on the document page. 
+
+
+
+Definition at line 41 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_a2e14764bd0da8f668fdae66527e35db6}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!img@{img}}
+\index{img@{img}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image dvi\+Page\+Info\+::img}}\label{classdviPageInfo_a2e14764bd0da8f668fdae66527e35db6}
+
+
+Definition at line 23 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Number} dvi\+Page\+Info\+::page\+Number}}\label{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}
+
+
+Definition at line 26 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!resolution@{resolution}}
+\index{resolution@{resolution}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{resolution}]{\setlength{\rightskip}{0pt plus 5cm}double dvi\+Page\+Info\+::resolution}}\label{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}
+
+
+Definition at line 25 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_ae3d8b5ce976b2df5c29244577362bb4f}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!source\+Hyper\+Link\+List@{source\+Hyper\+Link\+List}}
+\index{source\+Hyper\+Link\+List@{source\+Hyper\+Link\+List}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{source\+Hyper\+Link\+List}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<${\bf Hyperlink}$>$ dvi\+Page\+Info\+::source\+Hyper\+Link\+List}}\label{classdviPageInfo_ae3d8b5ce976b2df5c29244577362bb4f}
+
+
+List of source hyperlinks. 
+
+
+
+Definition at line 37 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_a4ba07c38e31cd25fc4987e79cd0968e2}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!text\+Box\+List@{text\+Box\+List}}
+\index{text\+Box\+List@{text\+Box\+List}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{text\+Box\+List}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<${\bf Text\+Box}$>$ dvi\+Page\+Info\+::text\+Box\+List}}\label{classdviPageInfo_a4ba07c38e31cd25fc4987e79cd0968e2}
+
+
+Definition at line 42 of file dvi\+Page\+Info.\+h.
+
+\hypertarget{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{\index{dvi\+Page\+Info@{dvi\+Page\+Info}!width@{width}}
+\index{width@{width}!dvi\+Page\+Info@{dvi\+Page\+Info}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int dvi\+Page\+Info\+::width}}\label{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}
+
+
+Definition at line 24 of file dvi\+Page\+Info.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{dviPageInfo_8h}{dvi\+Page\+Info.\+h}\item 
+generators/dvi/\hyperlink{dviPageInfo_8cpp}{dvi\+Page\+Info.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{classKParts_1_1HtmlExtension}{\section{K\+Parts\+:\+:Html\+Extension Class Reference}
+\label{classKParts_1_1HtmlExtension}\index{K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}}
+}
+
+
+an extension for \hyperlink{namespaceKParts}{K\+Parts} to provide H\+T\+M\+L-\/related features  
+
+
+
+
+{\ttfamily \#include $<$htmlextension.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Html\+Extension\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKParts_1_1HtmlExtension}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1HtmlExtension_ab75dcddad99744aad01a10b9b46b4f61}{Html\+Extension} (\hyperlink{classKParts_1_1ReadOnlyPart}{K\+Parts\+::\+Read\+Only\+Part} $\ast$parent)
+\item 
+\hyperlink{classKParts_1_1HtmlExtension_a090a296e890f968563d0352d4836efdd}{$\sim$\+Html\+Extension} ()
+\item 
+virtual K\+Url \hyperlink{classKParts_1_1HtmlExtension_a4be55820c257361f38ad9a595048bf5e}{base\+Url} () const =0
+\item 
+virtual bool \hyperlink{classKParts_1_1HtmlExtension_af3fe68c816bf92e14ceafdbf5179f134}{has\+Selection} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1HtmlExtension}{Html\+Extension} $\ast$ \hyperlink{classKParts_1_1HtmlExtension_a1008467fb117fa5dcf7cba422aa91f68}{child\+Object} (Q\+Object $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+an extension for \hyperlink{namespaceKParts}{K\+Parts} to provide H\+T\+M\+L-\/related features 
+
+Use qobject\+\_\+cast to cast the extension to interesting interfaces, like qobject\+\_\+cast$<$\+K\+Parts\+::\+Selector\+Interface$>$.
+
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+
+
+Definition at line 45 of file htmlextension.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1HtmlExtension_ab75dcddad99744aad01a10b9b46b4f61}{\index{K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}!Html\+Extension@{Html\+Extension}}
+\index{Html\+Extension@{Html\+Extension}!K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}}
+\subsubsection[{Html\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Html\+Extension\+::\+Html\+Extension (
+\begin{DoxyParamCaption}
+\item[{{\bf K\+Parts\+::\+Read\+Only\+Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1HtmlExtension_ab75dcddad99744aad01a10b9b46b4f61}
+\hypertarget{classKParts_1_1HtmlExtension_a090a296e890f968563d0352d4836efdd}{\index{K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}!````~Html\+Extension@{$\sim$\+Html\+Extension}}
+\index{````~Html\+Extension@{$\sim$\+Html\+Extension}!K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}}
+\subsubsection[{$\sim$\+Html\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Html\+Extension\+::$\sim$\+Html\+Extension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1HtmlExtension_a090a296e890f968563d0352d4836efdd}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1HtmlExtension_a4be55820c257361f38ad9a595048bf5e}{\index{K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}!base\+Url@{base\+Url}}
+\index{base\+Url@{base\+Url}!K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}}
+\subsubsection[{base\+Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Url K\+Parts\+::\+Html\+Extension\+::base\+Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKParts_1_1HtmlExtension_a4be55820c257361f38ad9a595048bf5e}
+Returns the current base url of the part that implements this extension.
+
+This function is mostly used to resolve any relative U\+R\+Ls that might be returned when querying the part for links. \hypertarget{classKParts_1_1HtmlExtension_a1008467fb117fa5dcf7cba422aa91f68}{\index{K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}!child\+Object@{child\+Object}}
+\index{child\+Object@{child\+Object}!K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}}
+\subsubsection[{child\+Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Html\+Extension}$\ast$ K\+Parts\+::\+Html\+Extension\+::child\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1HtmlExtension_a1008467fb117fa5dcf7cba422aa91f68}
+Queries {\ttfamily obj} for a child object which inherits from this \hyperlink{classKParts_1_1HtmlExtension}{Html\+Extension} class. \hypertarget{classKParts_1_1HtmlExtension_af3fe68c816bf92e14ceafdbf5179f134}{\index{K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}!has\+Selection@{has\+Selection}}
+\index{has\+Selection@{has\+Selection}!K\+Parts\+::\+Html\+Extension@{K\+Parts\+::\+Html\+Extension}}
+\subsubsection[{has\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+Html\+Extension\+::has\+Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1HtmlExtension_af3fe68c816bf92e14ceafdbf5179f134}
+Returns true if portions of the content in the part that implements this extension are selected.
+
+By default this function returns false. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{htmlextension_8h}{htmlextension.\+h}\end{DoxyCompactItemize}

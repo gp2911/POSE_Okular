@@ -1,0 +1,100 @@
+\hypertarget{classTreeView}{\section{Tree\+View Class Reference}
+\label{classTreeView}\index{Tree\+View@{Tree\+View}}
+}
+Inheritance diagram for Tree\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTreeView}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTreeView_ae4c155eb6768d21a54c34aab58e292ad}{Tree\+View} (\hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document, Q\+Widget $\ast$parent=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classTreeView_ab95914d4f702b774b20c75db051cce93}{paint\+Event} (Q\+Paint\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file side\+\_\+reviews.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTreeView_ae4c155eb6768d21a54c34aab58e292ad}{\index{Tree\+View@{Tree\+View}!Tree\+View@{Tree\+View}}
+\index{Tree\+View@{Tree\+View}!Tree\+View@{Tree\+View}}
+\subsubsection[{Tree\+View}]{\setlength{\rightskip}{0pt plus 5cm}Tree\+View\+::\+Tree\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTreeView_ae4c155eb6768d21a54c34aab58e292ad}
+
+
+Definition at line 41 of file side\+\_\+reviews.\+cpp.
+
+
+\begin{DoxyCode}
+42       : QTreeView( parent ), m\_document( document )
+43     \{
+44     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTreeView_ab95914d4f702b774b20c75db051cce93}{\index{Tree\+View@{Tree\+View}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!Tree\+View@{Tree\+View}}
+\subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tree\+View\+::paint\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Paint\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classTreeView_ab95914d4f702b774b20c75db051cce93}
+
+
+Definition at line 47 of file side\+\_\+reviews.\+cpp.
+
+
+\begin{DoxyCode}
+48     \{
+49       \textcolor{keywordtype}{bool} hasAnnotations = \textcolor{keyword}{false};
+50       \textcolor{keywordflow}{for} ( uint i = 0; i < m\_document->\hyperlink{classOkular_1_1Document_aaf5d986758e25127946986abaa401bcd}{pages}(); ++i )
+51         \textcolor{keywordflow}{if} ( m\_document->\hyperlink{classOkular_1_1Document_a1c95c2f192d739c217d00971da48f69d}{page}( i )->\hyperlink{classOkular_1_1Page_a7e7a1039febaed410867e5b3d30ef6c7}{hasAnnotations}() ) \{
+52           hasAnnotations = \textcolor{keyword}{true};
+53           \textcolor{keywordflow}{break};
+54         \}
+55       \textcolor{keywordflow}{if} ( !hasAnnotations ) \{
+56         QPainter p( viewport() );
+57         p.setRenderHint( QPainter::Antialiasing, \textcolor{keyword}{true} );
+58         p.setClipRect( event->rect() );
+59 
+60         QTextDocument document;
+61         document.setHtml( i18n( \textcolor{stringliteral}{"<div align=center><h3>No annotations</h3>"}
+62                                 \textcolor{stringliteral}{"To create new annotations press F6 or select <i>Tools -&gt; Review</i>"}
+63                                 \textcolor{stringliteral}{" from the menu.</div>"} ) );
+64         document.setTextWidth( width() - 50 );
+65 
+66         \textcolor{keyword}{const} uint w = document.size().width() + 20;
+67         \textcolor{keyword}{const} uint h = document.size().height() + 20;
+68 
+69         p.setBrush( palette().background() );
+70         p.translate( 0.5, 0.5 );
+71         p.drawRoundRect( 15, 15, w, h, (8*200)/w, (8*200)/h );
+72         p.translate( 20, 20 );
+73         document.drawContents( &p );
+74 
+75       \} \textcolor{keywordflow}{else} \{
+76         QTreeView::paintEvent( event );
+77       \}
+78     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{side__reviews_8cpp}{side\+\_\+reviews.\+cpp}\end{DoxyCompactItemize}

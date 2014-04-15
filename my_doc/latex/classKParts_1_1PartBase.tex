@@ -1,0 +1,218 @@
+\hypertarget{classKParts_1_1PartBase}{\section{K\+Parts\+:\+:Part\+Base Class Reference}
+\label{classKParts_1_1PartBase}\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+}
+
+
+Base class for all parts.  
+
+
+
+
+{\ttfamily \#include $<$part.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Part\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classKParts_1_1PartBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1PartBase_a24a84cc28a2f2c351d39c4128f2952a0}{Part\+Base} ()
+\item 
+virtual \hyperlink{classKParts_1_1PartBase_a0753290f4dd3c2886425e37594939ea8}{$\sim$\+Part\+Base} ()
+\item 
+void \hyperlink{classKParts_1_1PartBase_aea74884035b19b8909c3163ad6afd444}{set\+Part\+Object} (Q\+Object $\ast$object)
+\item 
+Q\+Object $\ast$ \hyperlink{classKParts_1_1PartBase_a259f6a9c7258d1a623b56782391ac7e6}{part\+Object} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76}{Plugin\+Loading\+Mode} \{ \hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76a3ffe0a5005d5e1d00b4d3fd8c4d51a1e}{Do\+Not\+Load\+Plugins} = 0, 
+\hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeff505f5627f1539e03730d042e39522}{Load\+Plugins} = 1, 
+\hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeaf6ca999ef635e22e3f52234226e931}{Load\+Plugins\+If\+Enabled} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1PartBase_a5542df2a60d5ed1882bf31ac89d9a8fe}{set\+Component\+Data} (const K\+Component\+Data \&component\+Data)
+\item 
+virtual void \hyperlink{classKParts_1_1PartBase_af8ef8d076e01eda7b03fadca80b41afc}{set\+Component\+Data} (const K\+Component\+Data \&component\+Data, bool \hyperlink{classKParts_1_1PartBase_aca02ff148518a56d98a1fc8e96d7f637}{load\+Plugins})
+\item 
+void \hyperlink{classKParts_1_1PartBase_aca02ff148518a56d98a1fc8e96d7f637}{load\+Plugins} (Q\+Object $\ast$parent, K\+X\+M\+L\+G\+U\+I\+Client $\ast$parent\+G\+U\+I\+Client, const K\+Component\+Data \&component\+Data)
+\item 
+void \hyperlink{classKParts_1_1PartBase_abaf6f9e33fa1890008905f9a1356e1a1}{set\+Plugin\+Loading\+Mode} (\hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76}{Plugin\+Loading\+Mode} loading\+Mode)
+\item 
+void \hyperlink{classKParts_1_1PartBase_a5a9ed59560edb848e787c4b3cee878b1}{set\+Plugin\+Interface\+Version} (int version)
+\item 
+\hyperlink{classKParts_1_1PartBase_acf7602b6a274df3a055ef39dcda3b6ed}{Part\+Base} (Part\+Base\+Private \&dd)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Part\+Base\+Private $\ast$ \hyperlink{classKParts_1_1PartBase_a5655e19a6338ea12c0e0a92956277e08}{d\+\_\+ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all parts. 
+
+Definition at line 64 of file part.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!Plugin\+Loading\+Mode@{Plugin\+Loading\+Mode}}
+\index{Plugin\+Loading\+Mode@{Plugin\+Loading\+Mode}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{Plugin\+Loading\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Part\+Base\+::\+Plugin\+Loading\+Mode}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76}
+We have three different policies, whether to load new plugins or not. The value in the K\+Config object of the K\+Component\+Data object always overrides Load\+Plugins and Load\+Plugins\+If\+Enabled. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Do\+Not\+Load\+Plugins@{Do\+Not\+Load\+Plugins}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!Do\+Not\+Load\+Plugins@{Do\+Not\+Load\+Plugins}}\item[{\em 
+\hypertarget{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76a3ffe0a5005d5e1d00b4d3fd8c4d51a1e}{Do\+Not\+Load\+Plugins}\label{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76a3ffe0a5005d5e1d00b4d3fd8c4d51a1e}
+}]Don't load any plugins at all. \index{Load\+Plugins@{Load\+Plugins}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!Load\+Plugins@{Load\+Plugins}}\item[{\em 
+\hypertarget{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeff505f5627f1539e03730d042e39522}{Load\+Plugins}\label{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeff505f5627f1539e03730d042e39522}
+}]Load new plugins automatically. Can be overridden by the plugin if it sets Enabled\+By\+Default=false in the corresponding .desktop file. \index{Load\+Plugins\+If\+Enabled@{Load\+Plugins\+If\+Enabled}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!Load\+Plugins\+If\+Enabled@{Load\+Plugins\+If\+Enabled}}\item[{\em 
+\hypertarget{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeaf6ca999ef635e22e3f52234226e931}{Load\+Plugins\+If\+Enabled}\label{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeaf6ca999ef635e22e3f52234226e931}
+}]New plugins are disabled by default. Can be overridden by the plugin if it sets Enabled\+By\+Default=true in the corresponding .desktop file. \end{description}
+\end{Desc}
+
+
+Definition at line 119 of file part.\+h.
+
+
+\begin{DoxyCode}
+119                          \{
+123     \hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76a3ffe0a5005d5e1d00b4d3fd8c4d51a1e}{DoNotLoadPlugins} = 0,
+130     \hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeff505f5627f1539e03730d042e39522}{LoadPlugins} = 1,
+137     \hyperlink{classKParts_1_1PartBase_a73b04eba759c3505ac722b2ceaaa8b76aeaf6ca999ef635e22e3f52234226e931}{LoadPluginsIfEnabled} = 2
+138   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1PartBase_a24a84cc28a2f2c351d39c4128f2952a0}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!Part\+Base@{Part\+Base}}
+\index{Part\+Base@{Part\+Base}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{Part\+Base}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Part\+Base\+::\+Part\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartBase_a24a84cc28a2f2c351d39c4128f2952a0}
+Constructor. \hypertarget{classKParts_1_1PartBase_a0753290f4dd3c2886425e37594939ea8}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!````~Part\+Base@{$\sim$\+Part\+Base}}
+\index{````~Part\+Base@{$\sim$\+Part\+Base}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{$\sim$\+Part\+Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Part\+Base\+::$\sim$\+Part\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1PartBase_a0753290f4dd3c2886425e37594939ea8}
+Destructor. \hypertarget{classKParts_1_1PartBase_acf7602b6a274df3a055ef39dcda3b6ed}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!Part\+Base@{Part\+Base}}
+\index{Part\+Base@{Part\+Base}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{Part\+Base}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Part\+Base\+::\+Part\+Base (
+\begin{DoxyParamCaption}
+\item[{Part\+Base\+Private \&}]{dd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1PartBase_acf7602b6a274df3a055ef39dcda3b6ed}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1PartBase_aca02ff148518a56d98a1fc8e96d7f637}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!load\+Plugins@{load\+Plugins}}
+\index{load\+Plugins@{load\+Plugins}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{load\+Plugins}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+Base\+::load\+Plugins (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{K\+X\+M\+L\+G\+U\+I\+Client $\ast$}]{parent\+G\+U\+I\+Client, }
+\item[{const K\+Component\+Data \&}]{component\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1PartBase_aca02ff148518a56d98a1fc8e96d7f637}
+Load the Plugins honoring the Plugin\+Loading\+Mode.
+
+If you call this method in an already constructed G\+U\+I (like when the user has changed which plugins are enabled) you need to add the new plugins to the K\+X\+M\+L\+G\+U\+I\+Factory\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}( factory() )
+\{
+  \hyperlink{classQList}{QList<KParts::Plugin *>} plugins = 
+      \hyperlink{classKParts_1_1Plugin_ad53945bdaf59d6f0e1747c9106be9254}{KParts::Plugin::pluginObjects}( \textcolor{keyword}{this} );
+  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i != plugins.size(); ++i) \{
+     factory()->addClient( plugins[i] );
+  \}
+\}
+\end{DoxyCode}
+ \hypertarget{classKParts_1_1PartBase_a259f6a9c7258d1a623b56782391ac7e6}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!part\+Object@{part\+Object}}
+\index{part\+Object@{part\+Object}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{part\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Object$\ast$ K\+Parts\+::\+Part\+Base\+::part\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartBase_a259f6a9c7258d1a623b56782391ac7e6}
+\hypertarget{classKParts_1_1PartBase_a5542df2a60d5ed1882bf31ac89d9a8fe}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!set\+Component\+Data@{set\+Component\+Data}}
+\index{set\+Component\+Data@{set\+Component\+Data}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{set\+Component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+Base\+::set\+Component\+Data (
+\begin{DoxyParamCaption}
+\item[{const K\+Component\+Data \&}]{component\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1PartBase_a5542df2a60d5ed1882bf31ac89d9a8fe}
+Set the component\+Data(\+K\+Component\+Data) for this part.
+
+Call this {\itshape first} in the inherited class constructor, because it loads the i18n catalogs. \hypertarget{classKParts_1_1PartBase_af8ef8d076e01eda7b03fadca80b41afc}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!set\+Component\+Data@{set\+Component\+Data}}
+\index{set\+Component\+Data@{set\+Component\+Data}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{set\+Component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+Base\+::set\+Component\+Data (
+\begin{DoxyParamCaption}
+\item[{const K\+Component\+Data \&}]{component\+Data, }
+\item[{bool}]{load\+Plugins}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1PartBase_af8ef8d076e01eda7b03fadca80b41afc}
+Set the component\+Data(\+K\+Component\+Data) for this part.
+
+Call this {\itshape first} in the inherited class constructor, because it loads the i18n catalogs.
+
+It is recommended to call set\+Component\+Data with load\+Plugins set to false, and to load plugins at the end of your part constructor (in the case of \hyperlink{classKParts_1_1MainWindow}{K\+Parts\+::\+Main\+Window}, plugins are automatically loaded in create\+G\+U\+I anyway, so set load\+Plugins to false for \hyperlink{classKParts_1_1MainWindow}{K\+Parts\+::\+Main\+Window} as well). \hypertarget{classKParts_1_1PartBase_aea74884035b19b8909c3163ad6afd444}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!set\+Part\+Object@{set\+Part\+Object}}
+\index{set\+Part\+Object@{set\+Part\+Object}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{set\+Part\+Object}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+Base\+::set\+Part\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartBase_aea74884035b19b8909c3163ad6afd444}
+Internal method. Called by \hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part} to specify the parent object for plugin objects. \hypertarget{classKParts_1_1PartBase_a5a9ed59560edb848e787c4b3cee878b1}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!set\+Plugin\+Interface\+Version@{set\+Plugin\+Interface\+Version}}
+\index{set\+Plugin\+Interface\+Version@{set\+Plugin\+Interface\+Version}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{set\+Plugin\+Interface\+Version}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+Base\+::set\+Plugin\+Interface\+Version (
+\begin{DoxyParamCaption}
+\item[{int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1PartBase_a5a9ed59560edb848e787c4b3cee878b1}
+If you change the binary interface offered by your part, you can avoid crashes from old plugins lying around by setting X-\/\+K\+D\+E-\/\+Interface\+Version=2 in the .desktop files of the plugins, and calling set\+Plugin\+Interface\+Version( 2 ), so that the old plugins are not loaded. Increase both numbers every time a binary incompatible change in the application's plugin interface is made.
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & the interface version that plugins must have in order to be loaded.\\
+\hline
+\end{DoxyParams}
+For a \hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part}\+: call this before set\+Component\+Data. For a \hyperlink{classKParts_1_1MainWindow}{K\+Parts\+::\+Main\+Window}\+: call this before create\+G\+U\+I. \hypertarget{classKParts_1_1PartBase_abaf6f9e33fa1890008905f9a1356e1a1}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!set\+Plugin\+Loading\+Mode@{set\+Plugin\+Loading\+Mode}}
+\index{set\+Plugin\+Loading\+Mode@{set\+Plugin\+Loading\+Mode}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{set\+Plugin\+Loading\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+Base\+::set\+Plugin\+Loading\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Plugin\+Loading\+Mode}}]{loading\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1PartBase_abaf6f9e33fa1890008905f9a1356e1a1}
+Set how plugins should be loaded 
+\begin{DoxyParams}{Parameters}
+{\em loading\+Mode} & see Plugin\+Loading\+Mode\\
+\hline
+\end{DoxyParams}
+For a \hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part}\+: call this before set\+Component\+Data. For a \hyperlink{classKParts_1_1MainWindow}{K\+Parts\+::\+Main\+Window}\+: call this before create\+G\+U\+I. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classKParts_1_1PartBase_a5655e19a6338ea12c0e0a92956277e08}{\index{K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}!d\+\_\+ptr@{d\+\_\+ptr}}
+\index{d\+\_\+ptr@{d\+\_\+ptr}!K\+Parts\+::\+Part\+Base@{K\+Parts\+::\+Part\+Base}}
+\subsubsection[{d\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}Part\+Base\+Private$\ast$ K\+Parts\+::\+Part\+Base\+::d\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1PartBase_a5655e19a6338ea12c0e0a92956277e08}
+
+
+Definition at line 184 of file part.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{usr_2include_2kparts_2part_8h}{part.\+h}\end{DoxyCompactItemize}

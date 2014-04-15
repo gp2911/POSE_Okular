@@ -1,0 +1,556 @@
+\hypertarget{classGSGenerator}{\section{G\+S\+Generator Class Reference}
+\label{classGSGenerator}\index{G\+S\+Generator@{G\+S\+Generator}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+ghostview.\+h$>$}
+
+Inheritance diagram for G\+S\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGSGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGSGenerator_a3257ce78fcdb8f1878637f6a5682bbc3}{slot\+Image\+Generated} (Q\+Image $\ast$img, \hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$request)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classGSGenerator_ab0fb7144433d9d5bcb01fc46352ed535}{load\+Document} (const Q\+String \&\hyperlink{classGSGenerator_abe1f26c04df57978c5c34a1ef2e58622}{file\+Name}, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+const \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} $\ast$ \hyperlink{classGSGenerator_a3516212ab10dfec514985017a1f2aaf2}{generate\+Document\+Info} ()
+\item 
+const \hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} $\ast$ \hyperlink{classGSGenerator_a679a080deddb1d8b8d98f77645a27bad}{generate\+Document\+Synopsis} ()
+\item 
+const Okular\+::\+Document\+Fonts $\ast$ \hyperlink{classGSGenerator_a4d1b49a85fa61d96ba1da2268c3c189f}{generate\+Document\+Fonts} ()
+\item 
+bool \hyperlink{classGSGenerator_a5e33403450c32acb89ca4d7c2e86adc6}{can\+Generate\+Pixmap} () const 
+\item 
+void \hyperlink{classGSGenerator_a8767c6444452e2ab8e39e0df2406b6d1}{generate\+Pixmap} (\hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$request)
+\item 
+Q\+Variant \hyperlink{classGSGenerator_af139005a25bf1231798eba23f0f4af3e}{meta\+Data} (const Q\+String \&key, const Q\+Variant \&option) const 
+\item 
+bool \hyperlink{classGSGenerator_a2010dbd7fb42399a0833b5658066a3cc}{print} (Q\+Printer \&)
+\item 
+Q\+String \hyperlink{classGSGenerator_abe1f26c04df57978c5c34a1ef2e58622}{file\+Name} () const 
+\item 
+bool \hyperlink{classGSGenerator_ad7f8c8c8d0a5bb85fa06a6bcbdecb56d}{reparse\+Config} ()
+\item 
+void \hyperlink{classGSGenerator_ae6cccf4dc11e844ec3c9d388d5582ffe}{add\+Pages} (K\+Config\+Dialog $\ast$dlg)
+\item 
+\hyperlink{classGSGenerator_a47d935218b452259ddfa38ff66c6b198}{G\+S\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+\hyperlink{classGSGenerator_abc9708c58f5f097e635fea66c8937d11}{$\sim$\+G\+S\+Generator} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classGSGenerator_a0a558327087336fdef9886a59f1e29b5}{do\+Close\+Document} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file generator\+\_\+ghostview.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGSGenerator_a47d935218b452259ddfa38ff66c6b198}{\index{G\+S\+Generator@{G\+S\+Generator}!G\+S\+Generator@{G\+S\+Generator}}
+\index{G\+S\+Generator@{G\+S\+Generator}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{G\+S\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}G\+S\+Generator\+::\+G\+S\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classGSGenerator_a47d935218b452259ddfa38ff66c6b198}
+constructor 
+
+Definition at line 54 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+54                                                                     :
+55     \hyperlink{classOkular_1_1Generator}{Okular::Generator}( parent, args ),
+56     m\_internalDocument(0),
+57     m\_docInfo(0),
+58     m\_request(0)
+59 \{
+60     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77af0ce4775bf5c69b470c2cce6011d576b}{PrintPostscript} );
+61     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0bb6cbe50f2ffb616e25106b2e34c289}{PrintToFile} );
+62 
+63     \hyperlink{classGSRendererThread}{GSRendererThread} *renderer = 
+      \hyperlink{classGSRendererThread_a5fc474e6996377c9d2ae9f8dd60dd786}{GSRendererThread::getCreateRenderer}();
+64     \textcolor{keywordflow}{if} (!renderer->isRunning()) renderer->start();
+65     connect(renderer, SIGNAL(imageDone(QImage*,\hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest}*)),
+66                       SLOT(\hyperlink{classGSGenerator_a3257ce78fcdb8f1878637f6a5682bbc3}{slotImageGenerated}(QImage*,
+      \hyperlink{classOkular_1_1PixmapRequest}{Okular::PixmapRequest}*)),
+67                       Qt::QueuedConnection);
+68 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_abc9708c58f5f097e635fea66c8937d11}{\index{G\+S\+Generator@{G\+S\+Generator}!````~G\+S\+Generator@{$\sim$\+G\+S\+Generator}}
+\index{````~G\+S\+Generator@{$\sim$\+G\+S\+Generator}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{$\sim$\+G\+S\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}G\+S\+Generator\+::$\sim$\+G\+S\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGSGenerator_abc9708c58f5f097e635fea66c8937d11}
+
+
+Definition at line 70 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+71 \{
+72 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGSGenerator_ae6cccf4dc11e844ec3c9d388d5582ffe}{\index{G\+S\+Generator@{G\+S\+Generator}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void G\+S\+Generator\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dialog}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_ae6cccf4dc11e844ec3c9d388d5582ffe}
+This method allows the generator to add custom configuration pages to the config {\ttfamily dialog} of okular. 
+
+Implements \hyperlink{classOkular_1_1ConfigInterface_a75030ba3abbbd134e388c05154695610}{Okular\+::\+Config\+Interface}.
+
+
+
+Definition at line 95 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+96 \{
+97     Ui\_GSSettingsWidget gsw;
+98     QWidget* w = \textcolor{keyword}{new} QWidget(dlg);
+99     gsw.setupUi(w);
+100     dlg->addPage(w, GSSettings::self(), i18n(\textcolor{stringliteral}{"Ghostscript"}), \textcolor{stringliteral}{"okular-gv"}, i18n(\textcolor{stringliteral}{"Ghostscript Backend
+       Configuration"}) );
+101 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a5e33403450c32acb89ca4d7c2e86adc6}{\index{G\+S\+Generator@{G\+S\+Generator}!can\+Generate\+Pixmap@{can\+Generate\+Pixmap}}
+\index{can\+Generate\+Pixmap@{can\+Generate\+Pixmap}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{can\+Generate\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+S\+Generator\+::can\+Generate\+Pixmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_a5e33403450c32acb89ca4d7c2e86adc6}
+This method returns whether the generator is ready to handle a new pixmap request. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_abbf00927221e2d2b2b71101f2b7f5732}{Okular\+::\+Generator}.
+
+
+
+Definition at line 263 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+264 \{
+265     \textcolor{keywordflow}{return} !m\_request;
+266 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a0a558327087336fdef9886a59f1e29b5}{\index{G\+S\+Generator@{G\+S\+Generator}!do\+Close\+Document@{do\+Close\+Document}}
+\index{do\+Close\+Document@{do\+Close\+Document}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{do\+Close\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+S\+Generator\+::do\+Close\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGSGenerator_a0a558327087336fdef9886a59f1e29b5}
+This method is called when the document is closed and not used any longer.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{Okular\+::\+Generator}.
+
+
+
+Definition at line 180 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+181 \{
+182     spectre\_document\_free(m\_internalDocument);
+183     m\_internalDocument = 0;
+184 
+185     \textcolor{keyword}{delete} m\_docInfo;
+186     m\_docInfo = 0;
+187 
+188     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+189 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_abe1f26c04df57978c5c34a1ef2e58622}{\index{G\+S\+Generator@{G\+S\+Generator}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String G\+S\+Generator\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGSGenerator_abe1f26c04df57978c5c34a1ef2e58622}
+\hypertarget{classGSGenerator_a4d1b49a85fa61d96ba1da2268c3c189f}{\index{G\+S\+Generator@{G\+S\+Generator}!generate\+Document\+Fonts@{generate\+Document\+Fonts}}
+\index{generate\+Document\+Fonts@{generate\+Document\+Fonts}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{generate\+Document\+Fonts}]{\setlength{\rightskip}{0pt plus 5cm}const Okular\+::\+Document\+Fonts$\ast$ G\+S\+Generator\+::generate\+Document\+Fonts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGSGenerator_a4d1b49a85fa61d96ba1da2268c3c189f}
+
+
+Definition at line 31 of file generator\+\_\+ghostview.\+h.
+
+
+\begin{DoxyCode}
+31 \{ \textcolor{keywordflow}{return} 0L; \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a3516212ab10dfec514985017a1f2aaf2}{\index{G\+S\+Generator@{G\+S\+Generator}!generate\+Document\+Info@{generate\+Document\+Info}}
+\index{generate\+Document\+Info@{generate\+Document\+Info}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{generate\+Document\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Info} $\ast$ G\+S\+Generator\+::generate\+Document\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_a3516212ab10dfec514985017a1f2aaf2}
+Returns the general information object of the document or 0 if no information are available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9993dd0a2415499e23d8394e7a447e98}{Okular\+::\+Generator}.
+
+
+
+Definition at line 268 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+269 \{
+270     \textcolor{keywordflow}{if} (!m\_docInfo)
+271     \{
+272         m\_docInfo = \textcolor{keyword}{new} \hyperlink{classOkular_1_1DocumentInfo}{Okular::DocumentInfo}();
+273 
+274         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ae400626d63f14b61c55bd22aca9481e0}{Okular::DocumentInfo::Title}, 
+      spectre\_document\_get\_title(m\_internalDocument) );
+275         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a1010574d070b1925e030c20fef3e7a35}{Okular::DocumentInfo::Author}, 
+      spectre\_document\_get\_for(m\_internalDocument) );
+276         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ab361aa9681b157d8d81e52f440bf646f}{Okular::DocumentInfo::Creator}, 
+      spectre\_document\_get\_creator(m\_internalDocument) );
+277         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a58a72aeacd3cb08e85d0f9f19b2fe83a}{Okular::DocumentInfo::CreationDate}, 
+      spectre\_document\_get\_creation\_date(m\_internalDocument) );
+278         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"dscversion"}, spectre\_document\_get\_format(m\_internalDocument), i18n(\textcolor{stringliteral}{"Document
+       version"}) );
+279 
+280         \textcolor{keywordtype}{int} languageLevel = spectre\_document\_get\_language\_level(m\_internalDocument);
+281         \textcolor{keywordflow}{if} (languageLevel > 0) m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"langlevel"}, QString::number(languageLevel), i18n(\textcolor{stringliteral}{"
+      Language Level"}) );
+282         \textcolor{keywordflow}{if} (spectre\_document\_is\_eps(m\_internalDocument))
+283             m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, \textcolor{stringliteral}{"image/x-eps"} 
+      );
+284         \textcolor{keywordflow}{else}
+285             m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, \textcolor{stringliteral}{"
+      application/postscript"} );
+286 
+287         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ac4706afb6f17aac2a6da24699cbd7360}{Okular::DocumentInfo::Pages}, QString::number(
+      spectre\_document\_get\_n\_pages(m\_internalDocument)) );
+288     \}
+289     \textcolor{keywordflow}{return} m\_docInfo;
+290 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a679a080deddb1d8b8d98f77645a27bad}{\index{G\+S\+Generator@{G\+S\+Generator}!generate\+Document\+Synopsis@{generate\+Document\+Synopsis}}
+\index{generate\+Document\+Synopsis@{generate\+Document\+Synopsis}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{generate\+Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Synopsis}$\ast$ G\+S\+Generator\+::generate\+Document\+Synopsis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classGSGenerator_a679a080deddb1d8b8d98f77645a27bad}
+Returns the 'table of content' object of the document or 0 if no table of content is available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a1f8b31c19d7a5101cadf3fe3186ab0f1}{Okular\+::\+Generator}.
+
+
+
+Definition at line 30 of file generator\+\_\+ghostview.\+h.
+
+
+\begin{DoxyCode}
+30 \{ \textcolor{keywordflow}{return} 0L; \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a8767c6444452e2ab8e39e0df2406b6d1}{\index{G\+S\+Generator@{G\+S\+Generator}!generate\+Pixmap@{generate\+Pixmap}}
+\index{generate\+Pixmap@{generate\+Pixmap}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{generate\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void G\+S\+Generator\+::generate\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_a8767c6444452e2ab8e39e0df2406b6d1}
+This method can be called to trigger the generation of a new pixmap as described by {\ttfamily request}. We create the text page for every page that is visible to the user, so he can use the text extraction tools without a delay.
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a198cdcd9c27b179562c935342fd457b6}{Okular\+::\+Generator}.
+
+
+
+Definition at line 228 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+229 \{
+230     kDebug(4711) << \textcolor{stringliteral}{"receiving"} << *req;
+231 
+232     SpectrePage *page = spectre\_document\_get\_page(m\_internalDocument, req->pageNumber());
+233 
+234     \hyperlink{classGSRendererThread}{GSRendererThread} *renderer = 
+      \hyperlink{classGSRendererThread_a5fc474e6996377c9d2ae9f8dd60dd786}{GSRendererThread::getCreateRenderer}();
+235 
+236     \hyperlink{structGSRendererThreadRequest}{GSRendererThreadRequest} gsreq(\textcolor{keyword}{this});
+237     gsreq.spectrePage = page;
+238     gsreq.platformFonts = GSSettings::platformFonts();
+239     \textcolor{keywordtype}{int} graphicsAA = 1;
+240     \textcolor{keywordtype}{int} textAA = 1;
+241     \textcolor{keywordflow}{if} (cache\_AAgfx) graphicsAA = 4;
+242     \textcolor{keywordflow}{if} (cache\_AAtext) textAA = 4;
+243     gsreq.textAAbits = textAA;
+244     gsreq.graphicsAAbits = graphicsAA;
+245 
+246     gsreq.orientation = req->page()->orientation();
+247     \textcolor{keywordflow}{if} (req->page()->rotation() == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a72f281f9a68957920dc968695de4363a}{Okular::Rotation90} ||
+248         req->page()->rotation() == \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6a01963dd547f5723a6b3975ae67090390}{Okular::Rotation270})
+249     \{
+250         gsreq.magnify = qMax( (\textcolor{keywordtype}{double})req->height() / req->page()->width(),
+251                               (double)req->width() / req->page()->height() );
+252     \}
+253     \textcolor{keywordflow}{else}
+254     \{
+255         gsreq.magnify = qMax( (\textcolor{keywordtype}{double})req->width() / req->page()->width(),
+256                               (double)req->height() / req->page()->height() );
+257     \}
+258     gsreq.request = req;
+259     m\_request = req;
+260     renderer->addRequest(gsreq);
+261 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_ab0fb7144433d9d5bcb01fc46352ed535}{\index{G\+S\+Generator@{G\+S\+Generator}!load\+Document@{load\+Document}}
+\index{load\+Document@{load\+Document}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{load\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+S\+Generator\+::load\+Document (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_ab0fb7144433d9d5bcb01fc46352ed535}
+virtual methods to reimplement 
+
+Implements \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{Okular\+::\+Generator}.
+
+
+
+Definition at line 160 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+161 \{
+162     cache\_AAtext = \hyperlink{classOkular_1_1Generator_a450f3316a563dcf217fcebac4fa0328e}{documentMetaData}(\textcolor{stringliteral}{"TextAntialias"}, \textcolor{keyword}{true}).toBool();
+163     cache\_AAgfx = \hyperlink{classOkular_1_1Generator_a450f3316a563dcf217fcebac4fa0328e}{documentMetaData}(\textcolor{stringliteral}{"GraphicsAntialias"}, \textcolor{keyword}{true}).toBool();
+164 
+165     m\_internalDocument = spectre\_document\_new();
+166     spectre\_document\_load(m\_internalDocument, QFile::encodeName(\hyperlink{classGSGenerator_abe1f26c04df57978c5c34a1ef2e58622}{fileName}));
+167     \textcolor{keyword}{const} SpectreStatus loadStatus = spectre\_document\_status(m\_internalDocument);
+168     \textcolor{keywordflow}{if} (loadStatus != SPECTRE\_STATUS\_SUCCESS)
+169     \{
+170         kDebug(4711) << \textcolor{stringliteral}{"ERR:"} << spectre\_status\_to\_string(loadStatus);
+171         spectre\_document\_free(m\_internalDocument);
+172         m\_internalDocument = 0;
+173         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+174     \}
+175     pagesVector.resize( spectre\_document\_get\_n\_pages(m\_internalDocument) );
+176     kDebug(4711) << \textcolor{stringliteral}{"Page count:"} << pagesVector.count();
+177     \textcolor{keywordflow}{return} loadPages(pagesVector);
+178 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_af139005a25bf1231798eba23f0f4af3e}{\index{G\+S\+Generator@{G\+S\+Generator}!meta\+Data@{meta\+Data}}
+\index{meta\+Data@{meta\+Data}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant G\+S\+Generator\+::meta\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+Variant \&}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_af139005a25bf1231798eba23f0f4af3e}
+This method returns the meta data of the given {\ttfamily key} with the given {\ttfamily option} of the document. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a74f6b91e31ead5b572ffb9fb6b06c188}{Okular\+::\+Generator}.
+
+
+
+Definition at line 309 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+310 \{
+311     Q\_UNUSED(option)
+312     if (key == "DocumentTitle")
+313     \{
+314         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *title = spectre\_document\_get\_title(m\_internalDocument);
+315         \textcolor{keywordflow}{if} (title)
+316             \textcolor{keywordflow}{return} QString::fromAscii(title);
+317     \}
+318     \textcolor{keywordflow}{return} QVariant();
+319 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a2010dbd7fb42399a0833b5658066a3cc}{\index{G\+S\+Generator@{G\+S\+Generator}!print@{print}}
+\index{print@{print}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+S\+Generator\+::print (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_a2010dbd7fb42399a0833b5658066a3cc}
+This method is called to print the document to the given {\ttfamily printer}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_aa786d406a1b0db6679a3bc62bbe2dc82}{Okular\+::\+Generator}.
+
+
+
+Definition at line 103 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};
+106 
+107     \textcolor{comment}{// Create tempfile to write to}
+108     KTemporaryFile tf;
+109     tf.setSuffix( \textcolor{stringliteral}{".ps"} );
+110 
+111     \textcolor{comment}{// Get list of pages to print}
+112     \hyperlink{classQList}{QList<int>} pageList = \hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{Okular::FilePrinter::pageList}( printer,
+113                                                spectre\_document\_get\_n\_pages( m\_internalDocument ),
+114                                                \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->currentPage() + 1,
+115                                                \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->bookmarkedPageList() );
+116 
+117     \textcolor{comment}{// Default to Postscript export, but if printing to PDF use that instead}
+118     SpectreExporterFormat exportFormat = SPECTRE\_EXPORTER\_FORMAT\_PS;
+119     \textcolor{keywordflow}{if} ( printer.outputFileName().right(3) == \textcolor{stringliteral}{"pdf"} )
+120     \{
+121         exportFormat = SPECTRE\_EXPORTER\_FORMAT\_PDF;
+122         tf.setSuffix(\textcolor{stringliteral}{".pdf"});
+123     \}
+124 
+125     \textcolor{keywordflow}{if} ( !tf.open() )
+126         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+127 
+128     SpectreExporter *exporter = spectre\_exporter\_new( m\_internalDocument, exportFormat );
+129     SpectreStatus exportStatus = spectre\_exporter\_begin( exporter, tf.fileName().toAscii() );
+130 
+131     \textcolor{keywordtype}{int} i = 0;
+132     \textcolor{keywordflow}{while} ( i < pageList.count() && exportStatus == SPECTRE\_STATUS\_SUCCESS )
+133     \{
+134         exportStatus = spectre\_exporter\_do\_page( exporter, pageList.at( i ) - 1 );
+135         i++;
+136     \}
+137 
+138     SpectreStatus endStatus = SPECTRE\_STATUS\_EXPORTER\_ERROR;
+139     \textcolor{keywordflow}{if} (exportStatus == SPECTRE\_STATUS\_SUCCESS)
+140         endStatus = spectre\_exporter\_end( exporter );
+141 
+142     spectre\_exporter\_free( exporter );
+143 
+144     \textcolor{keyword}{const} QString \hyperlink{classGSGenerator_abe1f26c04df57978c5c34a1ef2e58622}{fileName} = tf.fileName();
+145     tf.close();
+146 
+147     \textcolor{keywordflow}{if} ( exportStatus == SPECTRE\_STATUS\_SUCCESS && endStatus == SPECTRE\_STATUS\_SUCCESS )
+148     \{
+149         tf.setAutoRemove( \textcolor{keyword}{false} );
+150         \textcolor{keywordtype}{int} ret = \hyperlink{classOkular_1_1FilePrinter_abd5ec189d80d15983c49f91f7e1d38c1}{Okular::FilePrinter::printFile}( printer, fileName, 
+      \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->orientation(),
+151                                                   
+      \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{Okular::FilePrinter::SystemDeletesFiles},
+152                                                   
+      \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}{Okular::FilePrinter::ApplicationSelectsPages},
+153                                                   \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->bookmarkedPageRange() );
+154         \textcolor{keywordflow}{if} ( ret >= 0 ) result = \textcolor{keyword}{true};
+155     \}
+156 
+157     \textcolor{keywordflow}{return} result;
+158 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_ad7f8c8c8d0a5bb85fa06a6bcbdecb56d}{\index{G\+S\+Generator@{G\+S\+Generator}!reparse\+Config@{reparse\+Config}}
+\index{reparse\+Config@{reparse\+Config}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{reparse\+Config}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+S\+Generator\+::reparse\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGSGenerator_ad7f8c8c8d0a5bb85fa06a6bcbdecb56d}
+This method is called to tell the generator to re-\/parse its configuration.
+
+Returns true if something has changed.
+
+\begin{DoxyNote}{Note}
+this method can be called also when the generator is not the active generator, or when there was not changed in the config added by the generator itself. So the suggestion is to {\bfseries check} whether something changed, and only in that case return {\ttfamily true} 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classOkular_1_1ConfigInterface_a0f61ec6852e483b898efd9709b1ef63b}{Okular\+::\+Config\+Interface}.
+
+
+
+Definition at line 74 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76     \textcolor{keywordtype}{bool} changed = \textcolor{keyword}{false};
+77     \textcolor{keywordflow}{if} (m\_internalDocument)
+78     \{
+79 \textcolor{preprocessor}{#define SET\_HINT(hintname, hintdefvalue, hintvar) \(\backslash\)}
+80 \textcolor{preprocessor}{\{ \(\backslash\)}
+81 \textcolor{preprocessor}{    bool newhint = documentMetaData(hintname, hintdefvalue).toBool(); \(\backslash\)}
+82 \textcolor{preprocessor}{    if (newhint != cache\_##hintvar) \(\backslash\)}
+83 \textcolor{preprocessor}{    \{ \(\backslash\)}
+84 \textcolor{preprocessor}{        cache\_##hintvar = newhint; \(\backslash\)}
+85 \textcolor{preprocessor}{        changed = true; \(\backslash\)}
+86 \textcolor{preprocessor}{    \} \(\backslash\)}
+87 \textcolor{preprocessor}{\}}
+88     \hyperlink{generator__ghostview_8cpp_acb0d59c7215bd6dbfc06df3c15723d63}{SET\_HINT}(\textcolor{stringliteral}{"GraphicsAntialias"}, \textcolor{keyword}{true}, AAgfx)
+89     \hyperlink{generator__ghostview_8cpp_acb0d59c7215bd6dbfc06df3c15723d63}{SET\_HINT}("TextAntialias", true, AAtext)
+90 \textcolor{preprocessor}{#undef SET\_HINT}
+91     \}
+92     \textcolor{keywordflow}{return} changed;
+93 \}
+\end{DoxyCode}
+\hypertarget{classGSGenerator_a3257ce78fcdb8f1878637f6a5682bbc3}{\index{G\+S\+Generator@{G\+S\+Generator}!slot\+Image\+Generated@{slot\+Image\+Generated}}
+\index{slot\+Image\+Generated@{slot\+Image\+Generated}!G\+S\+Generator@{G\+S\+Generator}}
+\subsubsection[{slot\+Image\+Generated}]{\setlength{\rightskip}{0pt plus 5cm}void G\+S\+Generator\+::slot\+Image\+Generated (
+\begin{DoxyParamCaption}
+\item[{Q\+Image $\ast$}]{img, }
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classGSGenerator_a3257ce78fcdb8f1878637f6a5682bbc3}
+
+
+Definition at line 191 of file generator\+\_\+ghostview.\+cpp.
+
+
+\begin{DoxyCode}
+192 \{
+193     \textcolor{comment}{// This can happen as GSInterpreterCMD is a singleton and on creation signals all the slots}
+194     \textcolor{comment}{// of all the generators attached to it}
+195     \textcolor{keywordflow}{if} (request != m\_request) \textcolor{keywordflow}{return};
+196 
+197     \textcolor{keywordflow}{if} ( !request->\hyperlink{classOkular_1_1PixmapRequest_a83b5e81f2e908e70f3c19a0a3c07fab3}{page}()->\hyperlink{classOkular_1_1Page_a19690d5696075b6e93a5a6ea578ca09e}{isBoundingBoxKnown}() )
+198         \hyperlink{classOkular_1_1Generator_acc2aae181c392cb58e42eaa8d35213ef}{updatePageBoundingBox}( request->\hyperlink{classOkular_1_1PixmapRequest_a83b5e81f2e908e70f3c19a0a3c07fab3}{page}()->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}(), 
+      \hyperlink{classOkular_1_1Utils_af1d97967ffcdda70bbc4ddb293da5020}{Okular::Utils::imageBoundingBox}( img ) );
+199 
+200     m\_request = 0;
+201     QPixmap *pix = \textcolor{keyword}{new} QPixmap(QPixmap::fromImage(*img));
+202     \textcolor{keyword}{delete} img;
+203     request->\hyperlink{classOkular_1_1PixmapRequest_a83b5e81f2e908e70f3c19a0a3c07fab3}{page}()->\hyperlink{classOkular_1_1Page_ae7e45a6647904b01ebe84930b73f1d79}{setPixmap}( request->\hyperlink{classOkular_1_1PixmapRequest_af7abb325ca484ded40c556cf0ad5b793}{observer}(), pix );
+204     \hyperlink{classOkular_1_1Generator_abed0ea73d02be9c4a0afcd920882faf5}{signalPixmapRequestDone}( request );
+205 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/spectre/\hyperlink{generator__ghostview_8h}{generator\+\_\+ghostview.\+h}\item 
+generators/spectre/\hyperlink{generator__ghostview_8cpp}{generator\+\_\+ghostview.\+cpp}\end{DoxyCompactItemize}

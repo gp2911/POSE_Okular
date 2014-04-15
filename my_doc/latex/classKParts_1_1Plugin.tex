@@ -1,0 +1,237 @@
+\hypertarget{classKParts_1_1Plugin}{\section{K\+Parts\+:\+:Plugin Class Reference}
+\label{classKParts_1_1Plugin}\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+}
+
+
+{\ttfamily \#include $<$plugin.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKParts_1_1Plugin}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structKParts_1_1Plugin_1_1PluginInfo}{Plugin\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1Plugin_ab9f6924150a0a8ec941f4e81ba22311b}{Plugin} (Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classKParts_1_1Plugin_a8a31c0e95c1a8c467a8f22f0da9022ff}{$\sim$\+Plugin} ()
+\item 
+virtual Q\+String \hyperlink{classKParts_1_1Plugin_aef2c9fe874cea1c76e17418fee2a0268}{xml\+File} () const 
+\item 
+virtual Q\+String \hyperlink{classKParts_1_1Plugin_a5d409b39746290ef1606840ea1cb15d8}{local\+X\+M\+L\+File} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classKParts_1_1Plugin_a66590bc55db365f880417d14f7ba38d0}{load\+Plugins} (Q\+Object $\ast$parent, const K\+Component\+Data \&instance)
+\item 
+static void \hyperlink{classKParts_1_1Plugin_a1634580342d43bf995041047e818f4a1}{load\+Plugins} (Q\+Object $\ast$parent, const \hyperlink{classQList}{Q\+List}$<$ \hyperlink{structKParts_1_1Plugin_1_1PluginInfo}{Plugin\+Info} $>$ \&\hyperlink{classKParts_1_1Plugin_a00fa7c83044416dbe32dcef7672fb7a5}{plugin\+Infos})
+\item 
+static void \hyperlink{classKParts_1_1Plugin_aef449c965dc8b644ed6502d7543891c7}{load\+Plugins} (Q\+Object $\ast$parent, const \hyperlink{classQList}{Q\+List}$<$ \hyperlink{structKParts_1_1Plugin_1_1PluginInfo}{Plugin\+Info} $>$ \&\hyperlink{classKParts_1_1Plugin_a00fa7c83044416dbe32dcef7672fb7a5}{plugin\+Infos}, const K\+Component\+Data \&instance)
+\item 
+static void \hyperlink{classKParts_1_1Plugin_a6f28c0e34f43edcc9cff5f6d474e8e01}{load\+Plugins} (Q\+Object $\ast$parent, K\+X\+M\+L\+G\+U\+I\+Client $\ast$parent\+G\+U\+I\+Client, const K\+Component\+Data \&instance, bool enable\+New\+Plugins\+By\+Default=true, int interface\+Version\+Required=0)
+\item 
+static \hyperlink{classQList}{Q\+List}$<$ \hyperlink{classKParts_1_1Plugin}{Plugin} $\ast$ $>$ \hyperlink{classKParts_1_1Plugin_ad53945bdaf59d6f0e1747c9106be9254}{plugin\+Objects} (Q\+Object $\ast$parent)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1Plugin_a2406655ff0eb285c16516574cec136eb}{set\+Component\+Data} (const K\+Component\+Data \&instance)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classQList}{Q\+List}$<$ \hyperlink{structKParts_1_1Plugin_1_1PluginInfo}{Plugin\+::\+Plugin\+Info} $>$ \hyperlink{classKParts_1_1Plugin_a00fa7c83044416dbe32dcef7672fb7a5}{plugin\+Infos} (const K\+Component\+Data \&instance)
+\item 
+static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D \hyperlink{classKParts_1_1Plugin}{Plugin} $\ast$ \hyperlink{classKParts_1_1Plugin_adf61fe555a87f5ad3bf84c5e16a97e31}{load\+Plugin} (Q\+Object $\ast$parent, const char $\ast$libname)
+\item 
+static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D \hyperlink{classKParts_1_1Plugin}{Plugin} $\ast$ \hyperlink{classKParts_1_1Plugin_a1479723a42f26aa8b4fd843e00976d5b}{load\+Plugin} (Q\+Object $\ast$parent, const Q\+Byte\+Array \&libname)
+\item 
+static \hyperlink{classKParts_1_1Plugin}{Plugin} $\ast$ \hyperlink{classKParts_1_1Plugin_ae2c2c4b6f736f5236bc5d4f2b20710a1}{load\+Plugin} (Q\+Object $\ast$parent, const Q\+String \&libname)
+\item 
+static \hyperlink{classKParts_1_1Plugin}{Plugin} $\ast$ \hyperlink{classKParts_1_1Plugin_a7fef84c255c7ed61b4548258fbaf3a68}{load\+Plugin} (Q\+Object $\ast$parent, const Q\+String \&libname, const Q\+String \&keyword)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A plugin is the way to add actions to an existing \hyperlink{namespaceKParts}{K\+Parts} application, or to a \hyperlink{classKParts_1_1Part}{Part}.
+
+The X\+M\+L of those plugins looks exactly like of the shell or parts, with one small difference\+: The document tag should have an additional attribute, named \char`\"{}library\char`\"{}, and contain the name of the library implementing the plugin.
+
+If you want this plugin to be used by a part, you need to install the rc file under the directory \char`\"{}data\char`\"{} (K\+D\+E\+D\+I\+R/share/apps usually)+\char`\"{}/instancename/kpartplugins/\char`\"{} where instancename is the name of the part's instance.
+
+You should also install a \char`\"{}plugin info\char`\"{} .desktop file with the same name. \begin{DoxySeeAlso}{See Also}
+K\+Plugin\+Info
+\end{DoxySeeAlso}
+For a tutorial on how to write plugins, see \href{http://developer.kde.org/documentation/tutorials/developing-a-plugin-structure/index.html#developing_plugins}{\tt http\+://developer.\+kde.\+org/documentation/tutorials/developing-\/a-\/plugin-\/structure/index.\+html\#developing\+\_\+plugins} 
+
+Definition at line 54 of file plugin.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1Plugin_ab9f6924150a0a8ec941f4e81ba22311b}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!Plugin@{Plugin}}
+\index{Plugin@{Plugin}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{Plugin}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Plugin\+::\+Plugin (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1Plugin_ab9f6924150a0a8ec941f4e81ba22311b}
+Construct a new \hyperlink{namespaceKParts}{K\+Parts} plugin. \hypertarget{classKParts_1_1Plugin_a8a31c0e95c1a8c467a8f22f0da9022ff}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!````~Plugin@{$\sim$\+Plugin}}
+\index{````~Plugin@{$\sim$\+Plugin}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{$\sim$\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Plugin\+::$\sim$\+Plugin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Plugin_a8a31c0e95c1a8c467a8f22f0da9022ff}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1Plugin_adf61fe555a87f5ad3bf84c5e16a97e31}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugin@{load\+Plugin}}
+\index{load\+Plugin@{load\+Plugin}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D {\bf Plugin}$\ast$ K\+Parts\+::\+Plugin\+::load\+Plugin (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const char $\ast$}]{libname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classKParts_1_1Plugin_adf61fe555a87f5ad3bf84c5e16a97e31}
+\hypertarget{classKParts_1_1Plugin_a1479723a42f26aa8b4fd843e00976d5b}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugin@{load\+Plugin}}
+\index{load\+Plugin@{load\+Plugin}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D {\bf Plugin}$\ast$ K\+Parts\+::\+Plugin\+::load\+Plugin (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Byte\+Array \&}]{libname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classKParts_1_1Plugin_a1479723a42f26aa8b4fd843e00976d5b}
+\hypertarget{classKParts_1_1Plugin_ae2c2c4b6f736f5236bc5d4f2b20710a1}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugin@{load\+Plugin}}
+\index{load\+Plugin@{load\+Plugin}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Plugin}$\ast$ K\+Parts\+::\+Plugin\+::load\+Plugin (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+String \&}]{libname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classKParts_1_1Plugin_ae2c2c4b6f736f5236bc5d4f2b20710a1}
+\hypertarget{classKParts_1_1Plugin_a7fef84c255c7ed61b4548258fbaf3a68}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugin@{load\+Plugin}}
+\index{load\+Plugin@{load\+Plugin}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Plugin}$\ast$ K\+Parts\+::\+Plugin\+::load\+Plugin (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+String \&}]{libname, }
+\item[{const Q\+String \&}]{keyword}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classKParts_1_1Plugin_a7fef84c255c7ed61b4548258fbaf3a68}
+\hypertarget{classKParts_1_1Plugin_a66590bc55db365f880417d14f7ba38d0}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugins@{load\+Plugins}}
+\index{load\+Plugins@{load\+Plugins}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugins}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Plugin\+::load\+Plugins (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const K\+Component\+Data \&}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1Plugin_a66590bc55db365f880417d14f7ba38d0}
+Load the plugin libraries from the directories appropriate to {\ttfamily instance} and make the \hyperlink{classKParts_1_1Plugin}{Plugin} objects children of {\ttfamily parent}.
+
+It is recommended to use the last load\+Plugins method instead, to support enabling and disabling of plugins. \hypertarget{classKParts_1_1Plugin_a1634580342d43bf995041047e818f4a1}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugins@{load\+Plugins}}
+\index{load\+Plugins@{load\+Plugins}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugins}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Plugin\+::load\+Plugins (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const {\bf Q\+List}$<$ {\bf Plugin\+Info} $>$ \&}]{plugin\+Infos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1Plugin_a1634580342d43bf995041047e818f4a1}
+Load the plugin libraries specified by the list {\ttfamily docs} and make the \hyperlink{classKParts_1_1Plugin}{Plugin} objects children of {\ttfamily parent} .
+
+It is recommended to use the last load\+Plugins method instead, to support enabling and disabling of plugins. \hypertarget{classKParts_1_1Plugin_aef449c965dc8b644ed6502d7543891c7}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugins@{load\+Plugins}}
+\index{load\+Plugins@{load\+Plugins}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugins}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Plugin\+::load\+Plugins (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const {\bf Q\+List}$<$ {\bf Plugin\+Info} $>$ \&}]{plugin\+Infos, }
+\item[{const K\+Component\+Data \&}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1Plugin_aef449c965dc8b644ed6502d7543891c7}
+Load the plugin libraries specified by the list {\ttfamily plugin\+Infos}, make the \hyperlink{classKParts_1_1Plugin}{Plugin} objects children of {\ttfamily parent}, and use the given {\ttfamily instance}.
+
+It is recommended to use the last load\+Plugins method instead, to support enabling and disabling of plugins. \hypertarget{classKParts_1_1Plugin_a6f28c0e34f43edcc9cff5f6d474e8e01}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!load\+Plugins@{load\+Plugins}}
+\index{load\+Plugins@{load\+Plugins}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{load\+Plugins}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Plugin\+::load\+Plugins (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{K\+X\+M\+L\+G\+U\+I\+Client $\ast$}]{parent\+G\+U\+I\+Client, }
+\item[{const K\+Component\+Data \&}]{instance, }
+\item[{bool}]{enable\+New\+Plugins\+By\+Default = {\ttfamily true}, }
+\item[{int}]{interface\+Version\+Required = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1Plugin_a6f28c0e34f43edcc9cff5f6d474e8e01}
+Load the plugin libraries for the given {\ttfamily instance}, make the \hyperlink{classKParts_1_1Plugin}{Plugin} objects children of {\ttfamily parent}, and insert the plugin as a child G\+U\+I client of {\ttfamily parent\+G\+U\+I\+Client}.
+
+This method uses the K\+Config object of the given instance, to find out which plugins are enabled and which are disabled. What happens by default (i.\+e. for new plugins that are not in that config file) is controlled by {\ttfamily enable\+New\+Plugins\+By\+Default}. It can be overridden by the plugin if it sets the X-\/\+K\+D\+E-\/\+Plugin\+Info-\/\+Enabled\+By\+Default key in the .desktop file (with the same name as the .rc file)
+
+If a disabled plugin is already loaded it will be removed from the G\+U\+I factory and deleted.
+
+If you change the binary interface offered by your part, you can avoid crashes from old plugins lying around by setting X-\/\+K\+D\+E-\/\+Interface\+Version=2 in the .desktop files of the plugins, and passing 2 to {\ttfamily interface\+Version\+Required}, so that the old plugins are not loaded. Increase both numbers every time a binary incompatible change in the application's plugin interface is made.
+
+This method is automatically called by \hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part} and by \hyperlink{classKParts_1_1MainWindow}{K\+Parts\+::\+Main\+Window}. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classKParts_1_1PartBase_abaf6f9e33fa1890008905f9a1356e1a1}{Part\+Base\+::set\+Plugin\+Loading\+Mode}, \hyperlink{classKParts_1_1PartBase_a5a9ed59560edb848e787c4b3cee878b1}{Part\+Base\+::set\+Plugin\+Interface\+Version}
+\end{DoxySeeAlso}
+If you call this method in an already constructed G\+U\+I (like when the user has changed which plugins are enabled) you need to add the new plugins to the K\+X\+M\+L\+G\+U\+I\+Factory\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}( factory() )
+\{
+  \textcolor{keyword}{const} \hyperlink{classQList}{QList<KParts::Plugin *>} plugins = 
+      \hyperlink{classKParts_1_1Plugin_ad53945bdaf59d6f0e1747c9106be9254}{KParts::Plugin::pluginObjects}( \textcolor{keyword}{this} );
+  \textcolor{keywordflow}{foreach} ( \hyperlink{classKParts_1_1Plugin}{KParts::Plugin} * plugin, plugins )
+    factory()->addClient( plugin );
+\}
+\end{DoxyCode}
+ \hypertarget{classKParts_1_1Plugin_a5d409b39746290ef1606840ea1cb15d8}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!local\+X\+M\+L\+File@{local\+X\+M\+L\+File}}
+\index{local\+X\+M\+L\+File@{local\+X\+M\+L\+File}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{local\+X\+M\+L\+File}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String K\+Parts\+::\+Plugin\+::local\+X\+M\+L\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Plugin_a5d409b39746290ef1606840ea1cb15d8}
+Reimplemented for internal reasons \hypertarget{classKParts_1_1Plugin_a00fa7c83044416dbe32dcef7672fb7a5}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!plugin\+Infos@{plugin\+Infos}}
+\index{plugin\+Infos@{plugin\+Infos}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{plugin\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Q\+List}$<${\bf Plugin\+::\+Plugin\+Info}$>$ K\+Parts\+::\+Plugin\+::plugin\+Infos (
+\begin{DoxyParamCaption}
+\item[{const K\+Component\+Data \&}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classKParts_1_1Plugin_a00fa7c83044416dbe32dcef7672fb7a5}
+Look for plugins in the {\ttfamily instance's} \char`\"{}data\char`\"{} directory (+\char`\"{}/kpartplugins\char`\"{})
+
+\begin{DoxyReturn}{Returns}
+A list of Q\+Dom\+Document s, containing the parsed xml documents returned by plugins. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1Plugin_ad53945bdaf59d6f0e1747c9106be9254}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!plugin\+Objects@{plugin\+Objects}}
+\index{plugin\+Objects@{plugin\+Objects}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{plugin\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Q\+List}$<${\bf Plugin} $\ast$$>$ K\+Parts\+::\+Plugin\+::plugin\+Objects (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1Plugin_ad53945bdaf59d6f0e1747c9106be9254}
+Returns a list of plugin objects loaded for {\ttfamily parent}. This functions basically iterates over the children of the given object and returns those that inherit from \hyperlink{classKParts_1_1Plugin}{K\+Parts\+::\+Plugin}. \hypertarget{classKParts_1_1Plugin_a2406655ff0eb285c16516574cec136eb}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!set\+Component\+Data@{set\+Component\+Data}}
+\index{set\+Component\+Data@{set\+Component\+Data}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{set\+Component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Plugin\+::set\+Component\+Data (
+\begin{DoxyParamCaption}
+\item[{const K\+Component\+Data \&}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Plugin_a2406655ff0eb285c16516574cec136eb}
+\hypertarget{classKParts_1_1Plugin_aef2c9fe874cea1c76e17418fee2a0268}{\index{K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}!xml\+File@{xml\+File}}
+\index{xml\+File@{xml\+File}!K\+Parts\+::\+Plugin@{K\+Parts\+::\+Plugin}}
+\subsubsection[{xml\+File}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String K\+Parts\+::\+Plugin\+::xml\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Plugin_aef2c9fe874cea1c76e17418fee2a0268}
+Reimplemented for internal reasons 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{plugin_8h}{plugin.\+h}\end{DoxyCompactItemize}

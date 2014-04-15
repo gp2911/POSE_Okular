@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['basicfeatures',['BasicFeatures',['../classKParts_1_1BrowserOpenOrSaveQuestion.html#a9dfe6a7919cfadff826a357e94ac3a9aa1cfa50dab189d46bdc4a66c5a1763168',1,'KParts::BrowserOpenOrSaveQuestion']]],
+  ['beingmoved',['BeingMoved',['../classOkular_1_1Annotation.html#a8a214541446745761efeda70b3a4302ea9cd51e0fe53aac93798a205e7fb5c04a',1,'Okular::Annotation']]],
+  ['beveled',['Beveled',['../classOkular_1_1Annotation.html#ac60f5de2d449043f9f849f3f081f8a7aa1cdd133335b77eb2a3fa81b5765bc708',1,'Okular::Annotation']]],
+  ['blackwhite',['BlackWhite',['../classOkular_1_1SettingsCore_1_1EnumRenderMode.html#aae172bdb345dda4d639e763709ea357aacfc5ee223333e478da6fb379a9eaa23a',1,'Okular::SettingsCore::EnumRenderMode']]],
+  ['blinds',['Blinds',['../classOkular_1_1PageTransition.html#a3e8b592a5a587ec0c3a9855d5d2687dfa8d6d573cc8bcb70ad3de45677e16b23f',1,'Okular::PageTransition']]],
+  ['blindshorizontal',['BlindsHorizontal',['../classOkular_1_1Settings_1_1EnumSlidesTransition.html#ae1bec274595e6aac4cdcfc809afb3d63ab6acf4c165284f54d5f117b76a3a1ec4',1,'Okular::Settings::EnumSlidesTransition']]],
+  ['blindsvertical',['BlindsVertical',['../classOkular_1_1Settings_1_1EnumSlidesTransition.html#ae1bec274595e6aac4cdcfc809afb3d63a63fcf5a3a6dd78b79480889df8256111',1,'Okular::Settings::EnumSlidesTransition']]],
+  ['bookmark',['Bookmark',['../classOkular_1_1DocumentObserver.html#af0e6b09d5fc7ecb673bd4895ef2710dca34e801b3a66f7634fd65611c3e6d01a5',1,'Okular::DocumentObserver']]],
+  ['bottom',['Bottom',['../classPageViewToolBar.html#a6410ac0bc9e35fba1314cfd6d7049385ab20155b7a2791a54d63c84d188b67a43',1,'PageViewToolBar']]],
+  ['boundingbox',['BoundingBox',['../classOkular_1_1DocumentObserver.html#af0e6b09d5fc7ecb673bd4895ef2710dca55dd38c482d00976565314a6b353e948',1,'Okular::DocumentObserver']]],
+  ['box',['Box',['../classOkular_1_1PageTransition.html#a3e8b592a5a587ec0c3a9855d5d2687dfa916ea7954243ec5e7aec27fa7b6a069c',1,'Okular::PageTransition']]],
+  ['boxin',['BoxIn',['../classOkular_1_1Settings_1_1EnumSlidesTransition.html#ae1bec274595e6aac4cdcfc809afb3d63add6c744f708560ab49624db2d06df2e9',1,'Okular::Settings::EnumSlidesTransition']]],
+  ['boxout',['BoxOut',['../classOkular_1_1Settings_1_1EnumSlidesTransition.html#ae1bec274595e6aac4cdcfc809afb3d63a87c36d5ce2b8153a93d3d3baf7a1ab49',1,'Okular::Settings::EnumSlidesTransition']]],
+  ['browse',['Browse',['../classOkular_1_1Settings_1_1EnumMouseMode.html#ab2ae04e2d7d069f02195ccf32c52415bae5c77f74b0cf35d7838da1baaad4e822',1,'Okular::Settings::EnumMouseMode::Browse()'],['../classOkular_1_1Action.html#abe474735af30ea76105595533df9ec47a7b94e3d79ff6813ba8444b1d98ca4756',1,'Okular::Action::Browse()']]],
+  ['bullet',['Bullet',['../classOOO_1_1ListFormatProperty.html#ade7ec3de6e5f2d3e70ea0f7957bf6f78a4873cf9ff40610a812d97f7fd08b61ab',1,'OOO::ListFormatProperty']]],
+  ['butt',['Butt',['../classOkular_1_1LineAnnotation.html#a67e1128311347eabfd909909facabec6a7f23025f3dc305033c6c56a2ec95658d',1,'Okular::LineAnnotation']]]
+];

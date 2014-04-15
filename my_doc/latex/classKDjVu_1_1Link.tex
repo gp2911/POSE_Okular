@@ -1,0 +1,217 @@
+\hypertarget{classKDjVu_1_1Link}{\section{K\+Dj\+Vu\+:\+:Link Class Reference}
+\label{classKDjVu_1_1Link}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+}
+
+
+{\ttfamily \#include $<$kdjvu.\+h$>$}
+
+Inheritance diagram for K\+Dj\+Vu\+:\+:Link\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKDjVu_1_1Link}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2e}{Link\+Type} \{ \hyperlink{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eae69a9d466d98a79238b70196598f6d17}{Page\+Link}, 
+\hyperlink{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eab9d17f257c3c77f428e805ac04c8a55b}{Url\+Link}
+ \}
+\item 
+enum \hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9a}{Link\+Area} \{ \hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6c0cf99a52f0b175a8feaaaa76edceeb}{Unknown\+Area}, 
+\hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6897a602cd1401eb6d0ccc4bd5127ed1}{Rect\+Area}, 
+\hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa47d6a7b999bac1147973a3b3d272516c}{Ellipse\+Area}, 
+\hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa354fba105f6cef2461151c1b9e23024e}{Polygon\+Area}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classKDjVu_1_1Link_a739d79ef647905dd341c3cd2499095ab}{$\sim$\+Link} ()
+\item 
+virtual int \hyperlink{classKDjVu_1_1Link_ac25a9e93e099d74ea3f2dca8d774d7e0}{type} () const =0
+\item 
+\hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9a}{Link\+Area} \hyperlink{classKDjVu_1_1Link_ab4c915079557e3915aa4a823bf692095}{area\+Type} () const 
+\item 
+Q\+Point \hyperlink{classKDjVu_1_1Link_ac5b26fabaa557a48ef841acf3f9c92f2}{point} () const 
+\item 
+Q\+Size \hyperlink{classKDjVu_1_1Link_a56cdee5de83866c1fd961d016e579c2a}{size} () const 
+\item 
+Q\+Polygon \hyperlink{classKDjVu_1_1Link_aaa0b49aeb9dcab29ef72831ba8665bd8}{polygon} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classKDjVu_1_1Link_a4241ce0336d22245ffdb13dd5cb6edcc}{K\+Dj\+Vu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base implementation for a Dj\+Vu link. 
+
+Definition at line 65 of file kdjvu.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9a}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Link\+Area@{Link\+Area}}
+\index{Link\+Area@{Link\+Area}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{Link\+Area}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Dj\+Vu\+::\+Link\+::\+Link\+Area}}}\label{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Unknown\+Area@{Unknown\+Area}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Unknown\+Area@{Unknown\+Area}}\item[{\em 
+\hypertarget{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6c0cf99a52f0b175a8feaaaa76edceeb}{Unknown\+Area}\label{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6c0cf99a52f0b175a8feaaaa76edceeb}
+}]\index{Rect\+Area@{Rect\+Area}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Rect\+Area@{Rect\+Area}}\item[{\em 
+\hypertarget{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6897a602cd1401eb6d0ccc4bd5127ed1}{Rect\+Area}\label{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6897a602cd1401eb6d0ccc4bd5127ed1}
+}]\index{Ellipse\+Area@{Ellipse\+Area}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Ellipse\+Area@{Ellipse\+Area}}\item[{\em 
+\hypertarget{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa47d6a7b999bac1147973a3b3d272516c}{Ellipse\+Area}\label{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa47d6a7b999bac1147973a3b3d272516c}
+}]\index{Polygon\+Area@{Polygon\+Area}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Polygon\+Area@{Polygon\+Area}}\item[{\em 
+\hypertarget{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa354fba105f6cef2461151c1b9e23024e}{Polygon\+Area}\label{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa354fba105f6cef2461151c1b9e23024e}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 73 of file kdjvu.\+h.
+
+
+\begin{DoxyCode}
+73 \{ \hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6c0cf99a52f0b175a8feaaaa76edceeb}{UnknownArea}, \hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa6897a602cd1401eb6d0ccc4bd5127ed1}{RectArea}, \hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa47d6a7b999bac1147973a3b3d272516c}{EllipseArea}, \hyperlink{classKDjVu_1_1Link_ae7930012fef50123e69d2c97897afd9aa354fba105f6cef2461151c1b9e23024e}{PolygonArea} \};
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2e}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Link\+Type@{Link\+Type}}
+\index{Link\+Type@{Link\+Type}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{Link\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Dj\+Vu\+::\+Link\+::\+Link\+Type}}}\label{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Page\+Link@{Page\+Link}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Page\+Link@{Page\+Link}}\item[{\em 
+\hypertarget{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eae69a9d466d98a79238b70196598f6d17}{Page\+Link}\label{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eae69a9d466d98a79238b70196598f6d17}
+}]\index{Url\+Link@{Url\+Link}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!Url\+Link@{Url\+Link}}\item[{\em 
+\hypertarget{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eab9d17f257c3c77f428e805ac04c8a55b}{Url\+Link}\label{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eab9d17f257c3c77f428e805ac04c8a55b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 72 of file kdjvu.\+h.
+
+
+\begin{DoxyCode}
+72 \{ \hyperlink{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eae69a9d466d98a79238b70196598f6d17}{PageLink}, \hyperlink{classKDjVu_1_1Link_aa3462900152831c168c4c62614819b2eab9d17f257c3c77f428e805ac04c8a55b}{UrlLink} \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKDjVu_1_1Link_a739d79ef647905dd341c3cd2499095ab}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!````~Link@{$\sim$\+Link}}
+\index{````~Link@{$\sim$\+Link}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{$\sim$\+Link}]{\setlength{\rightskip}{0pt plus 5cm}K\+Dj\+Vu\+::\+Link\+::$\sim$\+Link (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKDjVu_1_1Link_a739d79ef647905dd341c3cd2499095ab}
+
+
+Definition at line 193 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+194 \{
+195 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKDjVu_1_1Link_ab4c915079557e3915aa4a823bf692095}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!area\+Type@{area\+Type}}
+\index{area\+Type@{area\+Type}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{area\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\+Dj\+Vu\+::\+Link\+::\+Link\+Area} K\+Dj\+Vu\+::\+Link\+::area\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKDjVu_1_1Link_ab4c915079557e3915aa4a823bf692095}
+
+
+Definition at line 197 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+198 \{
+199     \textcolor{keywordflow}{return} m\_area;
+200 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Link_ac5b26fabaa557a48ef841acf3f9c92f2}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!point@{point}}
+\index{point@{point}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{point}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point K\+Dj\+Vu\+::\+Link\+::point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKDjVu_1_1Link_ac5b26fabaa557a48ef841acf3f9c92f2}
+
+
+Definition at line 202 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+203 \{
+204     \textcolor{keywordflow}{return} m\_point;
+205 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Link_aaa0b49aeb9dcab29ef72831ba8665bd8}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!polygon@{polygon}}
+\index{polygon@{polygon}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{polygon}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Polygon K\+Dj\+Vu\+::\+Link\+::polygon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKDjVu_1_1Link_aaa0b49aeb9dcab29ef72831ba8665bd8}
+
+
+Definition at line 212 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+213 \{
+214     \textcolor{keywordflow}{return} m\_poly;
+215 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Link_a56cdee5de83866c1fd961d016e579c2a}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!size@{size}}
+\index{size@{size}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size K\+Dj\+Vu\+::\+Link\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKDjVu_1_1Link_a56cdee5de83866c1fd961d016e579c2a}
+
+
+Definition at line 207 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+208 \{
+209     \textcolor{keywordflow}{return} m\_size;
+210 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Link_ac25a9e93e099d74ea3f2dca8d774d7e0}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!type@{type}}
+\index{type@{type}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual int K\+Dj\+Vu\+::\+Link\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKDjVu_1_1Link_ac25a9e93e099d74ea3f2dca8d774d7e0}
+
+
+Implemented in \hyperlink{classKDjVu_1_1UrlLink_a2c6a7e31c7fcf8b3cbf5b577e1d63dbf}{K\+Dj\+Vu\+::\+Url\+Link}, and \hyperlink{classKDjVu_1_1PageLink_a3ed01b7b48403d996988b20038dc080f}{K\+Dj\+Vu\+::\+Page\+Link}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classKDjVu_1_1Link_a4241ce0336d22245ffdb13dd5cb6edcc}{\index{K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}!K\+Dj\+Vu@{K\+Dj\+Vu}}
+\index{K\+Dj\+Vu@{K\+Dj\+Vu}!K\+Dj\+Vu\+::\+Link@{K\+Dj\+Vu\+::\+Link}}
+\subsubsection[{K\+Dj\+Vu}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf K\+Dj\+Vu}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classKDjVu_1_1Link_a4241ce0336d22245ffdb13dd5cb6edcc}
+
+
+Definition at line 67 of file kdjvu.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/djvu/\hyperlink{kdjvu_8h}{kdjvu.\+h}\item 
+generators/djvu/\hyperlink{kdjvu_8cpp}{kdjvu.\+cpp}\end{DoxyCompactItemize}

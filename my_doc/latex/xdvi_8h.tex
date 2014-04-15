@@ -1,0 +1,171 @@
+\hypertarget{xdvi_8h}{\section{generators/dvi/xdvi.h File Reference}
+\label{xdvi_8h}\index{generators/dvi/xdvi.\+h@{generators/dvi/xdvi.\+h}}
+}
+{\ttfamily \#include $<$cstdio$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{xdvi_8h_a20c604ddc8550203707ee1ef509ba365}{R\+O\+U\+N\+D\+U\+P}(x, y)~(((x)+(y)-\/1)/(y))
+\item 
+\#define \hyperlink{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{one}(fp)~((unsigned char) getc(fp))
+\item 
+\#define \hyperlink{xdvi_8h_ae57354a2f706c057f0bad490537c4636}{sone}(fp)~((long) \hyperlink{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{one}(fp))
+\item 
+\#define \hyperlink{xdvi_8h_a6874b0a3b8a5ac96d88d2648abf373b1}{two}(fp)~\hyperlink{xdvi_8h_ac675915823064aa6f5ca36bdfddd0a5b}{num} (fp, 2)
+\item 
+\#define \hyperlink{xdvi_8h_a8262232c36678176fdfcbda6142e5667}{stwo}(fp)~\hyperlink{xdvi_8h_a66ef4ff80c1c724698a8dc64f995645d}{snum}(fp, 2)
+\item 
+\#define \hyperlink{xdvi_8h_a10d8eb8db1f355f496ee7adb02ab53b2}{four}(fp)~\hyperlink{xdvi_8h_ac675915823064aa6f5ca36bdfddd0a5b}{num} (fp, 4)
+\item 
+\#define \hyperlink{xdvi_8h_ab9f6cc7375b738447e6bf7f6d1c8e68f}{sfour}(fp)~\hyperlink{xdvi_8h_a66ef4ff80c1c724698a8dc64f995645d}{snum}(fp, 4)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \hyperlink{xdvi_8h_ac675915823064aa6f5ca36bdfddd0a5b}{num} (F\+I\+L\+E $\ast$, int)
+\item 
+long \hyperlink{xdvi_8h_a66ef4ff80c1c724698a8dc64f995645d}{snum} (F\+I\+L\+E $\ast$, int)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct Window\+Rec mane \hyperlink{xdvi_8h_a28839d782e3a72466b7f6ce68f7157c3}{currwin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{xdvi_8h_a10d8eb8db1f355f496ee7adb02ab53b2}{\index{xdvi.\+h@{xdvi.\+h}!four@{four}}
+\index{four@{four}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{four}]{\setlength{\rightskip}{0pt plus 5cm}\#define four(
+\begin{DoxyParamCaption}
+\item[{}]{fp}
+\end{DoxyParamCaption}
+)~{\bf num} (fp, 4)}}\label{xdvi_8h_a10d8eb8db1f355f496ee7adb02ab53b2}
+
+
+Definition at line 21 of file xdvi.\+h.
+
+\hypertarget{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{\index{xdvi.\+h@{xdvi.\+h}!one@{one}}
+\index{one@{one}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{one}]{\setlength{\rightskip}{0pt plus 5cm}\#define one(
+\begin{DoxyParamCaption}
+\item[{}]{fp}
+\end{DoxyParamCaption}
+)~((unsigned char) getc(fp))}}\label{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}
+
+
+Definition at line 17 of file xdvi.\+h.
+
+\hypertarget{xdvi_8h_a20c604ddc8550203707ee1ef509ba365}{\index{xdvi.\+h@{xdvi.\+h}!R\+O\+U\+N\+D\+U\+P@{R\+O\+U\+N\+D\+U\+P}}
+\index{R\+O\+U\+N\+D\+U\+P@{R\+O\+U\+N\+D\+U\+P}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{R\+O\+U\+N\+D\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+N\+D\+U\+P(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)~(((x)+(y)-\/1)/(y))}}\label{xdvi_8h_a20c604ddc8550203707ee1ef509ba365}
+
+
+Definition at line 11 of file xdvi.\+h.
+
+\hypertarget{xdvi_8h_ab9f6cc7375b738447e6bf7f6d1c8e68f}{\index{xdvi.\+h@{xdvi.\+h}!sfour@{sfour}}
+\index{sfour@{sfour}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{sfour}]{\setlength{\rightskip}{0pt plus 5cm}\#define sfour(
+\begin{DoxyParamCaption}
+\item[{}]{fp}
+\end{DoxyParamCaption}
+)~{\bf snum}(fp, 4)}}\label{xdvi_8h_ab9f6cc7375b738447e6bf7f6d1c8e68f}
+
+
+Definition at line 22 of file xdvi.\+h.
+
+\hypertarget{xdvi_8h_ae57354a2f706c057f0bad490537c4636}{\index{xdvi.\+h@{xdvi.\+h}!sone@{sone}}
+\index{sone@{sone}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{sone}]{\setlength{\rightskip}{0pt plus 5cm}\#define sone(
+\begin{DoxyParamCaption}
+\item[{}]{fp}
+\end{DoxyParamCaption}
+)~((long) {\bf one}(fp))}}\label{xdvi_8h_ae57354a2f706c057f0bad490537c4636}
+
+
+Definition at line 18 of file xdvi.\+h.
+
+\hypertarget{xdvi_8h_a8262232c36678176fdfcbda6142e5667}{\index{xdvi.\+h@{xdvi.\+h}!stwo@{stwo}}
+\index{stwo@{stwo}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{stwo}]{\setlength{\rightskip}{0pt plus 5cm}\#define stwo(
+\begin{DoxyParamCaption}
+\item[{}]{fp}
+\end{DoxyParamCaption}
+)~{\bf snum}(fp, 2)}}\label{xdvi_8h_a8262232c36678176fdfcbda6142e5667}
+
+
+Definition at line 20 of file xdvi.\+h.
+
+\hypertarget{xdvi_8h_a6874b0a3b8a5ac96d88d2648abf373b1}{\index{xdvi.\+h@{xdvi.\+h}!two@{two}}
+\index{two@{two}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{two}]{\setlength{\rightskip}{0pt plus 5cm}\#define two(
+\begin{DoxyParamCaption}
+\item[{}]{fp}
+\end{DoxyParamCaption}
+)~{\bf num} (fp, 2)}}\label{xdvi_8h_a6874b0a3b8a5ac96d88d2648abf373b1}
+
+
+Definition at line 19 of file xdvi.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{xdvi_8h_ac675915823064aa6f5ca36bdfddd0a5b}{\index{xdvi.\+h@{xdvi.\+h}!num@{num}}
+\index{num@{num}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long num (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{xdvi_8h_ac675915823064aa6f5ca36bdfddd0a5b}
+
+
+Definition at line 94 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{keyword}{register} \textcolor{keywordtype}{long} x = 0;
+97 
+98   \textcolor{keywordflow}{while} (\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}--) x = (x << 8) | \hyperlink{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{one}(fp);
+99   \textcolor{keywordflow}{return} x;
+100 \}
+\end{DoxyCode}
+\hypertarget{xdvi_8h_a66ef4ff80c1c724698a8dc64f995645d}{\index{xdvi.\+h@{xdvi.\+h}!snum@{snum}}
+\index{snum@{snum}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{snum}]{\setlength{\rightskip}{0pt plus 5cm}long snum (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{xdvi_8h_a66ef4ff80c1c724698a8dc64f995645d}
+
+
+Definition at line 102 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104   \textcolor{keyword}{register} \textcolor{keywordtype}{long} x;
+105 
+106 \textcolor{preprocessor}{#ifdef \_\_STDC\_\_}
+107   x = (\textcolor{keywordtype}{signed} char) getc(fp);
+108 \textcolor{preprocessor}{#else}
+109   x = (\textcolor{keywordtype}{unsigned} char) getc(fp);
+110   \textcolor{keywordflow}{if} (x & 0x80) x -= 0x100;
+111 \textcolor{preprocessor}{#endif}
+112   \textcolor{keywordflow}{while} (--\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}) x = (x << 8) | \hyperlink{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{one}(fp);
+113   \textcolor{keywordflow}{return} x;
+114 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{xdvi_8h_a28839d782e3a72466b7f6ce68f7157c3}{\index{xdvi.\+h@{xdvi.\+h}!currwin@{currwin}}
+\index{currwin@{currwin}!xdvi.\+h@{xdvi.\+h}}
+\subsubsection[{currwin}]{\setlength{\rightskip}{0pt plus 5cm}struct Window\+Rec mane currwin}}\label{xdvi_8h_a28839d782e3a72466b7f6ce68f7157c3}

@@ -1,0 +1,112 @@
+\hypertarget{classGSRendererThread}{\section{G\+S\+Renderer\+Thread Class Reference}
+\label{classGSRendererThread}\index{G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}}
+}
+
+
+{\ttfamily \#include $<$rendererthread.\+h$>$}
+
+Inheritance diagram for G\+S\+Renderer\+Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGSRendererThread}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGSRendererThread_a4babeac5daa2a6caa990a8c6be568579}{image\+Done} (Q\+Image $\ast$image, \hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$request)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGSRendererThread_a6f945d6dd756e799854c34ca40da36b1}{$\sim$\+G\+S\+Renderer\+Thread} ()
+\item 
+void \hyperlink{classGSRendererThread_aece7094dd18ae8138f09e26cdbf2638c}{add\+Request} (const \hyperlink{structGSRendererThreadRequest}{G\+S\+Renderer\+Thread\+Request} \&req)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGSRendererThread}{G\+S\+Renderer\+Thread} $\ast$ \hyperlink{classGSRendererThread_a5fc474e6996377c9d2ae9f8dd60dd786}{get\+Create\+Renderer} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 53 of file rendererthread.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGSRendererThread_a6f945d6dd756e799854c34ca40da36b1}{\index{G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}!````~G\+S\+Renderer\+Thread@{$\sim$\+G\+S\+Renderer\+Thread}}
+\index{````~G\+S\+Renderer\+Thread@{$\sim$\+G\+S\+Renderer\+Thread}!G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}}
+\subsubsection[{$\sim$\+G\+S\+Renderer\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}G\+S\+Renderer\+Thread\+::$\sim$\+G\+S\+Renderer\+Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGSRendererThread_a6f945d6dd756e799854c34ca40da36b1}
+
+
+Definition at line 33 of file rendererthread.\+cpp.
+
+
+\begin{DoxyCode}
+34 \{
+35     spectre\_render\_context\_free(m\_renderContext);
+36 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGSRendererThread_aece7094dd18ae8138f09e26cdbf2638c}{\index{G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}!add\+Request@{add\+Request}}
+\index{add\+Request@{add\+Request}!G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}}
+\subsubsection[{add\+Request}]{\setlength{\rightskip}{0pt plus 5cm}void G\+S\+Renderer\+Thread\+::add\+Request (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+S\+Renderer\+Thread\+Request} \&}]{req}
+\end{DoxyParamCaption}
+)}}\label{classGSRendererThread_aece7094dd18ae8138f09e26cdbf2638c}
+
+
+Definition at line 38 of file rendererthread.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     m\_queueMutex.lock();
+41     m\_queue.enqueue(req);
+42     m\_queueMutex.unlock();
+43     m\_semaphore.release();
+44 \}
+\end{DoxyCode}
+\hypertarget{classGSRendererThread_a5fc474e6996377c9d2ae9f8dd60dd786}{\index{G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}!get\+Create\+Renderer@{get\+Create\+Renderer}}
+\index{get\+Create\+Renderer@{get\+Create\+Renderer}!G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}}
+\subsubsection[{get\+Create\+Renderer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+S\+Renderer\+Thread} $\ast$ G\+S\+Renderer\+Thread\+::get\+Create\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGSRendererThread_a5fc474e6996377c9d2ae9f8dd60dd786}
+
+
+Definition at line 22 of file rendererthread.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{
+24     \textcolor{keywordflow}{if} (!theRenderer) theRenderer = \textcolor{keyword}{new} \hyperlink{classGSRendererThread}{GSRendererThread}();
+25     \textcolor{keywordflow}{return} theRenderer;
+26 \}
+\end{DoxyCode}
+\hypertarget{classGSRendererThread_a4babeac5daa2a6caa990a8c6be568579}{\index{G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}!image\+Done@{image\+Done}}
+\index{image\+Done@{image\+Done}!G\+S\+Renderer\+Thread@{G\+S\+Renderer\+Thread}}
+\subsubsection[{image\+Done}]{\setlength{\rightskip}{0pt plus 5cm}void G\+S\+Renderer\+Thread\+::image\+Done (
+\begin{DoxyParamCaption}
+\item[{Q\+Image $\ast$}]{image, }
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGSRendererThread_a4babeac5daa2a6caa990a8c6be568579}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/spectre/\hyperlink{rendererthread_8h}{rendererthread.\+h}\item 
+generators/spectre/\hyperlink{rendererthread_8cpp}{rendererthread.\+cpp}\end{DoxyCompactItemize}

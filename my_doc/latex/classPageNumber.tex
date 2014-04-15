@@ -1,0 +1,181 @@
+\hypertarget{classPageNumber}{\section{Page\+Number Class Reference}
+\label{classPageNumber}\index{Page\+Number@{Page\+Number}}
+}
+
+
+Class to represent a page number.  
+
+
+
+
+{\ttfamily \#include $<$page\+Number.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92}{page\+Nums} \{ \hyperlink{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}{invalid\+Page} = 0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageNumber_ae53d122d8f420761e0f6530a1a7d3d70}{Page\+Number} ()
+\item 
+\hyperlink{classPageNumber_a2b829eb70b97762152cf9ad195c81e2d}{Page\+Number} (quint16 \hyperlink{xdvi_8h_ac675915823064aa6f5ca36bdfddd0a5b}{num})
+\begin{DoxyCompactList}\small\item\em Constructor that sets the page number. \end{DoxyCompactList}\item 
+\hyperlink{classPageNumber}{Page\+Number} \& \hyperlink{classPageNumber_a4e6935a898b90e607dd147ca6eee19d9}{operator=} (const quint16 p)
+\begin{DoxyCompactList}\small\item\em this method implements typecasts from quint16 \end{DoxyCompactList}\item 
+\hyperlink{classPageNumber_a6d34ca3cade984c20ac89b0200d6eb6f}{operator quint16} () const 
+\begin{DoxyCompactList}\small\item\em This method implements typecasts to quint16. \end{DoxyCompactList}\item 
+bool \hyperlink{classPageNumber_a701f1be28f2dd97b88d83c4abce18645}{is\+Valid} () const 
+\begin{DoxyCompactList}\small\item\em Checks if the page number is invalid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to represent a page number. 
+
+The class \hyperlink{classPageNumber}{Page\+Number} is really nothing but an alias for quint16, and can be casted to and from quint16. It is used in kviewshell to remind the programmer of the convention that page numbers start at '1' (for 'first page'), and that the value '0' means 'illegal page number' or 'no page number'. Accordingly, the value '0' is also named \hyperlink{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}{Page\+Number\+::invalid\+Page}, and there is a trivial method is\+Invalid() that checks if the page number is 0.
+
+\begin{DoxyAuthor}{Author}
+Stefan Kebekus \href{mailto:kebekus@kde.org}{\tt kebekus@kde.\+org} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 0 
+\end{DoxyVersion}
+
+
+Definition at line 30 of file page\+Number.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92}{\index{Page\+Number@{Page\+Number}!page\+Nums@{page\+Nums}}
+\index{page\+Nums@{page\+Nums}!Page\+Number@{Page\+Number}}
+\subsubsection[{page\+Nums}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Page\+Number\+::page\+Nums}}}\label{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{invalid\+Page@{invalid\+Page}!Page\+Number@{Page\+Number}}\index{Page\+Number@{Page\+Number}!invalid\+Page@{invalid\+Page}}\item[{\em 
+\hypertarget{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}{invalid\+Page}\label{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 33 of file page\+Number.\+h.
+
+
+\begin{DoxyCode}
+33                 \{
+34     \hyperlink{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}{invalidPage}   = 0 
+35   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageNumber_ae53d122d8f420761e0f6530a1a7d3d70}{\index{Page\+Number@{Page\+Number}!Page\+Number@{Page\+Number}}
+\index{Page\+Number@{Page\+Number}!Page\+Number@{Page\+Number}}
+\subsubsection[{Page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Number\+::\+Page\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPageNumber_ae53d122d8f420761e0f6530a1a7d3d70}
+The default constructor sets the page number to 'invalid\+Page' 
+
+Definition at line 38 of file page\+Number.\+h.
+
+
+\begin{DoxyCode}
+38 \{pgNum = \hyperlink{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}{invalidPage};\}
+\end{DoxyCode}
+\hypertarget{classPageNumber_a2b829eb70b97762152cf9ad195c81e2d}{\index{Page\+Number@{Page\+Number}!Page\+Number@{Page\+Number}}
+\index{Page\+Number@{Page\+Number}!Page\+Number@{Page\+Number}}
+\subsubsection[{Page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Number\+::\+Page\+Number (
+\begin{DoxyParamCaption}
+\item[{quint16}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPageNumber_a2b829eb70b97762152cf9ad195c81e2d}
+
+
+Constructor that sets the page number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & page number that is set initially \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file page\+Number.\+h.
+
+
+\begin{DoxyCode}
+44 \{pgNum = \hyperlink{dvi_2util_8cpp_acc54804c2bc92eef873c373c37b69ff7}{num};\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageNumber_a701f1be28f2dd97b88d83c4abce18645}{\index{Page\+Number@{Page\+Number}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Page\+Number@{Page\+Number}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+Number\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPageNumber_a701f1be28f2dd97b88d83c4abce18645}
+
+
+Checks if the page number is invalid. 
+
+\begin{DoxyReturn}{Returns}
+true, if pg\+Num != invalid\+Page, i.\+e., does not equal 0 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file page\+Number.\+h.
+
+
+\begin{DoxyCode}
+56 \{\textcolor{keywordflow}{return} (pgNum != \hyperlink{classPageNumber_a9521b37657ab0c88e07c67ab75f48b92af17674d62e6864de4cd9fd233bbd6b1d}{invalidPage});\}
+\end{DoxyCode}
+\hypertarget{classPageNumber_a6d34ca3cade984c20ac89b0200d6eb6f}{\index{Page\+Number@{Page\+Number}!operator quint16@{operator quint16}}
+\index{operator quint16@{operator quint16}!Page\+Number@{Page\+Number}}
+\subsubsection[{operator quint16}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Number\+::operator quint16 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPageNumber_a6d34ca3cade984c20ac89b0200d6eb6f}
+
+
+This method implements typecasts to quint16. 
+
+
+
+Definition at line 50 of file page\+Number.\+h.
+
+
+\begin{DoxyCode}
+50 \{ \textcolor{keywordflow}{return} pgNum; \}
+\end{DoxyCode}
+\hypertarget{classPageNumber_a4e6935a898b90e607dd147ca6eee19d9}{\index{Page\+Number@{Page\+Number}!operator=@{operator=}}
+\index{operator=@{operator=}!Page\+Number@{Page\+Number}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Number}\& Page\+Number\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const quint16}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPageNumber_a4e6935a898b90e607dd147ca6eee19d9}
+
+
+this method implements typecasts from quint16 
+
+
+
+Definition at line 47 of file page\+Number.\+h.
+
+
+\begin{DoxyCode}
+47 \{ pgNum = p; \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{pageNumber_8h}{page\+Number.\+h}\end{DoxyCompactItemize}

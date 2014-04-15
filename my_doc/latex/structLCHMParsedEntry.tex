@@ -1,0 +1,78 @@
+\hypertarget{structLCHMParsedEntry}{\section{L\+C\+H\+M\+Parsed\+Entry Struct Reference}
+\label{structLCHMParsedEntry}\index{L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}}
+}
+
+
+Contains a single index or \hyperlink{classTOC}{T\+O\+C} entry. See L\+C\+H\+M\+File\+::parse\+T\+O\+C() and \hyperlink{classLCHMFile_ad93af373778e2460fa0f667b9731e76d}{L\+C\+H\+M\+File\+::parse\+Index()}  
+
+
+
+
+{\ttfamily \#include $<$libchmfile.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{structLCHMParsedEntry_a90196da32bb2ed757f516caf583a6437}{name}
+\begin{DoxyCompactList}\small\item\em Entry name. \end{DoxyCompactList}\item 
+Q\+String\+List \hyperlink{structLCHMParsedEntry_aa871a08e7fca4ae8e23983ff299bd24f}{urls}
+\begin{DoxyCompactList}\small\item\em Entry U\+R\+Ls. The \hyperlink{classTOC}{T\+O\+C} entry should have only one U\+R\+L; the index entry could have several. \end{DoxyCompactList}\item 
+int \hyperlink{structLCHMParsedEntry_aefeb9372238ddebc327350e1696ec901}{imageid}
+\item 
+int \hyperlink{structLCHMParsedEntry_a33a145dba3dd4761f26b361dcf49017b}{indent}
+\begin{DoxyCompactList}\small\item\em Indentation level for this entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains a single index or \hyperlink{classTOC}{T\+O\+C} entry. See L\+C\+H\+M\+File\+::parse\+T\+O\+C() and \hyperlink{classLCHMFile_ad93af373778e2460fa0f667b9731e76d}{L\+C\+H\+M\+File\+::parse\+Index()} 
+
+Definition at line 46 of file libchmfile.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structLCHMParsedEntry_aefeb9372238ddebc327350e1696ec901}{\index{L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}!imageid@{imageid}}
+\index{imageid@{imageid}!L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}}
+\subsubsection[{imageid}]{\setlength{\rightskip}{0pt plus 5cm}int L\+C\+H\+M\+Parsed\+Entry\+::imageid}}\label{structLCHMParsedEntry_aefeb9372238ddebc327350e1696ec901}
+Associated image number. Used for \hyperlink{classTOC}{T\+O\+C} only; indexes does not have the image. Use \hyperlink{classLCHMFile_a42b6781e6c3227656c9b6d12922fb522}{L\+C\+H\+M\+File\+::get\+Book\+Icon\+Pixmap()} to get associated pixmap icon 
+
+Definition at line 56 of file libchmfile.\+h.
+
+\hypertarget{structLCHMParsedEntry_a33a145dba3dd4761f26b361dcf49017b}{\index{L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}!indent@{indent}}
+\index{indent@{indent}!L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}}
+\subsubsection[{indent}]{\setlength{\rightskip}{0pt plus 5cm}int L\+C\+H\+M\+Parsed\+Entry\+::indent}}\label{structLCHMParsedEntry_a33a145dba3dd4761f26b361dcf49017b}
+
+
+Indentation level for this entry. 
+
+
+
+Definition at line 59 of file libchmfile.\+h.
+
+\hypertarget{structLCHMParsedEntry_a90196da32bb2ed757f516caf583a6437}{\index{L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}!name@{name}}
+\index{name@{name}!L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String L\+C\+H\+M\+Parsed\+Entry\+::name}}\label{structLCHMParsedEntry_a90196da32bb2ed757f516caf583a6437}
+
+
+Entry name. 
+
+
+
+Definition at line 49 of file libchmfile.\+h.
+
+\hypertarget{structLCHMParsedEntry_aa871a08e7fca4ae8e23983ff299bd24f}{\index{L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}!urls@{urls}}
+\index{urls@{urls}!L\+C\+H\+M\+Parsed\+Entry@{L\+C\+H\+M\+Parsed\+Entry}}
+\subsubsection[{urls}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List L\+C\+H\+M\+Parsed\+Entry\+::urls}}\label{structLCHMParsedEntry_aa871a08e7fca4ae8e23983ff299bd24f}
+
+
+Entry U\+R\+Ls. The \hyperlink{classTOC}{T\+O\+C} entry should have only one U\+R\+L; the index entry could have several. 
+
+
+
+Definition at line 52 of file libchmfile.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/chm/lib/\hyperlink{libchmfile_8h}{libchmfile.\+h}\end{DoxyCompactItemize}

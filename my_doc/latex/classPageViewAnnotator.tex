@@ -1,0 +1,813 @@
+\hypertarget{classPageViewAnnotator}{\section{Page\+View\+Annotator Class Reference}
+\label{classPageViewAnnotator}\index{Page\+View\+Annotator@{Page\+View\+Annotator}}
+}
+
+
+\hyperlink{classPageView}{Page\+View} object devoted to annotation creation/handling.  
+
+
+
+
+{\ttfamily \#include $<$pageviewannotator.\+h$>$}
+
+Inheritance diagram for Page\+View\+Annotator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPageViewAnnotator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageViewAnnotator_ac743bc259b4f428105d2c8833c511aab}{Page\+View\+Annotator} (\hyperlink{classPageView}{Page\+View} $\ast$parent, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$storage)
+\item 
+\hyperlink{classPageViewAnnotator_a41206bc7fe97f80e88e10d10b37e38ef}{$\sim$\+Page\+View\+Annotator} ()
+\item 
+void \hyperlink{classPageViewAnnotator_a69ebe26ffe14871bacc3b8bcb7fae14b}{set\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classPageViewAnnotator_ad4319944b2ac21b5d93895a9cb691553}{set\+Text\+Tools\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classPageViewAnnotator_a4cd15f84582b36f2c194530f3a123b69}{set\+Tools\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classPageViewAnnotator_ad6fed571534b89dfe7d8bee2e6254b26}{set\+Hiding\+Forced} (bool forced)
+\item 
+bool \hyperlink{classPageViewAnnotator_a0defd62b058f83eb04dc9d298188ab10}{hiding\+Was\+Forced} () const 
+\item 
+bool \hyperlink{classPageViewAnnotator_ae7fcfee911a4eb7811865863d852ffac}{active} () const 
+\item 
+bool \hyperlink{classPageViewAnnotator_a7b7e1af0db1184b745f6a294d02148c6}{annotating} () const 
+\item 
+Q\+Cursor \hyperlink{classPageViewAnnotator_a40f36ee467dc7502940e57bf3cf85f91}{cursor} () const 
+\item 
+Q\+Rect \hyperlink{classPageViewAnnotator_a6cd952408052c6d7de1c1111d61266b0}{route\+Mouse\+Event} (Q\+Mouse\+Event $\ast$event, \hyperlink{classPageViewItem}{Page\+View\+Item} $\ast$item)
+\item 
+Q\+Rect \hyperlink{classPageViewAnnotator_a5b8f1d3ac283209cd76838b199adee5d}{route\+Tablet\+Event} (Q\+Tablet\+Event $\ast$event, \hyperlink{classPageViewItem}{Page\+View\+Item} $\ast$item, const Q\+Point \&local\+Origin\+In\+Global)
+\item 
+Q\+Rect \hyperlink{classPageViewAnnotator_a08cf82846db4ea3fee9c3b786ded22cf}{perform\+Route\+Mouse\+Or\+Tablet\+Event} (const \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{Annotator\+Engine\+::\+Event\+Type} \&event\+Type, const \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{Annotator\+Engine\+::\+Button} \&button, const Q\+Point\+F \&pos, \hyperlink{classPageViewItem}{Page\+View\+Item} $\ast$item)
+\item 
+bool \hyperlink{classPageViewAnnotator_af2c97f1da1fa61fffb86a6a8118f9dc6}{route\+Key\+Event} (Q\+Key\+Event $\ast$event)
+\item 
+bool \hyperlink{classPageViewAnnotator_a6c9bb2e357dfa97da72ad0e610b4b7f6}{route\+Paints} (const Q\+Rect \&wanted\+Rect) const 
+\item 
+void \hyperlink{classPageViewAnnotator_a5d6faca78c8b002a1b2c30cb8570e47f}{route\+Paint} (Q\+Painter $\ast$painter, const Q\+Rect \&paint\+Rect)
+\item 
+void \hyperlink{classPageViewAnnotator_a7d1a67976c625883662731070416e4df}{reparse\+Config} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \hyperlink{classPageViewAnnotator_a669d7d940ca6b93689724e43fba25c86}{default\+Tool\+Name} (const Q\+Dom\+Element \&tool\+Element)
+\item 
+static Q\+Pixmap \hyperlink{classPageViewAnnotator_a54eb311605f2eefadaf78fd3b27eef7a}{make\+Tool\+Pixmap} (const Q\+Dom\+Element \&tool\+Element)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPageView}{Page\+View} object devoted to annotation creation/handling. 
+
+\hyperlink{classPageViewAnnotator}{Page\+View\+Annotator} is the okular class used for visually creating annotations. It uses internal 'engines' for interacting with user events and attaches the newly created annotation to the document when the creation is complete. In the meanwhile all \hyperlink{classPageView}{Page\+View} events (actually mouse/paint ones) are routed to this class that performs a rough visual representation of what the annotation will become when finished.
+
+m\+\_\+tools\+Definition is a \hyperlink{namespaceDOM}{D\+O\+M} object that contains Annotations/\+Engine association for the items placed in the toolbar. The X\+M\+L is parsed (1) when populating the toolbar and (2)after selecting a toolbar item, in which case an Ann is initialized with the values in the X\+M\+L and an engine is created to handle that annotation. m\+\_\+tools\+Definition is created in reparse\+Config according to user configuration. 
+
+Definition at line 50 of file pageviewannotator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageViewAnnotator_ac743bc259b4f428105d2c8833c511aab}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\index{Page\+View\+Annotator@{Page\+View\+Annotator}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{Page\+View\+Annotator}]{\setlength{\rightskip}{0pt plus 5cm}Page\+View\+Annotator\+::\+Page\+View\+Annotator (
+\begin{DoxyParamCaption}
+\item[{{\bf Page\+View} $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{storage}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_ac743bc259b4f428105d2c8833c511aab}
+\hyperlink{classPageViewAnnotator}{Page\+View\+Annotator} 
+
+Definition at line 650 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+651     : QObject( parent ), m\_document( storage ), m\_pageView( parent ),
+652     m\_toolBar( 0 ), m\_engine( 0 ), m\_textToolsEnabled( \textcolor{keyword}{false} ), m\_toolsEnabled( \textcolor{keyword}{false} ),
+653     m\_continuousMode( \textcolor{keyword}{false} ), m\_hidingWasForced( \textcolor{keyword}{false} ), m\_lastToolID( -1 ), m\_lockedItem( 0 )
+654 \{
+655     \hyperlink{classPageViewAnnotator_a7d1a67976c625883662731070416e4df}{reparseConfig}();
+656 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a41206bc7fe97f80e88e10d10b37e38ef}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!````~Page\+View\+Annotator@{$\sim$\+Page\+View\+Annotator}}
+\index{````~Page\+View\+Annotator@{$\sim$\+Page\+View\+Annotator}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{$\sim$\+Page\+View\+Annotator}]{\setlength{\rightskip}{0pt plus 5cm}Page\+View\+Annotator\+::$\sim$\+Page\+View\+Annotator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a41206bc7fe97f80e88e10d10b37e38ef}
+
+
+Definition at line 707 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+708 \{
+709     \textcolor{keyword}{delete} m\_engine;
+710 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageViewAnnotator_ae7fcfee911a4eb7811865863d852ffac}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!active@{active}}
+\index{active@{active}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Annotator\+::active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewAnnotator_ae7fcfee911a4eb7811865863d852ffac}
+
+
+Definition at line 775 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+776 \{
+777     \textcolor{keywordflow}{return} m\_engine && m\_toolBar;
+778 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a7b7e1af0db1184b745f6a294d02148c6}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!annotating@{annotating}}
+\index{annotating@{annotating}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{annotating}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Annotator\+::annotating (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewAnnotator_a7b7e1af0db1184b745f6a294d02148c6}
+
+
+Definition at line 780 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+781 \{
+782     \textcolor{keywordflow}{return} \hyperlink{classPageViewAnnotator_ae7fcfee911a4eb7811865863d852ffac}{active}() && m\_lockedItem;
+783 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a40f36ee467dc7502940e57bf3cf85f91}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!cursor@{cursor}}
+\index{cursor@{cursor}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Cursor Page\+View\+Annotator\+::cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewAnnotator_a40f36ee467dc7502940e57bf3cf85f91}
+
+
+Definition at line 785 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+786 \{
+787     \textcolor{keywordflow}{return} m\_engine->\hyperlink{classAnnotatorEngine_adec4c7612b59357c7b58aa81e3e3b212}{cursor}();
+788 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a669d7d940ca6b93689724e43fba25c86}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!default\+Tool\+Name@{default\+Tool\+Name}}
+\index{default\+Tool\+Name@{default\+Tool\+Name}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{default\+Tool\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Page\+View\+Annotator\+::default\+Tool\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{tool\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classPageViewAnnotator_a669d7d940ca6b93689724e43fba25c86}
+
+
+Definition at line 1075 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+1076 \{
+1077     \textcolor{keyword}{const} QString annotType = toolElement.attribute( \textcolor{stringliteral}{"type"} );
+1078 
+1079     \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"ellipse"} )
+1080         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Ellipse"} );
+1081     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"highlight"} )
+1082         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Highlighter"} );
+1083     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"ink"} )
+1084         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Freehand Line"} );
+1085     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"note-inline"} )
+1086         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Inline Note"} );
+1087     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"note-linked"} )
+1088         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Pop-up Note"} );
+1089     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"polygon"} )
+1090         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Polygon"} );
+1091     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"rectangle"} )
+1092         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Rectangle"} );
+1093     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"squiggly"} )
+1094         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Squiggle"} );
+1095     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"stamp"} )
+1096         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Stamp"} );
+1097     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"straight-line"} )
+1098         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Straight Line"} );
+1099     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"strikeout"} )
+1100         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Strike out"} );
+1101     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"underline"} )
+1102         \textcolor{keywordflow}{return} i18n( \textcolor{stringliteral}{"Underline"} );
+1103     \textcolor{keywordflow}{else}
+1104         \textcolor{keywordflow}{return} QString();
+1105 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a0defd62b058f83eb04dc9d298188ab10}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!hiding\+Was\+Forced@{hiding\+Was\+Forced}}
+\index{hiding\+Was\+Forced@{hiding\+Was\+Forced}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{hiding\+Was\+Forced}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Annotator\+::hiding\+Was\+Forced (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewAnnotator_a0defd62b058f83eb04dc9d298188ab10}
+
+
+Definition at line 770 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+771 \{
+772     \textcolor{keywordflow}{return} m\_hidingWasForced;
+773 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a54eb311605f2eefadaf78fd3b27eef7a}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!make\+Tool\+Pixmap@{make\+Tool\+Pixmap}}
+\index{make\+Tool\+Pixmap@{make\+Tool\+Pixmap}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{make\+Tool\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pixmap Page\+View\+Annotator\+::make\+Tool\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Element \&}]{tool\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classPageViewAnnotator_a54eb311605f2eefadaf78fd3b27eef7a}
+
+
+Definition at line 1107 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+1108 \{
+1109     QPixmap pixmap( 32, 32 );
+1110     \textcolor{keyword}{const} QString annotType = toolElement.attribute( \textcolor{stringliteral}{"type"} );
+1111 
+1112     \textcolor{comment}{// Load base pixmap. We'll draw on top of it}
+1113     pixmap.load( KStandardDirs::locate( \textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/tool-base-okular.png"} ) );
+1114 
+1115     \textcolor{comment}{/* Parse color, innerColor and icon (if present) */}
+1116     QColor engineColor, innerColor;
+1117     QString icon;
+1118     QDomNodeList engineNodeList = toolElement.elementsByTagName( \textcolor{stringliteral}{"engine"} );
+1119     \textcolor{keywordflow}{if} ( engineNodeList.size() > 0 )
+1120     \{
+1121         QDomElement engineEl = engineNodeList.item( 0 ).toElement();
+1122         \textcolor{keywordflow}{if} ( !engineEl.isNull() && engineEl.hasAttribute( \textcolor{stringliteral}{"color"} ) )
+1123             engineColor = QColor( engineEl.attribute( \textcolor{stringliteral}{"color"} ) );
+1124     \}
+1125     QDomNodeList annotationNodeList = toolElement.elementsByTagName( \textcolor{stringliteral}{"annotation"} );
+1126     \textcolor{keywordflow}{if} ( annotationNodeList.size() > 0 )
+1127     \{
+1128         QDomElement annotationEl = annotationNodeList.item( 0 ).toElement();
+1129         \textcolor{keywordflow}{if} ( !annotationEl.isNull() && annotationEl.hasAttribute( \textcolor{stringliteral}{"innerColor"} ) )
+1130             innerColor = QColor( annotationEl.attribute( \textcolor{stringliteral}{"innerColor"} ) );
+1131         \textcolor{keywordflow}{if} ( !annotationEl.isNull() && annotationEl.hasAttribute( \textcolor{stringliteral}{"icon"} ) )
+1132             icon = annotationEl.attribute( \textcolor{stringliteral}{"icon"} );
+1133     \}
+1134 
+1135     QPainter p( &pixmap );
+1136 
+1137     \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"ellipse"} )
+1138     \{
+1139         p.setRenderHint( QPainter::Antialiasing );
+1140         \textcolor{keywordflow}{if} ( innerColor.isValid() )
+1141             p.setBrush( innerColor );
+1142         p.setPen( QPen( engineColor, 2 ) );
+1143         p.drawEllipse( 2, 7, 21, 14 );
+1144     \}
+1145     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"highlight"} )
+1146     \{
+1147         QImage overlay( KStandardDirs::locate( \textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/tool-highlighter-okular-colorizable.png
+      "} ) );
+1148         QImage colorizedOverlay = overlay;
+1149         \hyperlink{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}{GuiUtils::colorizeImage}( colorizedOverlay, engineColor );
+1150 
+1151         p.drawImage( QPoint(0,0), colorizedOverlay ); \textcolor{comment}{// Trail}
+1152         p.drawImage( QPoint(0,-32), overlay ); \textcolor{comment}{// Text + Shadow (uncolorized)}
+1153         p.drawImage( QPoint(0,-64), colorizedOverlay ); \textcolor{comment}{// Pen}
+1154     \}
+1155     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"ink"} )
+1156     \{
+1157         QImage overlay( KStandardDirs::locate( \textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/tool-ink-okular-colorizable.png"} ) );
+1158         QImage colorizedOverlay = overlay;
+1159         \hyperlink{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}{GuiUtils::colorizeImage}( colorizedOverlay, engineColor );
+1160 
+1161         p.drawImage( QPoint(0,0), colorizedOverlay ); \textcolor{comment}{// Trail}
+1162         p.drawImage( QPoint(0,-32), overlay ); \textcolor{comment}{// Shadow (uncolorized)}
+1163         p.drawImage( QPoint(0,-64), colorizedOverlay ); \textcolor{comment}{// Pen}
+1164     \}
+1165     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"note-inline"} )
+1166     \{
+1167         QImage overlay( KStandardDirs::locate( \textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/tool-note-inline-okular-colorizable.png
+      "} ) );
+1168         \hyperlink{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}{GuiUtils::colorizeImage}( overlay, engineColor );
+1169         p.drawImage( QPoint(0,0), overlay );
+1170     \}
+1171     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"note-linked"} )
+1172     \{
+1173         QImage overlay( KStandardDirs::locate( \textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/tool-note-okular-colorizable.png"} ) );
+1174         \hyperlink{namespaceGuiUtils_a989345da409cc84c3636efad1b174cb5}{GuiUtils::colorizeImage}( overlay, engineColor );
+1175         p.drawImage( QPoint(0,0), overlay );
+1176     \}
+1177     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"polygon"} )
+1178     \{
+1179         QPainterPath path;
+1180         path.moveTo( 0, 7 );
+1181         path.lineTo( 19, 7 );
+1182         path.lineTo( 19, 14 );
+1183         path.lineTo( 23, 14 );
+1184         path.lineTo( 23, 20 );
+1185         path.lineTo( 0, 20 );
+1186         \textcolor{keywordflow}{if} ( innerColor.isValid() )
+1187             p.setBrush( innerColor );
+1188         p.setPen( QPen( engineColor, 1 ) );
+1189         p.drawPath( path );
+1190     \}
+1191     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"rectangle"} )
+1192     \{
+1193         p.setRenderHint( QPainter::Antialiasing );
+1194         \textcolor{keywordflow}{if} ( innerColor.isValid() )
+1195             p.setBrush( innerColor );
+1196         p.setPen( QPen( engineColor, 2 ) );
+1197         p.drawRect( 2, 7, 21, 14 );
+1198     \}
+1199     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"squiggly"} )
+1200     \{
+1201         QPen pen( engineColor, 1 );
+1202         pen.setDashPattern( QVector<qreal>() << 1 << 1 );
+1203         p.setPen( pen );
+1204         p.drawLine( 1, 13, 16, 13 );
+1205         p.drawLine( 2, 14, 15, 14 );
+1206         p.drawLine( 0, 20, 19, 20 );
+1207         p.drawLine( 1, 21, 18, 21 );
+1208     \}
+1209     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"stamp"} )
+1210     \{
+1211         QPixmap stamp = \hyperlink{namespaceGuiUtils_a5ba797636890ba5fbc39db6a092f4bd5}{GuiUtils::loadStamp}( icon, QSize( 16, 16 ) );
+1212         p.setRenderHint( QPainter::Antialiasing );
+1213         p.drawPixmap( 16, 14, stamp );
+1214     \}
+1215     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"straight-line"} )
+1216     \{
+1217         QPainterPath path;
+1218         path.moveTo( 1, 8 );
+1219         path.lineTo( 20, 8 );
+1220         path.lineTo( 1, 27 );
+1221         path.lineTo( 20, 27 );
+1222         p.setRenderHint( QPainter::Antialiasing );
+1223         p.setPen( QPen( engineColor, 1 ) );
+1224         p.drawPath( path ); \textcolor{comment}{// TODO To be discussed: This is not a straight line!}
+1225     \}
+1226     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"strikeout"} )
+1227     \{
+1228         p.setPen( QPen( engineColor, 1 ) );
+1229         p.drawLine( 1, 10, 16, 10 );
+1230         p.drawLine( 0, 17, 19, 17 );
+1231     \}
+1232     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( annotType == \textcolor{stringliteral}{"underline"} )
+1233     \{
+1234         p.setPen( QPen( engineColor, 1 ) );
+1235         p.drawLine( 1, 13, 16, 13 );
+1236         p.drawLine( 0, 20, 19, 20 );
+1237     \}
+1238     \textcolor{keywordflow}{else}
+1239     \{
+1240         \textcolor{comment}{/* Unrecognized annotation type -- It shouldn't happen */}
+1241         p.setPen( QPen( engineColor ) );
+1242         p.drawText( QPoint(20, 31), \textcolor{stringliteral}{"?"} );
+1243     \}
+1244 
+1245     \textcolor{keywordflow}{return} pixmap;
+1246 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a08cf82846db4ea3fee9c3b786ded22cf}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!perform\+Route\+Mouse\+Or\+Tablet\+Event@{perform\+Route\+Mouse\+Or\+Tablet\+Event}}
+\index{perform\+Route\+Mouse\+Or\+Tablet\+Event@{perform\+Route\+Mouse\+Or\+Tablet\+Event}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{perform\+Route\+Mouse\+Or\+Tablet\+Event}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Page\+View\+Annotator\+::perform\+Route\+Mouse\+Or\+Tablet\+Event (
+\begin{DoxyParamCaption}
+\item[{const {\bf Annotator\+Engine\+::\+Event\+Type} \&}]{event\+Type, }
+\item[{const {\bf Annotator\+Engine\+::\+Button} \&}]{button, }
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{{\bf Page\+View\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a08cf82846db4ea3fee9c3b786ded22cf}
+
+
+Definition at line 790 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+792 \{
+793     \textcolor{comment}{// if the right mouse button was pressed, we simply do nothing. In this way, we are still editing the
+       annotation}
+794     \textcolor{comment}{// and so this function will receive and process the right mouse button release event too. If we detach
+       now the annotation tool,}
+795     \textcolor{comment}{// the release event will be processed by the PageView class which would create the annotation property
+       widget, and we do not want this.}
+796     \textcolor{keywordflow}{if} ( button == \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}{AnnotatorEngine::Right} && eventType == 
+      \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{AnnotatorEngine::Press} )
+797         \textcolor{keywordflow}{return} QRect();
+798     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( button == \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567a8c25b27f7e32e09ea9767d465de328a9}{AnnotatorEngine::Right} && eventType == 
+      \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133ac80dbad38d0461d9e546aa694c2abc1c}{AnnotatorEngine::Release} )
+799     \{
+800         detachAnnotation();
+801         \textcolor{keywordflow}{return} QRect();
+802     \}
+803 
+804     \textcolor{comment}{// 1. lock engine to current item}
+805     \textcolor{keywordflow}{if} ( !m\_lockedItem && eventType == \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133a7f6f77a85d31dc6afd375db9a53d5069}{AnnotatorEngine::Press} )
+806     \{
+807         m\_lockedItem = item;
+808         m\_engine->\hyperlink{classAnnotatorEngine_aae312cd62f6fd4c9997a655d18de7385}{setItem}( m\_lockedItem );
+809     \}
+810     \textcolor{keywordflow}{if} ( !m\_lockedItem ) \{
+811         \textcolor{keywordflow}{return} QRect();
+812     \}
+813 
+814     \textcolor{comment}{// find out normalized mouse coords inside current item}
+815     \textcolor{keyword}{const} QRect & itemRect = m\_lockedItem->\hyperlink{classPageViewItem_a5d2e73a003f65b4e95c0c21b1698f835}{uncroppedGeometry}();
+816     \textcolor{keyword}{const} QPointF eventPos = m\_pageView->\hyperlink{classPageView_a7f432d3d6d05c69b568ad66a9c232cd7}{contentAreaPoint}( pos );
+817     \textcolor{keyword}{const} \textcolor{keywordtype}{double} nX = qBound( 0.0, m\_lockedItem->\hyperlink{classPageViewItem_ac8c32541cbae1efd5b4ab54f0a4b4576}{absToPageX}( eventPos.x() ), 1.0 );
+818     \textcolor{keyword}{const} \textcolor{keywordtype}{double} nY = qBound( 0.0, m\_lockedItem->\hyperlink{classPageViewItem_afdbba9ce015155c0e655efbb23e5d13b}{absToPageY}( eventPos.y() ), 1.0 );
+819 
+820     QRect modifiedRect;
+821 
+822     \textcolor{comment}{// 2. use engine to perform operations}
+823     \textcolor{keyword}{const} QRect paintRect = m\_engine->\hyperlink{classAnnotatorEngine_acca989fc60f9a6c20ed2518fafa8774e}{event}( eventType, button, nX, nY, itemRect.width(), itemRect.
+      height(), m\_lockedItem->\hyperlink{classPageViewItem_a5c512d95e5563e8d19d1fb3d93dafc31}{page}() );
+824 
+825     \textcolor{comment}{// 3. update absolute extents rect and send paint event(s)}
+826     \textcolor{keywordflow}{if} ( paintRect.isValid() )
+827     \{
+828         \textcolor{comment}{// 3.1. unite old and new painting regions}
+829         QRegion compoundRegion( m\_lastDrawnRect );
+830         m\_lastDrawnRect = paintRect;
+831         m\_lastDrawnRect.translate( itemRect.left(), itemRect.top() );
+832         \textcolor{comment}{// 3.2. decompose paint region in rects and send paint events}
+833         \textcolor{keyword}{const} QVector<QRect> rects = compoundRegion.unite( m\_lastDrawnRect ).rects();
+834         \textcolor{keyword}{const} QPoint areaPos = m\_pageView->\hyperlink{classPageView_a055aaf87367b9ad0dcfcdc3d2f5ff619}{contentAreaPosition}();
+835         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < rects.count(); i++ )
+836             m\_pageView->viewport()->update( rects[i].translated( -areaPos ) );
+837         modifiedRect = compoundRegion.boundingRect() | m\_lastDrawnRect;
+838     \}
+839 
+840     \textcolor{comment}{// 4. if engine has finished, apply Annotation to the page}
+841     \textcolor{keywordflow}{if} ( m\_engine->\hyperlink{classAnnotatorEngine_a54e1ac7803149f1a94490e5511ad3deb}{creationCompleted}() )
+842     \{
+843         \textcolor{comment}{// apply engine data to the Annotation's and reset engine}
+844         \hyperlink{classQList}{QList< Okular::Annotation* >} annotations = m\_engine->
+      \hyperlink{classAnnotatorEngine_a50455740303878b891195132df27a2ab}{end}();
+845         \textcolor{comment}{// attach the newly filled annotations to the page}
+846         \textcolor{keywordflow}{foreach} ( \hyperlink{classOkular_1_1Annotation}{Okular::Annotation} * annotation, annotations )
+847         \{
+848             \textcolor{keywordflow}{if} ( !annotation ) \textcolor{keywordflow}{continue};
+849 
+850             annotation->\hyperlink{classOkular_1_1Annotation_a7b8e97b104dc0b8cd8ff95253d95e167}{setCreationDate}( QDateTime::currentDateTime() );
+851             annotation->\hyperlink{classOkular_1_1Annotation_a1ea7e94039a7dc3dce500ae96817b30d}{setModificationDate}( QDateTime::currentDateTime() );
+852             annotation->\hyperlink{classOkular_1_1Annotation_ac67827a495bc3ca9fc91c82590c7bf35}{setAuthor}( \hyperlink{classOkular_1_1Settings_ae643409dda70c22852664fa4677896a1}{Okular::Settings::identityAuthor}
+      () );
+853             m\_document->\hyperlink{classOkular_1_1Document_a803b34cf352157810214667438f22210}{addPageAnnotation}( m\_lockedItem->
+      \hyperlink{classPageViewItem_ad75aab4c1ffd842bd5d54c0cfe84d1bf}{pageNumber}(), annotation );
+854             
+855             \textcolor{keywordflow}{if} ( annotation->\hyperlink{classOkular_1_1Annotation_a0dc9c020d3887707b383bdf5abb3c1c1}{openDialogAfterCreation}() )
+856                 m\_pageView->\hyperlink{classPageView_aae69bcd4740466f5af216c97f1c12f14}{openAnnotationWindow}( annotation, m\_lockedItem->
+      \hyperlink{classPageViewItem_ad75aab4c1ffd842bd5d54c0cfe84d1bf}{pageNumber}() );
+857         \}
+858 
+859         \textcolor{keywordflow}{if} ( m\_continuousMode )
+860             slotToolSelected( m\_lastToolID );
+861         \textcolor{keywordflow}{else}
+862             detachAnnotation();
+863     \}
+864 
+865     \textcolor{keywordflow}{return} modifiedRect;
+866 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a7d1a67976c625883662731070416e4df}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!reparse\+Config@{reparse\+Config}}
+\index{reparse\+Config@{reparse\+Config}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{reparse\+Config}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Annotator\+::reparse\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a7d1a67976c625883662731070416e4df}
+
+
+Definition at line 658 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+659 \{
+660     m\_items.clear();
+661 
+662     \textcolor{comment}{// Read tool list from configuration. It's a list of XML <tool></tool> elements}
+663     \textcolor{keyword}{const} QStringList userTools = \hyperlink{classOkular_1_1Settings_a514e900aa0ed6dcc26aa1daa2521eaa5}{Okular::Settings::annotationTools}();
+664 
+665     \textcolor{comment}{// Populate m\_toolsDefinition}
+666     QDomDocument doc;
+667     m\_toolsDefinition = doc.createElement( \textcolor{stringliteral}{"annotatingTools"} );
+668     \textcolor{keywordflow}{foreach} ( \textcolor{keyword}{const} QString &toolXml, userTools )
+669     \{
+670         QDomDocument entryParser;
+671         \textcolor{keywordflow}{if} ( entryParser.setContent( toolXml ) )
+672             m\_toolsDefinition.appendChild( doc.importNode( entryParser.documentElement(), true ) );
+673         \textcolor{keywordflow}{else}
+674             kWarning() << \textcolor{stringliteral}{"Skipping malformed tool XML in AnnotationTools setting"};
+675     \}
+676 
+677     \textcolor{comment}{// Create the AnnotationToolItems from the XML dom tree}
+678     QDomNode toolDescription = m\_toolsDefinition.firstChild();
+679     \textcolor{keywordflow}{while} ( toolDescription.isElement() )
+680     \{
+681         QDomElement toolElement = toolDescription.toElement();
+682         \textcolor{keywordflow}{if} ( toolElement.tagName() == \textcolor{stringliteral}{"tool"} )
+683         \{
+684             \hyperlink{structAnnotationToolItem}{AnnotationToolItem} item;
+685             item.\hyperlink{structAnnotationToolItem_a738162ebc807fdfb9d0a7937c34bab01}{id} = toolElement.attribute(\textcolor{stringliteral}{"id"}).toInt();
+686             \textcolor{keywordflow}{if} ( toolElement.hasAttribute( \textcolor{stringliteral}{"name"} ) )
+687                 item.\hyperlink{structAnnotationToolItem_a5a24d93be5ae5fba2c921b205c29b017}{text} = toolElement.attribute( \textcolor{stringliteral}{"name"} );
+688             \textcolor{keywordflow}{else}
+689                 item.\hyperlink{structAnnotationToolItem_a5a24d93be5ae5fba2c921b205c29b017}{text} = \hyperlink{classPageViewAnnotator_a669d7d940ca6b93689724e43fba25c86}{defaultToolName}( toolElement );
+690             item.\hyperlink{structAnnotationToolItem_a329b59ebf0a0064444d34874f41a70cb}{pixmap} = \hyperlink{classPageViewAnnotator_a54eb311605f2eefadaf78fd3b27eef7a}{makeToolPixmap}( toolElement );
+691             QDomNode shortcutNode = toolElement.elementsByTagName( \textcolor{stringliteral}{"shortcut"} ).item( 0 );
+692             \textcolor{keywordflow}{if} ( shortcutNode.isElement() )
+693                 item.\hyperlink{structAnnotationToolItem_ad9bf3c20abf0ddfc1d1ff826cd3d3da5}{shortcut} = shortcutNode.toElement().text();
+694             QDomNodeList engineNodeList = toolElement.elementsByTagName( \textcolor{stringliteral}{"engine"} );
+695             \textcolor{keywordflow}{if} ( engineNodeList.size() > 0 )
+696             \{
+697                 QDomElement engineEl = engineNodeList.item( 0 ).toElement();
+698                 \textcolor{keywordflow}{if} ( !engineEl.isNull() && engineEl.hasAttribute( \textcolor{stringliteral}{"type"} ) )
+699                     item.\hyperlink{structAnnotationToolItem_a7627b1e7036d516cd4bd290a9099a549}{isText} = engineEl.attribute( \textcolor{stringliteral}{"type"} ) == QLatin1String( \textcolor{stringliteral}{"TextSelector"} );
+700             \}
+701             m\_items.push\_back( item );
+702         \}
+703         toolDescription = toolDescription.nextSibling();
+704     \}
+705 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_af2c97f1da1fa61fffb86a6a8118f9dc6}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!route\+Key\+Event@{route\+Key\+Event}}
+\index{route\+Key\+Event@{route\+Key\+Event}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{route\+Key\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Annotator\+::route\+Key\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Key\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_af2c97f1da1fa61fffb86a6a8118f9dc6}
+
+
+Definition at line 912 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+913 \{
+914     \textcolor{keywordflow}{if} ( event->key() == Qt::Key\_Escape )
+915     \{
+916         detachAnnotation();
+917         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+918     \}
+919     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+920 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a6cd952408052c6d7de1c1111d61266b0}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!route\+Mouse\+Event@{route\+Mouse\+Event}}
+\index{route\+Mouse\+Event@{route\+Mouse\+Event}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{route\+Mouse\+Event}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Page\+View\+Annotator\+::route\+Mouse\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event, }
+\item[{{\bf Page\+View\+Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a6cd952408052c6d7de1c1111d61266b0}
+
+
+Definition at line 868 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+869 \{
+870     \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{AnnotatorEngine::EventType} eventType;
+871     \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{AnnotatorEngine::Button} button;
+872 
+873     \textcolor{comment}{// figure out the event type and button}
+874     \hyperlink{classAnnotatorEngine_acabc5b26b0693eb5b29138a7a70f7a39}{AnnotatorEngine::decodeEvent}( e, &eventType, &button );
+875 
+876     \textcolor{keywordflow}{return} \hyperlink{classPageViewAnnotator_a08cf82846db4ea3fee9c3b786ded22cf}{performRouteMouseOrTabletEvent}( eventType, button, e->posF(), item
+       );
+877 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a5d6faca78c8b002a1b2c30cb8570e47f}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!route\+Paint@{route\+Paint}}
+\index{route\+Paint@{route\+Paint}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{route\+Paint}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Annotator\+::route\+Paint (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter, }
+\item[{const Q\+Rect \&}]{paint\+Rect}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a5d6faca78c8b002a1b2c30cb8570e47f}
+
+
+Definition at line 927 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+928 \{
+929     \textcolor{comment}{// if there's no locked item, then there's no decided place to draw on}
+930     \textcolor{keywordflow}{if} ( !m\_lockedItem )
+931         \textcolor{keywordflow}{return};
+932 
+933 \textcolor{preprocessor}{#ifndef NDEBUG}
+934     \textcolor{comment}{// [DEBUG] draw the paint region if enabled}
+935     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1Settings_a2efc0bc534162c18db5c09c91e9b41fb}{Okular::Settings::debugDrawAnnotationRect}() )
+936         painter->drawRect( paintRect );
+937 \textcolor{preprocessor}{#endif}
+938     \textcolor{comment}{// move painter to current itemGeometry rect}
+939     \textcolor{keyword}{const} QRect & itemRect = m\_lockedItem->\hyperlink{classPageViewItem_a5d2e73a003f65b4e95c0c21b1698f835}{uncroppedGeometry}();
+940     painter->save();
+941     painter->translate( itemRect.topLeft() );
+942     \textcolor{comment}{// TODO: Clip annotation painting to cropped page.}
+943 
+944     \textcolor{comment}{// transform cliprect from absolute to item relative coords}
+945     QRect annotRect = paintRect.intersect( m\_lastDrawnRect );
+946     annotRect.translate( -itemRect.topLeft() );
+947 
+948     \textcolor{comment}{// use current engine for painting (in virtual page coordinates)}
+949     m\_engine->\hyperlink{classAnnotatorEngine_a71b2e9fcbcca36caadefa79adb99c93f}{paint}( painter, m\_lockedItem->\hyperlink{classPageViewItem_a240924407ae22bb0489363a6a2d481b9}{uncroppedWidth}(), m\_lockedItem->
+      \hyperlink{classPageViewItem_af1380fce5dc13a72458ef834c720b128}{uncroppedHeight}(), annotRect );
+950     painter->restore();
+951 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a6c9bb2e357dfa97da72ad0e610b4b7f6}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!route\+Paints@{route\+Paints}}
+\index{route\+Paints@{route\+Paints}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{route\+Paints}]{\setlength{\rightskip}{0pt plus 5cm}bool Page\+View\+Annotator\+::route\+Paints (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect \&}]{wanted\+Rect}
+\end{DoxyParamCaption}
+) const}}\label{classPageViewAnnotator_a6c9bb2e357dfa97da72ad0e610b4b7f6}
+
+
+Definition at line 922 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+923 \{
+924     \textcolor{keywordflow}{return} m\_engine && m\_toolBar && wantedRect.intersects( m\_lastDrawnRect ) && m\_lockedItem;
+925 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a5b8f1d3ac283209cd76838b199adee5d}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!route\+Tablet\+Event@{route\+Tablet\+Event}}
+\index{route\+Tablet\+Event@{route\+Tablet\+Event}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{route\+Tablet\+Event}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Page\+View\+Annotator\+::route\+Tablet\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Tablet\+Event $\ast$}]{event, }
+\item[{{\bf Page\+View\+Item} $\ast$}]{item, }
+\item[{const Q\+Point \&}]{local\+Origin\+In\+Global}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a5b8f1d3ac283209cd76838b199adee5d}
+
+
+Definition at line 879 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+880 \{
+881     \textcolor{comment}{// Unlike routeMouseEvent, routeTabletEvent must explicitly ignore events it doesn't care about so that}
+882     \textcolor{comment}{// the corresponding mouse event will later be delivered.}
+883     \textcolor{keywordflow}{if} ( !item )
+884     \{
+885         e->ignore();
+886         \textcolor{keywordflow}{return} QRect();
+887     \}
+888 
+889     \textcolor{comment}{// We set all tablet events that take place over the annotations toolbar to ignore so that
+       corresponding mouse}
+890     \textcolor{comment}{// events will be delivered to the toolbar.  However, we still allow the annotations code to handle}
+891     \textcolor{comment}{// TabletMove and TabletRelease events in case the user is drawing an annotation onto the toolbar.}
+892     \textcolor{keyword}{const} QPoint toolBarPos = m\_toolBar->mapFromGlobal( e->globalPos() );
+893     \textcolor{keyword}{const} QRect toolBarRect = m\_toolBar->rect();
+894     \textcolor{keywordflow}{if} ( toolBarRect.contains( toolBarPos ) )
+895     \{
+896         e->ignore();
+897         \textcolor{keywordflow}{if} (e->type() == QEvent::TabletPress)
+898             \textcolor{keywordflow}{return} QRect();
+899     \}
+900 
+901     \hyperlink{classAnnotatorEngine_a00fb22eb4cb6eafb056f9066031db133}{AnnotatorEngine::EventType} eventType;
+902     \hyperlink{classAnnotatorEngine_ac2e3b75e12bacbb6974d15dd53954567}{AnnotatorEngine::Button} button;
+903 
+904     \textcolor{comment}{// figure out the event type and button}
+905     \hyperlink{classAnnotatorEngine_acabc5b26b0693eb5b29138a7a70f7a39}{AnnotatorEngine::decodeEvent}( e, &eventType, &button );
+906 
+907     \textcolor{keyword}{const} QPointF globalPosF = e->hiResGlobalPos();
+908     \textcolor{keyword}{const} QPointF localPosF = globalPosF - localOriginInGlobal;
+909     \textcolor{keywordflow}{return} \hyperlink{classPageViewAnnotator_a08cf82846db4ea3fee9c3b786ded22cf}{performRouteMouseOrTabletEvent}( eventType, button, localPosF, item
+       );
+910 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a69ebe26ffe14871bacc3b8bcb7fae14b}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{set\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Annotator\+::set\+Enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a69ebe26ffe14871bacc3b8bcb7fae14b}
+
+
+Definition at line 712 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+713 \{
+714     \textcolor{keywordflow}{if} ( !on )
+715     \{
+716         \textcolor{comment}{// remove toolBar}
+717         \textcolor{keywordflow}{if} ( m\_toolBar )
+718             m\_toolBar->\hyperlink{classPageViewToolBar_a4dcd221e17f4413bf483c8429219a8b1}{hideAndDestroy}();
+719         m\_toolBar = 0;
+720         \textcolor{comment}{// deactivate the active tool, if any}
+721         slotToolSelected( -1 );
+722         \textcolor{keywordflow}{return};
+723     \}
+724 
+725     \textcolor{comment}{// if no tools are defined, don't show the toolbar}
+726     \textcolor{keywordflow}{if} ( !m\_toolsDefinition.hasChildNodes() )
+727         \textcolor{keywordflow}{return};
+728 
+729     \textcolor{comment}{// create toolBar}
+730     \textcolor{keywordflow}{if} ( !m\_toolBar )
+731     \{
+732         m\_toolBar = \textcolor{keyword}{new} \hyperlink{classPageViewToolBar}{PageViewToolBar}( m\_pageView, m\_pageView->viewport() );
+733         m\_toolBar->\hyperlink{classPageViewToolBar_a9f6bb3c8fae4e3b4223c7c6408cfc8d8}{setSide}( (\hyperlink{classPageViewToolBar_a6410ac0bc9e35fba1314cfd6d7049385}{PageViewToolBar::Side})
+      \hyperlink{classOkular_1_1Settings_ac46060432d448d647a00ef303afbf85c}{Okular::Settings::editToolBarPlacement}() );
+734         m\_toolBar->\hyperlink{classPageViewToolBar_a3ba0856b9d3d0e080d674c80a754d902}{setItems}( m\_items );
+735         m\_toolBar->\hyperlink{classPageViewToolBar_a99a0d8cd773f42adfa5420cbd4fa9535}{setToolsEnabled}( m\_toolsEnabled );
+736         m\_toolBar->\hyperlink{classPageViewToolBar_a028996f58918fec0dc4499105a4976c2}{setTextToolsEnabled}( m\_textToolsEnabled );
+737         connect( m\_toolBar, SIGNAL(toolSelected(\textcolor{keywordtype}{int})),
+738                 \textcolor{keyword}{this}, SLOT(slotToolSelected(\textcolor{keywordtype}{int})) );
+739         connect( m\_toolBar, SIGNAL(orientationChanged(\textcolor{keywordtype}{int})),
+740                 \textcolor{keyword}{this}, SLOT(slotSaveToolbarOrientation(\textcolor{keywordtype}{int})) );
+741         
+742         connect( m\_toolBar, SIGNAL(buttonDoubleClicked(\textcolor{keywordtype}{int})),
+743                 \textcolor{keyword}{this}, SLOT(slotToolDoubleClicked(\textcolor{keywordtype}{int})) );
+744         m\_toolBar->setCursor(Qt::ArrowCursor);
+745     \}
+746 
+747     \textcolor{comment}{// show the toolBar}
+748     m\_toolBar->\hyperlink{classPageViewToolBar_a4d401e75a2a30b1fd187697128c926cf}{showAndAnimate}();
+749 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_ad6fed571534b89dfe7d8bee2e6254b26}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!set\+Hiding\+Forced@{set\+Hiding\+Forced}}
+\index{set\+Hiding\+Forced@{set\+Hiding\+Forced}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{set\+Hiding\+Forced}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Annotator\+::set\+Hiding\+Forced (
+\begin{DoxyParamCaption}
+\item[{bool}]{forced}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_ad6fed571534b89dfe7d8bee2e6254b26}
+
+
+Definition at line 765 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+766 \{
+767     m\_hidingWasForced = forced;
+768 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_ad4319944b2ac21b5d93895a9cb691553}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!set\+Text\+Tools\+Enabled@{set\+Text\+Tools\+Enabled}}
+\index{set\+Text\+Tools\+Enabled@{set\+Text\+Tools\+Enabled}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{set\+Text\+Tools\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Annotator\+::set\+Text\+Tools\+Enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_ad4319944b2ac21b5d93895a9cb691553}
+
+
+Definition at line 751 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+752 \{
+753     m\_textToolsEnabled = enabled;
+754     \textcolor{keywordflow}{if} ( m\_toolBar )
+755         m\_toolBar->\hyperlink{classPageViewToolBar_a028996f58918fec0dc4499105a4976c2}{setTextToolsEnabled}( m\_textToolsEnabled );
+756 \}
+\end{DoxyCode}
+\hypertarget{classPageViewAnnotator_a4cd15f84582b36f2c194530f3a123b69}{\index{Page\+View\+Annotator@{Page\+View\+Annotator}!set\+Tools\+Enabled@{set\+Tools\+Enabled}}
+\index{set\+Tools\+Enabled@{set\+Tools\+Enabled}!Page\+View\+Annotator@{Page\+View\+Annotator}}
+\subsubsection[{set\+Tools\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+View\+Annotator\+::set\+Tools\+Enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classPageViewAnnotator_a4cd15f84582b36f2c194530f3a123b69}
+
+
+Definition at line 758 of file pageviewannotator.\+cpp.
+
+
+\begin{DoxyCode}
+759 \{
+760     m\_toolsEnabled = enabled;
+761     \textcolor{keywordflow}{if} ( m\_toolBar )
+762         m\_toolBar->\hyperlink{classPageViewToolBar_a99a0d8cd773f42adfa5420cbd4fa9535}{setToolsEnabled}( m\_toolsEnabled );
+763 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{pageviewannotator_8h}{pageviewannotator.\+h}\item 
+ui/\hyperlink{pageviewannotator_8cpp}{pageviewannotator.\+cpp}\end{DoxyCompactItemize}

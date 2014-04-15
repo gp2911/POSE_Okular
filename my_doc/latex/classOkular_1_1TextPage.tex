@@ -1,0 +1,882 @@
+\hypertarget{classOkular_1_1TextPage}{\section{Okular\+:\+:Text\+Page Class Reference}
+\label{classOkular_1_1TextPage}\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+}
+
+
+{\ttfamily \#include $<$textpage.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}{Text\+Area\+Inclusion\+Behaviour} \{ \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour}, 
+\hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a8f4ca9fdbb6e543cd335d787bc80eabc}{Central\+Pixel\+Text\+Area\+Inclusion\+Behaviour}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextPage_afb297bd4a13f9c1f130064e326499812}{Text\+Page} ()
+\item 
+\hyperlink{classOkular_1_1TextPage_aa7df8519615d968370ab2cca64dddee9}{Text\+Page} (const \hyperlink{classOkular_1_1TextEntity_a9deacb4422ede69001915b33ca21c023}{Text\+Entity\+::\+List} \&\hyperlink{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}{words})
+\item 
+\hyperlink{classOkular_1_1TextPage_abfc1c92bd4020d5222c93dee51700bf5}{$\sim$\+Text\+Page} ()
+\item 
+void \hyperlink{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}{append} (const Q\+String \&\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}, \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} $\ast$area)
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1TextPage_a362d1cde5838e68fdb244c8480054b76}{find\+Text} (int id, const Q\+String \&\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}, \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2}{Search\+Direction} direction, Qt\+::\+Case\+Sensitivity case\+Sensitivity, const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$last\+Rect)
+\item 
+Q\+String \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text} (const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$rect=0) const 
+\item 
+Q\+String \hyperlink{classOkular_1_1TextPage_a42e170befbc39463e599e3c313fd68ba}{text} (const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$rect, \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}{Text\+Area\+Inclusion\+Behaviour} b) const 
+\item 
+\hyperlink{classOkular_1_1TextEntity_a9deacb4422ede69001915b33ca21c023}{Text\+Entity\+::\+List} \hyperlink{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}{words} (const \hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$rect, \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}{Text\+Area\+Inclusion\+Behaviour} b) const 
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1TextPage_a95ed81e55002e36860bbb7c39f34a36f}{word\+At} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&p, Q\+String $\ast$word=0) const 
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1TextPage_a5dba636c3d91b59e6782700eba2efadf}{text\+Area} (\hyperlink{classOkular_1_1TextSelection}{Text\+Selection} $\ast$selection) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classOkular_1_1TextPage}{Text\+Page} class represents the text of a page by providing \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextEntity}{Text\+Entity} items for every word/character of the page. 
+\end{DoxySeeAlso}
+
+
+Definition at line 90 of file textpage.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!Text\+Area\+Inclusion\+Behaviour@{Text\+Area\+Inclusion\+Behaviour}}
+\index{Text\+Area\+Inclusion\+Behaviour@{Text\+Area\+Inclusion\+Behaviour}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{Text\+Area\+Inclusion\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Text\+Page\+::\+Text\+Area\+Inclusion\+Behaviour}}}\label{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34}
+Defines the behaviour of adding characters to \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text()} result \begin{DoxySince}{Since}
+0.\+10 (K\+D\+E 4.\+4) 
+\end{DoxySince}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour@{Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour@{Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour}}\item[{\em 
+\hypertarget{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour}\label{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}
+}]A character is included into \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text()} result if any pixel of his bounding box is in the given area. \index{Central\+Pixel\+Text\+Area\+Inclusion\+Behaviour@{Central\+Pixel\+Text\+Area\+Inclusion\+Behaviour}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!Central\+Pixel\+Text\+Area\+Inclusion\+Behaviour@{Central\+Pixel\+Text\+Area\+Inclusion\+Behaviour}}\item[{\em 
+\hypertarget{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a8f4ca9fdbb6e543cd335d787bc80eabc}{Central\+Pixel\+Text\+Area\+Inclusion\+Behaviour}\label{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a8f4ca9fdbb6e543cd335d787bc80eabc}
+}]A character is included into \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text()} result if the central pixel of his bounding box is in the given area. \end{description}
+\end{Desc}
+
+
+Definition at line 102 of file textpage.\+h.
+
+
+\begin{DoxyCode}
+103         \{
+104             \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{AnyPixelTextAreaInclusionBehaviour},      
+105             \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a8f4ca9fdbb6e543cd335d787bc80eabc}{CentralPixelTextAreaInclusionBehaviour}  
+106         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextPage_afb297bd4a13f9c1f130064e326499812}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!Text\+Page@{Text\+Page}}
+\index{Text\+Page@{Text\+Page}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{Text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Page\+::\+Text\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPage_afb297bd4a13f9c1f130064e326499812}
+Creates a new text page. 
+
+Definition at line 228 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+229     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextPagePrivate}{TextPagePrivate}() )
+230 \{
+231 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_aa7df8519615d968370ab2cca64dddee9}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!Text\+Page@{Text\+Page}}
+\index{Text\+Page@{Text\+Page}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{Text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Page\+::\+Text\+Page (
+\begin{DoxyParamCaption}
+\item[{const {\bf Text\+Entity\+::\+List} \&}]{words}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPage_aa7df8519615d968370ab2cca64dddee9}
+Creates a new text page with the given {\ttfamily words}. 
+
+Definition at line 233 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+234     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextPagePrivate}{TextPagePrivate}() )
+235 \{
+236     TextEntity::List::ConstIterator it = words.constBegin(), itEnd = words.constEnd();
+237     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+238     \{
+239         \hyperlink{classOkular_1_1TextEntity}{TextEntity} *e = *it;
+240         \textcolor{keywordflow}{if} ( !e->\hyperlink{classOkular_1_1TextEntity_a401ca5d9c54d5e25bd3c8a7ce7b7092b}{text}().isEmpty() )
+241             d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.append( \textcolor{keyword}{new} \hyperlink{classTinyTextEntity}{TinyTextEntity}( e->\hyperlink{classOkular_1_1TextEntity_a401ca5d9c54d5e25bd3c8a7ce7b7092b}{text}(), *e->
+      \hyperlink{classOkular_1_1TextEntity_a6b6b48011803d2b6bff6068eec430f4b}{area}() ) );
+242         \textcolor{keyword}{delete} e;
+243     \}
+244 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_abfc1c92bd4020d5222c93dee51700bf5}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!````~Text\+Page@{$\sim$\+Text\+Page}}
+\index{````~Text\+Page@{$\sim$\+Text\+Page}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{$\sim$\+Text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Page\+::$\sim$\+Text\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPage_abfc1c92bd4020d5222c93dee51700bf5}
+Destroys the text page. 
+
+Definition at line 246 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+247 \{
+248     \textcolor{keyword}{delete} d;
+249 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!append@{append}}
+\index{append@{append}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Page\+::append (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text, }
+\item[{{\bf Normalized\+Rect} $\ast$}]{area}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPage_a003032e4e1cd8c15f01ed639ce62d11f}
+Appends the given {\ttfamily text} with the given {\ttfamily area} as new \hyperlink{classOkular_1_1TextEntity}{Text\+Entity} to the page. 
+
+Definition at line 251 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+252 \{
+253     \textcolor{keywordflow}{if} ( !\hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}.isEmpty() )
+254         d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.append( \textcolor{keyword}{new} \hyperlink{classTinyTextEntity}{TinyTextEntity}( \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}.normalized(
+      QString::NormalizationForm\_KC), *area ) );
+255     \textcolor{keyword}{delete} area;
+256 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_a362d1cde5838e68fdb244c8480054b76}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!find\+Text@{find\+Text}}
+\index{find\+Text@{find\+Text}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{find\+Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Text\+Page\+::find\+Text (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{const Q\+String \&}]{text, }
+\item[{{\bf Search\+Direction}}]{direction, }
+\item[{Qt\+::\+Case\+Sensitivity}]{case\+Sensitivity, }
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{last\+Rect}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPage_a362d1cde5838e68fdb244c8480054b76}
+Returns the bounding rect of the text which matches the following criteria or 0 if the search is not successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & An unique id for this search. \\
+\hline
+{\em text} & The search text. \\
+\hline
+{\em direction} & The direction of the search (\hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2}{Search\+Direction}) \\
+\hline
+{\em case\+Sensitivity} & If Qt\+::\+Case\+Sensitive, the search is case sensitive; otherwise the search is case insensitive. \\
+\hline
+{\em last\+Rect} & If 0 the search starts at the beginning of the page, otherwise right/below the coordinates of the given rect. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 715 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+717 \{
+718     \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2}{SearchDirection} dir=direct;
+719     \textcolor{comment}{// invalid search request}
+720     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.isEmpty() || query.isEmpty() || ( area && area->isNull() ) )
+721         \textcolor{keywordflow}{return} 0;
+722     TextList::ConstIterator start;
+723     \textcolor{keywordtype}{int} start\_offset = 0;
+724     TextList::ConstIterator end;
+725     \textcolor{keyword}{const} \hyperlink{classQMap}{QMap< int, SearchPoint* >::const\_iterator} sIt = d->
+      \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.constFind( searchID );
+726     \textcolor{keywordflow}{if} ( sIt == d->\hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.constEnd() )
+727     \{
+728         \textcolor{comment}{// if no previous run of this search is found, then set it to start}
+729         \textcolor{comment}{// from the beginning (respecting the search direction)}
+730         \textcolor{keywordflow}{if} ( dir == \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2ae206453ab991a0ffea7c198f8ef600c4}{NextResult} )
+731             dir = \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2a12e1e0d5fba44b6eb075863eb0992cf6}{FromTop};
+732         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( dir == \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2ad604ce7efcb1e2987d9503404f34a504}{PreviousResult} )
+733             dir = \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2a1a146d4130e3d6f0ad12fd5ee6fc3497}{FromBottom};
+734     \}
+735     \textcolor{keywordtype}{bool} forward = \textcolor{keyword}{true};
+736     \textcolor{keywordflow}{switch} ( dir )
+737     \{
+738         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2a12e1e0d5fba44b6eb075863eb0992cf6}{FromTop}:
+739             start = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constBegin();
+740             start\_offset = 0;
+741             end = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd();
+742             \textcolor{keywordflow}{break};
+743         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2a1a146d4130e3d6f0ad12fd5ee6fc3497}{FromBottom}:
+744             start = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd();
+745             start\_offset = 0;
+746             end = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constBegin();
+747             forward = \textcolor{keyword}{false};
+748             \textcolor{keywordflow}{break};
+749         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2ae206453ab991a0ffea7c198f8ef600c4}{NextResult}:
+750             start = (*sIt)->it\_end;
+751             start\_offset = (*sIt)->offset\_end;
+752             end = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd();
+753             \textcolor{keywordflow}{break};
+754         \textcolor{keywordflow}{case} \hyperlink{namespaceOkular_ad7ede3c5a1b1a8bfd83f133e7e3ed9d2ad604ce7efcb1e2987d9503404f34a504}{PreviousResult}:
+755             start = (*sIt)->it\_begin;
+756             start\_offset = (*sIt)->offset\_begin;
+757             end = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constBegin();
+758             forward = \textcolor{keyword}{false};
+759             \textcolor{keywordflow}{break};
+760     \};
+761     \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect}* ret = 0;
+762     \textcolor{keyword}{const} \hyperlink{namespaceOkular_a686d56fd67c1b405491328f3f187a4b0}{TextComparisonFunction} cmpFn = caseSensitivity == Qt::CaseSensitive
+763                                        ? CaseSensitiveCmpFn : CaseInsensitiveCmpFn;
+764     \textcolor{keywordflow}{if} ( forward )
+765     \{
+766         ret = d->\hyperlink{classOkular_1_1TextPagePrivate_aea4416c7f6f5b3fb791a357e2990345c}{findTextInternalForward}( searchID, query, cmpFn, start, 
+      start\_offset, end );
+767     \}
+768     \textcolor{keywordflow}{else}
+769     \{
+770         ret = d->\hyperlink{classOkular_1_1TextPagePrivate_a720203a7151be15af3c70050eb9324c2}{findTextInternalBackward}( searchID, query, cmpFn, start, 
+      start\_offset, end );
+771     \}
+772     \textcolor{keywordflow}{return} ret;
+773 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!text@{text}}
+\index{text@{text}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Text\+Page\+::text (
+\begin{DoxyParamCaption}
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{rect = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}
+Text extraction function.
+
+Returns\+:
+\begin{DoxyItemize}
+\item a null string if {\ttfamily rect} is a valid pointer to a null area
+\item the whole page text if {\ttfamily rect} is a null pointer
+\item the text which is included by rectangular area {\ttfamily rect} otherwise Uses Any\+Pixel\+Text\+Area\+Inclusion\+Behaviour 
+\end{DoxyItemize}
+
+Definition at line 1068 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+1069 \{
+1070     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text}(area, \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{AnyPixelTextAreaInclusionBehaviour});
+1071 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_a42e170befbc39463e599e3c313fd68ba}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!text@{text}}
+\index{text@{text}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Text\+Page\+::text (
+\begin{DoxyParamCaption}
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{rect, }
+\item[{{\bf Text\+Area\+Inclusion\+Behaviour}}]{b}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextPage_a42e170befbc39463e599e3c313fd68ba}
+Text extraction function.
+
+Returns\+:
+\begin{DoxyItemize}
+\item a null string if {\ttfamily rect} is a valid pointer to a null area
+\item the whole page text if {\ttfamily rect} is a null pointer
+\item the text which is included by rectangular area {\ttfamily rect} otherwise \begin{DoxySince}{Since}
+0.\+10 (K\+D\+E 4.\+4) 
+\end{DoxySince}
+
+\end{DoxyItemize}
+
+Definition at line 1073 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+1074 \{
+1075     \textcolor{keywordflow}{if} ( area && area->isNull() )
+1076         \textcolor{keywordflow}{return} QString();
+1077 
+1078     TextList::ConstIterator it = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constBegin(), itEnd = d->
+      \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd();
+1079     QString ret;
+1080     \textcolor{keywordflow}{if} ( area )
+1081     \{
+1082         \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+1083         \{
+1084             \textcolor{keywordflow}{if} (b == \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{AnyPixelTextAreaInclusionBehaviour})
+1085             \{
+1086                 \textcolor{keywordflow}{if} ( area->intersects( (*it)->area ) )
+1087                 \{
+1088                     ret += (*it)->text();
+1089                 \}
+1090             \}
+1091             \textcolor{keywordflow}{else}
+1092             \{
+1093                 \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} center = (*it)->area.center();
+1094                 \textcolor{keywordflow}{if} ( area->contains( center.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, center.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} ) )
+1095                 \{
+1096                     ret += (*it)->text();
+1097                 \}
+1098             \}
+1099         \}
+1100     \}
+1101     \textcolor{keywordflow}{else}
+1102     \{
+1103         \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+1104             ret += (*it)->text();
+1105     \}
+1106     \textcolor{keywordflow}{return} ret;
+1107 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_a5dba636c3d91b59e6782700eba2efadf}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!text\+Area@{text\+Area}}
+\index{text\+Area@{text\+Area}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{text\+Area}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Text\+Page\+::text\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Selection} $\ast$}]{selection}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextPage_a5dba636c3d91b59e6782700eba2efadf}
+Returns the rectangular area of the given {\ttfamily selection}. It works like this\+: There are two cursors, we need to select all the text between them. The coordinates are normalised, left\+Top is (0,0) right\+Bottom is (1,1), so for cursors start (sx,sy) and end (ex,ey) we start with finding text rectangles under those points, if not we search for the first that is to the right to it in the same baseline, if none found, then we search for the first rectangle with a baseline under the cursor, having two points that are the best rectangles to both of the cursors\+: (rx,ry)x(tx,ty) for start and (ux,uy)x(vx,vy) for end, we do a
+\begin{DoxyEnumerate}
+\item (rx,ry)x(1,ty)
+\item (0,ty)x(1,uy)
+\item (0,uy)x(vx,vy)
+\end{DoxyEnumerate}
+
+To find the closest rectangle to cursor (cx,cy) we search for a rectangle that either contains the cursor or that has a left border $>$= cx and bottom border $>$= cy.
+
+We will now find out the \hyperlink{classTinyTextEntity}{Tiny\+Text\+Entity} for the start\+Rectangle and \hyperlink{classTinyTextEntity}{Tiny\+Text\+Entity} for the end\+Rectangle. We have four cases\+:
+
+Case 1(a)\+: both startpoint and endpoint are out of the bounding Rectangle and at one side, so the rectangle made of start and end\+Point are outof the bounding rect (do not intersect)
+
+Case 1(b)\+: both startpoint and endpoint are out of bounding rect, but they are in different side, so is their rectangle
+
+Case 2(a)\+: find the rectangle which contains start and endpoint and having some \hyperlink{classOkular_1_1TextEntity}{Text\+Entity}
+
+Case 2(b)\+: if 2(a) fails (if start\+Point and end\+Point both are unchanged), then we check whether there is any \hyperlink{classOkular_1_1TextEntity}{Text\+Entity} within the rect made by start\+Point and end\+Point
+
+Case 3\+: Now, we may have two type of selection.
+\begin{DoxyEnumerate}
+\item startpoint is left-\/top of start\+\_\+end and endpoint is right-\/bottom
+\item startpoint is left-\/bottom of start\+\_\+end and endpoint is top-\/right
+\end{DoxyEnumerate}
+
+Also, as 2(b) is passed, we might have it,it\+End or both unchanged, but the fact is that we have text within them. so, we need to search for the best suitable textposition for start and end.
+
+Case 3(a)\+: We search the nearest rectangle consisting of some \hyperlink{classTinyTextEntity}{Tiny\+Text\+Entity} right to or bottom of the start\+Point for selection 01. And, for selection 02, we have to search for right and top
+
+Case 3(b)\+: For endpoint, we have to find the point top of or left to endpoint if we have selection 01. Otherwise, the search will be left and bottom
+
+note that, after swapping of start and end, we know that, start is always left to end. but, we cannot say start is positioned upper than end.
+
+Definition at line 331 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+332 \{
+333     \textcolor{keywordflow}{if} ( d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.isEmpty() )
+334         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect}();
+335 
+350     \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect} * ret= \textcolor{keyword}{new} \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect};
+351 
+352     \textcolor{keyword}{const} QTransform matrix = d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page} ? d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a87e2009afc3a1f31a0b03d3a6a359a03}{rotationMatrix}() : 
+      QTransform();
+353 \textcolor{preprocessor}{#if 0}
+354     \textcolor{keywordtype}{int} it = -1;
+355     \textcolor{keywordtype}{int} itB = -1;
+356     \textcolor{keywordtype}{int} itE = -1;
+357 
+358     \textcolor{comment}{// ending cursor is higher than start cursor, we need to find positions in reverse}
+359     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} tmp;
+360     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} start;
+361     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} end;
+362 
+363     \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} startC = sel->start();
+364     \textcolor{keywordtype}{double} startCx = startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x};
+365     \textcolor{keywordtype}{double} startCy = startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y};
+366 
+367     \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} endC = sel->end();
+368     \textcolor{keywordtype}{double} endCx = endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x};
+369     \textcolor{keywordtype}{double} endCy = endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y};
+370 
+371     \textcolor{keywordflow}{if} ( sel->direction() == 1 || ( sel->itB() == -1 && sel->direction() == 0 ) )
+372     \{
+373 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+374         kWarning() << \textcolor{stringliteral}{"running first loop"};
+375 \textcolor{preprocessor}{#endif}
+376         \textcolor{keyword}{const} \textcolor{keywordtype}{int} count = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.count();
+377         \textcolor{keywordflow}{for} ( it = 0; it < count; it++ )
+378         \{
+379             tmp = *d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}[ it ]->area();
+380             \textcolor{keywordflow}{if} ( tmp.\hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains}( startCx, startCy )
+381                  || ( tmp.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} <= startCy && tmp.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} >= startCy && tmp.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} >= startCx )
+382                  || ( tmp.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} >= startCy))
+383             \{
+385                 itB = it;
+386 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+387                 kWarning() << \textcolor{stringliteral}{"start is"} << itB << \textcolor{stringliteral}{"count is"} << d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.count();
+388 \textcolor{preprocessor}{#endif}
+389                 \textcolor{keywordflow}{break};
+390             \}
+391         \}
+392         sel->itB( itB );
+393     \}
+394     itB = sel->itB();
+395 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+396     kWarning() << \textcolor{stringliteral}{"direction is"} << sel->direction();
+397     kWarning() << \textcolor{stringliteral}{"reloaded start is"} << itB << \textcolor{stringliteral}{"against"} << sel->itB();
+398 \textcolor{preprocessor}{#endif}
+399     \textcolor{keywordflow}{if} ( sel->direction() == 0 || ( sel->itE() == -1 && sel->direction() == 1 ) )
+400     \{
+401 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+402         kWarning() << \textcolor{stringliteral}{"running second loop"};
+403 \textcolor{preprocessor}{#endif}
+404         \textcolor{keywordflow}{for} ( it = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.count() - 1; it >= itB; it-- )
+405         \{
+406             tmp = *d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}[ it ]->area();
+407             \textcolor{keywordflow}{if} ( tmp.\hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains}( endCx, endCy )
+408                  || ( tmp.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} <= endCy && tmp.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} >= endCy && tmp.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} <= endCx )
+409                  || ( tmp.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} <= endCy ) )
+410             \{
+412                 itE = it;
+413 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+414                 kWarning() << \textcolor{stringliteral}{"ending is"} << itE << \textcolor{stringliteral}{"count is"} << d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.count();
+415                 kWarning() << \textcolor{stringliteral}{"conditions"} << tmp.\hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains}( endCx, endCy ) << \textcolor{stringliteral}{" "} 
+416                   << ( tmp.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} <= endCy && tmp.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} >= endCy && tmp.
+      \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} <= endCx ) << \textcolor{stringliteral}{" "} <<
+417                   ( tmp.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} >= endCy);
+418 \textcolor{preprocessor}{#endif}
+419                 \textcolor{keywordflow}{break};
+420             \}
+421         \}
+422         sel->itE( itE );
+423     \}
+424 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+425     kWarning() << \textcolor{stringliteral}{"reloaded ending is"} << itE << \textcolor{stringliteral}{"against"} << sel->itE();
+426 \textcolor{preprocessor}{#endif}
+427 
+428     \textcolor{keywordflow}{if} ( sel->itB() != -1 && sel->itE() != -1 )
+429     \{
+430         start = *d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}[ sel->itB() ]->area();
+431         end = *d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}[ sel->itE() ]->area();
+432 
+433         \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} first, second, third;
+437         first = start;
+438         second.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} = start.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom};
+439         first.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = second.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = 1;
+440         third = end;
+441         third.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = second.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = 0;
+442         second.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} = end.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top};
+443         \textcolor{keywordtype}{int} selMax = qMax( sel->itB(), sel->itE() );
+444         \textcolor{keywordflow}{for} ( it = qMin( sel->itB(), sel->itE() ); it <= selMax; ++it )
+445         \{
+446             tmp = *d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}[ it ]->area();
+447             \textcolor{keywordflow}{if} ( tmp.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( &first ) || tmp.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( &second ) || tmp.
+      \hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( &third ) )
+448                 ret->\hyperlink{classOkular_1_1RegularArea_a04f39bd87b3d075a9b8e8d4a0ee54149}{appendShape}( d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.at( it )->transformedArea( matrix ) );
+449         \}
+450     \}
+451 \textcolor{preprocessor}{#else}
+452     \textcolor{keyword}{const} \textcolor{keywordtype}{double} scaleX = d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}();
+453     \textcolor{keyword}{const} \textcolor{keywordtype}{double} scaleY = d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+454 
+455     \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} startC = sel->start();
+456     \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} endC = sel->end();
+457     \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} temp;
+458 
+459     \textcolor{comment}{// if startPoint is right to endPoint swap them}
+460     \textcolor{keywordflow}{if}(startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} > endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x})
+461     \{
+462         temp = startC;
+463         startC = endC;
+464         endC = temp;
+465     \}
+466 
+467     \textcolor{comment}{// minX,maxX,minY,maxY gives the bounding rectangle coordinates of the document}
+468     \textcolor{keyword}{const} \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} boundingRect = d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->
+      \hyperlink{classOkular_1_1Page_abaa4dd95f6281d3a7773cf1e3a5ae39a}{boundingBox}();
+469     \textcolor{keyword}{const} QRect content = boundingRect.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}(scaleX,scaleY);
+470     \textcolor{keyword}{const} \textcolor{keywordtype}{double} minX = content.left();
+471     \textcolor{keyword}{const} \textcolor{keywordtype}{double} maxX = content.right();
+472     \textcolor{keyword}{const} \textcolor{keywordtype}{double} minY = content.top();
+473     \textcolor{keyword}{const} \textcolor{keywordtype}{double} maxY = content.bottom();
+474 
+506     \textcolor{comment}{// we know that startC.x > endC.x, we need to decide which is top and which is bottom}
+507     \textcolor{keyword}{const} \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} start\_end = (startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} < endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y}) ? 
+      \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}(startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y}, endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y})
+508                                                          : \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}(startC.
+      \hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y}, endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y});
+509 
+510     \textcolor{comment}{// Case 1(a)}
+511     \textcolor{keywordflow}{if}(!boundingRect.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}(start\_end)) \textcolor{keywordflow}{return} ret;
+512 
+513     \textcolor{comment}{// case 1(b)}
+519 \textcolor{comment}{}    \textcolor{keywordflow}{else}
+520     \{
+521         \textcolor{comment}{// if start is left to content rect take it to content rect boundary}
+522         \textcolor{keywordflow}{if}(startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} * scaleX < minX) startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} = minX/scaleX;
+523         \textcolor{keywordflow}{if}(endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} * scaleX > maxX) endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} = maxX/scaleX;
+524 
+525         \textcolor{comment}{// if start is top to end (selection type 01)}
+526         \textcolor{keywordflow}{if}(startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} * scaleY < minY) startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} = minY/scaleY;
+527         \textcolor{keywordflow}{if}(endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} * scaleY > maxY) endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} = maxY/scaleY;
+528 
+529         \textcolor{comment}{// if start is bottom to end (selection type 02)}
+530         \textcolor{keywordflow}{if}(startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} * scaleY > maxY) startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} = maxY/scaleY;
+531         \textcolor{keywordflow}{if}(endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} * scaleY < minY) endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} = minY/scaleY;
+532     \}
+533 
+534     TextList::ConstIterator it = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constBegin(), itEnd = d->
+      \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd();
+535     TextList::ConstIterator start = it, end = itEnd, tmpIt = it; \textcolor{comment}{//, tmpItEnd = itEnd;}
+536     \textcolor{keyword}{const} \hyperlink{namespaceOkular_ad98deec425adfb02ba05a78568bccceb}{MergeSide} side = d->\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page} ? (\hyperlink{namespaceOkular_ad98deec425adfb02ba05a78568bccceb}{MergeSide})d->
+      \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->\hyperlink{classOkular_1_1Page_a8cde1b9063d412fc338700026735fe4c}{totalOrientation}() : \hyperlink{namespaceOkular_ad98deec425adfb02ba05a78568bccceba809db1d0fade6720582a2c4f35299e5a}{MergeRight};
+537 
+538     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} tmp;
+539     \textcolor{comment}{//case 2(a)}
+540     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+541     \{
+542         tmp = (*it)->area;
+543         \textcolor{keywordflow}{if}(tmp.\hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains}(startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x},startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y}))\{
+544             start = it;
+545         \}
+546         \textcolor{keywordflow}{if}(tmp.\hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains}(endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x},endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y}))\{
+547             end = it;
+548         \}
+549     \}
+550 
+551     \textcolor{comment}{//case 2(b)}
+552     it = tmpIt;
+553     \textcolor{keywordflow}{if}(start == it && end == itEnd)
+554     \{
+555         \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+556         \{
+557             \textcolor{comment}{// is there any text reactangle within the start\_end rect}
+558             tmp = (*it)->area;
+559             \textcolor{keywordflow}{if}(start\_end.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}(tmp))
+560                 \textcolor{keywordflow}{break};
+561         \}
+562 
+563         \textcolor{comment}{// we have searched every text entities, but none is within the rectangle created by start and end}
+564         \textcolor{comment}{// so, no selection should be done}
+565         \textcolor{keywordflow}{if}(it == itEnd)
+566         \{
+567             \textcolor{keywordflow}{return} ret;
+568         \}
+569     \}
+570     it = tmpIt;
+571     \textcolor{keywordtype}{bool} selection\_two\_start = \textcolor{keyword}{false};
+572 
+573     \textcolor{comment}{//case 3.a}
+574     \textcolor{keywordflow}{if}(start == it)
+575     \{
+576         \textcolor{keywordtype}{bool} flagV = \textcolor{keyword}{false};
+577         \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} rect;
+578 
+579         \textcolor{comment}{// selection type 01}
+580         \textcolor{keywordflow}{if}(startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} <= endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y})
+581         \{
+582             \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+583             \{
+584                 rect= (*it)->area;
+585                 rect.\hyperlink{classOkular_1_1NormalizedRect_ad7d24b65fc3351cd6dd6eace53d6a6e5}{isBottom}(startC) ? flagV = \textcolor{keyword}{false}: flagV = \textcolor{keyword}{true};
+586 
+587                 \textcolor{keywordflow}{if}(flagV && rect.\hyperlink{classOkular_1_1NormalizedRect_ad42d751d8a6db695622645a1e1df8962}{isRight}(startC))
+588                 \{
+589                     start = it;
+590                     \textcolor{keywordflow}{break};
+591                 \}
+592             \}
+593         \}
+594 
+595         \textcolor{comment}{//selection type 02}
+596         \textcolor{keywordflow}{else}
+597         \{
+598             selection\_two\_start = \textcolor{keyword}{true};
+599             \textcolor{keywordtype}{int} distance = scaleX + scaleY + 100;
+600             \textcolor{keywordtype}{int} count = 0;
+601 
+602             \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+603             \{
+604                 rect= (*it)->area;
+605 
+606                 \textcolor{keywordflow}{if}(rect.\hyperlink{classOkular_1_1NormalizedRect_a97cba414c1e1e096ddeb9e93ad1fe86d}{isBottomOrLevel}(startC) && rect.\hyperlink{classOkular_1_1NormalizedRect_ad42d751d8a6db695622645a1e1df8962}{isRight}(startC))
+607                 \{
+608                     count++;
+609                     QRect entRect = rect.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}(scaleX,scaleY);
+610                     \textcolor{keywordtype}{int} xdist, ydist;
+611                     xdist = entRect.center().x() - startC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} * scaleX;
+612                     ydist = entRect.center().y() - startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} * scaleY;
+613 
+614                     \textcolor{comment}{//make them positive}
+615                     \textcolor{keywordflow}{if}(xdist < 0) xdist = -xdist;
+616                     \textcolor{keywordflow}{if}(ydist < 0) ydist = -ydist;
+617 
+618                     \textcolor{keywordflow}{if}( (xdist + ydist) < distance)
+619                     \{
+620                         distance = xdist+ ydist;
+621                         start = it;
+622                     \}
+623                 \}
+624             \}
+625         \}
+626     \}
+627 
+628     \textcolor{comment}{//case 3.b}
+629     \textcolor{keywordflow}{if}(end == itEnd)
+630     \{
+631         it = tmpIt;
+632         itEnd = itEnd-1;
+633 
+634         \textcolor{keywordtype}{bool} flagV = \textcolor{keyword}{false};
+635         \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} rect;
+636 
+637         \textcolor{keywordflow}{if}(startC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} <= endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y})
+638         \{
+639             \textcolor{keywordflow}{for} ( ; itEnd >= it; itEnd-- )
+640             \{
+641                 rect= (*itEnd)->area;
+642                 rect.\hyperlink{classOkular_1_1NormalizedRect_a415ad207e347970f0406989dfcbf1b1b}{isTop}(endC) ? flagV = \textcolor{keyword}{false}: flagV = \textcolor{keyword}{true};
+643 
+644                 \textcolor{keywordflow}{if}(flagV && rect.\hyperlink{classOkular_1_1NormalizedRect_a8024acae1abfdb0765bd205df7efbfe3}{isLeft}(endC))
+645                 \{
+646                     end = itEnd;
+647                     \textcolor{keywordflow}{break};
+648                 \}
+649             \}
+650         \}
+651 
+652         \textcolor{keywordflow}{else}
+653         \{
+654             \textcolor{keywordtype}{int} distance = scaleX + scaleY + 100;
+655             \textcolor{keywordflow}{for} ( ; itEnd >= it; itEnd-- )
+656             \{
+657                 rect= (*itEnd)->area;
+658 
+659                 \textcolor{keywordflow}{if}(rect.\hyperlink{classOkular_1_1NormalizedRect_a0d525438d22d8b2ec76d054e1921b4e1}{isTopOrLevel}(endC) && rect.\hyperlink{classOkular_1_1NormalizedRect_a8024acae1abfdb0765bd205df7efbfe3}{isLeft}(endC))
+660                 \{
+661                     QRect entRect = rect.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}(scaleX,scaleY);
+662                     \textcolor{keywordtype}{int} xdist, ydist;
+663                     xdist = entRect.center().x() - endC.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} * scaleX;
+664                     ydist = entRect.center().y() - endC.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} * scaleY;
+665 
+666                     \textcolor{comment}{//make them positive}
+667                     \textcolor{keywordflow}{if}(xdist < 0) xdist = -xdist;
+668                     \textcolor{keywordflow}{if}(ydist < 0) ydist = -ydist;
+669 
+670                     \textcolor{keywordflow}{if}( (xdist + ydist) < distance)
+671                     \{
+672                         distance = xdist+ ydist;
+673                         end = itEnd;
+674                     \}
+675 
+676                 \}
+677             \}
+678         \}
+679     \}
+680 
+681     \textcolor{comment}{/* if start and end in selection 02 are in the same column, and we}
+682 \textcolor{comment}{     start at an empty space we have to remove the selection of last}
+683 \textcolor{comment}{     character}
+684 \textcolor{comment}{    */}
+685     \textcolor{keywordflow}{if}(selection\_two\_start)
+686     \{
+687         \textcolor{keywordflow}{if}(start > end)
+688         \{
+689             start = start - 1;
+690         \}
+691     \}
+692 
+693     \textcolor{comment}{// if start is less than end swap them}
+694     \textcolor{keywordflow}{if}(start > end)
+695     \{
+696         it = start;
+697         start = end;
+698         end = it;
+699     \}
+700 
+701     \textcolor{comment}{// removes the possibility of crash, in case none of 1 to 3 is true}
+702     \textcolor{keywordflow}{if}(end == d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd()) end--;
+703 
+704     \textcolor{keywordflow}{for}( ;start <= end ; start++)
+705     \{
+706         ret->\hyperlink{classOkular_1_1RegularArea_a04f39bd87b3d075a9b8e8d4a0ee54149}{appendShape}( (*start)->transformedArea( matrix ), side );
+707      \}
+708 
+709 \textcolor{preprocessor}{#endif}
+710 
+711     \textcolor{keywordflow}{return} ret;
+712 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_a95ed81e55002e36860bbb7c39f34a36f}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!word\+At@{word\+At}}
+\index{word\+At@{word\+At}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{word\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Text\+Page\+::word\+At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{p, }
+\item[{Q\+String $\ast$}]{word = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextPage_a95ed81e55002e36860bbb7c39f34a36f}
+Returns the area and text of the word at the given point Note that ownership of the returned area belongs to the caller. \begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 1957 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+1958 \{
+1959     TextList::ConstIterator itBegin = d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constBegin(), itEnd = d->
+      \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd();
+1960     TextList::ConstIterator it = itBegin;
+1961     TextList::ConstIterator posIt = itEnd;
+1962     \textcolor{keywordflow}{for} ( ; it != itEnd; ++it )
+1963     \{
+1964         \textcolor{keywordflow}{if} ( (*it)->area.contains( p.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, p.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} ) )
+1965         \{
+1966             posIt = it;
+1967             \textcolor{keywordflow}{break};
+1968         \}
+1969     \}
+1970     QString \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text};
+1971     \textcolor{keywordflow}{if} ( posIt != itEnd )
+1972     \{
+1973         \textcolor{keywordflow}{if} ( (*posIt)->text().simplified().isEmpty() )
+1974         \{
+1975             \textcolor{keywordflow}{return} NULL;
+1976         \}
+1977         \textcolor{comment}{// Find the first TinyTextEntity of the word}
+1978         \textcolor{keywordflow}{while} ( posIt != itBegin )
+1979         \{
+1980             --posIt;
+1981             \textcolor{keyword}{const} QString itText = (*posIt)->text();
+1982             \textcolor{keywordflow}{if} ( itText.right(1).at(0).isSpace() )
+1983             \{
+1984                 \textcolor{keywordflow}{if} (itText.endsWith(\textcolor{stringliteral}{"-\(\backslash\)n"}))
+1985                 \{
+1986                     \textcolor{comment}{// Is an hyphenated word}
+1987                     \textcolor{comment}{// continue searching the start of the word back}
+1988                     \textcolor{keywordflow}{continue};
+1989                 \}
+1990                 
+1991                 \textcolor{keywordflow}{if} (itText == \textcolor{stringliteral}{"\(\backslash\)n"} && posIt != itBegin )
+1992                 \{
+1993                     --posIt;
+1994                     \textcolor{keywordflow}{if} ((*posIt)->text().endsWith(\textcolor{stringliteral}{"-"})) \{
+1995                         \textcolor{comment}{// Is an hyphenated word}
+1996                         \textcolor{comment}{// continue searching the start of the word back}
+1997                         \textcolor{keywordflow}{continue};
+1998                     \}
+1999                     ++posIt;
+2000                 \}
+2001 
+2002                 ++posIt;
+2003                 \textcolor{keywordflow}{break};
+2004             \}
+2005         \}
+2006         \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect} *ret = \textcolor{keyword}{new} \hyperlink{classOkular_1_1RegularAreaRect}{RegularAreaRect}();
+2007         \textcolor{keywordflow}{for} ( ; posIt != itEnd; ++posIt )
+2008         \{
+2009             \textcolor{keyword}{const} QString itText = (*posIt)->text();
+2010             \textcolor{keywordflow}{if} ( itText.simplified().isEmpty() )
+2011             \{
+2012                 \textcolor{keywordflow}{break};
+2013             \}
+2014             
+2015             ret->\hyperlink{classOkular_1_1RegularArea_a04f39bd87b3d075a9b8e8d4a0ee54149}{appendShape}( (*posIt)->area );
+2016             text += (*posIt)->text();
+2017             \textcolor{keywordflow}{if} (itText.right(1).at(0).isSpace())
+2018             \{
+2019                 \textcolor{keywordflow}{if} (!text.endsWith(\textcolor{stringliteral}{"-\(\backslash\)n"}))
+2020                 \{
+2021                     \textcolor{keywordflow}{break};
+2022                 \}
+2023             \}
+2024         \}
+2025         
+2026         \textcolor{keywordflow}{if} (word)
+2027         \{
+2028             *word = \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text};
+2029         \}
+2030         \textcolor{keywordflow}{return} ret;
+2031     \}
+2032     \textcolor{keywordflow}{else}
+2033     \{
+2034         \textcolor{keywordflow}{return} NULL;
+2035     \}
+2036 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}{\index{Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}!words@{words}}
+\index{words@{words}!Okular\+::\+Text\+Page@{Okular\+::\+Text\+Page}}
+\subsubsection[{words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Entity\+::\+List} Text\+Page\+::words (
+\begin{DoxyParamCaption}
+\item[{const {\bf Regular\+Area\+Rect} $\ast$}]{rect, }
+\item[{{\bf Text\+Area\+Inclusion\+Behaviour}}]{b}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextPage_a4cebdb9719013a6aac4c2000d244ed93}
+Text entity extraction function. Similar to \hyperlink{classOkular_1_1TextPage_a5af682e8df70faec3e9e23792e6ac6b7}{text()} but returns the words including their bounding rectangles. Note that ownership of the contents of the returned list belongs to the caller. \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 1920 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+1921 \{
+1922     \textcolor{keywordflow}{if} ( area && area->isNull() )
+1923         \textcolor{keywordflow}{return} \hyperlink{classQList}{TextEntity::List}();
+1924 
+1925     \hyperlink{classQList}{TextEntity::List} ret;
+1926     \textcolor{keywordflow}{if} ( area )
+1927     \{
+1928         \textcolor{keywordflow}{foreach} (\hyperlink{classTinyTextEntity}{TinyTextEntity} *te, d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words})
+1929         \{
+1930             \textcolor{keywordflow}{if} (b == \hyperlink{classOkular_1_1TextPage_a07b135c84863f18df1d08e95aeeffd34a37eee044832944a9f31f7a9d3d39e0dd}{AnyPixelTextAreaInclusionBehaviour})
+1931             \{
+1932                 \textcolor{keywordflow}{if} ( area->intersects( te->\hyperlink{classTinyTextEntity_a8b5dce783e679c307cfd36f67e2fb521}{area} ) )
+1933                 \{
+1934                     ret.append( \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextEntity}{TextEntity}( te->\hyperlink{classTinyTextEntity_a9657105c457630e898ea823ddc87d278}{text}(), \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( te->\hyperlink{classTinyTextEntity_a8b5dce783e679c307cfd36f67e2fb521}{area}) ) );
+1935                 \}
+1936             \}
+1937             \textcolor{keywordflow}{else}
+1938             \{
+1939                 \textcolor{keyword}{const} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} center = te->\hyperlink{classTinyTextEntity_a8b5dce783e679c307cfd36f67e2fb521}{area}.
+      \hyperlink{classOkular_1_1NormalizedRect_ac5c7173b01ac84afe38cd0c93b653435}{center}();
+1940                 \textcolor{keywordflow}{if} ( area->contains( center.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, center.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} ) )
+1941                 \{
+1942                     ret.append( \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextEntity}{TextEntity}( te->\hyperlink{classTinyTextEntity_a9657105c457630e898ea823ddc87d278}{text}(), \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( te->\hyperlink{classTinyTextEntity_a8b5dce783e679c307cfd36f67e2fb521}{area}) ) );
+1943                 \}
+1944             \}
+1945         \}
+1946     \}
+1947     \textcolor{keywordflow}{else}
+1948     \{
+1949         \textcolor{keywordflow}{foreach} (\hyperlink{classTinyTextEntity}{TinyTextEntity} *te, d->\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words})
+1950         \{
+1951             ret.append( \textcolor{keyword}{new} \hyperlink{classOkular_1_1TextEntity}{TextEntity}( te->\hyperlink{classTinyTextEntity_a9657105c457630e898ea823ddc87d278}{text}(), \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}( te->\hyperlink{classTinyTextEntity_a8b5dce783e679c307cfd36f67e2fb521}{area}) ) );
+1952         \}
+1953     \}
+1954     \textcolor{keywordflow}{return} ret;
+1955 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{textpage_8h}{textpage.\+h}\item 
+core/\hyperlink{textpage_8cpp}{textpage.\+cpp}\end{DoxyCompactItemize}

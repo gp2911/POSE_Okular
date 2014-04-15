@@ -1,0 +1,156 @@
+\hypertarget{classGeomAnnotationWidget}{\section{Geom\+Annotation\+Widget Class Reference}
+\label{classGeomAnnotationWidget}\index{Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}}
+}
+
+
+{\ttfamily \#include $<$annotationwidgets.\+h$>$}
+
+Inheritance diagram for Geom\+Annotation\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGeomAnnotationWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGeomAnnotationWidget_a278f4a0e4ddca2fe81fbfccfe3f8f52e}{Geom\+Annotation\+Widget} (\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+virtual void \hyperlink{classGeomAnnotationWidget_a188cb69dbb5fdd20620e1c75522c9bc4}{apply\+Changes} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Q\+Widget $\ast$ \hyperlink{classGeomAnnotationWidget_a2ae78739fb17d4f05bcc584265ed246f}{create\+Style\+Widget} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 180 of file annotationwidgets.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGeomAnnotationWidget_a278f4a0e4ddca2fe81fbfccfe3f8f52e}{\index{Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}!Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}}
+\index{Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}!Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}}
+\subsubsection[{Geom\+Annotation\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Geom\+Annotation\+Widget\+::\+Geom\+Annotation\+Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{classGeomAnnotationWidget_a278f4a0e4ddca2fe81fbfccfe3f8f52e}
+
+
+Definition at line 558 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+559     : \hyperlink{classAnnotationWidget_a1152e99260c24acde30e2742a07af2ef}{AnnotationWidget}( ann )
+560 \{
+561     m\_geomAnn = \textcolor{keyword}{static\_cast<} \hyperlink{classOkular_1_1GeomAnnotation}{Okular::GeomAnnotation} * \textcolor{keyword}{>}( ann );
+562 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGeomAnnotationWidget_a188cb69dbb5fdd20620e1c75522c9bc4}{\index{Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}!apply\+Changes@{apply\+Changes}}
+\index{apply\+Changes@{apply\+Changes}!Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}}
+\subsubsection[{apply\+Changes}]{\setlength{\rightskip}{0pt plus 5cm}void Geom\+Annotation\+Widget\+::apply\+Changes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGeomAnnotationWidget_a188cb69dbb5fdd20620e1c75522c9bc4}
+
+
+Reimplemented from \hyperlink{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}{Annotation\+Widget}.
+
+
+
+Definition at line 608 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+609 \{
+610     \hyperlink{classAnnotationWidget_a00b35958653cb76c93b9d4f70d770f5c}{AnnotationWidget::applyChanges}();
+611     m\_geomAnn->\hyperlink{classOkular_1_1GeomAnnotation_a5e9487a727fc9299b69db657bb69fd89}{setGeometricalType}( (
+      \hyperlink{classOkular_1_1GeomAnnotation_a511623ed10a8d1f18cfd5987fadee682}{Okular::GeomAnnotation::GeomType})m\_typeCombo->currentIndex() );
+612     \textcolor{keywordflow}{if} ( !m\_useColor->isChecked() )
+613     \{
+614         m\_geomAnn->\hyperlink{classOkular_1_1GeomAnnotation_ab47f1690d00f9ee6efc70c19aeb2e7e8}{setGeometricalInnerColor}( QColor() );
+615     \}
+616     \textcolor{keywordflow}{else}
+617     \{
+618         m\_geomAnn->\hyperlink{classOkular_1_1GeomAnnotation_ab47f1690d00f9ee6efc70c19aeb2e7e8}{setGeometricalInnerColor}( m\_innerColor->color() );
+619     \}
+620     m\_geomAnn->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_af0643b15b59d282c196f0c6114493d9e}{setWidth}( m\_spinSize->value() );
+621 \}
+\end{DoxyCode}
+\hypertarget{classGeomAnnotationWidget_a2ae78739fb17d4f05bcc584265ed246f}{\index{Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}!create\+Style\+Widget@{create\+Style\+Widget}}
+\index{create\+Style\+Widget@{create\+Style\+Widget}!Geom\+Annotation\+Widget@{Geom\+Annotation\+Widget}}
+\subsubsection[{create\+Style\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Geom\+Annotation\+Widget\+::create\+Style\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classGeomAnnotationWidget_a2ae78739fb17d4f05bcc584265ed246f}
+
+
+Reimplemented from \hyperlink{classAnnotationWidget_a4b0926d20f0b26deb5b6a4e75f78fac3}{Annotation\+Widget}.
+
+
+
+Definition at line 564 of file annotationwidgets.\+cpp.
+
+
+\begin{DoxyCode}
+565 \{
+566     QWidget * widget = \textcolor{keyword}{new} QWidget();
+567     QGridLayout * lay = \textcolor{keyword}{new} QGridLayout( widget );
+568     lay->setMargin( 0 );
+569     QLabel * tmplabel = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"Type:"} ), widget );
+570     lay->addWidget( tmplabel, 0, 0, Qt::AlignRight );
+571     m\_typeCombo = \textcolor{keyword}{new} KComboBox( widget );
+572     tmplabel->setBuddy( m\_typeCombo );
+573     lay->addWidget( m\_typeCombo, 0, 1 );
+574     m\_useColor = \textcolor{keyword}{new} QCheckBox( i18n( \textcolor{stringliteral}{"Inner color:"} ), widget );
+575     lay->addWidget( m\_useColor, 1, 0 );
+576     m\_innerColor = \textcolor{keyword}{new} KColorButton( widget );
+577     lay->addWidget( m\_innerColor, 1, 1 );
+578     tmplabel = \textcolor{keyword}{new} QLabel( i18n( \textcolor{stringliteral}{"&Size:"} ), widget );
+579     lay->addWidget( tmplabel, 2, 0, Qt::AlignRight );
+580     m\_spinSize = \textcolor{keyword}{new} QDoubleSpinBox( widget );
+581     lay->addWidget( m\_spinSize, 2, 1 );
+582     tmplabel->setBuddy( m\_spinSize );
+583 
+584     m\_typeCombo->addItem( i18n( \textcolor{stringliteral}{"Rectangle"} ) );
+585     m\_typeCombo->addItem( i18n( \textcolor{stringliteral}{"Ellipse"} ) );
+586     m\_typeCombo->setCurrentIndex( m\_geomAnn->\hyperlink{classOkular_1_1GeomAnnotation_adeae1cc4b72aed7e9705b51f91f8555f}{geometricalType}() );
+587     m\_innerColor->setColor( m\_geomAnn->\hyperlink{classOkular_1_1GeomAnnotation_a5c84e1cbdf0d2bb6b75b6d6b049af63b}{geometricalInnerColor}() );
+588     \textcolor{keywordflow}{if} ( m\_geomAnn->\hyperlink{classOkular_1_1GeomAnnotation_a5c84e1cbdf0d2bb6b75b6d6b049af63b}{geometricalInnerColor}().isValid() )
+589     \{
+590         m\_useColor->setChecked( \textcolor{keyword}{true} );
+591     \}
+592     \textcolor{keywordflow}{else}
+593     \{
+594         m\_innerColor->setEnabled( \textcolor{keyword}{false} );
+595     \}
+596     m\_spinSize->setRange( 0, 100 );
+597     m\_spinSize->setValue( m\_geomAnn->\hyperlink{classOkular_1_1Annotation_ae1f845ddbd6d524b2b388c6c9ef26423}{style}().\hyperlink{classOkular_1_1Annotation_1_1Style_a5a8e23f3a4f95e25f45770937dc82948}{width}() );
+598 
+599     connect( m\_typeCombo, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SIGNAL(
+      \hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+600     connect( m\_innerColor, SIGNAL(changed(QColor)), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+601     connect( m\_useColor, SIGNAL(toggled(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+602     connect( m\_useColor, SIGNAL(toggled(\textcolor{keywordtype}{bool})), m\_innerColor, SLOT(setEnabled(\textcolor{keywordtype}{bool})) );
+603     connect( m\_spinSize, SIGNAL(valueChanged(\textcolor{keywordtype}{double})), \textcolor{keyword}{this}, SIGNAL(\hyperlink{classAnnotationWidget_af9dcb02a8b69a602225c9844b5deb6d4}{dataChanged}()) );
+604 
+605     \textcolor{keywordflow}{return} widget;
+606 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationwidgets_8h}{annotationwidgets.\+h}\item 
+ui/\hyperlink{annotationwidgets_8cpp}{annotationwidgets.\+cpp}\end{DoxyCompactItemize}

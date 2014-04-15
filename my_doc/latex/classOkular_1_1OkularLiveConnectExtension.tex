@@ -1,0 +1,160 @@
+\hypertarget{classOkular_1_1OkularLiveConnectExtension}{\section{Okular\+:\+:Okular\+Live\+Connect\+Extension Class Reference}
+\label{classOkular_1_1OkularLiveConnectExtension}\index{Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}}
+}
+
+
+{\ttfamily \#include $<$extensions.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Okular\+Live\+Connect\+Extension\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classOkular_1_1OkularLiveConnectExtension}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1OkularLiveConnectExtension_a35e1cb00813ecbbb745db3ab29c73273}{Okular\+Live\+Connect\+Extension} (\hyperlink{classOkular_1_1Part}{Part} $\ast$parent)
+\item 
+virtual bool \hyperlink{classOkular_1_1OkularLiveConnectExtension_ad0b24f4bdb9c4e2c010a83677ded3f69}{get} (const unsigned long objid, const Q\+String \&field, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{Type} \&type, unsigned long \&retobjid, Q\+String \&value)
+\item 
+virtual bool \hyperlink{classOkular_1_1OkularLiveConnectExtension_a694218a47c9f7fa0658fea86478b7e12}{put} (const unsigned long objid, const Q\+String \&field, const Q\+String \&value)
+\item 
+virtual bool \hyperlink{classOkular_1_1OkularLiveConnectExtension_a1db71ccc9e59e46203cd7cd9eccd6870}{call} (const unsigned long objid, const Q\+String \&func, const Q\+String\+List \&args, \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9c}{Type} \&type, unsigned long \&retobjid, Q\+String \&value)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file extensions.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1OkularLiveConnectExtension_a35e1cb00813ecbbb745db3ab29c73273}{\index{Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}!Okular\+Live\+Connect\+Extension@{Okular\+Live\+Connect\+Extension}}
+\index{Okular\+Live\+Connect\+Extension@{Okular\+Live\+Connect\+Extension}!Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}}
+\subsubsection[{Okular\+Live\+Connect\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Okular\+Live\+Connect\+Extension\+::\+Okular\+Live\+Connect\+Extension (
+\begin{DoxyParamCaption}
+\item[{{\bf Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1OkularLiveConnectExtension_a35e1cb00813ecbbb745db3ab29c73273}
+
+
+Definition at line 42 of file extensions.\+cpp.
+
+
+\begin{DoxyCode}
+43     : \hyperlink{classKParts_1_1LiveConnectExtension}{KParts::LiveConnectExtension}( parent ), m\_inEval( \textcolor{keyword}{false} )
+44 \{
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1OkularLiveConnectExtension_a1db71ccc9e59e46203cd7cd9eccd6870}{\index{Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}!call@{call}}
+\index{call@{call}!Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}}
+\subsubsection[{call}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Okular\+Live\+Connect\+Extension\+::call (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{func, }
+\item[{const Q\+String\+List \&}]{args, }
+\item[{{\bf Type} \&}]{type, }
+\item[{unsigned long \&}]{retobjid, }
+\item[{Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1OkularLiveConnectExtension_a1db71ccc9e59e46203cd7cd9eccd6870}
+calls a function of objid, return true on success 
+
+Reimplemented from \hyperlink{classKParts_1_1LiveConnectExtension_ac925e087aa86e8e11c7616b8f03551a0}{K\+Parts\+::\+Live\+Connect\+Extension}.
+
+
+
+Definition at line 78 of file extensions.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81     retobjid = objid;
+82     \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};
+83     \textcolor{keywordflow}{if} ( func == QLatin1String( \textcolor{stringliteral}{"postMessage"} ) )
+84     \{
+85         type = \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca862f2f5258607f30adbbe03395426c20}{KParts::LiveConnectExtension::TypeVoid};
+86         postMessage( args );
+87         value = QString();
+88         result = \textcolor{keyword}{true};
+89     \}
+90     \textcolor{keywordflow}{return} result;
+91 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1OkularLiveConnectExtension_ad0b24f4bdb9c4e2c010a83677ded3f69}{\index{Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}!get@{get}}
+\index{get@{get}!Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Okular\+Live\+Connect\+Extension\+::get (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{field, }
+\item[{{\bf Type} \&}]{type, }
+\item[{unsigned long \&}]{retobjid, }
+\item[{Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1OkularLiveConnectExtension_ad0b24f4bdb9c4e2c010a83677ded3f69}
+get a field value from objid, return true on success 
+
+Reimplemented from \hyperlink{classKParts_1_1LiveConnectExtension_a91ddec0deaa49516ade1e86d8bbd3b90}{K\+Parts\+::\+Live\+Connect\+Extension}.
+
+
+
+Definition at line 48 of file extensions.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     Q\_UNUSED( value )
+53     retobjid = objid;
+54     \textcolor{keywordtype}{bool} result = false;
+55     if ( field == QLatin1String( "postMessage" ) )
+56     \{
+57          type = \hyperlink{classKParts_1_1LiveConnectExtension_a8dfff0d5feb20316c714179c9eda9a9ca9f107d1ffb0bab7084c2952c00cf7f79}{KParts::LiveConnectExtension::TypeFunction};
+58          result = \textcolor{keyword}{true};
+59     \}
+60     \textcolor{keywordflow}{return} result;
+61 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1OkularLiveConnectExtension_a694218a47c9f7fa0658fea86478b7e12}{\index{Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}!put@{put}}
+\index{put@{put}!Okular\+::\+Okular\+Live\+Connect\+Extension@{Okular\+::\+Okular\+Live\+Connect\+Extension}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Okular\+Live\+Connect\+Extension\+::put (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{objid, }
+\item[{const Q\+String \&}]{field, }
+\item[{const Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1OkularLiveConnectExtension_a694218a47c9f7fa0658fea86478b7e12}
+put a field value in objid, return true on success 
+
+Reimplemented from \hyperlink{classKParts_1_1LiveConnectExtension_a20088d732c9bf45abf31e9723b263e4f}{K\+Parts\+::\+Live\+Connect\+Extension}.
+
+
+
+Definition at line 64 of file extensions.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     Q\_UNUSED( objid )
+67     if ( m\_inEval )
+68     \{
+69         \textcolor{keywordflow}{if} ( field == QLatin1String( \hyperlink{extensions_8cpp_ad7fbce71272c8c2b3cb4eebf0de1a358}{OKULAR\_EVAL\_RES\_OBJ\_NAME} ) )
+70            m\_evalRes = value;
+71         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+72     \}
+73 
+74     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+75 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{extensions_8h}{extensions.\+h}\item 
+\hyperlink{extensions_8cpp}{extensions.\+cpp}\end{DoxyCompactItemize}

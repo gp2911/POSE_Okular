@@ -1,0 +1,105 @@
+\hypertarget{classEPubGenerator}{\section{E\+Pub\+Generator Class Reference}
+\label{classEPubGenerator}\index{E\+Pub\+Generator@{E\+Pub\+Generator}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+epub.\+h$>$}
+
+Inheritance diagram for E\+Pub\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classEPubGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEPubGenerator_affc2563b9a341e62f488e6914d99ff31}{E\+Pub\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+\hyperlink{classEPubGenerator_ac80234dd529d7bdf06792037a4d5c531}{$\sim$\+E\+Pub\+Generator} ()
+\item 
+void \hyperlink{classEPubGenerator_a9ef2fd420a698d07236def3a9162fab4}{add\+Pages} (K\+Config\+Dialog $\ast$dlg)
+\begin{DoxyCompactList}\small\item\em Does nothing by default. You need to reimplement it in your generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file generator\+\_\+epub.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEPubGenerator_affc2563b9a341e62f488e6914d99ff31}{\index{E\+Pub\+Generator@{E\+Pub\+Generator}!E\+Pub\+Generator@{E\+Pub\+Generator}}
+\index{E\+Pub\+Generator@{E\+Pub\+Generator}!E\+Pub\+Generator@{E\+Pub\+Generator}}
+\subsubsection[{E\+Pub\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}E\+Pub\+Generator\+::\+E\+Pub\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classEPubGenerator_affc2563b9a341e62f488e6914d99ff31}
+
+
+Definition at line 36 of file generator\+\_\+epub.\+cpp.
+
+
+\begin{DoxyCode}
+37 : \hyperlink{classOkular_1_1TextDocumentGenerator}{Okular::TextDocumentGenerator}( \textcolor{keyword}{new} 
+      \hyperlink{classEpub_1_1Converter}{Epub::Converter}, \textcolor{stringliteral}{"okular\_epub\_generator\_settings"}, parent, args )
+38 \{
+39 \}
+\end{DoxyCode}
+\hypertarget{classEPubGenerator_ac80234dd529d7bdf06792037a4d5c531}{\index{E\+Pub\+Generator@{E\+Pub\+Generator}!````~E\+Pub\+Generator@{$\sim$\+E\+Pub\+Generator}}
+\index{````~E\+Pub\+Generator@{$\sim$\+E\+Pub\+Generator}!E\+Pub\+Generator@{E\+Pub\+Generator}}
+\subsubsection[{$\sim$\+E\+Pub\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}E\+Pub\+Generator\+::$\sim$\+E\+Pub\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classEPubGenerator_ac80234dd529d7bdf06792037a4d5c531}
+
+
+Definition at line 18 of file generator\+\_\+epub.\+h.
+
+
+\begin{DoxyCode}
+18 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEPubGenerator_a9ef2fd420a698d07236def3a9162fab4}{\index{E\+Pub\+Generator@{E\+Pub\+Generator}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!E\+Pub\+Generator@{E\+Pub\+Generator}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}void E\+Pub\+Generator\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dlg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEPubGenerator_a9ef2fd420a698d07236def3a9162fab4}
+
+
+Does nothing by default. You need to reimplement it in your generator. 
+
+
+
+Reimplemented from \hyperlink{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}{Okular\+::\+Text\+Document\+Generator}.
+
+
+
+Definition at line 41 of file generator\+\_\+epub.\+cpp.
+
+
+\begin{DoxyCode}
+42 \{
+43   \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Okular::TextDocumentSettingsWidget} *widget = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1TextDocumentSettingsWidget}{Okular::TextDocumentSettingsWidget}();
+44 
+45   dlg->addPage( widget, \hyperlink{classOkular_1_1TextDocumentGenerator_a776f1b9f38f55fdf086e022388ee4e36}{generalSettings}(), i18n(\textcolor{stringliteral}{"EPub"}), \textcolor{stringliteral}{"application-epub+zip"}, i18n(\textcolor{stringliteral}{"EPub
+       Backend Configuration"}) );
+46 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/epub/\hyperlink{generator__epub_8h}{generator\+\_\+epub.\+h}\item 
+generators/epub/\hyperlink{generator__epub_8cpp}{generator\+\_\+epub.\+cpp}\end{DoxyCompactItemize}

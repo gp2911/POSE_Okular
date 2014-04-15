@@ -1,0 +1,608 @@
+\hypertarget{classTilesManager_1_1Private}{\section{Okular\+:\+:Tiles\+Manager\+:\+:Private Class Reference}
+\label{classTilesManager_1_1Private}\index{Okular\+::\+Tiles\+Manager\+::\+Private@{Okular\+::\+Tiles\+Manager\+::\+Private}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTilesManager_1_1Private_a5633da74112a68e097dde8b0d11f56e4}{Private} ()
+\item 
+bool \hyperlink{classTilesManager_1_1Private_ab246bf1b76ee9f16c756991c4d599249}{has\+Pixmap} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect, const \hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile) const 
+\item 
+void \hyperlink{classTilesManager_1_1Private_a376b491f94a16015e7a1b019bb9c1165}{tiles\+At} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect, \hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile, \hyperlink{classQList}{Q\+List}$<$ \hyperlink{classOkular_1_1Tile}{Tile} $>$ \&result, \hyperlink{classOkular_1_1TilesManager_a89f92ae8fdfb530b5625343876f63e29}{Tile\+Leaf} tile\+Leaf)
+\item 
+void \hyperlink{classTilesManager_1_1Private_a95b185ba208c1492a7c98f9d415c667e}{set\+Pixmap} (const Q\+Pixmap $\ast$pixmap, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect, \hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile)
+\item 
+void \hyperlink{classTilesManager_1_1Private_aa036608dc89f16f1ba59b21636925c3c}{delete\+Tiles} (const \hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile)
+\item 
+void \hyperlink{classTilesManager_1_1Private_ab136a24cf52476c37c0b285f22a04b5a}{mark\+Parent\+Dirty} (const \hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile)
+\item 
+void \hyperlink{classTilesManager_1_1Private_a314df09ffe4598e871cd05e7ee098e06}{rank\+Tiles} (\hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile, \hyperlink{classQList}{Q\+List}$<$ \hyperlink{classOkular_1_1TileNode}{Tile\+Node} $\ast$ $>$ \&ranked\+Tiles, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&\hyperlink{classTilesManager_1_1Private_abc6e4b8356815117fa81618fb4a1e714}{visible\+Rect}, int visible\+Page\+Number)
+\item 
+void \hyperlink{classTilesManager_1_1Private_adf5cb50321f42cbf36c8691bc6dab7b5}{split} (\hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect)
+\item 
+bool \hyperlink{classTilesManager_1_1Private_aa64eea239e0ef5af4bf0e9522dfe57a5}{split\+Big\+Tiles} (\hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile, const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&rect)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classTilesManager_1_1Private_aded21e0985bbdc16ebd8cbae6ab40b6c}{mark\+Dirty} (\hyperlink{classOkular_1_1TileNode}{Tile\+Node} \&tile)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TileNode}{Tile\+Node} \hyperlink{classTilesManager_1_1Private_a012e2cd82b699c8338004bb96dfc0402}{tiles} \mbox{[}16\mbox{]}
+\item 
+int \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}
+\item 
+int \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height}
+\item 
+int \hyperlink{classTilesManager_1_1Private_ad4869e0390201b58e4b767795d98191d}{page\+Number}
+\item 
+qulonglong \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{total\+Pixels}
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation}
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classTilesManager_1_1Private_abc6e4b8356815117fa81618fb4a1e714}{visible\+Rect}
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classTilesManager_1_1Private_a7202a07fb2d4f9d1035b6e65429cc37d}{request\+Rect}
+\item 
+int \hyperlink{classTilesManager_1_1Private_a7fde18a61cf409f683df576fb56592b7}{request\+Width}
+\item 
+int \hyperlink{classTilesManager_1_1Private_a5b4e13663b908b60adc0ee7fab832bb9}{request\+Height}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file tilesmanager.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTilesManager_1_1Private_a5633da74112a68e097dde8b0d11f56e4}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!Private@{Private}}
+\index{Private@{Private}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Tiles\+Manager\+::\+Private\+::\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_a5633da74112a68e097dde8b0d11f56e4}
+
+
+Definition at line 81 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+82     : \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}( 0 )
+83     , \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height}( 0 )
+84     , \hyperlink{classTilesManager_1_1Private_ad4869e0390201b58e4b767795d98191d}{pageNumber}( 0 )
+85     , \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels}( 0 )
+86     , \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation}( \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} )
+87     , \hyperlink{classTilesManager_1_1Private_a7202a07fb2d4f9d1035b6e65429cc37d}{requestRect}( \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}() )
+88     , \hyperlink{classTilesManager_1_1Private_a7fde18a61cf409f683df576fb56592b7}{requestWidth}( 0 )
+89     , \hyperlink{classTilesManager_1_1Private_a5b4e13663b908b60adc0ee7fab832bb9}{requestHeight}( 0 )
+90 \{
+91 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTilesManager_1_1Private_aa036608dc89f16f1ba59b21636925c3c}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!delete\+Tiles@{delete\+Tiles}}
+\index{delete\+Tiles@{delete\+Tiles}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{delete\+Tiles}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::delete\+Tiles (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tile\+Node} \&}]{tile}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_aa036608dc89f16f1ba59b21636925c3c}
+Deletes all tiles, recursively 
+
+Definition at line 119 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+120 \{
+121     \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} )
+122     \{
+123         \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} -= tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+124         \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+125     \}
+126 
+127     \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} > 0 )
+128     \{
+129         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+130             \hyperlink{classTilesManager_1_1Private_aa036608dc89f16f1ba59b21636925c3c}{deleteTiles}( tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] );
+131 
+132         \textcolor{keyword}{delete} [] tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles};
+133     \}
+134 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_ab246bf1b76ee9f16c756991c4d599249}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!has\+Pixmap@{has\+Pixmap}}
+\index{has\+Pixmap@{has\+Pixmap}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{has\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Tiles\+Manager\+::\+Private\+::has\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{rect, }
+\item[{const {\bf Tile\+Node} \&}]{tile}
+\end{DoxyParamCaption}
+) const}}\label{classTilesManager_1_1Private_ab246bf1b76ee9f16c756991c4d599249}
+
+
+Definition at line 337 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+338 \{
+339     \textcolor{keywordflow}{if} ( !tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( rect ) )
+340         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+341 
+342     \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} == 0 )
+343         \textcolor{keywordflow}{return} tile.\hyperlink{classOkular_1_1TileNode_a2e8451a76338513fc71653e763d0262f}{isValid}();
+344 
+345     \textcolor{comment}{// all children tiles are clean. doesn't need to go deeper}
+346     \textcolor{keywordflow}{if} ( !tile.\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} )
+347         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+348 
+349     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+350     \{
+351         \textcolor{keywordflow}{if} ( !\hyperlink{classTilesManager_1_1Private_ab246bf1b76ee9f16c756991c4d599249}{hasPixmap}( rect, tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] ) )
+352             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+353     \}
+354 
+355     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+356 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_aded21e0985bbdc16ebd8cbae6ab40b6c}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!mark\+Dirty@{mark\+Dirty}}
+\index{mark\+Dirty@{mark\+Dirty}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{mark\+Dirty}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::mark\+Dirty (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Node} \&}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTilesManager_1_1Private_aded21e0985bbdc16ebd8cbae6ab40b6c}
+Mark {\ttfamily tile} and all its children as dirty 
+
+Definition at line 178 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+179 \{
+180     tile.\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} = \textcolor{keyword}{true};
+181 
+182     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+183     \{
+184         \hyperlink{classTilesManager_1_1Private_aded21e0985bbdc16ebd8cbae6ab40b6c}{markDirty}( tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] );
+185     \}
+186 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_ab136a24cf52476c37c0b285f22a04b5a}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!mark\+Parent\+Dirty@{mark\+Parent\+Dirty}}
+\index{mark\+Parent\+Dirty@{mark\+Parent\+Dirty}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{mark\+Parent\+Dirty}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::mark\+Parent\+Dirty (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tile\+Node} \&}]{tile}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_ab136a24cf52476c37c0b285f22a04b5a}
+
+
+Definition at line 482 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+483 \{
+484     \textcolor{keywordflow}{if} ( !tile.\hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent} )
+485         \textcolor{keywordflow}{return};
+486 
+487     \textcolor{keywordflow}{if} ( !tile.\hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent}->\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} )
+488     \{
+489         tile.\hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent}->\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} = \textcolor{keyword}{true};
+490         \hyperlink{classTilesManager_1_1Private_ab136a24cf52476c37c0b285f22a04b5a}{markParentDirty}( *tile.\hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent} );
+491     \}
+492 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_a314df09ffe4598e871cd05e7ee098e06}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!rank\+Tiles@{rank\+Tiles}}
+\index{rank\+Tiles@{rank\+Tiles}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{rank\+Tiles}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::rank\+Tiles (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Node} \&}]{tile, }
+\item[{{\bf Q\+List}$<$ {\bf Tile\+Node} $\ast$ $>$ \&}]{ranked\+Tiles, }
+\item[{const {\bf Normalized\+Rect} \&}]{visible\+Rect, }
+\item[{int}]{visible\+Page\+Number}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_a314df09ffe4598e871cd05e7ee098e06}
+
+
+Definition at line 494 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+495 \{
+496     \textcolor{comment}{// If the page is visible, visibleRect is not null.}
+497     \textcolor{comment}{// Otherwise we use the number of one of the visible pages to calculate the}
+498     \textcolor{comment}{// distance.}
+499     \textcolor{comment}{// Note that the current page may be visible and yet its pageNumber is}
+500     \textcolor{comment}{// different from visiblePageNumber. Since we only use this value on hidden}
+501     \textcolor{comment}{// pages, any visible page number will fit.}
+502     \textcolor{keywordflow}{if} ( visibleRect.\hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{isNull}() && visiblePageNumber < 0 )
+503         \textcolor{keywordflow}{return};
+504 
+505     \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} )
+506     \{
+507         \textcolor{comment}{// Update distance}
+508         \textcolor{keywordflow}{if} ( !visibleRect.\hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{isNull}() )
+509         \{
+510             \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} viewportCenter = visibleRect.\hyperlink{classOkular_1_1NormalizedRect_ac5c7173b01ac84afe38cd0c93b653435}{center}();
+511             \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} tileCenter = tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_ac5c7173b01ac84afe38cd0c93b653435}{center}();
+512             \textcolor{comment}{// Manhattan distance. It's a good and fast approximation.}
+513             tile.\hyperlink{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}{distance} = qAbs(viewportCenter.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} - tileCenter.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}) + qAbs(viewportCenter.
+      \hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} - tileCenter.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y});
+514         \}
+515         \textcolor{keywordflow}{else}
+516         \{
+517             \textcolor{comment}{// For non visible pages only the vertical distance is used}
+518             \textcolor{keywordflow}{if} ( \hyperlink{classTilesManager_1_1Private_ad4869e0390201b58e4b767795d98191d}{pageNumber} < visiblePageNumber )
+519                 tile.\hyperlink{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}{distance} = 1 - tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom};
+520             \textcolor{keywordflow}{else}
+521                 tile.\hyperlink{classOkular_1_1TileNode_ae0f9bbe30de6236cc1f22a6c04c24c2f}{distance} = tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top};
+522         \}
+523         rankedTiles.append( &tile );
+524     \}
+525     \textcolor{keywordflow}{else}
+526     \{
+527         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+528         \{
+529             \hyperlink{classTilesManager_1_1Private_a314df09ffe4598e871cd05e7ee098e06}{rankTiles}( tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ], rankedTiles, visibleRect, visiblePageNumber );
+530         \}
+531     \}
+532 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_a95b185ba208c1492a7c98f9d415c667e}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!set\+Pixmap@{set\+Pixmap}}
+\index{set\+Pixmap@{set\+Pixmap}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{set\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::set\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pixmap $\ast$}]{pixmap, }
+\item[{const {\bf Normalized\+Rect} \&}]{rect, }
+\item[{{\bf Tile\+Node} \&}]{tile}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_a95b185ba208c1492a7c98f9d415c667e}
+
+
+Definition at line 223 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+224 \{
+225     QRect pixmapRect = TilesManager::toRotatedRect( rect, \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} ).geometry( 
+      \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}, \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height} );
+226 
+227     \textcolor{comment}{// Exclude tiles outside the viewport}
+228     \textcolor{keywordflow}{if} ( !tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( rect ) )
+229         \textcolor{keywordflow}{return};
+230 
+231     \textcolor{comment}{// if the tile is not entirely within the viewport (the tile intersects an}
+232     \textcolor{comment}{// edged of the viewport), attempt to set the pixmap in the children tiles}
+233     \textcolor{keywordflow}{if} ( !((tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect} & rect) == tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}) )
+234     \{
+235         \textcolor{comment}{// paint children tiles}
+236         \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} > 0 )
+237         \{
+238             \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+239                 \hyperlink{classTilesManager_1_1Private_a95b185ba208c1492a7c98f9d415c667e}{setPixmap}( pixmap, rect, tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] );
+240 
+241             \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+242             tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = 0;
+243         \}
+244 
+245         \textcolor{keywordflow}{return};
+246     \}
+247 
+248     \textcolor{comment}{// the tile lies entirely within the viewport}
+249     \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} == 0 )
+250     \{
+251         tile.\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} = \textcolor{keyword}{false};
+252 
+253         \textcolor{comment}{// check whether the tile size is big and split it if necessary}
+254         \textcolor{keywordflow}{if} ( !\hyperlink{classTilesManager_1_1Private_aa64eea239e0ef5af4bf0e9522dfe57a5}{splitBigTiles}( tile, rect ) )
+255         \{
+256             \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} )
+257             \{
+258                 \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} -= tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+259                 \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+260             \}
+261             \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} rotatedRect = TilesManager::toRotatedRect( tile.
+      \hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}, \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} );
+262             tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = \textcolor{keyword}{new} QPixmap( pixmap->copy( rotatedRect.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}( 
+      \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}, \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height} ).translated( -pixmapRect.topLeft() ) ) );
+263             tile.\hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation} = \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation};
+264             \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} += tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+265         \}
+266         \textcolor{keywordflow}{else}
+267         \{
+268             \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} )
+269             \{
+270                 \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} -= tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+271                 \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+272                 tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = 0;
+273             \}
+274 
+275             \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+276                 \hyperlink{classTilesManager_1_1Private_a95b185ba208c1492a7c98f9d415c667e}{setPixmap}( pixmap, rect, tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] );
+277         \}
+278     \}
+279     \textcolor{keywordflow}{else}
+280     \{
+281         QRect tileRect = tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}( \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}, \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height} );
+282         \textcolor{comment}{// sets the pixmap of the children tiles. if the tile's size is too}
+283         \textcolor{comment}{// small, discards the children tiles and use the current one}
+284         \textcolor{keywordflow}{if} ( tileRect.width()*tileRect.height() >= \hyperlink{tilesmanager_8cpp_aba237eb3d72e01b19833729ddf51887f}{TILES\_MAXSIZE} )
+285         \{
+286             tile.\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} = \textcolor{keyword}{false};
+287             \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} )
+288             \{
+289                 \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} -= tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+290                 \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+291                 tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = 0;
+292             \}
+293 
+294             \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+295                 \hyperlink{classTilesManager_1_1Private_a95b185ba208c1492a7c98f9d415c667e}{setPixmap}( pixmap, rect, tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] );
+296         \}
+297         \textcolor{keywordflow}{else}
+298         \{
+299             \textcolor{comment}{// remove children tiles}
+300             \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+301             \{
+302                 \hyperlink{classTilesManager_1_1Private_aa036608dc89f16f1ba59b21636925c3c}{deleteTiles}( tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ] );
+303                 tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ].\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = 0;
+304             \}
+305 
+306             \textcolor{keyword}{delete} [] tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles};
+307             tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles} = 0;
+308             tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} = 0;
+309 
+310             \textcolor{comment}{// paint tile}
+311             \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} )
+312             \{
+313                 \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} -= tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+314                 \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+315             \}
+316             \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} rotatedRect = TilesManager::toRotatedRect( tile.
+      \hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}, \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} );
+317             tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = \textcolor{keyword}{new} QPixmap( pixmap->copy( rotatedRect.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}( 
+      \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}, \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height} ).translated( -pixmapRect.topLeft() ) ) );
+318             tile.\hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation} = \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation};
+319             \hyperlink{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{totalPixels} += tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width()*tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+320             tile.\hyperlink{classOkular_1_1TileNode_a6c0d041fa9a8cadecc4ea3b2c8e55de5}{dirty} = \textcolor{keyword}{false};
+321         \}
+322     \}
+323 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_adf5cb50321f42cbf36c8691bc6dab7b5}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!split@{split}}
+\index{split@{split}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::split (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Node} \&}]{tile, }
+\item[{const {\bf Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_adf5cb50321f42cbf36c8691bc6dab7b5}
+Since the tile can be large enough to occupy a significant amount of space, they may be split in more tiles. This operation is performed when the tiles of a certain region is requested and they are bigger than an arbitrary value. Only tiles intersecting the desired region are split. There's no need to do this for the entire page. 
+
+Definition at line 556 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+557 \{
+558     \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} != 0 )
+559         \textcolor{keywordflow}{return};
+560 
+561     \textcolor{keywordflow}{if} ( rect.\hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{isNull}() || !tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( rect ) )
+562         \textcolor{keywordflow}{return};
+563 
+564     tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} = 4;
+565     tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles} = \textcolor{keyword}{new} \hyperlink{classOkular_1_1TileNode}{TileNode}[4];
+566     \textcolor{keywordtype}{double} hCenter = (tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} + tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right})/2;
+567     \textcolor{keywordtype}{double} vCenter = (tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} + tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom})/2;
+568 
+569     tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[0].\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect} = \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}( tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, hCenter, vCenter );
+570     tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[1].\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect} = \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}( hCenter, tile.
+      \hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, vCenter );
+571     tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[2].\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect} = \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}( tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.
+      \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, vCenter, hCenter, tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} );
+572     tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[3].\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect} = \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect}( hCenter, vCenter, tile.
+      \hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} );
+573 
+574     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+575     \{
+576         tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ].\hyperlink{classOkular_1_1TileNode_ade947c75baa62dd6d29fe7776f1e6027}{parent} = &tile;
+577         \hyperlink{classTilesManager_1_1Private_aa64eea239e0ef5af4bf0e9522dfe57a5}{splitBigTiles}( tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ], rect );
+578     \}
+579 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_aa64eea239e0ef5af4bf0e9522dfe57a5}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!split\+Big\+Tiles@{split\+Big\+Tiles}}
+\index{split\+Big\+Tiles@{split\+Big\+Tiles}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{split\+Big\+Tiles}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Tiles\+Manager\+::\+Private\+::split\+Big\+Tiles (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Node} \&}]{tile, }
+\item[{const {\bf Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_aa64eea239e0ef5af4bf0e9522dfe57a5}
+Checks whether the tile's size is bigger than an arbitrary value and performs the split operation returning true. Otherwise it just returns false, without performing any operation. 
+
+Definition at line 546 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+547 \{
+548     QRect tileRect = tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry}( \hyperlink{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{width}, \hyperlink{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{height} );
+549     \textcolor{keywordflow}{if} ( tileRect.width()*tileRect.height() < \hyperlink{tilesmanager_8cpp_aba237eb3d72e01b19833729ddf51887f}{TILES\_MAXSIZE} )
+550         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+551 
+552     \hyperlink{classTilesManager_1_1Private_adf5cb50321f42cbf36c8691bc6dab7b5}{split}( tile, rect );
+553     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+554 \}
+\end{DoxyCode}
+\hypertarget{classTilesManager_1_1Private_a376b491f94a16015e7a1b019bb9c1165}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!tiles\+At@{tiles\+At}}
+\index{tiles\+At@{tiles\+At}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{tiles\+At}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Tiles\+Manager\+::\+Private\+::tiles\+At (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{rect, }
+\item[{{\bf Tile\+Node} \&}]{tile, }
+\item[{{\bf Q\+List}$<$ {\bf Tile} $>$ \&}]{result, }
+\item[{{\bf Tile\+Leaf}}]{tile\+Leaf}
+\end{DoxyParamCaption}
+)}}\label{classTilesManager_1_1Private_a376b491f94a16015e7a1b019bb9c1165}
+
+
+Definition at line 371 of file tilesmanager.\+cpp.
+
+
+\begin{DoxyCode}
+372 \{
+373     \textcolor{keywordflow}{if} ( !tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}.\hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects}( rect ) )
+374         \textcolor{keywordflow}{return};
+375 
+376     \textcolor{comment}{// split big tiles before the requests are made, otherwise we would end up}
+377     \textcolor{comment}{// requesting huge areas unnecessarily}
+378     \hyperlink{classTilesManager_1_1Private_aa64eea239e0ef5af4bf0e9522dfe57a5}{splitBigTiles}( tile, rect );
+379 
+380     \textcolor{keywordflow}{if} ( ( tileLeaf == TerminalTile && tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles} == 0 ) || ( tileLeaf == PixmapTile && tile.
+      \hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} ) )
+381     \{
+382         \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} rotatedRect;
+383         \textcolor{keywordflow}{if} ( \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} != \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Rotation0} )
+384             rotatedRect = TilesManager::toRotatedRect( tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect}, \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} );
+385         \textcolor{keywordflow}{else}
+386             rotatedRect = tile.\hyperlink{classOkular_1_1TileNode_a4b576ad78dac8c1d5c68fd9961b9c038}{rect};
+387 
+388         \textcolor{keywordflow}{if} ( tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} && tileLeaf == PixmapTile && tile.\hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation} != 
+      \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} )
+389         \{
+390             \textcolor{comment}{// Lazy tiles rotation}
+391             \textcolor{keywordtype}{int} angleToRotate = (\hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation} - tile.\hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation})*90;
+392             \textcolor{keywordtype}{int} xOffset = 0, yOffset = 0;
+393             \textcolor{keywordtype}{int} w = 0, h = 0;
+394             \textcolor{keywordflow}{switch}( angleToRotate )
+395             \{
+396                 \textcolor{keywordflow}{case} 0:
+397                     xOffset = 0;
+398                     yOffset = 0;
+399                     w = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width();
+400                     h = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+401                     \textcolor{keywordflow}{break};
+402                 \textcolor{keywordflow}{case} 90:
+403                 \textcolor{keywordflow}{case} -270:
+404                     xOffset = 0;
+405                     yOffset = -tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+406                     w = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+407                     h = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width();
+408                     \textcolor{keywordflow}{break};
+409                 \textcolor{keywordflow}{case} 180:
+410                 \textcolor{keywordflow}{case} -180:
+411                     xOffset = -tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width();
+412                     yOffset = -tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+413                     w = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width();
+414                     h = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+415                     \textcolor{keywordflow}{break};
+416                 \textcolor{keywordflow}{case} 270:
+417                 \textcolor{keywordflow}{case} -90:
+418                     xOffset = -tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width();
+419                     yOffset = 0;
+420                     w = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->height();
+421                     h = tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}->width();
+422                     \textcolor{keywordflow}{break};
+423             \}
+424             QPixmap *rotatedPixmap = \textcolor{keyword}{new} QPixmap( w, h );
+425             QPainter p( rotatedPixmap );
+426             p.rotate( angleToRotate );
+427             p.translate( xOffset, yOffset );
+428             p.drawPixmap( 0, 0, *tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} );
+429             p.end();
+430 
+431             \textcolor{keyword}{delete} tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap};
+432             tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap} = rotatedPixmap;
+433             tile.\hyperlink{classOkular_1_1TileNode_a42e2fd93c34cc3a9bedaf23f0448e40f}{rotation} = \hyperlink{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{rotation};
+434         \}
+435         result.append( \hyperlink{classOkular_1_1Tile}{Tile}( rotatedRect, tile.\hyperlink{classOkular_1_1TileNode_a6f1530e7484013655499145b83debc0d}{pixmap}, tile.\hyperlink{classOkular_1_1TileNode_a2e8451a76338513fc71653e763d0262f}{isValid}() ) );
+436     \}
+437     \textcolor{keywordflow}{else}
+438     \{
+439         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < tile.\hyperlink{classOkular_1_1TileNode_ab5af51178fe629bbee781d656671eaf5}{nTiles}; ++i )
+440             \hyperlink{classTilesManager_1_1Private_a376b491f94a16015e7a1b019bb9c1165}{tilesAt}( rect, tile.\hyperlink{classOkular_1_1TileNode_a5b2ae780071fcc4d535e69cd50ea5f4f}{tiles}[ i ], result, tileLeaf );
+441     \}
+442 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!height@{height}}
+\index{height@{height}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Tiles\+Manager\+::\+Private\+::height}}\label{classTilesManager_1_1Private_a3a34c3fae7f5b48be600e1bf2cf8536f}
+
+
+Definition at line 71 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_ad4869e0390201b58e4b767795d98191d}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!page\+Number@{page\+Number}}
+\index{page\+Number@{page\+Number}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{page\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Tiles\+Manager\+::\+Private\+::page\+Number}}\label{classTilesManager_1_1Private_ad4869e0390201b58e4b767795d98191d}
+
+
+Definition at line 72 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_a5b4e13663b908b60adc0ee7fab832bb9}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!request\+Height@{request\+Height}}
+\index{request\+Height@{request\+Height}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{request\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Tiles\+Manager\+::\+Private\+::request\+Height}}\label{classTilesManager_1_1Private_a5b4e13663b908b60adc0ee7fab832bb9}
+
+
+Definition at line 78 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_a7202a07fb2d4f9d1035b6e65429cc37d}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!request\+Rect@{request\+Rect}}
+\index{request\+Rect@{request\+Rect}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{request\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Okular\+::\+Tiles\+Manager\+::\+Private\+::request\+Rect}}\label{classTilesManager_1_1Private_a7202a07fb2d4f9d1035b6e65429cc37d}
+
+
+Definition at line 76 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_a7fde18a61cf409f683df576fb56592b7}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!request\+Width@{request\+Width}}
+\index{request\+Width@{request\+Width}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{request\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Tiles\+Manager\+::\+Private\+::request\+Width}}\label{classTilesManager_1_1Private_a7fde18a61cf409f683df576fb56592b7}
+
+
+Definition at line 77 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!rotation@{rotation}}
+\index{rotation@{rotation}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Okular\+::\+Tiles\+Manager\+::\+Private\+::rotation}}\label{classTilesManager_1_1Private_a7f3af32831b85f1c108fb428b9f634d2}
+
+
+Definition at line 74 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_a012e2cd82b699c8338004bb96dfc0402}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!tiles@{tiles}}
+\index{tiles@{tiles}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{tiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+Node} Okular\+::\+Tiles\+Manager\+::\+Private\+::tiles\mbox{[}16\mbox{]}}}\label{classTilesManager_1_1Private_a012e2cd82b699c8338004bb96dfc0402}
+
+
+Definition at line 69 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!total\+Pixels@{total\+Pixels}}
+\index{total\+Pixels@{total\+Pixels}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{total\+Pixels}]{\setlength{\rightskip}{0pt plus 5cm}qulonglong Okular\+::\+Tiles\+Manager\+::\+Private\+::total\+Pixels}}\label{classTilesManager_1_1Private_a74bd95bdb8cf49921bba8f59db98ba9d}
+
+
+Definition at line 73 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_abc6e4b8356815117fa81618fb4a1e714}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!visible\+Rect@{visible\+Rect}}
+\index{visible\+Rect@{visible\+Rect}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{visible\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Okular\+::\+Tiles\+Manager\+::\+Private\+::visible\+Rect}}\label{classTilesManager_1_1Private_abc6e4b8356815117fa81618fb4a1e714}
+
+
+Definition at line 75 of file tilesmanager.\+cpp.
+
+\hypertarget{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}{\index{Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}!width@{width}}
+\index{width@{width}!Tiles\+Manager\+::\+Private@{Tiles\+Manager\+::\+Private}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Okular\+::\+Tiles\+Manager\+::\+Private\+::width}}\label{classTilesManager_1_1Private_ac3e9434c1fb99eea9c4fc150d9143496}
+
+
+Definition at line 70 of file tilesmanager.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{tilesmanager_8cpp}{tilesmanager.\+cpp}\end{DoxyCompactItemize}

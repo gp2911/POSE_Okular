@@ -1,0 +1,447 @@
+\hypertarget{classOkular_1_1TextPagePrivate}{\section{Okular\+:\+:Text\+Page\+Private Class Reference}
+\label{classOkular_1_1TextPagePrivate}\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+}
+
+
+{\ttfamily \#include $<$textpage\+\_\+p.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextPagePrivate_a15d6902c7f5a8e0ad81bbe0669652560}{Text\+Page\+Private} ()
+\item 
+\hyperlink{classOkular_1_1TextPagePrivate_a0b7d7f78bd5fd09228899c4cfa551c86}{$\sim$\+Text\+Page\+Private} ()
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1TextPagePrivate_aea4416c7f6f5b3fb791a357e2990345c}{find\+Text\+Internal\+Forward} (int search\+I\+D, const Q\+String \&query, \hyperlink{namespaceOkular_a686d56fd67c1b405491328f3f187a4b0}{Text\+Comparison\+Function} comparer, const Text\+List\+::\+Const\+Iterator \&start, int start\+\_\+offset, const Text\+List\+::\+Const\+Iterator \&end)
+\item 
+\hyperlink{classOkular_1_1RegularAreaRect}{Regular\+Area\+Rect} $\ast$ \hyperlink{classOkular_1_1TextPagePrivate_a720203a7151be15af3c70050eb9324c2}{find\+Text\+Internal\+Backward} (int search\+I\+D, const Q\+String \&query, \hyperlink{namespaceOkular_a686d56fd67c1b405491328f3f187a4b0}{Text\+Comparison\+Function} comparer, const Text\+List\+::\+Const\+Iterator \&start, int start\+\_\+offset, const Text\+List\+::\+Const\+Iterator \&end)
+\item 
+void \hyperlink{classOkular_1_1TextPagePrivate_a1cacd06d910c0e31834b22bb5a5a1916}{set\+Word\+List} (const \hyperlink{namespaceOkular_ae9075ed4d543c119d2e86fae7fc6cf46}{Text\+List} \&list)
+\item 
+void \hyperlink{classOkular_1_1TextPagePrivate_afccad0af04791e12ac8e1cbe4dd64811}{correct\+Text\+Order} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceOkular_ae9075ed4d543c119d2e86fae7fc6cf46}{Text\+List} \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\+\_\+words}
+\item 
+\hyperlink{classQMap}{Q\+Map}$<$ int, \hyperlink{classSearchPoint}{Search\+Point} $\ast$ $>$ \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\+\_\+search\+Points}
+\item 
+\hyperlink{classOkular_1_1PagePrivate}{Page\+Private} $\ast$ \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\+\_\+page}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 40 of file textpage\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextPagePrivate_a15d6902c7f5a8e0ad81bbe0669652560}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!Text\+Page\+Private@{Text\+Page\+Private}}
+\index{Text\+Page\+Private@{Text\+Page\+Private}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{Text\+Page\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Page\+Private\+::\+Text\+Page\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPagePrivate_a15d6902c7f5a8e0ad81bbe0669652560}
+
+
+Definition at line 216 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+217     : \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}( 0 )
+218 \{
+219 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPagePrivate_a0b7d7f78bd5fd09228899c4cfa551c86}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!````~Text\+Page\+Private@{$\sim$\+Text\+Page\+Private}}
+\index{````~Text\+Page\+Private@{$\sim$\+Text\+Page\+Private}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{$\sim$\+Text\+Page\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Page\+Private\+::$\sim$\+Text\+Page\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPagePrivate_a0b7d7f78bd5fd09228899c4cfa551c86}
+
+
+Definition at line 221 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+222 \{
+223     qDeleteAll( \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints} );
+224     qDeleteAll( \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words} );
+225 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextPagePrivate_afccad0af04791e12ac8e1cbe4dd64811}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!correct\+Text\+Order@{correct\+Text\+Order}}
+\index{correct\+Text\+Order@{correct\+Text\+Order}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{correct\+Text\+Order}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Page\+Private\+::correct\+Text\+Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPagePrivate_afccad0af04791e12ac8e1cbe4dd64811}
+Make necessary modifications in the Text\+List to make the text order correct, so that textselection works fine
+
+Correct the text\+Order, all layout recognition works here Remove spaces from the text
+
+Construct words from characters
+
+Make a X\+Y Cut tree for segmentation of the texts
+
+Add spaces to the word
+
+Break the words into characters
+
+Definition at line 1876 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+1877 \{
+1878     \textcolor{comment}{//m\_page->m\_page->width() and m\_page->m\_page->height() are in pixels at}
+1879     \textcolor{comment}{//100% zoom level, and thus depend on display DPI. We scale pageWidth and}
+1880     \textcolor{comment}{//pageHeight to remove the dependence. Otherwise bugs would be more difficult}
+1881     \textcolor{comment}{//to reproduce and Okular could fail in extreme cases like a large TV with low DPI.}
+1882     \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalingFactor = 2000.0 / (\hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}() + 
+      \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}());
+1883     \textcolor{keyword}{const} \textcolor{keywordtype}{int} pageWidth  = (int) (scalingFactor * \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->
+      \hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}() );
+1884     \textcolor{keyword}{const} \textcolor{keywordtype}{int} pageHeight = (int) (scalingFactor * \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->
+      \hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}());
+1885 
+1886     \hyperlink{classQList}{TextList} characters = \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words};
+1887 
+1891     removeSpace(&characters);
+1892 
+1896     \textcolor{keyword}{const} \hyperlink{classQList}{QList<WordWithCharacters>} wordsWithCharacters = makeWordFromCharacters(
+      characters, pageWidth, pageHeight);
+1897 
+1901     \textcolor{keyword}{const} \hyperlink{classQList}{RegionTextList} tree = XYCutForBoundingBoxes(wordsWithCharacters, 
+      \hyperlink{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{m\_page}->\hyperlink{classOkular_1_1PagePrivate_a07c3e158a239c990c2ddcac53a6dd3c6}{m\_page}->\hyperlink{classOkular_1_1Page_abaa4dd95f6281d3a7773cf1e3a5ae39a}{boundingBox}(), pageWidth, pageHeight);
+1902 
+1906     \textcolor{keyword}{const} \hyperlink{classQList}{WordsWithCharacters} listWithWordsAndSpaces = 
+      \hyperlink{textpage_8cpp_a209dadd7a945144fc847eb9bfc0a0271}{addNecessarySpace}(tree, pageWidth, pageHeight);
+1907 
+1911     \hyperlink{classQList}{TextList} listOfCharacters;
+1912     \textcolor{keywordflow}{foreach}(\textcolor{keyword}{const} \hyperlink{structWordWithCharacters}{WordWithCharacters} &word, listWithWordsAndSpaces)
+1913     \{
+1914         \textcolor{keyword}{delete} word.\hyperlink{structWordWithCharacters_a689319e02faa2a486854f6f4b21d074f}{word};
+1915         listOfCharacters.append(word.\hyperlink{structWordWithCharacters_ada5bed4a3fda83185d4719374f59733d}{characters});
+1916     \}
+1917     \hyperlink{classOkular_1_1TextPagePrivate_a1cacd06d910c0e31834b22bb5a5a1916}{setWordList}(listOfCharacters);
+1918 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPagePrivate_a720203a7151be15af3c70050eb9324c2}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!find\+Text\+Internal\+Backward@{find\+Text\+Internal\+Backward}}
+\index{find\+Text\+Internal\+Backward@{find\+Text\+Internal\+Backward}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{find\+Text\+Internal\+Backward}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Text\+Page\+Private\+::find\+Text\+Internal\+Backward (
+\begin{DoxyParamCaption}
+\item[{int}]{search\+I\+D, }
+\item[{const Q\+String \&}]{query, }
+\item[{{\bf Text\+Comparison\+Function}}]{comparer, }
+\item[{const Text\+List\+::\+Const\+Iterator \&}]{start, }
+\item[{int}]{start\+\_\+offset, }
+\item[{const Text\+List\+::\+Const\+Iterator \&}]{end}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPagePrivate_a720203a7151be15af3c70050eb9324c2}
+
+
+Definition at line 949 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+954 \{
+955     \textcolor{comment}{// normalize query to search all unicode (including glyphs)}
+956     \textcolor{keyword}{const} QString query = \_query.normalized(QString::NormalizationForm\_KC);
+957 
+958     \textcolor{comment}{// j is the current position in our query}
+959     \textcolor{comment}{// len is the length of the string in TextEntity}
+960     \textcolor{comment}{// queryLeft is the length of the query we have left}
+961     \textcolor{keywordtype}{int} j=query.length(), queryLeft=query.length();
+962 
+963     TextList::ConstIterator it = start;
+964     \textcolor{keywordtype}{int} offset = start\_offset;
+965 
+966     TextList::ConstIterator it\_begin = TextList::ConstIterator();
+967     \textcolor{keywordtype}{int} offset\_begin = 0; \textcolor{comment}{//dummy initial value to suppress compiler warnings}
+968 
+969     \textcolor{keywordflow}{while} ( \textcolor{keyword}{true} )
+970     \{
+971         \textcolor{keywordflow}{if} (offset <= 0)
+972         \{
+973             \textcolor{keywordflow}{if} ( it == end )
+974             \{
+975                 \textcolor{keywordflow}{break};
+976             \}
+977             it--;
+978         \}
+979 
+980         \textcolor{keyword}{const} \hyperlink{classTinyTextEntity}{TinyTextEntity}* curEntity = *it;
+981         \textcolor{keyword}{const} QString& str = curEntity->\hyperlink{classTinyTextEntity_a9657105c457630e898ea823ddc87d278}{text}();
+982         \textcolor{keywordtype}{int} len = stringLengthAdaptedWithHyphen(str, it, \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd());
+983 
+984         \textcolor{keywordflow}{if} (offset <= 0)
+985         \{
+986             offset = len;
+987         \}
+988 
+989         \textcolor{keywordflow}{if} ( it\_begin == TextList::ConstIterator() )
+990         \{
+991             it\_begin = it;
+992             offset\_begin = offset;
+993         \}
+994 
+995         \textcolor{keywordtype}{int} min=qMin(queryLeft,offset);
+996         \{
+997 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+998             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << str.midRef(offset-min, min) << \textcolor{stringliteral}{" : "} << \_query.midRef(j-min, 
+      min);
+999 \textcolor{preprocessor}{#endif}
+1000             \textcolor{comment}{// we have equal (or less than) area of the query left as the length of the current }
+1001             \textcolor{comment}{// entity}
+1002 
+1003             \textcolor{comment}{// Note len is not str.length() so we can't use rightRef here}
+1004             \textcolor{keywordflow}{if} ( !comparer( str.midRef(offset-min, min ), query.midRef( j - min, min ) ) )
+1005             \{
+1006                     \textcolor{comment}{// we have not matched}
+1007                     \textcolor{comment}{// this means we do not have a complete match}
+1008                     \textcolor{comment}{// we need to get back to query start}
+1009                     \textcolor{comment}{// and continue the search from this place}
+1010 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+1011                     kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"\(\backslash\)tnot matched"};
+1012 \textcolor{preprocessor}{#endif}
+1013 
+1014                     j = query.length();
+1015                     queryLeft = query.length();
+1016                     it = it\_begin;
+1017                     offset = offset\_begin-1;
+1018                     it\_begin = TextList::ConstIterator();
+1019             \}
+1020             \textcolor{keywordflow}{else}
+1021             \{
+1022                     \textcolor{comment}{// we have a match}
+1023                     \textcolor{comment}{// move the current position in the query}
+1024                     \textcolor{comment}{// to the position after the length of this string}
+1025                     \textcolor{comment}{// we matched}
+1026                     \textcolor{comment}{// subtract the length of the current entity from }
+1027                     \textcolor{comment}{// the left length of the query}
+1028 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+1029                     kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"\(\backslash\)tmatched"};
+1030 \textcolor{preprocessor}{#endif}
+1031                     j -= min;
+1032                     queryLeft -= min;
+1033 
+1034                     \textcolor{keywordflow}{if} ( queryLeft == 0 )
+1035                     \{
+1036                         \textcolor{comment}{// save or update the search point for the current searchID}
+1037                         \hyperlink{classQMap}{QMap< int, SearchPoint* >::iterator} sIt = 
+      \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.find( searchID );
+1038                         \textcolor{keywordflow}{if} ( sIt == \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.end() )
+1039                         \{
+1040                             sIt = \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.insert( searchID, \textcolor{keyword}{new} 
+      \hyperlink{classSearchPoint}{SearchPoint} );
+1041                         \}
+1042                         \hyperlink{classSearchPoint}{SearchPoint}* sp = *sIt;
+1043                         sp->\hyperlink{classSearchPoint_a2fbb5753fdf7adba3318560e9199f502}{it\_begin} = it;
+1044                         sp->\hyperlink{classSearchPoint_a98ba2c6327cca4a7834238a9e67a7799}{it\_end} = it\_begin;
+1045                         sp->\hyperlink{classSearchPoint_aeac3cb8bdd76805bcf76e9b191732139}{offset\_begin} = offset - min;
+1046                         sp->\hyperlink{classSearchPoint_ad727c2d1a0467af554fd1fe38d2c757c}{offset\_end} = offset\_begin;
+1047                         \textcolor{keywordflow}{return} searchPointToArea(sp);
+1048                     \}
+1049 
+1050                     offset = 0;
+1051             \}
+1052 
+1053         \}
+1054 
+1055     \}
+1056     \textcolor{comment}{// end of loop - it means that we've ended the textentities}
+1057 
+1058     \textcolor{keyword}{const} \hyperlink{classQMap}{QMap< int, SearchPoint* >::iterator} sIt = 
+      \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.find( searchID );
+1059     \textcolor{keywordflow}{if} ( sIt != \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.end() )
+1060     \{
+1061         \hyperlink{classSearchPoint}{SearchPoint}* sp = *sIt;
+1062         \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.erase( sIt );
+1063         \textcolor{keyword}{delete} sp;
+1064     \}
+1065     \textcolor{keywordflow}{return} 0;
+1066 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPagePrivate_aea4416c7f6f5b3fb791a357e2990345c}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!find\+Text\+Internal\+Forward@{find\+Text\+Internal\+Forward}}
+\index{find\+Text\+Internal\+Forward@{find\+Text\+Internal\+Forward}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{find\+Text\+Internal\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Regular\+Area\+Rect} $\ast$ Text\+Page\+Private\+::find\+Text\+Internal\+Forward (
+\begin{DoxyParamCaption}
+\item[{int}]{search\+I\+D, }
+\item[{const Q\+String \&}]{query, }
+\item[{{\bf Text\+Comparison\+Function}}]{comparer, }
+\item[{const Text\+List\+::\+Const\+Iterator \&}]{start, }
+\item[{int}]{start\+\_\+offset, }
+\item[{const Text\+List\+::\+Const\+Iterator \&}]{end}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPagePrivate_aea4416c7f6f5b3fb791a357e2990345c}
+
+
+Definition at line 840 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+845 \{
+846     \textcolor{comment}{// normalize query search all unicode (including glyphs)}
+847     \textcolor{keyword}{const} QString query = \_query.normalized(QString::NormalizationForm\_KC);
+848 
+849     \textcolor{comment}{// j is the current position in our query}
+850     \textcolor{comment}{// len is the length of the string in TextEntity}
+851     \textcolor{comment}{// queryLeft is the length of the query we have left}
+852     \textcolor{keywordtype}{int} j=0, queryLeft=query.length();
+853 
+854     TextList::ConstIterator it = start;
+855     \textcolor{keywordtype}{int} offset = start\_offset;
+856 
+857     TextList::ConstIterator it\_begin = TextList::ConstIterator();
+858     \textcolor{keywordtype}{int} offset\_begin = 0; \textcolor{comment}{//dummy initial value to suppress compiler warnings}
+859 
+860     \textcolor{keywordflow}{while} ( it != end )
+861     \{
+862         \textcolor{keyword}{const} \hyperlink{classTinyTextEntity}{TinyTextEntity}* curEntity = *it;
+863         \textcolor{keyword}{const} QString& str = curEntity->\hyperlink{classTinyTextEntity_a9657105c457630e898ea823ddc87d278}{text}();
+864         \textcolor{keywordtype}{int} len = stringLengthAdaptedWithHyphen(str, it, \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words}.constEnd());
+865 
+866         \textcolor{keywordflow}{if} (offset >= len)
+867         \{
+868             it++;
+869             offset = 0;
+870             \textcolor{keywordflow}{continue};
+871         \}
+872 
+873         \textcolor{keywordflow}{if} ( it\_begin == TextList::ConstIterator() )
+874         \{
+875             it\_begin = it;
+876             offset\_begin = offset;
+877         \}
+878 
+879         \textcolor{keywordtype}{int} min=qMin(queryLeft,len-offset);
+880         \{
+881 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+882             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << str.midRef(offset, min) << \textcolor{stringliteral}{":"} << \_query.midRef(j, min);
+883 \textcolor{preprocessor}{#endif}
+884             \textcolor{comment}{// we have equal (or less than) area of the query left as the length of the current }
+885             \textcolor{comment}{// entity}
+886 
+887             \textcolor{keywordflow}{if} ( !comparer( str.midRef( offset, min ), query.midRef( j, min ) ) )
+888             \{
+889                     \textcolor{comment}{// we have not matched}
+890                     \textcolor{comment}{// this means we do not have a complete match}
+891                     \textcolor{comment}{// we need to get back to query start}
+892                     \textcolor{comment}{// and continue the search from this place}
+893 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+894             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"\(\backslash\)tnot matched"};
+895 \textcolor{preprocessor}{#endif}
+896                     j = 0;
+897                     queryLeft=query.length();
+898                     it = it\_begin;
+899                     offset = offset\_begin+1;
+900                     it\_begin = TextList::ConstIterator();
+901             \}
+902             \textcolor{keywordflow}{else}
+903             \{
+904                     \textcolor{comment}{// we have a match}
+905                     \textcolor{comment}{// move the current position in the query}
+906                     \textcolor{comment}{// to the position after the length of this string}
+907                     \textcolor{comment}{// we matched}
+908                     \textcolor{comment}{// subtract the length of the current entity from }
+909                     \textcolor{comment}{// the left length of the query}
+910 \textcolor{preprocessor}{#ifdef DEBUG\_TEXTPAGE}
+911             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"\(\backslash\)tmatched"};
+912 \textcolor{preprocessor}{#endif}
+913                     j += min;
+914                     queryLeft -= min;
+915 
+916                     \textcolor{keywordflow}{if} (queryLeft==0)
+917                     \{
+918                         \textcolor{comment}{// save or update the search point for the current searchID}
+919                         \hyperlink{classQMap}{QMap< int, SearchPoint* >::iterator} sIt = 
+      \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.find( searchID );
+920                         \textcolor{keywordflow}{if} ( sIt == \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.end() )
+921                         \{
+922                             sIt = \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.insert( searchID, \textcolor{keyword}{new} 
+      \hyperlink{classSearchPoint}{SearchPoint} );
+923                         \}
+924                         \hyperlink{classSearchPoint}{SearchPoint}* sp = *sIt;
+925                         sp->\hyperlink{classSearchPoint_a2fbb5753fdf7adba3318560e9199f502}{it\_begin} = it\_begin;
+926                         sp->\hyperlink{classSearchPoint_a98ba2c6327cca4a7834238a9e67a7799}{it\_end} = it;
+927                         sp->\hyperlink{classSearchPoint_aeac3cb8bdd76805bcf76e9b191732139}{offset\_begin} = offset\_begin;
+928                         sp->\hyperlink{classSearchPoint_ad727c2d1a0467af554fd1fe38d2c757c}{offset\_end} = offset + min;
+929                         \textcolor{keywordflow}{return} searchPointToArea(sp);
+930                     \}
+931 
+932                     it++;
+933                     offset = 0;
+934             \}
+935         \}
+936     \}
+937     \textcolor{comment}{// end of loop - it means that we've ended the textentities}
+938 
+939     \textcolor{keyword}{const} \hyperlink{classQMap}{QMap< int, SearchPoint* >::iterator} sIt = 
+      \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.find( searchID );
+940     \textcolor{keywordflow}{if} ( sIt != \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.end() )
+941     \{
+942         \hyperlink{classSearchPoint}{SearchPoint}* sp = *sIt;
+943         \hyperlink{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{m\_searchPoints}.erase( sIt );
+944         \textcolor{keyword}{delete} sp;
+945     \}
+946     \textcolor{keywordflow}{return} 0;
+947 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextPagePrivate_a1cacd06d910c0e31834b22bb5a5a1916}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!set\+Word\+List@{set\+Word\+List}}
+\index{set\+Word\+List@{set\+Word\+List}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{set\+Word\+List}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Page\+Private\+::set\+Word\+List (
+\begin{DoxyParamCaption}
+\item[{const {\bf Text\+List} \&}]{list}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextPagePrivate_a1cacd06d910c0e31834b22bb5a5a1916}
+Copy a Text\+List to m\+\_\+words, the pointers of list are adopted
+
+Sets a new world list. Deleting the contents of the old one 
+
+Definition at line 1128 of file textpage.\+cpp.
+
+
+\begin{DoxyCode}
+1129 \{
+1130     qDeleteAll(\hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words});
+1131     \hyperlink{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{m\_words} = list;
+1132 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!m\+\_\+page@{m\+\_\+page}}
+\index{m\+\_\+page@{m\+\_\+page}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{m\+\_\+page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Page\+Private}$\ast$ Okular\+::\+Text\+Page\+Private\+::m\+\_\+page}}\label{classOkular_1_1TextPagePrivate_a6662808b6ba334f5c7abc157759260b9}
+
+
+Definition at line 71 of file textpage\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!m\+\_\+search\+Points@{m\+\_\+search\+Points}}
+\index{m\+\_\+search\+Points@{m\+\_\+search\+Points}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{m\+\_\+search\+Points}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Map}$<$ int, {\bf Search\+Point}$\ast$ $>$ Okular\+::\+Text\+Page\+Private\+::m\+\_\+search\+Points}}\label{classOkular_1_1TextPagePrivate_a4cd8e4b3be609ba6f03c8c85963d7b6e}
+
+
+Definition at line 70 of file textpage\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}{\index{Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}!m\+\_\+words@{m\+\_\+words}}
+\index{m\+\_\+words@{m\+\_\+words}!Okular\+::\+Text\+Page\+Private@{Okular\+::\+Text\+Page\+Private}}
+\subsubsection[{m\+\_\+words}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+List} Okular\+::\+Text\+Page\+Private\+::m\+\_\+words}}\label{classOkular_1_1TextPagePrivate_a36b703334a8775136cb4308209afd1cb}
+
+
+Definition at line 69 of file textpage\+\_\+p.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{textpage__p_8h}{textpage\+\_\+p.\+h}\item 
+core/\hyperlink{textpage_8cpp}{textpage.\+cpp}\end{DoxyCompactItemize}

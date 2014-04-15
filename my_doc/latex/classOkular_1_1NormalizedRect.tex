@@ -1,0 +1,684 @@
+\hypertarget{classOkular_1_1NormalizedRect}{\section{Okular\+:\+:Normalized\+Rect Class Reference}
+\label{classOkular_1_1NormalizedRect}\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+}
+
+
+{\ttfamily \#include $<$area.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1NormalizedRect_a80eb2d59743ac4e76c6781a63f4709b1}{Normalized\+Rect} ()
+\item 
+\hyperlink{classOkular_1_1NormalizedRect_a5708667255d23fcaf5afdc06705ea44c}{Normalized\+Rect} (double \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, double \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, double \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, double \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom})
+\item 
+\hyperlink{classOkular_1_1NormalizedRect_a44d81e39483e48d6c81dee7b07df1c06}{Normalized\+Rect} (const Q\+Rect \&rectangle, double x\+Scale, double y\+Scale)
+\item 
+\hyperlink{classOkular_1_1NormalizedRect_a2818301f89fac54393b256c806ff4d2e}{Normalized\+Rect} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&)
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \& \hyperlink{classOkular_1_1NormalizedRect_a4a9eaa560f4432747f45fe66fb790f37}{operator=} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&other)
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{is\+Null} () const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{contains} (double x, double y) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{intersects} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&other) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a886cdecc7922230bf6fe6b5c7ee71197}{intersects} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} $\ast$other) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a7254f142cb6ca673fb344d2545cb23c0}{intersects} (double \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, double \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, double \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, double \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}) const 
+\item 
+Q\+Rect \hyperlink{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{geometry} (int x\+Scale, int y\+Scale) const 
+\item 
+Q\+Rect \hyperlink{classOkular_1_1NormalizedRect_a0518472bc065119466fecc6cbb6486de}{rounded\+Geometry} (int x\+Scale, int y\+Scale) const 
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1NormalizedRect_ab82a6bd130f6609b89ab44e8bc6b0872}{operator$\vert$} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&other) const 
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \& \hyperlink{classOkular_1_1NormalizedRect_a6ff74d915faa4d82dda2887a6751ac29}{operator$\vert$=} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&other)
+\item 
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1NormalizedRect_a90389666c455ee67782d939639604d52}{operator\&} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&other) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a17c80476a866fca0b6a1ff5834d304f3}{operator==} (const \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \&other) const 
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1NormalizedRect_ac5c7173b01ac84afe38cd0c93b653435}{center} () const 
+\item 
+void \hyperlink{classOkular_1_1NormalizedRect_ae3bd6448865cb5b1f2b0fb8327d47e9b}{transform} (const Q\+Transform \&matrix)
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_ad7d24b65fc3351cd6dd6eace53d6a6e5}{is\+Bottom} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&pt) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a415ad207e347970f0406989dfcbf1b1b}{is\+Top} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&pt) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a97cba414c1e1e096ddeb9e93ad1fe86d}{is\+Bottom\+Or\+Level} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&pt) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a0d525438d22d8b2ec76d054e1921b4e1}{is\+Top\+Or\+Level} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&pt) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_a8024acae1abfdb0765bd205df7efbfe3}{is\+Left} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&pt) const 
+\item 
+bool \hyperlink{classOkular_1_1NormalizedRect_ad42d751d8a6db695622645a1e1df8962}{is\+Right} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&pt) const 
+\item 
+double \hyperlink{classOkular_1_1NormalizedRect_a36a7a927756beabec76ab921da8ed108}{distance\+Sqr} (double x, double y, double x\+Scale, double y\+Scale) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} \hyperlink{classOkular_1_1NormalizedRect_a8e32af446abd7dbd07ae285a2ee4faa6}{from\+Q\+Rect\+F} (const Q\+Rect\+F \&rect)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}
+\item 
+double \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}
+\item 
+double \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}
+\item 
+double \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} is a helper class which stores the coordinates of a normalized rect, which is a rectangle of \begin{DoxySeeAlso}{See Also}
+Normalized\+Points. 
+\end{DoxySeeAlso}
+
+
+Definition at line 105 of file area.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1NormalizedRect_a80eb2d59743ac4e76c6781a63f4709b1}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!Normalized\+Rect@{Normalized\+Rect}}
+\index{Normalized\+Rect@{Normalized\+Rect}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{Normalized\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Normalized\+Rect\+::\+Normalized\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_a80eb2d59743ac4e76c6781a63f4709b1}
+Creates a null normalized rectangle. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{is\+Null()}
+\end{DoxySeeAlso}
+class \hyperlink{classOkular_1_1NormalizedRect}{Normalized\+Rect} 
+
+Definition at line 126 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+127     : \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}( 0.0 ), \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}( 0.0 ), \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}( 0.0 ), \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}( 0.0 ) \{\}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a5708667255d23fcaf5afdc06705ea44c}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!Normalized\+Rect@{Normalized\+Rect}}
+\index{Normalized\+Rect@{Normalized\+Rect}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{Normalized\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Normalized\+Rect\+::\+Normalized\+Rect (
+\begin{DoxyParamCaption}
+\item[{double}]{left, }
+\item[{double}]{top, }
+\item[{double}]{right, }
+\item[{double}]{bottom}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_a5708667255d23fcaf5afdc06705ea44c}
+Creates a normalized rectangle with the normalized coordinates {\ttfamily left}, {\ttfamily top}, {\ttfamily right}, {\ttfamily bottom}.
+
+If you need the x, y, width and height coordinates use the following formulas\+:
+
+\begin{DoxyItemize}
+\item x = left \item y = top \item width = right -\/ left \item height = bottom -\/ top \end{DoxyItemize}
+
+
+Definition at line 129 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+131     : \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}( l ), \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}( t ), \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}( r ), \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}( b ) \{\}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a44d81e39483e48d6c81dee7b07df1c06}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!Normalized\+Rect@{Normalized\+Rect}}
+\index{Normalized\+Rect@{Normalized\+Rect}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{Normalized\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Normalized\+Rect\+::\+Normalized\+Rect (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect \&}]{rectangle, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_a44d81e39483e48d6c81dee7b07df1c06}
+Creates a normalized rectangle of the given {\ttfamily rectangle} which is normalized by the scaling factors {\ttfamily x\+Scale} and {\ttfamily y\+Scale}. 
+
+Definition at line 133 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+134     : \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}( (\textcolor{keywordtype}{double})r.left() / xScale ), \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}( (\textcolor{keywordtype}{double})r.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}() / yScale ),
+135     \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}( (\textcolor{keywordtype}{double})r.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}() / xScale ), \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}( (\textcolor{keywordtype}{double})r.
+      \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}() / yScale ) \{\}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a2818301f89fac54393b256c806ff4d2e}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!Normalized\+Rect@{Normalized\+Rect}}
+\index{Normalized\+Rect@{Normalized\+Rect}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{Normalized\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Normalized\+Rect\+::\+Normalized\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_a2818301f89fac54393b256c806ff4d2e}
+
+
+Definition at line 137 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+138     : \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}( rect.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} ), \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}( rect.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} ), \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}( rect.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} ), 
+      \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}( rect.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} ) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1NormalizedRect_ac5c7173b01ac84afe38cd0c93b653435}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!center@{center}}
+\index{center@{center}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Normalized\+Rect\+::center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_ac5c7173b01ac84afe38cd0c93b653435}
+Returns the center of the rectangle \begin{DoxySince}{Since}
+0.\+10 (K\+D\+E 4.\+4) 
+\end{DoxySince}
+
+
+Definition at line 227 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+228 \{
+229     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}((\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}+\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right})/2.0, (\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}+
+      \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom})/2.0);
+230 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!contains@{contains}}
+\index{contains@{contains}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Normalized\+Rect\+::contains (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_ad9373aab8c5c6369cb0a9cbed2749d9b}
+Returns whether the normalized rectangle contains the normalized coordinates {\ttfamily x} and {\ttfamily y}. 
+
+Definition at line 156 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+157 \{
+158     \textcolor{keywordflow}{return} x >= \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} && x <= right && y >= \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} && y <= \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom};
+159 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a36a7a927756beabec76ab921da8ed108}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!distance\+Sqr@{distance\+Sqr}}
+\index{distance\+Sqr@{distance\+Sqr}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{distance\+Sqr}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Normalized\+Rect\+::distance\+Sqr (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_a36a7a927756beabec76ab921da8ed108}
+Returns the distance of the point {\ttfamily x} {\ttfamily y} {\ttfamily x\+Scale} {\ttfamily y\+Scale} to the closest edge or 0 if the point is within the rectangle \begin{DoxySince}{Since}
+0.\+17 (K\+D\+E 4.\+11) 
+\end{DoxySince}
+
+
+Definition at line 286 of file area.\+h.
+
+
+\begin{DoxyCode}
+287         \{
+288             \textcolor{keywordtype}{double} distX = 0;
+289             \textcolor{keywordflow}{if} ( x < \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} )
+290                 distX = \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} - x;
+291             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( x > \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} )
+292                 distX = x - \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right};
+293 
+294             \textcolor{keywordtype}{double} distY = 0;
+295             \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} > y )
+296                 distY = \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} - y;
+297             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} < y)
+298                 distY = y - \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom};
+299             \textcolor{keywordflow}{return} pow( distX * xScale, 2 ) + pow( distY * yScale, 2 );
+300         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a8e32af446abd7dbd07ae285a2ee4faa6}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!from\+Q\+Rect\+F@{from\+Q\+Rect\+F}}
+\index{from\+Q\+Rect\+F@{from\+Q\+Rect\+F}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{from\+Q\+Rect\+F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Normalized\+Rect\+::from\+Q\+Rect\+F (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect\+F \&}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1NormalizedRect_a8e32af446abd7dbd07ae285a2ee4faa6}
+Build a normalized rect from a Q\+Rect\+F. 
+
+Definition at line 140 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+141 \{
+142     QRectF nrect = rect.normalized();
+143     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} ret;
+144     ret.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = nrect.left();
+145     ret.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} = nrect.top();
+146     ret.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = nrect.right();
+147     ret.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} = nrect.bottom();
+148     \textcolor{keywordflow}{return} ret;
+149 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!geometry@{geometry}}
+\index{geometry@{geometry}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{geometry}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Normalized\+Rect\+::geometry (
+\begin{DoxyParamCaption}
+\item[{int}]{x\+Scale, }
+\item[{int}]{y\+Scale}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a006897c5fcff2c3a97b4141f1a967513}
+Returns the rectangle that accrues when the normalized rectangle is multiplyed with the scaling {\ttfamily x\+Scale} and {\ttfamily y\+Scale}. 
+
+Definition at line 239 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+240 \{
+241     \textcolor{keywordtype}{int} l = (int)( \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} * xScale ),
+242         t = (int)( \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} * yScale ),
+243         r = (int)( \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} * xScale ),
+244         b = (int)( \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} * yScale );
+245 
+246     \textcolor{keywordflow}{return} QRect( l, t, r - l + 1, b - t + 1 );
+247 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!intersects@{intersects}}
+\index{intersects@{intersects}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{intersects}]{\setlength{\rightskip}{0pt plus 5cm}bool Normalized\+Rect\+::intersects (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a9c2d89ccafd17802316c90406c6ec756}
+Returns whether the normalized rectangle intersects the {\ttfamily other} normalized rectangle. 
+
+Definition at line 161 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+162 \{
+163     \textcolor{keywordflow}{return} (r.left <= \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}) && (r.right >= \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}) && (r.top <= \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}) && (r.bottom >= 
+      \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top});
+164 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a886cdecc7922230bf6fe6b5c7ee71197}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!intersects@{intersects}}
+\index{intersects@{intersects}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{intersects}]{\setlength{\rightskip}{0pt plus 5cm}bool Normalized\+Rect\+::intersects (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} $\ast$}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a886cdecc7922230bf6fe6b5c7ee71197}
+This is an overloaded member function, provided for convenience. It behaves essentially like the above function. 
+
+Definition at line 166 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+167 \{
+168     \textcolor{keywordflow}{return} (r->left <= \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}) && (r->right >= \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}) && (r->top <= 
+      \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}) && (r->bottom >= \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top});
+169 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a7254f142cb6ca673fb344d2545cb23c0}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!intersects@{intersects}}
+\index{intersects@{intersects}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{intersects}]{\setlength{\rightskip}{0pt plus 5cm}bool Normalized\+Rect\+::intersects (
+\begin{DoxyParamCaption}
+\item[{double}]{left, }
+\item[{double}]{top, }
+\item[{double}]{right, }
+\item[{double}]{bottom}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a7254f142cb6ca673fb344d2545cb23c0}
+Returns whether the normalized rectangle intersects an other normalized rectangle, which is defined by {\ttfamily left}, {\ttfamily top}, {\ttfamily right} and {\ttfamily bottom}. 
+
+Definition at line 171 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+172 \{
+173     \textcolor{keywordflow}{return} (l <= \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}) && (r >= \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}) && (t <= \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}) && (b >= 
+      \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top});
+174 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_ad7d24b65fc3351cd6dd6eace53d6a6e5}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Bottom@{is\+Bottom}}
+\index{is\+Bottom@{is\+Bottom}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Bottom}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Normalized\+Rect\+::is\+Bottom (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_ad7d24b65fc3351cd6dd6eace53d6a6e5}
+Returns true if the point pt is located to the bottom of the rectangle \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 231 of file area.\+h.
+
+
+\begin{DoxyCode}
+232         \{
+233             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} < pt.y;
+234         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a97cba414c1e1e096ddeb9e93ad1fe86d}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Bottom\+Or\+Level@{is\+Bottom\+Or\+Level}}
+\index{is\+Bottom\+Or\+Level@{is\+Bottom\+Or\+Level}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Bottom\+Or\+Level}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Normalized\+Rect\+::is\+Bottom\+Or\+Level (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_a97cba414c1e1e096ddeb9e93ad1fe86d}
+Returns true if the point pt is located under the top of the rectangle \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 249 of file area.\+h.
+
+
+\begin{DoxyCode}
+250         \{
+251             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} < pt.y;
+252         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a8024acae1abfdb0765bd205df7efbfe3}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Left@{is\+Left}}
+\index{is\+Left@{is\+Left}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Left}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Normalized\+Rect\+::is\+Left (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_a8024acae1abfdb0765bd205df7efbfe3}
+Returns true if the point pt is located to the right of the left arm of rectangle \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 267 of file area.\+h.
+
+
+\begin{DoxyCode}
+268         \{
+269             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} < pt.x;
+270         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Null}]{\setlength{\rightskip}{0pt plus 5cm}bool Normalized\+Rect\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}
+Returns whether this normalized rectangle is a null normalized rect. 
+
+Definition at line 151 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+152 \{
+153     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} == 0 && \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}== 0 && \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} == 0 && \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} == 0;
+154 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_ad42d751d8a6db695622645a1e1df8962}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Right@{is\+Right}}
+\index{is\+Right@{is\+Right}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Normalized\+Rect\+::is\+Right (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_ad42d751d8a6db695622645a1e1df8962}
+Returns true if the point pt is located to the left of the right arm of rectangle \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 276 of file area.\+h.
+
+
+\begin{DoxyCode}
+277         \{
+278             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} > pt.x;
+279         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a415ad207e347970f0406989dfcbf1b1b}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Top@{is\+Top}}
+\index{is\+Top@{is\+Top}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Top}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Normalized\+Rect\+::is\+Top (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_a415ad207e347970f0406989dfcbf1b1b}
+Returns true if the point pt is located on the top of the rectangle \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 240 of file area.\+h.
+
+
+\begin{DoxyCode}
+241         \{
+242             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} > pt.y;
+243         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a0d525438d22d8b2ec76d054e1921b4e1}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!is\+Top\+Or\+Level@{is\+Top\+Or\+Level}}
+\index{is\+Top\+Or\+Level@{is\+Top\+Or\+Level}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{is\+Top\+Or\+Level}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Normalized\+Rect\+::is\+Top\+Or\+Level (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{pt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1NormalizedRect_a0d525438d22d8b2ec76d054e1921b4e1}
+Returns true if the point pt is located above the bottom of the rectangle \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 258 of file area.\+h.
+
+
+\begin{DoxyCode}
+259         \{
+260             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} > pt.y;
+261         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a90389666c455ee67782d939639604d52}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{operator\&}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Normalized\+Rect\+::operator\& (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a90389666c455ee67782d939639604d52}
+Returns the intersection of this normalized rectangle with the specified {\ttfamily other}. If the rects do not intersect then the result is null.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 196 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+197 \{
+198     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{isNull}() || r.isNull() )
+199         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedRect_a80eb2d59743ac4e76c6781a63f4709b1}{NormalizedRect}();
+200 
+201     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} ret;
+202     ret.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = qMax( \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, r.left );
+203     ret.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} = qMax( \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, r.top );
+204     ret.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} = qMin( \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}, r.bottom );
+205     ret.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = qMin( \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, r.right );
+206     \textcolor{keywordflow}{return} ret;
+207 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a4a9eaa560f4432747f45fe66fb790f37}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!operator=@{operator=}}
+\index{operator=@{operator=}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} \& Normalized\+Rect\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_a4a9eaa560f4432747f45fe66fb790f37}
+
+
+Definition at line 209 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+210 \{
+211     \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = r.left;
+212     \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = r.right;
+213     \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} = r.top;
+214     \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} = r.bottom;
+215     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+216 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a17c80476a866fca0b6a1ff5834d304f3}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!operator==@{operator==}}
+\index{operator==@{operator==}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Normalized\+Rect\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a17c80476a866fca0b6a1ff5834d304f3}
+Returns whether the normalized rectangle is equal to the {\ttfamily other} normalized rectangle. 
+
+Definition at line 218 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+219 \{
+220     \textcolor{keywordflow}{return} ( \hyperlink{classOkular_1_1NormalizedRect_a8f9a332a6247f4716d23513af00ac045}{isNull}() && r.isNull() ) ||
+221        ( fabs( \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} - r.left ) < 1e-4 &&
+222          fabs( \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - r.right ) < 1e-4 &&
+223          fabs( \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} - r.top ) < 1e-4 &&
+224          fabs( \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - r.bottom ) < 1e-4 );
+225 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_ab82a6bd130f6609b89ab44e8bc6b0872}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{operator\texttt{"|}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} Normalized\+Rect\+::operator$\vert$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_ab82a6bd130f6609b89ab44e8bc6b0872}
+Returns the normalized bounding rectangle of the normalized rectangle combined with the {\ttfamily other} normalized rectangle. 
+
+Definition at line 176 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+177 \{
+178     \hyperlink{classOkular_1_1NormalizedRect}{NormalizedRect} ret;
+179  \textcolor{comment}{// todo !       }
+180     ret.\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}=qMin(\hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left},r.left);
+181         ret.\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}=qMin(\hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top},r.top);
+182         ret.\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}=qMax(\hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom},r.bottom);
+183         ret.\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}=qMax(\hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right},r.right);
+184     \textcolor{keywordflow}{return} ret;
+185 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a6ff74d915faa4d82dda2887a6751ac29}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{operator\texttt{"|}=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Rect} \& Normalized\+Rect\+::operator$\vert$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Rect} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_a6ff74d915faa4d82dda2887a6751ac29}
+Sets the normalized rectangle to the normalized bounding rectangle of itself combined with the {\ttfamily other} normalized rectangle. 
+
+Definition at line 187 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+188 \{
+189     \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = qMin( \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, r.left );
+190     \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} = qMin( \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, r.top );
+191     \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} = qMax( \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom}, r.bottom );
+192     \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = qMax( \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right}, r.right );
+193     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+194 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_a0518472bc065119466fecc6cbb6486de}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!rounded\+Geometry@{rounded\+Geometry}}
+\index{rounded\+Geometry@{rounded\+Geometry}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{rounded\+Geometry}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Normalized\+Rect\+::rounded\+Geometry (
+\begin{DoxyParamCaption}
+\item[{int}]{x\+Scale, }
+\item[{int}]{y\+Scale}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1NormalizedRect_a0518472bc065119466fecc6cbb6486de}
+Same functionality as geometry, but the output is now rounded before typecasting to int \begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 249 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+250 \{
+251     \textcolor{keywordtype}{int} l = (int)( \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} * xScale + 0.5 ),
+252         t = (int)( \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} * yScale + 0.5 ),
+253         r = (int)( \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} * xScale + 0.5 ),
+254         b = (int)( \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} * yScale + 0.5 );
+255 
+256     \textcolor{keywordflow}{return} QRect( l, t, r - l + 1, b - t + 1 );
+257 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1NormalizedRect_ae3bd6448865cb5b1f2b0fb8327d47e9b}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!transform@{transform}}
+\index{transform@{transform}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}void Normalized\+Rect\+::transform (
+\begin{DoxyParamCaption}
+\item[{const Q\+Transform \&}]{matrix}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1NormalizedRect_ae3bd6448865cb5b1f2b0fb8327d47e9b}
+Transforms the normalized rectangle with the operations defined by {\ttfamily matrix}. 
+
+Definition at line 259 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+260 \{
+261     QRectF rect( \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top}, \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} - \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left}, \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} - \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} );
+262     rect = matrix.mapRect( rect );
+263 
+264     \hyperlink{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{left} = rect.left();
+265     \hyperlink{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{top} = rect.top();
+266     \hyperlink{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{right} = rect.right();
+267     \hyperlink{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{bottom} = rect.bottom();
+268 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!bottom@{bottom}}
+\index{bottom@{bottom}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{bottom}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Normalized\+Rect\+::bottom}}\label{classOkular_1_1NormalizedRect_a06fddfff238371f6f584360c0678741a}
+The normalized bottom coordinate. 
+
+Definition at line 320 of file area.\+h.
+
+\hypertarget{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!left@{left}}
+\index{left@{left}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Normalized\+Rect\+::left}}\label{classOkular_1_1NormalizedRect_a76336fe9d733f2b559cf8df3ef48f9e7}
+The normalized left coordinate. 
+
+Definition at line 305 of file area.\+h.
+
+\hypertarget{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!right@{right}}
+\index{right@{right}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Normalized\+Rect\+::right}}\label{classOkular_1_1NormalizedRect_a12bbdbb865e6282c9a325b61638553f4}
+The normalized right coordinate. 
+
+Definition at line 315 of file area.\+h.
+
+\hypertarget{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}{\index{Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}!top@{top}}
+\index{top@{top}!Okular\+::\+Normalized\+Rect@{Okular\+::\+Normalized\+Rect}}
+\subsubsection[{top}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Normalized\+Rect\+::top}}\label{classOkular_1_1NormalizedRect_acfb70f6417c993508d50090b512cb954}
+The normalized top coordinate. 
+
+Definition at line 310 of file area.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{area_8h}{area.\+h}\item 
+core/\hyperlink{area_8cpp}{area.\+cpp}\end{DoxyCompactItemize}

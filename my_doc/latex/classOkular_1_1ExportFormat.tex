@@ -1,0 +1,402 @@
+\hypertarget{classOkular_1_1ExportFormat}{\section{Okular\+:\+:Export\+Format Class Reference}
+\label{classOkular_1_1ExportFormat}\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+}
+
+
+Defines an entry for the export menu.  
+
+
+
+
+{\ttfamily \#include $<$generator.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2}{Standard\+Export\+Format} \{ \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{Plain\+Text}, 
+\hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a282bea2bc8da48d30988d1286571c671}{P\+D\+F}, 
+\hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a82b7e76dc44580c9742e6e41042892f3}{Open\+Document\+Text}, 
+\hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a7d2fa80544cea061db29c01e973131c0}{H\+T\+M\+L}
+ \}
+\item 
+typedef \hyperlink{classQList}{Q\+List}$<$ \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} $>$ \hyperlink{classOkular_1_1ExportFormat_a987d72c1a1456b8a983a37603a8fa78d}{List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{Export\+Format} ()
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a6934c2e94560a63de3fa160305eb08f9}{Export\+Format} (const Q\+String \&\hyperlink{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}{description}, const K\+Mime\+Type\+::\+Ptr \&\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mime\+Type})
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a5d5fd0ba00326712df2736e563d73092}{Export\+Format} (const K\+Icon \&\hyperlink{classOkular_1_1ExportFormat_a9a0df83b759d906cc05cb763f2741682}{icon}, const Q\+String \&\hyperlink{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}{description}, const K\+Mime\+Type\+::\+Ptr \&\hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mime\+Type})
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a07bbf0d0f2f08f98861df7cbb94fc5a4}{$\sim$\+Export\+Format} ()
+\item 
+\hyperlink{classOkular_1_1ExportFormat_a9fbaac8ba935133097ed7f59840a893a}{Export\+Format} (const \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} \&other)
+\item 
+\hyperlink{classOkular_1_1ExportFormat}{Export\+Format} \& \hyperlink{classOkular_1_1ExportFormat_ac2411c79e17ae187c92639c9ec006abb}{operator=} (const \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} \&other)
+\item 
+Q\+String \hyperlink{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}{description} () const 
+\item 
+K\+Mime\+Type\+::\+Ptr \hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mime\+Type} () const 
+\item 
+K\+Icon \hyperlink{classOkular_1_1ExportFormat_a9a0df83b759d906cc05cb763f2741682}{icon} () const 
+\item 
+bool \hyperlink{classOkular_1_1ExportFormat_a963d2b4cf54835cba6febc4956ad99d9}{is\+Null} () const 
+\item 
+bool \hyperlink{classOkular_1_1ExportFormat_a796183d731b4a280ee2ce8f6298b71b9}{operator==} (const \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} \&other) const 
+\item 
+bool \hyperlink{classOkular_1_1ExportFormat_abac749c581c153e650fbbbcacc2ebf67}{operator!=} (const \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} \hyperlink{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{standard\+Format} (\hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2}{Standard\+Export\+Format} type)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines an entry for the export menu. 
+
+This class encapsulates information about an export format. Every \hyperlink{classOkular_1_1Generator}{Generator} can support 0 or more export formats which can be queried with \hyperlink{classOkular_1_1Generator_a74280fb193319daab955feac694123ac}{Generator\+::export\+Formats()}. 
+
+Definition at line 76 of file generator.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classOkular_1_1ExportFormat_a987d72c1a1456b8a983a37603a8fa78d}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!List@{List}}
+\index{List@{List}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{List}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Q\+List}$<${\bf Export\+Format}$>$ {\bf Okular\+::\+Export\+Format\+::\+List}}}\label{classOkular_1_1ExportFormat_a987d72c1a1456b8a983a37603a8fa78d}
+
+
+Definition at line 79 of file generator.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Standard\+Export\+Format@{Standard\+Export\+Format}}
+\index{Standard\+Export\+Format@{Standard\+Export\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{Standard\+Export\+Format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Export\+Format\+::\+Standard\+Export\+Format}}}\label{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2}
+Type of standard export format. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Plain\+Text@{Plain\+Text}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Plain\+Text@{Plain\+Text}}\item[{\em 
+\hypertarget{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{Plain\+Text}\label{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}
+}]Plain text. \index{P\+D\+F@{P\+D\+F}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!P\+D\+F@{P\+D\+F}}\item[{\em 
+\hypertarget{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a282bea2bc8da48d30988d1286571c671}{P\+D\+F}\label{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a282bea2bc8da48d30988d1286571c671}
+}]P\+D\+F, aka Portable \hyperlink{classOkular_1_1Document}{Document} Format. \index{Open\+Document\+Text@{Open\+Document\+Text}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Open\+Document\+Text@{Open\+Document\+Text}}\item[{\em 
+\hypertarget{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a82b7e76dc44580c9742e6e41042892f3}{Open\+Document\+Text}\label{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a82b7e76dc44580c9742e6e41042892f3}
+}]Open\+Document Text format. \begin{DoxySince}{Since}
+0.\+8 (K\+D\+E 4.\+2) 
+\end{DoxySince}
+\index{H\+T\+M\+L@{H\+T\+M\+L}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!H\+T\+M\+L@{H\+T\+M\+L}}\item[{\em 
+\hypertarget{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a7d2fa80544cea061db29c01e973131c0}{H\+T\+M\+L}\label{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a7d2fa80544cea061db29c01e973131c0}
+}]Open\+Document Text format. \begin{DoxySince}{Since}
+0.\+8 (K\+D\+E 4.\+2) 
+\end{DoxySince}
+\end{description}
+\end{Desc}
+
+
+Definition at line 146 of file generator.\+h.
+
+
+\begin{DoxyCode}
+147         \{
+148             \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{PlainText},         
+149             \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a282bea2bc8da48d30988d1286571c671}{PDF},               
+150             \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a82b7e76dc44580c9742e6e41042892f3}{OpenDocumentText},  
+151             \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a7d2fa80544cea061db29c01e973131c0}{HTML}   
+152         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Export\+Format@{Export\+Format}}
+\index{Export\+Format@{Export\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{Export\+Format}]{\setlength{\rightskip}{0pt plus 5cm}Export\+Format\+::\+Export\+Format (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}
+Creates an empty export format.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1ExportFormat_a963d2b4cf54835cba6febc4956ad99d9}{is\+Null()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 547 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+548     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1ExportFormatPrivate}{ExportFormatPrivate}( QString(), KMimeType::Ptr() ) )
+549 \{
+550 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a6934c2e94560a63de3fa160305eb08f9}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Export\+Format@{Export\+Format}}
+\index{Export\+Format@{Export\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{Export\+Format}]{\setlength{\rightskip}{0pt plus 5cm}Export\+Format\+::\+Export\+Format (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{description, }
+\item[{const K\+Mime\+Type\+::\+Ptr \&}]{mime\+Type}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExportFormat_a6934c2e94560a63de3fa160305eb08f9}
+Creates a new export format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & The i18n'ed description of the format. \\
+\hline
+{\em mime\+Type} & The supported mime type of the format. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 552 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+553     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1ExportFormatPrivate}{ExportFormatPrivate}( \hyperlink{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}{description}, 
+      \hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType} ) )
+554 \{
+555 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a5d5fd0ba00326712df2736e563d73092}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Export\+Format@{Export\+Format}}
+\index{Export\+Format@{Export\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{Export\+Format}]{\setlength{\rightskip}{0pt plus 5cm}Export\+Format\+::\+Export\+Format (
+\begin{DoxyParamCaption}
+\item[{const K\+Icon \&}]{icon, }
+\item[{const Q\+String \&}]{description, }
+\item[{const K\+Mime\+Type\+::\+Ptr \&}]{mime\+Type}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExportFormat_a5d5fd0ba00326712df2736e563d73092}
+Creates a new export format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em icon} & The icon used in the G\+U\+I for this format. \\
+\hline
+{\em description} & The i18n'ed description of the format. \\
+\hline
+{\em mime\+Type} & The supported mime type of the format. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 557 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+558     : d( \textcolor{keyword}{new} \hyperlink{classOkular_1_1ExportFormatPrivate}{ExportFormatPrivate}( \hyperlink{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}{description}, 
+      \hyperlink{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{mimeType}, \hyperlink{classOkular_1_1ExportFormat_a9a0df83b759d906cc05cb763f2741682}{icon} ) )
+559 \{
+560 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a07bbf0d0f2f08f98861df7cbb94fc5a4}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!````~Export\+Format@{$\sim$\+Export\+Format}}
+\index{````~Export\+Format@{$\sim$\+Export\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{$\sim$\+Export\+Format}]{\setlength{\rightskip}{0pt plus 5cm}Export\+Format\+::$\sim$\+Export\+Format (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExportFormat_a07bbf0d0f2f08f98861df7cbb94fc5a4}
+Destroys the export format. 
+
+Definition at line 562 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+563 \{
+564 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a9fbaac8ba935133097ed7f59840a893a}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!Export\+Format@{Export\+Format}}
+\index{Export\+Format@{Export\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{Export\+Format}]{\setlength{\rightskip}{0pt plus 5cm}Export\+Format\+::\+Export\+Format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Export\+Format} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExportFormat_a9fbaac8ba935133097ed7f59840a893a}
+
+
+Definition at line 566 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+567     : d( other.d )
+568 \{
+569 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!description@{description}}
+\index{description@{description}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Export\+Format\+::description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExportFormat_adc971794900abeb52682cb333344995a}
+Returns the description of the format. 
+
+Definition at line 581 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+582 \{
+583     \textcolor{keywordflow}{return} d->mDescription;
+584 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a9a0df83b759d906cc05cb763f2741682}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!icon@{icon}}
+\index{icon@{icon}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{icon}]{\setlength{\rightskip}{0pt plus 5cm}K\+Icon Export\+Format\+::icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExportFormat_a9a0df83b759d906cc05cb763f2741682}
+Returns the icon for G\+U\+I representations of the format. 
+
+Definition at line 591 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+592 \{
+593     \textcolor{keywordflow}{return} d->mIcon;
+594 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a963d2b4cf54835cba6febc4956ad99d9}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{is\+Null}]{\setlength{\rightskip}{0pt plus 5cm}bool Export\+Format\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExportFormat_a963d2b4cf54835cba6febc4956ad99d9}
+Returns whether the export format is null/valid.
+
+An \hyperlink{classOkular_1_1ExportFormat}{Export\+Format} is null if the mimetype is not valid or the description is empty, or both. 
+
+Definition at line 596 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+597 \{
+598     \textcolor{keywordflow}{return} d->mMimeType.isNull() || d->mDescription.isNull();
+599 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!mime\+Type@{mime\+Type}}
+\index{mime\+Type@{mime\+Type}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}K\+Mime\+Type\+::\+Ptr Export\+Format\+::mime\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExportFormat_ab37ac9aa0c65cdff5e9666e1390d79de}
+Returns the mime type of the format. 
+
+Definition at line 586 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+587 \{
+588     \textcolor{keywordflow}{return} d->mMimeType;
+589 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_abac749c581c153e650fbbbcacc2ebf67}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Export\+Format\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Export\+Format} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExportFormat_abac749c581c153e650fbbbcacc2ebf67}
+
+
+Definition at line 629 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+630 \{
+631     \textcolor{keywordflow}{return} d != other.d;
+632 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_ac2411c79e17ae187c92639c9ec006abb}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!operator=@{operator=}}
+\index{operator=@{operator=}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Export\+Format} \& Export\+Format\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Export\+Format} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1ExportFormat_ac2411c79e17ae187c92639c9ec006abb}
+
+
+Definition at line 571 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+572 \{
+573     \textcolor{keywordflow}{if} ( \textcolor{keyword}{this} == &other )
+574         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+575 
+576     d = other.d;
+577 
+578     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+579 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a796183d731b4a280ee2ce8f6298b71b9}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!operator==@{operator==}}
+\index{operator==@{operator==}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Export\+Format\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Export\+Format} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1ExportFormat_a796183d731b4a280ee2ce8f6298b71b9}
+
+
+Definition at line 624 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+625 \{
+626     \textcolor{keywordflow}{return} d == other.d;
+627 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}{\index{Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}!standard\+Format@{standard\+Format}}
+\index{standard\+Format@{standard\+Format}!Okular\+::\+Export\+Format@{Okular\+::\+Export\+Format}}
+\subsubsection[{standard\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Export\+Format} Export\+Format\+::standard\+Format (
+\begin{DoxyParamCaption}
+\item[{{\bf Standard\+Export\+Format}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1ExportFormat_a5a403d349fe023513836471a18f55ced}
+Builds a standard format for the specified {\ttfamily type} . 
+
+Definition at line 601 of file generator.\+cpp.
+
+
+\begin{DoxyCode}
+602 \{
+603     \textcolor{keywordflow}{switch} ( type )
+604     \{
+605         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2ad7daf23a3915d800df9de1b417a4b65a}{PlainText}:
+606             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{ExportFormat}( KIcon( \textcolor{stringliteral}{"text-x-generic"} ), i18n( \textcolor{stringliteral}{"Plain &Text..."} ), 
+      KMimeType::mimeType( \textcolor{stringliteral}{"text/plain"} ) );
+607             \textcolor{keywordflow}{break};
+608         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a282bea2bc8da48d30988d1286571c671}{PDF}:
+609             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{ExportFormat}( KIcon( \textcolor{stringliteral}{"application-pdf"} ), i18n( \textcolor{stringliteral}{"PDF"} ), KMimeType::mimeType
+      ( \textcolor{stringliteral}{"application/pdf"} ) );
+610             \textcolor{keywordflow}{break};
+611         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a82b7e76dc44580c9742e6e41042892f3}{OpenDocumentText}:
+612             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{ExportFormat}(
+613                 KIcon( \textcolor{stringliteral}{"application-vnd.oasis.opendocument.text"} ),
+614                 i18nc( \textcolor{stringliteral}{"This is the document format"}, \textcolor{stringliteral}{"OpenDocument Text"} ),
+615                 KMimeType::mimeType( \textcolor{stringliteral}{"application/vnd.oasis.opendocument.text"} ) );
+616         \textcolor{keywordflow}{break};
+617         \textcolor{keywordflow}{case} \hyperlink{classOkular_1_1ExportFormat_af030ecc6c77b5cdd89cd1bc4a894c6f2a7d2fa80544cea061db29c01e973131c0}{HTML}:
+618             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{ExportFormat}( KIcon( \textcolor{stringliteral}{"text-html"} ), i18nc( \textcolor{stringliteral}{"This is the document format"}, \textcolor{stringliteral}{"
+      HTML"} ), KMimeType::mimeType( \textcolor{stringliteral}{"text/html"} ) );
+619             \textcolor{keywordflow}{break};
+620     \}
+621     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1ExportFormat_a339e9c29dbe58bf680ac06ab727614de}{ExportFormat}();
+622 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{generator_8h}{generator.\+h}\item 
+core/\hyperlink{generator_8cpp}{generator.\+cpp}\end{DoxyCompactItemize}

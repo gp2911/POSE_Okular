@@ -1,0 +1,98 @@
+\hypertarget{dvi_2util_8cpp}{\section{generators/dvi/util.cpp File Reference}
+\label{dvi_2util_8cpp}\index{generators/dvi/util.\+cpp@{generators/dvi/util.\+cpp}}
+}
+{\ttfamily \#include $<$config.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}kvs\+\_\+debug.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}xdvi.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include $<$kmessagebox.\+h$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dvi_2util_8cpp_a5b54de1a2e989b1e6caa66ee8804cff8}{oops} (const Q\+String \&message)
+\item 
+unsigned long \hyperlink{dvi_2util_8cpp_acc54804c2bc92eef873c373c37b69ff7}{num} (F\+I\+L\+E $\ast$fp, int \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size})
+\item 
+long \hyperlink{dvi_2util_8cpp_ae2cfe5fb1ee493f47074aa87e74a6cad}{snum} (F\+I\+L\+E $\ast$fp, int \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{dvi_2util_8cpp_acc54804c2bc92eef873c373c37b69ff7}{\index{dvi/util.\+cpp@{dvi/util.\+cpp}!num@{num}}
+\index{num@{num}!dvi/util.\+cpp@{dvi/util.\+cpp}}
+\subsubsection[{num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long num (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fp, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{dvi_2util_8cpp_acc54804c2bc92eef873c373c37b69ff7}
+
+
+Definition at line 94 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{keyword}{register} \textcolor{keywordtype}{long} x = 0;
+97 
+98   \textcolor{keywordflow}{while} (\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}--) x = (x << 8) | \hyperlink{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{one}(fp);
+99   \textcolor{keywordflow}{return} x;
+100 \}
+\end{DoxyCode}
+\hypertarget{dvi_2util_8cpp_a5b54de1a2e989b1e6caa66ee8804cff8}{\index{dvi/util.\+cpp@{dvi/util.\+cpp}!oops@{oops}}
+\index{oops@{oops}!dvi/util.\+cpp@{dvi/util.\+cpp}}
+\subsubsection[{oops}]{\setlength{\rightskip}{0pt plus 5cm}void oops (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{message}
+\end{DoxyParamCaption}
+)}}\label{dvi_2util_8cpp_a5b54de1a2e989b1e6caa66ee8804cff8}
+
+
+Definition at line 72 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74   kError(kvs::dvi) << \textcolor{stringliteral}{"Fatal Error:"} << message << endl;
+75 
+76   KMessageBox::error( NULL,
+77                       i18n(\textcolor{stringliteral}{"Fatal error.\(\backslash\)n\(\backslash\)n"}) +
+78                       message +
+79                       i18n(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n\(\backslash\)}
+80 \textcolor{stringliteral}{This probably means that either you found a bug in Okular,\(\backslash\)n\(\backslash\)}
+81 \textcolor{stringliteral}{or that the DVI file, or auxiliary files (such as font files, \(\backslash\)n\(\backslash\)}
+82 \textcolor{stringliteral}{or virtual font files) were really badly broken.\(\backslash\)n\(\backslash\)}
+83 \textcolor{stringliteral}{Okular will abort after this message. If you believe that you \(\backslash\)n\(\backslash\)}
+84 \textcolor{stringliteral}{found a bug, or that Okular should behave better in this situation\(\backslash\)n\(\backslash\)}
+85 \textcolor{stringliteral}{please report the problem."}));
+86   exit(1);
+87 \}
+\end{DoxyCode}
+\hypertarget{dvi_2util_8cpp_ae2cfe5fb1ee493f47074aa87e74a6cad}{\index{dvi/util.\+cpp@{dvi/util.\+cpp}!snum@{snum}}
+\index{snum@{snum}!dvi/util.\+cpp@{dvi/util.\+cpp}}
+\subsubsection[{snum}]{\setlength{\rightskip}{0pt plus 5cm}long snum (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fp, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{dvi_2util_8cpp_ae2cfe5fb1ee493f47074aa87e74a6cad}
+
+
+Definition at line 102 of file util.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104   \textcolor{keyword}{register} \textcolor{keywordtype}{long} x;
+105 
+106 \textcolor{preprocessor}{#ifdef \_\_STDC\_\_}
+107   x = (\textcolor{keywordtype}{signed} char) getc(fp);
+108 \textcolor{preprocessor}{#else}
+109   x = (\textcolor{keywordtype}{unsigned} char) getc(fp);
+110   \textcolor{keywordflow}{if} (x & 0x80) x -= 0x100;
+111 \textcolor{preprocessor}{#endif}
+112   \textcolor{keywordflow}{while} (--\hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}) x = (x << 8) | \hyperlink{xdvi_8h_a17c21c20130471893daf8e8e64b3c526}{one}(fp);
+113   \textcolor{keywordflow}{return} x;
+114 \}
+\end{DoxyCode}

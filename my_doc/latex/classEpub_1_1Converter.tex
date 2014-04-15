@@ -1,0 +1,391 @@
+\hypertarget{classEpub_1_1Converter}{\section{Epub\+:\+:Converter Class Reference}
+\label{classEpub_1_1Converter}\index{Epub\+::\+Converter@{Epub\+::\+Converter}}
+}
+
+
+{\ttfamily \#include $<$converter.\+h$>$}
+
+Inheritance diagram for Epub\+:\+:Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classEpub_1_1Converter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEpub_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}{Converter} ()
+\item 
+\hyperlink{classEpub_1_1Converter_a9ecd05695a52c03158b81e544e13b996}{$\sim$\+Converter} ()
+\item 
+virtual Q\+Text\+Document $\ast$ \hyperlink{classEpub_1_1Converter_aa63e543977130604de659a4d725ee8bd}{convert} (const Q\+String \&file\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file converter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEpub_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}{\index{Epub\+::\+Converter@{Epub\+::\+Converter}!Converter@{Converter}}
+\index{Converter@{Converter}!Epub\+::\+Converter@{Epub\+::\+Converter}}
+\subsubsection[{Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\+::\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEpub_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}
+
+
+Definition at line 30 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+30                      : mTextDocument(NULL)
+31 \{
+32 \}
+\end{DoxyCode}
+\hypertarget{classEpub_1_1Converter_a9ecd05695a52c03158b81e544e13b996}{\index{Epub\+::\+Converter@{Epub\+::\+Converter}!````~Converter@{$\sim$\+Converter}}
+\index{````~Converter@{$\sim$\+Converter}!Epub\+::\+Converter@{Epub\+::\+Converter}}
+\subsubsection[{$\sim$\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\+::$\sim$\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEpub_1_1Converter_a9ecd05695a52c03158b81e544e13b996}
+
+
+Definition at line 34 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEpub_1_1Converter_aa63e543977130604de659a4d725ee8bd}{\index{Epub\+::\+Converter@{Epub\+::\+Converter}!convert@{convert}}
+\index{convert@{convert}!Epub\+::\+Converter@{Epub\+::\+Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Document $\ast$ Converter\+::convert (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEpub_1_1Converter_aa63e543977130604de659a4d725ee8bd}
+Returns the generated Q\+Text\+Document object. 
+
+Implements \hyperlink{classOkular_1_1TextDocumentConverter_ad05f8bcde0f347c6292968fab331bcef}{Okular\+::\+Text\+Document\+Converter}.
+
+
+
+Definition at line 166 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+167 \{
+168   \hyperlink{classEpub_1_1EpubDocument}{EpubDocument} *newDocument = \textcolor{keyword}{new} \hyperlink{classEpub_1_1EpubDocument}{EpubDocument}(fileName);
+169   \textcolor{keywordflow}{if} (!newDocument->\hyperlink{classEpub_1_1EpubDocument_ad47e936fccea93a28d1ebb0cf3b36624}{isValid}()) \{
+170     emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}(i18n(\textcolor{stringliteral}{"Error while opening the EPub document."}), -1);
+171     \textcolor{keyword}{delete} newDocument;
+172     \textcolor{keywordflow}{return} NULL;
+173   \}
+174   mTextDocument = newDocument;
+175 
+176   QTextCursor *\_cursor = \textcolor{keyword}{new} QTextCursor( mTextDocument );
+177 
+178   mLocalLinks.clear();
+179   mSectionMap.clear();
+180 
+181   \textcolor{comment}{// Emit the document meta data}
+182   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ae400626d63f14b61c55bd22aca9481e0}{Okular::DocumentInfo::Title}, EPUB\_TITLE);
+183   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a1010574d070b1925e030c20fef3e7a35}{Okular::DocumentInfo::Author}, EPUB\_CREATOR);
+184   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a19478a99f97624500aa2d050fe7e1ad8}{Okular::DocumentInfo::Subject}, EPUB\_SUBJECT);
+185   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ab361aa9681b157d8d81e52f440bf646f}{Okular::DocumentInfo::Creator}, EPUB\_PUBLISHER);
+186 
+187   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791acc3edf1d2abe6eecb0882f4389475591}{Okular::DocumentInfo::Description}, EPUB\_DESCRIPTION);
+188 
+189   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a58a72aeacd3cb08e85d0f9f19b2fe83a}{Okular::DocumentInfo::CreationDate}, EPUB\_DATE);
+190   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a1c5f3f7912efdbeff34d16608375c97a}{Okular::DocumentInfo::Category}, EPUB\_TYPE);
+191   \_emitData(\hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a54b1ae59c56cd90e64b518e4d729471a}{Okular::DocumentInfo::Copyright}, EPUB\_RIGHTS);
+192   emit \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{addMetaData}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, \textcolor{stringliteral}{"
+      application/epub+zip"});
+193 
+194   \textcolor{keyword}{struct }eiterator *it;
+195 
+196   \textcolor{comment}{// iterate over the book}
+197   it = epub\_get\_iterator(mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a37cb6d97564a7764b22e44523889267e}{getEpub}(), EITERATOR\_SPINE, 0);
+198 
+199   \textcolor{comment}{// if the background color of the document is non-white it will be handled by QTextDocument::setHtml()}
+200   \textcolor{keywordtype}{bool} firstPage = \textcolor{keyword}{true};
+201   QVector<Okular::MovieAnnotation *> movieAnnots;
+202   QVector<Okular::SoundAction *> soundActions;
+203   \textcolor{keyword}{const} QSize videoSize(320, 240);
+204   \textcolor{keywordflow}{do}\{
+205     movieAnnots.clear();
+206     soundActions.clear();
+207 
+208     \textcolor{keywordflow}{if}(epub\_it\_get\_curr(it)) \{
+209       \textcolor{keyword}{const} QString link = QString::fromUtf8(epub\_it\_get\_curr\_url(it));
+210       mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a6e36681fb7d345bf885150d884513fdf}{setCurrentSubDocument}(link);
+211       QString htmlContent = QString::fromUtf8(epub\_it\_get\_curr(it));
+212 
+213       \textcolor{comment}{// as QTextCharFormat::anchorNames() ignores sections, replace it with <p>}
+214       htmlContent.replace(QRegExp(\textcolor{stringliteral}{"< *section"}),\textcolor{stringliteral}{"<p"});
+215       htmlContent.replace(QRegExp(\textcolor{stringliteral}{"< */ *section"}),\textcolor{stringliteral}{"</p"});
+216 
+217       \textcolor{comment}{// convert svg tags to img}
+218       \textcolor{keyword}{const} \textcolor{keywordtype}{int} maxHeight = mTextDocument->\hyperlink{classEpub_1_1EpubDocument_ae8f068a3e013d7736293a195986d71cb}{maxContentHeight}();
+219       \textcolor{keyword}{const} \textcolor{keywordtype}{int} maxWidth = mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a214f084adb359a132c522ffec0d61aeb}{maxContentWidth}();
+220       QDomDocument dom;
+221       \textcolor{keywordflow}{if}(dom.setContent(htmlContent)) \{
+222         QDomNodeList svgs = dom.elementsByTagName(\textcolor{stringliteral}{"svg"});
+223         \textcolor{keywordflow}{if}(!svgs.isEmpty()) \{
+224           \hyperlink{classQList}{QList< QDomNode >} imgNodes;
+225           \textcolor{keywordflow}{for} (uint i = 0; i < svgs.length(); ++i) \{
+226             QDomNodeList images = svgs.at(i).toElement().elementsByTagName(\textcolor{stringliteral}{"image"});
+227             \textcolor{keywordflow}{for} (uint j = 0; j < images.length(); ++j) \{
+228               QString lnk = images.at(i).toElement().attribute(\textcolor{stringliteral}{"xlink:href"});
+229               \textcolor{keywordtype}{int} ht = images.at(i).toElement().attribute(\textcolor{stringliteral}{"height"}).toInt();
+230               \textcolor{keywordtype}{int} wd = images.at(i).toElement().attribute(\textcolor{stringliteral}{"width"}).toInt();
+231               QImage img = mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a5977d43df31dc940280f6fc80eb6bc75}{loadResource}(QTextDocument::ImageResource,QUrl(lnk)).
+      value<QImage>();
+232               \textcolor{keywordflow}{if}(ht == 0) ht = img.height();
+233               \textcolor{keywordflow}{if}(wd == 0) wd = img.width();
+234               \textcolor{keywordflow}{if}(ht > maxHeight) ht = maxHeight;
+235               \textcolor{keywordflow}{if}(wd > maxWidth) wd = maxWidth;
+236               mTextDocument->addResource(QTextDocument::ImageResource,QUrl(lnk),img);
+237               QDomDocument newDoc;
+238               newDoc.setContent(QString(\textcolor{stringliteral}{"<img src=\(\backslash\)"%1\(\backslash\)" height=\(\backslash\)"%2\(\backslash\)" width=\(\backslash\)"%3\(\backslash\)" />"}).arg(lnk).arg(ht).
+      arg(wd));
+239               imgNodes.append(newDoc.documentElement());
+240             \}
+241             \textcolor{keywordflow}{foreach} (QDomNode nd, imgNodes) \{
+242               svgs.at(i).parentNode().replaceChild(nd,svgs.at(i));
+243             \}
+244           \}
+245         \}
+246 
+247         \textcolor{comment}{// handle embedded videos}
+248         QDomNodeList videoTags = dom.elementsByTagName(\textcolor{stringliteral}{"video"});
+249         \textcolor{keywordflow}{if}(!videoTags.isEmpty()) \{
+250           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < videoTags.size(); ++i) \{
+251             QDomNodeList sourceTags = videoTags.at(i).toElement().elementsByTagName(\textcolor{stringliteral}{"source"});
+252             \textcolor{keywordflow}{if}(!sourceTags.isEmpty()) \{
+253               QString lnk = sourceTags.at(0).toElement().attribute(\textcolor{stringliteral}{"src"});
+254 
+255               \hyperlink{classOkular_1_1Movie}{Okular::Movie} *movie = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Movie}{Okular::Movie}(mTextDocument->
+      \hyperlink{classEpub_1_1EpubDocument_a5977d43df31dc940280f6fc80eb6bc75}{loadResource}(\hyperlink{classEpub_1_1EpubDocument_a8727955892e8fa3c5eaef8d9d3ae7c8fa75a15290b8e57ccaad8ff2dee9593636}{EpubDocument::MovieResource},QUrl(lnk)).toString());
+256               movie->\hyperlink{classOkular_1_1Movie_aaa87050fba266ea14b37b7c9fa458c2f}{setSize}(videoSize);
+257               movie->\hyperlink{classOkular_1_1Movie_a72c045992d6fb31a7280e069422e43e5}{setShowControls}(\textcolor{keyword}{true});
+258 
+259               \hyperlink{classOkular_1_1MovieAnnotation}{Okular::MovieAnnotation} *annot = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1MovieAnnotation}{Okular::MovieAnnotation};
+260               annot->\hyperlink{classOkular_1_1MovieAnnotation_a76ea2ec20c8d441f1b9e2ce6f1eaf21f}{setMovie}(movie);
+261 
+262               movieAnnots.push\_back(annot);
+263               QDomDocument tempDoc;
+264               tempDoc.setContent(QString(\textcolor{stringliteral}{"<pre>&lt;video&gt;&lt;/video&gt;</pre>"}));
+265               videoTags.at(i).parentNode().replaceChild(tempDoc.documentElement(),videoTags.at(i));
+266             \}
+267           \}
+268         \}
+269 
+270         \textcolor{comment}{//handle embedded audio}
+271         QDomNodeList audioTags = dom.elementsByTagName(\textcolor{stringliteral}{"audio"});
+272         \textcolor{keywordflow}{if}(!audioTags.isEmpty()) \{
+273           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < audioTags.size(); ++i) \{
+274             QString lnk = audioTags.at(i).toElement().attribute(\textcolor{stringliteral}{"src"});
+275 
+276             \hyperlink{classOkular_1_1Sound}{Okular::Sound} *sound = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Sound}{Okular::Sound}(mTextDocument->
+      \hyperlink{classEpub_1_1EpubDocument_a5977d43df31dc940280f6fc80eb6bc75}{loadResource}(
+277                     \hyperlink{classEpub_1_1EpubDocument_a8727955892e8fa3c5eaef8d9d3ae7c8fa858f54dd2eb2907bbf1be8fbe0d1c054}{EpubDocument::AudioResource}, QUrl(lnk)).toByteArray());
+278 
+279             \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction} *soundAction = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1SoundAction}{Okular::SoundAction}(1.0,\textcolor{keyword}{true},\textcolor{keyword}{true},\textcolor{keyword}{false},sound);
+280             soundActions.push\_back(soundAction);
+281 
+282             QDomDocument tempDoc;
+283             tempDoc.setContent(QString(\textcolor{stringliteral}{"<pre>&lt;audio&gt;&lt;/audio&gt;</pre>"}));
+284             audioTags.at(i).parentNode().replaceChild(tempDoc.documentElement(),audioTags.at(i));
+285           \}
+286         \}
+287         htmlContent = dom.toString();
+288       \}
+289 
+290       \textcolor{comment}{// HACK BEGIN Get the links without CSS to be blue}
+291       \textcolor{comment}{//            Remove if Qt ever gets fixed and the code in textdocumentgenerator.cpp works}
+292       \textcolor{keyword}{const} QPalette orig = qApp->palette();
+293       QPalette p = orig;
+294       p.setColor(QPalette::Link, Qt::blue);
+295       qApp->setPalette(p);
+296       \textcolor{comment}{// HACK END}
+297 
+298       QTextBlock before;
+299       \textcolor{keywordflow}{if}(firstPage) \{
+300         \textcolor{comment}{// preHtml & postHtml make it possible to have a margin around the content of the page}
+301         \textcolor{keyword}{const} QString preHtml = QString(\textcolor{stringliteral}{"<html><head></head><body>"}
+302                                         \textcolor{stringliteral}{"<table style=\(\backslash\)"-qt-table-type: root; margin-top:%1px;
+       margin-bottom:%1px; margin-left:%1px; margin-right:%1px;\(\backslash\)">"}
+303                                         \textcolor{stringliteral}{"<tr>"}
+304                                         \textcolor{stringliteral}{"<td style=\(\backslash\)"border: none;\(\backslash\)">"}).arg(mTextDocument->padding);
+305         \textcolor{keyword}{const} QString postHtml = \textcolor{stringliteral}{"</tr></table></body></html>"};
+306         mTextDocument->setHtml(preHtml + htmlContent + postHtml);
+307         firstPage = \textcolor{keyword}{false};
+308         before = mTextDocument->begin();
+309       \} \textcolor{keywordflow}{else} \{
+310         before = \_cursor->block();
+311         \_cursor->insertHtml(htmlContent);
+312       \}
+313       \textcolor{comment}{// HACK BEGIN}
+314       qApp->setPalette(orig);
+315       \textcolor{comment}{// HACK END}
+316 
+317       QTextCursor csr(mTextDocument);   \textcolor{comment}{// a temporary cursor}
+318       csr.movePosition(QTextCursor::Start);
+319       \textcolor{keywordtype}{int} index = 0;
+320       \textcolor{keywordflow}{while}( !(csr = mTextDocument->find(\textcolor{stringliteral}{"<video></video>"},csr)).isNull() ) \{
+321         \textcolor{keyword}{const} \textcolor{keywordtype}{int} posStart = csr.position();
+322         \textcolor{keyword}{const} QPoint startPoint = calculateXYPosition(mTextDocument, posStart);
+323         QImage img(KStandardDirs::locate(\textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/okular-epub-movie.png"}));
+324         img = img.scaled(videoSize);
+325         csr.insertImage(img);
+326         \textcolor{keyword}{const} \textcolor{keywordtype}{int} posEnd = csr.position();
+327         \textcolor{keyword}{const} QRect videoRect(startPoint,videoSize);
+328         movieAnnots[index]->setBoundingRectangle(\hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}(videoRect,
+      mTextDocument->pageSize().width(), mTextDocument->pageSize().height()));
+329         emit \hyperlink{classOkular_1_1TextDocumentConverter_ab0291a2187c35bda6dd37c78e5642a1b}{addAnnotation}(movieAnnots[index++],posStart,posEnd);
+330         csr.movePosition(QTextCursor::NextWord);
+331       \}
+332 
+333       csr.movePosition(QTextCursor::Start);
+334       index = 0;
+335       \textcolor{keyword}{const} QString keyToSearch(\textcolor{stringliteral}{"<audio></audio>"});
+336       \textcolor{keywordflow}{while}( !(csr = mTextDocument->find(keyToSearch, csr)).isNull() ) \{
+337         \textcolor{keyword}{const} \textcolor{keywordtype}{int} posStart = csr.position() - keyToSearch.size();
+338         \textcolor{keyword}{const} QImage img(KStandardDirs::locate(\textcolor{stringliteral}{"data"}, \textcolor{stringliteral}{"okular/pics/okular-epub-sound-icon.png"}));
+339         csr.insertImage(img);
+340         \textcolor{keyword}{const} \textcolor{keywordtype}{int} posEnd = csr.position();
+341         qDebug() << posStart << posEnd;;
+342         emit \hyperlink{classOkular_1_1TextDocumentConverter_ac4f1b668547e87affede3663ea6d8bc6}{addAction}(soundActions[index++],posStart,posEnd);
+343         csr.movePosition(QTextCursor::NextWord);
+344       \}
+345 
+346       mSectionMap.insert(link, before);
+347 
+348       \_handle\_anchors(before, link);
+349 
+350       \textcolor{keyword}{const} \textcolor{keywordtype}{int} page = mTextDocument->pageCount();
+351 
+352       \textcolor{comment}{// it will clear the previous format}
+353       \textcolor{comment}{// useful when the last line had a bullet}
+354       \_cursor->insertBlock(QTextBlockFormat());
+355 
+356       \textcolor{keywordflow}{while}(mTextDocument->pageCount() == page)
+357         \_cursor->insertText(\textcolor{stringliteral}{"\(\backslash\)n"});
+358     \}
+359   \} \textcolor{keywordflow}{while} (epub\_it\_get\_next(it));
+360 
+361   epub\_free\_iterator(it);
+362 
+363   \textcolor{comment}{// handle toc}
+364   \textcolor{keyword}{struct }titerator *tit;
+365 
+366   \textcolor{comment}{// FIXME: support other method beside NAVMAP and GUIDE}
+367   tit = epub\_get\_titerator(mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a37cb6d97564a7764b22e44523889267e}{getEpub}(), TITERATOR\_NAVMAP, 0);
+368   \textcolor{keywordflow}{if} (!tit)
+369     tit = epub\_get\_titerator(mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a37cb6d97564a7764b22e44523889267e}{getEpub}(), TITERATOR\_GUIDE, 0);
+370 
+371   \textcolor{keywordflow}{if} (tit) \{
+372     \textcolor{keywordflow}{do} \{
+373       \textcolor{keywordflow}{if} (epub\_tit\_curr\_valid(tit)) \{
+374         \textcolor{keywordtype}{char} *clink = epub\_tit\_get\_curr\_link(tit);
+375         QString link = QString::fromUtf8(clink);
+376         \textcolor{keywordtype}{char} *label = epub\_tit\_get\_curr\_label(tit);
+377         QTextBlock block = mTextDocument->begin(); \textcolor{comment}{// must point somewhere}
+378 
+379         \textcolor{keywordflow}{if} (mSectionMap.contains(link)) \{
+380           block = mSectionMap.value(link);
+381         \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{// load missing resource}
+382           \textcolor{keywordtype}{char} *data = 0;
+383           \textcolor{keywordtype}{int} \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = epub\_get\_data(mTextDocument->\hyperlink{classEpub_1_1EpubDocument_a37cb6d97564a7764b22e44523889267e}{getEpub}(), clink, &data);
+384           \textcolor{keywordflow}{if} (data) \{
+385             \_cursor->insertBlock();
+386 
+387             \textcolor{comment}{// try to load as image and if not load as html}
+388             block = \_cursor->block();
+389             QImage image;
+390             mSectionMap.insert(link, block);
+391             \textcolor{keywordflow}{if} (image.loadFromData((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)data, size)) \{
+392               mTextDocument->addResource(QTextDocument::ImageResource,
+393                                          QUrl(link), image);
+394               \_cursor->insertImage(link);
+395             \} \textcolor{keywordflow}{else} \{
+396               \_cursor->insertHtml(QString::fromUtf8(data));
+397               \textcolor{comment}{// Add anchors to hashes}
+398               \_handle\_anchors(block, link);
+399             \}
+400 
+401             \textcolor{comment}{// Start new file in a new page}
+402             \textcolor{keywordtype}{int} page = mTextDocument->pageCount();
+403             \textcolor{keywordflow}{while}(mTextDocument->pageCount() == page)
+404               \_cursor->insertText(\textcolor{stringliteral}{"\(\backslash\)n"});
+405           \}
+406 
+407           free(data);
+408         \}
+409 
+410         \textcolor{keywordflow}{if} (block.isValid()) \{ \textcolor{comment}{// be sure we actually got a block}
+411           emit \hyperlink{classOkular_1_1TextDocumentConverter_a054a6dbaad659387f26d239aa96d758d}{addTitle}(epub\_tit\_get\_curr\_depth(tit),
+412                         QString::fromUtf8(label),
+413                         block);
+414         \} \textcolor{keywordflow}{else} \{
+415           kDebug() << \textcolor{stringliteral}{"Error: no block found for"}<< link;
+416         \}
+417 
+418         \textcolor{keywordflow}{if} (clink)
+419           free(clink);
+420         \textcolor{keywordflow}{if} (label)
+421           free(label);
+422       \}
+423     \} \textcolor{keywordflow}{while} (epub\_tit\_next(tit));
+424 
+425     epub\_free\_titerator(tit);
+426   \} \textcolor{keywordflow}{else} \{
+427     kDebug() << \textcolor{stringliteral}{"no toc found"};
+428   \}
+429 
+430   \textcolor{comment}{// adding link actions}
+431   QHashIterator<QString, QVector< QPair<int, int> > > hit(mLocalLinks);
+432   \textcolor{keywordflow}{while} (hit.hasNext()) \{
+433     hit.next();
+434 
+435     \textcolor{keyword}{const} QTextBlock block = mSectionMap.value(hit.key());
+436 
+437     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < hit.value().size(); ++i) \{
+438       \textcolor{keywordflow}{if} (block.isValid()) \{ \textcolor{comment}{// be sure we actually got a block}
+439         \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport =
+440           \hyperlink{classOkular_1_1TextDocumentConverter_a5d8709540be1213da6dac78759ce7172}{calculateViewport}(mTextDocument, block);
+441 
+442         \hyperlink{classOkular_1_1GotoAction}{Okular::GotoAction} *action = \textcolor{keyword}{new} \hyperlink{classOkular_1_1GotoAction}{Okular::GotoAction}(QString(), 
+      viewport);
+443 
+444         emit \hyperlink{classOkular_1_1TextDocumentConverter_ac4f1b668547e87affede3663ea6d8bc6}{addAction}(action, hit.value()[i].first, hit.value()[i].second);
+445       \} \textcolor{keywordflow}{else} \{
+446         kDebug() << \textcolor{stringliteral}{"Error: no block found for "}<< hit.key();
+447       \}
+448     \}
+449   \}
+450 
+451   \textcolor{keyword}{delete} \_cursor;
+452 
+453   \textcolor{keywordflow}{return} mTextDocument;
+454 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/epub/\hyperlink{epub_2converter_8h}{converter.\+h}\item 
+generators/epub/\hyperlink{epub_2converter_8cpp}{converter.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,300 @@
+\hypertarget{classTOC}{\section{T\+O\+C Class Reference}
+\label{classTOC}\index{T\+O\+C@{T\+O\+C}}
+}
+
+
+{\ttfamily \#include $<$toc.\+h$>$}
+
+Inheritance diagram for T\+O\+C\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTOC}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTOC_a0ec67e75322336e78c50725b8240f98e}{has\+T\+O\+C} (bool has)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTOC_afdab92acfa2df35fe87bdc92a09199ae}{T\+O\+C} (Q\+Widget $\ast$parent, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document)
+\item 
+\hyperlink{classTOC_a68efd9d176e9ed6aa05b9b0f9e996c7b}{$\sim$\+T\+O\+C} ()
+\item 
+void \hyperlink{classTOC_a131d7a59b8c1254fb54e280fb427c640}{notify\+Setup} (const Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages, int setup\+Flags)
+\item 
+void \hyperlink{classTOC_a3efaad78d7bec63e5dce884c4e460292}{notify\+Current\+Page\+Changed} (int previous, int current)
+\item 
+void \hyperlink{classTOC_a99818f663ddf48fa724aabfdadc1a516}{reparse\+Config} ()
+\item 
+void \hyperlink{classTOC_a2243312419f4c1d2aeb3a426acd80ffc}{prepare\+For\+Reload} ()
+\item 
+void \hyperlink{classTOC_ae7f5172e41ad71865d59f10faf37fd89}{rollback\+Reload} ()
+\item 
+void \hyperlink{classTOC_aac786e77326765a857a4d7bc57ccf53b}{finish\+Reload} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTOC_a66a702c391a4aeef37318b6d79c859f1}{Okular\+::\+Part\+Test}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file toc.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTOC_afdab92acfa2df35fe87bdc92a09199ae}{\index{T\+O\+C@{T\+O\+C}!T\+O\+C@{T\+O\+C}}
+\index{T\+O\+C@{T\+O\+C}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{T\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}T\+O\+C\+::\+T\+O\+C (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document}
+\end{DoxyParamCaption}
+)}}\label{classTOC_afdab92acfa2df35fe87bdc92a09199ae}
+
+
+Definition at line 28 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+28                                                   : QWidget(parent), m\_document(document)
+29 \{
+30     QVBoxLayout *mainlay = \textcolor{keyword}{new} QVBoxLayout( \textcolor{keyword}{this} );
+31     mainlay->setMargin( 0 );
+32     mainlay->setSpacing( 6 );
+33 
+34     m\_searchLine = \textcolor{keyword}{new} \hyperlink{classKTreeViewSearchLine}{KTreeViewSearchLine}( \textcolor{keyword}{this} );
+35     mainlay->addWidget( m\_searchLine );
+36     m\_searchLine->\hyperlink{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}{setCaseSensitivity}( \hyperlink{classOkular_1_1Settings_ae6f72bd2023f2f684f59bca5dde6617c}{Okular::Settings::self}()->
+      contentsSearchCaseSensitive() ? Qt::CaseSensitive : Qt::CaseInsensitive );
+37     m\_searchLine->\hyperlink{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{setRegularExpression}( 
+      \hyperlink{classOkular_1_1Settings_ae6f72bd2023f2f684f59bca5dde6617c}{Okular::Settings::self}()->contentsSearchRegularExpression() );
+38     connect( m\_searchLine, SIGNAL(searchOptionsChanged()), \textcolor{keyword}{this}, SLOT(saveSearchOptions()) );
+39 
+40     m\_treeView = \textcolor{keyword}{new} QTreeView( \textcolor{keyword}{this} );
+41     mainlay->addWidget( m\_treeView );
+42     m\_model = \textcolor{keyword}{new} \hyperlink{classTOCModel}{TOCModel}( document, m\_treeView );
+43     m\_treeView->setModel( m\_model );
+44     m\_treeView->setSortingEnabled( \textcolor{keyword}{false} );
+45     m\_treeView->setRootIsDecorated( \textcolor{keyword}{true} );
+46     m\_treeView->setAlternatingRowColors( \textcolor{keyword}{true} );
+47     m\_treeView->setItemDelegate( \textcolor{keyword}{new} \hyperlink{classPageItemDelegate}{PageItemDelegate}( m\_treeView ) );
+48     m\_treeView->header()->hide();
+49     m\_treeView->setSelectionBehavior( QAbstractItemView::SelectRows );
+50     connect( m\_treeView, SIGNAL(clicked(QModelIndex)), \textcolor{keyword}{this}, SLOT(slotExecuted(QModelIndex)) );
+51     connect( m\_treeView, SIGNAL(activated(QModelIndex)), \textcolor{keyword}{this}, SLOT(slotExecuted(QModelIndex)) );
+52     m\_searchLine->\hyperlink{classKTreeViewSearchLine_ad3b07726c1a9a6644704896f9e40fe6d}{addTreeView}( m\_treeView );
+53 \}
+\end{DoxyCode}
+\hypertarget{classTOC_a68efd9d176e9ed6aa05b9b0f9e996c7b}{\index{T\+O\+C@{T\+O\+C}!````~T\+O\+C@{$\sim$\+T\+O\+C}}
+\index{````~T\+O\+C@{$\sim$\+T\+O\+C}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{$\sim$\+T\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}T\+O\+C\+::$\sim$\+T\+O\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTOC_a68efd9d176e9ed6aa05b9b0f9e996c7b}
+
+
+Definition at line 55 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{
+57     m\_document->\hyperlink{classOkular_1_1Document_a2d704dea2ab28c846e58443ac38841f2}{removeObserver}( \textcolor{keyword}{this} );
+58 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTOC_aac786e77326765a857a4d7bc57ccf53b}{\index{T\+O\+C@{T\+O\+C}!finish\+Reload@{finish\+Reload}}
+\index{finish\+Reload@{finish\+Reload}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{finish\+Reload}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::finish\+Reload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTOC_aac786e77326765a857a4d7bc57ccf53b}
+
+
+Definition at line 113 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+114 \{
+115     m\_treeView->setModel( m\_model );
+116     m\_model->setParent( m\_treeView );
+117 \}
+\end{DoxyCode}
+\hypertarget{classTOC_a0ec67e75322336e78c50725b8240f98e}{\index{T\+O\+C@{T\+O\+C}!has\+T\+O\+C@{has\+T\+O\+C}}
+\index{has\+T\+O\+C@{has\+T\+O\+C}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{has\+T\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::has\+T\+O\+C (
+\begin{DoxyParamCaption}
+\item[{bool}]{has}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classTOC_a0ec67e75322336e78c50725b8240f98e}
+\hypertarget{classTOC_a3efaad78d7bec63e5dce884c4e460292}{\index{T\+O\+C@{T\+O\+C}!notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}}
+\index{notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{notify\+Current\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::notify\+Current\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{previous, }
+\item[{int}]{current}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTOC_a3efaad78d7bec63e5dce884c4e460292}
+This method is called after the current page of the document has been entered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em previous} & The number of the previous page (is {\ttfamily -\/1} for the initial page change). \\
+\hline
+{\em current} & The number of the current page.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_ae449ca3f3f8aa7dffab61a6b723a1fd8}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 85 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+86 \{
+87     m\_model->\hyperlink{classTOCModel_a25d87b5313bdebaa05de74172e74f92b}{setCurrentViewport}( m\_document->\hyperlink{classOkular_1_1Document_abb8738de0a53aa4a9f552de0e1e749f8}{viewport}() );
+88 \}
+\end{DoxyCode}
+\hypertarget{classTOC_a131d7a59b8c1254fb54e280fb427c640}{\index{T\+O\+C@{T\+O\+C}!notify\+Setup@{notify\+Setup}}
+\index{notify\+Setup@{notify\+Setup}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{notify\+Setup}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::notify\+Setup (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages, }
+\item[{int}]{setup\+Flags}
+\end{DoxyParamCaption}
+)}}\label{classTOC_a131d7a59b8c1254fb54e280fb427c640}
+
+
+Definition at line 60 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{
+62     \textcolor{keywordflow}{if} ( !( setupFlags & \hyperlink{classOkular_1_1DocumentObserver_aba00584af99894f95a9650e91f109d40ae599564392c01b22e96eff7602c4dd03}{Okular::DocumentObserver::DocumentChanged}
+       ) )
+63         \textcolor{keywordflow}{return};
+64 
+65     \textcolor{comment}{// clear contents}
+66     m\_model->\hyperlink{classTOCModel_a13fcb8e3043be00cd784c7f4f212df43}{clear}();
+67 
+68     \textcolor{comment}{// request synopsis description (is a dom tree)}
+69     \textcolor{keyword}{const} \hyperlink{classOkular_1_1DocumentSynopsis}{Okular::DocumentSynopsis} * syn = m\_document->
+      \hyperlink{classOkular_1_1Document_aa9dad88fffd255f0a1112228f58512f2}{documentSynopsis}();
+70     \textcolor{keywordflow}{if} ( !syn )
+71     \{
+72         \textcolor{keywordflow}{if} ( m\_document->\hyperlink{classOkular_1_1Document_a909ad69d556a6525e194a28c7fbf643a}{isOpened}() )
+73         \{
+74             \textcolor{comment}{// Make sure we clear the reload old model data}
+75             m\_model->\hyperlink{classTOCModel_a4500588182f65e687ccd77d5b9b8ee4d}{setOldModelData}( 0, QVector<QModelIndex>() );
+76         \}
+77         emit \hyperlink{classTOC_a0ec67e75322336e78c50725b8240f98e}{hasTOC}( \textcolor{keyword}{false} );
+78         \textcolor{keywordflow}{return};
+79     \}
+80 
+81     m\_model->\hyperlink{classTOCModel_a9c2336a41645593a2630dde4d2667425}{fill}( syn );
+82     emit \hyperlink{classTOC_a0ec67e75322336e78c50725b8240f98e}{hasTOC}( !m\_model->\hyperlink{classTOCModel_a2139ba87991f6c0e855ff6d65c5277ae}{isEmpty}() );
+83 \}
+\end{DoxyCode}
+\hypertarget{classTOC_a2243312419f4c1d2aeb3a426acd80ffc}{\index{T\+O\+C@{T\+O\+C}!prepare\+For\+Reload@{prepare\+For\+Reload}}
+\index{prepare\+For\+Reload@{prepare\+For\+Reload}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{prepare\+For\+Reload}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::prepare\+For\+Reload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTOC_a2243312419f4c1d2aeb3a426acd80ffc}
+
+
+Definition at line 90 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+91 \{
+92     \textcolor{keywordflow}{if}( m\_model->\hyperlink{classTOCModel_a2139ba87991f6c0e855ff6d65c5277ae}{isEmpty}() )
+93         \textcolor{keywordflow}{return};
+94 
+95     \textcolor{keyword}{const} QVector<QModelIndex> list = expandedNodes();
+96     \hyperlink{classTOCModel}{TOCModel} *m = m\_model;
+97     m\_model = \textcolor{keyword}{new} \hyperlink{classTOCModel}{TOCModel}( m\_document, m\_treeView );
+98     m\_model->\hyperlink{classTOCModel_a4500588182f65e687ccd77d5b9b8ee4d}{setOldModelData}( m, list );
+99     m->setParent( 0 );
+100 \}
+\end{DoxyCode}
+\hypertarget{classTOC_a99818f663ddf48fa724aabfdadc1a516}{\index{T\+O\+C@{T\+O\+C}!reparse\+Config@{reparse\+Config}}
+\index{reparse\+Config@{reparse\+Config}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{reparse\+Config}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::reparse\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTOC_a99818f663ddf48fa724aabfdadc1a516}
+
+
+Definition at line 137 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+138 \{
+139     m\_searchLine->\hyperlink{classKTreeViewSearchLine_a8eda8a70474ddee7918c32a0f60ce3c7}{setCaseSensitivity}( 
+      \hyperlink{classOkular_1_1Settings_a7e3c3e1cc78df41df617b0ccbb58679b}{Okular::Settings::contentsSearchCaseSensitive}() ? 
+      Qt::CaseSensitive : Qt::CaseInsensitive );
+140     m\_searchLine->\hyperlink{classKTreeViewSearchLine_ad1bd6c121df94564fea08af73c39b88b}{setRegularExpression}( 
+      \hyperlink{classOkular_1_1Settings_aeaa31cc9210d911e12970b80b72ef04e}{Okular::Settings::contentsSearchRegularExpression}() );
+141     m\_treeView->update();
+142 \}
+\end{DoxyCode}
+\hypertarget{classTOC_ae7f5172e41ad71865d59f10faf37fd89}{\index{T\+O\+C@{T\+O\+C}!rollback\+Reload@{rollback\+Reload}}
+\index{rollback\+Reload@{rollback\+Reload}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{rollback\+Reload}]{\setlength{\rightskip}{0pt plus 5cm}void T\+O\+C\+::rollback\+Reload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTOC_ae7f5172e41ad71865d59f10faf37fd89}
+
+
+Definition at line 102 of file toc.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{if}( !m\_model->\hyperlink{classTOCModel_aa91c6a23d109985b0b058fed64638176}{hasOldModelData}() )
+105         \textcolor{keywordflow}{return};
+106 
+107     \hyperlink{classTOCModel}{TOCModel} *m = m\_model;
+108     m\_model = m->\hyperlink{classTOCModel_a09a24dc3c9f6769d2e832f63c5d5b5da}{clearOldModelData}();
+109     m\_model->setParent( m\_treeView );
+110     \textcolor{keyword}{delete} m;
+111 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classTOC_a66a702c391a4aeef37318b6d79c859f1}{\index{T\+O\+C@{T\+O\+C}!Okular\+::\+Part\+Test@{Okular\+::\+Part\+Test}}
+\index{Okular\+::\+Part\+Test@{Okular\+::\+Part\+Test}!T\+O\+C@{T\+O\+C}}
+\subsubsection[{Okular\+::\+Part\+Test}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Okular\+::\+Part\+Test}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classTOC_a66a702c391a4aeef37318b6d79c859f1}
+
+
+Definition at line 33 of file toc.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{toc_8h}{toc.\+h}\item 
+ui/\hyperlink{toc_8cpp}{toc.\+cpp}\end{DoxyCompactItemize}

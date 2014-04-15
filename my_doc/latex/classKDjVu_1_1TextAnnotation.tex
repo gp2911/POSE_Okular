@@ -1,0 +1,163 @@
+\hypertarget{classKDjVu_1_1TextAnnotation}{\section{K\+Dj\+Vu\+:\+:Text\+Annotation Class Reference}
+\label{classKDjVu_1_1TextAnnotation}\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+}
+
+
+{\ttfamily \#include $<$kdjvu.\+h$>$}
+
+Inheritance diagram for K\+Dj\+Vu\+:\+:Text\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKDjVu_1_1TextAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classKDjVu_1_1TextAnnotation_a992ee92b526e912ee1dd6338c54eb350}{type} () const 
+\item 
+virtual Q\+Color \hyperlink{classKDjVu_1_1TextAnnotation_aff59cc205ed543d4ec440d318025468e}{color} () const 
+\item 
+virtual void \hyperlink{classKDjVu_1_1TextAnnotation_afc4989881d5b7d3b399a3622712edfb9}{set\+Color} (const Q\+Color \&\hyperlink{classKDjVu_1_1TextAnnotation_aff59cc205ed543d4ec440d318025468e}{color})
+\item 
+Q\+Size \hyperlink{classKDjVu_1_1TextAnnotation_a01b6e794358e49a7aa686315c35793a6}{size} () const 
+\item 
+bool \hyperlink{classKDjVu_1_1TextAnnotation_adcaceabd4f08391e169c32b215a00b74}{inline\+Text} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classKDjVu_1_1TextAnnotation_a4241ce0336d22245ffdb13dd5cb6edcc}{K\+Dj\+Vu}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A Dj\+Vu text annotation. 
+
+Definition at line 148 of file kdjvu.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKDjVu_1_1TextAnnotation_aff59cc205ed543d4ec440d318025468e}{\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}!color@{color}}
+\index{color@{color}!K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color K\+Dj\+Vu\+::\+Text\+Annotation\+::color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKDjVu_1_1TextAnnotation_aff59cc205ed543d4ec440d318025468e}
+
+
+Reimplemented from \hyperlink{classKDjVu_1_1Annotation_a7135ef982f0794b604232fa2802a3770}{K\+Dj\+Vu\+::\+Annotation}.
+
+
+
+Definition at line 321 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+322 \{
+323     \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} col = find\_second\_in\_pair( \hyperlink{classKDjVu_1_1Annotation_a7334ba00c896becbe9630c5f2e1bbd28}{m\_anno}, \textcolor{stringliteral}{"backclr"} );
+324     \textcolor{keywordflow}{if} ( !miniexp\_symbolp( col ) )
+325         \textcolor{keywordflow}{return} Qt::transparent;
+326 
+327     \textcolor{keywordflow}{return} QColor( QString::fromUtf8( miniexp\_to\_name( col ) ) );
+328 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1TextAnnotation_adcaceabd4f08391e169c32b215a00b74}{\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}!inline\+Text@{inline\+Text}}
+\index{inline\+Text@{inline\+Text}!K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+\subsubsection[{inline\+Text}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Dj\+Vu\+::\+Text\+Annotation\+::inline\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKDjVu_1_1TextAnnotation_adcaceabd4f08391e169c32b215a00b74}
+
+
+Definition at line 336 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+337 \{
+338     \textcolor{keywordflow}{return} m\_inlineText;
+339 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1TextAnnotation_afc4989881d5b7d3b399a3622712edfb9}{\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+\subsubsection[{set\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Dj\+Vu\+::\+Text\+Annotation\+::set\+Color (
+\begin{DoxyParamCaption}
+\item[{const Q\+Color \&}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKDjVu_1_1TextAnnotation_afc4989881d5b7d3b399a3622712edfb9}
+
+
+Reimplemented from \hyperlink{classKDjVu_1_1Annotation_a9ed0bebe3716db841d9bed53bb08acbe}{K\+Dj\+Vu\+::\+Annotation}.
+
+
+
+Definition at line 330 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+331 \{
+332     \textcolor{keyword}{const} QByteArray col = \hyperlink{classKDjVu_1_1TextAnnotation_aff59cc205ed543d4ec440d318025468e}{color}.name().toLatin1();
+333     find\_replace\_or\_add\_second\_in\_pair( \hyperlink{classKDjVu_1_1Annotation_a7334ba00c896becbe9630c5f2e1bbd28}{m\_anno}, \textcolor{stringliteral}{"backclr"}, miniexp\_symbol( col ) );
+334 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1TextAnnotation_a01b6e794358e49a7aa686315c35793a6}{\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}!size@{size}}
+\index{size@{size}!K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size K\+Dj\+Vu\+::\+Text\+Annotation\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKDjVu_1_1TextAnnotation_a01b6e794358e49a7aa686315c35793a6}
+
+
+Definition at line 308 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+309 \{
+310     \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} area = miniexp\_nth( 3, \hyperlink{classKDjVu_1_1Annotation_a7334ba00c896becbe9630c5f2e1bbd28}{m\_anno} );
+311     \textcolor{keywordtype}{int} c = miniexp\_to\_int( miniexp\_nth( 3, area ) );
+312     \textcolor{keywordtype}{int} d = miniexp\_to\_int( miniexp\_nth( 4, area ) );
+313     \textcolor{keywordflow}{return} QSize( c, d );
+314 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1TextAnnotation_a992ee92b526e912ee1dd6338c54eb350}{\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}!type@{type}}
+\index{type@{type}!K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int K\+Dj\+Vu\+::\+Text\+Annotation\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKDjVu_1_1TextAnnotation_a992ee92b526e912ee1dd6338c54eb350}
+
+
+Implements \hyperlink{classKDjVu_1_1Annotation_a6930b9190e07f47ba5bb097c95f028c5}{K\+Dj\+Vu\+::\+Annotation}.
+
+
+
+Definition at line 316 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+317 \{
+318     \textcolor{keywordflow}{return} \hyperlink{classKDjVu_1_1Annotation_add3feb5fc9e9f7c314afe748c6cf9225a435588b8a413abf8c6ec4cb75de5cbde}{KDjVu::Annotation::TextAnnotation};
+319 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classKDjVu_1_1TextAnnotation_a4241ce0336d22245ffdb13dd5cb6edcc}{\index{K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}!K\+Dj\+Vu@{K\+Dj\+Vu}}
+\index{K\+Dj\+Vu@{K\+Dj\+Vu}!K\+Dj\+Vu\+::\+Text\+Annotation@{K\+Dj\+Vu\+::\+Text\+Annotation}}
+\subsubsection[{K\+Dj\+Vu}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf K\+Dj\+Vu}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classKDjVu_1_1TextAnnotation_a4241ce0336d22245ffdb13dd5cb6edcc}
+
+
+Definition at line 150 of file kdjvu.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/djvu/\hyperlink{kdjvu_8h}{kdjvu.\+h}\item 
+generators/djvu/\hyperlink{kdjvu_8cpp}{kdjvu.\+cpp}\end{DoxyCompactItemize}

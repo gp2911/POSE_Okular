@@ -1,0 +1,175 @@
+\hypertarget{classOkular_1_1AnnotationProxy}{\section{Okular\+:\+:Annotation\+Proxy Class Reference}
+\label{classOkular_1_1AnnotationProxy}\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+}
+
+
+Native annotation interface.  
+
+
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Annotation\+Proxy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1AnnotationProxy}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543}{Capability} \{ \hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543afd5f00fa1edfb9d2043f90f9938cee3a}{Addition}, 
+\hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ac0cea5683bbb000686ad820c6cd885bf}{Modification}, 
+\hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ace001445896cb9742c5282e4fa127936}{Removal}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1AnnotationProxy_ad24d82a89e740d30a33f3a9a8657304b}{$\sim$\+Annotation\+Proxy} ()
+\item 
+virtual bool \hyperlink{classOkular_1_1AnnotationProxy_a4672c7ad39b464c0676e277cd9adbac7}{supports} (\hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543}{Capability} capability) const =0
+\item 
+virtual void \hyperlink{classOkular_1_1AnnotationProxy_a6fcdaa71557ad79ff1fbbd924887bdfc}{notify\+Addition} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation, int page)=0
+\item 
+virtual void \hyperlink{classOkular_1_1AnnotationProxy_acb43272324440c199bd7a450b41c0d34}{notify\+Modification} (const \hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation, int page, bool appearance\+Changed)=0
+\item 
+virtual void \hyperlink{classOkular_1_1AnnotationProxy_a5d893c0ad68dc29e43e58c7a08f5de49}{notify\+Removal} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$annotation, int page)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Native annotation interface. 
+
+Generators can subclass it to provide native annotation support. Generators can use \hyperlink{classOkular_1_1Annotation_a77c8188ca0d81966c29aebe0ef7ccfef}{Annotation\+::set\+Native\+Id} to store per-\/annotation data.
+
+\begin{DoxySince}{Since}
+0.\+15 (K\+D\+E 4.\+9) 
+\end{DoxySince}
+
+
+Definition at line 686 of file annotations.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543}{\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!Capability@{Capability}}
+\index{Capability@{Capability}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+\subsubsection[{Capability}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Annotation\+Proxy\+::\+Capability}}}\label{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Addition@{Addition}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!Addition@{Addition}}\item[{\em 
+\hypertarget{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543afd5f00fa1edfb9d2043f90f9938cee3a}{Addition}\label{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543afd5f00fa1edfb9d2043f90f9938cee3a}
+}]\hyperlink{classOkular_1_1Generator}{Generator} can create native annotations. \index{Modification@{Modification}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!Modification@{Modification}}\item[{\em 
+\hypertarget{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ac0cea5683bbb000686ad820c6cd885bf}{Modification}\label{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ac0cea5683bbb000686ad820c6cd885bf}
+}]\hyperlink{classOkular_1_1Generator}{Generator} can edit native annotations. \index{Removal@{Removal}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!Removal@{Removal}}\item[{\em 
+\hypertarget{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ace001445896cb9742c5282e4fa127936}{Removal}\label{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ace001445896cb9742c5282e4fa127936}
+}]\hyperlink{classOkular_1_1Generator}{Generator} can remove native annotations. \end{description}
+\end{Desc}
+
+
+Definition at line 689 of file annotations.\+h.
+
+
+\begin{DoxyCode}
+690         \{
+691             \hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543afd5f00fa1edfb9d2043f90f9938cee3a}{Addition},       
+692             \hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ac0cea5683bbb000686ad820c6cd885bf}{Modification},   
+693             \hyperlink{classOkular_1_1AnnotationProxy_ae89e16435aa7e10ac4089e673f44e543ace001445896cb9742c5282e4fa127936}{Removal}         
+694         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1AnnotationProxy_ad24d82a89e740d30a33f3a9a8657304b}{\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!````~Annotation\+Proxy@{$\sim$\+Annotation\+Proxy}}
+\index{````~Annotation\+Proxy@{$\sim$\+Annotation\+Proxy}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+\subsubsection[{$\sim$\+Annotation\+Proxy}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Proxy\+::$\sim$\+Annotation\+Proxy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1AnnotationProxy_ad24d82a89e740d30a33f3a9a8657304b}
+Destroys the annotation proxy. 
+
+Definition at line 171 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+172 \{
+173 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1AnnotationProxy_a6fcdaa71557ad79ff1fbbd924887bdfc}{\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!notify\+Addition@{notify\+Addition}}
+\index{notify\+Addition@{notify\+Addition}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+\subsubsection[{notify\+Addition}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Okular\+::\+Annotation\+Proxy\+::notify\+Addition (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1AnnotationProxy_a6fcdaa71557ad79ff1fbbd924887bdfc}
+Called when a new {\ttfamily annotation} is added to a {\ttfamily page}.
+
+\begin{DoxyNote}{Note}
+Only called if supports(\+Addition) == true 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classPopplerAnnotationProxy_aebfb359939745a4031b0e32a536ad306}{Poppler\+Annotation\+Proxy}.
+
+\hypertarget{classOkular_1_1AnnotationProxy_acb43272324440c199bd7a450b41c0d34}{\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!notify\+Modification@{notify\+Modification}}
+\index{notify\+Modification@{notify\+Modification}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+\subsubsection[{notify\+Modification}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Okular\+::\+Annotation\+Proxy\+::notify\+Modification (
+\begin{DoxyParamCaption}
+\item[{const {\bf Annotation} $\ast$}]{annotation, }
+\item[{int}]{page, }
+\item[{bool}]{appearance\+Changed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1AnnotationProxy_acb43272324440c199bd7a450b41c0d34}
+Called after an existing {\ttfamily annotation} at a given {\ttfamily page} is modified.
+
+\hyperlink{classOkular_1_1Generator}{Generator} can call {\ttfamily annotation} getters to get the new values. {\ttfamily appearance\+Changed} tells if a non-\/visible property was modifed
+
+\begin{DoxyNote}{Note}
+Only called if supports(\+Modification) == true 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classPopplerAnnotationProxy_a24570660843c85dd702d9cf743cb6c79}{Poppler\+Annotation\+Proxy}.
+
+\hypertarget{classOkular_1_1AnnotationProxy_a5d893c0ad68dc29e43e58c7a08f5de49}{\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!notify\+Removal@{notify\+Removal}}
+\index{notify\+Removal@{notify\+Removal}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+\subsubsection[{notify\+Removal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Okular\+::\+Annotation\+Proxy\+::notify\+Removal (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1AnnotationProxy_a5d893c0ad68dc29e43e58c7a08f5de49}
+Called when an existing {\ttfamily annotation} at a given {\ttfamily page} is removed.
+
+\begin{DoxyNote}{Note}
+Only called if supports(\+Removal) == true 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classPopplerAnnotationProxy_a476bb44d9f52463bb445322ec2fc436f}{Poppler\+Annotation\+Proxy}.
+
+\hypertarget{classOkular_1_1AnnotationProxy_a4672c7ad39b464c0676e277cd9adbac7}{\index{Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}!supports@{supports}}
+\index{supports@{supports}!Okular\+::\+Annotation\+Proxy@{Okular\+::\+Annotation\+Proxy}}
+\subsubsection[{supports}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Okular\+::\+Annotation\+Proxy\+::supports (
+\begin{DoxyParamCaption}
+\item[{{\bf Capability}}]{capability}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1AnnotationProxy_a4672c7ad39b464c0676e277cd9adbac7}
+Query for the supported capabilities. 
+
+Implemented in \hyperlink{classPopplerAnnotationProxy_a1c76a27f5bdcae079ac6cc389d790a4a}{Poppler\+Annotation\+Proxy}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,286 @@
+\hypertarget{classSidebarListWidget}{\section{Sidebar\+List\+Widget Class Reference}
+\label{classSidebarListWidget}\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+}
+Inheritance diagram for Sidebar\+List\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSidebarListWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSidebarListWidget_a099ba8d56d7a582e5abc7625de771537}{Sidebar\+List\+Widget} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{classSidebarListWidget_a351bd0fcfcaf4e23dddfd6822829d263}{$\sim$\+Sidebar\+List\+Widget} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSidebarListWidget_aede5c1cbe0204e841a38991defffe380}{mouse\+Double\+Click\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{classSidebarListWidget_a46c986def70ca4cc7d0e52d16f3ed943}{mouse\+Move\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{classSidebarListWidget_a5718e7749f8ef17d2a680404a28dada6}{mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{classSidebarListWidget_abd12787ad015461ab2fbdc046c8cb6fb}{mouse\+Release\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+Q\+Model\+Index \hyperlink{classSidebarListWidget_a80798d3faf893493d4d4b65b258f386c}{move\+Cursor} (Q\+Abstract\+Item\+View\+::\+Cursor\+Action cursor\+Action, Qt\+::\+Keyboard\+Modifiers modifiers)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 208 of file sidebar.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSidebarListWidget_a099ba8d56d7a582e5abc7625de771537}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{Sidebar\+List\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Sidebar\+List\+Widget\+::\+Sidebar\+List\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classSidebarListWidget_a099ba8d56d7a582e5abc7625de771537}
+
+
+Definition at line 237 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+238     : QListWidget( parent )
+239 \{
+240     mousePressedRow = -1;
+241     rowUnderMouse = -1;
+242 \}
+\end{DoxyCode}
+\hypertarget{classSidebarListWidget_a351bd0fcfcaf4e23dddfd6822829d263}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!````~Sidebar\+List\+Widget@{$\sim$\+Sidebar\+List\+Widget}}
+\index{````~Sidebar\+List\+Widget@{$\sim$\+Sidebar\+List\+Widget}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{$\sim$\+Sidebar\+List\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Sidebar\+List\+Widget\+::$\sim$\+Sidebar\+List\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSidebarListWidget_a351bd0fcfcaf4e23dddfd6822829d263}
+
+
+Definition at line 244 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+245 \{
+246 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSidebarListWidget_aede5c1cbe0204e841a38991defffe380}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!mouse\+Double\+Click\+Event@{mouse\+Double\+Click\+Event}}
+\index{mouse\+Double\+Click\+Event@{mouse\+Double\+Click\+Event}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{mouse\+Double\+Click\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+List\+Widget\+::mouse\+Double\+Click\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSidebarListWidget_aede5c1cbe0204e841a38991defffe380}
+
+
+Definition at line 248 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+249 \{
+250     QModelIndex index = indexAt( event->pos() );
+251     \textcolor{keywordflow}{if} ( index.isValid() && !( index.flags() & Qt::ItemIsSelectable ) )
+252         \textcolor{keywordflow}{return};
+253 
+254     QListWidget::mouseDoubleClickEvent( event );
+255 \}
+\end{DoxyCode}
+\hypertarget{classSidebarListWidget_a46c986def70ca4cc7d0e52d16f3ed943}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{mouse\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+List\+Widget\+::mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSidebarListWidget_a46c986def70ca4cc7d0e52d16f3ed943}
+
+
+Definition at line 257 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+258 \{
+259     QModelIndex index = indexAt( event->pos() );
+260 
+261     \textcolor{keywordflow}{if} ( index.isValid() )
+262     \{
+263         \textcolor{keywordflow}{if} ( index.flags() & Qt::ItemIsSelectable )
+264         \{
+265             \textcolor{keywordflow}{if} ( event->buttons() & Qt::LeftButton
+266                  && index.row() != mousePressedRow
+267                  && index.row() != rowUnderMouse )
+268             \{
+269                 mousePressedRow = -1;
+270                 rowUnderMouse = index.row();
+271 
+272                 QMetaObject::invokeMethod(parent(), \textcolor{stringliteral}{"itemClicked"}, Qt::DirectConnection,
+273                     Q\_ARG(QListWidgetItem*, item(index.row())));
+274             \}
+275         \}
+276         \textcolor{keywordflow}{else}
+277             \textcolor{keywordflow}{return};
+278     \}
+279 
+280     QListWidget::mouseMoveEvent( event );
+281 \}
+\end{DoxyCode}
+\hypertarget{classSidebarListWidget_a5718e7749f8ef17d2a680404a28dada6}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+List\+Widget\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSidebarListWidget_a5718e7749f8ef17d2a680404a28dada6}
+
+
+Definition at line 283 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+284 \{
+285     QModelIndex index = indexAt( event->pos() );
+286 
+287     \textcolor{keywordflow}{if} ( index.isValid() )
+288     \{
+289         \textcolor{keywordflow}{if} ( index.flags() & Qt::ItemIsSelectable )
+290         \{
+291             \textcolor{keywordflow}{if} ( event->buttons() & Qt::LeftButton )
+292                 mousePressedRow = index.row();
+293         \}
+294         \textcolor{keywordflow}{else}
+295             \textcolor{keywordflow}{return};
+296     \}
+297 
+298     QListWidget::mousePressEvent( event );
+299 \}
+\end{DoxyCode}
+\hypertarget{classSidebarListWidget_abd12787ad015461ab2fbdc046c8cb6fb}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!mouse\+Release\+Event@{mouse\+Release\+Event}}
+\index{mouse\+Release\+Event@{mouse\+Release\+Event}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{mouse\+Release\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Sidebar\+List\+Widget\+::mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSidebarListWidget_abd12787ad015461ab2fbdc046c8cb6fb}
+
+
+Definition at line 301 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+302 \{
+303     QModelIndex index = indexAt( event->pos() );
+304 
+305     \textcolor{keywordflow}{if} ( index.isValid() )
+306     \{
+307         \textcolor{keywordflow}{if} ( index.flags() & Qt::ItemIsSelectable )
+308         \{
+309             \textcolor{keywordflow}{if} ( event->button() == Qt::LeftButton
+310                  && index.row() != rowUnderMouse )
+311             \{
+312                 QMetaObject::invokeMethod(parent(), \textcolor{stringliteral}{"itemClicked"}, Qt::DirectConnection,
+313                     Q\_ARG(QListWidgetItem*, item(index.row())));
+314             \}
+315         \}
+316         \textcolor{keywordflow}{else}
+317         \{
+318             mousePressedRow = -1;
+319             rowUnderMouse = -1;
+320 
+321             \textcolor{keywordflow}{return};
+322         \}
+323     \}
+324 
+325     mousePressedRow = -1;
+326     rowUnderMouse = -1;
+327 
+328     QListWidget::mouseReleaseEvent( event );
+329 \}
+\end{DoxyCode}
+\hypertarget{classSidebarListWidget_a80798d3faf893493d4d4b65b258f386c}{\index{Sidebar\+List\+Widget@{Sidebar\+List\+Widget}!move\+Cursor@{move\+Cursor}}
+\index{move\+Cursor@{move\+Cursor}!Sidebar\+List\+Widget@{Sidebar\+List\+Widget}}
+\subsubsection[{move\+Cursor}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Model\+Index Sidebar\+List\+Widget\+::move\+Cursor (
+\begin{DoxyParamCaption}
+\item[{Q\+Abstract\+Item\+View\+::\+Cursor\+Action}]{cursor\+Action, }
+\item[{Qt\+::\+Keyboard\+Modifiers}]{modifiers}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSidebarListWidget_a80798d3faf893493d4d4b65b258f386c}
+
+
+Definition at line 331 of file sidebar.\+cpp.
+
+
+\begin{DoxyCode}
+332 \{
+333     Q\_UNUSED( modifiers )
+334     QModelIndex oldindex = currentIndex();
+335     QModelIndex newindex = oldindex;
+336     switch ( cursorAction )
+337     \{
+338         \textcolor{keywordflow}{case} MoveUp:
+339         \textcolor{keywordflow}{case} MovePrevious:
+340         \{
+341             \textcolor{keywordtype}{int} row = oldindex.row() - 1;
+342             \textcolor{keywordflow}{while} ( row > -1 && !( model()->index( row, 0 ).flags() & Qt::ItemIsSelectable ) ) --row;
+343             \textcolor{keywordflow}{if} ( row > -1 )
+344                 newindex = model()->index( row, 0 );
+345             \textcolor{keywordflow}{break};
+346         \}
+347         \textcolor{keywordflow}{case} MoveDown:
+348         \textcolor{keywordflow}{case} MoveNext:
+349         \{
+350             \textcolor{keywordtype}{int} row = oldindex.row() + 1;
+351             \textcolor{keywordtype}{int} max = model()->rowCount();
+352             \textcolor{keywordflow}{while} ( row < max && !( model()->index( row, 0 ).flags() & Qt::ItemIsSelectable ) ) ++row;
+353             \textcolor{keywordflow}{if} ( row < max )
+354                 newindex = model()->index( row, 0 );
+355             \textcolor{keywordflow}{break};
+356         \}
+357         \textcolor{keywordflow}{case} MoveHome:
+358         \textcolor{keywordflow}{case} MovePageUp:
+359         \{
+360             \textcolor{keywordtype}{int} row = 0;
+361             \textcolor{keywordflow}{while} ( row < oldindex.row() && !( model()->index( row, 0 ).flags() & Qt::ItemIsSelectable ) ) 
+      ++row;
+362             \textcolor{keywordflow}{if} ( row < oldindex.row() )
+363                 newindex = model()->index( row, 0 );
+364             \textcolor{keywordflow}{break};
+365         \}
+366         \textcolor{keywordflow}{case} MoveEnd:
+367         \textcolor{keywordflow}{case} MovePageDown:
+368         \{
+369             \textcolor{keywordtype}{int} row = model()->rowCount() - 1;
+370             \textcolor{keywordflow}{while} ( row > oldindex.row() && !( model()->index( row, 0 ).flags() & Qt::ItemIsSelectable ) ) 
+      --row;
+371             \textcolor{keywordflow}{if} ( row > oldindex.row() )
+372                 newindex = model()->index( row, 0 );
+373             \textcolor{keywordflow}{break};
+374         \}
+375         \textcolor{comment}{// no navigation possible for these}
+376         \textcolor{keywordflow}{case} MoveLeft:
+377         \textcolor{keywordflow}{case} MoveRight:
+378             \textcolor{keywordflow}{break};
+379     \}
+380 
+381     \textcolor{comment}{// dirty hack to change item when the key cursor changes item}
+382     \textcolor{keywordflow}{if} ( oldindex != newindex )
+383     \{
+384         emit itemClicked( itemFromIndex( newindex ) );
+385     \}
+386     \textcolor{keywordflow}{return} newindex;
+387 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{sidebar_8cpp}{sidebar.\+cpp}\end{DoxyCompactItemize}

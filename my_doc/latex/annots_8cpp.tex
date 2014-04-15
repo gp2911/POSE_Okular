@@ -1,0 +1,276 @@
+\hypertarget{annots_8cpp}{\section{generators/poppler/annots.cpp File Reference}
+\label{annots_8cpp}\index{generators/poppler/annots.\+cpp@{generators/poppler/annots.\+cpp}}
+}
+{\ttfamily \#include $<$poppler-\/annotation.\+h$>$}\\*
+{\ttfamily \#include $<$qvariant.\+h$>$}\\*
+{\ttfamily \#include $<$core/annotations.\+h$>$}\\*
+{\ttfamily \#include $<$core/area.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}annots.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}generator\+\_\+pdf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}popplerembeddedfile.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config-\/okular-\/poppler.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Sound}{Okular\+::\+Sound} $\ast$ \hyperlink{annots_8cpp_a7dfbf966808de19f5dca09740d6d459d}{create\+Sound\+From\+Poppler\+Sound} (const Poppler\+::\+Sound\+Object $\ast$poppler\+Sound)
+\item 
+\hyperlink{classOkular_1_1Movie}{Okular\+::\+Movie} $\ast$ \hyperlink{annots_8cpp_a685f8b2cbaa4a2d09b4fdddc49a0490c}{create\+Movie\+From\+Poppler\+Movie} (const Poppler\+::\+Movie\+Object $\ast$poppler\+Movie)
+\item 
+\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ \hyperlink{annots_8cpp_a2b1626973e3230098097b3e2631e8d42}{create\+Annotation\+From\+Poppler\+Annotation} (Poppler\+::\+Annotation $\ast$ann, bool $\ast$do\+Delete)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{annots_8cpp_a2b1626973e3230098097b3e2631e8d42}{\index{annots.\+cpp@{annots.\+cpp}!create\+Annotation\+From\+Poppler\+Annotation@{create\+Annotation\+From\+Poppler\+Annotation}}
+\index{create\+Annotation\+From\+Poppler\+Annotation@{create\+Annotation\+From\+Poppler\+Annotation}!annots.\+cpp@{annots.\+cpp}}
+\subsubsection[{create\+Annotation\+From\+Poppler\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Annotation}$\ast$ create\+Annotation\+From\+Poppler\+Annotation (
+\begin{DoxyParamCaption}
+\item[{Poppler\+::\+Annotation $\ast$}]{ann, }
+\item[{bool $\ast$}]{do\+Delete}
+\end{DoxyParamCaption}
+)}}\label{annots_8cpp_a2b1626973e3230098097b3e2631e8d42}
+
+
+Definition at line 271 of file annots.\+cpp.
+
+
+\begin{DoxyCode}
+272 \{
+273     \hyperlink{classOkular_1_1Annotation}{Okular::Annotation} *annotation = 0;
+274     *doDelete = \textcolor{keyword}{true};
+275     \textcolor{keywordtype}{bool} tieToOkularAnn = \textcolor{keyword}{false};
+276     \textcolor{keywordtype}{bool} externallyDrawn = \textcolor{keyword}{false};
+277     \textcolor{keywordflow}{switch} ( ann->subType() )
+278     \{
+279         \textcolor{keywordflow}{case} Poppler::Annotation::AFileAttachment:
+280         \{
+281             Poppler::FileAttachmentAnnotation * attachann = \textcolor{keyword}{static\_cast<} Poppler::FileAttachmentAnnotation 
+      * \textcolor{keyword}{>}( ann );
+282             \hyperlink{classOkular_1_1FileAttachmentAnnotation}{Okular::FileAttachmentAnnotation} * f = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1FileAttachmentAnnotation}{Okular::FileAttachmentAnnotation}();
+283             annotation = f;
+284             tieToOkularAnn = \textcolor{keyword}{true};
+285             *doDelete = \textcolor{keyword}{false};
+286 
+287             f->\hyperlink{classOkular_1_1FileAttachmentAnnotation_a2238e204c2b8472aeba4f4797c347287}{setFileIconName}( attachann->fileIconName() );
+288             f->\hyperlink{classOkular_1_1FileAttachmentAnnotation_abf9515f11176c72ed9ac37c496ecfc0b}{setEmbeddedFile}( \textcolor{keyword}{new} \hyperlink{classPDFEmbeddedFile}{PDFEmbeddedFile}( attachann->embeddedFile(
+      ) ) );
+289 
+290             \textcolor{keywordflow}{break};
+291         \}
+292         \textcolor{keywordflow}{case} Poppler::Annotation::ASound:
+293         \{
+294             Poppler::SoundAnnotation * soundann = \textcolor{keyword}{static\_cast<} Poppler::SoundAnnotation * \textcolor{keyword}{>}( ann );
+295             \hyperlink{classOkular_1_1SoundAnnotation}{Okular::SoundAnnotation} * s = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1SoundAnnotation}{Okular::SoundAnnotation}();
+296             annotation = s;
+297 
+298             s->\hyperlink{classOkular_1_1SoundAnnotation_a31cff8844c1f44ba429aaa5b19ae0174}{setSoundIconName}( soundann->soundIconName() );
+299             s->\hyperlink{classOkular_1_1SoundAnnotation_addaf9b30f0d8bd216d3738c278bcdd24}{setSound}( \hyperlink{annots_8cpp_a7dfbf966808de19f5dca09740d6d459d}{createSoundFromPopplerSound}( soundann->sound() 
+      ) );
+300 
+301             \textcolor{keywordflow}{break};
+302         \}
+303         \textcolor{keywordflow}{case} Poppler::Annotation::AMovie:
+304         \{
+305             Poppler::MovieAnnotation * movieann = \textcolor{keyword}{static\_cast<} Poppler::MovieAnnotation * \textcolor{keyword}{>}( ann );
+306             \hyperlink{classOkular_1_1MovieAnnotation}{Okular::MovieAnnotation} * m = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1MovieAnnotation}{Okular::MovieAnnotation}();
+307             annotation = m;
+308             tieToOkularAnn = \textcolor{keyword}{true};
+309             *doDelete = \textcolor{keyword}{false};
+310 
+311             m->\hyperlink{classOkular_1_1MovieAnnotation_a76ea2ec20c8d441f1b9e2ce6f1eaf21f}{setMovie}( \hyperlink{annots_8cpp_a685f8b2cbaa4a2d09b4fdddc49a0490c}{createMovieFromPopplerMovie}( movieann->movie() 
+      ) );
+312 
+313             \textcolor{keywordflow}{break};
+314         \}
+315 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+316         \textcolor{keywordflow}{case} Poppler::Annotation::AWidget:
+317         \{
+318             annotation = \textcolor{keyword}{new} \hyperlink{classOkular_1_1WidgetAnnotation}{Okular::WidgetAnnotation}();
+319             \textcolor{keywordflow}{break};
+320         \}
+321 \textcolor{preprocessor}{#endif}
+322 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_20}
+323         \textcolor{keywordflow}{case} Poppler::Annotation::AScreen:
+324         \{
+325 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+326             \hyperlink{classOkular_1_1ScreenAnnotation}{Okular::ScreenAnnotation} * m = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1ScreenAnnotation}{Okular::ScreenAnnotation}();
+327             annotation = m;
+328             tieToOkularAnn = \textcolor{keyword}{true};
+329             *doDelete = \textcolor{keyword}{false};
+330 \textcolor{preprocessor}{#else}
+331             Poppler::ScreenAnnotation * screenann = \textcolor{keyword}{static\_cast<} Poppler::ScreenAnnotation * \textcolor{keyword}{>}( ann );
+332             \hyperlink{classOkular_1_1MovieAnnotation}{Okular::MovieAnnotation} * m = \textcolor{keyword}{new} 
+      \hyperlink{classOkular_1_1MovieAnnotation}{Okular::MovieAnnotation}();
+333             annotation = m;
+334 
+335             m->\hyperlink{classOkular_1_1MovieAnnotation_a76ea2ec20c8d441f1b9e2ce6f1eaf21f}{setMovie}( createMovieFromPopplerScreen( screenann->action() ) );
+336 \textcolor{preprocessor}{#endif}
+337             \textcolor{keywordflow}{break};
+338         \}
+339         \textcolor{keywordflow}{case} Poppler::Annotation::AText:
+340         \textcolor{keywordflow}{case} Poppler::Annotation::ALine:
+341         \textcolor{keywordflow}{case} Poppler::Annotation::AGeom:
+342         \textcolor{keywordflow}{case} Poppler::Annotation::AHighlight:
+343         \textcolor{keywordflow}{case} Poppler::Annotation::AInk:
+344         \{
+345             externallyDrawn = \textcolor{keyword}{true};
+346             \textcolor{comment}{/* fallback */}
+347         \}
+348         \textcolor{keywordflow}{case} Poppler::Annotation::AStamp:
+349         \{
+350             tieToOkularAnn = \textcolor{keyword}{true};
+351             *doDelete = \textcolor{keyword}{false};
+352             \textcolor{comment}{/* fallback */}
+353         \}
+354 \textcolor{preprocessor}{#endif}
+355         \textcolor{keywordflow}{default}:
+356         \{
+357             \textcolor{comment}{// this is uber ugly but i don't know a better way to do it without introducing a
+       poppler::annotation dependency on core}
+358             QDomDocument doc;
+359             QDomElement root = doc.createElement( \textcolor{stringliteral}{"root"} );
+360             doc.appendChild( root );
+361             Poppler::AnnotationUtils::storeAnnotation( ann, root, doc );
+362             annotation = \hyperlink{classOkular_1_1AnnotationUtils_a790854adbb753b2a448640021442bf73}{Okular::AnnotationUtils::createAnnotation}
+      ( root );
+363             \textcolor{keywordflow}{break};
+364         \}
+365     \}
+366     \textcolor{keywordflow}{if} ( annotation )
+367     \{
+368         \textcolor{comment}{// the Contents field might have lines separated by \(\backslash\)r}
+369         QString contents = ann->contents();
+370         contents.replace( QLatin1Char( \textcolor{charliteral}{'\(\backslash\)r'} ), QLatin1Char( \textcolor{charliteral}{'\(\backslash\)n'} ) );
+371 
+372         annotation->\hyperlink{classOkular_1_1Annotation_ac67827a495bc3ca9fc91c82590c7bf35}{setAuthor}( ann->author() );
+373         annotation->\hyperlink{classOkular_1_1Annotation_a65a7316062031c6fdf578835245ddbd1}{setContents}( contents );
+374         annotation->\hyperlink{classOkular_1_1Annotation_a9a9c80155d92ff897450e4a06f84d7f1}{setUniqueName}( ann->uniqueName() );
+375         annotation->\hyperlink{classOkular_1_1Annotation_a1ea7e94039a7dc3dce500ae96817b30d}{setModificationDate}( ann->modificationDate() );
+376         annotation->\hyperlink{classOkular_1_1Annotation_a7b8e97b104dc0b8cd8ff95253d95e167}{setCreationDate}( ann->creationDate() );
+377         annotation->\hyperlink{classOkular_1_1Annotation_ab91b36dc7ecfd9cacba7761ec58145fd}{setFlags}( ann->flags() | 
+      \hyperlink{classOkular_1_1Annotation_a8a214541446745761efeda70b3a4302eabe908102c97a725aa1928602f17833c0}{Okular::Annotation::External} );
+378         annotation->\hyperlink{classOkular_1_1Annotation_a6977075c78f130b71ddbbda924480f38}{setBoundingRectangle}( 
+      \hyperlink{classOkular_1_1NormalizedRect_a8e32af446abd7dbd07ae285a2ee4faa6}{Okular::NormalizedRect::fromQRectF}( ann->boundary() ) );
+379 
+380         \textcolor{keywordflow}{if} (externallyDrawn)
+381             annotation->\hyperlink{classOkular_1_1Annotation_ab91b36dc7ecfd9cacba7761ec58145fd}{setFlags}( annotation->\hyperlink{classOkular_1_1Annotation_a3d6f7ee5057155b90e76c24768880947}{flags}() | 
+      \hyperlink{classOkular_1_1Annotation_a8a214541446745761efeda70b3a4302ea75f088f5533ace9d9d47a506b707f5a1}{Okular::Annotation::ExternallyDrawn} );
+382 
+383         \textcolor{comment}{// Poppler stores highlight points in swapped order}
+384         \textcolor{keywordflow}{if} ( annotation->\hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{subType}() == \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a03e002f9ae62005b2d7c7f1445507501}{Okular::Annotation::AHighlight} )
+385         \{
+386             \hyperlink{classOkular_1_1HighlightAnnotation}{Okular::HighlightAnnotation} * hlann = \textcolor{keyword}{static\_cast<}
+      \hyperlink{classOkular_1_1HighlightAnnotation}{Okular::HighlightAnnotation}*\textcolor{keyword}{>}( annotation );
+387             \hyperlink{classQList}{QList<Okular::HighlightAnnotation::Quad>} &quads = hlann
+      ->\hyperlink{classOkular_1_1HighlightAnnotation_ac0099fec5f383ea7296b86db15b6c08c}{highlightQuads}();
+388             \textcolor{keywordflow}{for} (\hyperlink{classQList}{QList<Okular::HighlightAnnotation::Quad>::iterator}
+       it = quads.begin(); it != quads.end(); ++it)
+389             \{
+390                 \hyperlink{classOkular_1_1NormalizedPoint}{Okular::NormalizedPoint} t;
+391                 t = it->point( 3 );
+392                 it->setPoint( it->point(0), 3 );
+393                 it->setPoint( t, 0 );
+394                 t = it->point( 2 );
+395                 it->setPoint( it->point(1), 2 );
+396                 it->setPoint( t, 1 );
+397             \}
+398         \}
+399 
+400         \textcolor{keywordflow}{if} ( annotation->\hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{subType}() == \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a48f93d5a9352abc4e38a45f69075e504}{Okular::Annotation::AText} )
+401         \{
+402             \hyperlink{classOkular_1_1TextAnnotation}{Okular::TextAnnotation} * txtann = \textcolor{keyword}{static\_cast<}
+      \hyperlink{classOkular_1_1TextAnnotation}{Okular::TextAnnotation}*\textcolor{keyword}{>}( annotation );
+403 
+404             \textcolor{keywordflow}{if} ( txtann->\hyperlink{classOkular_1_1TextAnnotation_acf75a9a22542d3008a486298972e6dcf}{textType}() == \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}{Okular::TextAnnotation::Linked}
+       )
+405             \{
+406                 Poppler::TextAnnotation * ppl\_txtann = \textcolor{keyword}{static\_cast<}Poppler::TextAnnotation*\textcolor{keyword}{>}( ann );
+407 
+408                 \textcolor{comment}{// Poppler and Okular assume a different default icon name in XML}
+409                 \textcolor{comment}{// We re-read it via getter, which always tells the right one}
+410                 txtann->\hyperlink{classOkular_1_1TextAnnotation_a4fc186a6617f71488283fa6f7dcf8222}{setTextIcon}( ppl\_txtann->textIcon() );
+411             \}
+412         \}
+413 
+414         \textcolor{comment}{// TODO clone style}
+415         \textcolor{comment}{// TODO clone window}
+416         \textcolor{comment}{// TODO clone revisions}
+417         \textcolor{keywordflow}{if} ( tieToOkularAnn )
+418         \{
+419             annotation->\hyperlink{classOkular_1_1Annotation_a77c8188ca0d81966c29aebe0ef7ccfef}{setNativeId}( qVariantFromValue( ann ) );
+420             annotation->\hyperlink{classOkular_1_1Annotation_a83d33746416b0a8fc528da35db3e9849}{setDisposeDataFunction}( disposeAnnotation );
+421         \}
+422     \}
+423     \textcolor{keywordflow}{return} annotation;
+424 \}
+\end{DoxyCode}
+\hypertarget{annots_8cpp_a685f8b2cbaa4a2d09b4fdddc49a0490c}{\index{annots.\+cpp@{annots.\+cpp}!create\+Movie\+From\+Poppler\+Movie@{create\+Movie\+From\+Poppler\+Movie}}
+\index{create\+Movie\+From\+Poppler\+Movie@{create\+Movie\+From\+Poppler\+Movie}!annots.\+cpp@{annots.\+cpp}}
+\subsubsection[{create\+Movie\+From\+Poppler\+Movie}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Movie}$\ast$ create\+Movie\+From\+Poppler\+Movie (
+\begin{DoxyParamCaption}
+\item[{const Poppler\+::\+Movie\+Object $\ast$}]{poppler\+Movie}
+\end{DoxyParamCaption}
+)}}\label{annots_8cpp_a685f8b2cbaa4a2d09b4fdddc49a0490c}
+
+
+Definition at line 180 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+181 \{
+182     \hyperlink{classOkular_1_1Movie}{Okular::Movie} *movie = \textcolor{keyword}{new} \hyperlink{classOkular_1_1Movie}{Okular::Movie}( popplerMovie->url() );
+183     movie->\hyperlink{classOkular_1_1Movie_aaa87050fba266ea14b37b7c9fa458c2f}{setSize}( popplerMovie->size() );
+184     movie->\hyperlink{classOkular_1_1Movie_a4757f9f66bdf2e55e3a5152f7e64feff}{setRotation}( (\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Okular::Rotation})( popplerMovie->rotation() / 90 ) );
+185     movie->\hyperlink{classOkular_1_1Movie_a72c045992d6fb31a7280e069422e43e5}{setShowControls}( popplerMovie->showControls() );
+186     movie->\hyperlink{classOkular_1_1Movie_aded1be790e1fa157dbc9b735e05429e7}{setPlayMode}( (\hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099b}{Okular::Movie::PlayMode})popplerMovie->playMode()
+       );
+187     movie->\hyperlink{classOkular_1_1Movie_a732120bf461a2c6d8682732f0fbcc780}{setAutoPlay}( \textcolor{keyword}{false} ); \textcolor{comment}{// will be triggered by external MovieAnnotation}
+188 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+189     movie->\hyperlink{classOkular_1_1Movie_a5bb46f14d21365b05afbd8c8bcca2dbe}{setShowPosterImage}( popplerMovie->showPosterImage() );
+190     movie->\hyperlink{classOkular_1_1Movie_a232c2d19a1b1f8e2bbfaf1debeaf18f4}{setPosterImage}( popplerMovie->posterImage() );
+191 \textcolor{preprocessor}{#endif}
+192     \textcolor{keywordflow}{return} movie;
+193 \}
+\end{DoxyCode}
+\hypertarget{annots_8cpp_a7dfbf966808de19f5dca09740d6d459d}{\index{annots.\+cpp@{annots.\+cpp}!create\+Sound\+From\+Poppler\+Sound@{create\+Sound\+From\+Poppler\+Sound}}
+\index{create\+Sound\+From\+Poppler\+Sound@{create\+Sound\+From\+Poppler\+Sound}!annots.\+cpp@{annots.\+cpp}}
+\subsubsection[{create\+Sound\+From\+Poppler\+Sound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Sound}$\ast$ create\+Sound\+From\+Poppler\+Sound (
+\begin{DoxyParamCaption}
+\item[{const Poppler\+::\+Sound\+Object $\ast$}]{poppler\+Sound}
+\end{DoxyParamCaption}
+)}}\label{annots_8cpp_a7dfbf966808de19f5dca09740d6d459d}
+
+
+Definition at line 156 of file generator\+\_\+pdf.\+cpp.
+
+
+\begin{DoxyCode}
+157 \{
+158     \hyperlink{classOkular_1_1Sound}{Okular::Sound} *sound = popplerSound->\hyperlink{classOkular_1_1Sound_a6ad3b22679e6a6db9d69230ce94bf247}{soundType}() == 
+      Poppler::SoundObject::Embedded ? \textcolor{keyword}{new} \hyperlink{classOkular_1_1Sound}{Okular::Sound}( popplerSound->data() ) : \textcolor{keyword}{new} \hyperlink{classOkular_1_1Sound}{Okular::Sound}( popplerSound->
+      url() );
+159     sound->\hyperlink{classOkular_1_1Sound_a4be8e371220885251a6effe3cf340349}{setSamplingRate}( popplerSound->samplingRate() );
+160     sound->\hyperlink{classOkular_1_1Sound_aa0c02b65856e96fe47ee8bb65e1fe693}{setChannels}( popplerSound->channels() );
+161     sound->\hyperlink{classOkular_1_1Sound_aae4a171bb2acd75280372ebda96516e5}{setBitsPerSample}( popplerSound->bitsPerSample() );
+162     \textcolor{keywordflow}{switch} ( popplerSound->soundEncoding() )
+163     \{
+164         \textcolor{keywordflow}{case} Poppler::SoundObject::Raw:
+165             sound->\hyperlink{classOkular_1_1Sound_aea9528cfcab890f5231318880e51839f}{setSoundEncoding}( \hyperlink{classOkular_1_1Sound_a4bc04dce6aa25c5aadb2f93d0fafe5f8a10d7500cc3f7778181b9850512b0507a}{Okular::Sound::Raw} );
+166             \textcolor{keywordflow}{break};
+167         \textcolor{keywordflow}{case} Poppler::SoundObject::Signed:
+168             sound->\hyperlink{classOkular_1_1Sound_aea9528cfcab890f5231318880e51839f}{setSoundEncoding}( \hyperlink{classOkular_1_1Sound_a4bc04dce6aa25c5aadb2f93d0fafe5f8ad923ae0ea21dd58a4b1e7d380b8daf59}{Okular::Sound::Signed} );
+169             \textcolor{keywordflow}{break};
+170         \textcolor{keywordflow}{case} Poppler::SoundObject::muLaw:
+171             sound->\hyperlink{classOkular_1_1Sound_aea9528cfcab890f5231318880e51839f}{setSoundEncoding}( \hyperlink{classOkular_1_1Sound_a4bc04dce6aa25c5aadb2f93d0fafe5f8a99878763f9826b226f11ca376739c9af}{Okular::Sound::muLaw} );
+172             \textcolor{keywordflow}{break};
+173         \textcolor{keywordflow}{case} Poppler::SoundObject::ALaw:
+174             sound->\hyperlink{classOkular_1_1Sound_aea9528cfcab890f5231318880e51839f}{setSoundEncoding}( \hyperlink{classOkular_1_1Sound_a4bc04dce6aa25c5aadb2f93d0fafe5f8a6ef006851290e544293f6305886d6b07}{Okular::Sound::ALaw} );
+175             \textcolor{keywordflow}{break};
+176     \}
+177     \textcolor{keywordflow}{return} sound;
+178 \}
+\end{DoxyCode}

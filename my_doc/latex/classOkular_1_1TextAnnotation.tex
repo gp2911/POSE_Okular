@@ -1,0 +1,515 @@
+\hypertarget{classOkular_1_1TextAnnotation}{\section{Okular\+:\+:Text\+Annotation Class Reference}
+\label{classOkular_1_1TextAnnotation}\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Text\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1TextAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06e}{Text\+Type} \{ \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}{Linked}, 
+\hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06ea2a746e9125e8cf53627335a8af01b998}{In\+Place}
+ \}
+\item 
+enum \hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5}{Inplace\+Intent} \{ \hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a6562381985b3edbd68dab5602bed50f6}{Unknown}, 
+\hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a1fb0eb4296023907cede7a44c71f8ba3}{Callout}, 
+\hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5adcb9a736c4560aed07977823b8e79e38}{Type\+Writer}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1TextAnnotation_a58b2cb10e88267570c934d6736009c70}{Text\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1TextAnnotation_a1eb50e2bce6803205d14867bd8595743}{Text\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+\hyperlink{classOkular_1_1TextAnnotation_a9d5f05c8e32ad33a4283bac5066f9140}{$\sim$\+Text\+Annotation} ()
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_aa755aebfdc64ce680064d4e9f64dde92}{set\+Text\+Type} (\hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06e}{Text\+Type} type)
+\item 
+\hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06e}{Text\+Type} \hyperlink{classOkular_1_1TextAnnotation_acf75a9a22542d3008a486298972e6dcf}{text\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_a4fc186a6617f71488283fa6f7dcf8222}{set\+Text\+Icon} (const Q\+String \&icon)
+\item 
+Q\+String \hyperlink{classOkular_1_1TextAnnotation_a40844236e2ea8684a6b439c2c3784821}{text\+Icon} () const 
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_adcf0c9d4bbf9445753ff1f082432378b}{set\+Text\+Font} (const Q\+Font \&font)
+\item 
+Q\+Font \hyperlink{classOkular_1_1TextAnnotation_aa48f194058046e70141412a5e85e7199}{text\+Font} () const 
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_a469a5ee0efdbb56d009262f80a8dec23}{set\+Inplace\+Alignment} (int alignment)
+\item 
+int \hyperlink{classOkular_1_1TextAnnotation_ada96fce5c424867d6b48a8ae39a8cace}{inplace\+Alignment} () const 
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_a358a1d173ed0453e4db86034784a7891}{set\+Inplace\+Callout} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&point, int index)
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1TextAnnotation_a5acb61c06f28b13fc92f786748a79948}{inplace\+Callout} (int index) const 
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1TextAnnotation_acbdb084e6d9972db6aa792b21e0c51f2}{transformed\+Inplace\+Callout} (int index) const 
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_af690ccd6d4f35448e4078ad6c85c914f}{set\+Inplace\+Intent} (\hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5}{Inplace\+Intent} intent)
+\item 
+\hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5}{Inplace\+Intent} \hyperlink{classOkular_1_1TextAnnotation_acfa4831c8980e50dc0a47742659a5a63}{inplace\+Intent} () const 
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1TextAnnotation_a9268a7f168ab8bab5ffba1d6bd4f5b32}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1TextAnnotation_a8f2181033c78541d4fdd02d2e37549da}{store} (Q\+Dom\+Node \&node, Q\+Dom\+Document \&document) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 731 of file annotations.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Inplace\+Intent@{Inplace\+Intent}}
+\index{Inplace\+Intent@{Inplace\+Intent}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{Inplace\+Intent}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Text\+Annotation\+::\+Inplace\+Intent}}}\label{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5}
+Describes the style of the text. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Unknown@{Unknown}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Unknown@{Unknown}}\item[{\em 
+\hypertarget{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a6562381985b3edbd68dab5602bed50f6}{Unknown}\label{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a6562381985b3edbd68dab5602bed50f6}
+}]Unknown style. \index{Callout@{Callout}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Callout@{Callout}}\item[{\em 
+\hypertarget{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a1fb0eb4296023907cede7a44c71f8ba3}{Callout}\label{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a1fb0eb4296023907cede7a44c71f8ba3}
+}]Callout style. \index{Type\+Writer@{Type\+Writer}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Type\+Writer@{Type\+Writer}}\item[{\em 
+\hypertarget{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5adcb9a736c4560aed07977823b8e79e38}{Type\+Writer}\label{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5adcb9a736c4560aed07977823b8e79e38}
+}]Type writer style. \end{description}
+\end{Desc}
+
+
+Definition at line 746 of file annotations.\+h.
+
+
+\begin{DoxyCode}
+747         \{
+748             \hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a6562381985b3edbd68dab5602bed50f6}{Unknown},    
+749             \hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a1fb0eb4296023907cede7a44c71f8ba3}{Callout},    
+750             \hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5adcb9a736c4560aed07977823b8e79e38}{TypeWriter}  
+751         \};
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06e}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Text\+Type@{Text\+Type}}
+\index{Text\+Type@{Text\+Type}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{Text\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Text\+Annotation\+::\+Text\+Type}}}\label{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06e}
+Describes the type of the text. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Linked@{Linked}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Linked@{Linked}}\item[{\em 
+\hypertarget{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}{Linked}\label{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}
+}]The annotation is linked to a text. \index{In\+Place@{In\+Place}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!In\+Place@{In\+Place}}\item[{\em 
+\hypertarget{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06ea2a746e9125e8cf53627335a8af01b998}{In\+Place}\label{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06ea2a746e9125e8cf53627335a8af01b998}
+}]The annotation is located next to the text. \end{description}
+\end{Desc}
+
+
+Definition at line 737 of file annotations.\+h.
+
+
+\begin{DoxyCode}
+738         \{
+739             \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}{Linked},  
+740             \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06ea2a746e9125e8cf53627335a8af01b998}{InPlace}  
+741         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1TextAnnotation_a58b2cb10e88267570c934d6736009c70}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Text\+Annotation@{Text\+Annotation}}
+\index{Text\+Annotation@{Text\+Annotation}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{Text\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Annotation\+::\+Text\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_a58b2cb10e88267570c934d6736009c70}
+Creates a new text annotation. 
+
+Definition at line 1004 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1005     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1TextAnnotationPrivate}{TextAnnotationPrivate}() )
+1006 \{
+1007 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a1eb50e2bce6803205d14867bd8595743}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!Text\+Annotation@{Text\+Annotation}}
+\index{Text\+Annotation@{Text\+Annotation}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{Text\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Annotation\+::\+Text\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_a1eb50e2bce6803205d14867bd8595743}
+Creates a new text annotation from the xml {\ttfamily description} 
+
+Definition at line 1009 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1010     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1TextAnnotationPrivate}{TextAnnotationPrivate}(), node )
+1011 \{
+1012 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a9d5f05c8e32ad33a4283bac5066f9140}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!````~Text\+Annotation@{$\sim$\+Text\+Annotation}}
+\index{````~Text\+Annotation@{$\sim$\+Text\+Annotation}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{$\sim$\+Text\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Annotation\+::$\sim$\+Text\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_a9d5f05c8e32ad33a4283bac5066f9140}
+Destroys the text annotation. 
+
+Definition at line 1014 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1015 \{
+1016 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1TextAnnotation_ada96fce5c424867d6b48a8ae39a8cace}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!inplace\+Alignment@{inplace\+Alignment}}
+\index{inplace\+Alignment@{inplace\+Alignment}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{inplace\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Annotation\+::inplace\+Alignment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_ada96fce5c424867d6b48a8ae39a8cace}
+Returns the inplace alignment of the text annotation. 
+
+Definition at line 1060 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1061 \{
+1062     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1063     \textcolor{keywordflow}{return} d->m\_inplaceAlign;
+1064 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a5acb61c06f28b13fc92f786748a79948}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!inplace\+Callout@{inplace\+Callout}}
+\index{inplace\+Callout@{inplace\+Callout}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{inplace\+Callout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Text\+Annotation\+::inplace\+Callout (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_a5acb61c06f28b13fc92f786748a79948}
+Returns the inplace callout point for {\ttfamily index}.
+
+{\ttfamily index} must be between 0 and 2. 
+
+Definition at line 1075 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1076 \{
+1077     \textcolor{keywordflow}{if} ( index < 0 || index > 2 )
+1078         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}();
+1079 
+1080     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1081     \textcolor{keywordflow}{return} d->m\_inplaceCallout[ index ];
+1082 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_acfa4831c8980e50dc0a47742659a5a63}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!inplace\+Intent@{inplace\+Intent}}
+\index{inplace\+Intent@{inplace\+Intent}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{inplace\+Intent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Annotation\+::\+Inplace\+Intent} Text\+Annotation\+::inplace\+Intent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_acfa4831c8980e50dc0a47742659a5a63}
+Returns the inplace intent of the text annotation. 
+
+Definition at line 1099 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1100 \{
+1101     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1102     \textcolor{keywordflow}{return} d->m\_inplaceIntent;
+1103 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a469a5ee0efdbb56d009262f80a8dec23}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!set\+Inplace\+Alignment@{set\+Inplace\+Alignment}}
+\index{set\+Inplace\+Alignment@{set\+Inplace\+Alignment}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{set\+Inplace\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::set\+Inplace\+Alignment (
+\begin{DoxyParamCaption}
+\item[{int}]{alignment}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_a469a5ee0efdbb56d009262f80a8dec23}
+Sets the inplace {\ttfamily alignment} of the text annotation. 
+
+Definition at line 1054 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1055 \{
+1056     Q\_D( \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1057     d->m\_inplaceAlign = alignment;
+1058 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a358a1d173ed0453e4db86034784a7891}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!set\+Inplace\+Callout@{set\+Inplace\+Callout}}
+\index{set\+Inplace\+Callout@{set\+Inplace\+Callout}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{set\+Inplace\+Callout}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::set\+Inplace\+Callout (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{point, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_a358a1d173ed0453e4db86034784a7891}
+Sets the inplace callout {\ttfamily point} at {\ttfamily index}.
+
+{\ttfamily index} must be between 0 and 2. 
+
+Definition at line 1066 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1067 \{
+1068     \textcolor{keywordflow}{if} ( index < 0 || index > 2 )
+1069         \textcolor{keywordflow}{return};
+1070 
+1071     Q\_D( \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1072     d->m\_inplaceCallout[ index ] = point;
+1073 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_af690ccd6d4f35448e4078ad6c85c914f}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!set\+Inplace\+Intent@{set\+Inplace\+Intent}}
+\index{set\+Inplace\+Intent@{set\+Inplace\+Intent}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{set\+Inplace\+Intent}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::set\+Inplace\+Intent (
+\begin{DoxyParamCaption}
+\item[{{\bf Inplace\+Intent}}]{intent}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_af690ccd6d4f35448e4078ad6c85c914f}
+Returns the inplace {\ttfamily intent} of the text annotation. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5}{Inplace\+Intent} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1093 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1094 \{
+1095     Q\_D( \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1096     d->m\_inplaceIntent = intent;
+1097 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_adcf0c9d4bbf9445753ff1f082432378b}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!set\+Text\+Font@{set\+Text\+Font}}
+\index{set\+Text\+Font@{set\+Text\+Font}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{set\+Text\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::set\+Text\+Font (
+\begin{DoxyParamCaption}
+\item[{const Q\+Font \&}]{font}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_adcf0c9d4bbf9445753ff1f082432378b}
+Sets the {\ttfamily font} of the text annotation. 
+
+Definition at line 1042 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1043 \{
+1044     Q\_D( \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1045     d->m\_textFont = font;
+1046 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a4fc186a6617f71488283fa6f7dcf8222}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!set\+Text\+Icon@{set\+Text\+Icon}}
+\index{set\+Text\+Icon@{set\+Text\+Icon}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{set\+Text\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::set\+Text\+Icon (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{icon}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_a4fc186a6617f71488283fa6f7dcf8222}
+Sets the {\ttfamily icon} of the text annotation. 
+
+Definition at line 1030 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1031 \{
+1032     Q\_D( \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1033     d->m\_textIcon = icon;
+1034 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_aa755aebfdc64ce680064d4e9f64dde92}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!set\+Text\+Type@{set\+Text\+Type}}
+\index{set\+Text\+Type@{set\+Text\+Type}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{set\+Text\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::set\+Text\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Text\+Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1TextAnnotation_aa755aebfdc64ce680064d4e9f64dde92}
+Sets the text {\ttfamily type} of the text annotation. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06e}{Text\+Type} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1018 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1019 \{
+1020     Q\_D( \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1021     d->m\_textType = \hyperlink{classOkular_1_1TextAnnotation_acf75a9a22542d3008a486298972e6dcf}{textType};
+1022 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a8f2181033c78541d4fdd02d2e37549da}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextAnnotation_a8f2181033c78541d4fdd02d2e37549da}
+Stores the text annotation as xml in {\ttfamily document} under the given parent {\ttfamily node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 1110 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1111 \{
+1112     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1113     \textcolor{comment}{// recurse to parent objects storing properties}
+1114     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+1115 
+1116     \textcolor{comment}{// create [text] element}
+1117     QDomElement textElement = document.createElement( \textcolor{stringliteral}{"text"} );
+1118     node.appendChild( textElement );
+1119 
+1120     \textcolor{comment}{// store the optional attributes}
+1121     \textcolor{keywordflow}{if} ( d->m\_textType != \hyperlink{classOkular_1_1TextAnnotation_af560204454bf812797bc95bea730b06eaf7d7133e8e4850bf030e108537a9887b}{Linked} )
+1122         textElement.setAttribute( \textcolor{stringliteral}{"type"}, (\textcolor{keywordtype}{int})d->m\_textType );
+1123     \textcolor{keywordflow}{if} ( !d->m\_textIcon.isEmpty() )
+1124         textElement.setAttribute( \textcolor{stringliteral}{"icon"}, d->m\_textIcon );
+1125     \textcolor{keywordflow}{if} ( d->m\_textFont != QApplication::font() )
+1126         textElement.setAttribute( \textcolor{stringliteral}{"font"}, d->m\_textFont.toString() );
+1127     \textcolor{keywordflow}{if} ( d->m\_inplaceAlign )
+1128         textElement.setAttribute( \textcolor{stringliteral}{"align"}, d->m\_inplaceAlign );
+1129     \textcolor{keywordflow}{if} ( d->m\_inplaceIntent != \hyperlink{classOkular_1_1TextAnnotation_a6494ecc81861c6b3da81aa98a3cd16c5a6562381985b3edbd68dab5602bed50f6}{Unknown} )
+1130         textElement.setAttribute( \textcolor{stringliteral}{"intent"}, (\textcolor{keywordtype}{int})d->m\_inplaceIntent );
+1131 
+1132     \textcolor{comment}{// Sub-Node - callout}
+1133     \textcolor{keywordflow}{if} ( d->m\_inplaceCallout[0].x != 0.0 )
+1134     \{
+1135         QDomElement calloutElement = document.createElement( \textcolor{stringliteral}{"callout"} );
+1136         textElement.appendChild( calloutElement );
+1137         calloutElement.setAttribute( \textcolor{stringliteral}{"ax"}, QString::number( d->m\_inplaceCallout[0].x ) );
+1138         calloutElement.setAttribute( \textcolor{stringliteral}{"ay"}, QString::number( d->m\_inplaceCallout[0].y ) );
+1139         calloutElement.setAttribute( \textcolor{stringliteral}{"bx"}, QString::number( d->m\_inplaceCallout[1].x ) );
+1140         calloutElement.setAttribute( \textcolor{stringliteral}{"by"}, QString::number( d->m\_inplaceCallout[1].y ) );
+1141         calloutElement.setAttribute( \textcolor{stringliteral}{"cx"}, QString::number( d->m\_inplaceCallout[2].x ) );
+1142         calloutElement.setAttribute( \textcolor{stringliteral}{"cy"}, QString::number( d->m\_inplaceCallout[2].y ) );
+1143     \}
+1144 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a9268a7f168ab8bab5ffba1d6bd4f5b32}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Text\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1TextAnnotation_a9268a7f168ab8bab5ffba1d6bd4f5b32}
+Returns the sub type of the text annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 1105 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1106 \{
+1107     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a48f93d5a9352abc4e38a45f69075e504}{AText};
+1108 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_aa48f194058046e70141412a5e85e7199}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!text\+Font@{text\+Font}}
+\index{text\+Font@{text\+Font}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{text\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Text\+Annotation\+::text\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_aa48f194058046e70141412a5e85e7199}
+Returns the font of the text annotation. 
+
+Definition at line 1048 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1049 \{
+1050     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1051     \textcolor{keywordflow}{return} d->m\_textFont;
+1052 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_a40844236e2ea8684a6b439c2c3784821}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!text\+Icon@{text\+Icon}}
+\index{text\+Icon@{text\+Icon}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{text\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Text\+Annotation\+::text\+Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_a40844236e2ea8684a6b439c2c3784821}
+Returns the icon of the text annotation. 
+
+Definition at line 1036 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1037 \{
+1038     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1039     \textcolor{keywordflow}{return} d->m\_textIcon;
+1040 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_acf75a9a22542d3008a486298972e6dcf}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!text\+Type@{text\+Type}}
+\index{text\+Type@{text\+Type}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{text\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Annotation\+::\+Text\+Type} Text\+Annotation\+::text\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_acf75a9a22542d3008a486298972e6dcf}
+Returns the text type of the text annotation. 
+
+Definition at line 1024 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1025 \{
+1026     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1027     \textcolor{keywordflow}{return} d->m\_textType;
+1028 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1TextAnnotation_acbdb084e6d9972db6aa792b21e0c51f2}{\index{Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}!transformed\+Inplace\+Callout@{transformed\+Inplace\+Callout}}
+\index{transformed\+Inplace\+Callout@{transformed\+Inplace\+Callout}!Okular\+::\+Text\+Annotation@{Okular\+::\+Text\+Annotation}}
+\subsubsection[{transformed\+Inplace\+Callout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Text\+Annotation\+::transformed\+Inplace\+Callout (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1TextAnnotation_acbdb084e6d9972db6aa792b21e0c51f2}
+Returns the transformed (e.\+g. rotated) inplace callout point for {\ttfamily index}.
+
+{\ttfamily index} must be between 0 and 2. 
+
+Definition at line 1084 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1085 \{
+1086     \textcolor{keywordflow}{if} ( index < 0 || index > 2 )
+1087         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}();
+1088 
+1089     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1TextAnnotation}{TextAnnotation} );
+1090     \textcolor{keywordflow}{return} d->m\_transformedInplaceCallout[ index ];
+1091 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

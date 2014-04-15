@@ -1,0 +1,66 @@
+\hypertarget{qnatsort_8h}{\section{generators/comicbook/qnatsort.h File Reference}
+\label{qnatsort_8h}\index{generators/comicbook/qnatsort.\+h@{generators/comicbook/qnatsort.\+h}}
+}
+{\ttfamily \#include $<$Qt\+Core/\+Q\+String$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{qnatsort_8h_a47cfb218123c3ff38d8e674fb78b9f0d}{case\+Sensitive\+Natural\+Order\+Less\+Then} (const Q\+String \&left, const Q\+String \&right)
+\item 
+bool \hyperlink{qnatsort_8h_a775d80fa61f34045d65c2552a588a23a}{case\+Insensitive\+Natural\+Order\+Less\+Then} (const Q\+String \&left, const Q\+String \&right)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{qnatsort_8h_a775d80fa61f34045d65c2552a588a23a}{\index{qnatsort.\+h@{qnatsort.\+h}!case\+Insensitive\+Natural\+Order\+Less\+Then@{case\+Insensitive\+Natural\+Order\+Less\+Then}}
+\index{case\+Insensitive\+Natural\+Order\+Less\+Then@{case\+Insensitive\+Natural\+Order\+Less\+Then}!qnatsort.\+h@{qnatsort.\+h}}
+\subsubsection[{case\+Insensitive\+Natural\+Order\+Less\+Then}]{\setlength{\rightskip}{0pt plus 5cm}bool case\+Insensitive\+Natural\+Order\+Less\+Then (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{left, }
+\item[{const Q\+String \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{qnatsort_8h_a775d80fa61f34045d65c2552a588a23a}
+Returns whether the {\ttfamily left} string is lesser than the {\ttfamily right} string in natural order and case insensitive. 
+
+Definition at line 155 of file qnatsort.\+cpp.
+
+
+\begin{DoxyCode}
+156 \{
+157   \textcolor{keywordflow}{return} (natural\_order\_compare( left, right, \textcolor{keyword}{true} ) < 0);
+158 \}
+\end{DoxyCode}
+\hypertarget{qnatsort_8h_a47cfb218123c3ff38d8e674fb78b9f0d}{\index{qnatsort.\+h@{qnatsort.\+h}!case\+Sensitive\+Natural\+Order\+Less\+Then@{case\+Sensitive\+Natural\+Order\+Less\+Then}}
+\index{case\+Sensitive\+Natural\+Order\+Less\+Then@{case\+Sensitive\+Natural\+Order\+Less\+Then}!qnatsort.\+h@{qnatsort.\+h}}
+\subsubsection[{case\+Sensitive\+Natural\+Order\+Less\+Then}]{\setlength{\rightskip}{0pt plus 5cm}bool case\+Sensitive\+Natural\+Order\+Less\+Then (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{left, }
+\item[{const Q\+String \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{qnatsort_8h_a47cfb218123c3ff38d8e674fb78b9f0d}
+Natural order sorting of strings which contains numbers.
+
+Copyright 2007 Tobias Koenig \href{mailto:tokoe@kde.org}{\tt tokoe@kde.\+org} based on the natural order code by Martin Pool $<$mbp sourcefrog=\char`\"{}\char`\"{} net$>$=\char`\"{}\char`\"{}$>$
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\+N\+U General Public License version 2 or at your option version 3 as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+U\+T A\+N\+Y W\+A\+R\+R\+A\+N\+T\+Y; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+T\+Y or F\+I\+T\+N\+E\+S\+S F\+O\+R A P\+A\+R\+T\+I\+C\+U\+L\+A\+R P\+U\+R\+P\+O\+S\+E. See the G\+N\+U General Public License for more details.
+
+You should have received a copy of the G\+N\+U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\+A 02110-\/1301, U\+S\+A. The two methods can be used in q\+Sort to sort strings which contain numbers in natural order.
+
+Normally strings are ordered like this\+: fam10g fam1g fam2g fam3g natural ordered it would look like this\+: fam1g fam2g fam3g fam10g
+
+Code\+:
+
+Q\+String\+List list; list $<$$<$ \char`\"{}fam10g\char`\"{} $<$$<$ \char`\"{}fam1g\char`\"{} $<$$<$ \char`\"{}fam2g\char`\"{} $<$$<$ \char`\"{}fam5g\char`\"{};
+
+q\+Sort( list.\+begin(), list.\+end(), case\+Sensitive\+Natural\+Oder\+Less\+Then ); Returns whether the {\ttfamily left} string is lesser than the {\ttfamily right} string in natural order. 
+
+Definition at line 150 of file qnatsort.\+cpp.
+
+
+\begin{DoxyCode}
+151 \{
+152   \textcolor{keywordflow}{return} (natural\_order\_compare( left, right, \textcolor{keyword}{false} ) < 0);
+153 \}
+\end{DoxyCode}

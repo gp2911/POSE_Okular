@@ -1,0 +1,137 @@
+\hypertarget{classKParts_1_1MainWindow}{\section{K\+Parts\+:\+:Main\+Window Class Reference}
+\label{classKParts_1_1MainWindow}\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classKParts_1_1MainWindow}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1MainWindow_a06a7c6c817f9b280804b0cabd28b3696}{configure\+Toolbars} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1MainWindow_a0691c70bec34e706409f019b91ca3173}{Main\+Window} (Q\+Widget $\ast$parent=0, Qt\+::\+Window\+Flags f=K\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+N\+D\+O\+W\+F\+L\+A\+G\+S)
+\item 
+K\+D\+E\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D \hyperlink{classKParts_1_1MainWindow_ad157c37ff711ecd0784569acb2582e07}{Main\+Window} (Q\+Widget $\ast$parent, const char $\ast$name=0, Qt\+::\+Window\+Flags f=K\+D\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+N\+D\+O\+W\+F\+L\+A\+G\+S)
+\item 
+virtual \hyperlink{classKParts_1_1MainWindow_a475129f2af4142fbe3612ec61ee411ef}{$\sim$\+Main\+Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1MainWindow_ac9064b03c5b9c86676e107f0dd80693b}{create\+G\+U\+I} (\hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part} $\ast$part)
+\item 
+virtual void \hyperlink{classKParts_1_1MainWindow_a97b2f32ff0736617b5385274782dd26a}{slot\+Set\+Status\+Bar\+Text} (const Q\+String \&)
+\item 
+void \hyperlink{classKParts_1_1MainWindow_a7ee678f5096405ef023e49390013c0af}{save\+New\+Toolbar\+Config} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1MainWindow_ac388eb6552660ee055c1d41e5f217553}{create\+Shell\+G\+U\+I} (bool create=true)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A K\+Part-\/aware main window, whose user interface is described in X\+M\+L.
+
+Inherit your main window from this class and don't forget to call set\+X\+M\+L\+File() in the inherited constructor.
+
+It implements all internal interfaces in the case of a K\+Main\+Window as host\+: the builder and servant interface (for menu merging). 
+
+Definition at line 46 of file mainwindow.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1MainWindow_a0691c70bec34e706409f019b91ca3173}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Main\+Window\+::\+Main\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}, }
+\item[{Qt\+::\+Window\+Flags}]{f = {\ttfamily KDE\+\_\+DEFAULT\+\_\+WINDOWFLAGS}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classKParts_1_1MainWindow_a0691c70bec34e706409f019b91ca3173}
+Constructor, same signature as K\+Main\+Window. \hypertarget{classKParts_1_1MainWindow_ad157c37ff711ecd0784569acb2582e07}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}K\+D\+E\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D K\+Parts\+::\+Main\+Window\+::\+Main\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{const char $\ast$}]{name = {\ttfamily 0}, }
+\item[{Qt\+::\+Window\+Flags}]{f = {\ttfamily KDE\+\_\+DEFAULT\+\_\+WINDOWFLAGS}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classKParts_1_1MainWindow_ad157c37ff711ecd0784569acb2582e07}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000009}{Deprecated}], remove the name argument and use set\+Object\+Name instead \end{DoxyRefDesc}
+\hypertarget{classKParts_1_1MainWindow_a475129f2af4142fbe3612ec61ee411ef}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
+\index{````~Main\+Window@{$\sim$\+Main\+Window}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{$\sim$\+Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Main\+Window\+::$\sim$\+Main\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1MainWindow_a475129f2af4142fbe3612ec61ee411ef}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1MainWindow_a06a7c6c817f9b280804b0cabd28b3696}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!configure\+Toolbars@{configure\+Toolbars}}
+\index{configure\+Toolbars@{configure\+Toolbars}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{configure\+Toolbars}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Main\+Window\+::configure\+Toolbars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classKParts_1_1MainWindow_a06a7c6c817f9b280804b0cabd28b3696}
+\hypertarget{classKParts_1_1MainWindow_ac9064b03c5b9c86676e107f0dd80693b}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!create\+G\+U\+I@{create\+G\+U\+I}}
+\index{create\+G\+U\+I@{create\+G\+U\+I}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{create\+G\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Main\+Window\+::create\+G\+U\+I (
+\begin{DoxyParamCaption}
+\item[{{\bf K\+Parts\+::\+Part} $\ast$}]{part}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKParts_1_1MainWindow_ac9064b03c5b9c86676e107f0dd80693b}
+Create the G\+U\+I (by merging the host's and the active part's) You {\itshape must} call this in order to see any G\+U\+I being created.
+
+In a main window with multiple parts being shown (e.\+g. as in Konqueror) you need to connect this slot to the K\+Part\+Manager\+::active\+Part\+Changed() signal
+
+
+\begin{DoxyParams}{Parameters}
+{\em part} & The active part (set to 0\+L if no part). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1MainWindow_ac388eb6552660ee055c1d41e5f217553}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!create\+Shell\+G\+U\+I@{create\+Shell\+G\+U\+I}}
+\index{create\+Shell\+G\+U\+I@{create\+Shell\+G\+U\+I}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{create\+Shell\+G\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Main\+Window\+::create\+Shell\+G\+U\+I (
+\begin{DoxyParamCaption}
+\item[{bool}]{create = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1MainWindow_ac388eb6552660ee055c1d41e5f217553}
+\hypertarget{classKParts_1_1MainWindow_a7ee678f5096405ef023e49390013c0af}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!save\+New\+Toolbar\+Config@{save\+New\+Toolbar\+Config}}
+\index{save\+New\+Toolbar\+Config@{save\+New\+Toolbar\+Config}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{save\+New\+Toolbar\+Config}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Main\+Window\+::save\+New\+Toolbar\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKParts_1_1MainWindow_a7ee678f5096405ef023e49390013c0af}
+Rebuilds the G\+U\+I after K\+Edit\+Toolbar changed the toolbar layout. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classKParts_1_1MainWindow_a06a7c6c817f9b280804b0cabd28b3696}{configure\+Toolbars()} K\+D\+E4\+: make this virtual. (For now we rely on the fact that it's called as a slot, so the metaobject finds it here). 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1MainWindow_a97b2f32ff0736617b5385274782dd26a}{\index{K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}!slot\+Set\+Status\+Bar\+Text@{slot\+Set\+Status\+Bar\+Text}}
+\index{slot\+Set\+Status\+Bar\+Text@{slot\+Set\+Status\+Bar\+Text}!K\+Parts\+::\+Main\+Window@{K\+Parts\+::\+Main\+Window}}
+\subsubsection[{slot\+Set\+Status\+Bar\+Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Main\+Window\+::slot\+Set\+Status\+Bar\+Text (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classKParts_1_1MainWindow_a97b2f32ff0736617b5385274782dd26a}
+Called when the active part wants to change the statusbar message Reimplement if your mainwindow has a complex statusbar (with several items) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{mainwindow_8h}{mainwindow.\+h}\end{DoxyCompactItemize}

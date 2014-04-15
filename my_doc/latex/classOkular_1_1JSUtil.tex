@@ -1,0 +1,70 @@
+\hypertarget{classOkular_1_1JSUtil}{\section{Okular\+:\+:J\+S\+Util Class Reference}
+\label{classOkular_1_1JSUtil}\index{Okular\+::\+J\+S\+Util@{Okular\+::\+J\+S\+Util}}
+}
+
+
+{\ttfamily \#include $<$kjs\+\_\+util\+\_\+p.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classOkular_1_1JSUtil_a6942ca98a6e90f234cd68b2a42f2fa8e}{init\+Type} (K\+J\+S\+Context $\ast$ctx)
+\item 
+static K\+J\+S\+Object \hyperlink{classOkular_1_1JSUtil_a8d150500eca02ba831bd82c313fb2c66}{object} (K\+J\+S\+Context $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file kjs\+\_\+util\+\_\+p.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1JSUtil_a6942ca98a6e90f234cd68b2a42f2fa8e}{\index{Okular\+::\+J\+S\+Util@{Okular\+::\+J\+S\+Util}!init\+Type@{init\+Type}}
+\index{init\+Type@{init\+Type}!Okular\+::\+J\+S\+Util@{Okular\+::\+J\+S\+Util}}
+\subsubsection[{init\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void J\+S\+Util\+::init\+Type (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSUtil_a6942ca98a6e90f234cd68b2a42f2fa8e}
+
+
+Definition at line 59 of file kjs\+\_\+util.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} initialized = \textcolor{keyword}{false};
+62     \textcolor{keywordflow}{if} ( initialized )
+63         \textcolor{keywordflow}{return};
+64     initialized = \textcolor{keyword}{true};
+65 
+66     g\_utilProto = \textcolor{keyword}{new} KJSPrototype();
+67     g\_utilProto->defineFunction( ctx, \textcolor{stringliteral}{"crackURL"}, crackURL );
+68 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1JSUtil_a8d150500eca02ba831bd82c313fb2c66}{\index{Okular\+::\+J\+S\+Util@{Okular\+::\+J\+S\+Util}!object@{object}}
+\index{object@{object}!Okular\+::\+J\+S\+Util@{Okular\+::\+J\+S\+Util}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}K\+J\+S\+Object J\+S\+Util\+::object (
+\begin{DoxyParamCaption}
+\item[{K\+J\+S\+Context $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1JSUtil_a8d150500eca02ba831bd82c313fb2c66}
+
+
+Definition at line 70 of file kjs\+\_\+util.\+cpp.
+
+
+\begin{DoxyCode}
+71 \{
+72     \textcolor{keywordflow}{return} g\_utilProto->constructObject( ctx, 0 );
+73 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/script/\hyperlink{kjs__util__p_8h}{kjs\+\_\+util\+\_\+p.\+h}\item 
+core/script/\hyperlink{kjs__util_8cpp}{kjs\+\_\+util.\+cpp}\end{DoxyCompactItemize}

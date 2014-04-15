@@ -1,0 +1,519 @@
+\hypertarget{classKParts_1_1BrowserRun}{\section{K\+Parts\+:\+:Browser\+Run Class Reference}
+\label{classKParts_1_1BrowserRun}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+}
+
+
+{\ttfamily \#include $<$browserrun.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Browser\+Run\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKParts_1_1BrowserRun}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6}{Ask\+Save\+Result} \{ \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6adc6aa058c60662f393aa8168681d8a58}{Save}, 
+\hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6ac44e1cbf269e6df9367051c7561de90b}{Open}, 
+\hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6aea88673d252dcf7b37559606ce45667f}{Cancel}
+ \}
+\item 
+enum \hyperlink{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08d}{Ask\+Embed\+Or\+Save\+Flags} \{ \hyperlink{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08dafa80faaf171d25b4a0e095a2c1f51cfe}{Inline\+Disposition} = 0, 
+\hyperlink{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08daa236cc4b09fc3ca6f88d9a37b32ea8af}{Attachment\+Disposition} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1BrowserRun_a48308a3cd53da552fb60a86400d06228}{Browser\+Run} (const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, const \hyperlink{classKParts_1_1OpenUrlArguments}{K\+Parts\+::\+Open\+Url\+Arguments} \&args, const \hyperlink{structKParts_1_1BrowserArguments}{K\+Parts\+::\+Browser\+Arguments} \&browser\+Args, \hyperlink{classKParts_1_1ReadOnlyPart}{K\+Parts\+::\+Read\+Only\+Part} $\ast$\hyperlink{classKParts_1_1BrowserRun_a65886b4004c00ddcc08b976f1042d0dc}{part}, Q\+Widget $\ast$window, bool remove\+Referrer, bool trusted\+Source, bool \hyperlink{classKParts_1_1BrowserRun_a1caa242a8389d61d6758e25a68f9df50}{hide\+Error\+Dialog}=false)
+\item 
+virtual \hyperlink{classKParts_1_1BrowserRun_aa141423e9096f956970d4fe92e581814}{$\sim$\+Browser\+Run} ()
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments}{K\+Parts\+::\+Open\+Url\+Arguments} \& \hyperlink{classKParts_1_1BrowserRun_a5843399feb9cafe9a2f62b258c2f5a31}{arguments} ()
+\item 
+\hyperlink{structKParts_1_1BrowserArguments}{K\+Parts\+::\+Browser\+Arguments} \& \hyperlink{classKParts_1_1BrowserRun_a7fb44c1871cf67132853d8bb59dfe006}{browser\+Arguments} ()
+\item 
+\hyperlink{classKParts_1_1ReadOnlyPart}{K\+Parts\+::\+Read\+Only\+Part} $\ast$ \hyperlink{classKParts_1_1BrowserRun_a65886b4004c00ddcc08b976f1042d0dc}{part} () const 
+\item 
+K\+Url \hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url} () const 
+\item 
+bool \hyperlink{classKParts_1_1BrowserRun_a1caa242a8389d61d6758e25a68f9df50}{hide\+Error\+Dialog} () const 
+\item 
+Q\+String \hyperlink{classKParts_1_1BrowserRun_aa0ffe2da032f4e14eb6c7ba5f0d9996f}{content\+Disposition} () const 
+\item 
+bool \hyperlink{classKParts_1_1BrowserRun_a7daa3c6e44b8a37aa9c1d010972194dc}{server\+Suggests\+Save} () const 
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserRun_acff594a6127fe8f5f19364e1da47eccf}{save} (const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, const Q\+String \&suggested\+File\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6}{Ask\+Save\+Result} \hyperlink{classKParts_1_1BrowserRun_a240c17aac1cd740315731916f0616723}{ask\+Save} (const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, K\+Service\+::\+Ptr offer, const Q\+String \&mime\+Type, const Q\+String \&suggested\+File\+Name=Q\+String())
+\item 
+static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6}{Ask\+Save\+Result} \hyperlink{classKParts_1_1BrowserRun_a548576ed0ee79c29f1b68d16922ae6bd}{ask\+Embed\+Or\+Save} (const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, const Q\+String \&mime\+Type, const Q\+String \&suggested\+File\+Name=Q\+String(), int flags=0)
+\item 
+static void \hyperlink{classKParts_1_1BrowserRun_a38a97c58c4a3bb15e3de9e5cdf7fb24a}{simple\+Save} (const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, const Q\+String \&suggested\+File\+Name, Q\+Widget $\ast$window=0)
+\item 
+static void \hyperlink{classKParts_1_1BrowserRun_a75d80364750fd734cabccaa8a818a48d}{save\+Url} (const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, const Q\+String \&suggested\+File\+Name, Q\+Widget $\ast$window, const \hyperlink{classKParts_1_1OpenUrlArguments}{K\+Parts\+::\+Open\+Url\+Arguments} \&args)
+\item 
+static void \hyperlink{classKParts_1_1BrowserRun_a76f09a0166b39cf15e02df97765d8d0a}{save\+Url\+Using\+K\+I\+O} (const K\+Url \&src\+Url, const K\+Url \&dest\+Url, Q\+Widget $\ast$window, const \hyperlink{classQMap}{Q\+Map}$<$ Q\+String, Q\+String $>$ \&meta\+Data)
+\item 
+static bool \hyperlink{classKParts_1_1BrowserRun_adc6f66d941b8361b6808f4d6dcee312b}{allow\+Execution} (const Q\+String \&mime\+Type, const K\+Url \&\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url})
+\item 
+static bool \hyperlink{classKParts_1_1BrowserRun_a5e9221ceeeaddac5b6f0929c9298afa6}{is\+Text\+Executable} (const Q\+String \&mime\+Type)
+\item 
+static K\+Url \hyperlink{classKParts_1_1BrowserRun_a07ae3b98d8050e48980711788c2b84d8}{make\+Error\+Url} (int error, const Q\+String \&error\+Text, const Q\+String \&initial\+Url)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79f}{Non\+Embeddable\+Result} \{ \hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa1489069cb381b59c2de0d501e347388e}{Handled}, 
+\hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fae968cb6de73d4c96f7644a55adf610ca}{Not\+Handled}, 
+\hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa7a4f366bf6b4319caab0e48610f5e26c}{Delayed}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1BrowserRun_abed6cac6df3f2147be76a0524e92ddc1}{slot\+Browser\+Scan\+Finished} (K\+Job $\ast$job)
+\item 
+void \hyperlink{classKParts_1_1BrowserRun_a549306dfbb92c12c97a1663b82d93a51}{slot\+Browser\+Mimetype} (K\+I\+O\+::\+Job $\ast$job, const Q\+String \&type)
+\item 
+void \hyperlink{classKParts_1_1BrowserRun_a43d7f0c6a27c25ba93d6085162574d7e}{slot\+Copy\+To\+Temp\+File\+Result} (K\+Job $\ast$job)
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserRun_a27fc9f400c6eccf2188d5899550af89a}{slot\+Stat\+Result} (K\+Job $\ast$job)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserRun_a78858ebd1b73ece426abc128edf4e4e5}{scan\+File} ()
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserRun_a6140fdc2848021232a3c84a5df98b130}{init} ()
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserRun_a2b961dffc73904a1b7fde816a49bb05f}{handle\+Error} (K\+Job $\ast$job)
+\item 
+\hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79f}{Non\+Embeddable\+Result} \hyperlink{classKParts_1_1BrowserRun_ad1b275632b2bc76378879a15ac548706}{handle\+Non\+Embeddable} (const Q\+String \&mime\+Type)
+\item 
+\hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79f}{Non\+Embeddable\+Result} \hyperlink{classKParts_1_1BrowserRun_a7fbb390d0f47884e704ebe77f5148808}{handle\+Non\+Embeddable} (const Q\+String \&mime\+Type, K\+Service\+::\+Ptr $\ast$p\+Selected\+Service)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class extends K\+Run to provide additional functionality for browsers\+:
+\begin{DoxyItemize}
+\item \char`\"{}save or open\char`\"{} dialog boxes
+\item \char`\"{}save\char`\"{} functionality
+\item support for H\+T\+T\+P P\+O\+S\+T (including saving the result to a temp file if opening a separate application)
+\item warning before launching executables off the web
+\item custom error handling (i.\+e. treating errors as H\+T\+M\+L pages)
+\item generation of S\+S\+L metadata depending on the previous U\+R\+L shown by the part \begin{DoxyAuthor}{Author}
+David Faure \href{mailto:faure@kde.org}{\tt faure@kde.\+org} 
+\end{DoxyAuthor}
+
+\end{DoxyItemize}
+
+Definition at line 39 of file browserrun.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08d}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Ask\+Embed\+Or\+Save\+Flags@{Ask\+Embed\+Or\+Save\+Flags}}
+\index{Ask\+Embed\+Or\+Save\+Flags@{Ask\+Embed\+Or\+Save\+Flags}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{Ask\+Embed\+Or\+Save\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Browser\+Run\+::\+Ask\+Embed\+Or\+Save\+Flags}}}\label{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Inline\+Disposition@{Inline\+Disposition}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Inline\+Disposition@{Inline\+Disposition}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08dafa80faaf171d25b4a0e095a2c1f51cfe}{Inline\+Disposition}\label{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08dafa80faaf171d25b4a0e095a2c1f51cfe}
+}]\index{Attachment\+Disposition@{Attachment\+Disposition}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Attachment\+Disposition@{Attachment\+Disposition}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08daa236cc4b09fc3ca6f88d9a37b32ea8af}{Attachment\+Disposition}\label{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08daa236cc4b09fc3ca6f88d9a37b32ea8af}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 98 of file browserrun.\+h.
+
+
+\begin{DoxyCode}
+98 \{ \hyperlink{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08dafa80faaf171d25b4a0e095a2c1f51cfe}{InlineDisposition} = 0, \hyperlink{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08daa236cc4b09fc3ca6f88d9a37b32ea8af}{AttachmentDisposition} = 1 \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Ask\+Save\+Result@{Ask\+Save\+Result}}
+\index{Ask\+Save\+Result@{Ask\+Save\+Result}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{Ask\+Save\+Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Browser\+Run\+::\+Ask\+Save\+Result}}}\label{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Save@{Save}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Save@{Save}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6adc6aa058c60662f393aa8168681d8a58}{Save}\label{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6adc6aa058c60662f393aa8168681d8a58}
+}]\index{Open@{Open}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Open@{Open}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6ac44e1cbf269e6df9367051c7561de90b}{Open}\label{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6ac44e1cbf269e6df9367051c7561de90b}
+}]\index{Cancel@{Cancel}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Cancel@{Cancel}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6aea88673d252dcf7b37559606ce45667f}{Cancel}\label{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6aea88673d252dcf7b37559606ce45667f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 80 of file browserrun.\+h.
+
+
+\begin{DoxyCode}
+80 \{ \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6adc6aa058c60662f393aa8168681d8a58}{Save}, \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6ac44e1cbf269e6df9367051c7561de90b}{Open}, \hyperlink{classKParts_1_1BrowserRun_a32ee53f65c723ec01f4c4c28e91db8e6aea88673d252dcf7b37559606ce45667f}{Cancel} \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79f}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Non\+Embeddable\+Result@{Non\+Embeddable\+Result}}
+\index{Non\+Embeddable\+Result@{Non\+Embeddable\+Result}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{Non\+Embeddable\+Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Browser\+Run\+::\+Non\+Embeddable\+Result}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79f}
+Not\+Handled means that found\+Mime\+Type should call K\+Run\+::found\+Mime\+Type, i.\+e. launch an external app. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Handled@{Handled}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Handled@{Handled}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa1489069cb381b59c2de0d501e347388e}{Handled}\label{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa1489069cb381b59c2de0d501e347388e}
+}]\index{Not\+Handled@{Not\+Handled}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Not\+Handled@{Not\+Handled}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fae968cb6de73d4c96f7644a55adf610ca}{Not\+Handled}\label{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fae968cb6de73d4c96f7644a55adf610ca}
+}]\index{Delayed@{Delayed}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Delayed@{Delayed}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa7a4f366bf6b4319caab0e48610f5e26c}{Delayed}\label{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa7a4f366bf6b4319caab0e48610f5e26c}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 176 of file browserrun.\+h.
+
+
+\begin{DoxyCode}
+176 \{ \hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa1489069cb381b59c2de0d501e347388e}{Handled}, \hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fae968cb6de73d4c96f7644a55adf610ca}{NotHandled}, \hyperlink{classKParts_1_1BrowserRun_af7f4f75d5ab28c3183f9f5ee96b8a79fa7a4f366bf6b4319caab0e48610f5e26c}{Delayed} \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1BrowserRun_a48308a3cd53da552fb60a86400d06228}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!Browser\+Run@{Browser\+Run}}
+\index{Browser\+Run@{Browser\+Run}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{Browser\+Run}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Browser\+Run\+::\+Browser\+Run (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{const {\bf K\+Parts\+::\+Open\+Url\+Arguments} \&}]{args, }
+\item[{const {\bf K\+Parts\+::\+Browser\+Arguments} \&}]{browser\+Args, }
+\item[{{\bf K\+Parts\+::\+Read\+Only\+Part} $\ast$}]{part, }
+\item[{Q\+Widget $\ast$}]{window, }
+\item[{bool}]{remove\+Referrer, }
+\item[{bool}]{trusted\+Source, }
+\item[{bool}]{hide\+Error\+Dialog = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserRun_a48308a3cd53da552fb60a86400d06228}
+
+\begin{DoxyParams}{Parameters}
+{\em url} & the U\+R\+L we're probing \\
+\hline
+{\em args} & U\+R\+L args -\/ includes reload, meta\+Data, etc. \\
+\hline
+{\em browser\+Args} & browser-\/related args -\/ includes data for a H\+T\+T\+P P\+O\+S\+T, etc. \\
+\hline
+{\em part} & the part going to open this U\+R\+L -\/ can be 0 if not created yet \\
+\hline
+{\em window} & the mainwindow -\/ passed to K\+I\+O\+::\+Job\+::set\+Window() \\
+\hline
+{\em remove\+Referrer} & if true, the \char`\"{}referrer\char`\"{} metadata from {\ttfamily args} isn't passed on \\
+\hline
+{\em trusted\+Source} & if false, a warning will be shown before launching an executable. Always pass false for {\ttfamily trusted\+Source}, except for local directory views. \\
+\hline
+{\em hide\+Error\+Dialog} & if true, no dialog will be shown in case of errors. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1BrowserRun_aa141423e9096f956970d4fe92e581814}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!````~Browser\+Run@{$\sim$\+Browser\+Run}}
+\index{````~Browser\+Run@{$\sim$\+Browser\+Run}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{$\sim$\+Browser\+Run}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Browser\+Run\+::$\sim$\+Browser\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1BrowserRun_aa141423e9096f956970d4fe92e581814}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1BrowserRun_adc6f66d941b8361b6808f4d6dcee312b}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!allow\+Execution@{allow\+Execution}}
+\index{allow\+Execution@{allow\+Execution}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{allow\+Execution}]{\setlength{\rightskip}{0pt plus 5cm}static bool K\+Parts\+::\+Browser\+Run\+::allow\+Execution (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime\+Type, }
+\item[{const K\+Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_adc6f66d941b8361b6808f4d6dcee312b}
+\hypertarget{classKParts_1_1BrowserRun_a5843399feb9cafe9a2f62b258c2f5a31}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!arguments@{arguments}}
+\index{arguments@{arguments}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\+Parts\+::\+Open\+Url\+Arguments}\& K\+Parts\+::\+Browser\+Run\+::arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserRun_a5843399feb9cafe9a2f62b258c2f5a31}
+\hypertarget{classKParts_1_1BrowserRun_a548576ed0ee79c29f1b68d16922ae6bd}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!ask\+Embed\+Or\+Save@{ask\+Embed\+Or\+Save}}
+\index{ask\+Embed\+Or\+Save@{ask\+Embed\+Or\+Save}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{ask\+Embed\+Or\+Save}]{\setlength{\rightskip}{0pt plus 5cm}static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D {\bf Ask\+Save\+Result} K\+Parts\+::\+Browser\+Run\+::ask\+Embed\+Or\+Save (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{const Q\+String \&}]{mime\+Type, }
+\item[{const Q\+String \&}]{suggested\+File\+Name = {\ttfamily QString()}, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a548576ed0ee79c29f1b68d16922ae6bd}
+Similar to ask\+Save but for the case where the current application is able to embed the url itself (instead of passing it to another app). 
+\begin{DoxyParams}{Parameters}
+{\em url} & the U\+R\+L in question \\
+\hline
+{\em mime\+Type} & the mimetype of the U\+R\+L \\
+\hline
+{\em suggested\+File\+Name} & optional filename suggested by the server \\
+\hline
+{\em flags} & set to Attachment\+Disposition if suggested by the server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Save, Open or Cancel. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000005}{Deprecated}]use \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion}{Browser\+Open\+Or\+Save\+Question} 
+\begin{DoxyCode}
+BrowserOpenOrSaveQuestion dlg(parent, \hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, mimeType, suggestedFileName);
+\textcolor{keyword}{const} \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}{BrowserOpenOrSaveQuestion::Result} res = dlg.askEmbedOrSave(flags);
+\textcolor{comment}{// Important: returns Embed now, not Open!}
+\end{DoxyCode}
+ \end{DoxyRefDesc}
+\hypertarget{classKParts_1_1BrowserRun_a240c17aac1cd740315731916f0616723}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!ask\+Save@{ask\+Save}}
+\index{ask\+Save@{ask\+Save}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{ask\+Save}]{\setlength{\rightskip}{0pt plus 5cm}static K\+D\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D {\bf Ask\+Save\+Result} K\+Parts\+::\+Browser\+Run\+::ask\+Save (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{K\+Service\+::\+Ptr}]{offer, }
+\item[{const Q\+String \&}]{mime\+Type, }
+\item[{const Q\+String \&}]{suggested\+File\+Name = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a240c17aac1cd740315731916f0616723}
+Ask the user whether to save or open a url in another application. 
+\begin{DoxyParams}{Parameters}
+{\em url} & the U\+R\+L in question \\
+\hline
+{\em offer} & the application that will be used to open the U\+R\+L \\
+\hline
+{\em mime\+Type} & the mimetype of the U\+R\+L \\
+\hline
+{\em suggested\+File\+Name} & optional file name suggested by the server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Save, Open or Cancel. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]use \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion}{Browser\+Open\+Or\+Save\+Question} 
+\begin{DoxyCode}
+BrowserOpenOrSaveQuestion dlg(parent, \hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}, mimeType, suggestedFileName);
+\textcolor{keyword}{const} \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}{BrowserOpenOrSaveQuestion::Result} res = dlg.askOpenOrSave();
+\end{DoxyCode}
+ \end{DoxyRefDesc}
+\hypertarget{classKParts_1_1BrowserRun_a7fb44c1871cf67132853d8bb59dfe006}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!browser\+Arguments@{browser\+Arguments}}
+\index{browser\+Arguments@{browser\+Arguments}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{browser\+Arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\+Parts\+::\+Browser\+Arguments}\& K\+Parts\+::\+Browser\+Run\+::browser\+Arguments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserRun_a7fb44c1871cf67132853d8bb59dfe006}
+\hypertarget{classKParts_1_1BrowserRun_aa0ffe2da032f4e14eb6c7ba5f0d9996f}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!content\+Disposition@{content\+Disposition}}
+\index{content\+Disposition@{content\+Disposition}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{content\+Disposition}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String K\+Parts\+::\+Browser\+Run\+::content\+Disposition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserRun_aa0ffe2da032f4e14eb6c7ba5f0d9996f}
+\begin{DoxyReturn}{Returns}
+Suggested disposition by the server (e.\+g. H\+T\+T\+P content-\/disposition) 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserRun_a2b961dffc73904a1b7fde816a49bb05f}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!handle\+Error@{handle\+Error}}
+\index{handle\+Error@{handle\+Error}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{handle\+Error}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Browser\+Run\+::handle\+Error (
+\begin{DoxyParamCaption}
+\item[{K\+Job $\ast$}]{job}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1BrowserRun_a2b961dffc73904a1b7fde816a49bb05f}
+Called when an error happens. N\+O\+T\+E\+: {\ttfamily job} could be 0\+L, if you passed hide\+Error\+Dialog=true. The default implementation shows a message box, but only when job != 0 .... It is strongly recommended to reimplement this method if you passed hide\+Error\+Dialog=true. \hypertarget{classKParts_1_1BrowserRun_ad1b275632b2bc76378879a15ac548706}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!handle\+Non\+Embeddable@{handle\+Non\+Embeddable}}
+\index{handle\+Non\+Embeddable@{handle\+Non\+Embeddable}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{handle\+Non\+Embeddable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Non\+Embeddable\+Result} K\+Parts\+::\+Browser\+Run\+::handle\+Non\+Embeddable (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1BrowserRun_ad1b275632b2bc76378879a15ac548706}
+Helper for found\+Mime\+Type\+: call this if the mimetype couldn't be embedded \hypertarget{classKParts_1_1BrowserRun_a7fbb390d0f47884e704ebe77f5148808}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!handle\+Non\+Embeddable@{handle\+Non\+Embeddable}}
+\index{handle\+Non\+Embeddable@{handle\+Non\+Embeddable}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{handle\+Non\+Embeddable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Non\+Embeddable\+Result} K\+Parts\+::\+Browser\+Run\+::handle\+Non\+Embeddable (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime\+Type, }
+\item[{K\+Service\+::\+Ptr $\ast$}]{p\+Selected\+Service}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1BrowserRun_a7fbb390d0f47884e704ebe77f5148808}
+Helper for found\+Mime\+Type\+: call this if the mimetype couldn't be embedded 
+\begin{DoxyParams}{Parameters}
+{\em mime\+Type} & the mimetype found for the U\+R\+L \\
+\hline
+{\em p\+Selected\+Service} & Output variable\+: pointer to a K\+Service\+::\+Ptr, which will be set to the service selected in the \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion}{Browser\+Open\+Or\+Save\+Question} dialog, if any.\\
+\hline
+\end{DoxyParams}
+How to handle this properly\+: if p\+Selected\+Service is non-\/zero, then the dialog will show additional \char`\"{}open with\char`\"{} buttons. In your code, you should write\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (selectedService) \{
+    KRun::setPreferredService(selectedService->desktopEntryName());
+    \textcolor{comment}{// and let this code path fall back to KRun::foundMimeType(mimeType);}
+\} \textcolor{keywordflow}{else} \{
+    KRun::displayOpenWithDialog(\hyperlink{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{url}(), m\_window, \textcolor{keyword}{false}, suggestedFileName());
+    setFinished(\textcolor{keyword}{true});
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySince}{Since}
+4.\+5 
+\end{DoxySince}
+\hypertarget{classKParts_1_1BrowserRun_a1caa242a8389d61d6758e25a68f9df50}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!hide\+Error\+Dialog@{hide\+Error\+Dialog}}
+\index{hide\+Error\+Dialog@{hide\+Error\+Dialog}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{hide\+Error\+Dialog}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Browser\+Run\+::hide\+Error\+Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserRun_a1caa242a8389d61d6758e25a68f9df50}
+\hypertarget{classKParts_1_1BrowserRun_a6140fdc2848021232a3c84a5df98b130}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!init@{init}}
+\index{init@{init}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Browser\+Run\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1BrowserRun_a6140fdc2848021232a3c84a5df98b130}
+Reimplemented from K\+Run \hypertarget{classKParts_1_1BrowserRun_a5e9221ceeeaddac5b6f0929c9298afa6}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!is\+Text\+Executable@{is\+Text\+Executable}}
+\index{is\+Text\+Executable@{is\+Text\+Executable}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{is\+Text\+Executable}]{\setlength{\rightskip}{0pt plus 5cm}static bool K\+Parts\+::\+Browser\+Run\+::is\+Text\+Executable (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{mime\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a5e9221ceeeaddac5b6f0929c9298afa6}
+\hypertarget{classKParts_1_1BrowserRun_a07ae3b98d8050e48980711788c2b84d8}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!make\+Error\+Url@{make\+Error\+Url}}
+\index{make\+Error\+Url@{make\+Error\+Url}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{make\+Error\+Url}]{\setlength{\rightskip}{0pt plus 5cm}static K\+Url K\+Parts\+::\+Browser\+Run\+::make\+Error\+Url (
+\begin{DoxyParamCaption}
+\item[{int}]{error, }
+\item[{const Q\+String \&}]{error\+Text, }
+\item[{const Q\+String \&}]{initial\+Url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a07ae3b98d8050e48980711788c2b84d8}
+K\+D\+E webbrowsing kparts support error urls to display errors in-\/line in the browser component. This helper method creates the error U\+R\+L from its parameters. 
+\begin{DoxyParams}{Parameters}
+{\em error} & the \hyperlink{namespaceKIO}{K\+I\+O} error code (or K\+I\+O\+::\+E\+R\+R\+\_\+\+S\+L\+A\+V\+E\+\_\+\+D\+E\+F\+I\+N\+E\+D if not from \hyperlink{namespaceKIO}{K\+I\+O}) \\
+\hline
+{\em error\+Text} & the text of the error message \\
+\hline
+{\em initial\+Url} & the U\+R\+L that we were trying to open (as a string, so that this can support invalid U\+R\+Ls as well) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+\hypertarget{classKParts_1_1BrowserRun_a65886b4004c00ddcc08b976f1042d0dc}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!part@{part}}
+\index{part@{part}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf K\+Parts\+::\+Read\+Only\+Part}$\ast$ K\+Parts\+::\+Browser\+Run\+::part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserRun_a65886b4004c00ddcc08b976f1042d0dc}
+\hypertarget{classKParts_1_1BrowserRun_acff594a6127fe8f5f19364e1da47eccf}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!save@{save}}
+\index{save@{save}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Browser\+Run\+::save (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{const Q\+String \&}]{suggested\+File\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1BrowserRun_acff594a6127fe8f5f19364e1da47eccf}
+\hypertarget{classKParts_1_1BrowserRun_a75d80364750fd734cabccaa8a818a48d}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!save\+Url@{save\+Url}}
+\index{save\+Url@{save\+Url}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{save\+Url}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Browser\+Run\+::save\+Url (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{const Q\+String \&}]{suggested\+File\+Name, }
+\item[{Q\+Widget $\ast$}]{window, }
+\item[{const {\bf K\+Parts\+::\+Open\+Url\+Arguments} \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a75d80364750fd734cabccaa8a818a48d}
+If kget integration is enabled, passes the url to kget. Otherwise, asks the user for a destination url, and calls save\+Url\+Using\+K\+I\+O. \begin{DoxySince}{Since}
+4.\+4 
+\end{DoxySince}
+\hypertarget{classKParts_1_1BrowserRun_a76f09a0166b39cf15e02df97765d8d0a}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!save\+Url\+Using\+K\+I\+O@{save\+Url\+Using\+K\+I\+O}}
+\index{save\+Url\+Using\+K\+I\+O@{save\+Url\+Using\+K\+I\+O}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{save\+Url\+Using\+K\+I\+O}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Browser\+Run\+::save\+Url\+Using\+K\+I\+O (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{src\+Url, }
+\item[{const K\+Url \&}]{dest\+Url, }
+\item[{Q\+Widget $\ast$}]{window, }
+\item[{const {\bf Q\+Map}$<$ Q\+String, Q\+String $>$ \&}]{meta\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a76f09a0166b39cf15e02df97765d8d0a}
+Starts the \hyperlink{namespaceKIO}{K\+I\+O} file copy job to download {\ttfamily src\+Url} into {\ttfamily dest\+Url}. \begin{DoxySince}{Since}
+4.\+4 
+\end{DoxySince}
+\hypertarget{classKParts_1_1BrowserRun_a78858ebd1b73ece426abc128edf4e4e5}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!scan\+File@{scan\+File}}
+\index{scan\+File@{scan\+File}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{scan\+File}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Browser\+Run\+::scan\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1BrowserRun_a78858ebd1b73ece426abc128edf4e4e5}
+Reimplemented from K\+Run \hypertarget{classKParts_1_1BrowserRun_a7daa3c6e44b8a37aa9c1d010972194dc}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!server\+Suggests\+Save@{server\+Suggests\+Save}}
+\index{server\+Suggests\+Save@{server\+Suggests\+Save}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{server\+Suggests\+Save}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Browser\+Run\+::server\+Suggests\+Save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserRun_a7daa3c6e44b8a37aa9c1d010972194dc}
+\begin{DoxyReturn}{Returns}
+Wheter the returned disposition suggests saving or opening inline 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserRun_a38a97c58c4a3bb15e3de9e5cdf7fb24a}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!simple\+Save@{simple\+Save}}
+\index{simple\+Save@{simple\+Save}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{simple\+Save}]{\setlength{\rightskip}{0pt plus 5cm}static void K\+Parts\+::\+Browser\+Run\+::simple\+Save (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{const Q\+String \&}]{suggested\+File\+Name, }
+\item[{Q\+Widget $\ast$}]{window = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1BrowserRun_a38a97c58c4a3bb15e3de9e5cdf7fb24a}
+\hypertarget{classKParts_1_1BrowserRun_a549306dfbb92c12c97a1663b82d93a51}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!slot\+Browser\+Mimetype@{slot\+Browser\+Mimetype}}
+\index{slot\+Browser\+Mimetype@{slot\+Browser\+Mimetype}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{slot\+Browser\+Mimetype}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Browser\+Run\+::slot\+Browser\+Mimetype (
+\begin{DoxyParamCaption}
+\item[{K\+I\+O\+::\+Job $\ast$}]{job, }
+\item[{const Q\+String \&}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKParts_1_1BrowserRun_a549306dfbb92c12c97a1663b82d93a51}
+\hypertarget{classKParts_1_1BrowserRun_abed6cac6df3f2147be76a0524e92ddc1}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!slot\+Browser\+Scan\+Finished@{slot\+Browser\+Scan\+Finished}}
+\index{slot\+Browser\+Scan\+Finished@{slot\+Browser\+Scan\+Finished}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{slot\+Browser\+Scan\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Browser\+Run\+::slot\+Browser\+Scan\+Finished (
+\begin{DoxyParamCaption}
+\item[{K\+Job $\ast$}]{job}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKParts_1_1BrowserRun_abed6cac6df3f2147be76a0524e92ddc1}
+\hypertarget{classKParts_1_1BrowserRun_a43d7f0c6a27c25ba93d6085162574d7e}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!slot\+Copy\+To\+Temp\+File\+Result@{slot\+Copy\+To\+Temp\+File\+Result}}
+\index{slot\+Copy\+To\+Temp\+File\+Result@{slot\+Copy\+To\+Temp\+File\+Result}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{slot\+Copy\+To\+Temp\+File\+Result}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Browser\+Run\+::slot\+Copy\+To\+Temp\+File\+Result (
+\begin{DoxyParamCaption}
+\item[{K\+Job $\ast$}]{job}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKParts_1_1BrowserRun_a43d7f0c6a27c25ba93d6085162574d7e}
+\hypertarget{classKParts_1_1BrowserRun_a27fc9f400c6eccf2188d5899550af89a}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!slot\+Stat\+Result@{slot\+Stat\+Result}}
+\index{slot\+Stat\+Result@{slot\+Stat\+Result}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{slot\+Stat\+Result}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Browser\+Run\+::slot\+Stat\+Result (
+\begin{DoxyParamCaption}
+\item[{K\+Job $\ast$}]{job}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classKParts_1_1BrowserRun_a27fc9f400c6eccf2188d5899550af89a}
+\hypertarget{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}{\index{K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}!url@{url}}
+\index{url@{url}!K\+Parts\+::\+Browser\+Run@{K\+Parts\+::\+Browser\+Run}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}K\+Url K\+Parts\+::\+Browser\+Run\+::url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserRun_ad3f7d10647ab8b5a77399f46df92046b}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browserrun_8h}{browserrun.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,1274 @@
+\hypertarget{classOkular_1_1FilePrinter}{\section{Okular\+:\+:File\+Printer Class Reference}
+\label{classOkular_1_1FilePrinter}\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+}
+
+
+{\ttfamily \#include $<$fileprinter.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}{File\+Delete\+Policy} \{ \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa3dc2e24676385e73e2e9f623c49cc94a}{Application\+Deletes\+Files}, 
+\hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{System\+Deletes\+Files}
+ \}
+\item 
+enum \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}{Page\+Select\+Policy} \{ \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}{Application\+Selects\+Pages}, 
+\hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981dad7061722165845cb9b893916a6442797}{System\+Selects\+Pages}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classOkular_1_1FilePrinter_abd5ec189d80d15983c49f91f7e1d38c1}{print\+File} (Q\+Printer \&printer, const Q\+String file, Q\+Printer\+::\+Orientation document\+Orientation, \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}{File\+Delete\+Policy} file\+Delete\+Policy=\hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa3dc2e24676385e73e2e9f623c49cc94a}{File\+Printer\+::\+Application\+Deletes\+Files}, \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}{Page\+Select\+Policy} page\+Select\+Policy=\hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}{File\+Printer\+::\+Application\+Selects\+Pages}, const Q\+String \&\hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{page\+Range}=Q\+String())
+\item 
+static \hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{page\+List} (Q\+Printer \&printer, int last\+Page, int current\+Page, const \hyperlink{classQList}{Q\+List}$<$ int $>$ \&selected\+Page\+List)
+\item 
+static \hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classOkular_1_1FilePrinter_a94933ee7a272148b12f3f9cf1a2f4920}{page\+List} (Q\+Printer \&printer, int last\+Page, const \hyperlink{classQList}{Q\+List}$<$ int $>$ \&selected\+Page\+List)
+\item 
+static Q\+String \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{page\+Range} (Q\+Printer \&printer, int last\+Page, const \hyperlink{classQList}{Q\+List}$<$ int $>$ \&selected\+Page\+List)
+\item 
+static Q\+String \hyperlink{classOkular_1_1FilePrinter_a38b67ef91d28b3f9d5d383572e23b92d}{page\+List\+To\+Page\+Range} (const \hyperlink{classQList}{Q\+List}$<$ int $>$ \&\hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{page\+List})
+\item 
+static bool \hyperlink{classOkular_1_1FilePrinter_a047b30a135796c064fda2823ae6c0ddb}{ps2pdf\+Available} ()
+\item 
+static bool \hyperlink{classOkular_1_1FilePrinter_af93f96fc338c59335071b664437df886}{pdf2ps\+Available} ()
+\item 
+static bool \hyperlink{classOkular_1_1FilePrinter_ac4fa1b8818f90dbae9d7337dadbb80b3}{cups\+Available} ()
+\item 
+static Q\+Size \hyperlink{classOkular_1_1FilePrinter_ade49b65682fe231b1437a1e045486869}{ps\+Paper\+Size} (Q\+Printer \&printer)
+\item 
+static \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61}{Generator\+::\+Print\+Error} \hyperlink{classOkular_1_1FilePrinter_aee2cfc9da47e38eb986a7f42dd774b41}{print\+Error} (int c)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classOkular_1_1FilePrinter_a7510d410004520490730ae51b1aa518c}{detect\+Cups\+Service} ()
+\item 
+bool \hyperlink{classOkular_1_1FilePrinter_a9b0896c03fc4f23eca75e3f429a3a190}{detect\+Cups\+Config} ()
+\item 
+int \hyperlink{classOkular_1_1FilePrinter_a4da8a453f83e3047e4e013fdb928bebc}{do\+Print\+Files} (Q\+Printer \&printer, const Q\+String\+List file\+List, \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}{File\+Delete\+Policy} file\+Delete\+Policy, \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}{Page\+Select\+Policy} page\+Select\+Policy, const Q\+String \&\hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{page\+Range}, Q\+Printer\+::\+Orientation document\+Orientation)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a80054323a734e7e56833c887d7e9891e}{print\+Arguments} (Q\+Printer \&printer, \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}{File\+Delete\+Policy} file\+Delete\+Policy, \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}{Page\+Select\+Policy} page\+Select\+Policy, bool use\+Cups\+Options, const Q\+String \&\hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{page\+Range}, const Q\+String \&version, Q\+Printer\+::\+Orientation document\+Orientation)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a2e1a4e95b8546287bf53e7459dfc610e}{destination} (Q\+Printer \&printer, const Q\+String \&version)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a9713e66fa8a5e4dd92fd426d30e8bfc1}{copies} (Q\+Printer \&printer, const Q\+String \&version)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a194c38eb766f303f03a74fe6719715b6}{jobname} (Q\+Printer \&printer, const Q\+String \&version)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_aab170418d71766ec305359a1e68e79c9}{delete\+File} (Q\+Printer \&printer, \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}{File\+Delete\+Policy} file\+Delete\+Policy, const Q\+String \&version)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_ae069e0709a742d926eb7b7c8c527e603}{pages} (Q\+Printer \&printer, \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}{Page\+Select\+Policy} page\+Select\+Policy, const Q\+String \&\hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{page\+Range}, bool use\+Cups\+Options, const Q\+String \&version)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}{cups\+Options} (Q\+Printer \&printer, Q\+Printer\+::\+Orientation document\+Orientation)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a7d41d2f77f811ce693b2246407db97db}{option\+Media} (Q\+Printer \&printer)
+\item 
+Q\+String \hyperlink{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}{media\+Page\+Size} (Q\+Printer \&printer)
+\item 
+Q\+String \hyperlink{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}{media\+Paper\+Source} (Q\+Printer \&printer)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a489dde1a1693f71a6668869e3a7bb833}{option\+Orientation} (Q\+Printer \&printer, Q\+Printer\+::\+Orientation document\+Orientation)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_af4a17e5901cfba00e2aa2b7dbe09351f}{option\+Double\+Sided\+Printing} (Q\+Printer \&printer)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a6e5d5320e8ac11fc4401cd0c3b1d7c53}{option\+Page\+Order} (Q\+Printer \&printer)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_aace0a07484dc8511baf535687485cde8}{option\+Collate\+Copies} (Q\+Printer \&printer)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_a2f877f9b3c612fec484c7f55b16f2f21}{option\+Page\+Margins} (Q\+Printer \&printer)
+\item 
+Q\+String\+List \hyperlink{classOkular_1_1FilePrinter_ad635cb81e76102f996b0216ef65b55ed}{option\+Cups\+Properties} (Q\+Printer \&printer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file fileprinter.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!File\+Delete\+Policy@{File\+Delete\+Policy}}
+\index{File\+Delete\+Policy@{File\+Delete\+Policy}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{File\+Delete\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+File\+Printer\+::\+File\+Delete\+Policy}}}\label{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7ba}
+Whether file(s) get deleted by the application or by the print system.
+
+You may need to chose system deletion if your temp file clean-\/up deletes the file before the print system is finished with it. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Application\+Deletes\+Files@{Application\+Deletes\+Files}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!Application\+Deletes\+Files@{Application\+Deletes\+Files}}\item[{\em 
+\hypertarget{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa3dc2e24676385e73e2e9f623c49cc94a}{Application\+Deletes\+Files}\label{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa3dc2e24676385e73e2e9f623c49cc94a}
+}]\index{System\+Deletes\+Files@{System\+Deletes\+Files}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!System\+Deletes\+Files@{System\+Deletes\+Files}}\item[{\em 
+\hypertarget{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{System\+Deletes\+Files}\label{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 37 of file fileprinter.\+h.
+
+
+\begin{DoxyCode}
+37 \{ \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa3dc2e24676385e73e2e9f623c49cc94a}{ApplicationDeletesFiles}, \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{SystemDeletesFiles} \};
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!Page\+Select\+Policy@{Page\+Select\+Policy}}
+\index{Page\+Select\+Policy@{Page\+Select\+Policy}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{Page\+Select\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+File\+Printer\+::\+Page\+Select\+Policy}}}\label{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981d}
+Whether pages to be printed are selected by the application or the print system.
+
+If application side, then the generated file will only contain those pages selected by the user, so \hyperlink{classOkular_1_1FilePrinter}{File\+Printer} will print all the pages in the file.
+
+If system side, then the file will contain all the pages in the document, and the print system will print the users selected print range from out of the file.
+
+Note system side only works in C\+U\+P\+S, not L\+P\+R. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Application\+Selects\+Pages@{Application\+Selects\+Pages}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!Application\+Selects\+Pages@{Application\+Selects\+Pages}}\item[{\em 
+\hypertarget{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}{Application\+Selects\+Pages}\label{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}
+}]\index{System\+Selects\+Pages@{System\+Selects\+Pages}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!System\+Selects\+Pages@{System\+Selects\+Pages}}\item[{\em 
+\hypertarget{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981dad7061722165845cb9b893916a6442797}{System\+Selects\+Pages}\label{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981dad7061722165845cb9b893916a6442797}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 49 of file fileprinter.\+h.
+
+
+\begin{DoxyCode}
+49 \{ \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981da3910c7efe4c8f4f8a69459765bea25a4}{ApplicationSelectsPages}, \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981dad7061722165845cb9b893916a6442797}{SystemSelectsPages} \};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FilePrinter_a9713e66fa8a5e4dd92fd426d30e8bfc1}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!copies@{copies}}
+\index{copies@{copies}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{copies}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::copies (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{const Q\+String \&}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a9713e66fa8a5e4dd92fd426d30e8bfc1}
+
+
+Definition at line 409 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+410 \{
+411     \textcolor{keywordtype}{int} cp = printer.actualNumCopies();
+412 
+413     \textcolor{keywordflow}{if} ( version == \textcolor{stringliteral}{"lp"} ) \{
+414         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-n"}) << QString(\textcolor{stringliteral}{"%1"}).arg( cp );
+415     \}
+416 
+417     \textcolor{keywordflow}{if} ( version.startsWith( \textcolor{stringliteral}{"lpr"} ) ) \{
+418         \textcolor{keywordflow}{return} QStringList() << QString(\textcolor{stringliteral}{"-#%1"}).arg( cp );
+419     \}
+420 
+421     \textcolor{keywordflow}{return} QStringList();
+422 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_ac4fa1b8818f90dbae9d7337dadbb80b3}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!cups\+Available@{cups\+Available}}
+\index{cups\+Available@{cups\+Available}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{cups\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool File\+Printer\+::cups\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_ac4fa1b8818f90dbae9d7337dadbb80b3}
+Return if C\+U\+P\+S Print System is available on this system
+
+\begin{DoxyReturn}{Returns}
+Returns true if C\+U\+P\+S available 
+\end{DoxyReturn}
+
+
+Definition at line 236 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+237 \{
+238 \textcolor{preprocessor}{#ifdef Q\_WS\_X11}
+239     \textcolor{comment}{// Ideally we would have access to the private Qt method}
+240     \textcolor{comment}{// QCUPSSupport::cupsAvailable() to do this as it is very complex routine.}
+241     \textcolor{comment}{// However, if CUPS is available then QPrinter::numCopies() will always return 1}
+242     \textcolor{comment}{// whereas if CUPS is not available it will return the real number of copies.}
+243     \textcolor{comment}{// This behaviour is guaranteed never to change, so we can use it as a reliable substitute.}
+244     QPrinter testPrinter;
+245     testPrinter.setNumCopies( 2 );
+246     \textcolor{keywordflow}{return} ( testPrinter.numCopies() == 1 );
+247 \textcolor{preprocessor}{#else}
+248     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+249 \textcolor{preprocessor}{#endif}
+250 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!cups\+Options@{cups\+Options}}
+\index{cups\+Options@{cups\+Options}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{cups\+Options}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::cups\+Options (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{Q\+Printer\+::\+Orientation}]{document\+Orientation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}
+
+
+Definition at line 486 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+487 \{
+488     QStringList optionList;
+489 
+490     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a7d41d2f77f811ce693b2246407db97db}{optionMedia}( printer ).isEmpty() ) \{
+491         optionList << \hyperlink{classOkular_1_1FilePrinter_a7d41d2f77f811ce693b2246407db97db}{optionMedia}( printer );
+492     \}
+493 
+494     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a489dde1a1693f71a6668869e3a7bb833}{optionOrientation}( printer, documentOrientation ).isEmpty() ) \{
+495         optionList << \hyperlink{classOkular_1_1FilePrinter_a489dde1a1693f71a6668869e3a7bb833}{optionOrientation}( printer, documentOrientation );
+496     \}
+497 
+498     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_af4a17e5901cfba00e2aa2b7dbe09351f}{optionDoubleSidedPrinting}( printer ).isEmpty() ) \{
+499         optionList << \hyperlink{classOkular_1_1FilePrinter_af4a17e5901cfba00e2aa2b7dbe09351f}{optionDoubleSidedPrinting}( printer );
+500     \}
+501 
+502     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a6e5d5320e8ac11fc4401cd0c3b1d7c53}{optionPageOrder}( printer ).isEmpty() ) \{
+503         optionList << \hyperlink{classOkular_1_1FilePrinter_a6e5d5320e8ac11fc4401cd0c3b1d7c53}{optionPageOrder}( printer );
+504     \}
+505 
+506     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_aace0a07484dc8511baf535687485cde8}{optionCollateCopies}( printer ).isEmpty() ) \{
+507         optionList << \hyperlink{classOkular_1_1FilePrinter_aace0a07484dc8511baf535687485cde8}{optionCollateCopies}( printer );
+508     \}
+509 
+510     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a2f877f9b3c612fec484c7f55b16f2f21}{optionPageMargins}( printer ).isEmpty() ) \{
+511         optionList << \hyperlink{classOkular_1_1FilePrinter_a2f877f9b3c612fec484c7f55b16f2f21}{optionPageMargins}( printer );
+512     \}
+513 
+514     optionList << \hyperlink{classOkular_1_1FilePrinter_ad635cb81e76102f996b0216ef65b55ed}{optionCupsProperties}( printer );
+515 
+516     \textcolor{keywordflow}{return} optionList;
+517 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_aab170418d71766ec305359a1e68e79c9}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!delete\+File@{delete\+File}}
+\index{delete\+File@{delete\+File}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{delete\+File}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::delete\+File (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{{\bf File\+Delete\+Policy}}]{file\+Delete\+Policy, }
+\item[{const Q\+String \&}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_aab170418d71766ec305359a1e68e79c9}
+
+
+Definition at line 441 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+442 \{
+443     \textcolor{keywordflow}{if} ( fileDeletePolicy == \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{FilePrinter::SystemDeletesFiles} && version.
+      startsWith( \textcolor{stringliteral}{"lpr"} ) ) \{
+444         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-r"});
+445     \}
+446 
+447     \textcolor{keywordflow}{return} QStringList();
+448 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a2e1a4e95b8546287bf53e7459dfc610e}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!destination@{destination}}
+\index{destination@{destination}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{destination}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::destination (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{const Q\+String \&}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a2e1a4e95b8546287bf53e7459dfc610e}
+
+
+Definition at line 396 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+397 \{
+398     \textcolor{keywordflow}{if} ( version == \textcolor{stringliteral}{"lp"} ) \{
+399         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-d"}) << printer.printerName();
+400     \}
+401 
+402     \textcolor{keywordflow}{if} ( version.startsWith( \textcolor{stringliteral}{"lpr"} ) ) \{
+403         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-P"}) << printer.printerName();
+404     \}
+405 
+406     \textcolor{keywordflow}{return} QStringList();
+407 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a9b0896c03fc4f23eca75e3f429a3a190}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!detect\+Cups\+Config@{detect\+Cups\+Config}}
+\index{detect\+Cups\+Config@{detect\+Cups\+Config}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{detect\+Cups\+Config}]{\setlength{\rightskip}{0pt plus 5cm}bool File\+Printer\+::detect\+Cups\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a9b0896c03fc4f23eca75e3f429a3a190}
+
+
+Definition at line 261 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+262 \{
+263     \textcolor{keywordflow}{if} ( QFile::exists(\textcolor{stringliteral}{"/etc/cups/cupsd.conf"}) ) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+264     \textcolor{keywordflow}{if} ( QFile::exists(\textcolor{stringliteral}{"/usr/etc/cups/cupsd.conf"}) ) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+265     \textcolor{keywordflow}{if} ( QFile::exists(\textcolor{stringliteral}{"/usr/local/etc/cups/cupsd.conf"}) ) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+266     \textcolor{keywordflow}{if} ( QFile::exists(\textcolor{stringliteral}{"/opt/etc/cups/cupsd.conf"}) ) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+267     \textcolor{keywordflow}{if} ( QFile::exists(\textcolor{stringliteral}{"/opt/local/etc/cups/cupsd.conf"}) ) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+268     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+269 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a7510d410004520490730ae51b1aa518c}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!detect\+Cups\+Service@{detect\+Cups\+Service}}
+\index{detect\+Cups\+Service@{detect\+Cups\+Service}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{detect\+Cups\+Service}]{\setlength{\rightskip}{0pt plus 5cm}bool File\+Printer\+::detect\+Cups\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a7510d410004520490730ae51b1aa518c}
+
+
+Definition at line 252 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+253 \{
+254     QTcpSocket qsock;
+255     qsock.connectToHost(\textcolor{stringliteral}{"localhost"}, 631);
+256     \textcolor{keywordtype}{bool} rtn = qsock.waitForConnected() && qsock.isValid();
+257     qsock.abort();
+258     \textcolor{keywordflow}{return} rtn;
+259 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a4da8a453f83e3047e4e013fdb928bebc}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!do\+Print\+Files@{do\+Print\+Files}}
+\index{do\+Print\+Files@{do\+Print\+Files}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{do\+Print\+Files}]{\setlength{\rightskip}{0pt plus 5cm}int File\+Printer\+::do\+Print\+Files (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{const Q\+String\+List}]{file\+List, }
+\item[{{\bf File\+Delete\+Policy}}]{file\+Delete\+Policy, }
+\item[{{\bf Page\+Select\+Policy}}]{page\+Select\+Policy, }
+\item[{const Q\+String \&}]{page\+Range, }
+\item[{Q\+Printer\+::\+Orientation}]{document\+Orientation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a4da8a453f83e3047e4e013fdb928bebc}
+
+
+Definition at line 45 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49 
+50     \textcolor{keywordflow}{if} ( fileList.size() < 1 ) \{
+51         \textcolor{keywordflow}{return} -8;
+52     \}
+53 
+54     \textcolor{keywordflow}{for} (QStringList::ConstIterator it = fileList.constBegin(); it != fileList.constEnd(); ++it) \{
+55         \textcolor{keywordflow}{if} (!QFile::exists(*it)) \{
+56             \textcolor{keywordflow}{return} -7;
+57         \}
+58     \}
+59 
+60     \textcolor{keywordflow}{if} ( printer.printerState() == QPrinter::Aborted || printer.printerState() == QPrinter::Error ) \{
+61         \textcolor{keywordflow}{return} -6;
+62     \}
+63 
+64     QString exe;
+65     QStringList argList;
+66     \textcolor{keywordtype}{int} ret;
+67 
+68     \textcolor{comment}{// Print to File if a filename set, assumes there must be only 1 file}
+69     \textcolor{keywordflow}{if} ( !printer.outputFileName().isEmpty() ) \{
+70 
+71         \textcolor{keywordflow}{if} ( QFile::exists( printer.outputFileName() ) ) \{
+72             QFile::remove( printer.outputFileName() );
+73         \}
+74 
+75         QFileInfo inputFileInfo = QFileInfo( fileList[0] );
+76         QFileInfo outputFileInfo = QFileInfo( printer.outputFileName() );
+77 
+78         \textcolor{keywordtype}{bool} doDeleteFile = (fileDeletePolicy == \hyperlink{classOkular_1_1FilePrinter_acd01eb48e99f9289a7f4786a366ef7baa86d9b928c2434b89a15de26c8cc22705}{FilePrinter::SystemDeletesFiles}
+      );
+79         \textcolor{keywordflow}{if} ( inputFileInfo.suffix() == outputFileInfo.suffix() ) \{
+80             \textcolor{keywordflow}{if} ( doDeleteFile ) \{
+81                 \textcolor{keywordtype}{bool} res = QFile::rename( fileList[0], printer.outputFileName() );
+82                 \textcolor{keywordflow}{if} ( res ) \{
+83                     doDeleteFile = \textcolor{keyword}{false};
+84                     ret = 0;
+85                 \} \textcolor{keywordflow}{else} \{
+86                     ret = -5;
+87                 \}
+88             \} \textcolor{keywordflow}{else} \{
+89                 \textcolor{keywordtype}{bool} res = QFile::copy( fileList[0], printer.outputFileName() );
+90                 \textcolor{keywordflow}{if} ( res ) \{
+91                     ret = 0;
+92                 \} \textcolor{keywordflow}{else} \{
+93                     ret = -5;
+94                 \}
+95             \}
+96         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( inputFileInfo.suffix() == \textcolor{stringliteral}{"ps"} && printer.outputFormat() == QPrinter::PdfFormat && 
+      \hyperlink{classOkular_1_1FilePrinter_a047b30a135796c064fda2823ae6c0ddb}{ps2pdfAvailable}() ) \{
+97             exe = \textcolor{stringliteral}{"ps2pdf"};
+98             argList << fileList[0] << printer.outputFileName();
+99             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"Executing"} << exe << \textcolor{stringliteral}{"with arguments"} << argList;
+100             ret = KProcess::execute( exe, argList );
+101         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( inputFileInfo.suffix() == \textcolor{stringliteral}{"pdf"} && printer.outputFormat() == QPrinter::PostScriptFormat
+       && \hyperlink{classOkular_1_1FilePrinter_af93f96fc338c59335071b664437df886}{pdf2psAvailable}() ) \{
+102             exe = \textcolor{stringliteral}{"pdf2ps"};
+103             argList << fileList[0] << printer.outputFileName();
+104             kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"Executing"} << exe << \textcolor{stringliteral}{"with arguments"} << argList;
+105             ret = KProcess::execute( exe, argList );
+106         \} \textcolor{keywordflow}{else} \{
+107             ret = -5;
+108         \}
+109 
+110         \textcolor{keywordflow}{if} ( doDeleteFile ) \{
+111             QFile::remove( fileList[0] );
+112         \}
+113 
+114 
+115     \} \textcolor{keywordflow}{else} \{  \textcolor{comment}{// Print to a printer via lpr command}
+116 
+117         \textcolor{comment}{//Decide what executable to use to print with, need the CUPS version of lpr if available}
+118         \textcolor{comment}{//Some distros name the CUPS version of lpr as lpr-cups or lpr.cups so try those first }
+119         \textcolor{comment}{//before default to lpr, or failing that to lp}
+120 
+121         \textcolor{keywordflow}{if} ( !KStandardDirs::findExe(\textcolor{stringliteral}{"lpr-cups"}).isEmpty() ) \{
+122             exe = \textcolor{stringliteral}{"lpr-cups"};
+123         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( !KStandardDirs::findExe(\textcolor{stringliteral}{"lpr.cups"}).isEmpty() ) \{
+124             exe = \textcolor{stringliteral}{"lpr.cups"};
+125         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( !KStandardDirs::findExe(\textcolor{stringliteral}{"lpr"}).isEmpty() ) \{
+126             exe = \textcolor{stringliteral}{"lpr"};
+127         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( !KStandardDirs::findExe(\textcolor{stringliteral}{"lp"}).isEmpty() ) \{
+128             exe = \textcolor{stringliteral}{"lp"};
+129         \} \textcolor{keywordflow}{else} \{
+130             \textcolor{keywordflow}{return} -9;
+131         \}
+132 
+133         \textcolor{keywordtype}{bool} useCupsOptions = \hyperlink{classOkular_1_1FilePrinter_ac4fa1b8818f90dbae9d7337dadbb80b3}{cupsAvailable}();
+134         argList = \hyperlink{classOkular_1_1FilePrinter_a80054323a734e7e56833c887d7e9891e}{printArguments}( printer, fileDeletePolicy, pageSelectPolicy, 
+135                                   useCupsOptions, \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange}, exe, documentOrientation ) << 
+      fileList;
+136         kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"Executing"} << exe << \textcolor{stringliteral}{"with arguments"} << argList;
+137 
+138         ret = KProcess::execute( exe, argList );
+139 
+140     \}
+141 
+142     \textcolor{keywordflow}{return} ret;
+143 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a194c38eb766f303f03a74fe6719715b6}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!jobname@{jobname}}
+\index{jobname@{jobname}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{jobname}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::jobname (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{const Q\+String \&}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a194c38eb766f303f03a74fe6719715b6}
+
+
+Definition at line 424 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+425 \{
+426     \textcolor{keywordflow}{if} ( ! printer.docName().isEmpty() ) \{
+427 
+428         \textcolor{keywordflow}{if} ( version == \textcolor{stringliteral}{"lp"} ) \{
+429             \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-t"}) << printer.docName();
+430         \}
+431 
+432         \textcolor{keywordflow}{if} ( version.startsWith( \textcolor{stringliteral}{"lpr"} ) ) \{
+433             \textcolor{keyword}{const} QString shortenedDocName = QString::fromUtf8(printer.docName().toUtf8().left(255));
+434             \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-J"}) << shortenedDocName;
+435         \}
+436     \}
+437 
+438     \textcolor{keywordflow}{return} QStringList();
+439 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!media\+Page\+Size@{media\+Page\+Size}}
+\index{media\+Page\+Size@{media\+Page\+Size}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{media\+Page\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String File\+Printer\+::media\+Page\+Size (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}
+
+
+Definition at line 541 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+542 \{
+543     \textcolor{keywordflow}{switch} ( printer.pageSize() ) \{
+544     \textcolor{keywordflow}{case} QPrinter::A0:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A0"};
+545     \textcolor{keywordflow}{case} QPrinter::A1:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A1"};
+546     \textcolor{keywordflow}{case} QPrinter::A2:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A2"};
+547     \textcolor{keywordflow}{case} QPrinter::A3:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A3"};
+548     \textcolor{keywordflow}{case} QPrinter::A4:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A4"};
+549     \textcolor{keywordflow}{case} QPrinter::A5:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A5"};
+550     \textcolor{keywordflow}{case} QPrinter::A6:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A6"};
+551     \textcolor{keywordflow}{case} QPrinter::A7:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A7"};
+552     \textcolor{keywordflow}{case} QPrinter::A8:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A8"};
+553     \textcolor{keywordflow}{case} QPrinter::A9:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"A9"};
+554     \textcolor{keywordflow}{case} QPrinter::B0:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B0"};
+555     \textcolor{keywordflow}{case} QPrinter::B1:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B1"};
+556     \textcolor{keywordflow}{case} QPrinter::B10:        \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B10"};
+557     \textcolor{keywordflow}{case} QPrinter::B2:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B2"};
+558     \textcolor{keywordflow}{case} QPrinter::B3:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B3"};
+559     \textcolor{keywordflow}{case} QPrinter::B4:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B4"};
+560     \textcolor{keywordflow}{case} QPrinter::B5:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B5"};
+561     \textcolor{keywordflow}{case} QPrinter::B6:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B6"};
+562     \textcolor{keywordflow}{case} QPrinter::B7:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B7"};
+563     \textcolor{keywordflow}{case} QPrinter::B8:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B8"};
+564     \textcolor{keywordflow}{case} QPrinter::B9:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"B9"};
+565     \textcolor{keywordflow}{case} QPrinter::C5E:        \textcolor{keywordflow}{return} \textcolor{stringliteral}{"C5"};     \textcolor{comment}{//Correct Translation?}
+566     \textcolor{keywordflow}{case} QPrinter::Comm10E:    \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Comm10"}; \textcolor{comment}{//Correct Translation?}
+567     \textcolor{keywordflow}{case} QPrinter::DLE:        \textcolor{keywordflow}{return} \textcolor{stringliteral}{"DL"};     \textcolor{comment}{//Correct Translation?}
+568     \textcolor{keywordflow}{case} QPrinter::Executive:  \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Executive"};
+569     \textcolor{keywordflow}{case} QPrinter::Folio:      \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Folio"};
+570     \textcolor{keywordflow}{case} QPrinter::Ledger:     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Ledger"};
+571     \textcolor{keywordflow}{case} QPrinter::Legal:      \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Legal"};
+572     \textcolor{keywordflow}{case} QPrinter::Letter:     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Letter"};
+573     \textcolor{keywordflow}{case} QPrinter::Tabloid:    \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Tabloid"};
+574     \textcolor{keywordflow}{case} QPrinter::Custom:     \textcolor{keywordflow}{return} QString(\textcolor{stringliteral}{"Custom.%1x%2mm"})
+575                                             .arg( printer.heightMM() )
+576                                             .arg( printer.widthMM() );
+577     \textcolor{keywordflow}{default}:                   \textcolor{keywordflow}{return} QString();
+578     \}
+579 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!media\+Paper\+Source@{media\+Paper\+Source}}
+\index{media\+Paper\+Source@{media\+Paper\+Source}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{media\+Paper\+Source}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String File\+Printer\+::media\+Paper\+Source (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}
+
+
+Definition at line 582 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+583 \{
+584     \textcolor{keywordflow}{switch} ( printer.paperSource() ) \{
+585     \textcolor{keywordflow}{case} QPrinter::Auto:            \textcolor{keywordflow}{return} QString();
+586     \textcolor{keywordflow}{case} QPrinter::Cassette:        \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Cassette"};
+587     \textcolor{keywordflow}{case} QPrinter::Envelope:        \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Envelope"};
+588     \textcolor{keywordflow}{case} QPrinter::EnvelopeManual:  \textcolor{keywordflow}{return} \textcolor{stringliteral}{"EnvelopeManual"};
+589     \textcolor{keywordflow}{case} QPrinter::FormSource:      \textcolor{keywordflow}{return} \textcolor{stringliteral}{"FormSource"};
+590     \textcolor{keywordflow}{case} QPrinter::LargeCapacity:   \textcolor{keywordflow}{return} \textcolor{stringliteral}{"LargeCapacity"};
+591     \textcolor{keywordflow}{case} QPrinter::LargeFormat:     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"LargeFormat"};
+592     \textcolor{keywordflow}{case} QPrinter::Lower:           \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Lower"};
+593     \textcolor{keywordflow}{case} QPrinter::MaxPageSource:   \textcolor{keywordflow}{return} \textcolor{stringliteral}{"MaxPageSource"};
+594     \textcolor{keywordflow}{case} QPrinter::Middle:          \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Middle"};
+595     \textcolor{keywordflow}{case} QPrinter::Manual:          \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Manual"};
+596     \textcolor{keywordflow}{case} QPrinter::OnlyOne:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"OnlyOne"};
+597     \textcolor{keywordflow}{case} QPrinter::Tractor:         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Tractor"};
+598     \textcolor{keywordflow}{case} QPrinter::SmallFormat:     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"SmallFormat"};
+599     \textcolor{keywordflow}{default}:                        \textcolor{keywordflow}{return} QString();
+600     \}
+601 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_aace0a07484dc8511baf535687485cde8}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Collate\+Copies@{option\+Collate\+Copies}}
+\index{option\+Collate\+Copies@{option\+Collate\+Copies}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Collate\+Copies}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Collate\+Copies (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_aace0a07484dc8511baf535687485cde8}
+
+
+Definition at line 640 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+641 \{
+642     \textcolor{keywordflow}{if} ( printer.collateCopies() ) \{
+643         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"Collate=True"};
+644     \}
+645     \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"Collate=False"};
+646 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_ad635cb81e76102f996b0216ef65b55ed}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Cups\+Properties@{option\+Cups\+Properties}}
+\index{option\+Cups\+Properties@{option\+Cups\+Properties}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Cups\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Cups\+Properties (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_ad635cb81e76102f996b0216ef65b55ed}
+
+
+Definition at line 662 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+663 \{
+664     QStringList dialogOptions = printer.printEngine()->property(QPrintEngine::PrintEnginePropertyKey(0xfe00
+      )).toStringList();
+665     QStringList \hyperlink{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}{cupsOptions};
+666 
+667     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < dialogOptions.count(); i = i + 2 ) \{
+668         \textcolor{keywordflow}{if} ( dialogOptions[i+1].isEmpty() ) \{
+669             cupsOptions << \textcolor{stringliteral}{"-o"} << dialogOptions[i];
+670         \} \textcolor{keywordflow}{else} \{
+671             cupsOptions << \textcolor{stringliteral}{"-o"} << dialogOptions[i] + \textcolor{charliteral}{'='} + dialogOptions[i+1];
+672         \}
+673     \}
+674 
+675     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}{cupsOptions};
+676 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_af4a17e5901cfba00e2aa2b7dbe09351f}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Double\+Sided\+Printing@{option\+Double\+Sided\+Printing}}
+\index{option\+Double\+Sided\+Printing@{option\+Double\+Sided\+Printing}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Double\+Sided\+Printing}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Double\+Sided\+Printing (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_af4a17e5901cfba00e2aa2b7dbe09351f}
+
+
+Definition at line 617 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+618 \{
+619     \textcolor{keywordflow}{switch} ( printer.duplex() ) \{
+620     \textcolor{keywordflow}{case} QPrinter::DuplexNone:       \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"sides=one-sided"};
+621     \textcolor{keywordflow}{case} QPrinter::DuplexAuto:       \textcolor{keywordflow}{if} ( printer.orientation() == QPrinter::Landscape ) \{
+622                                          \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"sides=two-sided-short-edge"};
+623                                      \} \textcolor{keywordflow}{else} \{
+624                                          \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"sides=two-sided-long-edge"};
+625                                      \}
+626     \textcolor{keywordflow}{case} QPrinter::DuplexLongSide:   \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"sides=two-sided-long-edge"};
+627     \textcolor{keywordflow}{case} QPrinter::DuplexShortSide:  \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"sides=two-sided-short-edge"};
+628     \textcolor{keywordflow}{default}:                         \textcolor{keywordflow}{return} QStringList();  \textcolor{comment}{//Use printer default}
+629     \}
+630 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a7d41d2f77f811ce693b2246407db97db}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Media@{option\+Media}}
+\index{option\+Media@{option\+Media}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Media}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Media (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a7d41d2f77f811ce693b2246407db97db}
+
+
+Definition at line 519 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+520 \{
+521     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}{mediaPageSize}( printer ).isEmpty() && 
+522          ! \hyperlink{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}{mediaPaperSource}( printer ).isEmpty() ) \{
+523         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) <<
+524                 QString(\textcolor{stringliteral}{"media=%1,%2"}).arg( \hyperlink{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}{mediaPageSize}( printer ) )
+525                                       .arg( \hyperlink{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}{mediaPaperSource}( printer ) );
+526     \}
+527 
+528     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}{mediaPageSize}( printer ).isEmpty() ) \{
+529         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) <<
+530                 QString(\textcolor{stringliteral}{"media=%1"}).arg( \hyperlink{classOkular_1_1FilePrinter_a103b33a5779433d55fe5d5dbe2541d30}{mediaPageSize}( printer ) );
+531     \}
+532 
+533     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}{mediaPaperSource}( printer ).isEmpty() ) \{
+534         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) <<
+535                 QString(\textcolor{stringliteral}{"media=%1"}).arg( \hyperlink{classOkular_1_1FilePrinter_af21ae5cbf7d73822174d474374c1368b}{mediaPaperSource}( printer ) );
+536     \}
+537 
+538     \textcolor{keywordflow}{return} QStringList();
+539 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a489dde1a1693f71a6668869e3a7bb833}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Orientation@{option\+Orientation}}
+\index{option\+Orientation@{option\+Orientation}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Orientation (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{Q\+Printer\+::\+Orientation}]{document\+Orientation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a489dde1a1693f71a6668869e3a7bb833}
+
+
+Definition at line 603 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+604 \{
+605     \textcolor{comment}{// portrait and landscape options rotate the document according to the document orientation}
+606     \textcolor{comment}{// If we want to print a landscape document as one would expect it, we have to pass the}
+607     \textcolor{comment}{// portrait option so that the document is not rotated additionally}
+608     \textcolor{keywordflow}{if} ( printer.orientation() == documentOrientation ) \{
+609         \textcolor{comment}{// the user wants the document printed as is}
+610         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"portrait"};
+611     \} \textcolor{keywordflow}{else} \{
+612         \textcolor{comment}{// the user expects the document being rotated by 90 degrees}
+613         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"landscape"};
+614     \}
+615 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a2f877f9b3c612fec484c7f55b16f2f21}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Page\+Margins@{option\+Page\+Margins}}
+\index{option\+Page\+Margins@{option\+Page\+Margins}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Page\+Margins}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Page\+Margins (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a2f877f9b3c612fec484c7f55b16f2f21}
+
+
+Definition at line 648 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+649 \{
+650     \textcolor{keywordflow}{if} (printer.printEngine()->property(QPrintEngine::PPK\_PageMargins).isNull()) \{
+651         \textcolor{keywordflow}{return} QStringList();
+652     \} \textcolor{keywordflow}{else} \{
+653         qreal l, t, r, b;
+654         printer.getPageMargins( &l, &t, &r, &b, QPrinter::Point );
+655         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << QString(\textcolor{stringliteral}{"page-left=%1"}).arg(l)
+656                        <<  \textcolor{stringliteral}{"-o"}  << QString(\textcolor{stringliteral}{"page-top=%1"}).arg(t)
+657                        <<  \textcolor{stringliteral}{"-o"}  << QString(\textcolor{stringliteral}{"page-right=%1"}).arg(r)
+658                        <<  \textcolor{stringliteral}{"-o"}  << QString(\textcolor{stringliteral}{"page-bottom=%1"}).arg(b) << \textcolor{stringliteral}{"-o"} << \textcolor{stringliteral}{"fit-to-page"};
+659     \}
+660 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a6e5d5320e8ac11fc4401cd0c3b1d7c53}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!option\+Page\+Order@{option\+Page\+Order}}
+\index{option\+Page\+Order@{option\+Page\+Order}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{option\+Page\+Order}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::option\+Page\+Order (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a6e5d5320e8ac11fc4401cd0c3b1d7c53}
+
+
+Definition at line 632 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+633 \{
+634     \textcolor{keywordflow}{if} ( printer.pageOrder() == QPrinter::LastPageFirst ) \{
+635         \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"outputorder=reverse"};
+636     \}
+637     \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << \textcolor{stringliteral}{"outputorder=normal"};
+638 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!page\+List@{page\+List}}
+\index{page\+List@{page\+List}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{page\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ int $>$ File\+Printer\+::page\+List (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{int}]{last\+Page, }
+\item[{int}]{current\+Page, }
+\item[{const {\bf Q\+List}$<$ int $>$ \&}]{selected\+Page\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}
+Return the list of pages selected by the user in the Print Dialog
+
+
+\begin{DoxyParams}{Parameters}
+{\em printer} & the print settings to use \\
+\hline
+{\em last\+Page} & the last page number, needed if All\+Pages option is selected \\
+\hline
+{\em current\+Page} & the current page number, needed if Current\+Page option is selected \\
+\hline
+{\em selected\+Page\+List} & list of pages to use if Selection option is selected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns list of pages to print 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+152 \{
+153     \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::Selection) \{
+154         \textcolor{keywordflow}{return} selectedPageList;
+155     \}
+156 
+157     \textcolor{keywordtype}{int} startPage, endPage;
+158     \hyperlink{classQList}{QList<int>} list;
+159 
+160     \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::PageRange ) \{
+161         startPage = printer.fromPage();
+162         endPage = printer.toPage();
+163 \textcolor{preprocessor}{#if QT\_VERSION >= KDE\_MAKE\_VERSION(4,7,0)}
+164     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::CurrentPage) \{
+165         startPage = currentPage;
+166         endPage = currentPage;
+167 \textcolor{preprocessor}{#endif}
+168     \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{//AllPages}
+169         startPage = 1;
+170         endPage = lastPage;
+171     \}
+172 
+173     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = startPage; i <= endPage; i++ ) \{
+174         list << i;
+175     \}
+176 
+177     \textcolor{keywordflow}{return} list;
+178 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a94933ee7a272148b12f3f9cf1a2f4920}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!page\+List@{page\+List}}
+\index{page\+List@{page\+List}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{page\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ int $>$ File\+Printer\+::page\+List (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{int}]{last\+Page, }
+\item[{const {\bf Q\+List}$<$ int $>$ \&}]{selected\+Page\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_a94933ee7a272148b12f3f9cf1a2f4920}
+Return the list of pages selected by the user in the Print Dialog
+
+
+\begin{DoxyParams}{Parameters}
+{\em printer} & the print settings to use \\
+\hline
+{\em last\+Page} & the last page number, needed if All\+Pages option is selected \\
+\hline
+{\em selected\+Page\+List} & list of pages to use if Selection option is selected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns list of pages to print 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+146 \{
+147     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{pageList}( printer, lastPage, 0, selectedPageList );
+148 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a38b67ef91d28b3f9d5d383572e23b92d}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!page\+List\+To\+Page\+Range@{page\+List\+To\+Page\+Range}}
+\index{page\+List\+To\+Page\+Range@{page\+List\+To\+Page\+Range}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{page\+List\+To\+Page\+Range}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String File\+Printer\+::page\+List\+To\+Page\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+List}$<$ int $>$ \&}]{page\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_a38b67ef91d28b3f9d5d383572e23b92d}
+convert a \hyperlink{classOkular_1_1Page}{Page} List into a \hyperlink{classOkular_1_1Page}{Page} Range
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+List} & list of pages to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns equivalent page range 
+\end{DoxyReturn}
+
+
+Definition at line 193 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+194 \{
+195     QString \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange};
+196     \textcolor{keywordtype}{int} count = pageList.count();
+197     \textcolor{keywordtype}{int} i = 0;
+198     \textcolor{keywordtype}{int} seqStart = i;
+199     \textcolor{keywordtype}{int} seqEnd;
+200 
+201     \textcolor{keywordflow}{while} ( i != count ) \{
+202 
+203         \textcolor{keywordflow}{if} ( i + 1 == count || pageList[i] + 1 != pageList[i+1] ) \{
+204 
+205             seqEnd = i;
+206 
+207             \textcolor{keywordflow}{if} ( !pageRange.isEmpty() ) \{
+208                 pageRange.append(\textcolor{stringliteral}{","});
+209             \}
+210 
+211             \textcolor{keywordflow}{if} ( seqStart == seqEnd ) \{
+212                 pageRange.append(pageList[i]);
+213             \} \textcolor{keywordflow}{else} \{
+214                 pageRange.append(QString(\textcolor{stringliteral}{"%1-%2"}).arg(seqStart).arg(seqEnd));
+215             \}
+216 
+217             seqStart = i + 1;
+218         \}
+219 
+220         i++;
+221     \}
+222 
+223     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange};
+224 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!page\+Range@{page\+Range}}
+\index{page\+Range@{page\+Range}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{page\+Range}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String File\+Printer\+::page\+Range (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{int}]{last\+Page, }
+\item[{const {\bf Q\+List}$<$ int $>$ \&}]{selected\+Page\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}
+Return the range of pages selected by the user in the Print Dialog
+
+
+\begin{DoxyParams}{Parameters}
+{\em printer} & the print settings to use \\
+\hline
+{\em last\+Page} & the last page number, needed if All\+Pages option is selected \\
+\hline
+{\em selected\+Page\+List} & list of pages to use if Selection option is selected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns range of pages to print 
+\end{DoxyReturn}
+
+
+Definition at line 180 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+181 \{
+182     \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::Selection) \{
+183         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FilePrinter_a38b67ef91d28b3f9d5d383572e23b92d}{pageListToPageRange}( selectedPageList );
+184     \}
+185 
+186     \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::PageRange ) \{
+187         \textcolor{keywordflow}{return} QString(\textcolor{stringliteral}{"%1-%2"}).arg(printer.fromPage()).arg(printer.toPage());
+188     \}
+189 
+190     \textcolor{keywordflow}{return} QString(\textcolor{stringliteral}{"1-%2"}).arg( lastPage );
+191 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_ae069e0709a742d926eb7b7c8c527e603}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!pages@{pages}}
+\index{pages@{pages}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{pages}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::pages (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{{\bf Page\+Select\+Policy}}]{page\+Select\+Policy, }
+\item[{const Q\+String \&}]{page\+Range, }
+\item[{bool}]{use\+Cups\+Options, }
+\item[{const Q\+String \&}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_ae069e0709a742d926eb7b7c8c527e603}
+
+
+Definition at line 450 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+452 \{
+453     \textcolor{keywordflow}{if} ( pageSelectPolicy == \hyperlink{classOkular_1_1FilePrinter_a755b647910344031db1d79312482981dad7061722165845cb9b893916a6442797}{FilePrinter::SystemSelectsPages} ) \{
+454 
+455         \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::Selection && ! \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange}.isEmpty() ) \{
+456 
+457             \textcolor{keywordflow}{if} ( version == \textcolor{stringliteral}{"lp"} ) \{
+458                 \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-P"}) << \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange} ;
+459             \}
+460 
+461             \textcolor{keywordflow}{if} ( version.startsWith( \textcolor{stringliteral}{"lpr"} ) && useCupsOptions ) \{
+462                 \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << QString(\textcolor{stringliteral}{"page-ranges=%1"}).arg( 
+      \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange} );
+463             \}
+464 
+465         \}
+466 
+467         \textcolor{keywordflow}{if} ( printer.printRange() == QPrinter::PageRange ) \{
+468 
+469             \textcolor{keywordflow}{if} ( version == \textcolor{stringliteral}{"lp"} ) \{
+470                 \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-P"}) << QString(\textcolor{stringliteral}{"%1-%2"}).arg( printer.fromPage() )
+471                                                             .arg( printer.toPage() );
+472             \}
+473 
+474             \textcolor{keywordflow}{if} ( version.startsWith( \textcolor{stringliteral}{"lpr"} ) && useCupsOptions ) \{
+475                 \textcolor{keywordflow}{return} QStringList(\textcolor{stringliteral}{"-o"}) << QString(\textcolor{stringliteral}{"page-ranges=%1-%2"}).arg( printer.fromPage() )
+476                                                                         .arg( printer.toPage() );
+477             \}
+478 
+479         \}
+480 
+481     \}
+482 
+483     \textcolor{keywordflow}{return} QStringList(); \textcolor{comment}{// AllPages}
+484 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_af93f96fc338c59335071b664437df886}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!pdf2ps\+Available@{pdf2ps\+Available}}
+\index{pdf2ps\+Available@{pdf2ps\+Available}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{pdf2ps\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool File\+Printer\+::pdf2ps\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_af93f96fc338c59335071b664437df886}
+Return if Ghostscript pdf2ps is available on this system
+
+\begin{DoxyReturn}{Returns}
+Returns true if Ghostscript pdf2ps available 
+\end{DoxyReturn}
+
+
+Definition at line 231 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+232 \{
+233     \textcolor{keywordflow}{return} ( !KStandardDirs::findExe(\textcolor{stringliteral}{"pdf2ps"}).isEmpty() );
+234 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a80054323a734e7e56833c887d7e9891e}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!print\+Arguments@{print\+Arguments}}
+\index{print\+Arguments@{print\+Arguments}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{print\+Arguments}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List File\+Printer\+::print\+Arguments (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{{\bf File\+Delete\+Policy}}]{file\+Delete\+Policy, }
+\item[{{\bf Page\+Select\+Policy}}]{page\+Select\+Policy, }
+\item[{bool}]{use\+Cups\+Options, }
+\item[{const Q\+String \&}]{page\+Range, }
+\item[{const Q\+String \&}]{version, }
+\item[{Q\+Printer\+::\+Orientation}]{document\+Orientation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FilePrinter_a80054323a734e7e56833c887d7e9891e}
+
+
+Definition at line 358 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+362 \{
+363     QStringList argList;
+364 
+365     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a2e1a4e95b8546287bf53e7459dfc610e}{destination}( printer, version ).isEmpty() ) \{
+366         argList << \hyperlink{classOkular_1_1FilePrinter_a2e1a4e95b8546287bf53e7459dfc610e}{destination}( printer, version );
+367     \}
+368 
+369     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a9713e66fa8a5e4dd92fd426d30e8bfc1}{copies}( printer, version ).isEmpty() ) \{
+370         argList << \hyperlink{classOkular_1_1FilePrinter_a9713e66fa8a5e4dd92fd426d30e8bfc1}{copies}( printer, version );
+371     \}
+372 
+373     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_a194c38eb766f303f03a74fe6719715b6}{jobname}( printer, version ).isEmpty() ) \{
+374         argList << \hyperlink{classOkular_1_1FilePrinter_a194c38eb766f303f03a74fe6719715b6}{jobname}( printer, version );
+375     \}
+376 
+377     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_ae069e0709a742d926eb7b7c8c527e603}{pages}( printer, pageSelectPolicy, \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange}, useCupsOptions, version ).isEmpty() )
+       \{
+378         argList << \hyperlink{classOkular_1_1FilePrinter_ae069e0709a742d926eb7b7c8c527e603}{pages}( printer, pageSelectPolicy, \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange}, useCupsOptions, version );
+379     \}
+380 
+381     \textcolor{keywordflow}{if} ( useCupsOptions && ! \hyperlink{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}{cupsOptions}( printer, documentOrientation ).isEmpty() ) \{
+382         argList << \hyperlink{classOkular_1_1FilePrinter_a0009250603cbc9d3f9d346d9a56544e2}{cupsOptions}( printer, documentOrientation);
+383     \}
+384 
+385     \textcolor{keywordflow}{if} ( ! \hyperlink{classOkular_1_1FilePrinter_aab170418d71766ec305359a1e68e79c9}{deleteFile}( printer, fileDeletePolicy, version ).isEmpty() ) \{
+386         argList << \hyperlink{classOkular_1_1FilePrinter_aab170418d71766ec305359a1e68e79c9}{deleteFile}( printer, fileDeletePolicy, version );
+387     \}
+388 
+389     \textcolor{keywordflow}{if} ( version == \textcolor{stringliteral}{"lp"} ) \{
+390         argList << \textcolor{stringliteral}{"--"};
+391     \}
+392 
+393     \textcolor{keywordflow}{return} argList;
+394 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_aee2cfc9da47e38eb986a7f42dd774b41}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!print\+Error@{print\+Error}}
+\index{print\+Error@{print\+Error}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{print\+Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Generator\+::\+Print\+Error} File\+Printer\+::print\+Error (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_aee2cfc9da47e38eb986a7f42dd774b41}
+Convert the code returned by print\+File$\ast$ to Print\+Error \begin{DoxySince}{Since}
+0.\+11 (K\+D\+E 4.\+5) 
+\end{DoxySince}
+
+
+Definition at line 318 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+319 \{
+320     \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61}{Generator::PrintError} pe;
+321     \textcolor{keywordflow}{if} ( c >= 0 )
+322     \{
+323         pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a6186f0488397997c9a950b5e5c1b472d}{Generator::NoPrintError};
+324     \} 
+325     \textcolor{keywordflow}{else} \{
+326         \textcolor{keywordflow}{switch} ( c )
+327         \{
+328             \textcolor{keywordflow}{case} -1:
+329                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a4888a7455baba78b6f8cfe351956ba5e}{Generator::PrintingProcessCrashPrintError};
+330                 \textcolor{keywordflow}{break};
+331             \textcolor{keywordflow}{case} -2:
+332                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a2266cdd2bd6a63a77c566cd49e73839f}{Generator::PrintingProcessStartPrintError};
+333                 \textcolor{keywordflow}{break};
+334             \textcolor{keywordflow}{case} -5:
+335                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a0730ff074dea39b2f31be7d33812918a}{Generator::PrintToFilePrintError};
+336                 \textcolor{keywordflow}{break};
+337             \textcolor{keywordflow}{case} -6:
+338                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61ae485c9d2113f08df22f841cdec5a6916}{Generator::InvalidPrinterStatePrintError};
+339                 \textcolor{keywordflow}{break};
+340             \textcolor{keywordflow}{case} -7:
+341                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a53237e1ad4d6e5145e29604834057b59}{Generator::UnableToFindFilePrintError};
+342                 \textcolor{keywordflow}{break};
+343             \textcolor{keywordflow}{case} -8:
+344                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61ae954cba05c7a5435588cf0ed29e2a890}{Generator::NoFileToPrintError};
+345                 \textcolor{keywordflow}{break};
+346             \textcolor{keywordflow}{case} -9:
+347                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61aa872427640e4ae32edc173645f3673d9}{Generator::NoBinaryToPrintError};
+348                 \textcolor{keywordflow}{break};
+349             \textcolor{keywordflow}{default}:
+350                 pe = \hyperlink{classOkular_1_1Generator_a43266d4eb3e7929924dd10ea53bc1d61a263e9cc38c84824414ea0b65e8deb408}{Generator::UnknownPrintError};
+351         \}
+352     \}
+353     \textcolor{keywordflow}{return} pe;
+354 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_abd5ec189d80d15983c49f91f7e1d38c1}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!print\+File@{print\+File}}
+\index{print\+File@{print\+File}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{print\+File}]{\setlength{\rightskip}{0pt plus 5cm}int File\+Printer\+::print\+File (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer, }
+\item[{const Q\+String}]{file, }
+\item[{Q\+Printer\+::\+Orientation}]{document\+Orientation, }
+\item[{{\bf File\+Delete\+Policy}}]{file\+Delete\+Policy = {\ttfamily {\bf File\+Printer\+::\+Application\+Deletes\+Files}}, }
+\item[{{\bf Page\+Select\+Policy}}]{page\+Select\+Policy = {\ttfamily {\bf File\+Printer\+::\+Application\+Selects\+Pages}}, }
+\item[{const Q\+String \&}]{page\+Range = {\ttfamily QString()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_abd5ec189d80d15983c49f91f7e1d38c1}
+Print a file using the settings in Q\+Printer
+
+Only supports C\+U\+P\+S and L\+P\+R on $\ast$\+N\+I\+X. \hyperlink{classOkular_1_1Page}{Page} Range only supported in C\+U\+P\+S. Most settings unsupported by L\+P\+R, some settings unsupported by C\+U\+P\+S.
+
+The document\+Orientation parameter was added in version 0.\+14.
+
+
+\begin{DoxyParams}{Parameters}
+{\em printer} & the print settings to use \\
+\hline
+{\em file} & the file to print \\
+\hline
+{\em document\+Orientation} & the orientation stored in the document itself \\
+\hline
+{\em file\+Delete\+Policy} & if the application or system deletes the file \\
+\hline
+{\em page\+Select\+Policy} & if the application or system selects the pages to print \\
+\hline
+{\em page\+Range} & page range to print if System\+Slects\+Pages and user chooses Selection in Print Dialog\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns exit code\+: -\/9 if lpr not found -\/8 if empty file name -\/7 if unable to find file -\/6 if invalid printer state -\/5 if print to file copy failed -\/2 if the K\+Process could not be started -\/1 if the K\+Process crashed otherwise the K\+Process exit code
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.\+14 (K\+D\+E 4.\+8) 
+\end{DoxySince}
+
+
+Definition at line 36 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     \hyperlink{classOkular_1_1FilePrinter}{FilePrinter} fp;
+41     \textcolor{keywordflow}{return} fp.\hyperlink{classOkular_1_1FilePrinter_a4da8a453f83e3047e4e013fdb928bebc}{doPrintFiles}( printer, QStringList( file ), fileDeletePolicy, pageSelectPolicy, 
+      \hyperlink{classOkular_1_1FilePrinter_a7a62a72292d1756871321f48446927e3}{pageRange}, 
+42                             documentOrientation );
+43 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_a047b30a135796c064fda2823ae6c0ddb}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!ps2pdf\+Available@{ps2pdf\+Available}}
+\index{ps2pdf\+Available@{ps2pdf\+Available}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{ps2pdf\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool File\+Printer\+::ps2pdf\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_a047b30a135796c064fda2823ae6c0ddb}
+Return if Ghostscript ps2pdf is available on this system
+
+\begin{DoxyReturn}{Returns}
+Returns true if Ghostscript ps2pdf available 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+227 \{
+228     \textcolor{keywordflow}{return} ( !KStandardDirs::findExe(\textcolor{stringliteral}{"ps2pdf"}).isEmpty() );
+229 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FilePrinter_ade49b65682fe231b1437a1e045486869}{\index{Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}!ps\+Paper\+Size@{ps\+Paper\+Size}}
+\index{ps\+Paper\+Size@{ps\+Paper\+Size}!Okular\+::\+File\+Printer@{Okular\+::\+File\+Printer}}
+\subsubsection[{ps\+Paper\+Size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size File\+Printer\+::ps\+Paper\+Size (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOkular_1_1FilePrinter_ade49b65682fe231b1437a1e045486869}
+Returns the postscript standard page size
+
+\begin{DoxyReturn}{Returns}
+Returns paper size in ps points 
+\end{DoxyReturn}
+
+
+Definition at line 271 of file fileprinter.\+cpp.
+
+
+\begin{DoxyCode}
+272 \{
+273     QSize \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size};
+274 
+275     \textcolor{keywordflow}{switch} ( printer.pageSize() ) \{
+276     \textcolor{keywordflow}{case} QPrinter::A0:        size = QSize( 2384, 3370 ); \textcolor{keywordflow}{break};
+277     \textcolor{keywordflow}{case} QPrinter::A1:        size = QSize( 1684, 2384 ); \textcolor{keywordflow}{break};
+278     \textcolor{keywordflow}{case} QPrinter::A2:        size = QSize( 1191, 1684 ); \textcolor{keywordflow}{break};
+279     \textcolor{keywordflow}{case} QPrinter::A3:        size = QSize(  842, 1191 ); \textcolor{keywordflow}{break};
+280     \textcolor{keywordflow}{case} QPrinter::A4:        size = QSize(  595,  842 ); \textcolor{keywordflow}{break};
+281     \textcolor{keywordflow}{case} QPrinter::A5:        size = QSize(  420,  595 ); \textcolor{keywordflow}{break};
+282     \textcolor{keywordflow}{case} QPrinter::A6:        size = QSize(  298,  420 ); \textcolor{keywordflow}{break};
+283     \textcolor{keywordflow}{case} QPrinter::A7:        size = QSize(  210,  298 ); \textcolor{keywordflow}{break};
+284     \textcolor{keywordflow}{case} QPrinter::A8:        size = QSize(  147,  210 ); \textcolor{keywordflow}{break};
+285     \textcolor{keywordflow}{case} QPrinter::A9:        size = QSize(  105,  147 ); \textcolor{keywordflow}{break};
+286     \textcolor{keywordflow}{case} QPrinter::B0:        size = QSize( 2835, 4008 ); \textcolor{keywordflow}{break};
+287     \textcolor{keywordflow}{case} QPrinter::B1:        size = QSize( 2004, 2835 ); \textcolor{keywordflow}{break};
+288     \textcolor{keywordflow}{case} QPrinter::B2:        size = QSize( 1417, 2004 ); \textcolor{keywordflow}{break};
+289     \textcolor{keywordflow}{case} QPrinter::B3:        size = QSize( 1001, 1417 ); \textcolor{keywordflow}{break};
+290     \textcolor{keywordflow}{case} QPrinter::B4:        size = QSize(  709, 1001 ); \textcolor{keywordflow}{break};
+291     \textcolor{keywordflow}{case} QPrinter::B5:        size = QSize(  499,  709 ); \textcolor{keywordflow}{break};
+292     \textcolor{keywordflow}{case} QPrinter::B6:        size = QSize(  354,  499 ); \textcolor{keywordflow}{break};
+293     \textcolor{keywordflow}{case} QPrinter::B7:        size = QSize(  249,  354 ); \textcolor{keywordflow}{break};
+294     \textcolor{keywordflow}{case} QPrinter::B8:        size = QSize(  176,  249 ); \textcolor{keywordflow}{break};
+295     \textcolor{keywordflow}{case} QPrinter::B9:        size = QSize(  125,  176 ); \textcolor{keywordflow}{break};
+296     \textcolor{keywordflow}{case} QPrinter::B10:       size = QSize(   88,  125 ); \textcolor{keywordflow}{break};
+297     \textcolor{keywordflow}{case} QPrinter::C5E:       size = QSize(  459,  649 ); \textcolor{keywordflow}{break};
+298     \textcolor{keywordflow}{case} QPrinter::Comm10E:   size = QSize(  297,  684 ); \textcolor{keywordflow}{break};
+299     \textcolor{keywordflow}{case} QPrinter::DLE:       size = QSize(  312,  624 ); \textcolor{keywordflow}{break};
+300     \textcolor{keywordflow}{case} QPrinter::Executive: size = QSize(  522,  756 ); \textcolor{keywordflow}{break};
+301     \textcolor{keywordflow}{case} QPrinter::Folio:     size = QSize(  595,  935 ); \textcolor{keywordflow}{break};
+302     \textcolor{keywordflow}{case} QPrinter::Ledger:    size = QSize( 1224,  792 ); \textcolor{keywordflow}{break};
+303     \textcolor{keywordflow}{case} QPrinter::Legal:     size = QSize(  612, 1008 ); \textcolor{keywordflow}{break};
+304     \textcolor{keywordflow}{case} QPrinter::Letter:    size = QSize(  612,  792 ); \textcolor{keywordflow}{break};
+305     \textcolor{keywordflow}{case} QPrinter::Tabloid:   size = QSize(  792, 1224 ); \textcolor{keywordflow}{break};
+306     \textcolor{keywordflow}{case} QPrinter::Custom:    \textcolor{keywordflow}{return} QSize( (\textcolor{keywordtype}{int}) printer.widthMM() * ( 25.4 / 72 ),
+307                                             (\textcolor{keywordtype}{int}) printer.heightMM() * ( 25.4 / 72 ) );
+308     \textcolor{keywordflow}{default}:                  \textcolor{keywordflow}{return} QSize();
+309     \}
+310 
+311     \textcolor{keywordflow}{if} ( printer.orientation() == QPrinter::Landscape ) \{
+312         size.transpose();
+313     \}
+314 
+315     \textcolor{keywordflow}{return} \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size};
+316 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{fileprinter_8h}{fileprinter.\+h}\item 
+core/\hyperlink{fileprinter_8cpp}{fileprinter.\+cpp}\end{DoxyCompactItemize}

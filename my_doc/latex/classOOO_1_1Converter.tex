@@ -1,0 +1,192 @@
+\hypertarget{classOOO_1_1Converter}{\section{O\+O\+O\+:\+:Converter Class Reference}
+\label{classOOO_1_1Converter}\index{O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}}
+}
+
+
+{\ttfamily \#include $<$converter.\+h$>$}
+
+Inheritance diagram for O\+O\+O\+:\+:Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classOOO_1_1Converter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOOO_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}{Converter} ()
+\item 
+\hyperlink{classOOO_1_1Converter_a9ecd05695a52c03158b81e544e13b996}{$\sim$\+Converter} ()
+\item 
+virtual Q\+Text\+Document $\ast$ \hyperlink{classOOO_1_1Converter_aa63e543977130604de659a4d725ee8bd}{convert} (const Q\+String \&file\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file converter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOOO_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}{\index{O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}!Converter@{Converter}}
+\index{Converter@{Converter}!O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}}
+\subsubsection[{Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\+::\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1Converter_a1de81f3e06093411e5d27ce882bc010f}
+
+
+Definition at line 65 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+66   : mTextDocument( 0 ), mCursor( 0 ),
+67     mStyleInformation( 0 )
+68 \{
+69 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1Converter_a9ecd05695a52c03158b81e544e13b996}{\index{O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}!````~Converter@{$\sim$\+Converter}}
+\index{````~Converter@{$\sim$\+Converter}!O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}}
+\subsubsection[{$\sim$\+Converter}]{\setlength{\rightskip}{0pt plus 5cm}Converter\+::$\sim$\+Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1Converter_a9ecd05695a52c03158b81e544e13b996}
+
+
+Definition at line 71 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOOO_1_1Converter_aa63e543977130604de659a4d725ee8bd}{\index{O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}!convert@{convert}}
+\index{convert@{convert}!O\+O\+O\+::\+Converter@{O\+O\+O\+::\+Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Document $\ast$ Converter\+::convert (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOOO_1_1Converter_aa63e543977130604de659a4d725ee8bd}
+Returns the generated Q\+Text\+Document object. Create the dom of the content
+
+Read the style properties, so the are available when parsing the content.
+
+Add all images of the document to resource framework
+
+Set the correct page size
+
+Parse the content of the document
+
+Implements \hyperlink{classOkular_1_1TextDocumentConverter_ad05f8bcde0f347c6292968fab331bcef}{Okular\+::\+Text\+Document\+Converter}.
+
+
+
+Definition at line 75 of file converter.\+cpp.
+
+
+\begin{DoxyCode}
+76 \{
+77   \hyperlink{classOOO_1_1Document}{Document} oooDocument( fileName );
+78   \textcolor{keywordflow}{if} ( !oooDocument.open() ) \{
+79     emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}( oooDocument.lastErrorString(), -1 );
+80     \textcolor{keywordflow}{return} 0;
+81   \}
+82 
+83   mTextDocument = \textcolor{keyword}{new} QTextDocument;
+84   mCursor = \textcolor{keyword}{new} QTextCursor( mTextDocument );
+85 
+89   QXmlSimpleReader reader;
+90 
+91   QXmlInputSource source;
+92   source.setData( oooDocument.content() );
+93 
+94   QString errorMsg;
+95   QDomDocument document;
+96   \textcolor{keywordflow}{if} ( !document.setContent( &source, &reader, &errorMsg ) ) \{
+97     emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}( i18n( \textcolor{stringliteral}{"Invalid XML document: %1"}, errorMsg ), -1 );
+98     \textcolor{keyword}{delete} mCursor;
+99     \textcolor{keywordflow}{return} 0;
+100   \}
+101 
+102   mStyleInformation = \textcolor{keyword}{new} \hyperlink{classOOO_1_1StyleInformation}{StyleInformation}();
+103 
+108   \hyperlink{classOOO_1_1StyleParser}{StyleParser} styleParser( &oooDocument, document, mStyleInformation );
+109   \textcolor{keywordflow}{if} ( !styleParser.parse() ) \{
+110     emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}( i18n( \textcolor{stringliteral}{"Unable to read style information"} ), -1 );
+111     \textcolor{keyword}{delete} mCursor;
+112     \textcolor{keywordflow}{return} 0;
+113   \}
+114 
+118   \textcolor{keyword}{const} \hyperlink{classQMap}{QMap<QString, QByteArray>} images = oooDocument.images();
+119   QMapIterator<QString, QByteArray> it( images );
+120   \textcolor{keywordflow}{while} ( it.hasNext() ) \{
+121     it.next();
+122 
+123     mTextDocument->addResource( QTextDocument::ImageResource, QUrl( it.key() ), QImage::fromData( it.value(
+      ) ) );
+124   \}
+125 
+129   \textcolor{keyword}{const} QString masterLayout = mStyleInformation->\hyperlink{classOOO_1_1StyleInformation_ad8c37f921e5d3b0c429226ac46f3a7ca}{masterPageName}();
+130   \textcolor{keyword}{const} \hyperlink{classOOO_1_1PageFormatProperty}{PageFormatProperty} \textcolor{keyword}{property} = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_a74abc64faa641fdc3213ca9a8dd18d6d}{pageProperty}( masterLayout );
+131 
+132   \textcolor{keywordtype}{int} pageWidth = qRound(property.width() / 72.0 * \hyperlink{classOkular_1_1Utils_acd9a3685415399561c6cde450ead4710}{Okular::Utils::dpiX}());
+133   \textcolor{keywordtype}{int} pageHeight = qRound(property.height() / 72.0 * \hyperlink{classOkular_1_1Utils_aeee309843e66a38840d6cec2002df3ea}{Okular::Utils::dpiY}());
+134 
+135   \textcolor{keywordflow}{if} ( pageWidth == 0 )
+136       pageWidth = 600;
+137   \textcolor{keywordflow}{if} ( pageHeight == 0 )
+138       pageHeight = 800;
+139 
+140   mTextDocument->setPageSize( QSize( pageWidth, pageHeight ) );
+141 
+142   QTextFrameFormat frameFormat;
+143   frameFormat.setMargin( qRound( property.margin() ) );
+144 
+145   QTextFrame *rootFrame = mTextDocument->rootFrame();
+146   rootFrame->setFrameFormat( frameFormat );
+147 
+151   \textcolor{keyword}{const} QDomElement documentElement = document.documentElement();
+152 
+153   QDomElement element = documentElement.firstChildElement();
+154   \textcolor{keywordflow}{while} ( !element.isNull() ) \{
+155     \textcolor{keywordflow}{if} ( element.tagName() == QLatin1String( \textcolor{stringliteral}{"body"} ) ) \{
+156       \textcolor{keywordflow}{if} ( !convertBody( element ) ) \{
+157         emit \hyperlink{classOkular_1_1TextDocumentConverter_a93f1335bdd8232626364c973d9d7e6b4}{error}( i18n( \textcolor{stringliteral}{"Unable to convert document content"} ), -1 );
+158         \textcolor{keyword}{delete} mCursor;
+159         \textcolor{keywordflow}{return} 0;
+160       \}
+161     \}
+162 
+163     element = element.nextSiblingElement();
+164   \}
+165 
+166   \hyperlink{classQList}{MetaInformation::List} metaInformation = mStyleInformation->
+      \hyperlink{classOOO_1_1StyleInformation_ac09f26c30d59e11a9ef7f21b8e1e7280}{metaInformation}();
+167   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < metaInformation.count(); ++i ) \{
+168     emit \hyperlink{classOkular_1_1TextDocumentConverter_ad6e263857527273c9cf618e16329f6a7}{addMetaData}( metaInformation[ i ].key(),
+169                       metaInformation[ i ].value(),
+170                       metaInformation[ i ].title() );
+171   \}
+172 
+173   \textcolor{keyword}{delete} mCursor;
+174   \textcolor{keyword}{delete} mStyleInformation;
+175   mStyleInformation = 0;
+176 
+177   \textcolor{keywordflow}{return} mTextDocument;
+178 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/ooo/\hyperlink{ooo_2converter_8h}{converter.\+h}\item 
+generators/ooo/\hyperlink{ooo_2converter_8cpp}{converter.\+cpp}\end{DoxyCompactItemize}

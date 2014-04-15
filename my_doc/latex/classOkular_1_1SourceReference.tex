@@ -1,0 +1,141 @@
+\hypertarget{classOkular_1_1SourceReference}{\section{Okular\+:\+:Source\+Reference Class Reference}
+\label{classOkular_1_1SourceReference}\index{Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}}
+}
+
+
+Defines a source reference.  
+
+
+
+
+{\ttfamily \#include $<$sourcereference.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSourceReference_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1SourceReference_af2e521ac88b10dd8b6be9d567c264ede}{Source\+Reference} (const Q\+String \&\hyperlink{classOkular_1_1SourceReference_acde61d4bdc6c59d9d01ff03dfe0f25fe}{file\+Name}, int \hyperlink{classOkular_1_1SourceReference_aa5633f3cdccd86c1a2cdf5e3ccf7956f}{row}, int \hyperlink{classOkular_1_1SourceReference_ad7bb96f1bad08bd0b03a1e021291a598}{column}=0)
+\item 
+\hyperlink{classOkular_1_1SourceReference_adb5d4db2f74f62c3b1f963cb3351548b}{$\sim$\+Source\+Reference} ()
+\item 
+Q\+String \hyperlink{classOkular_1_1SourceReference_acde61d4bdc6c59d9d01ff03dfe0f25fe}{file\+Name} () const 
+\item 
+int \hyperlink{classOkular_1_1SourceReference_aa5633f3cdccd86c1a2cdf5e3ccf7956f}{row} () const 
+\item 
+int \hyperlink{classOkular_1_1SourceReference_ad7bb96f1bad08bd0b03a1e021291a598}{column} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a source reference. 
+
+A source reference is a reference to one of the source(s) of the loaded document. 
+
+Definition at line 25 of file sourcereference.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1SourceReference_af2e521ac88b10dd8b6be9d567c264ede}{\index{Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}!Source\+Reference@{Source\+Reference}}
+\index{Source\+Reference@{Source\+Reference}!Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}}
+\subsubsection[{Source\+Reference}]{\setlength{\rightskip}{0pt plus 5cm}Source\+Reference\+::\+Source\+Reference (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{int}]{row, }
+\item[{int}]{column = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SourceReference_af2e521ac88b10dd8b6be9d567c264ede}
+Creates a reference to the row {\ttfamily row} and column {\ttfamily column} of the source {\ttfamily file\+Name} 
+
+Definition at line 32 of file sourcereference.\+cpp.
+
+
+\begin{DoxyCode}
+33     : d( \textcolor{keyword}{new} Private )
+34 \{
+35     d->\hyperlink{classSourceReference_1_1Private_a160cff3e531e76e49aee45a16b16d1d8}{filename} = \hyperlink{classOkular_1_1SourceReference_acde61d4bdc6c59d9d01ff03dfe0f25fe}{fileName};
+36     d->\hyperlink{classSourceReference_1_1Private_a6644b3f45dc1e708c2eada882d7b7a76}{row} = \hyperlink{classOkular_1_1SourceReference_aa5633f3cdccd86c1a2cdf5e3ccf7956f}{row};
+37     d->\hyperlink{classSourceReference_1_1Private_a58f92b34ebcda9e264ec800221849395}{column} = \hyperlink{classOkular_1_1SourceReference_ad7bb96f1bad08bd0b03a1e021291a598}{column};
+38 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SourceReference_adb5d4db2f74f62c3b1f963cb3351548b}{\index{Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}!````~Source\+Reference@{$\sim$\+Source\+Reference}}
+\index{````~Source\+Reference@{$\sim$\+Source\+Reference}!Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}}
+\subsubsection[{$\sim$\+Source\+Reference}]{\setlength{\rightskip}{0pt plus 5cm}Source\+Reference\+::$\sim$\+Source\+Reference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SourceReference_adb5d4db2f74f62c3b1f963cb3351548b}
+Destroys the source reference. 
+
+Definition at line 40 of file sourcereference.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     \textcolor{keyword}{delete} d;
+43 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1SourceReference_ad7bb96f1bad08bd0b03a1e021291a598}{\index{Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}!column@{column}}
+\index{column@{column}!Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}}
+\subsubsection[{column}]{\setlength{\rightskip}{0pt plus 5cm}int Source\+Reference\+::column (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SourceReference_ad7bb96f1bad08bd0b03a1e021291a598}
+Returns the column of the position in the source file. 
+
+Definition at line 55 of file sourcereference.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{
+57     \textcolor{keywordflow}{return} d->\hyperlink{classSourceReference_1_1Private_a58f92b34ebcda9e264ec800221849395}{column};
+58 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SourceReference_acde61d4bdc6c59d9d01ff03dfe0f25fe}{\index{Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}}
+\subsubsection[{file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Source\+Reference\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SourceReference_acde61d4bdc6c59d9d01ff03dfe0f25fe}
+Returns the filename of the source. 
+
+Definition at line 45 of file sourcereference.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     \textcolor{keywordflow}{return} d->\hyperlink{classSourceReference_1_1Private_a160cff3e531e76e49aee45a16b16d1d8}{filename};
+48 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SourceReference_aa5633f3cdccd86c1a2cdf5e3ccf7956f}{\index{Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}!row@{row}}
+\index{row@{row}!Okular\+::\+Source\+Reference@{Okular\+::\+Source\+Reference}}
+\subsubsection[{row}]{\setlength{\rightskip}{0pt plus 5cm}int Source\+Reference\+::row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SourceReference_aa5633f3cdccd86c1a2cdf5e3ccf7956f}
+Returns the row of the position in the source file. 
+
+Definition at line 50 of file sourcereference.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordflow}{return} d->\hyperlink{classSourceReference_1_1Private_a6644b3f45dc1e708c2eada882d7b7a76}{row};
+53 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{sourcereference_8h}{sourcereference.\+h}\item 
+core/\hyperlink{sourcereference_8cpp}{sourcereference.\+cpp}\end{DoxyCompactItemize}

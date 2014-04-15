@@ -1,0 +1,297 @@
+\hypertarget{classOkular_1_1View}{\section{Okular\+:\+:View Class Reference}
+\label{classOkular_1_1View}\index{Okular\+::\+View@{Okular\+::\+View}}
+}
+
+
+\hyperlink{classOkular_1_1View}{View} on the document.  
+
+
+
+
+{\ttfamily \#include $<$view.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classOkular_1_1View}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}{View\+Capability} \{ \hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a3fa37aa9737e4a0f9753aa398c30f667}{Zoom}, 
+\hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a2621c21053805b1e2f71fdeb069f9c35}{Zoom\+Modality}
+ \}
+\item 
+enum \hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45e}{Capability\+Flag} \{ \hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45ead39bbacee7b7b4f74d91ed1079922353}{No\+Flag} = 0, 
+\hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea129d96c4ba7ee8cc9bf91a544d07bcd3}{Capability\+Read} = 0x01, 
+\hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea8d7008cfbe58531381430014358fceb3}{Capability\+Write} = 0x02, 
+\hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45eac0b7ffc919ca2416425d9b81b7fef5d9}{Capability\+Serializable} = 0x04
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1View_ad0dc854db9aabbea98a334dec89f785c}{$\sim$\+View} ()
+\item 
+\hyperlink{classOkular_1_1Document}{Document} $\ast$ \hyperlink{classOkular_1_1View_a0971e5296142cba87af2af289079efea}{view\+Document} () const 
+\item 
+Q\+String \hyperlink{classOkular_1_1View_aac1d4ae8bad44a4a845de118892cfa1e}{name} () const 
+\item 
+virtual bool \hyperlink{classOkular_1_1View_a65d4511363fe5a1fb836a26688bea50c}{supports\+Capability} (\hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}{View\+Capability} \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability}) const 
+\item 
+virtual Capability\+Flags \hyperlink{classOkular_1_1View_abad9d21eaeb248a4b6712aa5cd0ab6fc}{capability\+Flags} (\hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}{View\+Capability} \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability}) const 
+\item 
+virtual Q\+Variant \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability} (\hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}{View\+Capability} capability) const 
+\item 
+virtual void \hyperlink{classOkular_1_1View_a8a6fa965fa025331f2653c529a60eafe}{set\+Capability} (\hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}{View\+Capability} \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability}, const Q\+Variant \&option)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1View_a5780edf1c77b41f495fa48383c9aa17d}{View} (const Q\+String \&\hyperlink{classOkular_1_1View_aac1d4ae8bad44a4a845de118892cfa1e}{name})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1View}{View} on the document. 
+
+The \hyperlink{classOkular_1_1View}{View} class represents a \char`\"{}view\char`\"{} on a document. A view can be registered with only a document at a time.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 32 of file view.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1View_a8552668497a612628f53b5010df7a45e}{\index{Okular\+::\+View@{Okular\+::\+View}!Capability\+Flag@{Capability\+Flag}}
+\index{Capability\+Flag@{Capability\+Flag}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{Capability\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+View\+::\+Capability\+Flag}}}\label{classOkular_1_1View_a8552668497a612628f53b5010df7a45e}
+The access type of a capability \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{No\+Flag@{No\+Flag}!Okular\+::\+View@{Okular\+::\+View}}\index{Okular\+::\+View@{Okular\+::\+View}!No\+Flag@{No\+Flag}}\item[{\em 
+\hypertarget{classOkular_1_1View_a8552668497a612628f53b5010df7a45ead39bbacee7b7b4f74d91ed1079922353}{No\+Flag}\label{classOkular_1_1View_a8552668497a612628f53b5010df7a45ead39bbacee7b7b4f74d91ed1079922353}
+}]\index{Capability\+Read@{Capability\+Read}!Okular\+::\+View@{Okular\+::\+View}}\index{Okular\+::\+View@{Okular\+::\+View}!Capability\+Read@{Capability\+Read}}\item[{\em 
+\hypertarget{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea129d96c4ba7ee8cc9bf91a544d07bcd3}{Capability\+Read}\label{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea129d96c4ba7ee8cc9bf91a544d07bcd3}
+}]Possibility to read a capability. \index{Capability\+Write@{Capability\+Write}!Okular\+::\+View@{Okular\+::\+View}}\index{Okular\+::\+View@{Okular\+::\+View}!Capability\+Write@{Capability\+Write}}\item[{\em 
+\hypertarget{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea8d7008cfbe58531381430014358fceb3}{Capability\+Write}\label{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea8d7008cfbe58531381430014358fceb3}
+}]Possibility to write a capability. \index{Capability\+Serializable@{Capability\+Serializable}!Okular\+::\+View@{Okular\+::\+View}}\index{Okular\+::\+View@{Okular\+::\+View}!Capability\+Serializable@{Capability\+Serializable}}\item[{\em 
+\hypertarget{classOkular_1_1View_a8552668497a612628f53b5010df7a45eac0b7ffc919ca2416425d9b81b7fef5d9}{Capability\+Serializable}\label{classOkular_1_1View_a8552668497a612628f53b5010df7a45eac0b7ffc919ca2416425d9b81b7fef5d9}
+}]The capability is suitable for being serialized/deserialized. \end{description}
+\end{Desc}
+
+
+Definition at line 52 of file view.\+h.
+
+
+\begin{DoxyCode}
+53         \{
+54             \hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45ead39bbacee7b7b4f74d91ed1079922353}{NoFlag} = 0,
+55             \hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea129d96c4ba7ee8cc9bf91a544d07bcd3}{CapabilityRead} = 0x01,      
+56             \hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45ea8d7008cfbe58531381430014358fceb3}{CapabilityWrite} = 0x02,     
+57             \hyperlink{classOkular_1_1View_a8552668497a612628f53b5010df7a45eac0b7ffc919ca2416425d9b81b7fef5d9}{CapabilitySerializable} = 0x04  
+58         \};
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}{\index{Okular\+::\+View@{Okular\+::\+View}!View\+Capability@{View\+Capability}}
+\index{View\+Capability@{View\+Capability}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{View\+Capability}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+View\+::\+View\+Capability}}}\label{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294}
+The capabilities of a view \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Zoom@{Zoom}!Okular\+::\+View@{Okular\+::\+View}}\index{Okular\+::\+View@{Okular\+::\+View}!Zoom@{Zoom}}\item[{\em 
+\hypertarget{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a3fa37aa9737e4a0f9753aa398c30f667}{Zoom}\label{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a3fa37aa9737e4a0f9753aa398c30f667}
+}]Possibility to get/set the zoom of the view. \index{Zoom\+Modality@{Zoom\+Modality}!Okular\+::\+View@{Okular\+::\+View}}\index{Okular\+::\+View@{Okular\+::\+View}!Zoom\+Modality@{Zoom\+Modality}}\item[{\em 
+\hypertarget{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a2621c21053805b1e2f71fdeb069f9c35}{Zoom\+Modality}\label{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a2621c21053805b1e2f71fdeb069f9c35}
+}]Possibility to get/set the zoom mode of the view. \end{description}
+\end{Desc}
+
+
+Definition at line 43 of file view.\+h.
+
+
+\begin{DoxyCode}
+44         \{
+45             \hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a3fa37aa9737e4a0f9753aa398c30f667}{Zoom},                
+46             \hyperlink{classOkular_1_1View_ad95d365554715eb1eabb79350f51b294a2621c21053805b1e2f71fdeb069f9c35}{ZoomModality}         
+47         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1View_ad0dc854db9aabbea98a334dec89f785c}{\index{Okular\+::\+View@{Okular\+::\+View}!````~View@{$\sim$\+View}}
+\index{````~View@{$\sim$\+View}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{$\sim$\+View}]{\setlength{\rightskip}{0pt plus 5cm}View\+::$\sim$\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1View_ad0dc854db9aabbea98a334dec89f785c}
+
+
+Definition at line 34 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{if} ( d\_ptr->document )
+37     \{
+38         d\_ptr->document->m\_views.remove( \textcolor{keyword}{this} );
+39     \}
+40 
+41     \textcolor{keyword}{delete} d\_ptr;
+42 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_a5780edf1c77b41f495fa48383c9aa17d}{\index{Okular\+::\+View@{Okular\+::\+View}!View@{View}}
+\index{View@{View}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{View}]{\setlength{\rightskip}{0pt plus 5cm}View\+::\+View (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1View_a5780edf1c77b41f495fa48383c9aa17d}
+Construct a new view with the specified {\ttfamily name}. 
+
+Definition at line 28 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+29     : d\_ptr( \textcolor{keyword}{new} \hyperlink{classOkular_1_1ViewPrivate}{ViewPrivate}() )
+30 \{
+31     d\_ptr->name = \hyperlink{classOkular_1_1View_aac1d4ae8bad44a4a845de118892cfa1e}{name};
+32 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{\index{Okular\+::\+View@{Okular\+::\+View}!capability@{capability}}
+\index{capability@{capability}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{capability}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant View\+::capability (
+\begin{DoxyParamCaption}
+\item[{{\bf View\+::\+View\+Capability}}]{capability}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1View_a32763d9566680b0ae37650a894245322}
+Query the value of the specified {\ttfamily capability}. 
+
+Reimplemented in \hyperlink{classPageView_a2a3eb80b924b29dd1498259734f81311}{Page\+View}.
+
+
+
+Definition at line 66 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68     Q\_UNUSED( \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability} )
+69     return QVariant();
+70 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_abad9d21eaeb248a4b6712aa5cd0ab6fc}{\index{Okular\+::\+View@{Okular\+::\+View}!capability\+Flags@{capability\+Flags}}
+\index{capability\+Flags@{capability\+Flags}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{capability\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}View\+::\+Capability\+Flags View\+::capability\+Flags (
+\begin{DoxyParamCaption}
+\item[{{\bf View\+::\+View\+Capability}}]{capability}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1View_abad9d21eaeb248a4b6712aa5cd0ab6fc}
+Query the flags for the specified {\ttfamily capability}. 
+
+Reimplemented in \hyperlink{classPageView_afb9281a41f591a04ffb96e4d7e1fe67e}{Page\+View}.
+
+
+
+Definition at line 60 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{
+62     Q\_UNUSED( \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability} )
+63     return 0;
+64 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_aac1d4ae8bad44a4a845de118892cfa1e}{\index{Okular\+::\+View@{Okular\+::\+View}!name@{name}}
+\index{name@{name}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String View\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1View_aac1d4ae8bad44a4a845de118892cfa1e}
+Return the name of this view. 
+
+Definition at line 49 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+50 \{
+51     \textcolor{keywordflow}{return} d\_ptr->name;
+52 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_a8a6fa965fa025331f2653c529a60eafe}{\index{Okular\+::\+View@{Okular\+::\+View}!set\+Capability@{set\+Capability}}
+\index{set\+Capability@{set\+Capability}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{set\+Capability}]{\setlength{\rightskip}{0pt plus 5cm}void View\+::set\+Capability (
+\begin{DoxyParamCaption}
+\item[{{\bf View\+::\+View\+Capability}}]{capability, }
+\item[{const Q\+Variant \&}]{option}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1View_a8a6fa965fa025331f2653c529a60eafe}
+Sets a new value for the specified {\ttfamily capability}. 
+
+Reimplemented in \hyperlink{classPageView_aad3b63508df30a6bc2ecbe587353c6b6}{Page\+View}.
+
+
+
+Definition at line 72 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74     Q\_UNUSED( \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability} )
+75     Q\_UNUSED( option )
+76 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_a65d4511363fe5a1fb836a26688bea50c}{\index{Okular\+::\+View@{Okular\+::\+View}!supports\+Capability@{supports\+Capability}}
+\index{supports\+Capability@{supports\+Capability}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{supports\+Capability}]{\setlength{\rightskip}{0pt plus 5cm}bool View\+::supports\+Capability (
+\begin{DoxyParamCaption}
+\item[{{\bf View\+::\+View\+Capability}}]{capability}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1View_a65d4511363fe5a1fb836a26688bea50c}
+Query whether the view support the specified {\ttfamily capability}. 
+
+Reimplemented in \hyperlink{classPageView_ad874758e1b8305ad1aeab986d1d2513c}{Page\+View}.
+
+
+
+Definition at line 54 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+55 \{
+56     Q\_UNUSED( \hyperlink{classOkular_1_1View_a32763d9566680b0ae37650a894245322}{capability} )
+57     return false;
+58 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1View_a0971e5296142cba87af2af289079efea}{\index{Okular\+::\+View@{Okular\+::\+View}!view\+Document@{view\+Document}}
+\index{view\+Document@{view\+Document}!Okular\+::\+View@{Okular\+::\+View}}
+\subsubsection[{view\+Document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document} $\ast$ View\+::view\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1View_a0971e5296142cba87af2af289079efea}
+Return the document which this view is associated to, or null if it is not associated with any document. 
+
+Definition at line 44 of file view.\+cpp.
+
+
+\begin{DoxyCode}
+45 \{
+46     \textcolor{keywordflow}{return} d\_ptr->document ? d\_ptr->document->m\_parent : 0;
+47 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{view_8h}{view.\+h}\item 
+core/\hyperlink{view_8cpp}{view.\+cpp}\end{DoxyCompactItemize}

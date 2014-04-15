@@ -1,0 +1,236 @@
+\hypertarget{classOkular_1_1SoundAnnotation}{\section{Okular\+:\+:Sound\+Annotation Class Reference}
+\label{classOkular_1_1SoundAnnotation}\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+}
+
+
+\hyperlink{classOkular_1_1Sound}{Sound} annotation.  
+
+
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Sound\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1SoundAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1SoundAnnotation_af0c5bb389c8e0768d34fafc9324f3275}{Sound\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1SoundAnnotation_abf2b78996e6ff7b94bc951a0087801e6}{Sound\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+virtual \hyperlink{classOkular_1_1SoundAnnotation_a5840cfe8d1e7762340ce9ba602a71051}{$\sim$\+Sound\+Annotation} ()
+\item 
+Q\+String \hyperlink{classOkular_1_1SoundAnnotation_a1dba0c2e63a69632479d3cb5fd5e11c0}{sound\+Icon\+Name} () const 
+\item 
+void \hyperlink{classOkular_1_1SoundAnnotation_a31cff8844c1f44ba429aaa5b19ae0174}{set\+Sound\+Icon\+Name} (const Q\+String \&name)
+\item 
+\hyperlink{classOkular_1_1Sound}{Sound} $\ast$ \hyperlink{classOkular_1_1SoundAnnotation_a8bcdec0ddd5970647944ca517f6580da}{sound} () const 
+\item 
+void \hyperlink{classOkular_1_1SoundAnnotation_addaf9b30f0d8bd216d3738c278bcdd24}{set\+Sound} (\hyperlink{classOkular_1_1Sound}{Sound} $\ast$object)
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1SoundAnnotation_a497aa4b131db0f95f690cfd729c89b6b}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1SoundAnnotation_ac70b0043016b8311d5eeff3334491826}{store} (Q\+Dom\+Node \&node, Q\+Dom\+Document \&document) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1Sound}{Sound} annotation. 
+
+The sound annotation represents a sound to be played when activated.
+
+\begin{DoxySince}{Since}
+0.\+7 (K\+D\+E 4.\+1) 
+\end{DoxySince}
+
+
+Definition at line 1428 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1SoundAnnotation_af0c5bb389c8e0768d34fafc9324f3275}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!Sound\+Annotation@{Sound\+Annotation}}
+\index{Sound\+Annotation@{Sound\+Annotation}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{Sound\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Sound\+Annotation\+::\+Sound\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SoundAnnotation_af0c5bb389c8e0768d34fafc9324f3275}
+Creates a new sound annotation. 
+
+Definition at line 2604 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2605     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1SoundAnnotationPrivate}{SoundAnnotationPrivate}() )
+2606 \{
+2607 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_abf2b78996e6ff7b94bc951a0087801e6}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!Sound\+Annotation@{Sound\+Annotation}}
+\index{Sound\+Annotation@{Sound\+Annotation}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{Sound\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Sound\+Annotation\+::\+Sound\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SoundAnnotation_abf2b78996e6ff7b94bc951a0087801e6}
+Creates a new sound annotation from the xml {\ttfamily description} 
+
+Definition at line 2609 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2610     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1SoundAnnotationPrivate}{SoundAnnotationPrivate}(), node )
+2611 \{
+2612 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_a5840cfe8d1e7762340ce9ba602a71051}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!````~Sound\+Annotation@{$\sim$\+Sound\+Annotation}}
+\index{````~Sound\+Annotation@{$\sim$\+Sound\+Annotation}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{$\sim$\+Sound\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Sound\+Annotation\+::$\sim$\+Sound\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAnnotation_a5840cfe8d1e7762340ce9ba602a71051}
+Destroys the sound annotation. 
+
+Definition at line 2614 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2615 \{
+2616 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1SoundAnnotation_addaf9b30f0d8bd216d3738c278bcdd24}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!set\+Sound@{set\+Sound}}
+\index{set\+Sound@{set\+Sound}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{set\+Sound}]{\setlength{\rightskip}{0pt plus 5cm}void Sound\+Annotation\+::set\+Sound (
+\begin{DoxyParamCaption}
+\item[{{\bf Sound} $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SoundAnnotation_addaf9b30f0d8bd216d3738c278bcdd24}
+Sets the {\ttfamily object} representing the sound of the file attachment annotation. 
+
+Definition at line 2651 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2652 \{
+2653     Q\_D( \hyperlink{classOkular_1_1SoundAnnotation}{SoundAnnotation} );
+2654     d->sound = s;
+2655 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_a31cff8844c1f44ba429aaa5b19ae0174}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!set\+Sound\+Icon\+Name@{set\+Sound\+Icon\+Name}}
+\index{set\+Sound\+Icon\+Name@{set\+Sound\+Icon\+Name}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{set\+Sound\+Icon\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Sound\+Annotation\+::set\+Sound\+Icon\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1SoundAnnotation_a31cff8844c1f44ba429aaa5b19ae0174}
+Sets the {\ttfamily name} of the icon for the sound annotation. 
+
+Definition at line 2639 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2640 \{
+2641     Q\_D( \hyperlink{classOkular_1_1SoundAnnotation}{SoundAnnotation} );
+2642     d->icon = icon;
+2643 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_a8bcdec0ddd5970647944ca517f6580da}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!sound@{sound}}
+\index{sound@{sound}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{sound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sound} $\ast$ Sound\+Annotation\+::sound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAnnotation_a8bcdec0ddd5970647944ca517f6580da}
+Gets the sound object. 
+
+Definition at line 2645 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2646 \{
+2647     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAnnotation}{SoundAnnotation} );
+2648     \textcolor{keywordflow}{return} d->sound;
+2649 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_a1dba0c2e63a69632479d3cb5fd5e11c0}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!sound\+Icon\+Name@{sound\+Icon\+Name}}
+\index{sound\+Icon\+Name@{sound\+Icon\+Name}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{sound\+Icon\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Sound\+Annotation\+::sound\+Icon\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1SoundAnnotation_a1dba0c2e63a69632479d3cb5fd5e11c0}
+Gets the name of the icon. 
+
+Definition at line 2633 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2634 \{
+2635     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1SoundAnnotation}{SoundAnnotation} );
+2636     \textcolor{keywordflow}{return} d->icon;
+2637 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_ac70b0043016b8311d5eeff3334491826}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Sound\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAnnotation_ac70b0043016b8311d5eeff3334491826}
+Stores the sound annotation as xml in {\ttfamily document} under the given parent {\ttfamily node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2618 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2619 \{
+2620     \textcolor{comment}{// recurse to parent objects storing properties}
+2621     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+2622 
+2623     \textcolor{comment}{// create [sound] element}
+2624     QDomElement soundElement = document.createElement( \textcolor{stringliteral}{"sound"} );
+2625     node.appendChild( soundElement );
+2626 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1SoundAnnotation_a497aa4b131db0f95f690cfd729c89b6b}{\index{Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Sound\+Annotation@{Okular\+::\+Sound\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Sound\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1SoundAnnotation_a497aa4b131db0f95f690cfd729c89b6b}
+Returns the sub type of the sound annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2628 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2629 \{
+2630     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a9e75622bfcf537319a904538840a0bce}{ASound};
+2631 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

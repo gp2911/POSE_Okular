@@ -1,0 +1,195 @@
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion}{\section{K\+Parts\+:\+:Browser\+Open\+Or\+Save\+Question Class Reference}
+\label{classKParts_1_1BrowserOpenOrSaveQuestion}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+}
+
+
+{\ttfamily \#include $<$browseropenorsavequestion.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9a}{Feature} \{ \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa1cfa50dab189d46bdc4a66c5a1763168}{Basic\+Features} = 0, 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa3bc1c3177b1a3c8f4cd297ae558c155e}{Service\+Selection} = 1
+ \}
+\item 
+enum \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}{Result} \{ \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fad5f24b54978bf4ec2a36720d33ad7609}{Save}, 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa1135dc1f27b120bdd6dc83dd7254b60b}{Open}, 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa9038d40b03609466a8433c35b428bf5a}{Embed}, 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fac5e1d49f3047805e8f216f11cbe903ab}{Cancel}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a93097e04518164345d399f7c376b993e}{Browser\+Open\+Or\+Save\+Question} (Q\+Widget $\ast$parent, const K\+Url \&url, const Q\+String \&mime\+Type)
+\item 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a6af2b8e427bf2bb922bb9fcc09df6a65}{$\sim$\+Browser\+Open\+Or\+Save\+Question} ()
+\item 
+void \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a82733c7818b3c6ee5987ee8c7450c29f}{set\+Suggested\+File\+Name} (const Q\+String \&suggested\+File\+Name)
+\item 
+void \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a998acfa7caa8a47794cc0eb2682a503d}{set\+Features} (Features features)
+\item 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}{Result} \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a5d9df0d831477073f43071dfe580456d}{ask\+Open\+Or\+Save} ()
+\item 
+\hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}{Result} \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_ad261c14f0e8e32b99b61029fdd5f2fad}{ask\+Embed\+Or\+Save} (int flags=0)
+\item 
+K\+Service\+::\+Ptr \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_aaaa2f3a0f18e7acc82152bf296c227da}{selected\+Service} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class shows the dialog that asks the user whether to save a url or open a url in another application.
+
+It also has the variant which asks \char`\"{}save or embed\char`\"{} (e.\+g. into konqueror).
+
+\begin{DoxySince}{Since}
+4.\+4 
+\end{DoxySince}
+
+
+Definition at line 41 of file browseropenorsavequestion.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9a}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Feature@{Feature}}
+\index{Feature@{Feature}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{Feature}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::\+Feature}}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9a}
+Set of features that should be enabled in this dialog. This allows to add features before making all applications ready for those features (e.\+g. applications need to read \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_aaaa2f3a0f18e7acc82152bf296c227da}{selected\+Service()} otherwise the dialog should not show the service selection button) \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Basic\+Features@{Basic\+Features}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Basic\+Features@{Basic\+Features}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa1cfa50dab189d46bdc4a66c5a1763168}{Basic\+Features}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa1cfa50dab189d46bdc4a66c5a1763168}
+}]Only the basic save, open, embed, cancel button \index{Service\+Selection@{Service\+Selection}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Service\+Selection@{Service\+Selection}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa3bc1c3177b1a3c8f4cd297ae558c155e}{Service\+Selection}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa3bc1c3177b1a3c8f4cd297ae558c155e}
+}]Shows \char`\"{}\+Open With...\char`\"{} with the associated applications for the mimetype \end{description}
+\end{Desc}
+
+
+Definition at line 64 of file browseropenorsavequestion.\+h.
+
+
+\begin{DoxyCode}
+64                  \{ \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa1cfa50dab189d46bdc4a66c5a1763168}{BasicFeatures} = 0, 
+65                    \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a9dfe6a7919cfadff826a357e94ac3a9aa3bc1c3177b1a3c8f4cd297ae558c155e}{ServiceSelection} = 1 
+66     \};
+\end{DoxyCode}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Result@{Result}}
+\index{Result@{Result}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::\+Result}}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Save@{Save}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Save@{Save}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fad5f24b54978bf4ec2a36720d33ad7609}{Save}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fad5f24b54978bf4ec2a36720d33ad7609}
+}]\index{Open@{Open}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Open@{Open}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa1135dc1f27b120bdd6dc83dd7254b60b}{Open}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa1135dc1f27b120bdd6dc83dd7254b60b}
+}]\index{Embed@{Embed}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Embed@{Embed}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa9038d40b03609466a8433c35b428bf5a}{Embed}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa9038d40b03609466a8433c35b428bf5a}
+}]\index{Cancel@{Cancel}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Cancel@{Cancel}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fac5e1d49f3047805e8f216f11cbe903ab}{Cancel}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fac5e1d49f3047805e8f216f11cbe903ab}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 74 of file browseropenorsavequestion.\+h.
+
+
+\begin{DoxyCode}
+74 \{ \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fad5f24b54978bf4ec2a36720d33ad7609}{Save}, \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa1135dc1f27b120bdd6dc83dd7254b60b}{Open}, \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fa9038d40b03609466a8433c35b428bf5a}{Embed}, \hyperlink{classKParts_1_1BrowserOpenOrSaveQuestion_a12842198b7684e9e246e9a207eabc93fac5e1d49f3047805e8f216f11cbe903ab}{Cancel} \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a93097e04518164345d399f7c376b993e}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!Browser\+Open\+Or\+Save\+Question@{Browser\+Open\+Or\+Save\+Question}}
+\index{Browser\+Open\+Or\+Save\+Question@{Browser\+Open\+Or\+Save\+Question}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{Browser\+Open\+Or\+Save\+Question}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::\+Browser\+Open\+Or\+Save\+Question (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{const K\+Url \&}]{url, }
+\item[{const Q\+String \&}]{mime\+Type}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a93097e04518164345d399f7c376b993e}
+Constructor, for all kinds of dialogs shown in this class. 
+\begin{DoxyParams}{Parameters}
+{\em url} & the U\+R\+L in question \\
+\hline
+{\em mime\+Type} & the mimetype of the U\+R\+L \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a6af2b8e427bf2bb922bb9fcc09df6a65}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!````~Browser\+Open\+Or\+Save\+Question@{$\sim$\+Browser\+Open\+Or\+Save\+Question}}
+\index{````~Browser\+Open\+Or\+Save\+Question@{$\sim$\+Browser\+Open\+Or\+Save\+Question}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{$\sim$\+Browser\+Open\+Or\+Save\+Question}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::$\sim$\+Browser\+Open\+Or\+Save\+Question (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a6af2b8e427bf2bb922bb9fcc09df6a65}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_ad261c14f0e8e32b99b61029fdd5f2fad}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!ask\+Embed\+Or\+Save@{ask\+Embed\+Or\+Save}}
+\index{ask\+Embed\+Or\+Save@{ask\+Embed\+Or\+Save}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{ask\+Embed\+Or\+Save}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Result} K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::ask\+Embed\+Or\+Save (
+\begin{DoxyParamCaption}
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_ad261c14f0e8e32b99b61029fdd5f2fad}
+Ask the user whether to save or open a url in another application. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent widget for the dialog \\
+\hline
+{\em flags} & set to \hyperlink{classKParts_1_1BrowserRun_ae78b4e6186491175ccdb4b0f2693c08daa236cc4b09fc3ca6f88d9a37b32ea8af}{Browser\+Run\+::\+Attachment\+Disposition} if suggested by the server This is used because by default text/html files are opened embedded in browsers, not saved. But if the server said \char`\"{}attachment\char`\"{}, it means the user is download a file for saving it. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Save, Embed or Cancel. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a5d9df0d831477073f43071dfe580456d}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!ask\+Open\+Or\+Save@{ask\+Open\+Or\+Save}}
+\index{ask\+Open\+Or\+Save@{ask\+Open\+Or\+Save}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{ask\+Open\+Or\+Save}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Result} K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::ask\+Open\+Or\+Save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a5d9df0d831477073f43071dfe580456d}
+Ask the user whether to save or open a url in another application. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent widget for the dialog \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Save, Open or Cancel. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_aaaa2f3a0f18e7acc82152bf296c227da}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!selected\+Service@{selected\+Service}}
+\index{selected\+Service@{selected\+Service}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{selected\+Service}]{\setlength{\rightskip}{0pt plus 5cm}K\+Service\+::\+Ptr K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::selected\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_aaaa2f3a0f18e7acc82152bf296c227da}
+\begin{DoxyReturn}{Returns}
+the service that was selected during ask\+Open\+Or\+Save, if it returned Open. In all other cases (no associated application, Save or Cancel selected), this returns 0.
+\end{DoxyReturn}
+Requires set\+Features(\+Browser\+Open\+Or\+Save\+Question\+::\+Service\+Selection). \hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a998acfa7caa8a47794cc0eb2682a503d}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!set\+Features@{set\+Features}}
+\index{set\+Features@{set\+Features}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{set\+Features}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::set\+Features (
+\begin{DoxyParamCaption}
+\item[{Features}]{features}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a998acfa7caa8a47794cc0eb2682a503d}
+Enables the given features in the dialog \hypertarget{classKParts_1_1BrowserOpenOrSaveQuestion_a82733c7818b3c6ee5987ee8c7450c29f}{\index{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}!set\+Suggested\+File\+Name@{set\+Suggested\+File\+Name}}
+\index{set\+Suggested\+File\+Name@{set\+Suggested\+File\+Name}!K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question@{K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question}}
+\subsubsection[{set\+Suggested\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Browser\+Open\+Or\+Save\+Question\+::set\+Suggested\+File\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{suggested\+File\+Name}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserOpenOrSaveQuestion_a82733c7818b3c6ee5987ee8c7450c29f}
+Sets the suggested filename, shown in the dialog. 
+\begin{DoxyParams}{Parameters}
+{\em suggested\+File\+Name} & optional file name suggested by the server (H\+T\+T\+P Content-\/\+Disposition) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browseropenorsavequestion_8h}{browseropenorsavequestion.\+h}\end{DoxyCompactItemize}

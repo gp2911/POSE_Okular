@@ -1,0 +1,323 @@
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad}{\section{Okular\+:\+:Highlight\+Annotation\+:\+:Quad Class Reference}
+\label{classOkular_1_1HighlightAnnotation_1_1Quad}\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHighlightAnnotation_1_1Quad_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a6f71ee70bc49f8150b76a8d2636661db}{Quad} ()
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a1c5afe1a4bc551baa56a2dc20cb88b3e}{$\sim$\+Quad} ()
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_ad82bc11764aef2cf20efac1097a7301d}{Quad} (const \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad}{Quad} \&other)
+\item 
+\hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad}{Quad} \& \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a9ba51930c6bab2ef2f6e5c191a307ff8}{operator=} (const \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad}{Quad} \&other)
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_ab9ce9af2562a336d4ef3d75d468c7eed}{set\+Point} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&\hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a9c189bc7240228b79d4e848b94fe8e15}{point}, int index)
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a9c189bc7240228b79d4e848b94fe8e15}{point} (int index) const 
+\item 
+\hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_acb6ab9f7ca3003937f7829941f5a0d52}{transformed\+Point} (int index) const 
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_af6cd18515ceea4f9523d9c40cf646551}{set\+Cap\+Start} (bool value)
+\item 
+bool \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_acf4eea0c1928c88380831c3d5b3bf90f}{cap\+Start} () const 
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a0dcc70a6b9830a27bd6b6ad5f542992d}{set\+Cap\+End} (bool value)
+\item 
+bool \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a027de3a1204489adfe5c998602c8bf1b}{cap\+End} () const 
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_ada9f47fe278053cf8a680140c7194ec3}{set\+Feather} (double width)
+\item 
+double \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a959b42d542a5e1e464e46eae2c41c28b}{feather} () const 
+\item 
+void \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_ae0209e81742a659d430d02e3892aa3f6}{transform} (const Q\+Transform \&matrix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad}{Quad} class contains 8 coordinates and style definitions which describe a line part of the whole highlight annotation. 
+
+Definition at line 1122 of file annotations.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a6f71ee70bc49f8150b76a8d2636661db}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!Quad@{Quad}}
+\index{Quad@{Quad}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{Quad}]{\setlength{\rightskip}{0pt plus 5cm}Highlight\+Annotation\+::\+Quad\+::\+Quad (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a6f71ee70bc49f8150b76a8d2636661db}
+Creates a new quad. 
+
+Definition at line 1775 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1776     : d( \textcolor{keyword}{new} Private )
+1777 \{
+1778 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a1c5afe1a4bc551baa56a2dc20cb88b3e}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!````~Quad@{$\sim$\+Quad}}
+\index{````~Quad@{$\sim$\+Quad}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{$\sim$\+Quad}]{\setlength{\rightskip}{0pt plus 5cm}Highlight\+Annotation\+::\+Quad\+::$\sim$\+Quad (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a1c5afe1a4bc551baa56a2dc20cb88b3e}
+Destroys the quad. 
+
+Definition at line 1780 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1781 \{
+1782     \textcolor{keyword}{delete} d;
+1783 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_ad82bc11764aef2cf20efac1097a7301d}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!Quad@{Quad}}
+\index{Quad@{Quad}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{Quad}]{\setlength{\rightskip}{0pt plus 5cm}Highlight\+Annotation\+::\+Quad\+::\+Quad (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quad} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_ad82bc11764aef2cf20efac1097a7301d}
+
+
+Definition at line 1785 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1786     : d( \textcolor{keyword}{new} Private )
+1787 \{
+1788     *d = *other.d;
+1789 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a027de3a1204489adfe5c998602c8bf1b}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!cap\+End@{cap\+End}}
+\index{cap\+End@{cap\+End}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{cap\+End}]{\setlength{\rightskip}{0pt plus 5cm}bool Highlight\+Annotation\+::\+Quad\+::cap\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a027de3a1204489adfe5c998602c8bf1b}
+Returns whether a cap should be used at the end. 
+
+Definition at line 1838 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1839 \{
+1840     \textcolor{keywordflow}{return} d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_afd27d64bf7ea84389192a19697b35a01}{m\_capEnd};
+1841 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_acf4eea0c1928c88380831c3d5b3bf90f}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!cap\+Start@{cap\+Start}}
+\index{cap\+Start@{cap\+Start}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{cap\+Start}]{\setlength{\rightskip}{0pt plus 5cm}bool Highlight\+Annotation\+::\+Quad\+::cap\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_acf4eea0c1928c88380831c3d5b3bf90f}
+Returns whether a cap should be used at the start. 
+
+Definition at line 1828 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1829 \{
+1830     \textcolor{keywordflow}{return} d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a89874cc544623ba223cad48ccb868700}{m\_capStart};
+1831 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a959b42d542a5e1e464e46eae2c41c28b}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!feather@{feather}}
+\index{feather@{feather}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{feather}]{\setlength{\rightskip}{0pt plus 5cm}double Highlight\+Annotation\+::\+Quad\+::feather (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a959b42d542a5e1e464e46eae2c41c28b}
+Returns the width of the drawing feather. 
+
+Definition at line 1848 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1849 \{
+1850     \textcolor{keywordflow}{return} d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a9330edf17dee0457e183dfcaa1daf6e4}{m\_feather};
+1851 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a9ba51930c6bab2ef2f6e5c191a307ff8}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!operator=@{operator=}}
+\index{operator=@{operator=}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Highlight\+Annotation\+::\+Quad} \& Highlight\+Annotation\+::\+Quad\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quad} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a9ba51930c6bab2ef2f6e5c191a307ff8}
+
+
+Definition at line 1791 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1792 \{
+1793     \textcolor{keywordflow}{if} ( \textcolor{keyword}{this} != &other )
+1794         *d = *other.d;
+1795 
+1796     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+1797 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a9c189bc7240228b79d4e848b94fe8e15}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!point@{point}}
+\index{point@{point}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Highlight\+Annotation\+::\+Quad\+::point (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a9c189bc7240228b79d4e848b94fe8e15}
+Returns the normalized point at {\ttfamily index}.
+
+{\ttfamily index} must be between 0 and 3. 
+
+Definition at line 1807 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1808 \{
+1809     \textcolor{keywordflow}{if} ( index < 0 || index > 3 )
+1810         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}();
+1811 
+1812     \textcolor{keywordflow}{return} d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a33ccf7c730e1aa0104fa245eacc073be}{m\_points}[ index ];
+1813 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_a0dcc70a6b9830a27bd6b6ad5f542992d}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!set\+Cap\+End@{set\+Cap\+End}}
+\index{set\+Cap\+End@{set\+Cap\+End}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{set\+Cap\+End}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::\+Quad\+::set\+Cap\+End (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_a0dcc70a6b9830a27bd6b6ad5f542992d}
+Sets whether a cap should be used at the end. 
+
+Definition at line 1833 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1834 \{
+1835     d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_afd27d64bf7ea84389192a19697b35a01}{m\_capEnd} = value;
+1836 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_af6cd18515ceea4f9523d9c40cf646551}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!set\+Cap\+Start@{set\+Cap\+Start}}
+\index{set\+Cap\+Start@{set\+Cap\+Start}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{set\+Cap\+Start}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::\+Quad\+::set\+Cap\+Start (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_af6cd18515ceea4f9523d9c40cf646551}
+Sets whether a cap should be used at the start. 
+
+Definition at line 1823 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1824 \{
+1825     d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a89874cc544623ba223cad48ccb868700}{m\_capStart} = value;
+1826 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_ada9f47fe278053cf8a680140c7194ec3}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!set\+Feather@{set\+Feather}}
+\index{set\+Feather@{set\+Feather}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{set\+Feather}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::\+Quad\+::set\+Feather (
+\begin{DoxyParamCaption}
+\item[{double}]{width}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_ada9f47fe278053cf8a680140c7194ec3}
+Sets the {\ttfamily width} of the drawing feather. 
+
+Definition at line 1843 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1844 \{
+1845     d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a9330edf17dee0457e183dfcaa1daf6e4}{m\_feather} = width;
+1846 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_ab9ce9af2562a336d4ef3d75d468c7eed}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!set\+Point@{set\+Point}}
+\index{set\+Point@{set\+Point}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{set\+Point}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::\+Quad\+::set\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{point, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_ab9ce9af2562a336d4ef3d75d468c7eed}
+Sets the normalized {\ttfamily point} at {\ttfamily index}.
+
+{\ttfamily index} must be between 0 and 3. 
+
+Definition at line 1799 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1800 \{
+1801     \textcolor{keywordflow}{if} ( index < 0 || index > 3 )
+1802         \textcolor{keywordflow}{return};
+1803 
+1804     d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a33ccf7c730e1aa0104fa245eacc073be}{m\_points}[ index ] = \hyperlink{classOkular_1_1HighlightAnnotation_1_1Quad_a9c189bc7240228b79d4e848b94fe8e15}{point};
+1805 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_ae0209e81742a659d430d02e3892aa3f6}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!transform@{transform}}
+\index{transform@{transform}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}void Highlight\+Annotation\+::\+Quad\+::transform (
+\begin{DoxyParamCaption}
+\item[{const Q\+Transform \&}]{matrix}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_ae0209e81742a659d430d02e3892aa3f6}
+Transforms the quad coordinates with the transformation defined by {\ttfamily matrix}. 
+
+Definition at line 1853 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1854 \{
+1855     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < 4; ++i ) \{
+1856         d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a2c44540ba5195db18fd64c41b05639ed}{m\_transformedPoints}[ i ] = d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a33ccf7c730e1aa0104fa245eacc073be}{m\_points}[ i ];
+1857         d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a2c44540ba5195db18fd64c41b05639ed}{m\_transformedPoints}[ i ].\hyperlink{classOkular_1_1NormalizedPoint_a5ad52e9cb2bdde31fef693e90f102bf0}{transform}( matrix );
+1858     \}
+1859 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1HighlightAnnotation_1_1Quad_acb6ab9f7ca3003937f7829941f5a0d52}{\index{Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}!transformed\+Point@{transformed\+Point}}
+\index{transformed\+Point@{transformed\+Point}!Okular\+::\+Highlight\+Annotation\+::\+Quad@{Okular\+::\+Highlight\+Annotation\+::\+Quad}}
+\subsubsection[{transformed\+Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Normalized\+Point} Highlight\+Annotation\+::\+Quad\+::transformed\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1HighlightAnnotation_1_1Quad_acb6ab9f7ca3003937f7829941f5a0d52}
+Returns the transformed (e.\+g. rotated) normalized point at {\ttfamily index}.
+
+{\ttfamily index} must be between 0 and 3. 
+
+Definition at line 1815 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1816 \{
+1817     \textcolor{keywordflow}{if} ( index < 0 || index > 3 )
+1818         \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}();
+1819 
+1820     \textcolor{keywordflow}{return} d->\hyperlink{classHighlightAnnotation_1_1Quad_1_1Private_a2c44540ba5195db18fd64c41b05639ed}{m\_transformedPoints}[ index ];
+1821 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

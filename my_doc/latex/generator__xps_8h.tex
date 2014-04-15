@@ -1,0 +1,107 @@
+\hypertarget{generator__xps_8h}{\section{generators/xps/generator\+\_\+xps.h File Reference}
+\label{generator__xps_8h}\index{generators/xps/generator\+\_\+xps.\+h@{generators/xps/generator\+\_\+xps.\+h}}
+}
+{\ttfamily \#include $<$core/generator.\+h$>$}\\*
+{\ttfamily \#include $<$core/textpage.\+h$>$}\\*
+{\ttfamily \#include $<$Q\+Color$>$}\\*
+{\ttfamily \#include $<$Q\+Dom\+Document$>$}\\*
+{\ttfamily \#include $<$Q\+Font\+Database$>$}\\*
+{\ttfamily \#include $<$Q\+Image$>$}\\*
+{\ttfamily \#include $<$Q\+Xml\+Stream\+Reader$>$}\\*
+{\ttfamily \#include $<$Q\+Xml\+Default\+Handler$>$}\\*
+{\ttfamily \#include $<$Q\+Stack$>$}\\*
+{\ttfamily \#include $<$Q\+Variant$>$}\\*
+{\ttfamily \#include $<$kzip.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAbbPathToken}{Abb\+Path\+Token}
+\item 
+class \hyperlink{classXpsRenderNode}{Xps\+Render\+Node}
+\item 
+struct \hyperlink{structXpsGradient}{Xps\+Gradient}
+\item 
+struct \hyperlink{structXpsPathFigure}{Xps\+Path\+Figure}
+\item 
+struct \hyperlink{structXpsPathGeometry}{Xps\+Path\+Geometry}
+\item 
+class \hyperlink{classXpsHandler}{Xps\+Handler}
+\item 
+class \hyperlink{classXpsPage}{Xps\+Page}
+\item 
+class \hyperlink{classXpsDocument}{Xps\+Document}
+\item 
+class \hyperlink{classXpsFile}{Xps\+File}
+\item 
+class \hyperlink{classXpsGenerator}{Xps\+Generator}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Q\+Transform \hyperlink{generator__xps_8h_aebde53773a7daebe396ae625700469cc}{Xps\+Matrix\+Transform}
+\item 
+typedef Q\+Transform \hyperlink{generator__xps_8h_af6a538acffbc38ab63ad5f5e54420202}{Xps\+Render\+Transform}
+\item 
+typedef Q\+Brush \hyperlink{generator__xps_8h_a4125d5b6b9db0e5f4a715cd6c341265a}{Xps\+Fill}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fab}{Abb\+Path\+Token\+Type} \{ \hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae5c8ab0ab1af086c300768ed5ef28887}{abt\+Command}, 
+\hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabad378fcbdc23fe8372870ed3524fa582d}{abt\+Number}, 
+\hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530faba038da409922f52be148a8dbc9ec3d296}{abt\+Comma}, 
+\hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae9170e6f18bab5ce745e488462779925}{abt\+E\+O\+F}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{generator__xps_8h_a4125d5b6b9db0e5f4a715cd6c341265a}{\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!Xps\+Fill@{Xps\+Fill}}
+\index{Xps\+Fill@{Xps\+Fill}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}
+\subsubsection[{Xps\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}typedef Q\+Brush {\bf Xps\+Fill}}}\label{generator__xps_8h_a4125d5b6b9db0e5f4a715cd6c341265a}
+
+
+Definition at line 81 of file generator\+\_\+xps.\+h.
+
+\hypertarget{generator__xps_8h_aebde53773a7daebe396ae625700469cc}{\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!Xps\+Matrix\+Transform@{Xps\+Matrix\+Transform}}
+\index{Xps\+Matrix\+Transform@{Xps\+Matrix\+Transform}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}
+\subsubsection[{Xps\+Matrix\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}typedef Q\+Transform {\bf Xps\+Matrix\+Transform}}}\label{generator__xps_8h_aebde53773a7daebe396ae625700469cc}
+Types of data in \hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{Xps\+Render\+Node\+::data}. Name of each type consist of Xps and name of xml element which data it holds 
+
+Definition at line 79 of file generator\+\_\+xps.\+h.
+
+\hypertarget{generator__xps_8h_af6a538acffbc38ab63ad5f5e54420202}{\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!Xps\+Render\+Transform@{Xps\+Render\+Transform}}
+\index{Xps\+Render\+Transform@{Xps\+Render\+Transform}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}
+\subsubsection[{Xps\+Render\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}typedef Q\+Transform {\bf Xps\+Render\+Transform}}}\label{generator__xps_8h_af6a538acffbc38ab63ad5f5e54420202}
+
+
+Definition at line 80 of file generator\+\_\+xps.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fab}{\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!Abb\+Path\+Token\+Type@{Abb\+Path\+Token\+Type}}
+\index{Abb\+Path\+Token\+Type@{Abb\+Path\+Token\+Type}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}
+\subsubsection[{Abb\+Path\+Token\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Abb\+Path\+Token\+Type}}}\label{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fab}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{abt\+Command@{abt\+Command}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!abt\+Command@{abt\+Command}}\item[{\em 
+\hypertarget{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae5c8ab0ab1af086c300768ed5ef28887}{abt\+Command}\label{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae5c8ab0ab1af086c300768ed5ef28887}
+}]\index{abt\+Number@{abt\+Number}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!abt\+Number@{abt\+Number}}\item[{\em 
+\hypertarget{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabad378fcbdc23fe8372870ed3524fa582d}{abt\+Number}\label{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabad378fcbdc23fe8372870ed3524fa582d}
+}]\index{abt\+Comma@{abt\+Comma}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!abt\+Comma@{abt\+Comma}}\item[{\em 
+\hypertarget{generator__xps_8h_a22ddb6476329df318f1b00ff5d530faba038da409922f52be148a8dbc9ec3d296}{abt\+Comma}\label{generator__xps_8h_a22ddb6476329df318f1b00ff5d530faba038da409922f52be148a8dbc9ec3d296}
+}]\index{abt\+E\+O\+F@{abt\+E\+O\+F}!generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}}\index{generator\+\_\+xps.\+h@{generator\+\_\+xps.\+h}!abt\+E\+O\+F@{abt\+E\+O\+F}}\item[{\em 
+\hypertarget{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae9170e6f18bab5ce745e488462779925}{abt\+E\+O\+F}\label{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae9170e6f18bab5ce745e488462779925}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 37 of file generator\+\_\+xps.\+h.
+
+
+\begin{DoxyCode}
+37 \{\hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae5c8ab0ab1af086c300768ed5ef28887}{abtCommand}, \hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabad378fcbdc23fe8372870ed3524fa582d}{abtNumber}, \hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530faba038da409922f52be148a8dbc9ec3d296}{abtComma}, \hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fabae9170e6f18bab5ce745e488462779925}{abtEOF}\} 
+      \hyperlink{generator__xps_8h_a22ddb6476329df318f1b00ff5d530fab}{AbbPathTokenType};
+\end{DoxyCode}

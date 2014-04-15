@@ -1,0 +1,107 @@
+\hypertarget{classKDocumentViewer}{\section{K\+Document\+Viewer Class Reference}
+\label{classKDocumentViewer}\index{K\+Document\+Viewer@{K\+Document\+Viewer}}
+}
+
+
+Abstract interface for a document viewer.  
+
+
+
+
+{\ttfamily \#include $<$kdocumentviewer.\+h$>$}
+
+Inheritance diagram for K\+Document\+Viewer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKDocumentViewer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classKDocumentViewer_a0328144f5466f7537ca279275f05a1d2}{$\sim$\+K\+Document\+Viewer} ()
+\item 
+virtual bool \hyperlink{classKDocumentViewer_ab34a54884eb18571652b18d99ded1206}{open\+Document} (const K\+Url \&url, uint page)=0
+\item 
+virtual void \hyperlink{classKDocumentViewer_aaa762cb9adcdf81faca86ba1e7f65ce8}{go\+To\+Page} (uint page)=0
+\item 
+virtual void \hyperlink{classKDocumentViewer_a7f3293f87da2d9e25535e620612c580b}{start\+Presentation} ()=0
+\item 
+virtual Q\+String\+List \hyperlink{classKDocumentViewer_ad80446320a2d8c55c20d74ac69c9e344}{supported\+Mime\+Types} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface for a document viewer. 
+
+This interface describe briefly the basic functions of a document viewer. 
+
+Definition at line 22 of file kdocumentviewer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKDocumentViewer_a0328144f5466f7537ca279275f05a1d2}{\index{K\+Document\+Viewer@{K\+Document\+Viewer}!````~K\+Document\+Viewer@{$\sim$\+K\+Document\+Viewer}}
+\index{````~K\+Document\+Viewer@{$\sim$\+K\+Document\+Viewer}!K\+Document\+Viewer@{K\+Document\+Viewer}}
+\subsubsection[{$\sim$\+K\+Document\+Viewer}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Document\+Viewer\+::$\sim$\+K\+Document\+Viewer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classKDocumentViewer_a0328144f5466f7537ca279275f05a1d2}
+
+
+Definition at line 25 of file kdocumentviewer.\+h.
+
+
+\begin{DoxyCode}
+25 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKDocumentViewer_aaa762cb9adcdf81faca86ba1e7f65ce8}{\index{K\+Document\+Viewer@{K\+Document\+Viewer}!go\+To\+Page@{go\+To\+Page}}
+\index{go\+To\+Page@{go\+To\+Page}!K\+Document\+Viewer@{K\+Document\+Viewer}}
+\subsubsection[{go\+To\+Page}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Document\+Viewer\+::go\+To\+Page (
+\begin{DoxyParamCaption}
+\item[{uint}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKDocumentViewer_aaa762cb9adcdf81faca86ba1e7f65ce8}
+Change to {\ttfamily page} the currently shown page. \hypertarget{classKDocumentViewer_ab34a54884eb18571652b18d99ded1206}{\index{K\+Document\+Viewer@{K\+Document\+Viewer}!open\+Document@{open\+Document}}
+\index{open\+Document@{open\+Document}!K\+Document\+Viewer@{K\+Document\+Viewer}}
+\subsubsection[{open\+Document}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Document\+Viewer\+::open\+Document (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{url, }
+\item[{uint}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKDocumentViewer_ab34a54884eb18571652b18d99ded1206}
+Open the document at the specified {\ttfamily url} at page {\ttfamily page}. 
+
+Implemented in \hyperlink{classOkular_1_1Part_a0c63d423f5922f5272ff1131b8264050}{Okular\+::\+Part}.
+
+\hypertarget{classKDocumentViewer_a7f3293f87da2d9e25535e620612c580b}{\index{K\+Document\+Viewer@{K\+Document\+Viewer}!start\+Presentation@{start\+Presentation}}
+\index{start\+Presentation@{start\+Presentation}!K\+Document\+Viewer@{K\+Document\+Viewer}}
+\subsubsection[{start\+Presentation}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Document\+Viewer\+::start\+Presentation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKDocumentViewer_a7f3293f87da2d9e25535e620612c580b}
+Start the presentation mode. 
+
+Implemented in \hyperlink{classOkular_1_1Part_ae7d1a0cd6debe40d4280872482732e3c}{Okular\+::\+Part}.
+
+\hypertarget{classKDocumentViewer_ad80446320a2d8c55c20d74ac69c9e344}{\index{K\+Document\+Viewer@{K\+Document\+Viewer}!supported\+Mime\+Types@{supported\+Mime\+Types}}
+\index{supported\+Mime\+Types@{supported\+Mime\+Types}!K\+Document\+Viewer@{K\+Document\+Viewer}}
+\subsubsection[{supported\+Mime\+Types}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String\+List K\+Document\+Viewer\+::supported\+Mime\+Types (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKDocumentViewer_ad80446320a2d8c55c20d74ac69c9e344}
+Return a list with the supported mimetypes. 
+
+Implemented in \hyperlink{classOkular_1_1Part_a32fe7199433b464ea89346c3b95e5824}{Okular\+::\+Part}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{kdocumentviewer_8h}{kdocumentviewer.\+h}\end{DoxyCompactItemize}

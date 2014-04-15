@@ -1,0 +1,305 @@
+\hypertarget{classKParts_1_1Part}{\section{K\+Parts\+:\+:Part Class Reference}
+\label{classKParts_1_1Part}\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+}
+
+
+{\ttfamily \#include $<$part.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Part\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classKParts_1_1Part}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1Part_a00982292ef3d8b80dedeb5fed2376099}{set\+Window\+Caption} (const Q\+String \&caption)
+\item 
+void \hyperlink{classKParts_1_1Part_a809740a79edf0fa0bbe1dd982a6c4d35}{set\+Status\+Bar\+Text} (const Q\+String \&text)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1Part_afa61f98b2c9b14cbf94f9b1e2b453597}{Part} (Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classKParts_1_1Part_a339e7a12833cdd5d4820d69070ea458b}{$\sim$\+Part} ()
+\item 
+virtual void \hyperlink{classKParts_1_1Part_afb9d58b0de422a96a809abade83c3922}{embed} (Q\+Widget $\ast$parent\+Widget)
+\item 
+virtual Q\+Widget $\ast$ \hyperlink{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{widget} ()
+\item 
+virtual void \hyperlink{classKParts_1_1Part_afb87e3aed12cfdd6ecf057f916c7889f}{set\+Manager} (\hyperlink{classKParts_1_1PartManager}{Part\+Manager} $\ast$\hyperlink{classKParts_1_1Part_a06ea4dd249752f23229bc30b693eed44}{manager})
+\item 
+\hyperlink{classKParts_1_1PartManager}{Part\+Manager} $\ast$ \hyperlink{classKParts_1_1Part_a06ea4dd249752f23229bc30b693eed44}{manager} () const 
+\item 
+void \hyperlink{classKParts_1_1Part_a18a6e6b02d7d08a52314d5a7a2d0a3bd}{set\+Auto\+Delete\+Widget} (bool auto\+Delete\+Widget)
+\item 
+void \hyperlink{classKParts_1_1Part_a0af0172fc3b5c585524ca5e84af05017}{set\+Auto\+Delete\+Part} (bool auto\+Delete\+Part)
+\item 
+virtual \hyperlink{classKParts_1_1Part}{Part} $\ast$ \hyperlink{classKParts_1_1Part_a5398eb6687f7136e2c02ec7f6f5fd66e}{hit\+Test} (Q\+Widget $\ast$\hyperlink{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{widget}, const Q\+Point \&global\+Pos)
+\item 
+virtual void \hyperlink{classKParts_1_1Part_aa4841b2e2ddb43de60e28ede88151f33}{set\+Selectable} (bool selectable)
+\item 
+bool \hyperlink{classKParts_1_1Part_a6c3e8845a5836a790ab67cb360120cab}{is\+Selectable} () const 
+\item 
+K\+Icon\+Loader $\ast$ \hyperlink{classKParts_1_1Part_a8c41d16009e44a35ec3b7c5e6b4e0b80}{icon\+Loader} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1Part_a07231742bae75d6fc5712aaf45397b29}{slot\+Widget\+Destroyed} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1Part_a7578836b79ed97019b42f2d2fc03082d}{set\+Widget} (Q\+Widget $\ast$\hyperlink{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{widget})
+\item 
+virtual void \hyperlink{classKParts_1_1Part_a06a8a01b69df2ab366c5c5453b9194bd}{custom\+Event} (Q\+Event $\ast$event)
+\item 
+virtual void \hyperlink{classKParts_1_1Part_ad848641dbb38a3b2404b2ad554a08fba}{part\+Activate\+Event} (\hyperlink{classKParts_1_1PartActivateEvent}{Part\+Activate\+Event} $\ast$event)
+\item 
+virtual void \hyperlink{classKParts_1_1Part_a71a55af4b780e14d9ccadddfe7868941}{part\+Select\+Event} (\hyperlink{classKParts_1_1PartSelectEvent}{Part\+Select\+Event} $\ast$event)
+\item 
+virtual void \hyperlink{classKParts_1_1Part_a34b92f00459085ca7e05b7e8ee321347}{gui\+Activate\+Event} (\hyperlink{classKParts_1_1GUIActivateEvent}{G\+U\+I\+Activate\+Event} $\ast$event)
+\item 
+Q\+Widget $\ast$ \hyperlink{classKParts_1_1Part_a42ca0149d66ab5f2eea3d22b96300af0}{host\+Container} (const Q\+String \&container\+Name)
+\item 
+void \hyperlink{classKParts_1_1Part_aff25cf37e0d4e205028d75dee120828c}{load\+Plugins} ()
+\item 
+\hyperlink{classKParts_1_1Part_aa6c6292dcf062b5f4d711e6ab90070c9}{Part} (Part\+Private \&dd, Q\+Object $\ast$parent)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for parts.
+
+A \char`\"{}part\char`\"{} is a G\+U\+I component, featuring\+: \begin{DoxyItemize}
+\item A widget embeddedable in any application. \item G\+U\+I elements that will be merged in the \char`\"{}host\char`\"{} user interface (menubars, toolbars... ).\end{DoxyItemize}
+{\bfseries About the widget\+:}\par
+ Note that \hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part} does not inherit Q\+Widget. This is due to the fact that the \char`\"{}visual representation\char`\"{} will probably not be a mere Q\+Widget, but an elaborate one. That's why when implementing your \hyperlink{classKParts_1_1Part}{K\+Parts\+::\+Part} (or derived) you should call \hyperlink{classKParts_1_1Part_a7578836b79ed97019b42f2d2fc03082d}{K\+Parts\+::\+Part\+::set\+Widget()} in your constructor.
+
+{\bfseries About the G\+U\+I elements\+:}\par
+ Those elements trigger actions, defined by the part ( action()). The layout of the actions in the G\+U\+I is defined by an X\+M\+L file ( set\+X\+M\+L\+File()).
+
+See also \hyperlink{classKParts_1_1ReadOnlyPart}{Read\+Only\+Part} and \hyperlink{classKParts_1_1ReadWritePart}{Read\+Write\+Part}, which define the framework for a \char`\"{}viewer\char`\"{} part and for an \char`\"{}editor\char`\"{}-\/like part. Use \hyperlink{classKParts_1_1Part}{Part} directly only if your part doesn't fit into those. 
+
+Definition at line 215 of file part.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1Part_afa61f98b2c9b14cbf94f9b1e2b453597}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!Part@{Part}}
+\index{Part@{Part}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{Part}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Part\+::\+Part (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classKParts_1_1Part_afa61f98b2c9b14cbf94f9b1e2b453597}
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Parent object of the part. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1Part_a339e7a12833cdd5d4820d69070ea458b}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!````~Part@{$\sim$\+Part}}
+\index{````~Part@{$\sim$\+Part}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{$\sim$\+Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+Part\+::$\sim$\+Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Part_a339e7a12833cdd5d4820d69070ea458b}
+Destructor. 
+
+Reimplemented in \hyperlink{classOkular_1_1Part_ad9e36566a956f331bbc7c59a43613481}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1Part_aa6c6292dcf062b5f4d711e6ab90070c9}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!Part@{Part}}
+\index{Part@{Part}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{Part}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Part\+::\+Part (
+\begin{DoxyParamCaption}
+\item[{Part\+Private \&}]{dd, }
+\item[{Q\+Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1Part_aa6c6292dcf062b5f4d711e6ab90070c9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1Part_a06a8a01b69df2ab366c5c5453b9194bd}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!custom\+Event@{custom\+Event}}
+\index{custom\+Event@{custom\+Event}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{custom\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::custom\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Part_a06a8a01b69df2ab366c5c5453b9194bd}
+\hypertarget{classKParts_1_1Part_afb9d58b0de422a96a809abade83c3922}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!embed@{embed}}
+\index{embed@{embed}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{embed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::embed (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent\+Widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Part_afb9d58b0de422a96a809abade83c3922}
+Embed this part into a host widget.
+
+You don't need to do this if you created the widget with the correct parent widget -\/ this is just a Q\+Widget\+::reparent(). Note that the \hyperlink{classKParts_1_1Part}{Part} is still the holder of the Q\+Widget, meaning that if you delete the \hyperlink{classKParts_1_1Part}{Part}, then the widget gets destroyed as well, and vice-\/versa. This method is not recommended since creating the widget with the correct parent is simpler anyway. \hypertarget{classKParts_1_1Part_a34b92f00459085ca7e05b7e8ee321347}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!gui\+Activate\+Event@{gui\+Activate\+Event}}
+\index{gui\+Activate\+Event@{gui\+Activate\+Event}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{gui\+Activate\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::gui\+Activate\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+U\+I\+Activate\+Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Part_a34b92f00459085ca7e05b7e8ee321347}
+Convenience method which is called when the \hyperlink{classKParts_1_1Part}{Part} received a \hyperlink{classKParts_1_1GUIActivateEvent}{G\+U\+I\+Activate\+Event} . Reimplement this if you don't want to reimplement event and test for the event yourself or even install an event filter. 
+
+Reimplemented in \hyperlink{classKParts_1_1ReadOnlyPart_aa5ac9f161aef38a92bbf25891746cac0}{K\+Parts\+::\+Read\+Only\+Part}, and \hyperlink{classOkular_1_1Part_a71ea7975f3f712fff8f91ce47a80149c}{Okular\+::\+Part}.
+
+\hypertarget{classKParts_1_1Part_a5398eb6687f7136e2c02ec7f6f5fd66e}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!hit\+Test@{hit\+Test}}
+\index{hit\+Test@{hit\+Test}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{hit\+Test}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Part}$\ast$ K\+Parts\+::\+Part\+::hit\+Test (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget, }
+\item[{const Q\+Point \&}]{global\+Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Part_a5398eb6687f7136e2c02ec7f6f5fd66e}
+Returns the part (this, or a child part) at the given global position. This is called by the part manager to ask whether a part should be activated when clicking somewhere. In most cases the default implementation is enough. Reimplement this if your part has child parts in some areas (like in khtml or koffice) 
+\begin{DoxyParams}{Parameters}
+{\em widget} & the part widget being clicked -\/ usually the same as \hyperlink{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{widget()}, except in koffice. \\
+\hline
+{\em global\+Pos} & the mouse coordinates in global coordinates \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1Part_a42ca0149d66ab5f2eea3d22b96300af0}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!host\+Container@{host\+Container}}
+\index{host\+Container@{host\+Container}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{host\+Container}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ K\+Parts\+::\+Part\+::host\+Container (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{container\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1Part_a42ca0149d66ab5f2eea3d22b96300af0}
+Convenience method for K\+X\+M\+L\+G\+U\+I\+Factory\+::container. \begin{DoxyReturn}{Returns}
+a container widget owned by the \hyperlink{classKParts_1_1Part}{Part}'s G\+U\+I. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1Part_a8c41d16009e44a35ec3b7c5e6b4e0b80}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!icon\+Loader@{icon\+Loader}}
+\index{icon\+Loader@{icon\+Loader}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{icon\+Loader}]{\setlength{\rightskip}{0pt plus 5cm}K\+Icon\+Loader$\ast$ K\+Parts\+::\+Part\+::icon\+Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1Part_a8c41d16009e44a35ec3b7c5e6b4e0b80}
+Use this icon loader to load any icons that are specific to this part, i.\+e. icons installed into this part's own directories as opposed to standard kde icons. Use K\+Icon(\char`\"{}myicon\char`\"{}, \hyperlink{classKParts_1_1Part_a8c41d16009e44a35ec3b7c5e6b4e0b80}{icon\+Loader()}).
+
+Make sure to call set\+Component\+Data before calling icon\+Loader. \hypertarget{classKParts_1_1Part_a6c3e8845a5836a790ab67cb360120cab}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!is\+Selectable@{is\+Selectable}}
+\index{is\+Selectable@{is\+Selectable}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{is\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Part\+::is\+Selectable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1Part_a6c3e8845a5836a790ab67cb360120cab}
+Returns whether the part is selectable or not. \hypertarget{classKParts_1_1Part_aff25cf37e0d4e205028d75dee120828c}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!load\+Plugins@{load\+Plugins}}
+\index{load\+Plugins@{load\+Plugins}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{load\+Plugins}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+::load\+Plugins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classKParts_1_1Part_aff25cf37e0d4e205028d75dee120828c}
+Load this part's plugins now. Normally you want to call this at the end of the part constructor, if you used set\+Component\+Data(component\+Data, false) \begin{DoxySince}{Since}
+4.\+1 
+\end{DoxySince}
+\hypertarget{classKParts_1_1Part_a06ea4dd249752f23229bc30b693eed44}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!manager@{manager}}
+\index{manager@{manager}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Part\+Manager}$\ast$ K\+Parts\+::\+Part\+::manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1Part_a06ea4dd249752f23229bc30b693eed44}
+Returns the part manager handling this part, if any (0\+L otherwise). \hypertarget{classKParts_1_1Part_ad848641dbb38a3b2404b2ad554a08fba}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!part\+Activate\+Event@{part\+Activate\+Event}}
+\index{part\+Activate\+Event@{part\+Activate\+Event}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{part\+Activate\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::part\+Activate\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Part\+Activate\+Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Part_ad848641dbb38a3b2404b2ad554a08fba}
+Convenience method which is called when the \hyperlink{classKParts_1_1Part}{Part} received a \hyperlink{classKParts_1_1PartActivateEvent}{Part\+Activate\+Event} . Reimplement this if you don't want to reimplement event and test for the event yourself or even install an event filter. \hypertarget{classKParts_1_1Part_a71a55af4b780e14d9ccadddfe7868941}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!part\+Select\+Event@{part\+Select\+Event}}
+\index{part\+Select\+Event@{part\+Select\+Event}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{part\+Select\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::part\+Select\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Part\+Select\+Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Part_a71a55af4b780e14d9ccadddfe7868941}
+Convenience method which is called when the \hyperlink{classKParts_1_1Part}{Part} received a \hyperlink{classKParts_1_1PartSelectEvent}{Part\+Select\+Event} . Reimplement this if you don't want to reimplement event and test for the event yourself or even install an event filter. \hypertarget{classKParts_1_1Part_a0af0172fc3b5c585524ca5e84af05017}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Auto\+Delete\+Part@{set\+Auto\+Delete\+Part}}
+\index{set\+Auto\+Delete\+Part@{set\+Auto\+Delete\+Part}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Auto\+Delete\+Part}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+::set\+Auto\+Delete\+Part (
+\begin{DoxyParamCaption}
+\item[{bool}]{auto\+Delete\+Part}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1Part_a0af0172fc3b5c585524ca5e84af05017}
+By default, the part deletes itself when its widget is deleted. The hosting application can call set\+Auto\+Delete\+Part(false) to disable this behavior, to be able to delete the widget and then the part, independently. This is a method for the hosting application only, \hyperlink{classKParts_1_1Part}{Part} subclasses should never call this. \hypertarget{classKParts_1_1Part_a18a6e6b02d7d08a52314d5a7a2d0a3bd}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Auto\+Delete\+Widget@{set\+Auto\+Delete\+Widget}}
+\index{set\+Auto\+Delete\+Widget@{set\+Auto\+Delete\+Widget}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Auto\+Delete\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+::set\+Auto\+Delete\+Widget (
+\begin{DoxyParamCaption}
+\item[{bool}]{auto\+Delete\+Widget}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1Part_a18a6e6b02d7d08a52314d5a7a2d0a3bd}
+By default, the widget is deleted by the part when the part is deleted. The hosting application can call set\+Auto\+Delete\+Widget(false) to disable this behavior, given that the widget is usually deleted by its parent widget anyway. This is a method for the hosting application only, \hyperlink{classKParts_1_1Part}{Part} subclasses should never call this. \hypertarget{classKParts_1_1Part_afb87e3aed12cfdd6ecf057f916c7889f}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Manager@{set\+Manager}}
+\index{set\+Manager@{set\+Manager}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::set\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Part\+Manager} $\ast$}]{manager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Part_afb87e3aed12cfdd6ecf057f916c7889f}
+\hypertarget{classKParts_1_1Part_aa4841b2e2ddb43de60e28ede88151f33}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Selectable@{set\+Selectable}}
+\index{set\+Selectable@{set\+Selectable}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::set\+Selectable (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Part_aa4841b2e2ddb43de60e28ede88151f33}
+
+\begin{DoxyParams}{Parameters}
+{\em selectable} & Indicates whether the part is selectable or not. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1Part_a809740a79edf0fa0bbe1dd982a6c4d35}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Status\+Bar\+Text@{set\+Status\+Bar\+Text}}
+\index{set\+Status\+Bar\+Text@{set\+Status\+Bar\+Text}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Status\+Bar\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+::set\+Status\+Bar\+Text (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKParts_1_1Part_a809740a79edf0fa0bbe1dd982a6c4d35}
+Emitted by the part, to set a text in the statusbar of the window(s) hosting this part \hypertarget{classKParts_1_1Part_a7578836b79ed97019b42f2d2fc03082d}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Widget@{set\+Widget}}
+\index{set\+Widget@{set\+Widget}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}virtual void K\+Parts\+::\+Part\+::set\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1Part_a7578836b79ed97019b42f2d2fc03082d}
+Set the main widget.
+
+Call this in the Part-\/inherited class constructor. \hypertarget{classKParts_1_1Part_a00982292ef3d8b80dedeb5fed2376099}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!set\+Window\+Caption@{set\+Window\+Caption}}
+\index{set\+Window\+Caption@{set\+Window\+Caption}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{set\+Window\+Caption}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+::set\+Window\+Caption (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{caption}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classKParts_1_1Part_a00982292ef3d8b80dedeb5fed2376099}
+Emitted by the part, to set the caption of the window(s) hosting this part \hypertarget{classKParts_1_1Part_a07231742bae75d6fc5712aaf45397b29}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!slot\+Widget\+Destroyed@{slot\+Widget\+Destroyed}}
+\index{slot\+Widget\+Destroyed@{slot\+Widget\+Destroyed}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{slot\+Widget\+Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Parts\+::\+Part\+::slot\+Widget\+Destroyed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}}\label{classKParts_1_1Part_a07231742bae75d6fc5712aaf45397b29}
+\hypertarget{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}{\index{K\+Parts\+::\+Part@{K\+Parts\+::\+Part}!widget@{widget}}
+\index{widget@{widget}!K\+Parts\+::\+Part@{K\+Parts\+::\+Part}}
+\subsubsection[{widget}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Widget$\ast$ K\+Parts\+::\+Part\+::widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1Part_a134900cb0605a1cd5113d90954a01fdf}
+\begin{DoxyReturn}{Returns}
+The widget defined by this part, set by \hyperlink{classKParts_1_1Part_a7578836b79ed97019b42f2d2fc03082d}{set\+Widget()}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{usr_2include_2kparts_2part_8h}{part.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,585 @@
+\hypertarget{classTeXFontDefinition}{\section{Te\+X\+Font\+Definition Class Reference}
+\label{classTeXFontDefinition}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+}
+
+
+{\ttfamily \#include $<$Te\+X\+Font\+Definition.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7a}{font\+\_\+flags} \{ \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E} = 1, 
+\hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}{F\+O\+N\+T\+\_\+\+L\+O\+A\+D\+E\+D} = 2, 
+\hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{F\+O\+N\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L} = 4, 
+\hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aaa5817af5df3fc6d468421edb2fff79a6}{F\+O\+N\+T\+\_\+\+K\+P\+S\+E\+\_\+\+N\+A\+M\+E} = 8
+ \}
+\item 
+enum \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8b}{font\+\_\+type} \{ \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8badb5595948c557dbe78949cac41fd9217}{T\+E\+X\+\_\+\+P\+K}, 
+\hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba33cdb392d84daa87be1fc743252ca234}{T\+E\+X\+\_\+\+V\+I\+R\+T\+U\+A\+L}, 
+\hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba8429ed809359c8960405c35656222266}{T\+E\+X\+\_\+\+F\+O\+N\+T\+M\+E\+T\+R\+I\+C}, 
+\hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba02e2c6c10eba28972b6b809fc7b75d4d}{F\+R\+E\+E\+T\+Y\+P\+E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTeXFontDefinition_a78eee3f166b4afe9e73394b26c5238ac}{Te\+X\+Font\+Definition} (const Q\+String \&nfontname, double \+\_\+display\+Resolution\+\_\+in\+\_\+dpi, quint32 chk, qint32 \+\_\+scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units, class \hyperlink{classfontPool}{font\+Pool} $\ast$pool, double \+\_\+enlargement)
+\item 
+\hyperlink{classTeXFontDefinition_a9d75e9c4b5e22f88f9f62bad0aa72594}{$\sim$\+Te\+X\+Font\+Definition} ()
+\item 
+void \hyperlink{classTeXFontDefinition_af39f7ad8018a8ccf6aded2e81c2700b3}{reset} ()
+\item 
+void \hyperlink{classTeXFontDefinition_aa62180494b1284ddaef8cf117c52126a}{font\+Name\+Receiver} (const Q\+String \&)
+\item 
+void \hyperlink{classTeXFontDefinition_a676ff9093ae228647162138963d2c1cc}{set\+Display\+Resolution} (double \+\_\+display\+Resolution\+\_\+in\+\_\+dpi)
+\item 
+bool \hyperlink{classTeXFontDefinition_aab4a426fd2dd2513c97613cb6406ef41}{is\+Located} () const 
+\item 
+void \hyperlink{classTeXFontDefinition_a5d1615536b321b4ede9df08326fc3cbd}{mark\+As\+Located} ()
+\item 
+void \hyperlink{classTeXFontDefinition_af481c09afa81fabb899ae5c005212371}{mark\+\_\+as\+\_\+used} ()
+\item 
+const \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8b}{font\+\_\+type} \& \hyperlink{classTeXFontDefinition_aafdb39a6beae35618238502ad1b25912}{get\+Font\+Type} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classfontPool}{font\+Pool} $\ast$ \hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\+\_\+pool}
+\item 
+Q\+String \hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname}
+\item 
+unsigned char \hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags}
+\item 
+double \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement}
+\item 
+qint32 \hyperlink{classTeXFontDefinition_a8514a1b74d448c5e9e9dafc8737938e9}{scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units}
+\item 
+\hyperlink{TeXFontDefinition_8h_a8c8fccd597b068130979c5ec1e66486c}{set\+\_\+char\+\_\+proc} \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\+\_\+char\+\_\+p}
+\item 
+double \hyperlink{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}{display\+Resolution\+\_\+in\+\_\+dpi}
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file}
+\item 
+Q\+String \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}
+\item 
+\hyperlink{classTeXFont}{Te\+X\+Font} $\ast$ \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font}
+\item 
+\hyperlink{classmacro}{macro} $\ast$ \hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable}
+\item 
+Q\+Hash$<$ int, \hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$ $>$ \hyperlink{classTeXFontDefinition_a5cbb8fb4966c6f2488053eb7b4abbfed}{vf\+\_\+table}
+\item 
+\hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$ \hyperlink{classTeXFontDefinition_ab6e60134247487e543a17590bf5ed774}{first\+\_\+font}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font} = 256
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 48 of file Te\+X\+Font\+Definition.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7a}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!font\+\_\+flags@{font\+\_\+flags}}
+\index{font\+\_\+flags@{font\+\_\+flags}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{font\+\_\+flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Te\+X\+Font\+Definition\+::font\+\_\+flags}}}\label{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E@{F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E@{F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E}\label{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}
+}]\index{F\+O\+N\+T\+\_\+\+L\+O\+A\+D\+E\+D@{F\+O\+N\+T\+\_\+\+L\+O\+A\+D\+E\+D}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!F\+O\+N\+T\+\_\+\+L\+O\+A\+D\+E\+D@{F\+O\+N\+T\+\_\+\+L\+O\+A\+D\+E\+D}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}{F\+O\+N\+T\+\_\+\+L\+O\+A\+D\+E\+D}\label{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}
+}]\index{F\+O\+N\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L@{F\+O\+N\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!F\+O\+N\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L@{F\+O\+N\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{F\+O\+N\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L}\label{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}
+}]\index{F\+O\+N\+T\+\_\+\+K\+P\+S\+E\+\_\+\+N\+A\+M\+E@{F\+O\+N\+T\+\_\+\+K\+P\+S\+E\+\_\+\+N\+A\+M\+E}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!F\+O\+N\+T\+\_\+\+K\+P\+S\+E\+\_\+\+N\+A\+M\+E@{F\+O\+N\+T\+\_\+\+K\+P\+S\+E\+\_\+\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aaa5817af5df3fc6d468421edb2fff79a6}{F\+O\+N\+T\+\_\+\+K\+P\+S\+E\+\_\+\+N\+A\+M\+E}\label{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aaa5817af5df3fc6d468421edb2fff79a6}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 56 of file Te\+X\+Font\+Definition.\+h.
+
+
+\begin{DoxyCode}
+56                   \{
+57     \textcolor{comment}{// used for housekeeping}
+58     \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{FONT\_IN\_USE} = 1,
+59     \textcolor{comment}{// if font file has been read}
+60     \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}{FONT\_LOADED} = 2,
+61     \textcolor{comment}{// if font is virtual}
+62     \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{FONT\_VIRTUAL} = 4,
+63     \textcolor{comment}{// if kpathsea has already tried to find the font name}
+64     \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aaa5817af5df3fc6d468421edb2fff79a6}{FONT\_KPSE\_NAME} = 8
+65   \};
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8b}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!font\+\_\+type@{font\+\_\+type}}
+\index{font\+\_\+type@{font\+\_\+type}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{font\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Te\+X\+Font\+Definition\+::font\+\_\+type}}}\label{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+E\+X\+\_\+\+P\+K@{T\+E\+X\+\_\+\+P\+K}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!T\+E\+X\+\_\+\+P\+K@{T\+E\+X\+\_\+\+P\+K}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8badb5595948c557dbe78949cac41fd9217}{T\+E\+X\+\_\+\+P\+K}\label{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8badb5595948c557dbe78949cac41fd9217}
+}]\index{T\+E\+X\+\_\+\+V\+I\+R\+T\+U\+A\+L@{T\+E\+X\+\_\+\+V\+I\+R\+T\+U\+A\+L}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!T\+E\+X\+\_\+\+V\+I\+R\+T\+U\+A\+L@{T\+E\+X\+\_\+\+V\+I\+R\+T\+U\+A\+L}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba33cdb392d84daa87be1fc743252ca234}{T\+E\+X\+\_\+\+V\+I\+R\+T\+U\+A\+L}\label{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba33cdb392d84daa87be1fc743252ca234}
+}]\index{T\+E\+X\+\_\+\+F\+O\+N\+T\+M\+E\+T\+R\+I\+C@{T\+E\+X\+\_\+\+F\+O\+N\+T\+M\+E\+T\+R\+I\+C}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!T\+E\+X\+\_\+\+F\+O\+N\+T\+M\+E\+T\+R\+I\+C@{T\+E\+X\+\_\+\+F\+O\+N\+T\+M\+E\+T\+R\+I\+C}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba8429ed809359c8960405c35656222266}{T\+E\+X\+\_\+\+F\+O\+N\+T\+M\+E\+T\+R\+I\+C}\label{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba8429ed809359c8960405c35656222266}
+}]\index{F\+R\+E\+E\+T\+Y\+P\+E@{F\+R\+E\+E\+T\+Y\+P\+E}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!F\+R\+E\+E\+T\+Y\+P\+E@{F\+R\+E\+E\+T\+Y\+P\+E}}\item[{\em 
+\hypertarget{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba02e2c6c10eba28972b6b809fc7b75d4d}{F\+R\+E\+E\+T\+Y\+P\+E}\label{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba02e2c6c10eba28972b6b809fc7b75d4d}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 67 of file Te\+X\+Font\+Definition.\+h.
+
+
+\begin{DoxyCode}
+67                  \{ 
+68     \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8badb5595948c557dbe78949cac41fd9217}{TEX\_PK},
+69     \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba33cdb392d84daa87be1fc743252ca234}{TEX\_VIRTUAL},
+70     \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba8429ed809359c8960405c35656222266}{TEX\_FONTMETRIC},
+71     \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba02e2c6c10eba28972b6b809fc7b75d4d}{FREETYPE}
+72   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTeXFontDefinition_a78eee3f166b4afe9e73394b26c5238ac}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{Te\+X\+Font\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}Te\+X\+Font\+Definition\+::\+Te\+X\+Font\+Definition (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{nfontname, }
+\item[{double}]{\+\_\+display\+Resolution\+\_\+in\+\_\+dpi, }
+\item[{quint32}]{chk, }
+\item[{qint32}]{\+\_\+scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units, }
+\item[{class {\bf font\+Pool} $\ast$}]{pool, }
+\item[{double}]{\+\_\+enlargement}
+\end{DoxyParamCaption}
+)}}\label{classTeXFontDefinition_a78eee3f166b4afe9e73394b26c5238ac}
+
+
+Definition at line 33 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+35 \{
+36 \textcolor{preprocessor}{#ifdef DEBUG\_FONT}
+37   kDebug(kvs::dvi) << \textcolor{stringliteral}{"TeXFontDefinition::TeXFontDefinition(...); fontname="} << nfontname << \textcolor{stringliteral}{",
+       enlargement="} << \_enlargement;
+38 \textcolor{preprocessor}{#endif}
+39 
+40   \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement}              = \_enlargement;
+41   \hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\_pool}                = pool;
+42   \hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname}                 = nfontname;
+43   \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font}                     = 0;
+44   \hyperlink{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}{displayResolution\_in\_dpi} = \_displayResolution\_in\_dpi;
+45   checksum                 = chk;
+46   \hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags}                    = \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE};
+47   \hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file}                     = 0;
+48   \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}.clear();
+49   \hyperlink{classTeXFontDefinition_a8514a1b74d448c5e9e9dafc8737938e9}{scaled\_size\_in\_DVI\_units} = \_scaled\_size\_in\_DVI\_units;
+50 
+51   \hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable}               = 0;
+52 
+53   \textcolor{comment}{// By default, this font contains only empty characters. After the}
+54   \textcolor{comment}{// font has been loaded, this function pointer will be replaced by}
+55   \textcolor{comment}{// another one.}
+56   \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p}  = &\hyperlink{classdviRenderer_a96fba91804fe14b87b554192fb772cb3}{dviRenderer::set\_empty\_char};
+57 \}
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_a9d75e9c4b5e22f88f9f62bad0aa72594}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!````~Te\+X\+Font\+Definition@{$\sim$\+Te\+X\+Font\+Definition}}
+\index{````~Te\+X\+Font\+Definition@{$\sim$\+Te\+X\+Font\+Definition}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{$\sim$\+Te\+X\+Font\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}Te\+X\+Font\+Definition\+::$\sim$\+Te\+X\+Font\+Definition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTeXFontDefinition_a9d75e9c4b5e22f88f9f62bad0aa72594}
+
+
+Definition at line 60 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{
+62 \textcolor{preprocessor}{#ifdef DEBUG\_FONT}
+63   kDebug(kvs::dvi) << \textcolor{stringliteral}{"discarding font "} << \hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname} << \textcolor{stringliteral}{" at "} << (int)(
+      \hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement} * \hyperlink{TeXFontDefinition_8cpp_a7bdf1661701f0a7e81acd0b8d162c33c}{MFResolutions}[\hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\_pool}->getMetafontMode()] + 0.5) << \textcolor{stringliteral}{" dpi"}
+      ;
+64 \textcolor{preprocessor}{#endif}
+65 
+66   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} != 0) \{
+67     \textcolor{keyword}{delete} \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font};
+68     \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} = 0;
+69   \}
+70   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable} != 0) \{
+71     \textcolor{keyword}{delete} [] \hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable};
+72     \hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable} = 0;
+73   \}
+74 
+75   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}{FONT\_LOADED}) \{
+76     \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} != 0) \{
+77       fclose(\hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file});
+78       \hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} = 0;
+79     \}
+80     \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{FONT\_VIRTUAL})
+81       \hyperlink{classTeXFontDefinition_a5cbb8fb4966c6f2488053eb7b4abbfed}{vf\_table}.clear();
+82   \}
+83 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTeXFontDefinition_aa62180494b1284ddaef8cf117c52126a}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!font\+Name\+Receiver@{font\+Name\+Receiver}}
+\index{font\+Name\+Receiver@{font\+Name\+Receiver}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{font\+Name\+Receiver}]{\setlength{\rightskip}{0pt plus 5cm}void Te\+X\+Font\+Definition\+::font\+Name\+Receiver (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{fname}
+\end{DoxyParamCaption}
+)}}\label{classTeXFontDefinition_aa62180494b1284ddaef8cf117c52126a}
+
+
+Definition at line 86 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+87 \{
+88 \textcolor{preprocessor}{#ifdef DEBUG\_FONT}
+89   kDebug(kvs::dvi) << \textcolor{stringliteral}{"void TeXFontDefinition::fontNameReceiver( "} << fname << \textcolor{stringliteral}{" )"};
+90 \textcolor{preprocessor}{#endif}
+91 
+92   \hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} |= \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}{TeXFontDefinition::FONT\_LOADED};
+93   \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename} = fname;
+94 \textcolor{preprocessor}{#ifdef HAVE\_FREETYPE}
+95   fullFontName.clear();
+96   fullEncodingName.clear();
+97 \textcolor{preprocessor}{#endif}
+98 
+99   \hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} = fopen(QFile::encodeName(\hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}), \textcolor{stringliteral}{"r"});
+100   \textcolor{comment}{// Check if the file could be opened. If not, try to find the file}
+101   \textcolor{comment}{// in the DVI file's directory. If that works, modify the filename}
+102   \textcolor{comment}{// accordingly and go on.}
+103   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} == 0) \{
+104     QString filename\_test(\hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\_pool}->\hyperlink{classfontPool_a4b82e285217fedd027a24d1c984085fa}{getExtraSearchPath}() + \textcolor{charliteral}{'/'} + 
+      \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename});
+105     \hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} = fopen( QFile::encodeName(filename\_test), \textcolor{stringliteral}{"r"});
+106     \textcolor{keywordflow}{if} (file == 0) \{
+107       kError(kvs::dvi) << i18n(\textcolor{stringliteral}{"Cannot find font %1, file %2."}, \hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname}, 
+      \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}) << endl;
+108       \textcolor{keywordflow}{return};
+109     \} \textcolor{keywordflow}{else}
+110       \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename} = filename\_test;
+111   \}
+112 
+113   \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p} = &\hyperlink{classdviRenderer_aee61c986d42cdc1f0ac1ff168a4e1663}{dviRenderer::set\_char};
+114   \textcolor{keywordtype}{int} magic      = \hyperlink{xdvi_8h_a6874b0a3b8a5ac96d88d2648abf373b1}{two}(file);
+115 
+116   \textcolor{keywordflow}{if} (fname.endsWith(\textcolor{stringliteral}{"pk"}))
+117     \textcolor{keywordflow}{if} (magic == \hyperlink{TeXFontDefinition_8cpp_a99333b84e007a74629d4f342bbf128af}{PK\_MAGIC}) \{
+118       fclose(file);
+119       file = 0;
+120       \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} = \textcolor{keyword}{new} \hyperlink{classTeXFont__PK}{TeXFont\_PK}(\textcolor{keyword}{this});
+121       \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p} = &\hyperlink{classdviRenderer_aee61c986d42cdc1f0ac1ff168a4e1663}{dviRenderer::set\_char};
+122       \textcolor{keywordflow}{if} ((checksum != 0) && (checksum != \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font}->\hyperlink{classTeXFont_a7bd82a10157e19f7e7534fdc386d2421}{checksum}))
+123         kWarning(kvs::dvi) << i18n(\textcolor{stringliteral}{"Checksum mismatch for font file %1"}, 
+      \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}) ;
+124       fontType = \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8badb5595948c557dbe78949cac41fd9217}{TEX\_PK};
+125       \textcolor{keywordflow}{return};
+126     \}
+127 
+128   \textcolor{keywordflow}{if} (fname.endsWith(\textcolor{stringliteral}{".vf"}))
+129     \textcolor{keywordflow}{if} (magic == \hyperlink{TeXFontDefinition_8cpp_a221a2f4019ba69d53303223f694e440e}{VF\_MAGIC}) \{
+130       read\_VF\_index();
+131       \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p} = &\hyperlink{classdviRenderer_a7a37517f903bc0446faadfbc4acff6e9}{dviRenderer::set\_vf\_char};
+132       fontType = \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba33cdb392d84daa87be1fc743252ca234}{TEX\_VIRTUAL};
+133       \textcolor{keywordflow}{return};
+134     \}
+135 
+136   \textcolor{keywordflow}{if} (fname.endsWith(\textcolor{stringliteral}{".tfm"})) \{
+137       fclose(file);
+138       file = 0;
+139       \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} = \textcolor{keyword}{new} \hyperlink{classTeXFont__TFM}{TeXFont\_TFM}(\textcolor{keyword}{this});
+140       \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p} = &\hyperlink{classdviRenderer_aee61c986d42cdc1f0ac1ff168a4e1663}{dviRenderer::set\_char};
+141       fontType = \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba8429ed809359c8960405c35656222266}{TEX\_FONTMETRIC};
+142       \textcolor{keywordflow}{return};
+143   \}
+144 
+145   \textcolor{comment}{// None of these known types? Then it should be one of the font}
+146   \textcolor{comment}{// formats that are handled by the FreeType library}
+147   fclose(file);
+148   file = 0;
+149 \textcolor{preprocessor}{#ifdef HAVE\_FREETYPE}
+150   \textcolor{comment}{// Find the encoding for that font}
+151   \textcolor{keyword}{const} QString &enc = \hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\_pool}->fontsByTeXName.findEncoding(\hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname});
+152 
+153   \textcolor{keywordflow}{if} (enc.isEmpty() == \textcolor{keyword}{false}) \{
+154 \textcolor{preprocessor}{#ifdef DEBUG\_FONT}
+155     kDebug(kvs::dvi) << \textcolor{stringliteral}{"Font "} << \hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname} << \textcolor{stringliteral}{" uses encoding "} << enc;
+156 \textcolor{preprocessor}{#endif}
+157     \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} = \textcolor{keyword}{new} \hyperlink{classTeXFont__PFB}{TeXFont\_PFB}(\textcolor{keyword}{this}, \hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\_pool}->encodingPool.findByName(enc), 
+      \hyperlink{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{font\_pool}->fontsByTeXName.findSlant(\hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname}) );
+158   \} \textcolor{keywordflow}{else} \{
+159 \textcolor{preprocessor}{#ifdef DEBUG\_FONT}
+160     kDebug(kvs::dvi) << \textcolor{stringliteral}{"Font "} << \hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname} << \textcolor{stringliteral}{" does not have an encoding."};
+161 \textcolor{preprocessor}{#endif}
+162     \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} = \textcolor{keyword}{new} \hyperlink{classTeXFont__PFB}{TeXFont\_PFB}(\textcolor{keyword}{this});
+163   \}
+164 
+165   \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p} = &\hyperlink{classdviRenderer_aee61c986d42cdc1f0ac1ff168a4e1663}{dviRenderer::set\_char};
+166   fontType = \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba02e2c6c10eba28972b6b809fc7b75d4d}{FREETYPE};
+167   \textcolor{keywordflow}{return};
+168 \textcolor{preprocessor}{#else}
+169   \textcolor{comment}{// If we don't have the FreeType library, we should never have}
+170   \textcolor{comment}{// reached this point. Complain, and leave this font blank}
+171   kError(kvs::dvi) << i18n(\textcolor{stringliteral}{"Cannot recognize format for font file %1"}, \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}) << endl;
+172 \textcolor{preprocessor}{#endif}
+173 \}
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_aafdb39a6beae35618238502ad1b25912}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!get\+Font\+Type@{get\+Font\+Type}}
+\index{get\+Font\+Type@{get\+Font\+Type}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{get\+Font\+Type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf font\+\_\+type}\& Te\+X\+Font\+Definition\+::get\+Font\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTeXFontDefinition_aafdb39a6beae35618238502ad1b25912}
+
+
+Definition at line 123 of file Te\+X\+Font\+Definition.\+h.
+
+
+\begin{DoxyCode}
+123 \{\textcolor{keywordflow}{return} fontType;\};
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_aab4a426fd2dd2513c97613cb6406ef41}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!is\+Located@{is\+Located}}
+\index{is\+Located@{is\+Located}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{is\+Located}]{\setlength{\rightskip}{0pt plus 5cm}bool Te\+X\+Font\+Definition\+::is\+Located (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTeXFontDefinition_aab4a426fd2dd2513c97613cb6406ef41}
+
+
+Definition at line 84 of file Te\+X\+Font\+Definition.\+h.
+
+
+\begin{DoxyCode}
+84 \{\textcolor{keywordflow}{return} ((\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aaa5817af5df3fc6d468421edb2fff79a6}{FONT\_KPSE\_NAME}) != 0);\}
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_af481c09afa81fabb899ae5c005212371}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!mark\+\_\+as\+\_\+used@{mark\+\_\+as\+\_\+used}}
+\index{mark\+\_\+as\+\_\+used@{mark\+\_\+as\+\_\+used}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{mark\+\_\+as\+\_\+used}]{\setlength{\rightskip}{0pt plus 5cm}void Te\+X\+Font\+Definition\+::mark\+\_\+as\+\_\+used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTeXFontDefinition_af481c09afa81fabb899ae5c005212371}
+mark\+\_\+as\+\_\+used marks the font, and all the fonts it referrs to, as used, i.\+e. their F\+O\+N\+T\+\_\+\+I\+N\+\_\+\+U\+S\+E-\/flag is set. 
+
+Definition at line 214 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+215 \{
+216 \textcolor{preprocessor}{#ifdef DEBUG\_FONT}
+217   kDebug(kvs::dvi) << \textcolor{stringliteral}{"TeXFontDefinition::mark\_as\_used()"};
+218 \textcolor{preprocessor}{#endif}
+219 
+220   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE})
+221     \textcolor{keywordflow}{return};
+222 
+223   \hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} |= \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE};
+224 
+225   \textcolor{comment}{// For virtual fonts, also go through the list of referred fonts}
+226   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{TeXFontDefinition::FONT\_VIRTUAL}) \{
+227     QHashIterator<int,TeXFontDefinition*> it(\hyperlink{classTeXFontDefinition_a5cbb8fb4966c6f2488053eb7b4abbfed}{vf\_table});
+228     \textcolor{keywordflow}{while}( it.hasNext() ) \{
+229       it.next();
+230       it.value()->flags |= \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE};
+231     \}
+232   \}
+233 \}
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_a5d1615536b321b4ede9df08326fc3cbd}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!mark\+As\+Located@{mark\+As\+Located}}
+\index{mark\+As\+Located@{mark\+As\+Located}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{mark\+As\+Located}]{\setlength{\rightskip}{0pt plus 5cm}void Te\+X\+Font\+Definition\+::mark\+As\+Located (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTeXFontDefinition_a5d1615536b321b4ede9df08326fc3cbd}
+
+
+Definition at line 85 of file Te\+X\+Font\+Definition.\+h.
+
+
+\begin{DoxyCode}
+85 \{\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} |= \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aaa5817af5df3fc6d468421edb2fff79a6}{FONT\_KPSE\_NAME};\}
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_af39f7ad8018a8ccf6aded2e81c2700b3}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!reset@{reset}}
+\index{reset@{reset}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Te\+X\+Font\+Definition\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTeXFontDefinition_af39f7ad8018a8ccf6aded2e81c2700b3}
+
+
+Definition at line 176 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+177 \{
+178   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} != 0) \{
+179     \textcolor{keyword}{delete} \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font};
+180     \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} = 0;
+181   \}
+182 
+183   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable} != 0) \{
+184     \textcolor{keyword}{delete} [] \hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable};
+185     \hyperlink{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{macrotable} = 0;
+186   \}
+187 
+188   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa1ba1a9855372c90eeab01e3cfa06c83f}{FONT\_LOADED}) \{
+189     \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} != 0) \{
+190       fclose(\hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file});
+191       \hyperlink{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{file} = 0;
+192     \}
+193     \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{FONT\_VIRTUAL})
+194       \hyperlink{classTeXFontDefinition_a5cbb8fb4966c6f2488053eb7b4abbfed}{vf\_table}.clear();
+195   \}
+196 
+197   \hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename}.clear();
+198   \hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags}      = \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aa437568b2048a9f1efcce8a3aa0722d70}{TeXFontDefinition::FONT\_IN\_USE};
+199   \hyperlink{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{set\_char\_p} = &\hyperlink{classdviRenderer_a96fba91804fe14b87b554192fb772cb3}{dviRenderer::set\_empty\_char};
+200 \}
+\end{DoxyCode}
+\hypertarget{classTeXFontDefinition_a676ff9093ae228647162138963d2c1cc}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!set\+Display\+Resolution@{set\+Display\+Resolution}}
+\index{set\+Display\+Resolution@{set\+Display\+Resolution}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{set\+Display\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}void Te\+X\+Font\+Definition\+::set\+Display\+Resolution (
+\begin{DoxyParamCaption}
+\item[{double}]{\+\_\+display\+Resolution\+\_\+in\+\_\+dpi}
+\end{DoxyParamCaption}
+)}}\label{classTeXFontDefinition_a676ff9093ae228647162138963d2c1cc}
+
+
+Definition at line 203 of file Te\+X\+Font\+Definition.\+cpp.
+
+
+\begin{DoxyCode}
+204 \{
+205   \hyperlink{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}{displayResolution\_in\_dpi} = \_displayResolution\_in\_dpi;
+206   \textcolor{keywordflow}{if} (\hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} != 0)
+207     \hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font}->\hyperlink{classTeXFont_aecb5ab55908369eb7b96f84b91771593}{setDisplayResolution}();
+208 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!display\+Resolution\+\_\+in\+\_\+dpi@{display\+Resolution\+\_\+in\+\_\+dpi}}
+\index{display\+Resolution\+\_\+in\+\_\+dpi@{display\+Resolution\+\_\+in\+\_\+dpi}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{display\+Resolution\+\_\+in\+\_\+dpi}]{\setlength{\rightskip}{0pt plus 5cm}double Te\+X\+Font\+Definition\+::display\+Resolution\+\_\+in\+\_\+dpi}}\label{classTeXFontDefinition_a08e27df7d9764c43308c5637906658c5}
+
+
+Definition at line 102 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!enlargement@{enlargement}}
+\index{enlargement@{enlargement}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{enlargement}]{\setlength{\rightskip}{0pt plus 5cm}double Te\+X\+Font\+Definition\+::enlargement}}\label{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}
+
+
+Definition at line 94 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!file@{file}}
+\index{file@{file}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ Te\+X\+Font\+Definition\+::file}}\label{classTeXFontDefinition_a5899cf41fd48fee065d13848ce3b81a8}
+
+
+Definition at line 105 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!filename@{filename}}
+\index{filename@{filename}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Te\+X\+Font\+Definition\+::filename}}\label{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}
+
+
+Definition at line 107 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_ab6e60134247487e543a17590bf5ed774}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!first\+\_\+font@{first\+\_\+font}}
+\index{first\+\_\+font@{first\+\_\+font}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{first\+\_\+font}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Te\+X\+Font\+Definition}$\ast$ Te\+X\+Font\+Definition\+::first\+\_\+font}}\label{classTeXFontDefinition_ab6e60134247487e543a17590bf5ed774}
+
+
+Definition at line 116 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!flags@{flags}}
+\index{flags@{flags}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Te\+X\+Font\+Definition\+::flags}}\label{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}
+
+
+Definition at line 93 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!font@{font}}
+\index{font@{font}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{font}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Te\+X\+Font}$\ast$ Te\+X\+Font\+Definition\+::font}}\label{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}
+
+
+Definition at line 109 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!font\+\_\+pool@{font\+\_\+pool}}
+\index{font\+\_\+pool@{font\+\_\+pool}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{font\+\_\+pool}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf font\+Pool}$\ast$ Te\+X\+Font\+Definition\+::font\+\_\+pool}}\label{classTeXFontDefinition_abc8dfc7c07e8d998150e4ab09f9f9bec}
+
+
+Definition at line 89 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!fontname@{fontname}}
+\index{fontname@{fontname}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{fontname}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Te\+X\+Font\+Definition\+::fontname}}\label{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}
+
+
+Definition at line 91 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!macrotable@{macrotable}}
+\index{macrotable@{macrotable}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{macrotable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf macro}$\ast$ Te\+X\+Font\+Definition\+::macrotable}}\label{classTeXFontDefinition_a03a3d2e16fb85e0847243aec5671c724}
+
+
+Definition at line 111 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font@{max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font}}
+\index{max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font@{max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Te\+X\+Font\+Definition\+::max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font = 256\hspace{0.3cm}{\ttfamily [static]}}}\label{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}
+
+
+Definition at line 55 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a8514a1b74d448c5e9e9dafc8737938e9}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units@{scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units}}
+\index{scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units@{scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units}]{\setlength{\rightskip}{0pt plus 5cm}qint32 Te\+X\+Font\+Definition\+::scaled\+\_\+size\+\_\+in\+\_\+\+D\+V\+I\+\_\+units}}\label{classTeXFontDefinition_a8514a1b74d448c5e9e9dafc8737938e9}
+
+
+Definition at line 96 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!set\+\_\+char\+\_\+p@{set\+\_\+char\+\_\+p}}
+\index{set\+\_\+char\+\_\+p@{set\+\_\+char\+\_\+p}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{set\+\_\+char\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf set\+\_\+char\+\_\+proc} Te\+X\+Font\+Definition\+::set\+\_\+char\+\_\+p}}\label{classTeXFontDefinition_a2901636eeb7920b42396cdbdd3f93774}
+
+
+Definition at line 98 of file Te\+X\+Font\+Definition.\+h.
+
+\hypertarget{classTeXFontDefinition_a5cbb8fb4966c6f2488053eb7b4abbfed}{\index{Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}!vf\+\_\+table@{vf\+\_\+table}}
+\index{vf\+\_\+table@{vf\+\_\+table}!Te\+X\+Font\+Definition@{Te\+X\+Font\+Definition}}
+\subsubsection[{vf\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$int,{\bf Te\+X\+Font\+Definition}$\ast$$>$ Te\+X\+Font\+Definition\+::vf\+\_\+table}}\label{classTeXFontDefinition_a5cbb8fb4966c6f2488053eb7b4abbfed}
+
+
+Definition at line 113 of file Te\+X\+Font\+Definition.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{TeXFontDefinition_8h}{Te\+X\+Font\+Definition.\+h}\item 
+generators/dvi/\hyperlink{TeXFontDefinition_8cpp}{Te\+X\+Font\+Definition.\+cpp}\item 
+generators/dvi/\hyperlink{vf_8cpp}{vf.\+cpp}\end{DoxyCompactItemize}

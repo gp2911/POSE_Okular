@@ -1,0 +1,160 @@
+\hypertarget{classOkular_1_1FormFieldPrivate}{\section{Okular\+:\+:Form\+Field\+Private Class Reference}
+\label{classOkular_1_1FormFieldPrivate}\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+}
+
+
+{\ttfamily \#include $<$form\+\_\+p.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Form\+Field\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.857380cm]{classOkular_1_1FormFieldPrivate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FormFieldPrivate_aaf4956b42549d09728750a47148aace3}{Form\+Field\+Private} (\hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cf}{Form\+Field\+::\+Field\+Type} type)
+\item 
+virtual \hyperlink{classOkular_1_1FormFieldPrivate_a455a173a1126e8dbde73000c928288e0}{$\sim$\+Form\+Field\+Private} ()
+\item 
+void \hyperlink{classOkular_1_1FormFieldPrivate_a8b755662a6683230dcbcfbe93a23815e}{set\+Default} ()
+\item 
+virtual void \hyperlink{classOkular_1_1FormFieldPrivate_a379271a28220778ad6893d9387926256}{set\+Value} (const Q\+String \&)=0
+\item 
+virtual Q\+String \hyperlink{classOkular_1_1FormFieldPrivate_a60e3dd3a4107a3d4b346fe5dab57cd73}{value} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cf}{Form\+Field\+::\+Field\+Type} \hyperlink{classOkular_1_1FormFieldPrivate_a00873a8ab669135c3ea701f3c5942e64}{m\+\_\+type}
+\item 
+Q\+String \hyperlink{classOkular_1_1FormFieldPrivate_acaa274a6d0a3a146bc5230c886453039}{m\+\_\+default}
+\item 
+\hyperlink{classOkular_1_1Action}{Action} $\ast$ \hyperlink{classOkular_1_1FormFieldPrivate_a3026383e91509ad4e88c6178bb82c916}{m\+\_\+activate\+Action}
+\item 
+\hyperlink{classOkular_1_1FormField}{Form\+Field} $\ast$ \hyperlink{classOkular_1_1FormFieldPrivate_ad76633424a6e8e97b8c6dd1a3bbae4e0}{q\+\_\+ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file form\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1FormFieldPrivate_aaf4956b42549d09728750a47148aace3}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!Form\+Field\+Private@{Form\+Field\+Private}}
+\index{Form\+Field\+Private@{Form\+Field\+Private}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{Form\+Field\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Form\+Field\+Private\+::\+Form\+Field\+Private (
+\begin{DoxyParamCaption}
+\item[{{\bf Form\+Field\+::\+Field\+Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1FormFieldPrivate_aaf4956b42549d09728750a47148aace3}
+
+
+Definition at line 20 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+21     : \hyperlink{classOkular_1_1FormFieldPrivate_a00873a8ab669135c3ea701f3c5942e64}{m\_type}( type ), \hyperlink{classOkular_1_1FormFieldPrivate_a3026383e91509ad4e88c6178bb82c916}{m\_activateAction}( 0 )
+22 \{
+23 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldPrivate_a455a173a1126e8dbde73000c928288e0}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!````~Form\+Field\+Private@{$\sim$\+Form\+Field\+Private}}
+\index{````~Form\+Field\+Private@{$\sim$\+Form\+Field\+Private}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{$\sim$\+Form\+Field\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Form\+Field\+Private\+::$\sim$\+Form\+Field\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldPrivate_a455a173a1126e8dbde73000c928288e0}
+
+
+Definition at line 25 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keyword}{delete} \hyperlink{classOkular_1_1FormFieldPrivate_a3026383e91509ad4e88c6178bb82c916}{m\_activateAction};
+28 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FormFieldPrivate_a8b755662a6683230dcbcfbe93a23815e}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!set\+Default@{set\+Default}}
+\index{set\+Default@{set\+Default}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{set\+Default}]{\setlength{\rightskip}{0pt plus 5cm}void Form\+Field\+Private\+::set\+Default (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1FormFieldPrivate_a8b755662a6683230dcbcfbe93a23815e}
+
+
+Definition at line 30 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+31 \{
+32     \hyperlink{classOkular_1_1FormFieldPrivate_acaa274a6d0a3a146bc5230c886453039}{m\_default} = \hyperlink{classOkular_1_1FormFieldPrivate_a60e3dd3a4107a3d4b346fe5dab57cd73}{value}();
+33 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldPrivate_a379271a28220778ad6893d9387926256}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{set\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Okular\+::\+Form\+Field\+Private\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormFieldPrivate_a379271a28220778ad6893d9387926256}
+
+
+Implemented in \hyperlink{classOkular_1_1FormFieldChoicePrivate_a617efb2e31c799183b389a532302a51c}{Okular\+::\+Form\+Field\+Choice\+Private}, \hyperlink{classOkular_1_1FormFieldTextPrivate_a514b98fb764911a4074cb12e827052f2}{Okular\+::\+Form\+Field\+Text\+Private}, and \hyperlink{classOkular_1_1FormFieldButtonPrivate_a1ee021b1ddd5872656eca0353e966c14}{Okular\+::\+Form\+Field\+Button\+Private}.
+
+\hypertarget{classOkular_1_1FormFieldPrivate_a60e3dd3a4107a3d4b346fe5dab57cd73}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!value@{value}}
+\index{value@{value}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String Okular\+::\+Form\+Field\+Private\+::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormFieldPrivate_a60e3dd3a4107a3d4b346fe5dab57cd73}
+
+
+Implemented in \hyperlink{classOkular_1_1FormFieldChoicePrivate_a9e0734a416520cf24ff87b84d8a1ab52}{Okular\+::\+Form\+Field\+Choice\+Private}, \hyperlink{classOkular_1_1FormFieldTextPrivate_ab0c130aa8e19814cf19e3d7e4080cfa5}{Okular\+::\+Form\+Field\+Text\+Private}, and \hyperlink{classOkular_1_1FormFieldButtonPrivate_a3d75f359bdb5ba6afda7575029b65cf5}{Okular\+::\+Form\+Field\+Button\+Private}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1FormFieldPrivate_a3026383e91509ad4e88c6178bb82c916}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!m\+\_\+activate\+Action@{m\+\_\+activate\+Action}}
+\index{m\+\_\+activate\+Action@{m\+\_\+activate\+Action}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{m\+\_\+activate\+Action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Action}$\ast$ Okular\+::\+Form\+Field\+Private\+::m\+\_\+activate\+Action}}\label{classOkular_1_1FormFieldPrivate_a3026383e91509ad4e88c6178bb82c916}
+
+
+Definition at line 35 of file form\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1FormFieldPrivate_acaa274a6d0a3a146bc5230c886453039}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!m\+\_\+default@{m\+\_\+default}}
+\index{m\+\_\+default@{m\+\_\+default}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{m\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+Form\+Field\+Private\+::m\+\_\+default}}\label{classOkular_1_1FormFieldPrivate_acaa274a6d0a3a146bc5230c886453039}
+
+
+Definition at line 34 of file form\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1FormFieldPrivate_a00873a8ab669135c3ea701f3c5942e64}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{m\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Form\+Field\+::\+Field\+Type} Okular\+::\+Form\+Field\+Private\+::m\+\_\+type}}\label{classOkular_1_1FormFieldPrivate_a00873a8ab669135c3ea701f3c5942e64}
+
+
+Definition at line 33 of file form\+\_\+p.\+h.
+
+\hypertarget{classOkular_1_1FormFieldPrivate_ad76633424a6e8e97b8c6dd1a3bbae4e0}{\index{Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}!q\+\_\+ptr@{q\+\_\+ptr}}
+\index{q\+\_\+ptr@{q\+\_\+ptr}!Okular\+::\+Form\+Field\+Private@{Okular\+::\+Form\+Field\+Private}}
+\subsubsection[{q\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Form\+Field}$\ast$ Okular\+::\+Form\+Field\+Private\+::q\+\_\+ptr}}\label{classOkular_1_1FormFieldPrivate_ad76633424a6e8e97b8c6dd1a3bbae4e0}
+
+
+Definition at line 38 of file form\+\_\+p.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{form__p_8h}{form\+\_\+p.\+h}\item 
+core/\hyperlink{form_8cpp}{form.\+cpp}\end{DoxyCompactItemize}

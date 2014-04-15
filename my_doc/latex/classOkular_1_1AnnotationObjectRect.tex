@@ -1,0 +1,180 @@
+\hypertarget{classOkular_1_1AnnotationObjectRect}{\section{Okular\+:\+:Annotation\+Object\+Rect Class Reference}
+\label{classOkular_1_1AnnotationObjectRect}\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+}
+
+
+{\ttfamily \#include $<$area.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Annotation\+Object\+Rect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1AnnotationObjectRect}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1AnnotationObjectRect_a354e67fd4b871c538f6fb426a131750f}{Annotation\+Object\+Rect} (\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$\hyperlink{classOkular_1_1AnnotationObjectRect_ab44473e0817a058930e9a95d1773067d}{annotation})
+\item 
+virtual \hyperlink{classOkular_1_1AnnotationObjectRect_a6af3aeedc67e3bf0a3706bd837fdd9bf}{$\sim$\+Annotation\+Object\+Rect} ()
+\item 
+\hyperlink{classOkular_1_1Annotation}{Annotation} $\ast$ \hyperlink{classOkular_1_1AnnotationObjectRect_ab44473e0817a058930e9a95d1773067d}{annotation} () const 
+\item 
+virtual Q\+Rect \hyperlink{classOkular_1_1AnnotationObjectRect_a9ff5aa8673b33196df0cb14d51dacef2}{bounding\+Rect} (double x\+Scale, double y\+Scale) const 
+\item 
+virtual bool \hyperlink{classOkular_1_1AnnotationObjectRect_a1ca7ee341122db5f40af45ffd4607017}{contains} (double x, double y, double x\+Scale, double y\+Scale) const 
+\item 
+virtual void \hyperlink{classOkular_1_1AnnotationObjectRect_af61b2cdb3787c76bd6b53f0aa18c4476}{transform} (const Q\+Transform \&matrix)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class describes the object rectangle for an annotation. 
+
+Definition at line 431 of file area.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1AnnotationObjectRect_a354e67fd4b871c538f6fb426a131750f}{\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}!Annotation\+Object\+Rect@{Annotation\+Object\+Rect}}
+\index{Annotation\+Object\+Rect@{Annotation\+Object\+Rect}!Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+\subsubsection[{Annotation\+Object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Object\+Rect\+::\+Annotation\+Object\+Rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Annotation} $\ast$}]{annotation}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1AnnotationObjectRect_a354e67fd4b871c538f6fb426a131750f}
+Creates a new annotation object rectangle with the given {\ttfamily annotation}.
+
+class \hyperlink{classOkular_1_1AnnotationObjectRect}{Annotation\+Object\+Rect} 
+
+Definition at line 429 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+430     : \hyperlink{classOkular_1_1ObjectRect_a699760a940f2476e917ff11cefcfab28}{ObjectRect}( QPolygonF(), \hyperlink{classOkular_1_1ObjectRect_a2f77f7653306bae90bfb68277aaafe16a7fa3680e4804e223e58ce2dea398345f}{OAnnotation}, annotation ), m\_annotation( annotation )
+431 \{
+432 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AnnotationObjectRect_a6af3aeedc67e3bf0a3706bd837fdd9bf}{\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}!````~Annotation\+Object\+Rect@{$\sim$\+Annotation\+Object\+Rect}}
+\index{````~Annotation\+Object\+Rect@{$\sim$\+Annotation\+Object\+Rect}!Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+\subsubsection[{$\sim$\+Annotation\+Object\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Annotation\+Object\+Rect\+::$\sim$\+Annotation\+Object\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1AnnotationObjectRect_a6af3aeedc67e3bf0a3706bd837fdd9bf}
+Destroys the annotation object rectangle. 
+
+Definition at line 457 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+458 \{
+459     \textcolor{comment}{// the annotation pointer is kept elsewehere (in Page, most probably),}
+460     \textcolor{comment}{// so just release its pointer}
+461     \hyperlink{classOkular_1_1ObjectRect_a8adcb135543e1399458f1fc3392f7a84}{m\_object} = 0;
+462 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1AnnotationObjectRect_ab44473e0817a058930e9a95d1773067d}{\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}!annotation@{annotation}}
+\index{annotation@{annotation}!Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+\subsubsection[{annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation} $\ast$ Annotation\+Object\+Rect\+::annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1AnnotationObjectRect_ab44473e0817a058930e9a95d1773067d}
+Returns the annotation object of the annotation object rectangle. 
+
+Definition at line 434 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+435 \{
+436     \textcolor{keywordflow}{return} m\_annotation;
+437 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AnnotationObjectRect_a9ff5aa8673b33196df0cb14d51dacef2}{\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}!bounding\+Rect@{bounding\+Rect}}
+\index{bounding\+Rect@{bounding\+Rect}!Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+\subsubsection[{bounding\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Annotation\+Object\+Rect\+::bounding\+Rect (
+\begin{DoxyParamCaption}
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1AnnotationObjectRect_a9ff5aa8673b33196df0cb14d51dacef2}
+Returns the bounding rect of the annotation object rectangle for the scaling factor {\ttfamily x\+Scale} and {\ttfamily y\+Scale}. 
+
+Reimplemented from \hyperlink{classOkular_1_1ObjectRect_aa6b1c3b6ed093291d5ec7f92b97754ae}{Okular\+::\+Object\+Rect}.
+
+
+
+Definition at line 439 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+440 \{
+441     \textcolor{keyword}{const} QRect annotRect = \hyperlink{classOkular_1_1AnnotationUtils_a6b3fdb4e89227d26ec9e6f62bf4d0eb9}{AnnotationUtils::annotationGeometry}( 
+      m\_annotation, xScale, yScale );
+442     \textcolor{keyword}{const} QPoint center = annotRect.center();
+443 
+444     \textcolor{comment}{// Make sure that the rectangle has a minimum size, so that it's possible}
+445     \textcolor{comment}{// to click on it}
+446     \textcolor{keyword}{const} \textcolor{keywordtype}{int} minSize = 14;
+447     \textcolor{keyword}{const} QRect minRect( center.x()-minSize/2, center.y()-minSize/2, minSize, minSize );
+448 
+449     \textcolor{keywordflow}{return} annotRect | minRect;
+450 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AnnotationObjectRect_a1ca7ee341122db5f40af45ffd4607017}{\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}!contains@{contains}}
+\index{contains@{contains}!Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Annotation\+Object\+Rect\+::contains (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1AnnotationObjectRect_a1ca7ee341122db5f40af45ffd4607017}
+Returns whether the annotation object rectangle contains the point {\ttfamily x}, {\ttfamily y} for the scaling factor {\ttfamily x\+Scale} and {\ttfamily y\+Scale}. 
+
+Reimplemented from \hyperlink{classOkular_1_1ObjectRect_aadc1a6f33f9af0f6da1fd94c07d52488}{Okular\+::\+Object\+Rect}.
+
+
+
+Definition at line 452 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+453 \{
+454     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1AnnotationObjectRect_a9ff5aa8673b33196df0cb14d51dacef2}{boundingRect}( xScale, yScale ).contains( (\textcolor{keywordtype}{int})( x * xScale ), (\textcolor{keywordtype}{int})( y * yScale ), \textcolor{keyword}{
+      false} );
+455 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1AnnotationObjectRect_af61b2cdb3787c76bd6b53f0aa18c4476}{\index{Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}!transform@{transform}}
+\index{transform@{transform}!Okular\+::\+Annotation\+Object\+Rect@{Okular\+::\+Annotation\+Object\+Rect}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}void Annotation\+Object\+Rect\+::transform (
+\begin{DoxyParamCaption}
+\item[{const Q\+Transform \&}]{matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1AnnotationObjectRect_af61b2cdb3787c76bd6b53f0aa18c4476}
+Transforms the annotation object rectangle with the operations defined by {\ttfamily matrix}. 
+
+Reimplemented from \hyperlink{classOkular_1_1ObjectRect_ae792b4a8ca659f7315173722a862e05f}{Okular\+::\+Object\+Rect}.
+
+
+
+Definition at line 464 of file area.\+cpp.
+
+
+\begin{DoxyCode}
+465 \{
+466     m\_annotation->d\_func()->annotationTransform( matrix );
+467 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{area_8h}{area.\+h}\item 
+core/\hyperlink{area_8cpp}{area.\+cpp}\end{DoxyCompactItemize}

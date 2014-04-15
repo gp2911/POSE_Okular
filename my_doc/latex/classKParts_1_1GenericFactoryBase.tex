@@ -1,0 +1,177 @@
+\hypertarget{classKParts_1_1GenericFactoryBase}{\section{K\+Parts\+:\+:Generic\+Factory\+Base$<$ T $>$ Class Template Reference}
+\label{classKParts_1_1GenericFactoryBase}\index{K\+Parts\+::\+Generic\+Factory\+Base$<$ T $>$@{K\+Parts\+::\+Generic\+Factory\+Base$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$genericfactory.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:Generic\+Factory\+Base$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classKParts_1_1GenericFactoryBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1GenericFactoryBase_af55233417c6cfae4f515ffe332987261}{Generic\+Factory\+Base} ()
+\item 
+virtual \hyperlink{classKParts_1_1GenericFactoryBase_a684bf9bd99f8c86d64a1fbdac6ee2901}{$\sim$\+Generic\+Factory\+Base} ()
+\item 
+virtual K\+Component\+Data \hyperlink{classKParts_1_1GenericFactoryBase_a0b1d32c7adf2255890bdd3898757feae}{part\+Component\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const K\+Component\+Data \& \hyperlink{classKParts_1_1GenericFactoryBase_ad4a0ca70dec2fe8f4e0d4293e17eb776}{component\+Data} ()
+\item 
+static K\+About\+Data $\ast$ \hyperlink{classKParts_1_1GenericFactoryBase_ad5b89e87d73a76f3548c1afd09858020}{about\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual K\+Component\+Data $\ast$ \hyperlink{classKParts_1_1GenericFactoryBase_ae90ec2009529241553290269f3108134}{create\+Component\+Data} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class K\+Parts\+::\+Generic\+Factory\+Base$<$ T $>$}
+
+
+
+Definition at line 35 of file genericfactory.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1GenericFactoryBase_af55233417c6cfae4f515ffe332987261}{\index{K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}!Generic\+Factory\+Base@{Generic\+Factory\+Base}}
+\index{Generic\+Factory\+Base@{Generic\+Factory\+Base}!K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}}
+\subsubsection[{Generic\+Factory\+Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf K\+Parts\+::\+Generic\+Factory\+Base}$<$ T $>$\+::{\bf Generic\+Factory\+Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classKParts_1_1GenericFactoryBase_af55233417c6cfae4f515ffe332987261}
+
+
+Definition at line 38 of file genericfactory.\+h.
+
+
+\begin{DoxyCode}
+39         \{
+40             \textcolor{keywordflow}{if} ( s\_self )
+41             \{
+42                 kWarning() << \textcolor{stringliteral}{"KParts::GenericFactory instantiated more than once!"};
+43             \}
+44             s\_self = \textcolor{keyword}{this};
+45         \}
+\end{DoxyCode}
+\hypertarget{classKParts_1_1GenericFactoryBase_a684bf9bd99f8c86d64a1fbdac6ee2901}{\index{K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}!````~Generic\+Factory\+Base@{$\sim$\+Generic\+Factory\+Base}}
+\index{````~Generic\+Factory\+Base@{$\sim$\+Generic\+Factory\+Base}!K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}}
+\subsubsection[{$\sim$\+Generic\+Factory\+Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf K\+Parts\+::\+Generic\+Factory\+Base}$<$ T $>$\+::$\sim${\bf Generic\+Factory\+Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classKParts_1_1GenericFactoryBase_a684bf9bd99f8c86d64a1fbdac6ee2901}
+
+
+Definition at line 46 of file genericfactory.\+h.
+
+
+\begin{DoxyCode}
+47         \{
+48             \textcolor{keyword}{delete} s\_aboutData;
+49             \textcolor{keyword}{delete} s\_componentData;
+50             s\_aboutData = 0;
+51             s\_componentData = 0;
+52             s\_self = 0;
+53         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1GenericFactoryBase_ad5b89e87d73a76f3548c1afd09858020}{\index{K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}!about\+Data@{about\+Data}}
+\index{about\+Data@{about\+Data}!K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}}
+\subsubsection[{about\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ K\+About\+Data $\ast$ {\bf K\+Parts\+::\+Generic\+Factory\+Base}$<$ T $>$\+::about\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1GenericFactoryBase_ad5b89e87d73a76f3548c1afd09858020}
+
+
+Definition at line 202 of file genericfactory.\+h.
+
+
+\begin{DoxyCode}
+203     \{
+204         \textcolor{keywordflow}{if} ( !s\_aboutData )
+205             s\_aboutData = T::createAboutData();
+206         \textcolor{keywordflow}{return} s\_aboutData;
+207     \}
+\end{DoxyCode}
+\hypertarget{classKParts_1_1GenericFactoryBase_ad4a0ca70dec2fe8f4e0d4293e17eb776}{\index{K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}!component\+Data@{component\+Data}}
+\index{component\+Data@{component\+Data}!K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}}
+\subsubsection[{component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const K\+Component\+Data \& {\bf K\+Parts\+::\+Generic\+Factory\+Base}$<$ T $>$\+::component\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1GenericFactoryBase_ad4a0ca70dec2fe8f4e0d4293e17eb776}
+
+
+Definition at line 186 of file genericfactory.\+h.
+
+
+\begin{DoxyCode}
+187     \{
+188         \textcolor{keywordflow}{if} ( !s\_componentData )
+189         \{
+190             \textcolor{keywordflow}{if} ( s\_self )
+191                 s\_componentData = s\_self->createComponentData();
+192             \textcolor{keywordflow}{else}
+193                 s\_componentData = \textcolor{keyword}{new} KComponentData(\hyperlink{classKParts_1_1GenericFactoryBase_ad5b89e87d73a76f3548c1afd09858020}{aboutData}());
+194         \}
+195         \textcolor{keywordflow}{return} *s\_componentData;
+196     \}
+\end{DoxyCode}
+\hypertarget{classKParts_1_1GenericFactoryBase_ae90ec2009529241553290269f3108134}{\index{K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}!create\+Component\+Data@{create\+Component\+Data}}
+\index{create\+Component\+Data@{create\+Component\+Data}!K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}}
+\subsubsection[{create\+Component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual K\+Component\+Data$\ast$ {\bf K\+Parts\+::\+Generic\+Factory\+Base}$<$ T $>$\+::create\+Component\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classKParts_1_1GenericFactoryBase_ae90ec2009529241553290269f3108134}
+
+
+Definition at line 64 of file genericfactory.\+h.
+
+
+\begin{DoxyCode}
+65         \{
+66             \textcolor{keywordflow}{return} \textcolor{keyword}{new} KComponentData(\hyperlink{classKParts_1_1GenericFactoryBase_ad5b89e87d73a76f3548c1afd09858020}{aboutData}());
+67         \}
+\end{DoxyCode}
+\hypertarget{classKParts_1_1GenericFactoryBase_a0b1d32c7adf2255890bdd3898757feae}{\index{K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}!part\+Component\+Data@{part\+Component\+Data}}
+\index{part\+Component\+Data@{part\+Component\+Data}!K\+Parts\+::\+Generic\+Factory\+Base@{K\+Parts\+::\+Generic\+Factory\+Base}}
+\subsubsection[{part\+Component\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual K\+Component\+Data {\bf K\+Parts\+::\+Generic\+Factory\+Base}$<$ T $>$\+::part\+Component\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classKParts_1_1GenericFactoryBase_a0b1d32c7adf2255890bdd3898757feae}
+If you have a part contained in a shared library you might want to query for meta-\/information like the about-\/data, or the K\+Component\+Data in general. If the part is exported using \hyperlink{classKParts_1_1GenericFactory}{K\+Parts\+::\+Generic\+Factory} then this method will return the instance that belongs to the part without the need to instantiate the part component. 
+
+Reimplemented from \hyperlink{classKParts_1_1Factory_a94c5c244737f0aa7788a1c114bc2acb9}{K\+Parts\+::\+Factory}.
+
+
+
+Definition at line 57 of file genericfactory.\+h.
+
+
+\begin{DoxyCode}
+58         \{
+59             \textcolor{keywordflow}{return} \hyperlink{classKParts_1_1GenericFactoryBase_ad4a0ca70dec2fe8f4e0d4293e17eb776}{componentData}();
+60         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{genericfactory_8h}{genericfactory.\+h}\end{DoxyCompactItemize}

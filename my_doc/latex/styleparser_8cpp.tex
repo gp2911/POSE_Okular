@@ -1,0 +1,82 @@
+\hypertarget{styleparser_8cpp}{\section{generators/ooo/styleparser.cpp File Reference}
+\label{styleparser_8cpp}\index{generators/ooo/styleparser.\+cpp@{generators/ooo/styleparser.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}styleparser.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Date\+Time$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui/\+Q\+Font$>$}\\*
+{\ttfamily \#include $<$Qt\+Xml/\+Q\+Dom\+Document$>$}\\*
+{\ttfamily \#include $<$Qt\+Xml/\+Q\+Dom\+Element$>$}\\*
+{\ttfamily \#include $<$Qt\+Xml/\+Q\+Xml\+Simple\+Reader$>$}\\*
+{\ttfamily \#include $<$kglobal.\+h$>$}\\*
+{\ttfamily \#include $<$klocale.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}document.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}styleinformation.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{styleparser_8cpp_a85f198d69e42a5686c905514be5c5137}{M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(mm)~((mm)$\ast$2.\+83465058)
+\item 
+\#define \hyperlink{styleparser_8cpp_a37faf85021b6cab0edaa1087e8c5280e}{C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(cm)~((cm)$\ast$28.\+3465058)
+\item 
+\#define \hyperlink{styleparser_8cpp_aec1021756b3b02af73eab35246b78e5f}{D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(dm)~((dm)$\ast$283.\+465058)
+\item 
+\#define \hyperlink{styleparser_8cpp_aa8de65e1e8bd2a5dffd7045030eb24da}{I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(inch)~((inch)$\ast$72.\+0)
+\item 
+\#define \hyperlink{styleparser_8cpp_adbba8572489a58dfda22e9e20e3b2936}{P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(pi)~((pi)$\ast$12)
+\item 
+\#define \hyperlink{styleparser_8cpp_a6617fb39abfbda936b5b18823c8878bd}{D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(dd)~((dd)$\ast$154.\+08124)
+\item 
+\#define \hyperlink{styleparser_8cpp_affe69b72a5c70500aa9f999950d5ef61}{C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}(cc)~((cc)$\ast$12.\+840103)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{styleparser_8cpp_affe69b72a5c70500aa9f999950d5ef61}{\index{styleparser.\+cpp@{styleparser.\+cpp}!C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+C\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{cc}
+\end{DoxyParamCaption}
+)~((cc)$\ast$12.\+840103)}}\label{styleparser_8cpp_affe69b72a5c70500aa9f999950d5ef61}
+\hypertarget{styleparser_8cpp_a37faf85021b6cab0edaa1087e8c5280e}{\index{styleparser.\+cpp@{styleparser.\+cpp}!C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{cm}
+\end{DoxyParamCaption}
+)~((cm)$\ast$28.\+3465058)}}\label{styleparser_8cpp_a37faf85021b6cab0edaa1087e8c5280e}
+\hypertarget{styleparser_8cpp_a6617fb39abfbda936b5b18823c8878bd}{\index{styleparser.\+cpp@{styleparser.\+cpp}!D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+D\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{dd}
+\end{DoxyParamCaption}
+)~((dd)$\ast$154.\+08124)}}\label{styleparser_8cpp_a6617fb39abfbda936b5b18823c8878bd}
+\hypertarget{styleparser_8cpp_aec1021756b3b02af73eab35246b78e5f}{\index{styleparser.\+cpp@{styleparser.\+cpp}!D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{dm}
+\end{DoxyParamCaption}
+)~((dm)$\ast$283.\+465058)}}\label{styleparser_8cpp_aec1021756b3b02af73eab35246b78e5f}
+\hypertarget{styleparser_8cpp_aa8de65e1e8bd2a5dffd7045030eb24da}{\index{styleparser.\+cpp@{styleparser.\+cpp}!I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+C\+H\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{inch}
+\end{DoxyParamCaption}
+)~((inch)$\ast$72.\+0)}}\label{styleparser_8cpp_aa8de65e1e8bd2a5dffd7045030eb24da}
+\hypertarget{styleparser_8cpp_a85f198d69e42a5686c905514be5c5137}{\index{styleparser.\+cpp@{styleparser.\+cpp}!M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+M\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{mm}
+\end{DoxyParamCaption}
+)~((mm)$\ast$2.\+83465058)}}\label{styleparser_8cpp_a85f198d69e42a5686c905514be5c5137}
+\hypertarget{styleparser_8cpp_adbba8572489a58dfda22e9e20e3b2936}{\index{styleparser.\+cpp@{styleparser.\+cpp}!P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}}
+\index{P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T@{P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}!styleparser.\+cpp@{styleparser.\+cpp}}
+\subsubsection[{P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+\_\+\+T\+O\+\_\+\+P\+O\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{pi}
+\end{DoxyParamCaption}
+)~((pi)$\ast$12)}}\label{styleparser_8cpp_adbba8572489a58dfda22e9e20e3b2936}

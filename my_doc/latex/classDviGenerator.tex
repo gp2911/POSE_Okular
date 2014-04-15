@@ -1,0 +1,641 @@
+\hypertarget{classDviGenerator}{\section{Dvi\+Generator Class Reference}
+\label{classDviGenerator}\index{Dvi\+Generator@{Dvi\+Generator}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+dvi.\+h$>$}
+
+Inheritance diagram for Dvi\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDviGenerator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDviGenerator_add18ac5457a98c23e3f35751f4b7da8c}{Dvi\+Generator} (Q\+Object $\ast$parent, const Q\+Variant\+List \&args)
+\item 
+bool \hyperlink{classDviGenerator_a4cb860362974bcb3dc4c4fd58c432366}{load\+Document} (const Q\+String \&file\+Name, Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages\+Vector)
+\item 
+const \hyperlink{classOkular_1_1DocumentInfo}{Okular\+::\+Document\+Info} $\ast$ \hyperlink{classDviGenerator_a85ae4d96c108cd28c3cc777d3074d8e5}{generate\+Document\+Info} ()
+\item 
+const \hyperlink{classOkular_1_1DocumentSynopsis}{Okular\+::\+Document\+Synopsis} $\ast$ \hyperlink{classDviGenerator_aeb5f2577ec948e19178e411179b5943c}{generate\+Document\+Synopsis} ()
+\item 
+\hyperlink{classOkular_1_1FontInfo_ada799641ba87703c808645f57fdfafaa}{Okular\+::\+Font\+Info\+::\+List} \hyperlink{classDviGenerator_a07abf71b072fecaaea489ae5073471d5}{fonts\+For\+Page} (int page)
+\item 
+bool \hyperlink{classDviGenerator_abb9db773a1e83c5fbfe0b75f3c7eeb05}{print} (Q\+Printer \&printer)
+\item 
+Q\+Variant \hyperlink{classDviGenerator_a78b4c37e9ae60c07d61ad0e934a93481}{meta\+Data} (const Q\+String \&key, const Q\+Variant \&option) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDviGenerator_a94d185bd8563bfaba46bc3ada95268c3}{do\+Close\+Document} ()
+\item 
+Q\+Image \hyperlink{classDviGenerator_afa5b3e66b3be1d35e7747012c53402f8}{image} (\hyperlink{classOkular_1_1PixmapRequest}{Okular\+::\+Pixmap\+Request} $\ast$request)
+\item 
+\hyperlink{classOkular_1_1TextPage}{Okular\+::\+Text\+Page} $\ast$ \hyperlink{classDviGenerator_a482ced980f5ee951246a02cfd17c66f0}{text\+Page} (\hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$page)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file generator\+\_\+dvi.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDviGenerator_add18ac5457a98c23e3f35751f4b7da8c}{\index{Dvi\+Generator@{Dvi\+Generator}!Dvi\+Generator@{Dvi\+Generator}}
+\index{Dvi\+Generator@{Dvi\+Generator}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{Dvi\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}Dvi\+Generator\+::\+Dvi\+Generator (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{const Q\+Variant\+List \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{classDviGenerator_add18ac5457a98c23e3f35751f4b7da8c}
+
+
+Definition at line 65 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+65                                                                       : 
+      \hyperlink{classOkular_1_1Generator}{Okular::Generator}( parent, args ),
+66   m\_fontExtracted( \textcolor{keyword}{false} ), m\_docInfo( 0 ), m\_docSynopsis( 0 ), m\_dviRenderer( 0 )
+67 \{
+68     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} );
+69     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a1bf7de5d98ec0333e392ce7f004d6578}{TextExtraction} );
+70     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a8b712b2b89239900d3d0d000280efa36}{FontInfo} );
+71     \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77af0ce4775bf5c69b470c2cce6011d576b}{PrintPostscript} );
+72     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1FilePrinter_a047b30a135796c064fda2823ae6c0ddb}{Okular::FilePrinter::ps2pdfAvailable}() )
+73         \hyperlink{classOkular_1_1Generator_abcebcc5f69e98b6227496198a5c69d2c}{setFeature}( \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0bb6cbe50f2ffb616e25106b2e34c289}{PrintToFile} );
+74 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDviGenerator_a94d185bd8563bfaba46bc3ada95268c3}{\index{Dvi\+Generator@{Dvi\+Generator}!do\+Close\+Document@{do\+Close\+Document}}
+\index{do\+Close\+Document@{do\+Close\+Document}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{do\+Close\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Dvi\+Generator\+::do\+Close\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDviGenerator_a94d185bd8563bfaba46bc3ada95268c3}
+This method is called when the document is closed and not used any longer.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_ad3f1dcb98f3bd87c87ad0e91ecf4a6d7}{Okular\+::\+Generator}.
+
+
+
+Definition at line 133 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+134 \{
+135     \textcolor{keyword}{delete} m\_docInfo;
+136     m\_docInfo = 0;
+137     \textcolor{keyword}{delete} m\_docSynopsis;
+138     m\_docSynopsis = 0;
+139     \textcolor{keyword}{delete} m\_dviRenderer;
+140     m\_dviRenderer = 0;
+141 
+142     m\_linkGenerated.clear();
+143     m\_fontExtracted = \textcolor{keyword}{false};
+144 
+145     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+146 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_a07abf71b072fecaaea489ae5073471d5}{\index{Dvi\+Generator@{Dvi\+Generator}!fonts\+For\+Page@{fonts\+For\+Page}}
+\index{fonts\+For\+Page@{fonts\+For\+Page}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{fonts\+For\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Font\+Info\+::\+List} Dvi\+Generator\+::fonts\+For\+Page (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDviGenerator_a07abf71b072fecaaea489ae5073471d5}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a75ae286341000fb8f30d383d42760ac2}{Okular\+::\+Generator}.
+
+
+
+Definition at line 411 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+412 \{
+413     Q\_UNUSED( page );
+414 
+415     \hyperlink{classQList}{Okular::FontInfo::List} list;
+416 
+417     \textcolor{comment}{// the list of the fonts is extracted once }
+418     \textcolor{keywordflow}{if} ( m\_fontExtracted )
+419         \textcolor{keywordflow}{return} list;
+420 
+421     \textcolor{keywordflow}{if} ( m\_dviRenderer && m\_dviRenderer->\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile} &&
+422          m\_dviRenderer->\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile}->\hyperlink{classdvifile_a4864f0edcaad892f4684ab2379f061b9}{font\_pool} )
+423     \{
+424         \hyperlink{classQList}{QList<TeXFontDefinition*>} fonts = m\_dviRenderer->
+      \hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile}->\hyperlink{classdvifile_a4864f0edcaad892f4684ab2379f061b9}{font\_pool}->\hyperlink{classfontPool_a6a4a93e8193b31519eb5e17c623c65ac}{fontList};
+425 
+426         \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} \hyperlink{classTeXFontDefinition}{TeXFontDefinition}* font, fonts)
+427         \{
+428             \hyperlink{classOkular_1_1FontInfo}{Okular::FontInfo} of;
+429             QString name;
+430             \textcolor{keywordtype}{int} zoom = (int)(font->\hyperlink{classTeXFontDefinition_ad49309e518eb93ef852667ccc2b324f3}{enlargement}*100 + 0.5);
+431 \textcolor{preprocessor}{#ifdef HAVE\_FREETYPE}
+432             \textcolor{keywordflow}{if} ( font->getFullFontName().isEmpty() ) 
+433             \{
+434                 name = QString( \textcolor{stringliteral}{"%1, %2%"} )
+435                         .arg( font->\hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname} )
+436                         .arg( zoom );
+437             \}
+438             \textcolor{keywordflow}{else}
+439             \{
+440                 name = QString( \textcolor{stringliteral}{"%1 (%2), %3%"} ) 
+441                         .arg( font->\hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname} )
+442                         .arg( font->getFullFontName() ) 
+443                         .arg( zoom ); 
+444             \}
+445 \textcolor{preprocessor}{#else}
+446             name = QString( \textcolor{stringliteral}{"%1, %2%"} )
+447                     .arg( font->\hyperlink{classTeXFontDefinition_a9f1c42427054d44e3a5f110230858c03}{fontname} )
+448                     .arg( zoom );
+449 \textcolor{preprocessor}{#endif}
+450             of.\hyperlink{classOkular_1_1FontInfo_abd20d06c554455aee07624a6b3917e4e}{setName}( name );
+451 
+452             QString fontFileName;
+453             \textcolor{keywordflow}{if} (!(font->\hyperlink{classTeXFontDefinition_ad381057cceb9b78816df47e27c771d1e}{flags} & \hyperlink{classTeXFontDefinition_a5e758fb1a6ddffb8325b1f893132ce7aadec6d0da445c6ed411d92ccfd61e32bd}{TeXFontDefinition::FONT\_VIRTUAL})) \{
+454                 \textcolor{keywordflow}{if} ( font->\hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font} != 0 )
+455                     fontFileName = font->\hyperlink{classTeXFontDefinition_a3e788e09d8978795672226b472163b4f}{font}->\hyperlink{classTeXFont_a97c5eee8ad11d2f8f52797468268d1a4}{errorMessage};
+456                 \textcolor{keywordflow}{else}
+457                     fontFileName = i18n(\textcolor{stringliteral}{"Font file not found"});
+458 
+459                 \textcolor{keywordflow}{if} ( fontFileName.isEmpty() )
+460                     fontFileName = font->\hyperlink{classTeXFontDefinition_a28d5b98d97711686c6bc0e8df3bc9cc6}{filename};
+461             \}
+462 
+463             of.\hyperlink{classOkular_1_1FontInfo_aa18933d938e0a5ac217f8a48acd88bca}{setFile}( fontFileName );
+464 
+465             \hyperlink{classOkular_1_1FontInfo_a9a7fc21a728ffa7296546c8a527e43f6}{Okular::FontInfo::FontType} ft;
+466             \textcolor{keywordflow}{switch} ( font->\hyperlink{classTeXFontDefinition_aafdb39a6beae35618238502ad1b25912}{getFontType}() )
+467             \{
+468                 \textcolor{keywordflow}{case} \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8badb5595948c557dbe78949cac41fd9217}{TeXFontDefinition::TEX\_PK}:
+469                     ft = \hyperlink{classOkular_1_1FontInfo_a9a7fc21a728ffa7296546c8a527e43f6af6650c793c096a827636a9450973365d}{Okular::FontInfo::TeXPK};
+470                     \textcolor{keywordflow}{break};
+471                 \textcolor{keywordflow}{case} \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba33cdb392d84daa87be1fc743252ca234}{TeXFontDefinition::TEX\_VIRTUAL}:
+472                     ft = \hyperlink{classOkular_1_1FontInfo_a9a7fc21a728ffa7296546c8a527e43f6a43efdc343ebabf509303c263f2270af6}{Okular::FontInfo::TeXVirtual};
+473                     \textcolor{keywordflow}{break};
+474                 \textcolor{keywordflow}{case} \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba8429ed809359c8960405c35656222266}{TeXFontDefinition::TEX\_FONTMETRIC}:
+475                     ft = \hyperlink{classOkular_1_1FontInfo_a9a7fc21a728ffa7296546c8a527e43f6a9ab3934556b47ec54f84a6b025a08419}{Okular::FontInfo::TeXFontMetric};
+476                     \textcolor{keywordflow}{break};
+477                 \textcolor{keywordflow}{case} \hyperlink{classTeXFontDefinition_a74669917a483ec5a5c8dd8e0335fbd8ba02e2c6c10eba28972b6b809fc7b75d4d}{TeXFontDefinition::FREETYPE}:
+478                     ft = \hyperlink{classOkular_1_1FontInfo_a9a7fc21a728ffa7296546c8a527e43f6acf21988c45e1117d95b0a6a7e006ab9b}{Okular::FontInfo::TeXFreeTypeHandled};
+479                     \textcolor{keywordflow}{break};
+480             \}
+481             of.\hyperlink{classOkular_1_1FontInfo_a3e4ff54705b7a349743e4634dfc373a8}{setType}( ft );
+482 
+483             \textcolor{comment}{// DVI has not the concept of "font embedding"}
+484             of.\hyperlink{classOkular_1_1FontInfo_af7ce75552d5064e350bf9a2e02dbffd0}{setEmbedType}( \hyperlink{classOkular_1_1FontInfo_a549f8b2d829aead40f868ba5a6bf427faf441cb538942a751a582d8fb5e47398d}{Okular::FontInfo::NotEmbedded} );
+485             of.\hyperlink{classOkular_1_1FontInfo_a4008f39b90867e3d908c7345db2e636d}{setCanBeExtracted}( \textcolor{keyword}{false} );
+486 
+487             list.append( of );
+488         \}
+489 
+490         m\_fontExtracted = \textcolor{keyword}{true};
+491 
+492     \}
+493 
+494     \textcolor{keywordflow}{return} list;
+495 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_a85ae4d96c108cd28c3cc777d3074d8e5}{\index{Dvi\+Generator@{Dvi\+Generator}!generate\+Document\+Info@{generate\+Document\+Info}}
+\index{generate\+Document\+Info@{generate\+Document\+Info}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{generate\+Document\+Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Info} $\ast$ Dvi\+Generator\+::generate\+Document\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDviGenerator_a85ae4d96c108cd28c3cc777d3074d8e5}
+Returns the general information object of the document or 0 if no information are available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a9993dd0a2415499e23d8394e7a447e98}{Okular\+::\+Generator}.
+
+
+
+Definition at line 340 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+341 \{
+342     \textcolor{keywordflow}{if} ( m\_docInfo )
+343         \textcolor{keywordflow}{return} m\_docInfo;
+344 
+345     m\_docInfo = \textcolor{keyword}{new} \hyperlink{classOkular_1_1DocumentInfo}{Okular::DocumentInfo}();
+346 
+347     m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791a786464e8e8c3e6ba1cd74e408487785b}{Okular::DocumentInfo::MimeType}, \textcolor{stringliteral}{"application/x-dvi"} );
+348 
+349     QMutexLocker lock( \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}() );
+350 
+351     \textcolor{keywordflow}{if} ( m\_dviRenderer && m\_dviRenderer->\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile} )
+352     \{
+353         \hyperlink{classdvifile}{dvifile} *dvif = m\_dviRenderer->\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile};
+354 
+355         \textcolor{comment}{// read properties from dvif}
+356         \textcolor{comment}{//m\_docInfo->set( "filename", dvif->filename, i18n("Filename") );}
+357         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \textcolor{stringliteral}{"generatorDate"}, dvif->\hyperlink{classdvifile_a65f21e8c100dbbf49f160f563d9fda30}{generatorString},
+358                        i18n(\textcolor{stringliteral}{"Generator/Date"}) );
+359         m\_docInfo->\hyperlink{classOkular_1_1DocumentInfo_a8bd5403394ab192f1103cbf2a8e48d9b}{set}( \hyperlink{classOkular_1_1DocumentInfo_a3a6e5f7fb246e29bcb2e830b6f770791ac4706afb6f17aac2a6da24699cbd7360}{Okular::DocumentInfo::Pages}, QString::number( dvif->
+      \hyperlink{classdvifile_a71577dbd82a462b855abc96be3b369c5}{total\_pages} ) );
+360     \}
+361     \textcolor{keywordflow}{return} m\_docInfo;
+362 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_aeb5f2577ec948e19178e411179b5943c}{\index{Dvi\+Generator@{Dvi\+Generator}!generate\+Document\+Synopsis@{generate\+Document\+Synopsis}}
+\index{generate\+Document\+Synopsis@{generate\+Document\+Synopsis}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{generate\+Document\+Synopsis}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Okular\+::\+Document\+Synopsis} $\ast$ Dvi\+Generator\+::generate\+Document\+Synopsis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDviGenerator_aeb5f2577ec948e19178e411179b5943c}
+Returns the 'table of content' object of the document or 0 if no table of content is available. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a1f8b31c19d7a5101cadf3fe3186ab0f1}{Okular\+::\+Generator}.
+
+
+
+Definition at line 364 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+365 \{
+366     \textcolor{keywordflow}{if} ( m\_docSynopsis )
+367         \textcolor{keywordflow}{return} m\_docSynopsis;
+368 
+369     m\_docSynopsis = \textcolor{keyword}{new} \hyperlink{classOkular_1_1DocumentSynopsis}{Okular::DocumentSynopsis}();
+370 
+371     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->lock();
+372 
+373     QVector<PreBookmark> prebookmarks = m\_dviRenderer->\hyperlink{classdviRenderer_aa59a29b870ae9a4ec30bfefdde940ca1}{getPrebookmarks}();
+374 
+375     \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}()->unlock();
+376 
+377     \textcolor{keywordflow}{if} ( prebookmarks.isEmpty() ) 
+378         \textcolor{keywordflow}{return} m\_docSynopsis;
+379 
+380     QStack<QDomElement> stack;
+381 
+382     QVector<PreBookmark>::ConstIterator it = prebookmarks.constBegin();
+383     QVector<PreBookmark>::ConstIterator itEnd = prebookmarks.constEnd();
+384     \textcolor{keywordflow}{for}( ; it != itEnd; ++it ) 
+385     \{
+386         QDomElement domel = m\_docSynopsis->createElement( (*it).title );
+387         \hyperlink{classAnchor}{Anchor} a = m\_dviRenderer->\hyperlink{classdviRenderer_a0f11aa712420cb39bf0909822a4e98bf}{findAnchor}((*it).anchorName);
+388         \textcolor{keywordflow}{if} ( a.\hyperlink{classAnchor_a808ec5fc9d0075ca1c15cda24690277e}{isValid}() )
+389         \{
+390             \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} vp;
+391  
+392             \textcolor{keyword}{const} \hyperlink{classOkular_1_1Page}{Okular::Page} *p = \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_a1c95c2f192d739c217d00971da48f69d}{page}( a.
+      \hyperlink{classAnchor_a6383150d7bcb2a7f0281274d17881aa2}{page} - 1 );
+393 
+394             fillViewportFromAnchor( vp, a, (\textcolor{keywordtype}{int})p->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}(), (int)p->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}() );
+395             domel.setAttribute( \textcolor{stringliteral}{"Viewport"}, vp.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}() );
+396         \}
+397         \textcolor{keywordflow}{if} ( stack.isEmpty() )
+398             m\_docSynopsis->appendChild( domel );
+399         \textcolor{keywordflow}{else} 
+400         \{
+401             stack.top().appendChild( domel );
+402             stack.pop();
+403         \}
+404         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < (*it).noOfChildren; ++i )
+405             stack.push( domel );
+406     \}
+407 
+408     \textcolor{keywordflow}{return} m\_docSynopsis;
+409 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_afa5b3e66b3be1d35e7747012c53402f8}{\index{Dvi\+Generator@{Dvi\+Generator}!image@{image}}
+\index{image@{image}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Dvi\+Generator\+::image (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Pixmap\+Request} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDviGenerator_afa5b3e66b3be1d35e7747012c53402f8}
+Returns the image of the page as specified in the passed pixmap {\ttfamily request}.
+
+\begin{DoxyWarning}{Warning}
+this method may be executed in its own separated thread if the \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} is enabled! 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a6712c8d3c2759c3a1fcacbd503d3286e}{Okular\+::\+Generator}.
+
+
+
+Definition at line 218 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+219 \{
+220 
+221     \hyperlink{classdviPageInfo}{dviPageInfo} *\hyperlink{classpageInfo}{pageInfo} = \textcolor{keyword}{new} \hyperlink{classdviPageInfo}{dviPageInfo}();
+222     \hyperlink{classpageSize}{pageSize} ps;
+223     QImage ret;
+224 
+225     pageInfo->\hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width} = request->width();
+226     pageInfo->\hyperlink{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}{height} = request->height();
+227 
+228     pageInfo->\hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{pageNumber} = request->pageNumber() + 1;
+229 
+230 \textcolor{comment}{//  pageInfo->resolution = m\_resolution;}
+231 
+232     QMutexLocker lock( \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}() );
+233 
+234     \textcolor{keywordflow}{if} ( m\_dviRenderer )
+235     \{
+236         \hyperlink{classSimplePageSize}{SimplePageSize} s = m\_dviRenderer->\hyperlink{classdviRenderer_a8d5430b14cdc4bdf6579402004f31317}{sizeOfPage}( pageInfo->
+      \hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{pageNumber} );
+237 
+238 \textcolor{comment}{/*       if ( s.width() != pageInfo->width) */}
+239         \textcolor{comment}{//   if (!useDocumentSpecifiedSize)}
+240         \textcolor{comment}{//    s = userPreferredSize;}
+241 
+242         \textcolor{keywordflow}{if} (s.\hyperlink{classSimplePageSize_acc614937770417e54201cac058ed19be}{isValid}())
+243         \{
+244             ps = s; \textcolor{comment}{/* it should be the user specified size, if any, instead */}
+245         \}
+246 
+247         pageInfo->\hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution} = (double)(pageInfo->\hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width})/ps.\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}().
+      \hyperlink{classLength_afbaef4ba8d8a3e97873ed5cfd20c7dea}{getLength\_in\_inch}();
+248 
+249 \textcolor{preprocessor}{#if 0}
+250         kDebug(DviDebug) << *request
+251         << \textcolor{stringliteral}{", res:"} << pageInfo->\hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution} << \textcolor{stringliteral}{" - ("} << pageInfo->
+      \hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width} << \textcolor{stringliteral}{","}
+252         << ps.\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}().\hyperlink{classLength_afbaef4ba8d8a3e97873ed5cfd20c7dea}{getLength\_in\_inch}() << \textcolor{stringliteral}{"),"} << ps.
+      \hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}().\hyperlink{classLength_ab57252f3b49a668104d76396b2c74041}{getLength\_in\_mm}()
+253         << endl;
+254 \textcolor{preprocessor}{#endif}
+255 
+256         m\_dviRenderer->\hyperlink{classdviRenderer_ac7bf7c2ee0d8e11b9cc465d50953b1c8}{drawPage}( pageInfo );
+257 
+258         \textcolor{keywordflow}{if} ( ! pageInfo->\hyperlink{classdviPageInfo_a2e14764bd0da8f668fdae66527e35db6}{img}.isNull() )
+259         \{
+260             kDebug(DviDebug) << \textcolor{stringliteral}{"Image OK"};
+261 
+262             ret = pageInfo->\hyperlink{classdviPageInfo_a2e14764bd0da8f668fdae66527e35db6}{img};
+263 
+264             \textcolor{keywordflow}{if} ( !m\_linkGenerated[ request->pageNumber() ] )
+265             \{
+266                 request->page()->setObjectRects( generateDviLinks( pageInfo ) );
+267                 m\_linkGenerated[ request->pageNumber() ] = \textcolor{keyword}{true};
+268             \}
+269         \}
+270     \}
+271 
+272     lock.unlock();
+273 
+274     \textcolor{keyword}{delete} pageInfo;
+275 
+276     \textcolor{keywordflow}{return} ret;
+277 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_a4cb860362974bcb3dc4c4fd58c432366}{\index{Dvi\+Generator@{Dvi\+Generator}!load\+Document@{load\+Document}}
+\index{load\+Document@{load\+Document}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{load\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Dvi\+Generator\+::load\+Document (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDviGenerator_a4cb860362974bcb3dc4c4fd58c432366}
+Loads the document with the given {\ttfamily file\+Name} and fills the {\ttfamily pages\+Vector} with the parsed pages.
+
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classOkular_1_1Generator_a388b47328a5297d53cdbdc6fcf074ee3}{Okular\+::\+Generator}.
+
+
+
+Definition at line 76 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{comment}{//kDebug(DviDebug) << "file:" << fileName;}
+79     KUrl base( fileName );
+80 
+81     (void)\hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}();
+82 
+83     m\_dviRenderer = \textcolor{keyword}{new} \hyperlink{classdviRenderer}{dviRenderer}(\hyperlink{classOkular_1_1Generator_a450f3316a563dcf217fcebac4fa0328e}{documentMetaData}(\textcolor{stringliteral}{"TextHinting"}, QVariant()).
+      toBool());
+84     connect( m\_dviRenderer, SIGNAL( \hyperlink{classOkular_1_1Generator_a0f73eaeb88ccb1ecb73814a918244e03}{error}(QString,\textcolor{keywordtype}{int}) ), \textcolor{keyword}{this}, SIGNAL( 
+      \hyperlink{classOkular_1_1Generator_a0f73eaeb88ccb1ecb73814a918244e03}{error}(QString,\textcolor{keywordtype}{int}) ) );
+85     connect( m\_dviRenderer, SIGNAL( \hyperlink{classOkular_1_1Generator_aff0b69c430b30d0e0bf820015ba0a79d}{warning}(QString,\textcolor{keywordtype}{int}) ), \textcolor{keyword}{this}, SIGNAL( 
+      \hyperlink{classOkular_1_1Generator_aff0b69c430b30d0e0bf820015ba0a79d}{warning}(QString,\textcolor{keywordtype}{int}) ) );
+86     connect( m\_dviRenderer, SIGNAL( \hyperlink{classOkular_1_1Generator_a3a0ac65f0d61abbaa86b79b258bbe3b3}{notice}(QString,\textcolor{keywordtype}{int}) ), \textcolor{keyword}{this}, SIGNAL( 
+      \hyperlink{classOkular_1_1Generator_a3a0ac65f0d61abbaa86b79b258bbe3b3}{notice}(QString,\textcolor{keywordtype}{int}) ) );
+87 \textcolor{preprocessor}{#ifdef DVI\_OPEN\_BUSYLOOP}
+88     \textcolor{keyword}{static} \textcolor{keyword}{const} ushort s\_waitTime = 800; \textcolor{comment}{// milliseconds}
+89     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} s\_maxIterations = 10;
+90     \textcolor{keywordtype}{int} iter = 0;
+91     \textcolor{keywordflow}{for} ( ; !m\_dviRenderer->\hyperlink{classdviRenderer_ac97838eefe7ae970c4cd462829267261}{isValidFile}( fileName ) && iter < s\_maxIterations; ++iter )
+92     \{
+93         kDebug(DviDebug).nospace() << \textcolor{stringliteral}{"file not valid after iteration #"} << iter << \textcolor{stringliteral}{"/"} << s\_maxIterations 
+      << \textcolor{stringliteral}{", waiting for "} << s\_waitTime;
+94 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN}
+95         Sleep( uint( s\_waitTime ) );
+96 \textcolor{preprocessor}{#else}
+97         \textcolor{keyword}{struct }timespec ts = \{ 0, s\_waitTime * 1000 * 1000 \};
+98         nanosleep( &ts, NULL );
+99 \textcolor{preprocessor}{#endif}
+100     \}
+101     \textcolor{keywordflow}{if} ( iter >= s\_maxIterations && !m\_dviRenderer->\hyperlink{classdviRenderer_ac97838eefe7ae970c4cd462829267261}{isValidFile}( fileName ) )
+102     \{
+103         kDebug(DviDebug) << \textcolor{stringliteral}{"file still not valid after"} << s\_maxIterations;
+104         \textcolor{keyword}{delete} m\_dviRenderer;
+105         m\_dviRenderer = 0;
+106         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+107     \}
+108 \textcolor{preprocessor}{#else}
+109     \textcolor{keywordflow}{if} ( !m\_dviRenderer->\hyperlink{classdviRenderer_ac97838eefe7ae970c4cd462829267261}{isValidFile}( fileName ) )
+110     \{
+111         \textcolor{keyword}{delete} m\_dviRenderer;
+112         m\_dviRenderer = 0;
+113         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+114     \}
+115 \textcolor{preprocessor}{#endif}
+116     \textcolor{keywordflow}{if} ( ! m\_dviRenderer->\hyperlink{classdviRenderer_a1e7b4808351b40f86051926f006506d9}{setFile}( fileName, base ) )
+117     \{
+118         \textcolor{keyword}{delete} m\_dviRenderer;
+119         m\_dviRenderer = 0;
+120         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+121     \}
+122 
+123     m\_dviRenderer->\hyperlink{classdviRenderer_af30d1266141994da13096f793e4fc25b}{setParentWidget}( \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->widget() );
+124 
+125     kDebug(DviDebug) << \textcolor{stringliteral}{"# of pages:"} << m\_dviRenderer->\hyperlink{classdviRenderer_a67ded13a1a8da343aa0ee921ed96d4c2}{dviFile}->
+      \hyperlink{classdvifile_a71577dbd82a462b855abc96be3b369c5}{total\_pages};
+126 
+127     m\_resolution = \hyperlink{classOkular_1_1Utils_aeee309843e66a38840d6cec2002df3ea}{Okular::Utils::dpiY}();
+128     loadPages( pagesVector );
+129 
+130     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+131 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_a78b4c37e9ae60c07d61ad0e934a93481}{\index{Dvi\+Generator@{Dvi\+Generator}!meta\+Data@{meta\+Data}}
+\index{meta\+Data@{meta\+Data}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant Dvi\+Generator\+::meta\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+Variant \&}]{option}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDviGenerator_a78b4c37e9ae60c07d61ad0e934a93481}
+This method returns the meta data of the given {\ttfamily key} with the given {\ttfamily option} of the document. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_a74f6b91e31ead5b572ffb9fb6b06c188}{Okular\+::\+Generator}.
+
+
+
+Definition at line 587 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+588 \{
+589     \textcolor{keywordflow}{if} ( key == \textcolor{stringliteral}{"NamedViewport"} && !option.toString().isEmpty() )
+590     \{
+591         \textcolor{keyword}{const} \hyperlink{classAnchor}{Anchor} anchor = m\_dviRenderer->\hyperlink{classdviRenderer_ac86c232ea62e24495bea6ea67a2c01b8}{parseReference}( option.toString() );
+592         \textcolor{keywordflow}{if} ( anchor.\hyperlink{classAnchor_a808ec5fc9d0075ca1c15cda24690277e}{isValid}() )
+593         \{
+594             \textcolor{keyword}{const} \hyperlink{classOkular_1_1Page}{Okular::Page} *page = \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_a1c95c2f192d739c217d00971da48f69d}{page}( anchor.
+      \hyperlink{classAnchor_a6383150d7bcb2a7f0281274d17881aa2}{page} - 1 );
+595             Q\_ASSERT\_X( page, \textcolor{stringliteral}{"DviGenerator::metaData()"}, \textcolor{stringliteral}{"NULL page as result of valid Anchor"} );
+596             \hyperlink{classOkular_1_1DocumentViewport}{Okular::DocumentViewport} viewport;
+597             fillViewportFromAnchor( viewport, anchor, page );
+598             \textcolor{keywordflow}{if} ( viewport.\hyperlink{classOkular_1_1DocumentViewport_a13161b17f2d0b68bf033955f81d41584}{isValid}() )
+599             \{
+600                 \textcolor{keywordflow}{return} viewport.\hyperlink{classOkular_1_1DocumentViewport_a77e42e0c9502b91085cd25f845ecafa0}{toString}();
+601             \}
+602         \}
+603     \}
+604     \textcolor{keywordflow}{return} QVariant();
+605 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_abb9db773a1e83c5fbfe0b75f3c7eeb05}{\index{Dvi\+Generator@{Dvi\+Generator}!print@{print}}
+\index{print@{print}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}bool Dvi\+Generator\+::print (
+\begin{DoxyParamCaption}
+\item[{Q\+Printer \&}]{printer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDviGenerator_abb9db773a1e83c5fbfe0b75f3c7eeb05}
+This method is called to print the document to the given {\ttfamily printer}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_aa786d406a1b0db6679a3bc62bbe2dc82}{Okular\+::\+Generator}.
+
+
+
+Definition at line 555 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+556 \{
+557     \textcolor{comment}{// Create tempfile to write to}
+558     KTemporaryFile tf;
+559     tf.setSuffix( \textcolor{stringliteral}{".ps"} );
+560     \textcolor{keywordflow}{if} ( !tf.open() )
+561         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+562 
+563     \hyperlink{classQList}{QList<int>} pageList = \hyperlink{classOkular_1_1FilePrinter_aed485e5e3fbe591b16e15915e318a1b7}{Okular::FilePrinter::pageList}( printer, 
+564                                  m\_dviRenderer->\hyperlink{classdviRenderer_a694e70b7bf8453cab6f6922b4e9d66b7}{totalPages}(),
+565                                  \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_a42ec374d73794bf56d7e7b11f1f56319}{currentPage}() + 1,
+566                                  \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_a01de5a7212e14772e647a8e1caa07627}{bookmarkedPageList}() );
+567     QString pages;
+568     QStringList printOptions;
+569     \textcolor{comment}{// List of pages to print.}
+570     \textcolor{keywordflow}{foreach} ( \textcolor{keywordtype}{int} p, pageList )
+571     \{
+572         pages += QString(\textcolor{stringliteral}{",%1"}).arg(p);
+573     \}
+574     \textcolor{keywordflow}{if} ( !pages.isEmpty() )
+575         printOptions << \textcolor{stringliteral}{"-pp"} << pages.mid(1);
+576 
+577     QEventLoop el;
+578     m\_dviRenderer->\hyperlink{classdviRenderer_a2fd78732f8a754a69680ba49a7c33dd0}{setEventLoop}( &el );
+579     m\_dviRenderer->\hyperlink{classdviRenderer_a784bc755f1db810e472768128250f917}{exportPS}( tf.fileName(), printOptions, &printer, 
+      \hyperlink{classOkular_1_1Generator_a4248672ef04e62660d51f16c0a862bbe}{document}()->\hyperlink{classOkular_1_1Document_a0865032f8934fca262b382a6af9a5671}{orientation}() );
+580 
+581     tf.close();
+582 
+583     \textcolor{comment}{// Error messages are handled by the generator - ugly, but it works.}
+584     \textcolor{keywordflow}{return} \textcolor{keyword}{true}; 
+585 \}
+\end{DoxyCode}
+\hypertarget{classDviGenerator_a482ced980f5ee951246a02cfd17c66f0}{\index{Dvi\+Generator@{Dvi\+Generator}!text\+Page@{text\+Page}}
+\index{text\+Page@{text\+Page}!Dvi\+Generator@{Dvi\+Generator}}
+\subsubsection[{text\+Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Text\+Page} $\ast$ Dvi\+Generator\+::text\+Page (
+\begin{DoxyParamCaption}
+\item[{{\bf Okular\+::\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDviGenerator_a482ced980f5ee951246a02cfd17c66f0}
+Returns the text page for the given {\ttfamily page}.
+
+\begin{DoxyWarning}{Warning}
+this method may be executed in its own separated thread if the \hyperlink{classOkular_1_1Generator_a8517096896273a5ba5b970be09313c77a0764a910b194896e72da084c3c51a2d0}{Threaded} is enabled! 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classOkular_1_1Generator_af7915b97ab4b9347fb76babdda212cef}{Okular\+::\+Generator}.
+
+
+
+Definition at line 279 of file generator\+\_\+dvi.\+cpp.
+
+
+\begin{DoxyCode}
+280 \{
+281     kDebug(DviDebug);
+282     \hyperlink{classdviPageInfo}{dviPageInfo} *\hyperlink{classpageInfo}{pageInfo} = \textcolor{keyword}{new} \hyperlink{classdviPageInfo}{dviPageInfo}();
+283     \hyperlink{classpageSize}{pageSize} ps;
+284     
+285     pageInfo->\hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width}=page->\hyperlink{classOkular_1_1Page_a57114e88281da2a51b1bb0d5d4996d53}{width}();
+286     pageInfo->\hyperlink{classdviPageInfo_af6aae8bcca7fab26e073f0cda75197ad}{height}=page->\hyperlink{classOkular_1_1Page_a67246a32b3e625946eb5c685b8372a4f}{height}();
+287 
+288     pageInfo->\hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{pageNumber} = page->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}() + 1;
+289 
+290     pageInfo->\hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution} = m\_resolution;
+291 
+292     QMutexLocker lock( \hyperlink{classOkular_1_1Generator_a83d702cccbce2288c3258d97f1f15e19}{userMutex}() );
+293 
+294     \textcolor{comment}{// get page text from m\_dviRenderer}
+295     \hyperlink{classOkular_1_1TextPage}{Okular::TextPage} *ktp = 0;
+296     \textcolor{keywordflow}{if} ( m\_dviRenderer )
+297     \{
+298         \hyperlink{classSimplePageSize}{SimplePageSize} s = m\_dviRenderer->\hyperlink{classdviRenderer_a8d5430b14cdc4bdf6579402004f31317}{sizeOfPage}( pageInfo->
+      \hyperlink{classdviPageInfo_a53def64ce72621ae5c95524cec77ee2e}{pageNumber} );
+299         pageInfo->\hyperlink{classdviPageInfo_a1a941bfcf6edfb69562bccf5f392a268}{resolution} = (double)(pageInfo->\hyperlink{classdviPageInfo_ae69134192cb1f4a18c3eb8e52e52be73}{width})/ps.\hyperlink{classSimplePageSize_a5866f4c04635b09ec065a1fc45f9d1df}{width}().
+      \hyperlink{classLength_afbaef4ba8d8a3e97873ed5cfd20c7dea}{getLength\_in\_inch}();
+300 
+301         m\_dviRenderer->\hyperlink{classdviRenderer_a8e14acc0c7dffed62d4af08c8bf9226c}{getText}( pageInfo );
+302         lock.unlock();
+303 
+304         ktp = extractTextFromPage( pageInfo );
+305     \}
+306     \textcolor{keyword}{delete} pageInfo;
+307     \textcolor{keywordflow}{return} ktp;
+308 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{generator__dvi_8h}{generator\+\_\+dvi.\+h}\item 
+generators/dvi/\hyperlink{generator__dvi_8cpp}{generator\+\_\+dvi.\+cpp}\end{DoxyCompactItemize}

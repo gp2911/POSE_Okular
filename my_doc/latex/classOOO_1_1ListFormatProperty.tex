@@ -1,0 +1,151 @@
+\hypertarget{classOOO_1_1ListFormatProperty}{\section{O\+O\+O\+:\+:List\+Format\+Property Class Reference}
+\label{classOOO_1_1ListFormatProperty}\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}
+}
+
+
+{\ttfamily \#include $<$formatproperty.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78}{Type} \{ \hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a914b0896543559de81a64c4d976044fe}{Number}, 
+\hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a4873cf9ff40610a812d97f7fd08b61ab}{Bullet}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOOO_1_1ListFormatProperty_a969ba6a166bc2cb9c4ff0516506dae6a}{List\+Format\+Property} ()
+\item 
+\hyperlink{classOOO_1_1ListFormatProperty_acf36551f2c739d74b7381c04f6b75f62}{List\+Format\+Property} (\hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78}{Type} type)
+\item 
+void \hyperlink{classOOO_1_1ListFormatProperty_ae9fd663fd484d7be4569c16238244f4f}{apply} (Q\+Text\+List\+Format $\ast$format, int level) const 
+\item 
+void \hyperlink{classOOO_1_1ListFormatProperty_aec8eb60abaf72270dbc02e64b1b1974d}{add\+Item} (int level, double indent=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 148 of file formatproperty.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78}{\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!Type@{Type}}
+\index{Type@{Type}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf O\+O\+O\+::\+List\+Format\+Property\+::\+Type}}}\label{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Number@{Number}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!Number@{Number}}\item[{\em 
+\hypertarget{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a914b0896543559de81a64c4d976044fe}{Number}\label{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a914b0896543559de81a64c4d976044fe}
+}]\index{Bullet@{Bullet}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!Bullet@{Bullet}}\item[{\em 
+\hypertarget{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a4873cf9ff40610a812d97f7fd08b61ab}{Bullet}\label{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a4873cf9ff40610a812d97f7fd08b61ab}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 151 of file formatproperty.\+h.
+
+
+\begin{DoxyCode}
+152     \{
+153       \hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a914b0896543559de81a64c4d976044fe}{Number},
+154       \hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a4873cf9ff40610a812d97f7fd08b61ab}{Bullet}
+155     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOOO_1_1ListFormatProperty_a969ba6a166bc2cb9c4ff0516506dae6a}{\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!List\+Format\+Property@{List\+Format\+Property}}
+\index{List\+Format\+Property@{List\+Format\+Property}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}
+\subsubsection[{List\+Format\+Property}]{\setlength{\rightskip}{0pt plus 5cm}List\+Format\+Property\+::\+List\+Format\+Property (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ListFormatProperty_a969ba6a166bc2cb9c4ff0516506dae6a}
+
+
+Definition at line 360 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+361   : mType( \hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a914b0896543559de81a64c4d976044fe}{Number} )
+362 \{
+363   mIndents.resize( 10 );
+364 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ListFormatProperty_acf36551f2c739d74b7381c04f6b75f62}{\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!List\+Format\+Property@{List\+Format\+Property}}
+\index{List\+Format\+Property@{List\+Format\+Property}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}
+\subsubsection[{List\+Format\+Property}]{\setlength{\rightskip}{0pt plus 5cm}List\+Format\+Property\+::\+List\+Format\+Property (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ListFormatProperty_acf36551f2c739d74b7381c04f6b75f62}
+
+
+Definition at line 366 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+367   : mType( type )
+368 \{
+369   mIndents.resize( 10 );
+370 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOOO_1_1ListFormatProperty_aec8eb60abaf72270dbc02e64b1b1974d}{\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!add\+Item@{add\+Item}}
+\index{add\+Item@{add\+Item}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}
+\subsubsection[{add\+Item}]{\setlength{\rightskip}{0pt plus 5cm}void List\+Format\+Property\+::add\+Item (
+\begin{DoxyParamCaption}
+\item[{int}]{level, }
+\item[{double}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1ListFormatProperty_aec8eb60abaf72270dbc02e64b1b1974d}
+
+
+Definition at line 383 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+384 \{
+385   \textcolor{keywordflow}{if} ( level < 0 || level >= 10 )
+386     \textcolor{keywordflow}{return};
+387 
+388   mIndents[ level ] = indent;
+389 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1ListFormatProperty_ae9fd663fd484d7be4569c16238244f4f}{\index{O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}!apply@{apply}}
+\index{apply@{apply}!O\+O\+O\+::\+List\+Format\+Property@{O\+O\+O\+::\+List\+Format\+Property}}
+\subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void List\+Format\+Property\+::apply (
+\begin{DoxyParamCaption}
+\item[{Q\+Text\+List\+Format $\ast$}]{format, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+) const}}\label{classOOO_1_1ListFormatProperty_ae9fd663fd484d7be4569c16238244f4f}
+
+
+Definition at line 372 of file formatproperty.\+cpp.
+
+
+\begin{DoxyCode}
+373 \{
+374   \textcolor{keywordflow}{if} ( mType == \hyperlink{classOOO_1_1ListFormatProperty_ade7ec3de6e5f2d3e70ea0f7957bf6f78a914b0896543559de81a64c4d976044fe}{Number} )
+375     format->setStyle( QTextListFormat::ListDecimal );
+376   \textcolor{keywordflow}{else} \{
+377     format->setStyle( QTextListFormat::ListDisc );
+378     \textcolor{keywordflow}{if} ( level > 0 && level < 10 )
+379       format->setIndent( qRound( mIndents[ level ] ) );
+380   \}
+381 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/ooo/\hyperlink{formatproperty_8h}{formatproperty.\+h}\item 
+generators/ooo/\hyperlink{formatproperty_8cpp}{formatproperty.\+cpp}\end{DoxyCompactItemize}

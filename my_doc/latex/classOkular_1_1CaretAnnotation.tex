@@ -1,0 +1,221 @@
+\hypertarget{classOkular_1_1CaretAnnotation}{\section{Okular\+:\+:Caret\+Annotation Class Reference}
+\label{classOkular_1_1CaretAnnotation}\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+}
+
+
+{\ttfamily \#include $<$annotations.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Caret\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1CaretAnnotation}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695}{Caret\+Symbol} \{ \hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695aac987216c2d46c031053ac96718c05ee}{None}, 
+\hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695a18d3f68c9167d4db0fd70b5d869c813a}{P}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1CaretAnnotation_a96fd46a67b080689128acf9aefa4d17f}{Caret\+Annotation} ()
+\item 
+\hyperlink{classOkular_1_1CaretAnnotation_a55bfb4eebec11782fda2855ae340f4dc}{Caret\+Annotation} (const Q\+Dom\+Node \&description)
+\item 
+\hyperlink{classOkular_1_1CaretAnnotation_aab7f00e4d6f59f0ce1f75f5e8e9fd313}{$\sim$\+Caret\+Annotation} ()
+\item 
+void \hyperlink{classOkular_1_1CaretAnnotation_a3f6f7dcb073888075762244d2805981f}{set\+Caret\+Symbol} (\hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695}{Caret\+Annotation\+::\+Caret\+Symbol} symbol)
+\item 
+\hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695}{Caret\+Annotation\+::\+Caret\+Symbol} \hyperlink{classOkular_1_1CaretAnnotation_ac328095a16f32e9039d917d7ee2774dc}{caret\+Symbol} () const 
+\item 
+\hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0}{Sub\+Type} \hyperlink{classOkular_1_1CaretAnnotation_aa126043fc2afcb4b89bd197dbdb463a0}{sub\+Type} () const 
+\item 
+void \hyperlink{classOkular_1_1CaretAnnotation_ac1d1d750933fa58b3868cec6fe645dfd}{store} (Q\+Dom\+Node \&node, Q\+Dom\+Document \&document) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1315 of file annotations.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!Caret\+Symbol@{Caret\+Symbol}}
+\index{Caret\+Symbol@{Caret\+Symbol}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{Caret\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Caret\+Annotation\+::\+Caret\+Symbol}}}\label{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695}
+Describes the highlighting style of the annotation. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!None@{None}}\item[{\em 
+\hypertarget{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695aac987216c2d46c031053ac96718c05ee}{None}\label{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695aac987216c2d46c031053ac96718c05ee}
+}]No symbol to be associated with the text. \index{P@{P}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!P@{P}}\item[{\em 
+\hypertarget{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695a18d3f68c9167d4db0fd70b5d869c813a}{P}\label{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695a18d3f68c9167d4db0fd70b5d869c813a}
+}]A 'paragraph' symbol. \end{description}
+\end{Desc}
+
+
+Definition at line 1321 of file annotations.\+h.
+
+
+\begin{DoxyCode}
+1322         \{
+1323             \hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695aac987216c2d46c031053ac96718c05ee}{None},       
+1324             \hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695a18d3f68c9167d4db0fd70b5d869c813a}{P}           
+1325         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1CaretAnnotation_a96fd46a67b080689128acf9aefa4d17f}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!Caret\+Annotation@{Caret\+Annotation}}
+\index{Caret\+Annotation@{Caret\+Annotation}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{Caret\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Caret\+Annotation\+::\+Caret\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1CaretAnnotation_a96fd46a67b080689128acf9aefa4d17f}
+Creates a new caret annotation. 
+
+Definition at line 2414 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2415     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1CaretAnnotationPrivate}{CaretAnnotationPrivate}() )
+2416 \{
+2417 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1CaretAnnotation_a55bfb4eebec11782fda2855ae340f4dc}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!Caret\+Annotation@{Caret\+Annotation}}
+\index{Caret\+Annotation@{Caret\+Annotation}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{Caret\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Caret\+Annotation\+::\+Caret\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{description}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1CaretAnnotation_a55bfb4eebec11782fda2855ae340f4dc}
+Creates a new caret annotation from the xml {\ttfamily description} 
+
+Definition at line 2419 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2420     : \hyperlink{classOkular_1_1Annotation}{Annotation}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1CaretAnnotationPrivate}{CaretAnnotationPrivate}(), node )
+2421 \{
+2422 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1CaretAnnotation_aab7f00e4d6f59f0ce1f75f5e8e9fd313}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!````~Caret\+Annotation@{$\sim$\+Caret\+Annotation}}
+\index{````~Caret\+Annotation@{$\sim$\+Caret\+Annotation}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{$\sim$\+Caret\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}Caret\+Annotation\+::$\sim$\+Caret\+Annotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1CaretAnnotation_aab7f00e4d6f59f0ce1f75f5e8e9fd313}
+Destroys the caret annotation. 
+
+Definition at line 2424 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2425 \{
+2426 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1CaretAnnotation_ac328095a16f32e9039d917d7ee2774dc}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!caret\+Symbol@{caret\+Symbol}}
+\index{caret\+Symbol@{caret\+Symbol}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{caret\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Caret\+Annotation\+::\+Caret\+Symbol} Caret\+Annotation\+::caret\+Symbol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1CaretAnnotation_ac328095a16f32e9039d917d7ee2774dc}
+Returns the symbol of the annotation. 
+
+Definition at line 2434 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2435 \{
+2436     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1CaretAnnotation}{CaretAnnotation} );
+2437     \textcolor{keywordflow}{return} d->m\_symbol;
+2438 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1CaretAnnotation_a3f6f7dcb073888075762244d2805981f}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!set\+Caret\+Symbol@{set\+Caret\+Symbol}}
+\index{set\+Caret\+Symbol@{set\+Caret\+Symbol}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{set\+Caret\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}void Caret\+Annotation\+::set\+Caret\+Symbol (
+\begin{DoxyParamCaption}
+\item[{{\bf Caret\+Annotation\+::\+Caret\+Symbol}}]{symbol}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1CaretAnnotation_a3f6f7dcb073888075762244d2805981f}
+Sets the {\ttfamily symbol} for the caret annotation. 
+
+Definition at line 2428 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2429 \{
+2430     Q\_D( \hyperlink{classOkular_1_1CaretAnnotation}{CaretAnnotation} );
+2431     d->m\_symbol = symbol;
+2432 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1CaretAnnotation_ac1d1d750933fa58b3868cec6fe645dfd}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!store@{store}}
+\index{store@{store}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Caret\+Annotation\+::store (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Node \&}]{node, }
+\item[{Q\+Dom\+Document \&}]{document}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1CaretAnnotation_ac1d1d750933fa58b3868cec6fe645dfd}
+Stores the caret annotation as xml in {\ttfamily document} under the given parent {\ttfamily node}. 
+
+Reimplemented from \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2445 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2446 \{
+2447     Q\_D( \textcolor{keyword}{const} \hyperlink{classOkular_1_1CaretAnnotation}{CaretAnnotation} );
+2448     \textcolor{comment}{// recurse to parent objects storing properties}
+2449     \hyperlink{classOkular_1_1Annotation_abbb607cf5929ffd06f789a22b353dcb3}{Annotation::store}( node, document );
+2450 
+2451     \textcolor{comment}{// create [caret] element}
+2452     QDomElement caretElement = document.createElement( \textcolor{stringliteral}{"caret"} );
+2453     node.appendChild( caretElement );
+2454 
+2455     \textcolor{comment}{// append the optional attributes}
+2456     \textcolor{keywordflow}{if} ( d->m\_symbol != \hyperlink{classOkular_1_1CaretAnnotation_a0fa75d6ac84d6e08aae0561b55e98695aac987216c2d46c031053ac96718c05ee}{None} )
+2457         caretElement.setAttribute( \textcolor{stringliteral}{"symbol"}, caretSymbolToString( d->m\_symbol ) );
+2458 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1CaretAnnotation_aa126043fc2afcb4b89bd197dbdb463a0}{\index{Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Okular\+::\+Caret\+Annotation@{Okular\+::\+Caret\+Annotation}}
+\subsubsection[{sub\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+::\+Sub\+Type} Caret\+Annotation\+::sub\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1CaretAnnotation_aa126043fc2afcb4b89bd197dbdb463a0}
+Returns the sub type of the caret annotation. 
+
+Implements \hyperlink{classOkular_1_1Annotation_af9833449767eacd740f377e69a1fdd48}{Okular\+::\+Annotation}.
+
+
+
+Definition at line 2440 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+2441 \{
+2442     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1Annotation_af71b46e37d5f850b97d5c4de3be9aac0a904187454fd508d898a3d5843193ad43}{ACaret};
+2443 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8h}{annotations.\+h}\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

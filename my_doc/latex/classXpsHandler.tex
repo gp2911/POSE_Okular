@@ -1,0 +1,980 @@
+\hypertarget{classXpsHandler}{\section{Xps\+Handler Class Reference}
+\label{classXpsHandler}\index{Xps\+Handler@{Xps\+Handler}}
+}
+
+
+{\ttfamily \#include $<$generator\+\_\+xps.\+h$>$}
+
+Inheritance diagram for Xps\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classXpsHandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classXpsHandler_ad3ad0c8f97d71b5a953c30b56efbe77b}{Xps\+Handler} (\hyperlink{classXpsPage}{Xps\+Page} $\ast$page)
+\item 
+\hyperlink{classXpsHandler_a9ef994d1a67b2d9280f8f996cde65ecd}{$\sim$\+Xps\+Handler} ()
+\item 
+bool \hyperlink{classXpsHandler_a9c43380d1a3c28f39f7061f0636026aa}{start\+Element} (const Q\+String \&name\+Space, const Q\+String \&local\+Name, const Q\+String \&qname, const Q\+Xml\+Attributes \&atts)
+\item 
+bool \hyperlink{classXpsHandler_a562c36ba3e7e92dedf9cc9b897af5860}{end\+Element} (const Q\+String \&name\+Space, const Q\+String \&local\+Name, const Q\+String \&qname)
+\item 
+bool \hyperlink{classXpsHandler_afba33984622a2d040c9afef3a5a62510}{start\+Document} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classXpsHandler_aedb472a41dbaf8dc98f9c56082e20be9}{process\+Start\+Element} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_a128698f7127d6685e4ef8b0a548f3e86}{process\+End\+Element} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_a04b3024d155c9df20b3843e27014ff2c}{process\+Glyph} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_a7e906e018c5e746d79a0ae796b1734a3}{process\+Path} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_a0d8078f72932635d0176df232ca5dd5b}{process\+Path\+Data} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_aa84f158c104a06c9a2ab85dc52507d4b}{process\+Fill} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_a5942a8cb7eae345d4a657f4f2e9e5f53}{process\+Stroke} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_a7b84e307ae7cb8b1d584616367a3bffe}{process\+Image\+Brush} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_af9c8dd42a00347185710e1d124f13b4e}{process\+Path\+Geometry} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\item 
+void \hyperlink{classXpsHandler_adabc205b6b381b8938613866df4e988a}{process\+Path\+Figure} (\hyperlink{classXpsRenderNode}{Xps\+Render\+Node} \&node)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classXpsPage}{Xps\+Page} $\ast$ \hyperlink{classXpsHandler_a57252ea44adece639b38d84237222d7f}{m\+\_\+page}
+\item 
+Q\+Painter $\ast$ \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\+\_\+painter}
+\item 
+Q\+Image \hyperlink{classXpsHandler_aac7da032d9b9577bf8f1aa5194e40ba0}{m\+\_\+image}
+\item 
+Q\+Stack$<$ \hyperlink{classXpsRenderNode}{Xps\+Render\+Node} $>$ \hyperlink{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}{m\+\_\+nodes}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classXpsHandler_a65618cf3329d418ab5b3e611e8e1d7f5}{Xps\+Page}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 109 of file generator\+\_\+xps.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classXpsHandler_ad3ad0c8f97d71b5a953c30b56efbe77b}{\index{Xps\+Handler@{Xps\+Handler}!Xps\+Handler@{Xps\+Handler}}
+\index{Xps\+Handler@{Xps\+Handler}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{Xps\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}Xps\+Handler\+::\+Xps\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)}}\label{classXpsHandler_ad3ad0c8f97d71b5a953c30b56efbe77b}
+
+
+Definition at line 747 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+747                                    : \hyperlink{classXpsHandler_a57252ea44adece639b38d84237222d7f}{m\_page}(page)
+748 \{
+749     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter} = NULL;
+750 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a9ef994d1a67b2d9280f8f996cde65ecd}{\index{Xps\+Handler@{Xps\+Handler}!````~Xps\+Handler@{$\sim$\+Xps\+Handler}}
+\index{````~Xps\+Handler@{$\sim$\+Xps\+Handler}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{$\sim$\+Xps\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}Xps\+Handler\+::$\sim$\+Xps\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsHandler_a9ef994d1a67b2d9280f8f996cde65ecd}
+
+
+Definition at line 752 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+753 \{
+754 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classXpsHandler_a562c36ba3e7e92dedf9cc9b897af5860}{\index{Xps\+Handler@{Xps\+Handler}!end\+Element@{end\+Element}}
+\index{end\+Element@{end\+Element}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{end\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool Xps\+Handler\+::end\+Element (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name\+Space, }
+\item[{const Q\+String \&}]{local\+Name, }
+\item[{const Q\+String \&}]{qname}
+\end{DoxyParamCaption}
+)}}\label{classXpsHandler_a562c36ba3e7e92dedf9cc9b897af5860}
+
+
+Definition at line 785 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+788 \{
+789     Q\_UNUSED( nameSpace )
+790     Q\_UNUSED( qname )
+791 
+792 
+793     \hyperlink{classXpsRenderNode}{XpsRenderNode} node = \hyperlink{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}{m\_nodes}.pop();
+794     if (node.name != localName) \{
+795         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Name doesn't match"};
+796     \}
+797     \hyperlink{classXpsHandler_a128698f7127d6685e4ef8b0a548f3e86}{processEndElement}( node );
+798     node.children.clear();
+799     \hyperlink{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}{m\_nodes}.top().children.append(node);
+800 
+801     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+802 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a128698f7127d6685e4ef8b0a548f3e86}{\index{Xps\+Handler@{Xps\+Handler}!process\+End\+Element@{process\+End\+Element}}
+\index{process\+End\+Element@{process\+End\+Element}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+End\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+End\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a128698f7127d6685e4ef8b0a548f3e86}
+
+
+Definition at line 1311 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1312 \{
+1313     \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Glyphs"}) \{
+1314         \hyperlink{classXpsHandler_a04b3024d155c9df20b3843e27014ff2c}{processGlyph}( node );
+1315     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Path"}) \{
+1316         \hyperlink{classXpsHandler_a7e906e018c5e746d79a0ae796b1734a3}{processPath}( node );
+1317     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"MatrixTransform"}) \{
+1318         \textcolor{comment}{//TODO Ignoring x:key}
+1319         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( QTransform( attsToMatrix( node.
+      \hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Matrix"} ) ) ) );
+1320     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Canvas.RenderTransform"}) || (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Glyphs.RenderTransform"}) 
+      || (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Path.RenderTransform"}))  \{
+1321         QVariant data = node.\hyperlink{classXpsRenderNode_a8d897b4ee08e42ca6844ce23c80beb55}{getRequiredChildData}( \textcolor{stringliteral}{"MatrixTransform"} );
+1322         \textcolor{keywordflow}{if} (data.canConvert<QTransform>()) \{
+1323             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setWorldTransform( data.value<QTransform>(), \textcolor{keyword}{true} );
+1324         \}
+1325     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Canvas"}) \{
+1326         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+1327     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Path.Fill"}) || (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Glyphs.Fill"})) \{
+1328         \hyperlink{classXpsHandler_aa84f158c104a06c9a2ab85dc52507d4b}{processFill}( node );
+1329     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Path.Stroke"}) \{
+1330         \hyperlink{classXpsHandler_a5942a8cb7eae345d4a657f4f2e9e5f53}{processStroke}( node );
+1331     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"SolidColorBrush"}) \{
+1332         \textcolor{comment}{//TODO Ignoring opacity, x:key}
+1333         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( QBrush( QColor( hexToRgba( node.
+      \hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Color"} ).toLatin1() ) ) ) );
+1334     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"ImageBrush"}) \{
+1335         \hyperlink{classXpsHandler_a7b84e307ae7cb8b1d584616367a3bffe}{processImageBrush}( node );
+1336     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"ImageBrush.Transform"}) \{
+1337         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = node.\hyperlink{classXpsRenderNode_a8d897b4ee08e42ca6844ce23c80beb55}{getRequiredChildData}( \textcolor{stringliteral}{"MatrixTransform"} );
+1338     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"LinearGradientBrush"}) \{
+1339         \hyperlink{classXpsRenderNode}{XpsRenderNode} * gradients = node.\hyperlink{classXpsRenderNode_a91777855666ee3b327a67485b9d50f84}{findChild}( \textcolor{stringliteral}{"
+      LinearGradientBrush.GradientStops"} );
+1340         \textcolor{keywordflow}{if} ( gradients && gradients->\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data}.canConvert< QGradient * >() ) \{
+1341             QPointF start = getPointFromString( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StartPoint"} ) );
+1342             QPointF end = getPointFromString( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"EndPoint"} ) );
+1343             QLinearGradient * qgrad = \textcolor{keyword}{static\_cast<} QLinearGradient * \textcolor{keyword}{>}( gradients->
+      \hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data}.value< QGradient * >() );
+1344             qgrad->setStart( start );
+1345             qgrad->setFinalStop( end );
+1346             applySpreadStyleToQGradient( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"SpreadMethod"} ), qgrad );
+1347             node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( QBrush( *qgrad ) );
+1348             \textcolor{keyword}{delete} qgrad;
+1349         \}
+1350     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"RadialGradientBrush"}) \{
+1351         \hyperlink{classXpsRenderNode}{XpsRenderNode} * gradients = node.\hyperlink{classXpsRenderNode_a91777855666ee3b327a67485b9d50f84}{findChild}( \textcolor{stringliteral}{"
+      RadialGradientBrush.GradientStops"} );
+1352         \textcolor{keywordflow}{if} ( gradients && gradients->\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data}.canConvert< QGradient * >() ) \{
+1353             QPointF center = getPointFromString( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Center"} ) );
+1354             QPointF origin = getPointFromString( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"GradientOrigin"} ) );
+1355             \textcolor{keywordtype}{double} radiusX = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"RadiusX"} ).toDouble();
+1356             \textcolor{keywordtype}{double} radiusY = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"RadiusY"} ).toDouble();
+1357             QRadialGradient * qgrad = \textcolor{keyword}{static\_cast<} QRadialGradient * \textcolor{keyword}{>}( gradients->
+      \hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data}.value< QGradient * >() );
+1358             qgrad->setCenter( center );
+1359             qgrad->setFocalPoint( origin );
+1360             \textcolor{comment}{// TODO what in case of different radii?}
+1361             qgrad->setRadius( qMin( radiusX, radiusY ) );
+1362             applySpreadStyleToQGradient( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"SpreadMethod"} ), qgrad );
+1363             node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( QBrush( *qgrad ) );
+1364             \textcolor{keyword}{delete} qgrad;
+1365         \}
+1366     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"LinearGradientBrush.GradientStops"}) \{
+1367         \hyperlink{classQList}{QList<XpsGradient>} gradients;
+1368         Q\_FOREACH ( \textcolor{keyword}{const} \hyperlink{classXpsRenderNode}{XpsRenderNode} &child, node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children} ) \{
+1369             \textcolor{keywordtype}{double} offset = child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Offset"} ).toDouble();
+1370             QColor \hyperlink{classglyph_ab4847af7a7b13322d5651fe47735c8dd}{color} = hexToRgba( child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Color"} ).toLatin1() );
+1371             gradients.append( \hyperlink{structXpsGradient}{XpsGradient}( offset, color ) );
+1372         \}
+1373         preprocessXpsGradients( gradients );
+1374         \textcolor{keywordflow}{if} ( !gradients.isEmpty() ) \{
+1375             QLinearGradient * qgrad = \textcolor{keyword}{new} QLinearGradient();
+1376             addXpsGradientsToQGradient( gradients, qgrad );
+1377             node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue< QGradient * >( qgrad );
+1378         \}
+1379     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"RadialGradientBrush.GradientStops"}) \{
+1380         \hyperlink{classQList}{QList<XpsGradient>} gradients;
+1381         Q\_FOREACH ( \textcolor{keyword}{const} \hyperlink{classXpsRenderNode}{XpsRenderNode} &child, node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children} ) \{
+1382             \textcolor{keywordtype}{double} offset = child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Offset"} ).toDouble();
+1383             QColor color = hexToRgba( child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Color"} ).toLatin1() );
+1384             gradients.append( \hyperlink{structXpsGradient}{XpsGradient}( offset, color ) );
+1385         \}
+1386         preprocessXpsGradients( gradients );
+1387         \textcolor{keywordflow}{if} ( !gradients.isEmpty() ) \{
+1388             QRadialGradient * qgrad = \textcolor{keyword}{new} QRadialGradient();
+1389             addXpsGradientsToQGradient( gradients, qgrad );
+1390             node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue< QGradient * >( qgrad );
+1391         \}
+1392     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"PathFigure"}) \{
+1393         \hyperlink{classXpsHandler_adabc205b6b381b8938613866df4e988a}{processPathFigure}( node );
+1394     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"PathGeometry"}) \{
+1395         \hyperlink{classXpsHandler_af9c8dd42a00347185710e1d124f13b4e}{processPathGeometry}( node );
+1396     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Path.Data"}) \{
+1397         \hyperlink{classXpsHandler_a0d8078f72932635d0176df232ca5dd5b}{processPathData}( node );
+1398     \} \textcolor{keywordflow}{else} \{
+1399         \textcolor{comment}{//kDebug(XpsDebug) << "Unknown element: " << node->name;}
+1400     \}
+1401 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_aa84f158c104a06c9a2ab85dc52507d4b}{\index{Xps\+Handler@{Xps\+Handler}!process\+Fill@{process\+Fill}}
+\index{process\+Fill@{process\+Fill}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Fill (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_aa84f158c104a06c9a2ab85dc52507d4b}
+
+
+Definition at line 952 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+953 \{
+954     \textcolor{comment}{//TODO Ignored child elements: VirtualBrush}
+955 
+956     \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children}.size() != 1) \{
+957         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Fill element should have exactly one child"};
+958     \} \textcolor{keywordflow}{else} \{
+959         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children}[0].data;
+960     \}
+961 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a04b3024d155c9df20b3843e27014ff2c}{\index{Xps\+Handler@{Xps\+Handler}!process\+Glyph@{process\+Glyph}}
+\index{process\+Glyph@{process\+Glyph}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Glyph}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Glyph (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a04b3024d155c9df20b3843e27014ff2c}
+
+
+Definition at line 804 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+805 \{
+806     \textcolor{comment}{//TODO Currently ignored attributes: CaretStops, DeviceFontName, IsSideways, OpacityMask, Name,
+       FixedPage.NavigateURI, xml:lang, x:key}
+807     \textcolor{comment}{//TODO Indices is only partially implemented}
+808     \textcolor{comment}{//TODO Currently ignored child elements: Clip, OpacityMask}
+809     \textcolor{comment}{//Handled separately: RenderTransform}
+810 
+811     QString att;
+812 
+813     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->save();
+814 
+815     \textcolor{comment}{// Get font (doesn't work well because qt doesn't allow to load font from file)}
+816     \textcolor{comment}{// This works despite the fact that font size isn't specified in points as required by qt. It's because
+       I set point size to be equal to drawing unit.}
+817     \textcolor{keywordtype}{float} fontSize = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"FontRenderingEmSize"}).toFloat();
+818     \textcolor{comment}{// kDebug(XpsDebug) << "Font Rendering EmSize:" << fontSize;}
+819     \textcolor{comment}{// a value of 0.0 means the text is not visible (see XPS specs, chapter 12, "Glyphs")}
+820     \textcolor{keywordflow}{if} ( fontSize < 0.1 ) \{
+821         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+822         \textcolor{keywordflow}{return};
+823     \}
+824     QFont font = \hyperlink{classXpsHandler_a57252ea44adece639b38d84237222d7f}{m\_page}->m\_file->\hyperlink{classXpsFile_a3eaa64c752c7aa845409abb440e9eda0}{getFontByName}( node.
+      \hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"FontUri"}), fontSize );
+825     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StyleSimulations"} );
+826     \textcolor{keywordflow}{if}  ( !att.isEmpty() ) \{
+827         \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"ItalicSimulation"} ) ) \{
+828             font.setItalic( \textcolor{keyword}{true} );
+829         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"BoldSimulation"} ) ) \{
+830             font.setBold( \textcolor{keyword}{true} );
+831         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"BoldItalicSimulation"} ) ) \{
+832             font.setItalic( \textcolor{keyword}{true} );
+833             font.setBold( \textcolor{keyword}{true} );
+834         \}
+835     \}
+836     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setFont(font);
+837 
+838     \textcolor{comment}{//Origin}
+839     QPointF origin( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"OriginX"}).toDouble(), node.
+      \hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"OriginY"}).toDouble() );
+840 
+841     \textcolor{comment}{//Fill}
+842     QBrush brush;
+843     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"Fill"});
+844     \textcolor{keywordflow}{if} (att.isEmpty()) \{
+845         QVariant data = node.\hyperlink{classXpsRenderNode_a7b201a5c93024bcb63ebb6e913a010f8}{getChildData}( \textcolor{stringliteral}{"Glyphs.Fill"} );
+846         \textcolor{keywordflow}{if} (data.canConvert<QBrush>()) \{
+847             brush = data.value<QBrush>();
+848         \} \textcolor{keywordflow}{else} \{
+849             \textcolor{comment}{// no "Fill" attribute and no "Glyphs.Fill" child, so show nothing}
+850             \textcolor{comment}{// (see XPS specs, 5.10)}
+851             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+852             \textcolor{keywordflow}{return};
+853         \}
+854     \} \textcolor{keywordflow}{else} \{
+855         brush = parseRscRefColorForBrush( att );
+856         \textcolor{keywordflow}{if} ( brush.style() > Qt::NoBrush && brush.style() < Qt::LinearGradientPattern
+857              && brush.color().alpha() == 0 ) \{
+858             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+859             \textcolor{keywordflow}{return};
+860         \}
+861     \}
+862     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setBrush( brush );
+863     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setPen( QPen( brush, 0 ) );
+864 
+865     \textcolor{comment}{// Opacity}
+866     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"Opacity"});
+867     \textcolor{keywordflow}{if} (! att.isEmpty()) \{
+868         \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{true};
+869         \textcolor{keywordtype}{double} value = att.toDouble( &ok );
+870         \textcolor{keywordflow}{if} ( ok && value >= 0.1 ) \{
+871             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setOpacity( value );
+872         \} \textcolor{keywordflow}{else} \{
+873             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+874             \textcolor{keywordflow}{return};
+875         \}
+876     \}
+877 
+878     \textcolor{comment}{//RenderTransform}
+879     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"RenderTransform"});
+880     \textcolor{keywordflow}{if} (!att.isEmpty()) \{
+881         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setWorldTransform( parseRscRefMatrix( att ), \textcolor{keyword}{true});
+882     \}
+883 
+884     \textcolor{comment}{// Clip}
+885     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Clip"} );
+886     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+887         QPainterPath clipPath = parseRscRefPath( att );
+888         \textcolor{keywordflow}{if} ( !clipPath.isEmpty() ) \{
+889             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setClipPath( clipPath );
+890         \}
+891     \}
+892 
+893     \textcolor{comment}{// BiDiLevel - default Left-to-Right}
+894     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setLayoutDirection( Qt::LeftToRight );
+895     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"BiDiLevel"} );
+896     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+897         \textcolor{keywordflow}{if} ( (att.toInt() % 2) == 1 ) \{
+898             \textcolor{comment}{// odd BiDiLevel, so Right-to-Left}
+899             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setLayoutDirection( Qt::RightToLeft );
+900         \}
+901     \}
+902 
+903     \textcolor{comment}{// Indices - partial handling only}
+904     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Indices"} );
+905     \hyperlink{classQList}{QList<qreal>} advanceWidths;
+906     \textcolor{keywordflow}{if} ( ! att.isEmpty() ) \{
+907         QStringList indicesElements = att.split( \textcolor{charliteral}{';'} );
+908         \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < indicesElements.size(); ++i ) \{
+909             \textcolor{keywordflow}{if} ( indicesElements.at(i).contains( \textcolor{stringliteral}{","} ) ) \{
+910                 QStringList parts = indicesElements.at(i).split( \textcolor{charliteral}{','} );
+911                 \textcolor{keywordflow}{if} (parts.size() == 2 ) \{
+912                     \textcolor{comment}{// regular advance case, no offsets}
+913                     advanceWidths.append( parts.at(1).toDouble() * fontSize / 100.0 );
+914                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (parts.size() == 3 ) \{
+915                     \textcolor{comment}{// regular advance case, with uOffset}
+916                     qreal AdvanceWidth = parts.at(1).toDouble() * fontSize / 100.0 ;
+917                     qreal uOffset = parts.at(2).toDouble() / 100.0;
+918                     advanceWidths.append( AdvanceWidth + uOffset );
+919                 \} \textcolor{keywordflow}{else} \{
+920                     \textcolor{comment}{// has vertical offset, but don't know how to handle that yet}
+921                     kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Unhandled Indices element: "} << indicesElements.at(i);
+922                     advanceWidths.append( -1.0 );
+923                 \}
+924             \} \textcolor{keywordflow}{else} \{
+925                 \textcolor{comment}{// no special advance case}
+926                 advanceWidths.append( -1.0 );
+927             \}
+928         \}
+929     \}
+930 
+931     \textcolor{comment}{// UnicodeString}
+932     QString stringToDraw( unicodeString( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"UnicodeString"} ) ) );
+933     QPointF originAdvance(0, 0);
+934     QFontMetrics metrics = \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->fontMetrics();
+935     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < stringToDraw.size(); ++i ) \{
+936         QChar thisChar = stringToDraw.at( i );
+937         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->drawText( origin + originAdvance, QString( thisChar ) );
+938     \textcolor{keyword}{const} qreal advanceWidth = advanceWidths.value( i, qreal(-1.0) );
+939         \textcolor{keywordflow}{if} ( advanceWidth > 0.0 ) \{
+940             originAdvance.rx() += advanceWidth;
+941         \} \textcolor{keywordflow}{else} \{
+942             originAdvance.rx() += metrics.width( thisChar );
+943         \}
+944     \}
+945     \textcolor{comment}{// kDebug(XpsDebug) << "Glyphs: " << atts.value("Fill") << ", " << atts.value("FontUri");}
+946     \textcolor{comment}{// kDebug(XpsDebug) << "    Origin: " << atts.value("OriginX") << "," << atts.value("OriginY");}
+947     \textcolor{comment}{// kDebug(XpsDebug) << "    Unicode: " << atts.value("UnicodeString");}
+948 
+949     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+950 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a7b84e307ae7cb8b1d584616367a3bffe}{\index{Xps\+Handler@{Xps\+Handler}!process\+Image\+Brush@{process\+Image\+Brush}}
+\index{process\+Image\+Brush@{process\+Image\+Brush}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Image\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Image\+Brush (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a7b84e307ae7cb8b1d584616367a3bffe}
+
+
+Definition at line 974 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+975 \{
+976     \textcolor{comment}{//TODO Ignored attributes: Opacity, x:key, TileMode, ViewBoxUnits, ViewPortUnits}
+977     \textcolor{comment}{//TODO Check whether transformation works for non standard situations (viewbox different that whole
+       image, Transform different that simple move & scale, Viewport different than [0, 0, 1, 1]}
+978 
+979     QString att;
+980     QBrush brush;
+981 
+982     QRectF viewport = stringToRectF( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Viewport"} ) );
+983     QRectF viewbox = stringToRectF( node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Viewbox"} ) );
+984     QImage image = \hyperlink{classXpsHandler_a57252ea44adece639b38d84237222d7f}{m\_page}->\hyperlink{classXpsPage_ab1afed165c88b931d2877fdda48ba6b2}{loadImageFromFile}( node.
+      \hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"ImageSource"} ) );
+985 
+986     \textcolor{comment}{// Matrix which can transform [0, 0, 1, 1] rectangle to given viewbox}
+987     QTransform viewboxMatrix = QTransform( viewbox.width() * image.physicalDpiX() / 96, 0, 0, viewbox.
+      height() * image.physicalDpiY() / 96, viewbox.x(), viewbox.y() );
+988 
+989     \textcolor{comment}{// Matrix which can transform [0, 0, 1, 1] rectangle to given viewport}
+990     \textcolor{comment}{//TODO Take ViewPort into account}
+991     QTransform viewportMatrix;
+992     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Transform"} );
+993     \textcolor{keywordflow}{if} ( att.isEmpty() ) \{
+994         QVariant data = node.\hyperlink{classXpsRenderNode_a7b201a5c93024bcb63ebb6e913a010f8}{getChildData}( \textcolor{stringliteral}{"ImageBrush.Transform"} );
+995         \textcolor{keywordflow}{if} (data.canConvert<QTransform>()) \{
+996             viewportMatrix = data.value<QTransform>();
+997         \} \textcolor{keywordflow}{else} \{
+998             viewportMatrix = QTransform();
+999         \}
+1000     \} \textcolor{keywordflow}{else} \{
+1001         viewportMatrix = parseRscRefMatrix( att );
+1002     \}
+1003     viewportMatrix = viewportMatrix * QTransform( viewport.width(), 0, 0, viewport.height(), viewport.x(), 
+      viewport.y() );
+1004 
+1005 
+1006     brush = QBrush( image );
+1007     brush.setTransform( viewboxMatrix.inverted() * viewportMatrix );
+1008 
+1009     node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( brush );
+1010 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a7e906e018c5e746d79a0ae796b1734a3}{\index{Xps\+Handler@{Xps\+Handler}!process\+Path@{process\+Path}}
+\index{process\+Path@{process\+Path}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Path (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a7e906e018c5e746d79a0ae796b1734a3}
+
+
+Definition at line 1012 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1013 \{
+1014     \textcolor{comment}{//TODO Ignored attributes: Clip, OpacityMask, StrokeEndLineCap, StorkeStartLineCap, Name,
+       FixedPage.NavigateURI, xml:lang, x:key, AutomationProperties.Name, AutomationProperties.HelpText, SnapsToDevicePixels}
+1015     \textcolor{comment}{//TODO Ignored child elements: RenderTransform, Clip, OpacityMask}
+1016     \textcolor{comment}{// Handled separately: RenderTransform}
+1017     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->save();
+1018 
+1019     QString att;
+1020     QVariant data;
+1021 
+1022     \textcolor{comment}{// Get path}
+1023     \hyperlink{structXpsPathGeometry}{XpsPathGeometry} * pathdata = node.\hyperlink{classXpsRenderNode_a7b201a5c93024bcb63ebb6e913a010f8}{getChildData}( \textcolor{stringliteral}{"Path.Data"} ).value< 
+      \hyperlink{structXpsPathGeometry}{XpsPathGeometry} * >();
+1024     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Data"} );
+1025     \textcolor{keywordflow}{if} (! att.isEmpty() ) \{
+1026         QPainterPath path = parseRscRefPath( att );
+1027         \textcolor{keyword}{delete} pathdata;
+1028         pathdata = \textcolor{keyword}{new} \hyperlink{structXpsPathGeometry}{XpsPathGeometry}();
+1029         pathdata->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths}.append( \textcolor{keyword}{new} \hyperlink{structXpsPathFigure}{XpsPathFigure}( path, \textcolor{keyword}{true} ) );
+1030     \}
+1031     \textcolor{keywordflow}{if} ( !pathdata ) \{
+1032         \textcolor{comment}{// nothing to draw}
+1033         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+1034         \textcolor{keywordflow}{return};
+1035     \}
+1036 
+1037     \textcolor{comment}{// Set Fill}
+1038     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Fill"} );
+1039     QBrush brush;
+1040     \textcolor{keywordflow}{if} (! att.isEmpty() ) \{
+1041         brush = parseRscRefColorForBrush( att );
+1042     \} \textcolor{keywordflow}{else} \{
+1043         data = node.\hyperlink{classXpsRenderNode_a7b201a5c93024bcb63ebb6e913a010f8}{getChildData}( \textcolor{stringliteral}{"Path.Fill"} );
+1044         \textcolor{keywordflow}{if} (data.canConvert<QBrush>()) \{
+1045             brush = data.value<QBrush>();
+1046         \}
+1047     \}
+1048     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setBrush( brush );
+1049 
+1050     \textcolor{comment}{// Stroke (pen)}
+1051     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Stroke"} );
+1052     QPen pen( Qt::transparent );
+1053     \textcolor{keywordflow}{if}  (! att.isEmpty() ) \{
+1054         pen = parseRscRefColorForPen( att );
+1055     \} \textcolor{keywordflow}{else} \{
+1056         data = node.\hyperlink{classXpsRenderNode_a7b201a5c93024bcb63ebb6e913a010f8}{getChildData}( \textcolor{stringliteral}{"Path.Stroke"} );
+1057         \textcolor{keywordflow}{if} (data.canConvert<QBrush>()) \{
+1058             pen.setBrush( data.value<QBrush>() );
+1059         \}
+1060     \}
+1061     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StrokeThickness"} );
+1062     \textcolor{keywordflow}{if}  (! att.isEmpty() ) \{
+1063         \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{false};
+1064         \textcolor{keywordtype}{int} thickness = att.toInt( &ok );
+1065         \textcolor{keywordflow}{if} (ok)
+1066             pen.setWidth( thickness );
+1067     \}
+1068     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StrokeDashArray"} );
+1069     \textcolor{keywordflow}{if}  ( !att.isEmpty() ) \{
+1070         \textcolor{keyword}{const} QStringList pieces = att.split( QLatin1Char( \textcolor{charliteral}{' '} ), QString::SkipEmptyParts );
+1071         QVector<qreal> dashPattern( pieces.count() );
+1072         \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{false};
+1073         \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < pieces.count(); ++i ) \{
+1074             qreal value = pieces.at( i ).toInt( &ok );
+1075             \textcolor{keywordflow}{if} ( ok ) \{
+1076                 dashPattern[i] = value;
+1077             \} \textcolor{keywordflow}{else} \{
+1078                 \textcolor{keywordflow}{break};
+1079             \}
+1080         \}
+1081         \textcolor{keywordflow}{if} ( ok ) \{
+1082             pen.setDashPattern( dashPattern );
+1083         \}
+1084     \}
+1085     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StrokeDashOffset"} );
+1086     \textcolor{keywordflow}{if}  ( !att.isEmpty() ) \{
+1087         \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{false};
+1088         \textcolor{keywordtype}{int} offset = att.toInt( &ok );
+1089         \textcolor{keywordflow}{if} ( ok )
+1090             pen.setDashOffset( offset );
+1091     \}
+1092     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StrokeDashCap"} );
+1093     \textcolor{keywordflow}{if}  ( !att.isEmpty() ) \{
+1094         Qt::PenCapStyle cap = Qt::FlatCap;
+1095         \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"Flat"} ) ) \{
+1096             cap = Qt::FlatCap;
+1097         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"Round"} ) ) \{
+1098             cap = Qt::RoundCap;
+1099         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"Square"} ) ) \{
+1100             cap = Qt::SquareCap;
+1101         \}
+1102         \textcolor{comment}{// ### missing "Triangle"}
+1103         pen.setCapStyle( cap );
+1104     \}
+1105     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StrokeLineJoin"} );
+1106     \textcolor{keywordflow}{if}  ( !att.isEmpty() ) \{
+1107         Qt::PenJoinStyle joinStyle = Qt::MiterJoin;
+1108         \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"Miter"} ) ) \{
+1109             joinStyle = Qt::MiterJoin;
+1110         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"Bevel"} ) ) \{
+1111             joinStyle = Qt::BevelJoin;
+1112         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( att == QLatin1String( \textcolor{stringliteral}{"Round"} ) ) \{
+1113             joinStyle = Qt::RoundJoin;
+1114         \}
+1115         pen.setJoinStyle( joinStyle );
+1116     \}
+1117     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StrokeMiterLimit"} );
+1118     \textcolor{keywordflow}{if}  ( !att.isEmpty() ) \{
+1119         \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{false};
+1120         \textcolor{keywordtype}{double} limit = att.toDouble( &ok );
+1121         \textcolor{keywordflow}{if} ( ok ) \{
+1122             \textcolor{comment}{// we have to divide it by two, as XPS consider half of the stroke width,}
+1123             \textcolor{comment}{// while Qt the whole of it}
+1124             pen.setMiterLimit( limit / 2 );
+1125         \}
+1126     \}
+1127     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setPen( pen );
+1128 
+1129     \textcolor{comment}{// Opacity}
+1130     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value(\textcolor{stringliteral}{"Opacity"});
+1131     \textcolor{keywordflow}{if} (! att.isEmpty()) \{
+1132         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setOpacity(att.toDouble());
+1133     \}
+1134 
+1135     \textcolor{comment}{// RenderTransform}
+1136     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"RenderTransform"} );
+1137     \textcolor{keywordflow}{if} (! att.isEmpty() ) \{
+1138         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setWorldTransform( parseRscRefMatrix( att ), \textcolor{keyword}{true} );
+1139     \}
+1140     \textcolor{keywordflow}{if} ( !pathdata->\hyperlink{structXpsPathGeometry_a9ff5ab784e20e3a6fc70189f2bef8f72}{transform}.isIdentity() ) \{
+1141         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setWorldTransform( pathdata->\hyperlink{structXpsPathGeometry_a9ff5ab784e20e3a6fc70189f2bef8f72}{transform}, \textcolor{keyword}{true} );
+1142     \}
+1143 
+1144     Q\_FOREACH ( \hyperlink{structXpsPathFigure}{XpsPathFigure} *figure, pathdata->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths} ) \{
+1145         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setBrush( figure->\hyperlink{structXpsPathFigure_a814e70bb5067df634922919ee1854abe}{isFilled} ? brush : QBrush() );
+1146         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->drawPath( figure->\hyperlink{structXpsPathFigure_a838158781b3fff2e2125b6379fa1f62f}{path} );
+1147     \}
+1148 
+1149     \textcolor{keyword}{delete} pathdata;
+1150 
+1151     \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->restore();
+1152 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a0d8078f72932635d0176df232ca5dd5b}{\index{Xps\+Handler@{Xps\+Handler}!process\+Path\+Data@{process\+Path\+Data}}
+\index{process\+Path\+Data@{process\+Path\+Data}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Path\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Path\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a0d8078f72932635d0176df232ca5dd5b}
+
+
+Definition at line 1154 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1155 \{
+1156     \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children}.size() != 1) \{
+1157         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Path.Data element should have exactly one child"};
+1158     \} \textcolor{keywordflow}{else} \{
+1159         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children}[0].data;
+1160     \}
+1161 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_adabc205b6b381b8938613866df4e988a}{\index{Xps\+Handler@{Xps\+Handler}!process\+Path\+Figure@{process\+Path\+Figure}}
+\index{process\+Path\+Figure@{process\+Path\+Figure}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Path\+Figure}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Path\+Figure (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_adabc205b6b381b8938613866df4e988a}
+
+
+Definition at line 1202 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1203 \{
+1204     \textcolor{comment}{//TODO Ignored child elements: ArcSegment}
+1205 
+1206     QString att;
+1207     QPainterPath path;
+1208 
+1209     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"StartPoint"} );
+1210     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1211         QPointF point = getPointFromString( att );
+1212         path.moveTo( point );
+1213     \} \textcolor{keywordflow}{else} \{
+1214         \textcolor{keywordflow}{return};
+1215     \}
+1216 
+1217     Q\_FOREACH ( \textcolor{keyword}{const} \hyperlink{classXpsRenderNode}{XpsRenderNode} &child, node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children} ) \{
+1218         \textcolor{keywordtype}{bool} isStroked = \textcolor{keyword}{true};
+1219         att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"IsStroked"} );
+1220         \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1221             isStroked = att == QLatin1String( \textcolor{stringliteral}{"true"} );
+1222         \}
+1223         \textcolor{keywordflow}{if} ( !isStroked ) \{
+1224             \textcolor{keywordflow}{continue};
+1225         \}
+1226 
+1227         \textcolor{comment}{// PolyLineSegment}
+1228         \textcolor{keywordflow}{if} ( child.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == QLatin1String( \textcolor{stringliteral}{"PolyLineSegment"} ) ) \{
+1229             att = child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Points"} );
+1230             \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1231                 \textcolor{keyword}{const} QStringList points = att.split( QLatin1Char( \textcolor{charliteral}{' '} ), QString::SkipEmptyParts );
+1232                 Q\_FOREACH ( \textcolor{keyword}{const} QString &p, points ) \{
+1233                     QPointF point = getPointFromString( p );
+1234                     path.lineTo( point );
+1235                 \}
+1236             \}
+1237         \}
+1238         \textcolor{comment}{// PolyBezierSegment}
+1239         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( child.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == QLatin1String( \textcolor{stringliteral}{"PolyBezierSegment"} ) ) \{
+1240             att = child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Points"} );
+1241             \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1242                 \textcolor{keyword}{const} QStringList points = att.split( QLatin1Char( \textcolor{charliteral}{' '} ), QString::SkipEmptyParts );
+1243                 \textcolor{keywordflow}{if} ( points.count() % 3 == 0 ) \{
+1244                     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < points.count(); ) \{
+1245                         QPointF firstControl = getPointFromString( points.at( i++ ) );
+1246                         QPointF secondControl = getPointFromString( points.at( i++ ) );
+1247                         QPointF endPoint = getPointFromString( points.at( i++ ) );
+1248                         path.cubicTo(firstControl, secondControl, endPoint);
+1249                     \}
+1250                 \}
+1251             \}
+1252         \}
+1253         \textcolor{comment}{// PolyQuadraticBezierSegment}
+1254         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( child.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == QLatin1String( \textcolor{stringliteral}{"PolyQuadraticBezierSegment"} ) ) \{
+1255             att = child.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Points"} );
+1256             \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1257                 \textcolor{keyword}{const} QStringList points = att.split( QLatin1Char( \textcolor{charliteral}{' '} ), QString::SkipEmptyParts );
+1258                 \textcolor{keywordflow}{if} ( points.count() % 2 == 0 ) \{
+1259                     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < points.count(); ) \{
+1260                         QPointF point1 = getPointFromString( points.at( i++ ) );
+1261                         QPointF point2 = getPointFromString( points.at( i++ ) );
+1262                         path.quadTo( point1, point2 );
+1263                     \}
+1264                 \}
+1265             \}
+1266         \}
+1267     \}
+1268 
+1269     \textcolor{keywordtype}{bool} closePath = \textcolor{keyword}{false};
+1270     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"IsClosed"} );
+1271     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1272         closePath = att == QLatin1String( \textcolor{stringliteral}{"true"} );
+1273     \}
+1274     \textcolor{keywordflow}{if} ( closePath ) \{
+1275         path.closeSubpath();
+1276     \}
+1277 
+1278     \textcolor{keywordtype}{bool} isFilled = \textcolor{keyword}{true};
+1279     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"IsFilled"} );
+1280     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1281         isFilled = att == QLatin1String( \textcolor{stringliteral}{"true"} );
+1282     \}
+1283 
+1284     \textcolor{keywordflow}{if} ( !path.isEmpty() ) \{
+1285         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( \textcolor{keyword}{new} \hyperlink{structXpsPathFigure}{XpsPathFigure}( path, isFilled ) );
+1286     \}
+1287 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_af9c8dd42a00347185710e1d124f13b4e}{\index{Xps\+Handler@{Xps\+Handler}!process\+Path\+Geometry@{process\+Path\+Geometry}}
+\index{process\+Path\+Geometry@{process\+Path\+Geometry}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Path\+Geometry}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Path\+Geometry (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_af9c8dd42a00347185710e1d124f13b4e}
+
+
+Definition at line 1163 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1164 \{
+1165     \hyperlink{structXpsPathGeometry}{XpsPathGeometry} * geom = \textcolor{keyword}{new} \hyperlink{structXpsPathGeometry}{XpsPathGeometry}();
+1166 
+1167     Q\_FOREACH ( \textcolor{keyword}{const} \hyperlink{classXpsRenderNode}{XpsRenderNode} &child, node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children} ) \{
+1168         \textcolor{keywordflow}{if} ( child.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data}.canConvert<\hyperlink{structXpsPathFigure}{XpsPathFigure} *>() ) \{
+1169             \hyperlink{structXpsPathFigure}{XpsPathFigure} *figure = child.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data}.value<
+      \hyperlink{structXpsPathFigure}{XpsPathFigure} *>();
+1170             geom->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths}.append( figure );
+1171         \}
+1172     \}
+1173 
+1174     QString att;
+1175 
+1176     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Figures"} );
+1177     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1178         QPainterPath path = parseRscRefPath( att );
+1179         qDeleteAll( geom->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths} );
+1180         geom->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths}.clear();
+1181         geom->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths}.append( \textcolor{keyword}{new} \hyperlink{structXpsPathFigure}{XpsPathFigure}( path, \textcolor{keyword}{true} ) );
+1182     \}
+1183 
+1184     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"FillRule"} );
+1185     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1186         geom->\hyperlink{structXpsPathGeometry_a5588ce9b578b7557dab8a31d04e09fef}{fillRule} = fillRuleFromString( att );
+1187     \}
+1188 
+1189     \textcolor{comment}{// Transform}
+1190     att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Transform"} );
+1191     \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1192         geom->\hyperlink{structXpsPathGeometry_a9ff5ab784e20e3a6fc70189f2bef8f72}{transform} = parseRscRefMatrix( att );
+1193     \}
+1194 
+1195     \textcolor{keywordflow}{if} ( !geom->\hyperlink{structXpsPathGeometry_a2623aacaaadb1ac2b4c7cb2c5ded4b7b}{paths}.isEmpty() ) \{
+1196         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = qVariantFromValue( geom );
+1197     \} \textcolor{keywordflow}{else} \{
+1198         \textcolor{keyword}{delete} geom;
+1199     \}
+1200 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_aedb472a41dbaf8dc98f9c56082e20be9}{\index{Xps\+Handler@{Xps\+Handler}!process\+Start\+Element@{process\+Start\+Element}}
+\index{process\+Start\+Element@{process\+Start\+Element}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Start\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Start\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_aedb472a41dbaf8dc98f9c56082e20be9}
+
+
+Definition at line 1289 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+1290 \{
+1291     \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} == \textcolor{stringliteral}{"Canvas"}) \{
+1292         \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->save();
+1293         QString att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"RenderTransform"} );
+1294         \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1295             \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setWorldTransform( parseRscRefMatrix( att ), \textcolor{keyword}{true} );
+1296         \}
+1297         att = node.\hyperlink{classXpsRenderNode_a7f6fca2e06dd119e7eb20139af6c8477}{attributes}.value( \textcolor{stringliteral}{"Opacity"} );
+1298         \textcolor{keywordflow}{if} ( !att.isEmpty() ) \{
+1299             \textcolor{keywordtype}{double} value = att.toDouble();
+1300             \textcolor{keywordflow}{if} ( value > 0.0 && value <= 1.0 ) \{
+1301                 \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setOpacity( \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->opacity() * value );
+1302             \} \textcolor{keywordflow}{else} \{
+1303                 \textcolor{comment}{// setting manually to 0 is necessary to "disable"}
+1304                 \textcolor{comment}{// all the stuff inside}
+1305                 \hyperlink{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{m\_painter}->setOpacity( 0.0 );
+1306             \}
+1307         \}
+1308     \}
+1309 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a5942a8cb7eae345d4a657f4f2e9e5f53}{\index{Xps\+Handler@{Xps\+Handler}!process\+Stroke@{process\+Stroke}}
+\index{process\+Stroke@{process\+Stroke}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{process\+Stroke}]{\setlength{\rightskip}{0pt plus 5cm}void Xps\+Handler\+::process\+Stroke (
+\begin{DoxyParamCaption}
+\item[{{\bf Xps\+Render\+Node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a5942a8cb7eae345d4a657f4f2e9e5f53}
+
+
+Definition at line 963 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+964 \{
+965     \textcolor{comment}{//TODO Ignored child elements: VirtualBrush}
+966 
+967     \textcolor{keywordflow}{if} (node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children}.size() != 1) \{
+968         kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"Stroke element should have exactly one child"};
+969     \} \textcolor{keywordflow}{else} \{
+970         node.\hyperlink{classXpsRenderNode_a1b07b9ac5eb86bec6d9f94ec5c855065}{data} = node.\hyperlink{classXpsRenderNode_a8a1cc47feef96fa119b2491e60ebeb09}{children}[0].data;
+971     \}
+972 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_afba33984622a2d040c9afef3a5a62510}{\index{Xps\+Handler@{Xps\+Handler}!start\+Document@{start\+Document}}
+\index{start\+Document@{start\+Document}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{start\+Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Xps\+Handler\+::start\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classXpsHandler_afba33984622a2d040c9afef3a5a62510}
+
+
+Definition at line 756 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+757 \{
+758     kDebug(\hyperlink{generator__xps_8cpp_a00c0825a8bf77ed142d9a5a205d66f3c}{XpsDebug}) << \textcolor{stringliteral}{"start document"} << \hyperlink{classXpsHandler_a57252ea44adece639b38d84237222d7f}{m\_page}->m\_fileName ;
+759 
+760     \hyperlink{classXpsRenderNode}{XpsRenderNode} node;
+761     node.\hyperlink{classXpsRenderNode_a7b3d33b9669c0235e095d5efc870ccf0}{name} = \textcolor{stringliteral}{"document"};
+762     \hyperlink{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}{m\_nodes}.push(node);
+763 
+764     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+765 \}
+\end{DoxyCode}
+\hypertarget{classXpsHandler_a9c43380d1a3c28f39f7061f0636026aa}{\index{Xps\+Handler@{Xps\+Handler}!start\+Element@{start\+Element}}
+\index{start\+Element@{start\+Element}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{start\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool Xps\+Handler\+::start\+Element (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name\+Space, }
+\item[{const Q\+String \&}]{local\+Name, }
+\item[{const Q\+String \&}]{qname, }
+\item[{const Q\+Xml\+Attributes \&}]{atts}
+\end{DoxyParamCaption}
+)}}\label{classXpsHandler_a9c43380d1a3c28f39f7061f0636026aa}
+
+
+Definition at line 767 of file generator\+\_\+xps.\+cpp.
+
+
+\begin{DoxyCode}
+771 \{
+772     Q\_UNUSED( nameSpace )
+773     Q\_UNUSED( qname )
+774 
+775     \hyperlink{classXpsRenderNode}{XpsRenderNode} node;
+776     node.name = localName;
+777     node.attributes = atts;
+778     \hyperlink{classXpsHandler_aedb472a41dbaf8dc98f9c56082e20be9}{processStartElement}( node );
+779     \hyperlink{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}{m\_nodes}.push(node);
+780 
+781 
+782     return true;
+783 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classXpsHandler_a65618cf3329d418ab5b3e611e8e1d7f5}{\index{Xps\+Handler@{Xps\+Handler}!Xps\+Page@{Xps\+Page}}
+\index{Xps\+Page@{Xps\+Page}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{Xps\+Page}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Xps\+Page}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classXpsHandler_a65618cf3329d418ab5b3e611e8e1d7f5}
+
+
+Definition at line 146 of file generator\+\_\+xps.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classXpsHandler_aac7da032d9b9577bf8f1aa5194e40ba0}{\index{Xps\+Handler@{Xps\+Handler}!m\+\_\+image@{m\+\_\+image}}
+\index{m\+\_\+image@{m\+\_\+image}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{m\+\_\+image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Xps\+Handler\+::m\+\_\+image\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_aac7da032d9b9577bf8f1aa5194e40ba0}
+
+
+Definition at line 142 of file generator\+\_\+xps.\+h.
+
+\hypertarget{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}{\index{Xps\+Handler@{Xps\+Handler}!m\+\_\+nodes@{m\+\_\+nodes}}
+\index{m\+\_\+nodes@{m\+\_\+nodes}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{m\+\_\+nodes}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Stack$<${\bf Xps\+Render\+Node}$>$ Xps\+Handler\+::m\+\_\+nodes\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_ac1147d386794d189fd0fe4a904e74f62}
+
+
+Definition at line 144 of file generator\+\_\+xps.\+h.
+
+\hypertarget{classXpsHandler_a57252ea44adece639b38d84237222d7f}{\index{Xps\+Handler@{Xps\+Handler}!m\+\_\+page@{m\+\_\+page}}
+\index{m\+\_\+page@{m\+\_\+page}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{m\+\_\+page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Xps\+Page}$\ast$ Xps\+Handler\+::m\+\_\+page\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a57252ea44adece639b38d84237222d7f}
+
+
+Definition at line 125 of file generator\+\_\+xps.\+h.
+
+\hypertarget{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}{\index{Xps\+Handler@{Xps\+Handler}!m\+\_\+painter@{m\+\_\+painter}}
+\index{m\+\_\+painter@{m\+\_\+painter}!Xps\+Handler@{Xps\+Handler}}
+\subsubsection[{m\+\_\+painter}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Painter$\ast$ Xps\+Handler\+::m\+\_\+painter\hspace{0.3cm}{\ttfamily [protected]}}}\label{classXpsHandler_a2db77df5312274e6f1d7e274b45c9d21}
+
+
+Definition at line 140 of file generator\+\_\+xps.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/xps/\hyperlink{generator__xps_8h}{generator\+\_\+xps.\+h}\item 
+generators/xps/\hyperlink{generator__xps_8cpp}{generator\+\_\+xps.\+cpp}\end{DoxyCompactItemize}

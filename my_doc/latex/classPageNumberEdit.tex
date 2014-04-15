@@ -1,0 +1,77 @@
+\hypertarget{classPageNumberEdit}{\section{Page\+Number\+Edit Class Reference}
+\label{classPageNumberEdit}\index{Page\+Number\+Edit@{Page\+Number\+Edit}}
+}
+
+
+{\ttfamily \#include $<$minibar.\+h$>$}
+
+Inheritance diagram for Page\+Number\+Edit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPageNumberEdit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageNumberEdit_a41052b9c1ca69b643869a7a0a2698585}{Page\+Number\+Edit} (\hyperlink{classMiniBar}{Mini\+Bar} $\ast$parent)
+\item 
+void \hyperlink{classPageNumberEdit_a844debe272a0cc761736185203c19b59}{set\+Pages\+Number} (int pages)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 52 of file minibar.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageNumberEdit_a41052b9c1ca69b643869a7a0a2698585}{\index{Page\+Number\+Edit@{Page\+Number\+Edit}!Page\+Number\+Edit@{Page\+Number\+Edit}}
+\index{Page\+Number\+Edit@{Page\+Number\+Edit}!Page\+Number\+Edit@{Page\+Number\+Edit}}
+\subsubsection[{Page\+Number\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Number\+Edit\+::\+Page\+Number\+Edit (
+\begin{DoxyParamCaption}
+\item[{{\bf Mini\+Bar} $\ast$}]{mini\+Bar}
+\end{DoxyParamCaption}
+)}}\label{classPageNumberEdit_a41052b9c1ca69b643869a7a0a2698585}
+\hyperlink{classPageNumberEdit}{Page\+Number\+Edit} 
+
+Definition at line 473 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+474     : \hyperlink{classPagesEdit_a3c8582f1992d34a6cd664b6a50824ce8}{PagesEdit}( miniBar )
+475 \{
+476     \textcolor{comment}{// use an integer validator}
+477     m\_validator = \textcolor{keyword}{new} QIntValidator( 1, 1, \textcolor{keyword}{this} );
+478     setValidator( m\_validator );
+479 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageNumberEdit_a844debe272a0cc761736185203c19b59}{\index{Page\+Number\+Edit@{Page\+Number\+Edit}!set\+Pages\+Number@{set\+Pages\+Number}}
+\index{set\+Pages\+Number@{set\+Pages\+Number}!Page\+Number\+Edit@{Page\+Number\+Edit}}
+\subsubsection[{set\+Pages\+Number}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Number\+Edit\+::set\+Pages\+Number (
+\begin{DoxyParamCaption}
+\item[{int}]{pages}
+\end{DoxyParamCaption}
+)}}\label{classPageNumberEdit_a844debe272a0cc761736185203c19b59}
+
+
+Definition at line 481 of file minibar.\+cpp.
+
+
+\begin{DoxyCode}
+482 \{
+483     m\_validator->setTop( pages );
+484 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{minibar_8h}{minibar.\+h}\item 
+ui/\hyperlink{minibar_8cpp}{minibar.\+cpp}\end{DoxyCompactItemize}

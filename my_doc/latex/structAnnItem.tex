@@ -1,0 +1,145 @@
+\hypertarget{structAnnItem}{\section{Ann\+Item Struct Reference}
+\label{structAnnItem}\index{Ann\+Item@{Ann\+Item}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structAnnItem_a470674064cc4782539c18b5a84d8d92c}{Ann\+Item} ()
+\item 
+\hyperlink{structAnnItem_a62238531831021d5e500ca21e4141f33}{Ann\+Item} (\hyperlink{structAnnItem}{Ann\+Item} $\ast$\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}, \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\item 
+\hyperlink{structAnnItem_a347e18ec47f43003e855789dae47434c}{Ann\+Item} (\hyperlink{structAnnItem}{Ann\+Item} $\ast$\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}, int \hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page})
+\item 
+\hyperlink{structAnnItem_a7ef99a3a1013d8a1daccc4c39d9f5369}{$\sim$\+Ann\+Item} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structAnnItem}{Ann\+Item} $\ast$ \hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{structAnnItem}{Ann\+Item} $\ast$ $>$ \hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}
+\item 
+\hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ \hyperlink{structAnnItem_a72999b1a45d966e6f622dee4d958790f}{annotation}
+\item 
+int \hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file annotationmodel.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structAnnItem_a470674064cc4782539c18b5a84d8d92c}{\index{Ann\+Item@{Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\index{Ann\+Item@{Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{Ann\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Ann\+Item\+::\+Ann\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structAnnItem_a470674064cc4782539c18b5a84d8d92c}
+
+
+Definition at line 73 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+74     : \hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}( 0 ), \hyperlink{structAnnItem_a72999b1a45d966e6f622dee4d958790f}{annotation}( 0 ), \hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page}( -1 )
+75 \{
+76 \}
+\end{DoxyCode}
+\hypertarget{structAnnItem_a62238531831021d5e500ca21e4141f33}{\index{Ann\+Item@{Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\index{Ann\+Item@{Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{Ann\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Ann\+Item\+::\+Ann\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Ann\+Item} $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)}}\label{structAnnItem_a62238531831021d5e500ca21e4141f33}
+
+
+Definition at line 78 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+79     : \hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}( \_parent ), \hyperlink{structAnnItem_a72999b1a45d966e6f622dee4d958790f}{annotation}( ann ), \hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page}( \_parent->page )
+80 \{
+81     Q\_ASSERT( !parent->\hyperlink{structAnnItem_a72999b1a45d966e6f622dee4d958790f}{annotation} );
+82     parent->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.append( \textcolor{keyword}{this} );
+83 \}
+\end{DoxyCode}
+\hypertarget{structAnnItem_a347e18ec47f43003e855789dae47434c}{\index{Ann\+Item@{Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\index{Ann\+Item@{Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{Ann\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Ann\+Item\+::\+Ann\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Ann\+Item} $\ast$}]{parent, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{structAnnItem_a347e18ec47f43003e855789dae47434c}
+
+
+Definition at line 85 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+86     : \hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent}( \_parent ), \hyperlink{structAnnItem_a72999b1a45d966e6f622dee4d958790f}{annotation}( 0 ), \hyperlink{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{page}( \_page )
+87 \{
+88     Q\_ASSERT( !parent->\hyperlink{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{parent} );
+89     parent->\hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children}.append( \textcolor{keyword}{this} );
+90 \}
+\end{DoxyCode}
+\hypertarget{structAnnItem_a7ef99a3a1013d8a1daccc4c39d9f5369}{\index{Ann\+Item@{Ann\+Item}!````~Ann\+Item@{$\sim$\+Ann\+Item}}
+\index{````~Ann\+Item@{$\sim$\+Ann\+Item}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{$\sim$\+Ann\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Ann\+Item\+::$\sim$\+Ann\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structAnnItem_a7ef99a3a1013d8a1daccc4c39d9f5369}
+
+
+Definition at line 92 of file annotationmodel.\+cpp.
+
+
+\begin{DoxyCode}
+93 \{
+94     qDeleteAll( \hyperlink{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{children} );
+95 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structAnnItem_a72999b1a45d966e6f622dee4d958790f}{\index{Ann\+Item@{Ann\+Item}!annotation@{annotation}}
+\index{annotation@{annotation}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{annotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Annotation}$\ast$ Ann\+Item\+::annotation}}\label{structAnnItem_a72999b1a45d966e6f622dee4d958790f}
+
+
+Definition at line 35 of file annotationmodel.\+cpp.
+
+\hypertarget{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}{\index{Ann\+Item@{Ann\+Item}!children@{children}}
+\index{children@{children}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ {\bf Ann\+Item}$\ast$ $>$ Ann\+Item\+::children}}\label{structAnnItem_a11048051ad0be5a2c8607a9334e006a1}
+
+
+Definition at line 33 of file annotationmodel.\+cpp.
+
+\hypertarget{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}{\index{Ann\+Item@{Ann\+Item}!page@{page}}
+\index{page@{page}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{page}]{\setlength{\rightskip}{0pt plus 5cm}int Ann\+Item\+::page}}\label{structAnnItem_ad2bc09dd1499fd52205eb02c3bf67830}
+
+
+Definition at line 36 of file annotationmodel.\+cpp.
+
+\hypertarget{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}{\index{Ann\+Item@{Ann\+Item}!parent@{parent}}
+\index{parent@{parent}!Ann\+Item@{Ann\+Item}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ann\+Item}$\ast$ Ann\+Item\+::parent}}\label{structAnnItem_aece74b70cc6acc8ebb751256386f9be8}
+
+
+Definition at line 32 of file annotationmodel.\+cpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{annotationmodel_8cpp}{annotationmodel.\+cpp}\end{DoxyCompactItemize}

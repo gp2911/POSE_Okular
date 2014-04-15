@@ -1,0 +1,115 @@
+\hypertarget{classOkular_1_1FormFieldChoicePrivate}{\section{Okular\+:\+:Form\+Field\+Choice\+Private Class Reference}
+\label{classOkular_1_1FormFieldChoicePrivate}\index{Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}}
+}
+Inheritance diagram for Okular\+:\+:Form\+Field\+Choice\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1FormFieldChoicePrivate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FormFieldChoicePrivate_a64dff464e21567cd5ca9674d82e6ad62}{Form\+Field\+Choice\+Private} ()
+\item 
+void \hyperlink{classOkular_1_1FormFieldChoicePrivate_a617efb2e31c799183b389a532302a51c}{set\+Value} (const Q\+String \&v)
+\item 
+Q\+String \hyperlink{classOkular_1_1FormFieldChoicePrivate_a9e0734a416520cf24ff87b84d8a1ab52}{value} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 178 of file form.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1FormFieldChoicePrivate_a64dff464e21567cd5ca9674d82e6ad62}{\index{Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}!Form\+Field\+Choice\+Private@{Form\+Field\+Choice\+Private}}
+\index{Form\+Field\+Choice\+Private@{Form\+Field\+Choice\+Private}!Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}}
+\subsubsection[{Form\+Field\+Choice\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Form\+Field\+Choice\+Private\+::\+Form\+Field\+Choice\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1FormFieldChoicePrivate_a64dff464e21567cd5ca9674d82e6ad62}
+
+
+Definition at line 181 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+182             : \hyperlink{classOkular_1_1FormFieldPrivate_aaf4956b42549d09728750a47148aace3}{FormFieldPrivate}( \hyperlink{classOkular_1_1FormField_a46e9c2bd0942dfe55408c8c1aa5363cfa77c671816ffafa08e36800e93fceb51d}{FormField::FormChoice} )
+183         \{
+184         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FormFieldChoicePrivate_a617efb2e31c799183b389a532302a51c}{\index{Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}}
+\subsubsection[{set\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void Okular\+::\+Form\+Field\+Choice\+Private\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldChoicePrivate_a617efb2e31c799183b389a532302a51c}
+
+
+Implements \hyperlink{classOkular_1_1FormFieldPrivate_a379271a28220778ad6893d9387926256}{Okular\+::\+Form\+Field\+Private}.
+
+
+
+Definition at line 188 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+189         \{
+190             Q\_Q( \hyperlink{classOkular_1_1FormFieldChoice}{FormFieldChoice} );
+191             QStringList choices = v.split( \textcolor{charliteral}{';'}, QString::SkipEmptyParts );
+192             \hyperlink{classQList}{QList<int>} newchoices;
+193             \textcolor{keywordflow}{foreach} ( \textcolor{keyword}{const} QString& str, choices )
+194             \{
+195                 \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{true};
+196                 \textcolor{keywordtype}{int} val = str.toInt( &ok );
+197                 \textcolor{keywordflow}{if} ( ok )
+198                     newchoices.append( val );
+199             \}
+200             \textcolor{keywordflow}{if} ( !newchoices.isEmpty() )
+201                 q->setCurrentChoices( newchoices );
+202         \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldChoicePrivate_a9e0734a416520cf24ff87b84d8a1ab52}{\index{Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}!value@{value}}
+\index{value@{value}!Okular\+::\+Form\+Field\+Choice\+Private@{Okular\+::\+Form\+Field\+Choice\+Private}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Okular\+::\+Form\+Field\+Choice\+Private\+::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldChoicePrivate_a9e0734a416520cf24ff87b84d8a1ab52}
+
+
+Implements \hyperlink{classOkular_1_1FormFieldPrivate_a60e3dd3a4107a3d4b346fe5dab57cd73}{Okular\+::\+Form\+Field\+Private}.
+
+
+
+Definition at line 204 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+205         \{
+206             Q\_Q( \textcolor{keyword}{const} \hyperlink{classOkular_1_1FormFieldChoice}{FormFieldChoice} );
+207             \hyperlink{classQList}{QList<int>} choices = q->currentChoices();
+208             qSort( choices );
+209             QStringList list;
+210             \textcolor{keywordflow}{foreach} ( \textcolor{keywordtype}{int} c, choices )
+211             \{
+212                 list.append( QString::number( c ) );
+213             \}
+214             \textcolor{keywordflow}{return} list.join( QLatin1String( \textcolor{stringliteral}{";"} ) );
+215         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{form_8cpp}{form.\+cpp}\end{DoxyCompactItemize}

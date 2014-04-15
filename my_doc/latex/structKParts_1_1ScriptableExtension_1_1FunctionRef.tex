@@ -1,0 +1,104 @@
+\hypertarget{structKParts_1_1ScriptableExtension_1_1FunctionRef}{\section{K\+Parts\+:\+:Scriptable\+Extension\+:\+:Function\+Ref Struct Reference}
+\label{structKParts_1_1ScriptableExtension_1_1FunctionRef}\index{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}}
+}
+
+
+{\ttfamily \#include $<$scriptableextension.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_a86b2595b7fdf73a3bc128b295792f3da}{Function\+Ref} ()
+\item 
+\hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_a0349d019315c9ec43aa75c91c184b500}{Function\+Ref} (const \hyperlink{structKParts_1_1ScriptableExtension_1_1Object}{Object} \&b, const Q\+String \&f)
+\item 
+bool \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_a97f50a9c52fb32ae83cfc07768866c9d}{operator==} (const \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef}{Function\+Ref} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structKParts_1_1ScriptableExtension_1_1Object}{Object} \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_aefa54e151818239bce80641973c79e18}{base}
+\item 
+Q\+String \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_a1e3cffbdcfde393b9ff6243080edbbd4}{field}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function references are a pair of an object and a field in it. Essentially, if you have a base.\+field(something) call, the 'base' needs to be passed as the 'this' to the function, and these references can be used to resolve that. 
+
+Definition at line 104 of file scriptableextension.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structKParts_1_1ScriptableExtension_1_1FunctionRef_a86b2595b7fdf73a3bc128b295792f3da}{\index{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}!Function\+Ref@{Function\+Ref}}
+\index{Function\+Ref@{Function\+Ref}!K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}}
+\subsubsection[{Function\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref\+::\+Function\+Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structKParts_1_1ScriptableExtension_1_1FunctionRef_a86b2595b7fdf73a3bc128b295792f3da}
+
+
+Definition at line 108 of file scriptableextension.\+h.
+
+
+\begin{DoxyCode}
+108 \{\}
+\end{DoxyCode}
+\hypertarget{structKParts_1_1ScriptableExtension_1_1FunctionRef_a0349d019315c9ec43aa75c91c184b500}{\index{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}!Function\+Ref@{Function\+Ref}}
+\index{Function\+Ref@{Function\+Ref}!K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}}
+\subsubsection[{Function\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref\+::\+Function\+Ref (
+\begin{DoxyParamCaption}
+\item[{const {\bf Object} \&}]{b, }
+\item[{const Q\+String \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structKParts_1_1ScriptableExtension_1_1FunctionRef_a0349d019315c9ec43aa75c91c184b500}
+
+
+Definition at line 109 of file scriptableextension.\+h.
+
+
+\begin{DoxyCode}
+109 : \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_aefa54e151818239bce80641973c79e18}{base}(b), \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_a1e3cffbdcfde393b9ff6243080edbbd4}{field}(f) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structKParts_1_1ScriptableExtension_1_1FunctionRef_a97f50a9c52fb32ae83cfc07768866c9d}{\index{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}!operator==@{operator==}}
+\index{operator==@{operator==}!K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Function\+Ref} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structKParts_1_1ScriptableExtension_1_1FunctionRef_a97f50a9c52fb32ae83cfc07768866c9d}
+
+
+Definition at line 110 of file scriptableextension.\+h.
+
+
+\begin{DoxyCode}
+110 \{ \textcolor{keywordflow}{return} \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_aefa54e151818239bce80641973c79e18}{base} == other.base && \hyperlink{structKParts_1_1ScriptableExtension_1_1FunctionRef_a1e3cffbdcfde393b9ff6243080edbbd4}{field} == other.field; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structKParts_1_1ScriptableExtension_1_1FunctionRef_aefa54e151818239bce80641973c79e18}{\index{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}!base@{base}}
+\index{base@{base}!K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}}
+\subsubsection[{base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object} K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref\+::base}}\label{structKParts_1_1ScriptableExtension_1_1FunctionRef_aefa54e151818239bce80641973c79e18}
+
+
+Definition at line 105 of file scriptableextension.\+h.
+
+\hypertarget{structKParts_1_1ScriptableExtension_1_1FunctionRef_a1e3cffbdcfde393b9ff6243080edbbd4}{\index{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}!field@{field}}
+\index{field@{field}!K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref@{K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref}}
+\subsubsection[{field}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String K\+Parts\+::\+Scriptable\+Extension\+::\+Function\+Ref\+::field}}\label{structKParts_1_1ScriptableExtension_1_1FunctionRef_a1e3cffbdcfde393b9ff6243080edbbd4}
+
+
+Definition at line 106 of file scriptableextension.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{scriptableextension_8h}{scriptableextension.\+h}\end{DoxyCompactItemize}

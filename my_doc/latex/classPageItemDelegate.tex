@@ -1,0 +1,178 @@
+\hypertarget{classPageItemDelegate}{\section{Page\+Item\+Delegate Class Reference}
+\label{classPageItemDelegate}\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+}
+
+
+{\ttfamily \#include $<$pageitemdelegate.\+h$>$}
+
+Inheritance diagram for Page\+Item\+Delegate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPageItemDelegate}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPageItemDelegate_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPageItemDelegate_af4e7efab6bbcc61dc897f6dc5d97e868}{Page\+Item\+Delegate} (Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classPageItemDelegate_a577b0516348a33c016dcedbf6b63decb}{$\sim$\+Page\+Item\+Delegate} ()
+\item 
+virtual void \hyperlink{classPageItemDelegate_a5f31eacfac173ae6e8f85d14efd42508}{paint} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+View\+Item \&option, const Q\+Model\+Index \&index) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classPageItemDelegate_abd76ff54064145a88199c5c60880d91f}{Page\+Role} = 0x000f0001
+\item 
+static const int \hyperlink{classPageItemDelegate_ac9fbbb47e84f3908d29c1ffa164ba90e}{Page\+Label\+Role} = 0x000f0002
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classPageItemDelegate_a4bcba2735f4f02d0c6c98bb693e6e2b8}{draw\+Display} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+View\+Item \&option, const Q\+Rect \&rect, const Q\+String \&text) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file pageitemdelegate.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPageItemDelegate_af4e7efab6bbcc61dc897f6dc5d97e868}{\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\subsubsection[{Page\+Item\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Item\+Delegate\+::\+Page\+Item\+Delegate (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classPageItemDelegate_af4e7efab6bbcc61dc897f6dc5d97e868}
+
+
+Definition at line 33 of file pageitemdelegate.\+cpp.
+
+
+\begin{DoxyCode}
+34     : QItemDelegate( parent ), d( \textcolor{keyword}{new} Private )
+35 \{
+36 \}
+\end{DoxyCode}
+\hypertarget{classPageItemDelegate_a577b0516348a33c016dcedbf6b63decb}{\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!````~Page\+Item\+Delegate@{$\sim$\+Page\+Item\+Delegate}}
+\index{````~Page\+Item\+Delegate@{$\sim$\+Page\+Item\+Delegate}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\subsubsection[{$\sim$\+Page\+Item\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}Page\+Item\+Delegate\+::$\sim$\+Page\+Item\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageItemDelegate_a577b0516348a33c016dcedbf6b63decb}
+
+
+Definition at line 38 of file pageitemdelegate.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keyword}{delete} d;
+41 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPageItemDelegate_a4bcba2735f4f02d0c6c98bb693e6e2b8}{\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!draw\+Display@{draw\+Display}}
+\index{draw\+Display@{draw\+Display}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\subsubsection[{draw\+Display}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+Delegate\+::draw\+Display (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter, }
+\item[{const Q\+Style\+Option\+View\+Item \&}]{option, }
+\item[{const Q\+Rect \&}]{rect, }
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classPageItemDelegate_a4bcba2735f4f02d0c6c98bb693e6e2b8}
+
+
+Definition at line 49 of file pageitemdelegate.\+cpp.
+
+
+\begin{DoxyCode}
+50 \{
+51     QVariant pageVariant = d->\hyperlink{classPageItemDelegate_1_1Private_a0183829c4130511959080e7e5c8fa188}{index}.data( \hyperlink{classPageItemDelegate_abd76ff54064145a88199c5c60880d91f}{PageRole} );
+52     QVariant labelVariant = d->\hyperlink{classPageItemDelegate_1_1Private_a0183829c4130511959080e7e5c8fa188}{index}.data( \hyperlink{classPageItemDelegate_ac9fbbb47e84f3908d29c1ffa164ba90e}{PageLabelRole} );
+53     \textcolor{keywordflow}{if} ( ( labelVariant.type() != QVariant::String && !pageVariant.canConvert( QVariant::String ) ) || !
+      \hyperlink{classOkular_1_1Settings_abe5d7b63d6699c52a18f6a9e8bf15d5d}{Okular::Settings::tocPageColumn}() )
+54     \{
+55         QItemDelegate::drawDisplay( painter, option, rect, text );
+56         \textcolor{keywordflow}{return};
+57     \}
+58     QString label = labelVariant.toString();
+59     QString page = label.isEmpty() ? pageVariant.toString() : label;
+60     QTextDocument document;
+61     document.setPlainText( page );
+62     document.setDefaultFont( option.font );
+63     \textcolor{keywordtype}{int} margindelta = QApplication::style()->pixelMetric( QStyle::PM\_FocusFrameHMargin ) + 1;
+64     \textcolor{keywordtype}{int} pageRectWidth = (int)document.size().width();
+65     QRect newRect( rect );
+66     QRect pageRect( rect );
+67     pageRect.setWidth( pageRectWidth + 2 * margindelta );
+68     newRect.setWidth( newRect.width() - pageRectWidth - 
+      \hyperlink{pageitemdelegate_8cpp_aea23dba57a8b40c4ccf77b3960e0c7cf}{PAGEITEMDELEGATE\_INTERNALMARGIN} );
+69     \textcolor{keywordflow}{if} ( option.direction == Qt::RightToLeft )
+70         newRect.translate( pageRectWidth + \hyperlink{pageitemdelegate_8cpp_aea23dba57a8b40c4ccf77b3960e0c7cf}{PAGEITEMDELEGATE\_INTERNALMARGIN}, 
+      0 );
+71     \textcolor{keywordflow}{else}
+72         pageRect.translate( newRect.width() + \hyperlink{pageitemdelegate_8cpp_aea23dba57a8b40c4ccf77b3960e0c7cf}{PAGEITEMDELEGATE\_INTERNALMARGIN}
+       - 2 * margindelta, 0 );
+73     QItemDelegate::drawDisplay( painter, option, newRect, text );
+74     QStyleOptionViewItemV2 newoption( option );
+75     newoption.displayAlignment = ( option.displayAlignment & ~Qt::AlignHorizontal\_Mask ) | Qt::AlignRight;
+76     QItemDelegate::drawDisplay( painter, newoption, pageRect, page );
+77 \}
+\end{DoxyCode}
+\hypertarget{classPageItemDelegate_a5f31eacfac173ae6e8f85d14efd42508}{\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!paint@{paint}}
+\index{paint@{paint}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Page\+Item\+Delegate\+::paint (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter, }
+\item[{const Q\+Style\+Option\+View\+Item \&}]{option, }
+\item[{const Q\+Model\+Index \&}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPageItemDelegate_a5f31eacfac173ae6e8f85d14efd42508}
+
+
+Definition at line 43 of file pageitemdelegate.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     d->\hyperlink{classPageItemDelegate_1_1Private_a0183829c4130511959080e7e5c8fa188}{index} = index;
+46     QItemDelegate::paint( painter, option, index );
+47 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPageItemDelegate_ac9fbbb47e84f3908d29c1ffa164ba90e}{\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!Page\+Label\+Role@{Page\+Label\+Role}}
+\index{Page\+Label\+Role@{Page\+Label\+Role}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\subsubsection[{Page\+Label\+Role}]{\setlength{\rightskip}{0pt plus 5cm}const int Page\+Item\+Delegate\+::\+Page\+Label\+Role = 0x000f0002\hspace{0.3cm}{\ttfamily [static]}}}\label{classPageItemDelegate_ac9fbbb47e84f3908d29c1ffa164ba90e}
+
+
+Definition at line 24 of file pageitemdelegate.\+h.
+
+\hypertarget{classPageItemDelegate_abd76ff54064145a88199c5c60880d91f}{\index{Page\+Item\+Delegate@{Page\+Item\+Delegate}!Page\+Role@{Page\+Role}}
+\index{Page\+Role@{Page\+Role}!Page\+Item\+Delegate@{Page\+Item\+Delegate}}
+\subsubsection[{Page\+Role}]{\setlength{\rightskip}{0pt plus 5cm}const int Page\+Item\+Delegate\+::\+Page\+Role = 0x000f0001\hspace{0.3cm}{\ttfamily [static]}}}\label{classPageItemDelegate_abd76ff54064145a88199c5c60880d91f}
+
+
+Definition at line 23 of file pageitemdelegate.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{pageitemdelegate_8h}{pageitemdelegate.\+h}\item 
+ui/\hyperlink{pageitemdelegate_8cpp}{pageitemdelegate.\+cpp}\end{DoxyCompactItemize}

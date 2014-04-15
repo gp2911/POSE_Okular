@@ -1,0 +1,465 @@
+\hypertarget{classOkular_1_1Movie}{\section{Okular\+:\+:Movie Class Reference}
+\label{classOkular_1_1Movie}\index{Okular\+::\+Movie@{Okular\+::\+Movie}}
+}
+
+
+Contains information about a movie object.  
+
+
+
+
+{\ttfamily \#include $<$movie.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMovie_1_1Private}{Private}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099b}{Play\+Mode} \{ \hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba70bb38b13a47dd04b9140e830ed00acf}{Play\+Once}, 
+\hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba90b46cfe98cc6e11909323cb0a1deb79}{Play\+Open}, 
+\hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099bae5df974ff070edfa063900e2b2a3064e}{Play\+Repeat}, 
+\hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba0062c8a114d099c166bde1d6f54133d9}{Play\+Palindrome}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1Movie_a3a8c358194f191347327db9fbb1f4aa3}{Movie} (const Q\+String \&file\+Name)
+\item 
+\hyperlink{classOkular_1_1Movie_a0f11da93dc5f735fe7c88842c40a6c7a}{Movie} (const Q\+String \&file\+Name, const Q\+Byte\+Array \&data)
+\item 
+\hyperlink{classOkular_1_1Movie_abf1d82f3db5306141635e34cdb80273c}{$\sim$\+Movie} ()
+\item 
+Q\+String \hyperlink{classOkular_1_1Movie_af04e278dbed1c47b567fa7adc2a9d035}{url} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_aaa87050fba266ea14b37b7c9fa458c2f}{set\+Size} (const Q\+Size \&aspect)
+\item 
+Q\+Size \hyperlink{classOkular_1_1Movie_a9dad9cd8643d12b8794547470df05e81}{size} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_a4757f9f66bdf2e55e3a5152f7e64feff}{set\+Rotation} (\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1Movie_a641d9edc033d2308a7982f074bc01de1}{rotation})
+\item 
+\hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6}{Rotation} \hyperlink{classOkular_1_1Movie_a641d9edc033d2308a7982f074bc01de1}{rotation} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_a72c045992d6fb31a7280e069422e43e5}{set\+Show\+Controls} (bool show)
+\item 
+bool \hyperlink{classOkular_1_1Movie_a2b609559fc76b4ccf4aa647db9528be0}{show\+Controls} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_aded1be790e1fa157dbc9b735e05429e7}{set\+Play\+Mode} (\hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099b}{Play\+Mode} mode)
+\item 
+\hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099b}{Play\+Mode} \hyperlink{classOkular_1_1Movie_a55f41a08014fa825ff6afc97d2461e39}{play\+Mode} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_a732120bf461a2c6d8682732f0fbcc780}{set\+Auto\+Play} (bool \hyperlink{classOkular_1_1Movie_afee77daf9321afaf6c164a464d516940}{auto\+Play})
+\item 
+bool \hyperlink{classOkular_1_1Movie_afee77daf9321afaf6c164a464d516940}{auto\+Play} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_a5bb46f14d21365b05afbd8c8bcca2dbe}{set\+Show\+Poster\+Image} (bool show)
+\item 
+bool \hyperlink{classOkular_1_1Movie_abbd73c60d6503641c04c945ba00cc809}{show\+Poster\+Image} () const 
+\item 
+void \hyperlink{classOkular_1_1Movie_a232c2d19a1b1f8e2bbfaf1debeaf18f4}{set\+Poster\+Image} (const Q\+Image \&image)
+\item 
+Q\+Image \hyperlink{classOkular_1_1Movie_a5d4159ce41a4e2dc7688f7c507827e2c}{poster\+Image} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains information about a movie object. 
+
+\begin{DoxySince}{Since}
+0.\+8 (K\+D\+E 4.\+2) 
+\end{DoxySince}
+
+
+Definition at line 28 of file movie.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099b}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Play\+Mode@{Play\+Mode}}
+\index{Play\+Mode@{Play\+Mode}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{Play\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Movie\+::\+Play\+Mode}}}\label{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099b}
+The play mode for playing the movie \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Play\+Once@{Play\+Once}!Okular\+::\+Movie@{Okular\+::\+Movie}}\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Play\+Once@{Play\+Once}}\item[{\em 
+\hypertarget{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba70bb38b13a47dd04b9140e830ed00acf}{Play\+Once}\label{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba70bb38b13a47dd04b9140e830ed00acf}
+}]Play the movie once, closing the movie controls at the end. \index{Play\+Open@{Play\+Open}!Okular\+::\+Movie@{Okular\+::\+Movie}}\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Play\+Open@{Play\+Open}}\item[{\em 
+\hypertarget{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba90b46cfe98cc6e11909323cb0a1deb79}{Play\+Open}\label{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba90b46cfe98cc6e11909323cb0a1deb79}
+}]Like Play\+Once, but leaving the controls open. \index{Play\+Repeat@{Play\+Repeat}!Okular\+::\+Movie@{Okular\+::\+Movie}}\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Play\+Repeat@{Play\+Repeat}}\item[{\em 
+\hypertarget{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099bae5df974ff070edfa063900e2b2a3064e}{Play\+Repeat}\label{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099bae5df974ff070edfa063900e2b2a3064e}
+}]Play continuously until stopped. \index{Play\+Palindrome@{Play\+Palindrome}!Okular\+::\+Movie@{Okular\+::\+Movie}}\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Play\+Palindrome@{Play\+Palindrome}}\item[{\em 
+\hypertarget{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba0062c8a114d099c166bde1d6f54133d9}{Play\+Palindrome}\label{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba0062c8a114d099c166bde1d6f54133d9}
+}]Play forward, then backward, then again forward and so on until stopped. \end{description}
+\end{Desc}
+
+
+Definition at line 34 of file movie.\+h.
+
+
+\begin{DoxyCode}
+35         \{
+36             \hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba70bb38b13a47dd04b9140e830ed00acf}{PlayOnce},         
+37             \hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba90b46cfe98cc6e11909323cb0a1deb79}{PlayOpen},         
+38             \hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099bae5df974ff070edfa063900e2b2a3064e}{PlayRepeat},       
+39             \hyperlink{classOkular_1_1Movie_ac15c187b1f32107f51813a0da17e099ba0062c8a114d099c166bde1d6f54133d9}{PlayPalindrome}    
+40         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1Movie_a3a8c358194f191347327db9fbb1f4aa3}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{Movie}]{\setlength{\rightskip}{0pt plus 5cm}Movie\+::\+Movie (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1Movie_a3a8c358194f191347327db9fbb1f4aa3}
+Creates a new movie object with the given external {\ttfamily file\+Name}. 
+
+Definition at line 50 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+51     : d( \textcolor{keyword}{new} Private( fileName ) )
+52 \{
+53 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a0f11da93dc5f735fe7c88842c40a6c7a}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{Movie}]{\setlength{\rightskip}{0pt plus 5cm}Movie\+::\+Movie (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name, }
+\item[{const Q\+Byte\+Array \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classOkular_1_1Movie_a0f11da93dc5f735fe7c88842c40a6c7a}
+Creates a new movie object with the given movie data. 
+
+Definition at line 55 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+56     : d( \textcolor{keyword}{new} Private( fileName ) )
+57 \{
+58     \textcolor{comment}{/* Store movie data as temporary file.}
+59 \textcolor{comment}{     *}
+60 \textcolor{comment}{     * Originally loaded movie data directly using a QBuffer, but sadly phonon}
+61 \textcolor{comment}{     * fails to play on a few of my test systems (I think it's the Phonon}
+62 \textcolor{comment}{     * GStreamer backend). Storing the data in a temporary file works fine}
+63 \textcolor{comment}{     * though, not to mention, it releases much needed memory. (gamaral)}
+64 \textcolor{comment}{     */}
+65     d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp} = \textcolor{keyword}{new} QTemporaryFile( QString( \textcolor{stringliteral}{"%1/okrXXXXXX"} ).arg( QDir::tempPath() ) );
+66     \textcolor{keywordflow}{if} ( d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp}->open() ) \{
+67        d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp}->write( data );
+68        d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp}->flush();
+69     \}
+70     \textcolor{keywordflow}{else} kDebug(\hyperlink{debug__p_8h_af16c6e32a95969dd0605d792ec9807c7}{OkularDebug}) << \textcolor{stringliteral}{"Failed to create temporary file for video data."};
+71 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_abf1d82f3db5306141635e34cdb80273c}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!````~Movie@{$\sim$\+Movie}}
+\index{````~Movie@{$\sim$\+Movie}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{$\sim$\+Movie}]{\setlength{\rightskip}{0pt plus 5cm}Movie\+::$\sim$\+Movie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_abf1d82f3db5306141635e34cdb80273c}
+Destroys the movie object. 
+
+Definition at line 73 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+74 \{
+75     \textcolor{keyword}{delete} d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp};
+76     \textcolor{keyword}{delete} d;
+77 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1Movie_afee77daf9321afaf6c164a464d516940}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!auto\+Play@{auto\+Play}}
+\index{auto\+Play@{auto\+Play}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{auto\+Play}]{\setlength{\rightskip}{0pt plus 5cm}bool Movie\+::auto\+Play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_afee77daf9321afaf6c164a464d516940}
+Whether to play the movie automatically 
+
+Definition at line 132 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+133 \{
+134     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_a2877e4e03e5b0bb2af911834dc4363db}{m\_autoPlay};
+135 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a55f41a08014fa825ff6afc97d2461e39}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!play\+Mode@{play\+Mode}}
+\index{play\+Mode@{play\+Mode}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{play\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Movie\+::\+Play\+Mode} Movie\+::play\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_a55f41a08014fa825ff6afc97d2461e39}
+How to play the movie 
+
+Definition at line 122 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+123 \{
+124     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_ab418a34a68536a04613e37bf8711f783}{m\_playMode};
+125 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a5d4159ce41a4e2dc7688f7c507827e2c}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!poster\+Image@{poster\+Image}}
+\index{poster\+Image@{poster\+Image}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{poster\+Image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Movie\+::poster\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_a5d4159ce41a4e2dc7688f7c507827e2c}
+Returns the poster image.
+
+\begin{DoxySince}{Since}
+4.\+10 
+\end{DoxySince}
+
+
+Definition at line 152 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+153 \{
+154     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_a010b7491e1f102a2db84e1b575b7de58}{m\_posterImage};
+155 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a641d9edc033d2308a7982f074bc01de1}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!rotation@{rotation}}
+\index{rotation@{rotation}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotation} Movie\+::rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_a641d9edc033d2308a7982f074bc01de1}
+Returns the rotation of the movie. 
+
+Definition at line 102 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_ac853dc27239be18e7e6fc0ce975168dc}{m\_rotation};
+105 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a732120bf461a2c6d8682732f0fbcc780}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Auto\+Play@{set\+Auto\+Play}}
+\index{set\+Auto\+Play@{set\+Auto\+Play}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Auto\+Play}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Auto\+Play (
+\begin{DoxyParamCaption}
+\item[{bool}]{auto\+Play}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_a732120bf461a2c6d8682732f0fbcc780}
+Sets whether to play the movie automatically 
+
+Definition at line 127 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+128 \{
+129     d->\hyperlink{classMovie_1_1Private_a2877e4e03e5b0bb2af911834dc4363db}{m\_autoPlay} = \hyperlink{classOkular_1_1Movie_afee77daf9321afaf6c164a464d516940}{autoPlay};
+130 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_aded1be790e1fa157dbc9b735e05429e7}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Play\+Mode@{set\+Play\+Mode}}
+\index{set\+Play\+Mode@{set\+Play\+Mode}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Play\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Play\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Movie\+::\+Play\+Mode}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_aded1be790e1fa157dbc9b735e05429e7}
+Sets the way the movie should be played 
+
+Definition at line 117 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+118 \{
+119     d->\hyperlink{classMovie_1_1Private_ab418a34a68536a04613e37bf8711f783}{m\_playMode} = mode;
+120 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a232c2d19a1b1f8e2bbfaf1debeaf18f4}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Poster\+Image@{set\+Poster\+Image}}
+\index{set\+Poster\+Image@{set\+Poster\+Image}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Poster\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Poster\+Image (
+\begin{DoxyParamCaption}
+\item[{const Q\+Image \&}]{image}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_a232c2d19a1b1f8e2bbfaf1debeaf18f4}
+Sets the poster image.
+
+\begin{DoxySince}{Since}
+4.\+10 
+\end{DoxySince}
+
+
+Definition at line 147 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+148 \{
+149     d->\hyperlink{classMovie_1_1Private_a010b7491e1f102a2db84e1b575b7de58}{m\_posterImage} = image;
+150 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a4757f9f66bdf2e55e3a5152f7e64feff}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Rotation}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Rotation (
+\begin{DoxyParamCaption}
+\item[{{\bf Rotation}}]{rotation}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_a4757f9f66bdf2e55e3a5152f7e64feff}
+Sets the {\ttfamily rotation} of the movie. 
+
+Definition at line 97 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{
+99     d->\hyperlink{classMovie_1_1Private_ac853dc27239be18e7e6fc0ce975168dc}{m\_rotation} = \hyperlink{classOkular_1_1Movie_a641d9edc033d2308a7982f074bc01de1}{rotation};
+100 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a72c045992d6fb31a7280e069422e43e5}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Show\+Controls@{set\+Show\+Controls}}
+\index{set\+Show\+Controls@{set\+Show\+Controls}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Show\+Controls}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Show\+Controls (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_a72c045992d6fb31a7280e069422e43e5}
+Sets whether show a bar with movie controls 
+
+Definition at line 107 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+108 \{
+109     d->\hyperlink{classMovie_1_1Private_ad5410d6b4a6ad3b9c894cfc1dce9b1d0}{m\_showControls} = show;
+110 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a5bb46f14d21365b05afbd8c8bcca2dbe}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Show\+Poster\+Image@{set\+Show\+Poster\+Image}}
+\index{set\+Show\+Poster\+Image@{set\+Show\+Poster\+Image}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Show\+Poster\+Image}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Show\+Poster\+Image (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_a5bb46f14d21365b05afbd8c8bcca2dbe}
+Sets whether to show a poster image.
+
+\begin{DoxySince}{Since}
+4.\+10 
+\end{DoxySince}
+
+
+Definition at line 137 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+138 \{
+139     d->\hyperlink{classMovie_1_1Private_a914c169b8e31855cc2cf444a5475d384}{m\_showPosterImage} = show;
+140 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_aaa87050fba266ea14b37b7c9fa458c2f}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{set\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Movie\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{const Q\+Size \&}]{aspect}
+\end{DoxyParamCaption}
+)}}\label{classOkular_1_1Movie_aaa87050fba266ea14b37b7c9fa458c2f}
+Sets the size for the movie. 
+
+Definition at line 87 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+88 \{
+89     d->\hyperlink{classMovie_1_1Private_a3af3868607b59bacaa1ec3d999e44a71}{m\_aspect} = aspect;
+90 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a2b609559fc76b4ccf4aa647db9528be0}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!show\+Controls@{show\+Controls}}
+\index{show\+Controls@{show\+Controls}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{show\+Controls}]{\setlength{\rightskip}{0pt plus 5cm}bool Movie\+::show\+Controls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_a2b609559fc76b4ccf4aa647db9528be0}
+Whether show a bar with movie controls 
+
+Definition at line 112 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+113 \{
+114     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_ad5410d6b4a6ad3b9c894cfc1dce9b1d0}{m\_showControls};
+115 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_abbd73c60d6503641c04c945ba00cc809}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!show\+Poster\+Image@{show\+Poster\+Image}}
+\index{show\+Poster\+Image@{show\+Poster\+Image}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{show\+Poster\+Image}]{\setlength{\rightskip}{0pt plus 5cm}bool Movie\+::show\+Poster\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_abbd73c60d6503641c04c945ba00cc809}
+Whether to show a poster image.
+
+\begin{DoxySince}{Since}
+4.\+10 
+\end{DoxySince}
+
+
+Definition at line 142 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+143 \{
+144     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_a914c169b8e31855cc2cf444a5475d384}{m\_showPosterImage};
+145 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_a9dad9cd8643d12b8794547470df05e81}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!size@{size}}
+\index{size@{size}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Movie\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_a9dad9cd8643d12b8794547470df05e81}
+Returns the size of the movie. 
+
+Definition at line 92 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_a3af3868607b59bacaa1ec3d999e44a71}{m\_aspect};
+95 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1Movie_af04e278dbed1c47b567fa7adc2a9d035}{\index{Okular\+::\+Movie@{Okular\+::\+Movie}!url@{url}}
+\index{url@{url}!Okular\+::\+Movie@{Okular\+::\+Movie}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Movie\+::url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOkular_1_1Movie_af04e278dbed1c47b567fa7adc2a9d035}
+Returns the url of the movie. 
+
+Definition at line 79 of file movie.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{if} (d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp})
+82         \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_a7cb9fd2bb37d4e64e46512cda29fbf73}{m\_tmp}->fileName();
+83     \textcolor{keywordflow}{else}
+84         \textcolor{keywordflow}{return} d->\hyperlink{classMovie_1_1Private_a4854a7b3f3c477551174018976eb794f}{m\_url};
+85 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{movie_8h}{movie.\+h}\item 
+core/\hyperlink{movie_8cpp}{movie.\+cpp}\end{DoxyCompactItemize}

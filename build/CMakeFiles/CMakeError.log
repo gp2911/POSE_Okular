@@ -1,0 +1,197 @@
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:25: error: ‘Q_WS_WIN’ undeclared (first use in this function)
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:25: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o] Error 1
+make: *** [cmTryCompileExec/fast] Error 2
+
+File /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_WIN
+  cmakeRequireSymbol(0,&Q_WS_WIN);
+#endif
+  return 0;
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:25: error: ‘Q_WS_QWS’ undeclared (first use in this function)
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:25: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+File /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_QWS
+  cmakeRequireSymbol(0,&Q_WS_QWS);
+#endif
+  return 0;
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:25: error: ‘Q_WS_MAC’ undeclared (first use in this function)
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:25: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+File /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_MAC
+  cmakeRequireSymbol(0,&Q_WS_MAC);
+#endif
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec] Error 1
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test HAVE_POPPLER_0_20 failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-check-new -fno-common -Woverloaded-virtual -fno-threadsafe-statics -fvisibility=hidden -Werror=return-type -fvisibility-inlines-hidden  -DHAVE_POPPLER_0_20 -I/usr/include/poppler/qt4 -I/usr/include/poppler -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:3:27: fatal error: poppler-media.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+
+#include <poppler-qt4.h>
+#include <poppler-media.h>
+
+int main()
+{
+  Poppler::ScreenAnnotation *annot = 0;
+  Poppler::LinkRendition *link = 0;
+  const Poppler::LinkMovie::Operation operation = Poppler::LinkMovie::Play;
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test HAVE_POPPLER_0_22 failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-check-new -fno-common -Woverloaded-virtual -fno-threadsafe-statics -fvisibility=hidden -Werror=return-type -fvisibility-inlines-hidden  -DHAVE_POPPLER_0_22 -I/usr/include/poppler/qt4 -I/usr/include/poppler -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:10:10: error: ‘class Poppler::MovieObject’ has no member named ‘showPosterImage’
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:12:9: error: ‘AdditionalActionType’ in ‘class Poppler::Annotation’ does not name a type
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:13:9: error: ‘LinkRendition’ in namespace ‘Poppler’ does not name a type
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:14:9: error: ‘FormType’ in ‘class Poppler::Document’ does not name a type
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:9:22: warning: unused variable ‘doc’ [-Wunused-variable]
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+
+#include <poppler-qt4.h>
+#include <poppler-annotation.h>
+#include <poppler-link.h>
+
+int main()
+{
+  Poppler::MovieObject *movie = 0;
+  Poppler::Document *doc = 0;
+  movie->showPosterImage();
+
+  const Poppler::Annotation::AdditionalActionType type = Poppler::Annotation::PageOpeningAction;
+  const Poppler::LinkRendition::RenditionAction action = Poppler::LinkRendition::NoRendition;
+  const Poppler::Document::FormType formType = doc->formType();
+
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test HAVE_POPPLER_0_24 failed with the following output:
+Change Dir: /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-check-new -fno-common -Woverloaded-virtual -fno-threadsafe-statics -fvisibility=hidden -Werror=return-type -fvisibility-inlines-hidden  -DHAVE_POPPLER_0_24 -I/usr/include/poppler/qt4 -I/usr/include/poppler -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:5:40: error: ‘ThinLineSolid’ is not a member of ‘Poppler::Document’
+/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp/src.cxx:5:33: warning: unused variable ‘hint’ [-Wunused-variable]
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+make[1]: Leaving directory `/home/ganesh/okular-src/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+
+#include <poppler-qt4.h>
+int main()
+{
+  Poppler::Document::RenderHint hint = Poppler::Document::ThinLineSolid;
+  return 0;
+}
+

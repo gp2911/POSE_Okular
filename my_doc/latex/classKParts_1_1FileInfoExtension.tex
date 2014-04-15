@@ -1,0 +1,148 @@
+\hypertarget{classKParts_1_1FileInfoExtension}{\section{K\+Parts\+:\+:File\+Info\+Extension Class Reference}
+\label{classKParts_1_1FileInfoExtension}\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+}
+
+
+an extension for obtaining file information from the part.  
+
+
+
+
+{\ttfamily \#include $<$fileinfoextension.\+h$>$}
+
+Inheritance diagram for K\+Parts\+:\+:File\+Info\+Extension\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKParts_1_1FileInfoExtension}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639}{Query\+Mode} \{ \hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639af7f7b524610ed47f67081fee1a37a604}{None} = 0x00, 
+\hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639a553b2481b4b7b99d8f839eed303177d8}{All\+Items} = 0x01, 
+\hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639aaa07fd2649d0deb94a819b29cddbe32e}{Selected\+Items} = 0x02
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1FileInfoExtension_ab7f24a4cbfcabe40422b26fa2ee562b7}{File\+Info\+Extension} (\hyperlink{classKParts_1_1ReadOnlyPart}{K\+Parts\+::\+Read\+Only\+Part} $\ast$parent)
+\item 
+virtual \hyperlink{classKParts_1_1FileInfoExtension_aefda4c72d82131c2dd8cc2e69d157a90}{$\sim$\+File\+Info\+Extension} ()
+\item 
+virtual bool \hyperlink{classKParts_1_1FileInfoExtension_a4774dbd7c4debae026e6103ba0b4ffd5}{has\+Selection} () const 
+\item 
+virtual Query\+Modes \hyperlink{classKParts_1_1FileInfoExtension_aa07ffdbb4c8ecc67d75836d48cb33250}{supported\+Query\+Modes} () const 
+\item 
+virtual K\+File\+Item\+List \hyperlink{classKParts_1_1FileInfoExtension_addac1579dcbc21c5fcceecda6f5cb532}{query\+For} (\hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639}{Query\+Mode} mode) const =0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1FileInfoExtension}{File\+Info\+Extension} $\ast$ \hyperlink{classKParts_1_1FileInfoExtension_a1c137505684c839e52edff6b3592a264}{child\+Object} (Q\+Object $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+an extension for obtaining file information from the part. 
+
+This extension provides information about file and directory resources that are present in the part the implements it.
+
+The main purpose of for this extension is to provide information about files and directories located on remote servers so that download managers such as kget can easily retrieve these resources.
+
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+
+
+Definition at line 48 of file fileinfoextension.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!Query\+Mode@{Query\+Mode}}
+\index{Query\+Mode@{Query\+Mode}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{Query\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf K\+Parts\+::\+File\+Info\+Extension\+::\+Query\+Mode}}}\label{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639}
+Supported file information retrieval modes. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!None@{None}}\item[{\em 
+\hypertarget{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639af7f7b524610ed47f67081fee1a37a604}{None}\label{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639af7f7b524610ed47f67081fee1a37a604}
+}]Querying for file information is N\+O\+T possible \index{All\+Items@{All\+Items}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!All\+Items@{All\+Items}}\item[{\em 
+\hypertarget{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639a553b2481b4b7b99d8f839eed303177d8}{All\+Items}\label{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639a553b2481b4b7b99d8f839eed303177d8}
+}]Retrieve or can retrieve file information for all items. \index{Selected\+Items@{Selected\+Items}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!Selected\+Items@{Selected\+Items}}\item[{\em 
+\hypertarget{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639aaa07fd2649d0deb94a819b29cddbe32e}{Selected\+Items}\label{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639aaa07fd2649d0deb94a819b29cddbe32e}
+}]Retrieve or can retrieve file information for selected items. \end{description}
+\end{Desc}
+
+
+Definition at line 57 of file fileinfoextension.\+h.
+
+
+\begin{DoxyCode}
+57                     \{
+58         \hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639af7f7b524610ed47f67081fee1a37a604}{None} = 0x00,              
+59         \hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639a553b2481b4b7b99d8f839eed303177d8}{AllItems} = 0x01,          
+60         \hyperlink{classKParts_1_1FileInfoExtension_a9bc830a53b0005013082984a2bbd5639aaa07fd2649d0deb94a819b29cddbe32e}{SelectedItems} = 0x02      
+61     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKParts_1_1FileInfoExtension_ab7f24a4cbfcabe40422b26fa2ee562b7}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!File\+Info\+Extension@{File\+Info\+Extension}}
+\index{File\+Info\+Extension@{File\+Info\+Extension}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{File\+Info\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}K\+Parts\+::\+File\+Info\+Extension\+::\+File\+Info\+Extension (
+\begin{DoxyParamCaption}
+\item[{{\bf K\+Parts\+::\+Read\+Only\+Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1FileInfoExtension_ab7f24a4cbfcabe40422b26fa2ee562b7}
+Constructor \hypertarget{classKParts_1_1FileInfoExtension_aefda4c72d82131c2dd8cc2e69d157a90}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!````~File\+Info\+Extension@{$\sim$\+File\+Info\+Extension}}
+\index{````~File\+Info\+Extension@{$\sim$\+File\+Info\+Extension}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{$\sim$\+File\+Info\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+Parts\+::\+File\+Info\+Extension\+::$\sim$\+File\+Info\+Extension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1FileInfoExtension_aefda4c72d82131c2dd8cc2e69d157a90}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKParts_1_1FileInfoExtension_a1c137505684c839e52edff6b3592a264}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!child\+Object@{child\+Object}}
+\index{child\+Object@{child\+Object}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{child\+Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf File\+Info\+Extension}$\ast$ K\+Parts\+::\+File\+Info\+Extension\+::child\+Object (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classKParts_1_1FileInfoExtension_a1c137505684c839e52edff6b3592a264}
+Queries {\ttfamily obj} for a child object which inherits from this class. \hypertarget{classKParts_1_1FileInfoExtension_a4774dbd7c4debae026e6103ba0b4ffd5}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!has\+Selection@{has\+Selection}}
+\index{has\+Selection@{has\+Selection}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{has\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool K\+Parts\+::\+File\+Info\+Extension\+::has\+Selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1FileInfoExtension_a4774dbd7c4debae026e6103ba0b4ffd5}
+Returns true if any of the items in the current view of the part that implements this extension are selected.
+
+By default this function returns false. \hypertarget{classKParts_1_1FileInfoExtension_addac1579dcbc21c5fcceecda6f5cb532}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!query\+For@{query\+For}}
+\index{query\+For@{query\+For}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{query\+For}]{\setlength{\rightskip}{0pt plus 5cm}virtual K\+File\+Item\+List K\+Parts\+::\+File\+Info\+Extension\+::query\+For (
+\begin{DoxyParamCaption}
+\item[{{\bf Query\+Mode}}]{mode}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classKParts_1_1FileInfoExtension_addac1579dcbc21c5fcceecda6f5cb532}
+Returns a information for files that match the specified query {\ttfamily mode}.
+
+If the mode specified by {\ttfamily mode} is not supported or cannot be handled, then an empty list is returned. \hypertarget{classKParts_1_1FileInfoExtension_aa07ffdbb4c8ecc67d75836d48cb33250}{\index{K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}!supported\+Query\+Modes@{supported\+Query\+Modes}}
+\index{supported\+Query\+Modes@{supported\+Query\+Modes}!K\+Parts\+::\+File\+Info\+Extension@{K\+Parts\+::\+File\+Info\+Extension}}
+\subsubsection[{supported\+Query\+Modes}]{\setlength{\rightskip}{0pt plus 5cm}virtual Query\+Modes K\+Parts\+::\+File\+Info\+Extension\+::supported\+Query\+Modes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classKParts_1_1FileInfoExtension_aa07ffdbb4c8ecc67d75836d48cb33250}
+Returns the file information retrieve modes supported by the part that implements this extension.
+
+By default this function returns None. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{fileinfoextension_8h}{fileinfoextension.\+h}\end{DoxyCompactItemize}

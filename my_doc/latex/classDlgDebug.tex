@@ -1,0 +1,59 @@
+\hypertarget{classDlgDebug}{\section{Dlg\+Debug Class Reference}
+\label{classDlgDebug}\index{Dlg\+Debug@{Dlg\+Debug}}
+}
+
+
+{\ttfamily \#include $<$dlgdebug.\+h$>$}
+
+Inheritance diagram for Dlg\+Debug\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDlgDebug}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDlgDebug_abd0199996551c2c421672cabd813bdfe}{Dlg\+Debug} (Q\+Widget $\ast$parent=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file dlgdebug.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDlgDebug_abd0199996551c2c421672cabd813bdfe}{\index{Dlg\+Debug@{Dlg\+Debug}!Dlg\+Debug@{Dlg\+Debug}}
+\index{Dlg\+Debug@{Dlg\+Debug}!Dlg\+Debug@{Dlg\+Debug}}
+\subsubsection[{Dlg\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}Dlg\+Debug\+::\+Dlg\+Debug (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classDlgDebug_abd0199996551c2c421672cabd813bdfe}
+
+
+Definition at line 22 of file dlgdebug.\+cpp.
+
+
+\begin{DoxyCode}
+23     : QWidget( parent )
+24 \{
+25     QVBoxLayout * lay = \textcolor{keyword}{new} QVBoxLayout( \textcolor{keyword}{this} );
+26     lay->setMargin( 0 );
+27 
+28     \hyperlink{dlgdebug_8cpp_a21b0fcbf5794b5490062e4eb15e4dad8}{DEBUG\_SIMPLE\_BOOL}( \textcolor{stringliteral}{"DebugDrawBoundaries"}, lay );
+29     \hyperlink{dlgdebug_8cpp_a21b0fcbf5794b5490062e4eb15e4dad8}{DEBUG\_SIMPLE\_BOOL}( \textcolor{stringliteral}{"DebugDrawAnnotationRect"}, lay );
+30     \hyperlink{dlgdebug_8cpp_a21b0fcbf5794b5490062e4eb15e4dad8}{DEBUG\_SIMPLE\_BOOL}( \textcolor{stringliteral}{"TocPageColumn"}, lay );
+31 
+32     lay->addItem( \textcolor{keyword}{new} QSpacerItem( 5, 5, QSizePolicy::Fixed, QSizePolicy::MinimumExpanding ) );
+33 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+conf/\hyperlink{dlgdebug_8h}{dlgdebug.\+h}\item 
+conf/\hyperlink{dlgdebug_8cpp}{dlgdebug.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\hypertarget{classTestingUtils_1_1AnnotationDisposeWatcher}{\section{Testing\+Utils\+:\+:Annotation\+Dispose\+Watcher Class Reference}
+\label{classTestingUtils_1_1AnnotationDisposeWatcher}\index{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}}
+}
+
+
+{\ttfamily \#include $<$testingutils.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \hyperlink{classTestingUtils_1_1AnnotationDisposeWatcher_a317fa0456f82ecada3e57355ad0489f8}{disposed\+Annotation\+Name} ()
+\item 
+static void \hyperlink{classTestingUtils_1_1AnnotationDisposeWatcher_a8030972bd0e76ba6038bea037e661b97}{reset\+Disposed\+Annotation\+Name} ()
+\item 
+static void \hyperlink{classTestingUtils_1_1AnnotationDisposeWatcher_a207daf4e37de2a18085983d4733b658c}{dispose\+Annotation} (const \hyperlink{classOkular_1_1Annotation}{Okular\+::\+Annotation} $\ast$ann)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 40 of file testingutils.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTestingUtils_1_1AnnotationDisposeWatcher_a207daf4e37de2a18085983d4733b658c}{\index{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}!dispose\+Annotation@{dispose\+Annotation}}
+\index{dispose\+Annotation@{dispose\+Annotation}!Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}}
+\subsubsection[{dispose\+Annotation}]{\setlength{\rightskip}{0pt plus 5cm}void Testing\+Utils\+::\+Annotation\+Dispose\+Watcher\+::dispose\+Annotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Annotation} $\ast$}]{ann}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTestingUtils_1_1AnnotationDisposeWatcher_a207daf4e37de2a18085983d4733b658c}
+
+
+Definition at line 50 of file testingutils.\+cpp.
+
+
+\begin{DoxyCode}
+51     \{
+52         m\_disposedAnnotationName = ann->\hyperlink{classOkular_1_1Annotation_a8a86ff8c722014c2296112d0fa703eab}{uniqueName}();
+53     \}
+\end{DoxyCode}
+\hypertarget{classTestingUtils_1_1AnnotationDisposeWatcher_a317fa0456f82ecada3e57355ad0489f8}{\index{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}!disposed\+Annotation\+Name@{disposed\+Annotation\+Name}}
+\index{disposed\+Annotation\+Name@{disposed\+Annotation\+Name}!Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}}
+\subsubsection[{disposed\+Annotation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Testing\+Utils\+::\+Annotation\+Dispose\+Watcher\+::disposed\+Annotation\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTestingUtils_1_1AnnotationDisposeWatcher_a317fa0456f82ecada3e57355ad0489f8}
+
+
+Definition at line 41 of file testingutils.\+cpp.
+
+
+\begin{DoxyCode}
+41                                                              \{
+42         \textcolor{keywordflow}{return} m\_disposedAnnotationName;
+43     \}
+\end{DoxyCode}
+\hypertarget{classTestingUtils_1_1AnnotationDisposeWatcher_a8030972bd0e76ba6038bea037e661b97}{\index{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}!reset\+Disposed\+Annotation\+Name@{reset\+Disposed\+Annotation\+Name}}
+\index{reset\+Disposed\+Annotation\+Name@{reset\+Disposed\+Annotation\+Name}!Testing\+Utils\+::\+Annotation\+Dispose\+Watcher@{Testing\+Utils\+::\+Annotation\+Dispose\+Watcher}}
+\subsubsection[{reset\+Disposed\+Annotation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void Testing\+Utils\+::\+Annotation\+Dispose\+Watcher\+::reset\+Disposed\+Annotation\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTestingUtils_1_1AnnotationDisposeWatcher_a8030972bd0e76ba6038bea037e661b97}
+
+
+Definition at line 45 of file testingutils.\+cpp.
+
+
+\begin{DoxyCode}
+46     \{
+47         m\_disposedAnnotationName = QString();
+48     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/\hyperlink{testingutils_8h}{testingutils.\+h}\item 
+tests/\hyperlink{testingutils_8cpp}{testingutils.\+cpp}\end{DoxyCompactItemize}

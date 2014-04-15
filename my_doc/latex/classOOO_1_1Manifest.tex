@@ -1,0 +1,294 @@
+\hypertarget{classOOO_1_1Manifest}{\section{O\+O\+O\+:\+:Manifest Class Reference}
+\label{classOOO_1_1Manifest}\index{O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}}
+}
+
+
+{\ttfamily \#include $<$manifest.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOOO_1_1Manifest_a94f5887020a95d6b43516077383549a5}{Manifest} (const Q\+String \&odf\+File\+Name, const Q\+Byte\+Array \&manifest\+Data)
+\item 
+\hyperlink{classOOO_1_1Manifest_ab9f24651f48da247a87c7e6ff33aacd8}{$\sim$\+Manifest} ()
+\item 
+bool \hyperlink{classOOO_1_1Manifest_ad4dc3e80fccd7589b98d47824154df15}{test\+If\+Encrypted} (const Q\+String \&filename)
+\item 
+Q\+Byte\+Array \hyperlink{classOOO_1_1Manifest_a5e88bb8ac85d60ed396a295cc7d2933f}{decrypt\+File} (const Q\+String \&filename, const Q\+Byte\+Array \&file\+Data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespaceOOO}{O\+O\+O} document manifest
+
+The document manifest is described in the O\+A\+S\+I\+S Open Office Specification (Version 1.\+1) section 17.\+7. This class represents the same data. 
+
+Definition at line 199 of file manifest.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOOO_1_1Manifest_a94f5887020a95d6b43516077383549a5}{\index{O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}!Manifest@{Manifest}}
+\index{Manifest@{Manifest}!O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}}
+\subsubsection[{Manifest}]{\setlength{\rightskip}{0pt plus 5cm}Manifest\+::\+Manifest (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{odf\+File\+Name, }
+\item[{const Q\+Byte\+Array \&}]{manifest\+Data}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1Manifest_a94f5887020a95d6b43516077383549a5}
+Create a new manifest.
+
+
+\begin{DoxyParams}{Parameters}
+{\em odf\+File\+Name} & the name of the parent O\+D\+F file \\
+\hline
+{\em manifest\+Data} & the data from the manifest file, as a byte array of the X\+M\+L format data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+129   : m\_odfFileName( odfFileName ), m\_haveGoodPassword( \textcolor{keyword}{false} ), m\_userCancelled( \textcolor{keyword}{false} )
+130 \{
+131   \textcolor{comment}{// I don't know why the parser barfs on this.}
+132   QByteArray manifestCopy = manifestData;
+133   manifestCopy.replace(QByteArray(\textcolor{stringliteral}{"DOCTYPE manifest:manifest"}), QByteArray(\textcolor{stringliteral}{"DOCTYPE manifest"}));
+134 
+135   QXmlStreamReader xml( manifestCopy );
+136 
+137   \hyperlink{classOOO_1_1ManifestEntry}{ManifestEntry} *currentEntry = 0;
+138   \textcolor{keywordflow}{while} ( ! xml.atEnd() ) \{
+139     xml.readNext();
+140     \textcolor{keywordflow}{if} ( (xml.tokenType() == QXmlStreamReader::NoToken) ||
+141      (xml.tokenType() == QXmlStreamReader::Invalid) ||
+142      (xml.tokenType() == QXmlStreamReader::StartDocument) ||
+143      (xml.tokenType() == QXmlStreamReader::EndDocument) ||
+144      (xml.tokenType() == QXmlStreamReader::DTD) || 
+145      (xml.tokenType() == QXmlStreamReader::Characters) ) \{
+146       \textcolor{keywordflow}{continue};
+147     \}
+148     \textcolor{keywordflow}{if} (xml.tokenType() == QXmlStreamReader::StartElement) \{
+149       \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"manifest"} ) \{
+150     \textcolor{keywordflow}{continue};
+151       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"file-entry"} ) \{
+152     QXmlStreamAttributes attributes = xml.attributes();
+153     \textcolor{keywordflow}{if} (currentEntry != 0) \{
+154       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Got new StartElement for new file-entry, but haven't finished the last
+       one yet!"};
+155       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"processing"} << currentEntry->\hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{fileName}() << \textcolor{stringliteral}{", got"} << 
+      attributes.value(\textcolor{stringliteral}{"manifest:full-path"}).toString();
+156     \}
+157     currentEntry = \textcolor{keyword}{new} \hyperlink{classOOO_1_1ManifestEntry}{ManifestEntry}( attributes.value(\textcolor{stringliteral}{"manifest:full-path"}).toString() );
+158     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_ab100ed14298e33bb907752ad8e8d17f1}{setMimeType}( attributes.value(\textcolor{stringliteral}{"manifest:media-type"}).toString() );
+159     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_ae73f2907cba2cfec09e9203299ca701a}{setSize}( attributes.value(\textcolor{stringliteral}{"manifest:size"}).toString() );
+160       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"encryption-data"} ) \{
+161     \textcolor{keywordflow}{if} (currentEntry == 0) \{
+162       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Got encryption-data without valid file-entry at line"} << xml.
+      lineNumber();
+163       \textcolor{keywordflow}{continue};
+164     \}
+165     QXmlStreamAttributes encryptionAttributes = xml.attributes();
+166     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_a4e69eda5242a4f4a4741a8d627f6962c}{setChecksumType}( encryptionAttributes.value(\textcolor{stringliteral}{"manifest:checksum-type"}).
+      toString() );
+167     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_a48e5174537ba7916f143a9329a5b4218}{setChecksum}( encryptionAttributes.value(\textcolor{stringliteral}{"manifest:checksum"}).toString() );
+168       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"algorithm"} ) \{
+169     \textcolor{keywordflow}{if} (currentEntry == 0) \{
+170       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Got algorithm without valid file-entry at line"} << xml.lineNumber();
+171       \textcolor{keywordflow}{continue};
+172     \}
+173     QXmlStreamAttributes algorithmAttributes = xml.attributes();
+174     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_a77d0d27a37517813700ee830f9c11c72}{setAlgorithm}( algorithmAttributes.value(\textcolor{stringliteral}{"manifest:algorithm-name"}).toString()
+       );
+175     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_a5a6783f55b0e2f5e9c41a77c518f9cb2}{setInitialisationVector}( algorithmAttributes.value(\textcolor{stringliteral}{"
+      manifest:initialisation-vector"}).toString() );
+176       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"key-derivation"} ) \{
+177     \textcolor{keywordflow}{if} (currentEntry == 0) \{
+178       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Got key-derivation without valid file-entry at line"} << xml.lineNumber
+      ();
+179       \textcolor{keywordflow}{continue};
+180     \}
+181     QXmlStreamAttributes kdfAttributes = xml.attributes();
+182     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_a6d1398f193f038fd3e605df33564154b}{setKeyDerivationName}( kdfAttributes.value(\textcolor{stringliteral}{"
+      manifest:key-derivation-name"}).toString() );
+183     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_ab78f36fcf7d297649148a1e97f810328}{setIterationCount}( kdfAttributes.value(\textcolor{stringliteral}{"manifest:iteration-count"}).
+      toString() );
+184     currentEntry->\hyperlink{classOOO_1_1ManifestEntry_a94422c9f4b80209ec1fdf876b0832c7d}{setSalt}( kdfAttributes.value(\textcolor{stringliteral}{"manifest:salt"}).toString() );
+185       \} \textcolor{keywordflow}{else} \{
+186     \textcolor{comment}{// handle other StartDocument types here }
+187     kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Unexpected start document type: "} << xml.name().toString();
+188       \}
+189     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( xml.tokenType() == QXmlStreamReader::EndElement ) \{
+190       \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"manifest"} ) \{
+191     \textcolor{keywordflow}{continue};
+192       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( xml.name().toString() == \textcolor{stringliteral}{"file-entry"}) \{
+193     \textcolor{keywordflow}{if} (currentEntry == 0) \{
+194       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Got EndElement for file-entry without valid StartElement at line"} << 
+      xml.lineNumber();
+195       \textcolor{keywordflow}{continue};
+196     \}
+197     \textcolor{comment}{// we're finished processing that file entry}
+198     \textcolor{keywordflow}{if} ( mEntries.contains( currentEntry->\hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{fileName}() ) ) \{
+199       kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Can't insert entry because of duplicate name:"} << currentEntry->
+      \hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{fileName}();
+200       \textcolor{keyword}{delete} currentEntry;
+201     \} \textcolor{keywordflow}{else} \{
+202       mEntries.insert( currentEntry->\hyperlink{classOOO_1_1ManifestEntry_ae1238ad127da660fdef017046a94b5aa}{fileName}(), currentEntry);
+203     \}
+204         currentEntry = 0;
+205       \}
+206     \}
+207   \}
+208   \textcolor{keywordflow}{if} (xml.hasError()) \{
+209     kWarning(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"error: "} << xml.errorString() << xml.lineNumber() << xml.columnNumber();
+210   \}
+211 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1Manifest_ab9f24651f48da247a87c7e6ff33aacd8}{\index{O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}!````~Manifest@{$\sim$\+Manifest}}
+\index{````~Manifest@{$\sim$\+Manifest}!O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}}
+\subsubsection[{$\sim$\+Manifest}]{\setlength{\rightskip}{0pt plus 5cm}Manifest\+::$\sim$\+Manifest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1Manifest_ab9f24651f48da247a87c7e6ff33aacd8}
+
+
+Definition at line 213 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+214 \{
+215   savePasswordToWallet();
+216 
+217   qDeleteAll( mEntries );
+218 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOOO_1_1Manifest_a5e88bb8ac85d60ed396a295cc7d2933f}{\index{O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}!decrypt\+File@{decrypt\+File}}
+\index{decrypt\+File@{decrypt\+File}!O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}}
+\subsubsection[{decrypt\+File}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Manifest\+::decrypt\+File (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{filename, }
+\item[{const Q\+Byte\+Array \&}]{file\+Data}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1Manifest_a5e88bb8ac85d60ed396a295cc7d2933f}
+Decrypt data associated with a specific file 
+
+Definition at line 353 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+354 \{
+355 \textcolor{preprocessor}{#ifdef QCA2}
+356   \hyperlink{classOOO_1_1ManifestEntry}{ManifestEntry} *entry = entryByName( filename );
+357 
+358   \textcolor{keywordflow}{if} ( ! QCA::isSupported( \textcolor{stringliteral}{"sha1"} ) ) \{
+359     KMessageBox::error( 0, i18n(\textcolor{stringliteral}{"This document is encrypted, and crypto support is compiled in, but a
+       hashing plugin could not be located"}) );
+360     \textcolor{comment}{// in the hope that it wasn't really encrypted...}
+361     \textcolor{keywordflow}{return} QByteArray( fileData );
+362   \}
+363 
+364   \textcolor{keywordflow}{if} ( ! QCA::isSupported( \textcolor{stringliteral}{"pbkdf2(sha1)"}) )  \{
+365     KMessageBox::error( 0, i18n(\textcolor{stringliteral}{"This document is encrypted, and crypto support is compiled in, but a key
+       derivation plugin could not be located"}) );
+366     \textcolor{comment}{// in the hope that it wasn't really encrypted...}
+367     \textcolor{keywordflow}{return} QByteArray( fileData );
+368   \}
+369 
+370   \textcolor{keywordflow}{if} ( ! QCA::isSupported( \textcolor{stringliteral}{"blowfish-cfb"}) )  \{
+371     KMessageBox::error( 0, i18n(\textcolor{stringliteral}{"This document is encrypted, and crypto support is compiled in, but a
+       cipher plugin could not be located"}) );
+372     \textcolor{comment}{// in the hope that it wasn't really encrypted...}
+373     \textcolor{keywordflow}{return} QByteArray( fileData );
+374   \}
+375 
+376   \textcolor{keywordflow}{if} (m\_userCancelled) \{
+377     \textcolor{keywordflow}{return} QByteArray();
+378   \}
+379 
+380 
+381   QByteArray decryptedData;
+382   \textcolor{keywordflow}{if} (! m\_haveGoodPassword ) \{
+383     getPasswordFromWallet();
+384     checkPassword( entry, fileData, &decryptedData );
+385   \}
+386 
+387   \textcolor{keywordflow}{do} \{
+388     \textcolor{keywordflow}{if} (! m\_haveGoodPassword ) \{
+389       getPasswordFromUser();
+390     \}
+391 
+392     \textcolor{keywordflow}{if} (m\_userCancelled) \{
+393       \textcolor{keywordflow}{return} QByteArray();
+394     \}
+395 
+396     checkPassword( entry, fileData, &decryptedData );
+397     \textcolor{keywordflow}{if} ( !m\_haveGoodPassword ) \{
+398       KMessageBox::information( 0,  i18n(\textcolor{stringliteral}{"The password is not correct."}), i18n(\textcolor{stringliteral}{"Incorrect password"}) );
+399     \} \textcolor{keywordflow}{else} \{
+400       \textcolor{comment}{// kDebug(OooDebug) << "Have good password";}
+401     \}
+402 
+403   \} \textcolor{keywordflow}{while} ( ( ! m\_haveGoodPassword ) && ( ! m\_userCancelled ) );
+404 
+405   \textcolor{keywordflow}{if} ( m\_haveGoodPassword ) \{
+406     QIODevice *decompresserDevice = KFilterDev::device( \textcolor{keyword}{new} QBuffer( &decryptedData, 0 ), \textcolor{stringliteral}{"
+      application/x-gzip"}, \textcolor{keyword}{true} );
+407     \textcolor{keywordflow}{if}( !decompresserDevice ) \{
+408       kDebug(\hyperlink{debug_8h_a7cc98d68e6cad31e47e0f4c94664c0da}{OooDebug}) << \textcolor{stringliteral}{"Couldn't create decompressor"};
+409       \textcolor{comment}{// hopefully it isn't compressed then!}
+410       \textcolor{keywordflow}{return} QByteArray( fileData );
+411     \}
+412 
+413     \textcolor{keyword}{static\_cast<}KFilterDev*\textcolor{keyword}{>}( decompresserDevice )->setSkipHeaders( );
+414 
+415     decompresserDevice->open( QIODevice::ReadOnly );
+416 
+417     \textcolor{keywordflow}{return} decompresserDevice->readAll();
+418 
+419   \} \textcolor{keywordflow}{else} \{
+420     \textcolor{keywordflow}{return} QByteArray( fileData );
+421   \}    
+422 \textcolor{preprocessor}{#else}
+423   \textcolor{comment}{// TODO: This should have a proper parent}
+424   KMessageBox::error( 0, i18n(\textcolor{stringliteral}{"This document is encrypted, but Okular was compiled without crypto support.
+       This document will probably not open."}) );
+425   \textcolor{comment}{// this is equivalent to what happened before all this Manifest stuff :-)}
+426   \textcolor{keywordflow}{return} QByteArray( fileData );
+427 \textcolor{preprocessor}{#endif}
+428 \}
+\end{DoxyCode}
+\hypertarget{classOOO_1_1Manifest_ad4dc3e80fccd7589b98d47824154df15}{\index{O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}!test\+If\+Encrypted@{test\+If\+Encrypted}}
+\index{test\+If\+Encrypted@{test\+If\+Encrypted}!O\+O\+O\+::\+Manifest@{O\+O\+O\+::\+Manifest}}
+\subsubsection[{test\+If\+Encrypted}]{\setlength{\rightskip}{0pt plus 5cm}bool Manifest\+::test\+If\+Encrypted (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classOOO_1_1Manifest_ad4dc3e80fccd7589b98d47824154df15}
+Check if the manifest indicates that a file is encrypted 
+
+Definition at line 225 of file manifest.\+cpp.
+
+
+\begin{DoxyCode}
+226 \{
+227   \hyperlink{classOOO_1_1ManifestEntry}{ManifestEntry} *entry = entryByName( filename );
+228 
+229   \textcolor{keywordflow}{if} (entry) \{
+230     \textcolor{keywordflow}{return} ( entry->\hyperlink{classOOO_1_1ManifestEntry_ad4f788206aaeb89a2794a40d299ceaee}{salt}().length() > 0 );
+231   \}
+232 
+233   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+234 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/ooo/\hyperlink{manifest_8h}{manifest.\+h}\item 
+generators/ooo/\hyperlink{manifest_8cpp}{manifest.\+cpp}\end{DoxyCompactItemize}

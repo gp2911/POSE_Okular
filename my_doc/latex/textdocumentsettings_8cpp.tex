@@ -1,0 +1,33 @@
+\hypertarget{textdocumentsettings_8cpp}{\section{core/textdocumentsettings.cpp File Reference}
+\label{textdocumentsettings_8cpp}\index{core/textdocumentsettings.\+cpp@{core/textdocumentsettings.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}textdocumentsettings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}textdocumentsettings\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ui\+\_\+textdocumentsettings.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$K\+Font\+Requester$>$}\\*
+{\ttfamily \#include $<$K\+Locale$>$}\\*
+{\ttfamily \#include $<$Q\+Label$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{textdocumentsettings_8cpp_ac606d40db1b21cd10e074fddd88bff03}{A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T}(property, widget, object\+Name, label\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{textdocumentsettings_8cpp_ac606d40db1b21cd10e074fddd88bff03}{\index{textdocumentsettings.\+cpp@{textdocumentsettings.\+cpp}!A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T@{A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T}}
+\index{A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T@{A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T}!textdocumentsettings.\+cpp@{textdocumentsettings.\+cpp}}
+\subsubsection[{A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+W\+I\+D\+G\+E\+T(
+\begin{DoxyParamCaption}
+\item[{}]{property, }
+\item[{}]{widget, }
+\item[{}]{object\+Name, }
+\item[{}]{label\+Name}
+\end{DoxyParamCaption}
+)}}\label{textdocumentsettings_8cpp_ac606d40db1b21cd10e074fddd88bff03}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+d->property = \textcolor{keyword}{new} widget( \textcolor{keyword}{this} );                                \(\backslash\)
+    d->property->setObjectName( QString::fromUtf8( objectName ) );   \(\backslash\)
+    addRow( labelName, d->property );
+\end{DoxyCode}

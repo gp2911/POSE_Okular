@@ -1,0 +1,407 @@
+\hypertarget{classOkular_1_1LineAnnotationPrivate}{\section{Okular\+:\+:Line\+Annotation\+Private Class Reference}
+\label{classOkular_1_1LineAnnotationPrivate}\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+}
+Inheritance diagram for Okular\+:\+:Line\+Annotation\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOkular_1_1LineAnnotationPrivate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1LineAnnotationPrivate_ac7a466fe56995d2c4f2de2dc73871b1e}{Line\+Annotation\+Private} ()
+\item 
+virtual void \hyperlink{classOkular_1_1LineAnnotationPrivate_ae76ec496d162f08385ac0ff8effd05d3}{transform} (const Q\+Transform \&matrix)
+\item 
+virtual void \hyperlink{classOkular_1_1LineAnnotationPrivate_ae28c53c0ca77d4d8c8849d950f191c38}{base\+Transform} (const Q\+Transform \&matrix)
+\item 
+virtual void \hyperlink{classOkular_1_1LineAnnotationPrivate_aa47e0e7d37cfd1fba25a5499a003a915}{reset\+Transformation} ()
+\item 
+virtual void \hyperlink{classOkular_1_1LineAnnotationPrivate_a281be34b0d8545034b778f8987c15ed0}{translate} (const \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} \&coord)
+\item 
+virtual double \hyperlink{classOkular_1_1LineAnnotationPrivate_ae26622fa2061f8d98cd210d611fc0fc2}{distance\+Sqr} (double x, double y, double x\+Scale, double y\+Scale)
+\item 
+virtual void \hyperlink{classOkular_1_1LineAnnotationPrivate_a91ac5baeac9854b86ef326f928be0ae9}{set\+Annotation\+Properties} (const Q\+Dom\+Node \&node)
+\item 
+virtual \hyperlink{classOkular_1_1AnnotationPrivate}{Annotation\+Private} $\ast$ \hyperlink{classOkular_1_1LineAnnotationPrivate_a459d5d0222ba9b0bc17f144aeaedcaf2}{get\+New\+Annotation\+Private} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} $>$ \hyperlink{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{m\+\_\+line\+Points}
+\item 
+\hyperlink{classQLinkedList}{Q\+Linked\+List}$<$ \hyperlink{classOkular_1_1NormalizedPoint}{Normalized\+Point} $>$ \hyperlink{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}{m\+\_\+transformed\+Line\+Points}
+\item 
+\hyperlink{classOkular_1_1LineAnnotation_a67e1128311347eabfd909909facabec6}{Line\+Annotation\+::\+Term\+Style} \hyperlink{classOkular_1_1LineAnnotationPrivate_aabf0926a14575248365c4e5de9d11296}{m\+\_\+line\+Start\+Style}
+\item 
+\hyperlink{classOkular_1_1LineAnnotation_a67e1128311347eabfd909909facabec6}{Line\+Annotation\+::\+Term\+Style} \hyperlink{classOkular_1_1LineAnnotationPrivate_a863fad380ea94af5d61687b7afb9ef4c}{m\+\_\+line\+End\+Style}
+\item 
+bool \hyperlink{classOkular_1_1LineAnnotationPrivate_a907d7a68ff88495dd5d318de5fdf53f3}{m\+\_\+line\+Closed}\+: 1
+\item 
+bool \hyperlink{classOkular_1_1LineAnnotationPrivate_a1260f459bf184a0606df9fa329406c21}{m\+\_\+line\+Show\+Caption}\+: 1
+\item 
+Q\+Color \hyperlink{classOkular_1_1LineAnnotationPrivate_a8000d981312a77260058c7bab0523dd0}{m\+\_\+line\+Inner\+Color}
+\item 
+double \hyperlink{classOkular_1_1LineAnnotationPrivate_affc0c88c47cf398b4cb52e94cae615ff}{m\+\_\+line\+Leading\+Fwd\+Pt}
+\item 
+double \hyperlink{classOkular_1_1LineAnnotationPrivate_a98ba85c09e6201d9df8da64c918c6a49}{m\+\_\+line\+Leading\+Back\+Pt}
+\item 
+\hyperlink{classOkular_1_1LineAnnotation_a80458e2d982d5ef91ff18b850b34489f}{Line\+Annotation\+::\+Line\+Intent} \hyperlink{classOkular_1_1LineAnnotationPrivate_a491ace64fcaa9d2156e541d75fc05431}{m\+\_\+line\+Intent}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classOkular_1_1LineAnnotation}{Line\+Annotation} \mbox{[}\hyperlink{classOkular_1_1Annotation}{Annotation}\mbox{]} 
+
+Definition at line 1255 of file annotations.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_ac7a466fe56995d2c4f2de2dc73871b1e}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!Line\+Annotation\+Private@{Line\+Annotation\+Private}}
+\index{Line\+Annotation\+Private@{Line\+Annotation\+Private}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{Line\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}Okular\+::\+Line\+Annotation\+Private\+::\+Line\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOkular_1_1LineAnnotationPrivate_ac7a466fe56995d2c4f2de2dc73871b1e}
+
+
+Definition at line 1258 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1259             : \hyperlink{classOkular_1_1AnnotationPrivate_affc5d14076f4606905c3c0cd2f6b9dc1}{AnnotationPrivate}(),
+1260               \hyperlink{classOkular_1_1LineAnnotationPrivate_aabf0926a14575248365c4e5de9d11296}{m\_lineStartStyle}( \hyperlink{classOkular_1_1LineAnnotation_a67e1128311347eabfd909909facabec6a48afe55289103ef17833562f7467deab}{LineAnnotation::None} ), 
+      \hyperlink{classOkular_1_1LineAnnotationPrivate_a863fad380ea94af5d61687b7afb9ef4c}{m\_lineEndStyle}( \hyperlink{classOkular_1_1LineAnnotation_a67e1128311347eabfd909909facabec6a48afe55289103ef17833562f7467deab}{LineAnnotation::None} ),
+1261               \hyperlink{classOkular_1_1LineAnnotationPrivate_a907d7a68ff88495dd5d318de5fdf53f3}{m\_lineClosed}( \textcolor{keyword}{false} ), \hyperlink{classOkular_1_1LineAnnotationPrivate_a1260f459bf184a0606df9fa329406c21}{m\_lineShowCaption}( \textcolor{keyword}{false} ), 
+      \hyperlink{classOkular_1_1LineAnnotationPrivate_affc0c88c47cf398b4cb52e94cae615ff}{m\_lineLeadingFwdPt}( 0 ),
+1262               \hyperlink{classOkular_1_1LineAnnotationPrivate_a98ba85c09e6201d9df8da64c918c6a49}{m\_lineLeadingBackPt}( 0 ), \hyperlink{classOkular_1_1LineAnnotationPrivate_a491ace64fcaa9d2156e541d75fc05431}{m\_lineIntent}( 
+      \hyperlink{classOkular_1_1LineAnnotation_a80458e2d982d5ef91ff18b850b34489fa19b01657e2f4e7fcffb081833b6c6fb9}{LineAnnotation::Unknown} )
+1263         \{
+1264         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_ae28c53c0ca77d4d8c8849d950f191c38}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!base\+Transform@{base\+Transform}}
+\index{base\+Transform@{base\+Transform}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{base\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}void Line\+Annotation\+Private\+::base\+Transform (
+\begin{DoxyParamCaption}
+\item[{const Q\+Transform \&}]{matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_ae28c53c0ca77d4d8c8849d950f191c38}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_aa60e3513cd1a25f60afbdef5614683d2}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1473 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1474 \{
+1475     \hyperlink{classOkular_1_1AnnotationPrivate_aa60e3513cd1a25f60afbdef5614683d2}{AnnotationPrivate::baseTransform}( matrix );
+1476 
+1477     QMutableLinkedListIterator<NormalizedPoint> it( \hyperlink{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{m\_linePoints} );
+1478     \textcolor{keywordflow}{while} ( it.hasNext() )
+1479         it.next().transform( matrix );
+1480 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_ae26622fa2061f8d98cd210d611fc0fc2}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!distance\+Sqr@{distance\+Sqr}}
+\index{distance\+Sqr@{distance\+Sqr}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{distance\+Sqr}]{\setlength{\rightskip}{0pt plus 5cm}double Line\+Annotation\+Private\+::distance\+Sqr (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{x\+Scale, }
+\item[{double}]{y\+Scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_ae26622fa2061f8d98cd210d611fc0fc2}
+Determines the distance of the closest point of the annotation to the given point {\ttfamily x} {\ttfamily y} {\ttfamily x\+Scale} {\ttfamily y\+Scale} \begin{DoxySince}{Since}
+0.\+17 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_ab4288200b0dd46f33e4958a64ffac373}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1561 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1562 \{
+1563     \hyperlink{classQLinkedList}{QLinkedList<NormalizedPoint>} transformedLinePoints = 
+      \hyperlink{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}{m\_transformedLinePoints};
+1564 
+1565     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1LineAnnotationPrivate_a907d7a68ff88495dd5d318de5fdf53f3}{m\_lineClosed} ) \textcolor{comment}{// Close the path}
+1566         transformedLinePoints.append( transformedLinePoints.first() );
+1567 
+1568     \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1LineAnnotationPrivate_a8000d981312a77260058c7bab0523dd0}{m\_lineInnerColor}.isValid() )
+1569     \{
+1570         QPolygonF polygon;
+1571         \textcolor{keywordflow}{foreach} ( \textcolor{keyword}{const} \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} &p, transformedLinePoints )
+1572             polygon.append( QPointF( p.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x}, p.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} ) );
+1573 
+1574         \textcolor{keywordflow}{if} ( polygon.containsPoint( QPointF( x, y ), Qt::WindingFill ) )
+1575             \textcolor{keywordflow}{return} 0;
+1576     \}
+1577 
+1578     \textcolor{keywordflow}{return} strokeDistance( ::\hyperlink{classOkular_1_1LineAnnotationPrivate_ae26622fa2061f8d98cd210d611fc0fc2}{distanceSqr}( x, y, xScale, yScale, transformedLinePoints ),
+1579                            \hyperlink{classOkular_1_1AnnotationPrivate_af49e79222d9e16611c0abd90533bc206}{m\_style}.\hyperlink{classOkular_1_1Annotation_1_1Style_a5a8e23f3a4f95e25f45770937dc82948}{width}() * xScale / ( \hyperlink{classOkular_1_1AnnotationPrivate_a2db3806670326880d0d7e6e1986d35f4}{m\_page}->
+      \hyperlink{classOkular_1_1PagePrivate_a3350b64842d008c59422f1b4fe6d7243}{m\_width} * 2 ) );
+1580 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a459d5d0222ba9b0bc17f144aeaedcaf2}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!get\+New\+Annotation\+Private@{get\+New\+Annotation\+Private}}
+\index{get\+New\+Annotation\+Private@{get\+New\+Annotation\+Private}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{get\+New\+Annotation\+Private}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Annotation\+Private} $\ast$ Line\+Annotation\+Private\+::get\+New\+Annotation\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_a459d5d0222ba9b0bc17f144aeaedcaf2}
+
+
+Implements \hyperlink{classOkular_1_1AnnotationPrivate_a4a27afb6108cff892c7bcccd8ba3aafa}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1556 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1557 \{
+1558     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classOkular_1_1LineAnnotationPrivate_ac7a466fe56995d2c4f2de2dc73871b1e}{LineAnnotationPrivate}();
+1559 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_aa47e0e7d37cfd1fba25a5499a003a915}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!reset\+Transformation@{reset\+Transformation}}
+\index{reset\+Transformation@{reset\+Transformation}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{reset\+Transformation}]{\setlength{\rightskip}{0pt plus 5cm}void Line\+Annotation\+Private\+::reset\+Transformation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_aa47e0e7d37cfd1fba25a5499a003a915}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_afb8f0d99eefa51347efaef5114511154}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1482 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1483 \{
+1484     \hyperlink{classOkular_1_1AnnotationPrivate_afb8f0d99eefa51347efaef5114511154}{AnnotationPrivate::resetTransformation}();
+1485 
+1486     \hyperlink{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}{m\_transformedLinePoints} = \hyperlink{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{m\_linePoints};
+1487 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a91ac5baeac9854b86ef326f928be0ae9}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!set\+Annotation\+Properties@{set\+Annotation\+Properties}}
+\index{set\+Annotation\+Properties@{set\+Annotation\+Properties}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{set\+Annotation\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}void Line\+Annotation\+Private\+::set\+Annotation\+Properties (
+\begin{DoxyParamCaption}
+\item[{const Q\+Dom\+Node \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_a91ac5baeac9854b86ef326f928be0ae9}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_a5fc7b450fa8c7e2717372e7394c3aa39}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1502 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1503 \{
+1504     \hyperlink{classOkular_1_1AnnotationPrivate_a5fc7b450fa8c7e2717372e7394c3aa39}{Okular::AnnotationPrivate::setAnnotationProperties}(
+      node);
+1505 
+1506     \textcolor{comment}{// loop through the whole children looking for a 'line' element}
+1507     QDomNode subNode = node.firstChild();
+1508     \textcolor{keywordflow}{while}( subNode.isElement() )
+1509     \{
+1510         QDomElement e = subNode.toElement();
+1511         subNode = subNode.nextSibling();
+1512         \textcolor{keywordflow}{if} ( e.tagName() != \textcolor{stringliteral}{"line"} )
+1513             \textcolor{keywordflow}{continue};
+1514 
+1515         \textcolor{comment}{// parse the attributes}
+1516         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"startStyle"} ) )
+1517             \hyperlink{classOkular_1_1LineAnnotationPrivate_aabf0926a14575248365c4e5de9d11296}{m\_lineStartStyle} = (\hyperlink{classOkular_1_1LineAnnotation_a67e1128311347eabfd909909facabec6}{LineAnnotation::TermStyle})e.
+      attribute( \textcolor{stringliteral}{"startStyle"} ).toInt();
+1518         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"endStyle"} ) )
+1519             \hyperlink{classOkular_1_1LineAnnotationPrivate_a863fad380ea94af5d61687b7afb9ef4c}{m\_lineEndStyle} = (\hyperlink{classOkular_1_1LineAnnotation_a67e1128311347eabfd909909facabec6}{LineAnnotation::TermStyle})e.attribute(
+       \textcolor{stringliteral}{"endStyle"} ).toInt();
+1520         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"closed"} ) )
+1521             \hyperlink{classOkular_1_1LineAnnotationPrivate_a907d7a68ff88495dd5d318de5fdf53f3}{m\_lineClosed} = e.attribute( \textcolor{stringliteral}{"closed"} ).toInt();
+1522         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"innerColor"} ) )
+1523             \hyperlink{classOkular_1_1LineAnnotationPrivate_a8000d981312a77260058c7bab0523dd0}{m\_lineInnerColor} = QColor( e.attribute( \textcolor{stringliteral}{"innerColor"} ) );
+1524         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"leadFwd"} ) )
+1525             \hyperlink{classOkular_1_1LineAnnotationPrivate_affc0c88c47cf398b4cb52e94cae615ff}{m\_lineLeadingFwdPt} = e.attribute( \textcolor{stringliteral}{"leadFwd"} ).toDouble();
+1526         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"leadBack"} ) )
+1527             \hyperlink{classOkular_1_1LineAnnotationPrivate_a98ba85c09e6201d9df8da64c918c6a49}{m\_lineLeadingBackPt} = e.attribute( \textcolor{stringliteral}{"leadBack"} ).toDouble();
+1528         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"showCaption"} ) )
+1529             \hyperlink{classOkular_1_1LineAnnotationPrivate_a1260f459bf184a0606df9fa329406c21}{m\_lineShowCaption} = e.attribute( \textcolor{stringliteral}{"showCaption"} ).toInt();
+1530         \textcolor{keywordflow}{if} ( e.hasAttribute( \textcolor{stringliteral}{"intent"} ) )
+1531             \hyperlink{classOkular_1_1LineAnnotationPrivate_a491ace64fcaa9d2156e541d75fc05431}{m\_lineIntent} = (\hyperlink{classOkular_1_1LineAnnotation_a80458e2d982d5ef91ff18b850b34489f}{LineAnnotation::LineIntent})e.attribute( \textcolor{stringliteral}{"
+      intent"} ).toInt();
+1532 
+1533         \textcolor{comment}{// parse all 'point' subnodes}
+1534         QDomNode pointNode = e.firstChild();
+1535         \textcolor{keywordflow}{while} ( pointNode.isElement() )
+1536         \{
+1537             QDomElement pe = pointNode.toElement();
+1538             pointNode = pointNode.nextSibling();
+1539 
+1540             \textcolor{keywordflow}{if} ( pe.tagName() != \textcolor{stringliteral}{"point"} )
+1541                 \textcolor{keywordflow}{continue};
+1542 
+1543             \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint} p;
+1544             p.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} = pe.attribute( \textcolor{stringliteral}{"x"}, \textcolor{stringliteral}{"0.0"} ).toDouble();
+1545             p.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} = pe.attribute( \textcolor{stringliteral}{"y"}, \textcolor{stringliteral}{"0.0"} ).toDouble();
+1546             \hyperlink{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{m\_linePoints}.append( p );
+1547         \}
+1548 
+1549         \textcolor{comment}{// loading complete}
+1550         \textcolor{keywordflow}{break};
+1551     \}
+1552 
+1553     \hyperlink{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}{m\_transformedLinePoints} = \hyperlink{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{m\_linePoints};
+1554 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_ae76ec496d162f08385ac0ff8effd05d3}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!transform@{transform}}
+\index{transform@{transform}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}void Line\+Annotation\+Private\+::transform (
+\begin{DoxyParamCaption}
+\item[{const Q\+Transform \&}]{matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_ae76ec496d162f08385ac0ff8effd05d3}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_a0d340a5ed89975edc173b72569f1e3f0}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1464 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1465 \{
+1466     \hyperlink{classOkular_1_1AnnotationPrivate_a0d340a5ed89975edc173b72569f1e3f0}{AnnotationPrivate::transform}( matrix );
+1467 
+1468     QMutableLinkedListIterator<NormalizedPoint> it( \hyperlink{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}{m\_transformedLinePoints} );
+1469     \textcolor{keywordflow}{while} ( it.hasNext() )
+1470         it.next().transform( matrix );
+1471 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a281be34b0d8545034b778f8987c15ed0}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!translate@{translate}}
+\index{translate@{translate}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void Line\+Annotation\+Private\+::translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Normalized\+Point} \&}]{coord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1LineAnnotationPrivate_a281be34b0d8545034b778f8987c15ed0}
+
+
+Reimplemented from \hyperlink{classOkular_1_1AnnotationPrivate_aee9684802697da01c33c4dec9de56ee1}{Okular\+::\+Annotation\+Private}.
+
+
+
+Definition at line 1489 of file annotations.\+cpp.
+
+
+\begin{DoxyCode}
+1490 \{
+1491     \hyperlink{classOkular_1_1AnnotationPrivate_aee9684802697da01c33c4dec9de56ee1}{AnnotationPrivate::translate}( coord );
+1492 
+1493     QMutableLinkedListIterator<NormalizedPoint> it( \hyperlink{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{m\_linePoints} );
+1494     \textcolor{keywordflow}{while} ( it.hasNext() )
+1495     \{
+1496         \hyperlink{classOkular_1_1NormalizedPoint}{NormalizedPoint}& p = it.next();
+1497         p.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} = p.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x} + coord.\hyperlink{classOkular_1_1NormalizedPoint_a857f49b9bc7712430d167472ef9dbd94}{x};
+1498         p.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} = p.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y} + coord.\hyperlink{classOkular_1_1NormalizedPoint_ac2276daabda627d5f82bb1532c293047}{y};
+1499     \}
+1500 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a907d7a68ff88495dd5d318de5fdf53f3}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Closed@{m\+\_\+line\+Closed}}
+\index{m\+\_\+line\+Closed@{m\+\_\+line\+Closed}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Closed}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Closed}}\label{classOkular_1_1LineAnnotationPrivate_a907d7a68ff88495dd5d318de5fdf53f3}
+
+
+Definition at line 1278 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a863fad380ea94af5d61687b7afb9ef4c}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+End\+Style@{m\+\_\+line\+End\+Style}}
+\index{m\+\_\+line\+End\+Style@{m\+\_\+line\+End\+Style}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+End\+Style}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Line\+Annotation\+::\+Term\+Style} Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+End\+Style}}\label{classOkular_1_1LineAnnotationPrivate_a863fad380ea94af5d61687b7afb9ef4c}
+
+
+Definition at line 1277 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a8000d981312a77260058c7bab0523dd0}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Inner\+Color@{m\+\_\+line\+Inner\+Color}}
+\index{m\+\_\+line\+Inner\+Color@{m\+\_\+line\+Inner\+Color}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Inner\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Inner\+Color}}\label{classOkular_1_1LineAnnotationPrivate_a8000d981312a77260058c7bab0523dd0}
+
+
+Definition at line 1280 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a491ace64fcaa9d2156e541d75fc05431}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Intent@{m\+\_\+line\+Intent}}
+\index{m\+\_\+line\+Intent@{m\+\_\+line\+Intent}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Intent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Line\+Annotation\+::\+Line\+Intent} Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Intent}}\label{classOkular_1_1LineAnnotationPrivate_a491ace64fcaa9d2156e541d75fc05431}
+
+
+Definition at line 1283 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a98ba85c09e6201d9df8da64c918c6a49}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Leading\+Back\+Pt@{m\+\_\+line\+Leading\+Back\+Pt}}
+\index{m\+\_\+line\+Leading\+Back\+Pt@{m\+\_\+line\+Leading\+Back\+Pt}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Leading\+Back\+Pt}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Leading\+Back\+Pt}}\label{classOkular_1_1LineAnnotationPrivate_a98ba85c09e6201d9df8da64c918c6a49}
+
+
+Definition at line 1282 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_affc0c88c47cf398b4cb52e94cae615ff}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Leading\+Fwd\+Pt@{m\+\_\+line\+Leading\+Fwd\+Pt}}
+\index{m\+\_\+line\+Leading\+Fwd\+Pt@{m\+\_\+line\+Leading\+Fwd\+Pt}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Leading\+Fwd\+Pt}]{\setlength{\rightskip}{0pt plus 5cm}double Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Leading\+Fwd\+Pt}}\label{classOkular_1_1LineAnnotationPrivate_affc0c88c47cf398b4cb52e94cae615ff}
+
+
+Definition at line 1281 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Points@{m\+\_\+line\+Points}}
+\index{m\+\_\+line\+Points@{m\+\_\+line\+Points}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Points}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Linked\+List}$<${\bf Normalized\+Point}$>$ Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Points}}\label{classOkular_1_1LineAnnotationPrivate_ad1c827db72218f6c718da80220e4a7f7}
+
+
+Definition at line 1274 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a1260f459bf184a0606df9fa329406c21}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Show\+Caption@{m\+\_\+line\+Show\+Caption}}
+\index{m\+\_\+line\+Show\+Caption@{m\+\_\+line\+Show\+Caption}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Show\+Caption}]{\setlength{\rightskip}{0pt plus 5cm}bool Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Show\+Caption}}\label{classOkular_1_1LineAnnotationPrivate_a1260f459bf184a0606df9fa329406c21}
+
+
+Definition at line 1279 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_aabf0926a14575248365c4e5de9d11296}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+line\+Start\+Style@{m\+\_\+line\+Start\+Style}}
+\index{m\+\_\+line\+Start\+Style@{m\+\_\+line\+Start\+Style}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+line\+Start\+Style}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Line\+Annotation\+::\+Term\+Style} Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+line\+Start\+Style}}\label{classOkular_1_1LineAnnotationPrivate_aabf0926a14575248365c4e5de9d11296}
+
+
+Definition at line 1276 of file annotations.\+cpp.
+
+\hypertarget{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}{\index{Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}!m\+\_\+transformed\+Line\+Points@{m\+\_\+transformed\+Line\+Points}}
+\index{m\+\_\+transformed\+Line\+Points@{m\+\_\+transformed\+Line\+Points}!Okular\+::\+Line\+Annotation\+Private@{Okular\+::\+Line\+Annotation\+Private}}
+\subsubsection[{m\+\_\+transformed\+Line\+Points}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Linked\+List}$<${\bf Normalized\+Point}$>$ Okular\+::\+Line\+Annotation\+Private\+::m\+\_\+transformed\+Line\+Points}}\label{classOkular_1_1LineAnnotationPrivate_a68a2ec899127d3f2d1f0c69da619b1c3}
+
+
+Definition at line 1275 of file annotations.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{annotations_8cpp}{annotations.\+cpp}\end{DoxyCompactItemize}

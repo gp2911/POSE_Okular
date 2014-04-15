@@ -1,0 +1,626 @@
+\hypertarget{classThumbnailList}{\section{Thumbnail\+List Class Reference}
+\label{classThumbnailList}\index{Thumbnail\+List@{Thumbnail\+List}}
+}
+
+
+A scrollview that displays page pixmap previews (aka thumbnails).  
+
+
+
+
+{\ttfamily \#include $<$thumbnaillist.\+h$>$}
+
+Inheritance diagram for Thumbnail\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classThumbnailList}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classThumbnailList_aa87ec39d6085e009402f560e01f86a09}{slot\+Filter\+Bookmarks} (bool filter\+On)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classThumbnailList_ae23ce1aaf766a0633cbee9d8c8185903}{url\+Dropped} (const K\+Url \&)
+\item 
+void \hyperlink{classThumbnailList_af73fbc70ddd6bb5551594883548c4251}{right\+Click} (const \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$, const Q\+Point \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classThumbnailList_a45adddadeb2103881c9cd8f4ee1553a9}{Thumbnail\+List} (Q\+Widget $\ast$parent, \hyperlink{classOkular_1_1Document}{Okular\+::\+Document} $\ast$document)
+\item 
+\hyperlink{classThumbnailList_a31bfc2342c868531907f31081e084b25}{$\sim$\+Thumbnail\+List} ()
+\item 
+void \hyperlink{classThumbnailList_af82e95598d7b7be22a368ddc769bf3b1}{notify\+Setup} (const Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ \&pages, int setup\+Flags)
+\item 
+void \hyperlink{classThumbnailList_a0c00a18ceb86706745b69e676fc88ca7}{notify\+Current\+Page\+Changed} (int previous, int current)
+\item 
+void \hyperlink{classThumbnailList_a1186ac57f00bed32df13098cfea02d3b}{notify\+Page\+Changed} (int page\+Number, int changed\+Flags)
+\item 
+void \hyperlink{classThumbnailList_af3bf55309904fca46e969e23484329ec}{notify\+Contents\+Cleared} (int changed\+Flags)
+\item 
+void \hyperlink{classThumbnailList_a6e85a07d48d20671af2b8b535df03d03}{notify\+Visible\+Rects\+Changed} ()
+\item 
+bool \hyperlink{classThumbnailList_a2e36dbd5758486176229709827e682b0}{can\+Unload\+Pixmap} (int page\+Number) const 
+\item 
+void \hyperlink{classThumbnailList_ae1b8a0ab9d95508f23a2ce679adbbe99}{update\+Widgets} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classThumbnailList_a7bb68b3917a8064f6063997ffc9e41a6}{key\+Press\+Event} (Q\+Key\+Event $\ast$e)
+\item 
+bool \hyperlink{classThumbnailList_a7ab92edfd37d11f925c3f8a2088275c7}{viewport\+Event} (Q\+Event $\ast$)
+\item 
+void \hyperlink{classThumbnailList_ae908665e960e065082bc574026fe2bd9}{drag\+Enter\+Event} (Q\+Drag\+Enter\+Event $\ast$)
+\item 
+void \hyperlink{classThumbnailList_a8ca1c1b0e52b833f0596041a02221c4a}{drop\+Event} (Q\+Drop\+Event $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classThumbnailList_a4618ad8163c3f52e81c6aa6ef186f369}{Thumbnail\+List\+Private}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A scrollview that displays page pixmap previews (aka thumbnails). 
+
+... 
+
+Definition at line 32 of file thumbnaillist.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classThumbnailList_a45adddadeb2103881c9cd8f4ee1553a9}{\index{Thumbnail\+List@{Thumbnail\+List}!Thumbnail\+List@{Thumbnail\+List}}
+\index{Thumbnail\+List@{Thumbnail\+List}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{Thumbnail\+List}]{\setlength{\rightskip}{0pt plus 5cm}Thumbnail\+List\+::\+Thumbnail\+List (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent, }
+\item[{{\bf Okular\+::\+Document} $\ast$}]{document}
+\end{DoxyParamCaption}
+)}}\label{classThumbnailList_a45adddadeb2103881c9cd8f4ee1553a9}
+\hyperlink{classThumbnailList}{Thumbnail\+List} implementation 
+
+Definition at line 200 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+201     : QScrollArea( parent ), d( \textcolor{keyword}{new} \hyperlink{classThumbnailList_a4618ad8163c3f52e81c6aa6ef186f369}{ThumbnailListPrivate}( \textcolor{keyword}{this}, document ) )
+202 \{
+203     setObjectName( QLatin1String( \textcolor{stringliteral}{"okular::Thumbnails"} ) );
+204     \textcolor{comment}{// set scrollbars}
+205     setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+206     setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOn );
+207     verticalScrollBar()->setEnabled( \textcolor{keyword}{false} );
+208 
+209     setAttribute( Qt::WA\_StaticContents );
+210 
+211     setAcceptDrops( \textcolor{keyword}{true} );
+212 
+213     viewport()->setBackgroundRole( QPalette::Base );
+214 
+215     setWidget( d );
+216     \textcolor{comment}{// widget setup: can be focused by mouse click (not wheel nor tab)}
+217     widget()->setFocusPolicy( Qt::ClickFocus );
+218     widget()->show();
+219     widget()->setBackgroundRole( QPalette::Base );
+220 
+221     connect( verticalScrollBar(), SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(slotRequestVisiblePixmaps(\textcolor{keywordtype}{int})) );
+222 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_a31bfc2342c868531907f31081e084b25}{\index{Thumbnail\+List@{Thumbnail\+List}!````~Thumbnail\+List@{$\sim$\+Thumbnail\+List}}
+\index{````~Thumbnail\+List@{$\sim$\+Thumbnail\+List}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{$\sim$\+Thumbnail\+List}]{\setlength{\rightskip}{0pt plus 5cm}Thumbnail\+List\+::$\sim$\+Thumbnail\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classThumbnailList_a31bfc2342c868531907f31081e084b25}
+
+
+Definition at line 224 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+225 \{
+226     d->\hyperlink{classThumbnailListPrivate_ae19b3e09f87437e8d485d0e039a52b08}{m\_document}->\hyperlink{classOkular_1_1Document_a2d704dea2ab28c846e58443ac38841f2}{removeObserver}( \textcolor{keyword}{this} );
+227     \textcolor{keyword}{delete} d->\hyperlink{classThumbnailListPrivate_a87f8be2fdcdd496791316b4e4b87f007}{m\_bookmarkOverlay};
+228 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classThumbnailList_a2e36dbd5758486176229709827e682b0}{\index{Thumbnail\+List@{Thumbnail\+List}!can\+Unload\+Pixmap@{can\+Unload\+Pixmap}}
+\index{can\+Unload\+Pixmap@{can\+Unload\+Pixmap}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{can\+Unload\+Pixmap}]{\setlength{\rightskip}{0pt plus 5cm}bool Thumbnail\+List\+::can\+Unload\+Pixmap (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classThumbnailList_a2e36dbd5758486176229709827e682b0}
+Returns whether the observer agrees that all pixmaps for the given {\ttfamily page} can be unloaded to improve memory usage.
+
+Returns true per default. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_a6b294d9207a1546eb9fcb7b878d94f20}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 390 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+391 \{
+392     \textcolor{comment}{// if the thubnail 'pageNumber' is one of the visible ones, forbid unloading}
+393     \hyperlink{classQList}{QList<ThumbnailWidget *>::const\_iterator} vIt = d->
+      \hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.constBegin(), vEnd = d->
+      \hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.constEnd();
+394     \textcolor{keywordflow}{for} ( ; vIt != vEnd; ++vIt )
+395         \textcolor{keywordflow}{if} ( (*vIt)->pageNumber() == pageNumber )
+396             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+397     \textcolor{comment}{// if hidden permit unloading}
+398     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+399 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_ae908665e960e065082bc574026fe2bd9}{\index{Thumbnail\+List@{Thumbnail\+List}!drag\+Enter\+Event@{drag\+Enter\+Event}}
+\index{drag\+Enter\+Event@{drag\+Enter\+Event}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{drag\+Enter\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::drag\+Enter\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drag\+Enter\+Event $\ast$}]{ev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classThumbnailList_ae908665e960e065082bc574026fe2bd9}
+
+
+Definition at line 604 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+605 \{
+606     ev->accept();
+607 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_a8ca1c1b0e52b833f0596041a02221c4a}{\index{Thumbnail\+List@{Thumbnail\+List}!drop\+Event@{drop\+Event}}
+\index{drop\+Event@{drop\+Event}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{drop\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::drop\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drop\+Event $\ast$}]{ev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classThumbnailList_a8ca1c1b0e52b833f0596041a02221c4a}
+
+
+Definition at line 609 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+610 \{
+611     \textcolor{keywordflow}{if} (  KUrl::List::canDecode(  ev->mimeData() ) )
+612     \{
+613         \textcolor{keyword}{const} KUrl::List list = KUrl::List::fromMimeData( ev->mimeData() );
+614         \textcolor{keywordflow}{if} ( !list.isEmpty() )
+615             emit \hyperlink{classThumbnailList_ae23ce1aaf766a0633cbee9d8c8185903}{urlDropped}( list.first() );
+616     \}
+617 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_a7bb68b3917a8064f6063997ffc9e41a6}{\index{Thumbnail\+List@{Thumbnail\+List}!key\+Press\+Event@{key\+Press\+Event}}
+\index{key\+Press\+Event@{key\+Press\+Event}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::key\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Key\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classThumbnailList_a7bb68b3917a8064f6063997ffc9e41a6}
+
+
+Definition at line 500 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+501 \{
+502     \textcolor{keywordflow}{if} ( d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.count() < 1 )
+503         \textcolor{keywordflow}{return} keyEvent->ignore();
+504 
+505     \textcolor{keywordtype}{int} nextPage = -1;
+506     \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_Up )
+507     \{
+508         \textcolor{keywordflow}{if} ( !d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} )
+509             nextPage = 0;
+510         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( d->\hyperlink{classThumbnailListPrivate_a23212529d10b47411092e4ec45ffc2fe}{m\_vectorIndex} > 0 )
+511             nextPage = d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}[ d->\hyperlink{classThumbnailListPrivate_a23212529d10b47411092e4ec45ffc2fe}{m\_vectorIndex} - 1 ]->pageNumber();
+512     \}
+513     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_Down )
+514     \{
+515         \textcolor{keywordflow}{if} ( !d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} )
+516             nextPage = 0;
+517         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( d->\hyperlink{classThumbnailListPrivate_a23212529d10b47411092e4ec45ffc2fe}{m\_vectorIndex} < (\textcolor{keywordtype}{int})d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.count() - 1 )
+518             nextPage = d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}[ d->\hyperlink{classThumbnailListPrivate_a23212529d10b47411092e4ec45ffc2fe}{m\_vectorIndex} + 1 ]->pageNumber();
+519     \}
+520     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_PageUp )
+521         verticalScrollBar()->triggerAction( QScrollBar::SliderPageStepSub );
+522     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_PageDown )
+523         verticalScrollBar()->triggerAction( QScrollBar::SliderPageStepAdd );
+524     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_Home )
+525         nextPage = d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}[ 0 ]->pageNumber();
+526     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( keyEvent->key() == Qt::Key\_End )
+527         nextPage = d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}[ d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.count() - 1 ]->pageNumber();
+528 
+529     \textcolor{keywordflow}{if} ( nextPage == -1 )
+530         \textcolor{keywordflow}{return} keyEvent->ignore();
+531 
+532     keyEvent->accept();
+533     \textcolor{keywordflow}{if} ( d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} )
+534         d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->\hyperlink{classThumbnailWidget_a730b93ed157970ee052494fc1043191a}{setSelected}( \textcolor{keyword}{false} );
+535     d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} = 0;
+536     d->\hyperlink{classThumbnailListPrivate_ae19b3e09f87437e8d485d0e039a52b08}{m\_document}->\hyperlink{classOkular_1_1Document_ac3bdbd5137c7fd4d5e960646affc25ec}{setViewportPage}( nextPage );
+537 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_af3bf55309904fca46e969e23484329ec}{\index{Thumbnail\+List@{Thumbnail\+List}!notify\+Contents\+Cleared@{notify\+Contents\+Cleared}}
+\index{notify\+Contents\+Cleared@{notify\+Contents\+Cleared}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{notify\+Contents\+Cleared}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::notify\+Contents\+Cleared (
+\begin{DoxyParamCaption}
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classThumbnailList_af3bf55309904fca46e969e23484329ec}
+This method is called whenever the content described by the passed {\ttfamily flags} has been cleared. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_ada5aff7f1944ccdf81526b8278ab5843}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 358 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+359 \{
+360     \textcolor{comment}{// if pixmaps were cleared, re-ask them}
+361     \textcolor{keywordflow}{if} ( changedFlags & DocumentObserver::Pixmap )
+362         d->\hyperlink{classThumbnailListPrivate_aea63d745e73446fb0d5a25ed5c9bb9e1}{slotRequestVisiblePixmaps}();
+363 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_a0c00a18ceb86706745b69e676fc88ca7}{\index{Thumbnail\+List@{Thumbnail\+List}!notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}}
+\index{notify\+Current\+Page\+Changed@{notify\+Current\+Page\+Changed}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{notify\+Current\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::notify\+Current\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{previous, }
+\item[{int}]{current}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classThumbnailList_a0c00a18ceb86706745b69e676fc88ca7}
+This method is called after the current page of the document has been entered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em previous} & The number of the previous page (is {\ttfamily -\/1} for the initial page change). \\
+\hline
+{\em current} & The number of the current page.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_ae449ca3f3f8aa7dffab61a6b723a1fd8}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 308 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+309 \{
+310     Q\_UNUSED( previousPage )
+311 
+312     \textcolor{comment}{// skip notifies for the current page (already selected)}
+313     if ( d->m\_selected && d->m\_selected->pageNumber() == currentPage )
+314         return;
+315 
+316     \textcolor{comment}{// deselect previous thumbnail}
+317     if ( d->m\_selected )
+318         d->m\_selected->setSelected( false );
+319     d->m\_selected = 0;
+320 
+321     \textcolor{comment}{// select the page with viewport and ensure it's centered in the view}
+322     d->m\_vectorIndex = 0;
+323     QVector<\hyperlink{classThumbnailWidget}{ThumbnailWidget} *>::const\_iterator tIt = d->m\_thumbnails.constBegin(), tEnd = d-
+      >m\_thumbnails.constEnd();
+324     for ( ; tIt != tEnd; ++tIt )
+325     \{
+326         \textcolor{keywordflow}{if} ( (*tIt)->pageNumber() == currentPage )
+327         \{
+328             d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} = *tIt;
+329             d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->\hyperlink{classThumbnailWidget_a730b93ed157970ee052494fc1043191a}{setSelected}( \textcolor{keyword}{true} );
+330             \textcolor{keywordflow}{if} ( \hyperlink{classOkular_1_1Settings_ae4432b68ddec383271f1c029a98ea25b}{Okular::Settings::syncThumbnailsViewport}() )
+331             \{
+332                 \textcolor{keywordtype}{int} yOffset = qMax( viewport()->height() / 4, d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->
+      \hyperlink{classThumbnailWidget_a4b3de1b4027c53dd07e52da4ec458494}{height}() / 2 );
+333                 ensureVisible( 0, d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->\hyperlink{classThumbnailWidget_a9c5628545df5720e6c2e03d481b6763b}{pos}().y() + d->
+      \hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->\hyperlink{classThumbnailWidget_a4b3de1b4027c53dd07e52da4ec458494}{height}()/2, 0, yOffset );
+334             \}
+335             \textcolor{keywordflow}{break};
+336         \}
+337         d->\hyperlink{classThumbnailListPrivate_a23212529d10b47411092e4ec45ffc2fe}{m\_vectorIndex}++;
+338     \}
+339 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_a1186ac57f00bed32df13098cfea02d3b}{\index{Thumbnail\+List@{Thumbnail\+List}!notify\+Page\+Changed@{notify\+Page\+Changed}}
+\index{notify\+Page\+Changed@{notify\+Page\+Changed}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{notify\+Page\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::notify\+Page\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{page, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classThumbnailList_a1186ac57f00bed32df13098cfea02d3b}
+This method is called whenever the content on {\ttfamily page} described by the passed {\ttfamily flags} has been changed. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_abf7600dabd7d6c1e38c950d99f7be595}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 341 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+342 \{
+343     \textcolor{keyword}{static} \textcolor{keywordtype}{int} interestingFlags = DocumentObserver::Pixmap | DocumentObserver::Bookmark | 
+      DocumentObserver::Highlights | DocumentObserver::Annotations;
+344     \textcolor{comment}{// only handle change notifications we are interested in}
+345     \textcolor{keywordflow}{if} ( !( changedFlags & interestingFlags ) )
+346         \textcolor{keywordflow}{return};
+347 
+348     \textcolor{comment}{// iterate over visible items: if page(pageNumber) is one of them, repaint it}
+349     \hyperlink{classQList}{QList<ThumbnailWidget *>::const\_iterator} vIt = d->
+      \hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.constBegin(), vEnd = d->
+      \hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.constEnd();
+350     \textcolor{keywordflow}{for} ( ; vIt != vEnd; ++vIt )
+351         \textcolor{keywordflow}{if} ( (*vIt)->pageNumber() == pageNumber )
+352         \{
+353             (*vIt)->update();
+354             \textcolor{keywordflow}{break};
+355         \}
+356 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_af82e95598d7b7be22a368ddc769bf3b1}{\index{Thumbnail\+List@{Thumbnail\+List}!notify\+Setup@{notify\+Setup}}
+\index{notify\+Setup@{notify\+Setup}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{notify\+Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::notify\+Setup (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ \&}]{pages, }
+\item[{int}]{setup\+Flags}
+\end{DoxyParamCaption}
+)}}\label{classThumbnailList_af82e95598d7b7be22a368ddc769bf3b1}
+
+
+Definition at line 231 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+232 \{
+233     \textcolor{comment}{// if there was a widget selected, save its pagenumber to restore}
+234     \textcolor{comment}{// its selection (if available in the new set of pages)}
+235     \textcolor{keywordtype}{int} prevPage = -1;
+236     \textcolor{keywordflow}{if} ( !( setupFlags & \hyperlink{classOkular_1_1DocumentObserver_aba00584af99894f95a9650e91f109d40ae599564392c01b22e96eff7602c4dd03}{Okular::DocumentObserver::DocumentChanged}
+       ) && d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} )
+237     \{
+238         prevPage = d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->\hyperlink{classThumbnailWidget_a3b39edbf5519ac9c804aacb79e623d5d}{page}()->\hyperlink{classOkular_1_1Page_a6eee5f157a130b47d81ddd63e501664b}{number}();
+239     \} \textcolor{keywordflow}{else} 
+240         prevPage = d->\hyperlink{classThumbnailListPrivate_ae19b3e09f87437e8d485d0e039a52b08}{m\_document}->\hyperlink{classOkular_1_1Document_abb8738de0a53aa4a9f552de0e1e749f8}{viewport}().\hyperlink{classOkular_1_1DocumentViewport_a122674d4a493e79b1aa5fd5c00e81c93}{pageNumber};
+241 
+242     \textcolor{comment}{// delete all the Thumbnails}
+243     QVector<ThumbnailWidget *>::const\_iterator tIt = d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.constBegin(), tEnd = d->
+      \hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.constEnd();
+244     \textcolor{keywordflow}{for} ( ; tIt != tEnd; ++tIt )
+245         \textcolor{keyword}{delete} *tIt;
+246     d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.clear();
+247     d->\hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.clear();
+248     d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} = 0;
+249     d->\hyperlink{classThumbnailListPrivate_afd4652d135d2e87a4e10774e9cd73694}{m\_mouseGrabItem} = 0;
+250 
+251     \textcolor{keywordflow}{if} ( pages.count() < 1 )
+252     \{
+253         widget()->resize( 0, 0 );
+254         \textcolor{keywordflow}{return};
+255     \}
+256 
+257     \textcolor{comment}{// show pages containing hilighted text or bookmarked ones}
+258     \textcolor{comment}{//RESTORE THIS int flags = Okular::Settings::filterBookmarks() ? Okular::Page::Bookmark :
+       Okular::Page::Highlight;}
+259 
+260     \textcolor{comment}{// if no page matches filter rule, then display all pages}
+261     QVector< Okular::Page * >::const\_iterator pIt = pages.constBegin(), pEnd = pages.constEnd();
+262     \textcolor{keywordtype}{bool} skipCheck = \textcolor{keyword}{true};
+263     \textcolor{keywordflow}{for} ( ; pIt != pEnd ; ++pIt )
+264         \textcolor{comment}{//if ( (*pIt)->attributes() & flags )}
+265         \textcolor{keywordflow}{if} ( (*pIt)->hasHighlights( \hyperlink{core_2document_8h_ada2c5c36e5b2a4bb2be2ec9e4ceb0886}{SW\_SEARCH\_ID} ) )
+266             skipCheck = \textcolor{keyword}{false};
+267 
+268     \textcolor{comment}{// generate Thumbnails for the given set of pages}
+269     \textcolor{keyword}{const} \textcolor{keywordtype}{int} width = viewport()->\hyperlink{classThumbnailWidget_ae49f53a3dd4b131ac08f0a8e96df08a2}{width}();
+270     \textcolor{keywordtype}{int} height = 0;
+271     \textcolor{keywordtype}{int} centerHeight = 0;
+272     \textcolor{keywordflow}{for} ( pIt = pages.constBegin(); pIt != pEnd ; ++pIt )
+273         \textcolor{comment}{//if ( skipCheck || (*pIt)->attributes() & flags )}
+274         \textcolor{keywordflow}{if} ( skipCheck || (*pIt)->hasHighlights( \hyperlink{core_2document_8h_ada2c5c36e5b2a4bb2be2ec9e4ceb0886}{SW\_SEARCH\_ID} ) )
+275         \{
+276             \hyperlink{classThumbnailWidget}{ThumbnailWidget} * t = \textcolor{keyword}{new} \hyperlink{classThumbnailWidget}{ThumbnailWidget}( d, *pIt );
+277             t->\hyperlink{classThumbnailWidget_ad35c1fb02e68bb80ce8bbe92ace57ddf}{move}(0, height);
+278             \textcolor{comment}{// add to the internal queue}
+279             d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.push\_back( t );
+280             \textcolor{comment}{// update total height (asking widget its own height)}
+281             t->\hyperlink{classThumbnailWidget_ad7253ea3bd3e10f59c0aeab5cf3fadd8}{resizeFitWidth}( width );
+282             \textcolor{comment}{// restoring the previous selected page, if any}
+283             \textcolor{keywordflow}{if} ( (*pIt)->number() < prevPage )
+284             \{
+285                 centerHeight = height + t->\hyperlink{classThumbnailWidget_a4b3de1b4027c53dd07e52da4ec458494}{height}() + KDialog::spacingHint()/2;
+286             \}
+287             \textcolor{keywordflow}{if} ( (*pIt)->number() == prevPage )
+288             \{
+289                 d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected} = t;
+290                 d->\hyperlink{classThumbnailListPrivate_a0b16f6278cb8bd930d7b484affe31bac}{m\_selected}->\hyperlink{classThumbnailWidget_a730b93ed157970ee052494fc1043191a}{setSelected}( \textcolor{keyword}{true} );
+291                 centerHeight = height + t->\hyperlink{classThumbnailWidget_a4b3de1b4027c53dd07e52da4ec458494}{height}() / 2;
+292             \}
+293             height += t->\hyperlink{classThumbnailWidget_a4b3de1b4027c53dd07e52da4ec458494}{height}() + KDialog::spacingHint();
+294         \}
+295 
+296     \textcolor{comment}{// update scrollview's contents size (sets scrollbars limits)}
+297     height -= KDialog::spacingHint();
+298     widget()->resize( width, height );
+299 
+300     \textcolor{comment}{// enable scrollbar when there's something to scroll}
+301     verticalScrollBar()->setEnabled( viewport()->height() < height );
+302     verticalScrollBar()->setValue(centerHeight - viewport()->height() / 2);
+303 
+304     \textcolor{comment}{// request for thumbnail generation}
+305     d->\hyperlink{classThumbnailListPrivate_a830ad4ac20c8f6d4d8f9cb09def53510}{delayedRequestVisiblePixmaps}( 200 );
+306 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_a6e85a07d48d20671af2b8b535df03d03}{\index{Thumbnail\+List@{Thumbnail\+List}!notify\+Visible\+Rects\+Changed@{notify\+Visible\+Rects\+Changed}}
+\index{notify\+Visible\+Rects\+Changed@{notify\+Visible\+Rects\+Changed}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{notify\+Visible\+Rects\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::notify\+Visible\+Rects\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classThumbnailList_a6e85a07d48d20671af2b8b535df03d03}
+This method is called whenever the visible rects have been changed. 
+
+Reimplemented from \hyperlink{classOkular_1_1DocumentObserver_a6e528ff60565b4dd6da415a8f68bec14}{Okular\+::\+Document\+Observer}.
+
+
+
+Definition at line 365 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+366 \{
+367     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+368     \textcolor{keyword}{const} QVector<Okular::VisiblePageRect *> & visibleRects = d->\hyperlink{classThumbnailListPrivate_ae19b3e09f87437e8d485d0e039a52b08}{m\_document}->
+      \hyperlink{classOkular_1_1Document_a2ba56fa52cfacc10267896938a2ac37b}{visiblePageRects}();
+369     QVector<ThumbnailWidget *>::const\_iterator tIt = d->\hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.constBegin(), tEnd = d->
+      \hyperlink{classThumbnailListPrivate_adc3638d1cfe0435440c400065ccd20af}{m\_thumbnails}.constEnd();
+370     QVector<Okular::VisiblePageRect *>::const\_iterator vEnd = visibleRects.end();
+371     \textcolor{keywordflow}{for} ( ; tIt != tEnd; ++tIt )
+372     \{
+373         found = \textcolor{keyword}{false};
+374         QVector<Okular::VisiblePageRect *>::const\_iterator vIt = visibleRects.begin();
+375         \textcolor{keywordflow}{for} ( ; ( vIt != vEnd ) && !found; ++vIt )
+376         \{
+377             \textcolor{keywordflow}{if} ( (*tIt)->pageNumber() == (*vIt)->pageNumber )
+378             \{
+379                 (*tIt)->setVisibleRect( (*vIt)->rect );
+380                 found = \textcolor{keyword}{true};
+381             \}
+382         \}
+383         \textcolor{keywordflow}{if} ( !found )
+384         \{
+385             (*tIt)->setVisibleRect( \hyperlink{classOkular_1_1NormalizedRect}{Okular::NormalizedRect}() );
+386         \}
+387     \}
+388 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_af73fbc70ddd6bb5551594883548c4251}{\index{Thumbnail\+List@{Thumbnail\+List}!right\+Click@{right\+Click}}
+\index{right\+Click@{right\+Click}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{right\+Click}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::right\+Click (
+\begin{DoxyParamCaption}
+\item[{const {\bf Okular\+::\+Page} $\ast$}]{, }
+\item[{const Q\+Point \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classThumbnailList_af73fbc70ddd6bb5551594883548c4251}
+\hypertarget{classThumbnailList_aa87ec39d6085e009402f560e01f86a09}{\index{Thumbnail\+List@{Thumbnail\+List}!slot\+Filter\+Bookmarks@{slot\+Filter\+Bookmarks}}
+\index{slot\+Filter\+Bookmarks@{slot\+Filter\+Bookmarks}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{slot\+Filter\+Bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::slot\+Filter\+Bookmarks (
+\begin{DoxyParamCaption}
+\item[{bool}]{filter\+On}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classThumbnailList_aa87ec39d6085e009402f560e01f86a09}
+
+
+Definition at line 487 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+488 \{
+489     \textcolor{comment}{// save state}
+490     \hyperlink{classOkular_1_1Settings_a4d3c63568c7e923f25cdae52da568900}{Okular::Settings::setFilterBookmarks}( filterOn );
+491     \hyperlink{classOkular_1_1Settings_ae6f72bd2023f2f684f59bca5dde6617c}{Okular::Settings::self}()->writeConfig();
+492     \textcolor{comment}{// ask for the 'notifySetup' with a little trick (on reinsertion the}
+493     \textcolor{comment}{// document sends the list again)}
+494     d->\hyperlink{classThumbnailListPrivate_ae19b3e09f87437e8d485d0e039a52b08}{m\_document}->\hyperlink{classOkular_1_1Document_a2d704dea2ab28c846e58443ac38841f2}{removeObserver}( \textcolor{keyword}{this} );
+495     d->\hyperlink{classThumbnailListPrivate_ae19b3e09f87437e8d485d0e039a52b08}{m\_document}->\hyperlink{classOkular_1_1Document_a37300860cf93f60184305829b033e0e2}{addObserver}( \textcolor{keyword}{this} );
+496 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_ae1b8a0ab9d95508f23a2ce679adbbe99}{\index{Thumbnail\+List@{Thumbnail\+List}!update\+Widgets@{update\+Widgets}}
+\index{update\+Widgets@{update\+Widgets}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{update\+Widgets}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::update\+Widgets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classThumbnailList_ae1b8a0ab9d95508f23a2ce679adbbe99}
+
+
+Definition at line 403 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+404 \{
+405     \textcolor{comment}{// Update all visible widgets}
+406     \hyperlink{classQList}{QList<ThumbnailWidget *>::const\_iterator} vIt = d->
+      \hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.constBegin(), vEnd = d->
+      \hyperlink{classThumbnailListPrivate_a7cbd0afea7a3fc032f23a1854cd7df52}{m\_visibleThumbnails}.constEnd();
+407     \textcolor{keywordflow}{for} ( ; vIt != vEnd; ++vIt )
+408     \{
+409         \hyperlink{classThumbnailWidget}{ThumbnailWidget} * t = *vIt;
+410         t->\hyperlink{classThumbnailWidget_a0cdafa1094bc39e9f50ddd287442a552}{update}();
+411     \}
+412 \}
+\end{DoxyCode}
+\hypertarget{classThumbnailList_ae23ce1aaf766a0633cbee9d8c8185903}{\index{Thumbnail\+List@{Thumbnail\+List}!url\+Dropped@{url\+Dropped}}
+\index{url\+Dropped@{url\+Dropped}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{url\+Dropped}]{\setlength{\rightskip}{0pt plus 5cm}void Thumbnail\+List\+::url\+Dropped (
+\begin{DoxyParamCaption}
+\item[{const K\+Url \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classThumbnailList_ae23ce1aaf766a0633cbee9d8c8185903}
+\hypertarget{classThumbnailList_a7ab92edfd37d11f925c3f8a2088275c7}{\index{Thumbnail\+List@{Thumbnail\+List}!viewport\+Event@{viewport\+Event}}
+\index{viewport\+Event@{viewport\+Event}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{viewport\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Thumbnail\+List\+::viewport\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classThumbnailList_a7ab92edfd37d11f925c3f8a2088275c7}
+
+
+Definition at line 539 of file thumbnaillist.\+cpp.
+
+
+\begin{DoxyCode}
+540 \{
+541     \textcolor{keywordflow}{switch} ( e->type() )
+542     \{
+543         \textcolor{keywordflow}{case} QEvent::Resize:
+544         \{
+545             d->\hyperlink{classThumbnailListPrivate_a50ec7d81dbde95a64c239c8b39aed7e9}{viewportResizeEvent}( (QResizeEvent*)e );
+546             \textcolor{keywordflow}{break};
+547         \}
+548         \textcolor{keywordflow}{default}:
+549             ;
+550     \}
+551     \textcolor{keywordflow}{return} QScrollArea::viewportEvent( e );
+552 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classThumbnailList_a4618ad8163c3f52e81c6aa6ef186f369}{\index{Thumbnail\+List@{Thumbnail\+List}!Thumbnail\+List\+Private@{Thumbnail\+List\+Private}}
+\index{Thumbnail\+List\+Private@{Thumbnail\+List\+Private}!Thumbnail\+List@{Thumbnail\+List}}
+\subsubsection[{Thumbnail\+List\+Private}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Thumbnail\+List\+Private}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classThumbnailList_a4618ad8163c3f52e81c6aa6ef186f369}
+
+
+Definition at line 75 of file thumbnaillist.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ui/\hyperlink{thumbnaillist_8h}{thumbnaillist.\+h}\item 
+ui/\hyperlink{thumbnaillist_8cpp}{thumbnaillist.\+cpp}\end{DoxyCompactItemize}

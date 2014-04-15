@@ -1,0 +1,483 @@
+\hypertarget{classPopplerFormFieldChoice}{\section{Poppler\+Form\+Field\+Choice Class Reference}
+\label{classPopplerFormFieldChoice}\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+}
+
+
+{\ttfamily \#include $<$formfields.\+h$>$}
+
+Inheritance diagram for Poppler\+Form\+Field\+Choice\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPopplerFormFieldChoice}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPopplerFormFieldChoice_a4b2843bd99f3d9fe576d73f54e715c29}{Poppler\+Form\+Field\+Choice} (Poppler\+::\+Form\+Field\+Choice $\ast$field)
+\item 
+virtual \hyperlink{classPopplerFormFieldChoice_a2bb9041e54dd87241b7ba535c61afa12}{$\sim$\+Poppler\+Form\+Field\+Choice} ()
+\item 
+virtual \hyperlink{classOkular_1_1NormalizedRect}{Okular\+::\+Normalized\+Rect} \hyperlink{classPopplerFormFieldChoice_a95b88f2ec5d489c12ad16f91eeff28ee}{rect} () const 
+\item 
+virtual int \hyperlink{classPopplerFormFieldChoice_a7efc9a9971d4b4af1568262225534d07}{id} () const 
+\item 
+virtual Q\+String \hyperlink{classPopplerFormFieldChoice_ac1eb32851e00f9a18f6f0f791e85d6ad}{name} () const 
+\item 
+virtual Q\+String \hyperlink{classPopplerFormFieldChoice_ae92267230146194ee31fedcf9e997f36}{ui\+Name} () const 
+\item 
+virtual bool \hyperlink{classPopplerFormFieldChoice_ac13b2cfa4bff848e21a577b5671016c1}{is\+Read\+Only} () const 
+\item 
+virtual bool \hyperlink{classPopplerFormFieldChoice_a7b297c4acd9e262a3123c62a8740d042}{is\+Visible} () const 
+\item 
+virtual \hyperlink{classOkular_1_1FormFieldChoice_a40b3939793e805c34303dff8262a17b3}{Choice\+Type} \hyperlink{classPopplerFormFieldChoice_a0885d5bfc0c0b51e3f24611e91edb6c3}{choice\+Type} () const 
+\item 
+virtual Q\+String\+List \hyperlink{classPopplerFormFieldChoice_a4c60f6daf758d95acf0f74cd67591a86}{choices} () const 
+\item 
+virtual bool \hyperlink{classPopplerFormFieldChoice_a88344e6f0654cb96738eae0224145345}{is\+Editable} () const 
+\item 
+virtual bool \hyperlink{classPopplerFormFieldChoice_a4bdcb7f2b39bcb675c786e556d4169cc}{multi\+Select} () const 
+\item 
+virtual \hyperlink{classQList}{Q\+List}$<$ int $>$ \hyperlink{classPopplerFormFieldChoice_a2705b4873fa80b235717260dc96dc08a}{current\+Choices} () const 
+\item 
+virtual void \hyperlink{classPopplerFormFieldChoice_ae35504765cf8bb28f2676a23a102aada}{set\+Current\+Choices} (const \hyperlink{classQList}{Q\+List}$<$ int $>$ \&\hyperlink{classPopplerFormFieldChoice_a4c60f6daf758d95acf0f74cd67591a86}{choices})
+\item 
+virtual Q\+String \hyperlink{classPopplerFormFieldChoice_a4583d4585dcdb9654b2da23525d2d641}{edit\+Choice} () const 
+\item 
+virtual void \hyperlink{classPopplerFormFieldChoice_a5f48cdbb545f96ddfb1ed8bdce01fd41}{set\+Edit\+Choice} (const Q\+String \&text)
+\item 
+virtual Qt\+::\+Alignment \hyperlink{classPopplerFormFieldChoice_ac39cea55f97a8033937e61ce4e04c70f}{text\+Alignment} () const 
+\item 
+virtual bool \hyperlink{classPopplerFormFieldChoice_ae6978b1c0e9d90d69d54a134498022b1}{can\+Be\+Spell\+Checked} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 73 of file formfields.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPopplerFormFieldChoice_a4b2843bd99f3d9fe576d73f54e715c29}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{Poppler\+Form\+Field\+Choice}]{\setlength{\rightskip}{0pt plus 5cm}Poppler\+Form\+Field\+Choice\+::\+Poppler\+Form\+Field\+Choice (
+\begin{DoxyParamCaption}
+\item[{Poppler\+::\+Form\+Field\+Choice $\ast$}]{field}
+\end{DoxyParamCaption}
+)}}\label{classPopplerFormFieldChoice_a4b2843bd99f3d9fe576d73f54e715c29}
+
+
+Definition at line 197 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+198     : \hyperlink{classOkular_1_1FormFieldChoice}{Okular::FormFieldChoice}(), m\_field( field )
+199 \{
+200     m\_rect = \hyperlink{classOkular_1_1NormalizedRect_a8e32af446abd7dbd07ae285a2ee4faa6}{Okular::NormalizedRect::fromQRectF}( m\_field->rect() );
+201     Poppler::Link *aAction = field->activationAction();
+202     \textcolor{keywordflow}{if} ( aAction )
+203     \{
+204         \hyperlink{classOkular_1_1FormField_a39a5161a282d40bc88a1633e93655c50}{setActivationAction}( \hyperlink{formfields_8cpp_ac8496a01bf2593a90b5063709cff7d99}{createLinkFromPopplerLink}( aAction
+       ) );
+205     \}
+206 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a2bb9041e54dd87241b7ba535c61afa12}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!````~Poppler\+Form\+Field\+Choice@{$\sim$\+Poppler\+Form\+Field\+Choice}}
+\index{````~Poppler\+Form\+Field\+Choice@{$\sim$\+Poppler\+Form\+Field\+Choice}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{$\sim$\+Poppler\+Form\+Field\+Choice}]{\setlength{\rightskip}{0pt plus 5cm}Poppler\+Form\+Field\+Choice\+::$\sim$\+Poppler\+Form\+Field\+Choice (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a2bb9041e54dd87241b7ba535c61afa12}
+
+
+Definition at line 208 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+209 \{
+210     \textcolor{keyword}{delete} m\_field;
+211 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPopplerFormFieldChoice_ae6978b1c0e9d90d69d54a134498022b1}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!can\+Be\+Spell\+Checked@{can\+Be\+Spell\+Checked}}
+\index{can\+Be\+Spell\+Checked@{can\+Be\+Spell\+Checked}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{can\+Be\+Spell\+Checked}]{\setlength{\rightskip}{0pt plus 5cm}bool Poppler\+Form\+Field\+Choice\+::can\+Be\+Spell\+Checked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_ae6978b1c0e9d90d69d54a134498022b1}
+Whether the text inserted manually in the field (where possible) can be spell-\/checked.
+
+\begin{DoxyNote}{Note}
+meaningful only if the field is editable. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a2c408d22d15516f9dd972aa20fe19d86}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 301 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+302 \{
+303     \textcolor{keywordflow}{return} m\_field->canBeSpellChecked();
+304 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a4c60f6daf758d95acf0f74cd67591a86}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!choices@{choices}}
+\index{choices@{choices}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{choices}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Poppler\+Form\+Field\+Choice\+::choices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a4c60f6daf758d95acf0f74cd67591a86}
+The possible choices of the choice field. 
+
+Implements \hyperlink{classOkular_1_1FormFieldChoice_aeb4047c2c4b3b1c06b06e615c073f923}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 255 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+256 \{
+257     \textcolor{keywordflow}{return} m\_field->choices();
+258 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a0885d5bfc0c0b51e3f24611e91edb6c3}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!choice\+Type@{choice\+Type}}
+\index{choice\+Type@{choice\+Type}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{choice\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Form\+Field\+Choice\+::\+Choice\+Type} Poppler\+Form\+Field\+Choice\+::choice\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a0885d5bfc0c0b51e3f24611e91edb6c3}
+The particular type of the choice field. 
+
+Implements \hyperlink{classOkular_1_1FormFieldChoice_ae6c02629fc4e317d45624676d36659ec}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 243 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+244 \{
+245     \textcolor{keywordflow}{switch} ( m\_field->choiceType() )
+246     \{
+247         \textcolor{keywordflow}{case} Poppler::FormFieldChoice::ComboBox:
+248             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FormFieldChoice_a40b3939793e805c34303dff8262a17b3a0b28a631de109efed14e9183a83a0855}{Okular::FormFieldChoice::ComboBox};
+249         \textcolor{keywordflow}{case} Poppler::FormFieldChoice::ListBox:
+250             \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FormFieldChoice_a40b3939793e805c34303dff8262a17b3acc508b1d796fa6a7da5043fdbf6c7d2a}{Okular::FormFieldChoice::ListBox};
+251     \}
+252     \textcolor{keywordflow}{return} \hyperlink{classOkular_1_1FormFieldChoice_a40b3939793e805c34303dff8262a17b3acc508b1d796fa6a7da5043fdbf6c7d2a}{Okular::FormFieldChoice::ListBox};
+253 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a2705b4873fa80b235717260dc96dc08a}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!current\+Choices@{current\+Choices}}
+\index{current\+Choices@{current\+Choices}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{current\+Choices}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<$ int $>$ Poppler\+Form\+Field\+Choice\+::current\+Choices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a2705b4873fa80b235717260dc96dc08a}
+The currently selected choices.
+
+Always one element in the list in case of single choice elements. 
+
+Implements \hyperlink{classOkular_1_1FormFieldChoice_a7715f0a6629d8d874c22f436a62165ed}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 270 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+271 \{
+272     \textcolor{keywordflow}{return} m\_field->currentChoices();
+273 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a4583d4585dcdb9654b2da23525d2d641}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!edit\+Choice@{edit\+Choice}}
+\index{edit\+Choice@{edit\+Choice}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{edit\+Choice}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Poppler\+Form\+Field\+Choice\+::edit\+Choice (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a4583d4585dcdb9654b2da23525d2d641}
+The text entered into an editable combo box choice field
+
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a63c046d413e912c3b2873bfb25ab83f9}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 280 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+281 \{
+282 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+283     \textcolor{keywordflow}{return} m\_field->editChoice();
+284 \textcolor{preprocessor}{#else}
+285     \textcolor{keywordflow}{return} QString();
+286 \textcolor{preprocessor}{#endif}
+287 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a7efc9a9971d4b4af1568262225534d07}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!id@{id}}
+\index{id@{id}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int Poppler\+Form\+Field\+Choice\+::id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a7efc9a9971d4b4af1568262225534d07}
+The I\+D of the field. 
+
+Implements \hyperlink{classOkular_1_1FormField_a88ae3d04b4fbe5fd0fedeb068b3d5071}{Okular\+::\+Form\+Field}.
+
+
+
+Definition at line 218 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+219 \{
+220     \textcolor{keywordflow}{return} m\_field->id();
+221 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a88344e6f0654cb96738eae0224145345}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!is\+Editable@{is\+Editable}}
+\index{is\+Editable@{is\+Editable}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{is\+Editable}]{\setlength{\rightskip}{0pt plus 5cm}bool Poppler\+Form\+Field\+Choice\+::is\+Editable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a88344e6f0654cb96738eae0224145345}
+Whether this Combo\+Box is editable, ie the user can type in a custom value.
+
+Always false for the other types of choices. 
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a3d9978586fb90b5cf91357816d93f193}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 260 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+261 \{
+262     \textcolor{keywordflow}{return} m\_field->isEditable();
+263 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_ac13b2cfa4bff848e21a577b5671016c1}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!is\+Read\+Only@{is\+Read\+Only}}
+\index{is\+Read\+Only@{is\+Read\+Only}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{is\+Read\+Only}]{\setlength{\rightskip}{0pt plus 5cm}bool Poppler\+Form\+Field\+Choice\+::is\+Read\+Only (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_ac13b2cfa4bff848e21a577b5671016c1}
+Whether the field is read-\/only. 
+
+Reimplemented from \hyperlink{classOkular_1_1FormField_ad1636c715682959442f528c72a2f4c0a}{Okular\+::\+Form\+Field}.
+
+
+
+Definition at line 233 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+234 \{
+235     \textcolor{keywordflow}{return} m\_field->isReadOnly();
+236 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a7b297c4acd9e262a3123c62a8740d042}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!is\+Visible@{is\+Visible}}
+\index{is\+Visible@{is\+Visible}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{is\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Poppler\+Form\+Field\+Choice\+::is\+Visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a7b297c4acd9e262a3123c62a8740d042}
+Whether this form field is visible. 
+
+Reimplemented from \hyperlink{classOkular_1_1FormField_aee63f77f88a7f8359d9a53de3d07ebe0}{Okular\+::\+Form\+Field}.
+
+
+
+Definition at line 238 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+239 \{
+240     \textcolor{keywordflow}{return} m\_field->isVisible();
+241 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a4bdcb7f2b39bcb675c786e556d4169cc}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!multi\+Select@{multi\+Select}}
+\index{multi\+Select@{multi\+Select}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{multi\+Select}]{\setlength{\rightskip}{0pt plus 5cm}bool Poppler\+Form\+Field\+Choice\+::multi\+Select (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a4bdcb7f2b39bcb675c786e556d4169cc}
+Whether more than one choice of this List\+Box can be selected at the same time.
+
+Always false for the other types of choices. 
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a9040f9e1f608efb93843797c51a3551f}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 265 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+266 \{
+267     \textcolor{keywordflow}{return} m\_field->multiSelect();
+268 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_ac1eb32851e00f9a18f6f0f791e85d6ad}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!name@{name}}
+\index{name@{name}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Poppler\+Form\+Field\+Choice\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_ac1eb32851e00f9a18f6f0f791e85d6ad}
+The internal name of the field, to be used when referring to the field in eg scripts. 
+
+Implements \hyperlink{classOkular_1_1FormField_a8eed821c6f1b957610fd275930c8f7cf}{Okular\+::\+Form\+Field}.
+
+
+
+Definition at line 223 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+224 \{
+225     \textcolor{keywordflow}{return} m\_field->name();
+226 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a95b88f2ec5d489c12ad16f91eeff28ee}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!rect@{rect}}
+\index{rect@{rect}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Okular\+::\+Normalized\+Rect} Poppler\+Form\+Field\+Choice\+::rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a95b88f2ec5d489c12ad16f91eeff28ee}
+The bouding rect of the field, in normalized coordinates. 
+
+Implements \hyperlink{classOkular_1_1FormField_a76014a9315921056764c72dd17b81339}{Okular\+::\+Form\+Field}.
+
+
+
+Definition at line 213 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+214 \{
+215     \textcolor{keywordflow}{return} m\_rect;
+216 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_ae35504765cf8bb28f2676a23a102aada}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!set\+Current\+Choices@{set\+Current\+Choices}}
+\index{set\+Current\+Choices@{set\+Current\+Choices}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{set\+Current\+Choices}]{\setlength{\rightskip}{0pt plus 5cm}void Poppler\+Form\+Field\+Choice\+::set\+Current\+Choices (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+List}$<$ int $>$ \&}]{choices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_ae35504765cf8bb28f2676a23a102aada}
+Sets the selected choices to {\ttfamily choices} . 
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a04709d9348dffe9de80178b9be2f2521}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 275 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+276 \{
+277     m\_field->setCurrentChoices( choices );
+278 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_a5f48cdbb545f96ddfb1ed8bdce01fd41}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!set\+Edit\+Choice@{set\+Edit\+Choice}}
+\index{set\+Edit\+Choice@{set\+Edit\+Choice}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{set\+Edit\+Choice}]{\setlength{\rightskip}{0pt plus 5cm}void Poppler\+Form\+Field\+Choice\+::set\+Edit\+Choice (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_a5f48cdbb545f96ddfb1ed8bdce01fd41}
+Sets the text entered into an editable combo box choice field
+
+\begin{DoxySince}{Since}
+0.\+16 (K\+D\+E 4.\+10) 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a4d1604d12cc73427f22e923b250532c6}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 289 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+290 \{
+291 \textcolor{preprocessor}{#ifdef HAVE\_POPPLER\_0\_22}
+292     m\_field->setEditChoice( text );
+293 \textcolor{preprocessor}{#endif}
+294 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_ac39cea55f97a8033937e61ce4e04c70f}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!text\+Alignment@{text\+Alignment}}
+\index{text\+Alignment@{text\+Alignment}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{text\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Alignment Poppler\+Form\+Field\+Choice\+::text\+Alignment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_ac39cea55f97a8033937e61ce4e04c70f}
+The alignment of the text within the field. 
+
+Reimplemented from \hyperlink{classOkular_1_1FormFieldChoice_a0eeb0db3e3709fcc7bb0f53635a08852}{Okular\+::\+Form\+Field\+Choice}.
+
+
+
+Definition at line 296 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+297 \{
+298     \textcolor{keywordflow}{return} Qt::AlignTop | m\_field->textAlignment();
+299 \}
+\end{DoxyCode}
+\hypertarget{classPopplerFormFieldChoice_ae92267230146194ee31fedcf9e997f36}{\index{Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}!ui\+Name@{ui\+Name}}
+\index{ui\+Name@{ui\+Name}!Poppler\+Form\+Field\+Choice@{Poppler\+Form\+Field\+Choice}}
+\subsubsection[{ui\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Poppler\+Form\+Field\+Choice\+::ui\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPopplerFormFieldChoice_ae92267230146194ee31fedcf9e997f36}
+The visible name of the field, to be used in the user interface (eg in error messages, etc). 
+
+Implements \hyperlink{classOkular_1_1FormField_a32a3eed7310ff961cc2d748135d4173b}{Okular\+::\+Form\+Field}.
+
+
+
+Definition at line 228 of file formfields.\+cpp.
+
+
+\begin{DoxyCode}
+229 \{
+230     \textcolor{keywordflow}{return} m\_field->uiName();
+231 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/poppler/\hyperlink{formfields_8h}{formfields.\+h}\item 
+generators/poppler/\hyperlink{formfields_8cpp}{formfields.\+cpp}\end{DoxyCompactItemize}

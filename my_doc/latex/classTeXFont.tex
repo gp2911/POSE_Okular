@@ -1,0 +1,153 @@
+\hypertarget{classTeXFont}{\section{Te\+X\+Font Class Reference}
+\label{classTeXFont}\index{Te\+X\+Font@{Te\+X\+Font}}
+}
+
+
+{\ttfamily \#include $<$Te\+X\+Font.\+h$>$}
+
+Inheritance diagram for Te\+X\+Font\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTeXFont}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTeXFont_ac61cef23719a7d5e79b1c7fa09935b35}{Te\+X\+Font} (\hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$\+\_\+parent)
+\item 
+virtual \hyperlink{classTeXFont_a995a0a4b9154f5239a2ca3565c56f4fb}{$\sim$\+Te\+X\+Font} ()
+\item 
+void \hyperlink{classTeXFont_aecb5ab55908369eb7b96f84b91771593}{set\+Display\+Resolution} ()
+\item 
+virtual \hyperlink{classglyph}{glyph} $\ast$ \hyperlink{classTeXFont_a5c4953623f686aac4ec09981cf2680cf}{get\+Glyph} (quint16 character, bool generate\+Character\+Pixmap=false, const Q\+Color \&color=Qt\+::black)=0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \hyperlink{classTeXFont_a7bd82a10157e19f7e7534fdc386d2421}{checksum}
+\item 
+Q\+String \hyperlink{classTeXFont_a97c5eee8ad11d2f8f52797468268d1a4}{error\+Message}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classglyph}{glyph} \hyperlink{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}{glyphtable} \mbox{[}\hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{Te\+X\+Font\+Definition\+::max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font}\mbox{]}
+\item 
+\hyperlink{classTeXFontDefinition}{Te\+X\+Font\+Definition} $\ast$ \hyperlink{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}{parent}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Te\+X\+Font.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTeXFont_ac61cef23719a7d5e79b1c7fa09935b35}{\index{Te\+X\+Font@{Te\+X\+Font}!Te\+X\+Font@{Te\+X\+Font}}
+\index{Te\+X\+Font@{Te\+X\+Font}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{Te\+X\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Te\+X\+Font\+::\+Te\+X\+Font (
+\begin{DoxyParamCaption}
+\item[{{\bf Te\+X\+Font\+Definition} $\ast$}]{\+\_\+parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTeXFont_ac61cef23719a7d5e79b1c7fa09935b35}
+
+
+Definition at line 18 of file Te\+X\+Font.\+h.
+
+
+\begin{DoxyCode}
+19     \{
+20       \hyperlink{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}{parent}       = \_parent;
+21       \hyperlink{classTeXFont_a97c5eee8ad11d2f8f52797468268d1a4}{errorMessage}.clear();
+22     \}
+\end{DoxyCode}
+\hypertarget{classTeXFont_a995a0a4b9154f5239a2ca3565c56f4fb}{\index{Te\+X\+Font@{Te\+X\+Font}!````~Te\+X\+Font@{$\sim$\+Te\+X\+Font}}
+\index{````~Te\+X\+Font@{$\sim$\+Te\+X\+Font}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{$\sim$\+Te\+X\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Te\+X\+Font\+::$\sim$\+Te\+X\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTeXFont_a995a0a4b9154f5239a2ca3565c56f4fb}
+
+
+Definition at line 7 of file Te\+X\+Font.\+cpp.
+
+
+\begin{DoxyCode}
+8 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTeXFont_a5c4953623f686aac4ec09981cf2680cf}{\index{Te\+X\+Font@{Te\+X\+Font}!get\+Glyph@{get\+Glyph}}
+\index{get\+Glyph@{get\+Glyph}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{get\+Glyph}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf glyph}$\ast$ Te\+X\+Font\+::get\+Glyph (
+\begin{DoxyParamCaption}
+\item[{quint16}]{character, }
+\item[{bool}]{generate\+Character\+Pixmap = {\ttfamily false}, }
+\item[{const Q\+Color \&}]{color = {\ttfamily Qt\+:\+:black}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classTeXFont_a5c4953623f686aac4ec09981cf2680cf}
+
+
+Implemented in \hyperlink{classTeXFont__PFB_ac58a8a554d305b5b56f3c196f9b214d0}{Te\+X\+Font\+\_\+\+P\+F\+B}, \hyperlink{classTeXFont__TFM_a4e42a94f04f889575227dd994645979e}{Te\+X\+Font\+\_\+\+T\+F\+M}, and \hyperlink{classTeXFont__PK_a0c2859ee4b390f91e8fa73e8a77e89e0}{Te\+X\+Font\+\_\+\+P\+K}.
+
+\hypertarget{classTeXFont_aecb5ab55908369eb7b96f84b91771593}{\index{Te\+X\+Font@{Te\+X\+Font}!set\+Display\+Resolution@{set\+Display\+Resolution}}
+\index{set\+Display\+Resolution@{set\+Display\+Resolution}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{set\+Display\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}void Te\+X\+Font\+::set\+Display\+Resolution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTeXFont_aecb5ab55908369eb7b96f84b91771593}
+
+
+Definition at line 26 of file Te\+X\+Font.\+h.
+
+
+\begin{DoxyCode}
+27     \{
+28       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\hyperlink{classTeXFontDefinition_a542c448736e5c591257ac3889f047d66}{TeXFontDefinition::max\_num\_of\_chars\_in\_font}
+      ; i++)
+29         \hyperlink{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}{glyphtable}[i].shrunkenCharacter = QImage();
+30     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTeXFont_a7bd82a10157e19f7e7534fdc386d2421}{\index{Te\+X\+Font@{Te\+X\+Font}!checksum@{checksum}}
+\index{checksum@{checksum}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{checksum}]{\setlength{\rightskip}{0pt plus 5cm}quint32 Te\+X\+Font\+::checksum}}\label{classTeXFont_a7bd82a10157e19f7e7534fdc386d2421}
+
+
+Definition at line 37 of file Te\+X\+Font.\+h.
+
+\hypertarget{classTeXFont_a97c5eee8ad11d2f8f52797468268d1a4}{\index{Te\+X\+Font@{Te\+X\+Font}!error\+Message@{error\+Message}}
+\index{error\+Message@{error\+Message}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{error\+Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Te\+X\+Font\+::error\+Message}}\label{classTeXFont_a97c5eee8ad11d2f8f52797468268d1a4}
+
+
+Definition at line 41 of file Te\+X\+Font.\+h.
+
+\hypertarget{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}{\index{Te\+X\+Font@{Te\+X\+Font}!glyphtable@{glyphtable}}
+\index{glyphtable@{glyphtable}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{glyphtable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf glyph} Te\+X\+Font\+::glyphtable\mbox{[}{\bf Te\+X\+Font\+Definition\+::max\+\_\+num\+\_\+of\+\_\+chars\+\_\+in\+\_\+font}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTeXFont_a4ec465c9b189f0845a25ad5c99903e5f}
+
+
+Definition at line 44 of file Te\+X\+Font.\+h.
+
+\hypertarget{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}{\index{Te\+X\+Font@{Te\+X\+Font}!parent@{parent}}
+\index{parent@{parent}!Te\+X\+Font@{Te\+X\+Font}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Te\+X\+Font\+Definition}$\ast$ Te\+X\+Font\+::parent\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTeXFont_a72d8eb1f0377749cf4a45dfabf1c3dd5}
+
+
+Definition at line 45 of file Te\+X\+Font.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/dvi/\hyperlink{TeXFont_8h}{Te\+X\+Font.\+h}\item 
+generators/dvi/\hyperlink{TeXFont_8cpp}{Te\+X\+Font.\+cpp}\end{DoxyCompactItemize}

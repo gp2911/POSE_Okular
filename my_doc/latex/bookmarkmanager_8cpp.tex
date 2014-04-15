@@ -1,0 +1,67 @@
+\hypertarget{bookmarkmanager_8cpp}{\section{core/bookmarkmanager.cpp File Reference}
+\label{bookmarkmanager_8cpp}\index{core/bookmarkmanager.\+cpp@{core/bookmarkmanager.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}bookmarkmanager.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$qhash.\+h$>$}\\*
+{\ttfamily \#include $<$qset.\+h$>$}\\*
+{\ttfamily \#include $<$kbookmarkmanager.\+h$>$}\\*
+{\ttfamily \#include $<$kbookmarkmenu.\+h$>$}\\*
+{\ttfamily \#include $<$kdebug.\+h$>$}\\*
+{\ttfamily \#include $<$kglobal.\+h$>$}\\*
+{\ttfamily \#include $<$kstandarddirs.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}document\+\_\+p.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}observer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bookmarkmanager.\+moc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOkularBookmarkAction}{Okular\+Bookmark\+Action}
+\item 
+class \hyperlink{classBookmarkManager_1_1Private}{Okular\+::\+Bookmark\+Manager\+::\+Private}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{foreach\+Observer}(cmd)
+\item 
+\#define \hyperlink{bookmarkmanager_8cpp_a213572010703f4fcbc3229b09d665d3c}{foreach\+Observer\+D}(cmd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}{\index{bookmarkmanager.\+cpp@{bookmarkmanager.\+cpp}!foreach\+Observer@{foreach\+Observer}}
+\index{foreach\+Observer@{foreach\+Observer}!bookmarkmanager.\+cpp@{bookmarkmanager.\+cpp}}
+\subsubsection[{foreach\+Observer}]{\setlength{\rightskip}{0pt plus 5cm}\#define foreach\+Observer(
+\begin{DoxyParamCaption}
+\item[{}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{bookmarkmanager_8cpp_a67e536532b9ae1f36450a4ebff082fea}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{\(\backslash\)
+    QSet< DocumentObserver * >::const\_iterator it = d->document->m\_observers.constBegin(), end = d->
+      document->m\_observers.constEnd();\(\backslash\)
+    for ( ; it != end ; ++ it ) \{ (*it)-> cmd ; \} \}
+\end{DoxyCode}
+
+
+Definition at line 27 of file bookmarkmanager.\+cpp.
+
+\hypertarget{bookmarkmanager_8cpp_a213572010703f4fcbc3229b09d665d3c}{\index{bookmarkmanager.\+cpp@{bookmarkmanager.\+cpp}!foreach\+Observer\+D@{foreach\+Observer\+D}}
+\index{foreach\+Observer\+D@{foreach\+Observer\+D}!bookmarkmanager.\+cpp@{bookmarkmanager.\+cpp}}
+\subsubsection[{foreach\+Observer\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define foreach\+Observer\+D(
+\begin{DoxyParamCaption}
+\item[{}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{bookmarkmanager_8cpp_a213572010703f4fcbc3229b09d665d3c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{\(\backslash\)
+    QSet< DocumentObserver * >::const\_iterator it = document->m\_observers.constBegin(), end = document->
+      m\_observers.constEnd();\(\backslash\)
+    for ( ; it != end ; ++ it ) \{ (*it)-> cmd ; \} \}
+\end{DoxyCode}
+
+
+Definition at line 31 of file bookmarkmanager.\+cpp.
+

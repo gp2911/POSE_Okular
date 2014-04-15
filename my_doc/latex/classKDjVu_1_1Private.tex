@@ -1,0 +1,403 @@
+\hypertarget{classKDjVu_1_1Private}{\section{K\+Dj\+Vu\+:\+:Private Class Reference}
+\label{classKDjVu_1_1Private}\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKDjVu_1_1Private_aa74c6a57ea120fba54423cf9d2881b07}{Private} ()
+\item 
+Q\+Image \hyperlink{classKDjVu_1_1Private_aeb06ba931fdafc7b463603fb7481d477}{generate\+Image\+Tile} (ddjvu\+\_\+page\+\_\+t $\ast$djvupage, int \&res, int width, int row, int xdelta, int height, int col, int ydelta)
+\item 
+void \hyperlink{classKDjVu_1_1Private_a0272321e85183ccde6326dc13a21c2bb}{read\+Bookmarks} ()
+\item 
+void \hyperlink{classKDjVu_1_1Private_a880323dc9a820151abfbfd5ee2822665}{fill\+Bookmarks\+Recurse} (Q\+Dom\+Document \&maindoc, Q\+Dom\+Node \&curnode, \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\+\_\+t} exp, int offset=-\/1)
+\item 
+void \hyperlink{classKDjVu_1_1Private_a7b150f97629079f814eeb91368cc3dcc}{read\+Meta\+Data} (int page)
+\item 
+int \hyperlink{classKDjVu_1_1Private_aaba1afe5cef39023edfae2f4333d2c10}{page\+With\+Name} (const Q\+String \&name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ddjvu\+\_\+context\+\_\+t $\ast$ \hyperlink{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{m\+\_\+djvu\+\_\+cxt}
+\item 
+ddjvu\+\_\+document\+\_\+t $\ast$ \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\+\_\+djvu\+\_\+document}
+\item 
+ddjvu\+\_\+format\+\_\+t $\ast$ \hyperlink{classKDjVu_1_1Private_aad4bfbe2fe3646d6c9f862e6575c00cb}{m\+\_\+format}
+\item 
+Q\+Vector$<$ \hyperlink{classKDjVu_1_1Page}{K\+Dj\+Vu\+::\+Page} $\ast$ $>$ \hyperlink{classKDjVu_1_1Private_a0c009b87dde95717ec9e9a8f701e6628}{m\+\_\+pages}
+\item 
+Q\+Vector$<$ ddjvu\+\_\+page\+\_\+t $\ast$ $>$ \hyperlink{classKDjVu_1_1Private_a7c2361a6591fe13e69bc7982a3efd780}{m\+\_\+pages\+\_\+cache}
+\item 
+\hyperlink{classQList}{Q\+List}$<$ \hyperlink{classImageCacheItem}{Image\+Cache\+Item} $\ast$ $>$ \hyperlink{classKDjVu_1_1Private_a447ca81b4cc0237ac52aa8bfadd1258e}{m\+Img\+Cache}
+\item 
+Q\+Hash$<$ Q\+String, Q\+Variant $>$ \hyperlink{classKDjVu_1_1Private_a48e70e9e1d6e964cacaf5bc8295dcba7}{m\+\_\+meta\+Data}
+\item 
+Q\+Dom\+Document $\ast$ \hyperlink{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}{m\+\_\+doc\+Bookmarks}
+\item 
+Q\+Hash$<$ Q\+String, int $>$ \hyperlink{classKDjVu_1_1Private_ad9d14bf5618d9bd6fc6c0595f7122bf5}{m\+\_\+page\+Names\+Cache}
+\item 
+bool \hyperlink{classKDjVu_1_1Private_a61eaa61e0d4e31a7e411a481df9827ee}{m\+\_\+cache\+Enabled}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{classKDjVu_1_1Private_a4faf2c57e9e0b65a5adf0d55115c6ae1}{s\+\_\+formatmask} \mbox{[}4\mbox{]} = \{ 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 428 of file kdjvu.\+cpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKDjVu_1_1Private_aa74c6a57ea120fba54423cf9d2881b07}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!Private@{Private}}
+\index{Private@{Private}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{Private}]{\setlength{\rightskip}{0pt plus 5cm}K\+Dj\+Vu\+::\+Private\+::\+Private (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classKDjVu_1_1Private_aa74c6a57ea120fba54423cf9d2881b07}
+
+
+Definition at line 431 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+432           : \hyperlink{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{m\_djvu\_cxt}( 0 ), \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document}( 0 ), 
+      \hyperlink{classKDjVu_1_1Private_aad4bfbe2fe3646d6c9f862e6575c00cb}{m\_format}( 0 ), \hyperlink{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}{m\_docBookmarks}( 0 ),
+433             \hyperlink{classKDjVu_1_1Private_a61eaa61e0d4e31a7e411a481df9827ee}{m\_cacheEnabled}( \textcolor{keyword}{true} )
+434         \{
+435         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKDjVu_1_1Private_a880323dc9a820151abfbfd5ee2822665}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!fill\+Bookmarks\+Recurse@{fill\+Bookmarks\+Recurse}}
+\index{fill\+Bookmarks\+Recurse@{fill\+Bookmarks\+Recurse}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{fill\+Bookmarks\+Recurse}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Dj\+Vu\+::\+Private\+::fill\+Bookmarks\+Recurse (
+\begin{DoxyParamCaption}
+\item[{Q\+Dom\+Document \&}]{maindoc, }
+\item[{Q\+Dom\+Node \&}]{curnode, }
+\item[{{\bf miniexp\+\_\+t}}]{exp, }
+\item[{int}]{offset = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classKDjVu_1_1Private_a880323dc9a820151abfbfd5ee2822665}
+
+
+Definition at line 525 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+527 \{
+528     \textcolor{keywordflow}{if} ( !miniexp\_listp( exp ) )
+529         \textcolor{keywordflow}{return};
+530 
+531     \textcolor{keywordtype}{int} l = miniexp\_length( exp );
+532     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = qMax( offset, 0 ); i < l; ++i )
+533     \{
+534         \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} cur = miniexp\_nth( i, exp );
+535 
+536         \textcolor{keywordflow}{if} ( miniexp\_consp( cur ) && ( miniexp\_length( cur ) > 0 ) &&
+537              miniexp\_stringp( miniexp\_nth( 0, cur ) ) && miniexp\_stringp( miniexp\_nth( 1, cur ) ) )
+538         \{
+539             QString title = QString::fromUtf8( miniexp\_to\_str( miniexp\_nth( 0, cur ) ) );
+540             QString \hyperlink{synctex__parser__utils_8c_a723e06ace24a60ed94dca199595c08d2}{dest} = QString::fromUtf8( miniexp\_to\_str( miniexp\_nth( 1, cur ) ) );
+541             QDomElement el = maindoc.createElement( \textcolor{stringliteral}{"item"} );
+542             el.setAttribute( \textcolor{stringliteral}{"title"}, title );
+543             \textcolor{keywordflow}{if} ( !dest.isEmpty() )
+544             \{
+545                 \textcolor{keywordflow}{if} ( dest.at( 0 ) == QLatin1Char( \textcolor{charliteral}{'#'} ) )
+546                 \{
+547                     dest.remove( 0, 1 );
+548                     \textcolor{keywordtype}{bool} isNumber = \textcolor{keyword}{false};
+549                     dest.toInt( &isNumber );
+550                     \textcolor{keywordflow}{if} ( isNumber )
+551                     \{
+552                         \textcolor{comment}{// it might be an actual page number, but could also be a page label}
+553                         \textcolor{comment}{// so resolve the number, and get the real page number}
+554                         \textcolor{keywordtype}{int} pageNo = \hyperlink{classKDjVu_1_1Private_aaba1afe5cef39023edfae2f4333d2c10}{pageWithName}( dest );
+555                         \textcolor{keywordflow}{if} ( pageNo != -1 )
+556                         \{
+557                             el.setAttribute( \textcolor{stringliteral}{"PageNumber"}, QString::number( pageNo + 1 ) );
+558                         \}
+559                         \textcolor{keywordflow}{else}
+560                         \{
+561                             el.setAttribute( \textcolor{stringliteral}{"PageNumber"}, dest );
+562                         \}
+563                     \}
+564                     \textcolor{keywordflow}{else}
+565                     \{
+566                        el.setAttribute( \textcolor{stringliteral}{"PageName"}, dest );
+567                     \}
+568                 \}
+569                 \textcolor{keywordflow}{else}
+570                 \{
+571                     el.setAttribute( \textcolor{stringliteral}{"URL"}, dest );
+572                 \}
+573             \}
+574             curnode.appendChild( el );
+575             \textcolor{keywordflow}{if} ( !el.isNull() && ( miniexp\_length( cur ) > 2 ) )
+576             \{
+577                 \hyperlink{classKDjVu_1_1Private_a880323dc9a820151abfbfd5ee2822665}{fillBookmarksRecurse}( maindoc, el, cur, 2 );
+578             \}
+579         \}
+580     \}
+581 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Private_aeb06ba931fdafc7b463603fb7481d477}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!generate\+Image\+Tile@{generate\+Image\+Tile}}
+\index{generate\+Image\+Tile@{generate\+Image\+Tile}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{generate\+Image\+Tile}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image K\+Dj\+Vu\+::\+Private\+::generate\+Image\+Tile (
+\begin{DoxyParamCaption}
+\item[{ddjvu\+\_\+page\+\_\+t $\ast$}]{djvupage, }
+\item[{int \&}]{res, }
+\item[{int}]{width, }
+\item[{int}]{row, }
+\item[{int}]{xdelta, }
+\item[{int}]{height, }
+\item[{int}]{col, }
+\item[{int}]{ydelta}
+\end{DoxyParamCaption}
+)}}\label{classKDjVu_1_1Private_aeb06ba931fdafc7b463603fb7481d477}
+
+
+Definition at line 469 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+471 \{
+472     ddjvu\_rect\_t renderrect;
+473     renderrect.x = row * xdelta;
+474     renderrect.y = col * ydelta;
+475     \textcolor{keywordtype}{int} realwidth = qMin( width - renderrect.x, xdelta );
+476     \textcolor{keywordtype}{int} realheight = qMin( height - renderrect.y, ydelta );
+477     renderrect.w = realwidth;
+478     renderrect.h = realheight;
+479 \textcolor{preprocessor}{#ifdef KDJVU\_DEBUG}
+480     kDebug() << \textcolor{stringliteral}{"renderrect:"} << renderrect;
+481 \textcolor{preprocessor}{#endif}
+482     ddjvu\_rect\_t pagerect;
+483     pagerect.x = 0;
+484     pagerect.y = 0;
+485     pagerect.w = width;
+486     pagerect.h = height;
+487 \textcolor{preprocessor}{#ifdef KDJVU\_DEBUG}
+488     kDebug() << \textcolor{stringliteral}{"pagerect:"} << pagerect;
+489 \textcolor{preprocessor}{#endif}
+490     handle\_ddjvu\_messages( \hyperlink{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{m\_djvu\_cxt}, \textcolor{keyword}{false} );
+491     QImage res\_img( realwidth, realheight, QImage::Format\_RGB32 );
+492     \textcolor{comment}{// the following line workarounds a rare crash in djvulibre;}
+493     \textcolor{comment}{// it should be fixed with >= 3.5.21}
+494     ddjvu\_page\_get\_width( djvupage );
+495     res = ddjvu\_page\_render( djvupage, DDJVU\_RENDER\_COLOR,
+496                   &pagerect, &renderrect, \hyperlink{classKDjVu_1_1Private_aad4bfbe2fe3646d6c9f862e6575c00cb}{m\_format}, res\_img.bytesPerLine(), (\textcolor{keywordtype}{char} *)res\_img.bits() 
+      );
+497 \textcolor{preprocessor}{#ifdef KDJVU\_DEBUG}
+498     kDebug() << \textcolor{stringliteral}{"rendering result:"} << res;
+499 \textcolor{preprocessor}{#endif}
+500     handle\_ddjvu\_messages( \hyperlink{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{m\_djvu\_cxt}, \textcolor{keyword}{false} );
+501 
+502     \textcolor{keywordflow}{return} res\_img;
+503 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Private_aaba1afe5cef39023edfae2f4333d2c10}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!page\+With\+Name@{page\+With\+Name}}
+\index{page\+With\+Name@{page\+With\+Name}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{page\+With\+Name}]{\setlength{\rightskip}{0pt plus 5cm}int K\+Dj\+Vu\+::\+Private\+::page\+With\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classKDjVu_1_1Private_aaba1afe5cef39023edfae2f4333d2c10}
+
+
+Definition at line 613 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+614 \{
+615     \textcolor{keyword}{const} \textcolor{keywordtype}{int} pageNo = \hyperlink{classKDjVu_1_1Private_ad9d14bf5618d9bd6fc6c0595f7122bf5}{m\_pageNamesCache}.value( name, -1 );
+616     \textcolor{keywordflow}{if} ( pageNo != -1 )
+617         \textcolor{keywordflow}{return} pageNo;
+618 
+619     \textcolor{keyword}{const} QByteArray utfName = name.toUtf8();
+620     \textcolor{keyword}{const} \textcolor{keywordtype}{int} fileNum = ddjvu\_document\_get\_filenum( \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document} );
+621     ddjvu\_fileinfo\_t info;
+622     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < fileNum; ++i )
+623     \{
+624         \textcolor{keywordflow}{if} ( DDJVU\_JOB\_OK != ddjvu\_document\_get\_fileinfo( \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document}, i, &info ) )
+625             \textcolor{keywordflow}{continue};
+626         \textcolor{keywordflow}{if} ( info.type != \textcolor{charliteral}{'P'} )
+627             \textcolor{keywordflow}{continue};
+628         \textcolor{keywordflow}{if} ( ( utfName == info.id ) || ( utfName == info.name ) || ( utfName == info.title ) )
+629         \{
+630             \hyperlink{classKDjVu_1_1Private_ad9d14bf5618d9bd6fc6c0595f7122bf5}{m\_pageNamesCache}.insert( name, info.pageno );
+631             \textcolor{keywordflow}{return} info.pageno;
+632         \}
+633     \}
+634     \textcolor{keywordflow}{return} -1;
+635 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Private_a0272321e85183ccde6326dc13a21c2bb}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!read\+Bookmarks@{read\+Bookmarks}}
+\index{read\+Bookmarks@{read\+Bookmarks}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{read\+Bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Dj\+Vu\+::\+Private\+::read\+Bookmarks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKDjVu_1_1Private_a0272321e85183ccde6326dc13a21c2bb}
+
+
+Definition at line 505 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+506 \{
+507     \textcolor{keywordflow}{if} ( !\hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document} )
+508         \textcolor{keywordflow}{return};
+509 
+510     \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} outline;
+511     \textcolor{keywordflow}{while} ( ( outline = ddjvu\_document\_get\_outline( \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document} ) ) == miniexp\_dummy )
+512         handle\_ddjvu\_messages( \hyperlink{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{m\_djvu\_cxt}, \textcolor{keyword}{true} );
+513 
+514     \textcolor{keywordflow}{if} ( miniexp\_listp( outline ) &&
+515          ( miniexp\_length( outline ) > 0 ) &&
+516          miniexp\_symbolp( miniexp\_nth( 0, outline ) ) &&
+517          ( QString::fromUtf8( miniexp\_to\_name( miniexp\_nth( 0, outline ) ) ) == QLatin1String( \textcolor{stringliteral}{"bookmarks"} 
+      ) ) )
+518     \{
+519         \hyperlink{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}{m\_docBookmarks} = \textcolor{keyword}{new} QDomDocument( \textcolor{stringliteral}{"KDjVuBookmarks"} );
+520         \hyperlink{classKDjVu_1_1Private_a880323dc9a820151abfbfd5ee2822665}{fillBookmarksRecurse}( *\hyperlink{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}{m\_docBookmarks}, *
+      \hyperlink{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}{m\_docBookmarks}, outline, 1 );
+521         ddjvu\_miniexp\_release( \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document}, outline );
+522     \}
+523 \}
+\end{DoxyCode}
+\hypertarget{classKDjVu_1_1Private_a7b150f97629079f814eeb91368cc3dcc}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!read\+Meta\+Data@{read\+Meta\+Data}}
+\index{read\+Meta\+Data@{read\+Meta\+Data}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{read\+Meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void K\+Dj\+Vu\+::\+Private\+::read\+Meta\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{classKDjVu_1_1Private_a7b150f97629079f814eeb91368cc3dcc}
+
+
+Definition at line 583 of file kdjvu.\+cpp.
+
+
+\begin{DoxyCode}
+584 \{
+585     \textcolor{keywordflow}{if} ( !\hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document} )
+586         \textcolor{keywordflow}{return};
+587 
+588     \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} annots;
+589     \textcolor{keywordflow}{while} ( ( annots = ddjvu\_document\_get\_pageanno( \hyperlink{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{m\_djvu\_document}, page ) ) == 
+      miniexp\_dummy )
+590         handle\_ddjvu\_messages( \hyperlink{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{m\_djvu\_cxt}, \textcolor{keyword}{true} );
+591 
+592     \textcolor{keywordflow}{if} ( !miniexp\_listp( annots ) || miniexp\_length( annots ) == 0 )
+593         \textcolor{keywordflow}{return};
+594 
+595     \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} exp = miniexp\_nth( 0, annots );
+596     \textcolor{keywordtype}{int} \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size} = miniexp\_length( exp );
+597     \textcolor{keywordflow}{if} ( size <= 1 ||
+598          qstrncmp( miniexp\_to\_name( miniexp\_nth( 0, exp ) ), \textcolor{stringliteral}{"metadata"}, 8 ) )
+599         \textcolor{keywordflow}{return};
+600 
+601     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 1; i < \hyperlink{synctex__parser_8c_aa23c661441688350614bd6a350d2b6ff}{size}; ++i )
+602     \{
+603         \hyperlink{kdjvu_8h_a58955b1a7edfc6e6ccb48402f744802b}{miniexp\_t} cur = miniexp\_nth( i, exp );
+604         \textcolor{keywordflow}{if} ( miniexp\_length( cur ) != 2 )
+605             \textcolor{keywordflow}{continue};
+606 
+607         QString \textcolor{keywordtype}{id} = QString::fromUtf8( miniexp\_to\_name( miniexp\_nth( 0, cur ) ) );
+608         QString value = QString::fromUtf8( miniexp\_to\_str( miniexp\_nth( 1, cur ) ) );
+609         \hyperlink{classKDjVu_1_1Private_a48e70e9e1d6e964cacaf5bc8295dcba7}{m\_metaData}[ \textcolor{keywordtype}{id}.toLower() ] = value;
+610     \}
+611 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classKDjVu_1_1Private_a61eaa61e0d4e31a7e411a481df9827ee}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+cache\+Enabled@{m\+\_\+cache\+Enabled}}
+\index{m\+\_\+cache\+Enabled@{m\+\_\+cache\+Enabled}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+cache\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool K\+Dj\+Vu\+::\+Private\+::m\+\_\+cache\+Enabled}}\label{classKDjVu_1_1Private_a61eaa61e0d4e31a7e411a481df9827ee}
+
+
+Definition at line 462 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+djvu\+\_\+cxt@{m\+\_\+djvu\+\_\+cxt}}
+\index{m\+\_\+djvu\+\_\+cxt@{m\+\_\+djvu\+\_\+cxt}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+djvu\+\_\+cxt}]{\setlength{\rightskip}{0pt plus 5cm}ddjvu\+\_\+context\+\_\+t$\ast$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+djvu\+\_\+cxt}}\label{classKDjVu_1_1Private_a5a52150a7ab9bbd584d6d73d68ae9ba1}
+
+
+Definition at line 448 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+djvu\+\_\+document@{m\+\_\+djvu\+\_\+document}}
+\index{m\+\_\+djvu\+\_\+document@{m\+\_\+djvu\+\_\+document}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+djvu\+\_\+document}]{\setlength{\rightskip}{0pt plus 5cm}ddjvu\+\_\+document\+\_\+t$\ast$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+djvu\+\_\+document}}\label{classKDjVu_1_1Private_a183f9508738c71bb5abab150619a5ccd}
+
+
+Definition at line 449 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+doc\+Bookmarks@{m\+\_\+doc\+Bookmarks}}
+\index{m\+\_\+doc\+Bookmarks@{m\+\_\+doc\+Bookmarks}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+doc\+Bookmarks}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dom\+Document$\ast$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+doc\+Bookmarks}}\label{classKDjVu_1_1Private_a44dd323816fabcc89971ce3d0b9b72a7}
+
+
+Definition at line 458 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_aad4bfbe2fe3646d6c9f862e6575c00cb}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+format@{m\+\_\+format}}
+\index{m\+\_\+format@{m\+\_\+format}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+format}]{\setlength{\rightskip}{0pt plus 5cm}ddjvu\+\_\+format\+\_\+t$\ast$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+format}}\label{classKDjVu_1_1Private_aad4bfbe2fe3646d6c9f862e6575c00cb}
+
+
+Definition at line 450 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a48e70e9e1d6e964cacaf5bc8295dcba7}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+meta\+Data@{m\+\_\+meta\+Data}}
+\index{m\+\_\+meta\+Data@{m\+\_\+meta\+Data}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+meta\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$Q\+String, Q\+Variant$>$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+meta\+Data}}\label{classKDjVu_1_1Private_a48e70e9e1d6e964cacaf5bc8295dcba7}
+
+
+Definition at line 457 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_ad9d14bf5618d9bd6fc6c0595f7122bf5}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+page\+Names\+Cache@{m\+\_\+page\+Names\+Cache}}
+\index{m\+\_\+page\+Names\+Cache@{m\+\_\+page\+Names\+Cache}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+page\+Names\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<$Q\+String, int$>$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+page\+Names\+Cache}}\label{classKDjVu_1_1Private_ad9d14bf5618d9bd6fc6c0595f7122bf5}
+
+
+Definition at line 460 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a0c009b87dde95717ec9e9a8f701e6628}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+pages@{m\+\_\+pages}}
+\index{m\+\_\+pages@{m\+\_\+pages}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+pages}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<${\bf K\+Dj\+Vu\+::\+Page}$\ast$$>$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+pages}}\label{classKDjVu_1_1Private_a0c009b87dde95717ec9e9a8f701e6628}
+
+
+Definition at line 452 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a7c2361a6591fe13e69bc7982a3efd780}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+\_\+pages\+\_\+cache@{m\+\_\+pages\+\_\+cache}}
+\index{m\+\_\+pages\+\_\+cache@{m\+\_\+pages\+\_\+cache}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+\_\+pages\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ddjvu\+\_\+page\+\_\+t $\ast$$>$ K\+Dj\+Vu\+::\+Private\+::m\+\_\+pages\+\_\+cache}}\label{classKDjVu_1_1Private_a7c2361a6591fe13e69bc7982a3efd780}
+
+
+Definition at line 453 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a447ca81b4cc0237ac52aa8bfadd1258e}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!m\+Img\+Cache@{m\+Img\+Cache}}
+\index{m\+Img\+Cache@{m\+Img\+Cache}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{m\+Img\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+List}$<${\bf Image\+Cache\+Item}$\ast$$>$ K\+Dj\+Vu\+::\+Private\+::m\+Img\+Cache}}\label{classKDjVu_1_1Private_a447ca81b4cc0237ac52aa8bfadd1258e}
+
+
+Definition at line 455 of file kdjvu.\+cpp.
+
+\hypertarget{classKDjVu_1_1Private_a4faf2c57e9e0b65a5adf0d55115c6ae1}{\index{K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}!s\+\_\+formatmask@{s\+\_\+formatmask}}
+\index{s\+\_\+formatmask@{s\+\_\+formatmask}!K\+Dj\+Vu\+::\+Private@{K\+Dj\+Vu\+::\+Private}}
+\subsubsection[{s\+\_\+formatmask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int K\+Dj\+Vu\+::\+Private\+::s\+\_\+formatmask = \{ 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000 \}\hspace{0.3cm}{\ttfamily [static]}}}\label{classKDjVu_1_1Private_a4faf2c57e9e0b65a5adf0d55115c6ae1}
+
+
+Definition at line 464 of file kdjvu.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+generators/djvu/\hyperlink{kdjvu_8cpp}{kdjvu.\+cpp}\end{DoxyCompactItemize}

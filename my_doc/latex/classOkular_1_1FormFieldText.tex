@@ -1,0 +1,293 @@
+\hypertarget{classOkular_1_1FormFieldText}{\section{Okular\+:\+:Form\+Field\+Text Class Reference}
+\label{classOkular_1_1FormFieldText}\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+}
+
+
+Interface of a text form field.  
+
+
+
+
+{\ttfamily \#include $<$form.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Form\+Field\+Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classOkular_1_1FormFieldText}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671ba}{Text\+Type} \{ \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baabf3d7517053b7298f8051cea7f0cf034}{Normal}, 
+\hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baa4cd572a2044a634f8df6a284f595dc2f}{Multiline}, 
+\hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baaeaeb6def433745650b1ffd5dacefc7e2}{File\+Select}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1FormFieldText_a28e6d7e06e3c824269a3a7c4f7ba290c}{$\sim$\+Form\+Field\+Text} ()
+\item 
+virtual \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671ba}{Text\+Type} \hyperlink{classOkular_1_1FormFieldText_af23fa9f5620f6b3909a064f8285348fc}{text\+Type} () const =0
+\item 
+virtual Q\+String \hyperlink{classOkular_1_1FormFieldText_ae81ae855ec36f258bc690a4960c93eb3}{text} () const =0
+\item 
+virtual void \hyperlink{classOkular_1_1FormFieldText_ab67ad787fc119bdf87281d07339e310c}{set\+Text} (const Q\+String \&\hyperlink{classOkular_1_1FormFieldText_ae81ae855ec36f258bc690a4960c93eb3}{text})
+\item 
+virtual bool \hyperlink{classOkular_1_1FormFieldText_ae9c7b5cbde590e6285de3a25993a5202}{is\+Password} () const 
+\item 
+virtual bool \hyperlink{classOkular_1_1FormFieldText_ab19c3a41187ae8d1129950c5bc03c7b7}{is\+Rich\+Text} () const 
+\item 
+virtual int \hyperlink{classOkular_1_1FormFieldText_a5a2cc43d03a3b4d21a68b35a48ab52ff}{maximum\+Length} () const 
+\item 
+virtual Qt\+::\+Alignment \hyperlink{classOkular_1_1FormFieldText_a5a089e161057983827b40ca3ca57a1b3}{text\+Alignment} () const 
+\item 
+virtual bool \hyperlink{classOkular_1_1FormFieldText_ae85f290a7d8cbe1a280c6129d72df561}{can\+Be\+Spell\+Checked} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOkular_1_1FormFieldText_a4c4633684016169c3aed297269fdcbc5}{Form\+Field\+Text} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface of a text form field. 
+
+This is the base interface to reimplement to represent a text field, ie a field where the user insert text. 
+
+Definition at line 176 of file form.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671ba}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!Text\+Type@{Text\+Type}}
+\index{Text\+Type@{Text\+Type}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{Text\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Okular\+::\+Form\+Field\+Text\+::\+Text\+Type}}}\label{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671ba}
+The types of text field. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Normal@{Normal}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!Normal@{Normal}}\item[{\em 
+\hypertarget{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baabf3d7517053b7298f8051cea7f0cf034}{Normal}\label{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baabf3d7517053b7298f8051cea7f0cf034}
+}]A simple singleline text field. \index{Multiline@{Multiline}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!Multiline@{Multiline}}\item[{\em 
+\hypertarget{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baa4cd572a2044a634f8df6a284f595dc2f}{Multiline}\label{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baa4cd572a2044a634f8df6a284f595dc2f}
+}]A multiline text field. \index{File\+Select@{File\+Select}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!File\+Select@{File\+Select}}\item[{\em 
+\hypertarget{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baaeaeb6def433745650b1ffd5dacefc7e2}{File\+Select}\label{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baaeaeb6def433745650b1ffd5dacefc7e2}
+}]An input field to select the path of a file on disk. \end{description}
+\end{Desc}
+
+
+Definition at line 182 of file form.\+h.
+
+
+\begin{DoxyCode}
+183         \{
+184             \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baabf3d7517053b7298f8051cea7f0cf034}{Normal},        
+185             \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baa4cd572a2044a634f8df6a284f595dc2f}{Multiline},     
+186             \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baaeaeb6def433745650b1ffd5dacefc7e2}{FileSelect}     
+187         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1FormFieldText_a28e6d7e06e3c824269a3a7c4f7ba290c}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!````~Form\+Field\+Text@{$\sim$\+Form\+Field\+Text}}
+\index{````~Form\+Field\+Text@{$\sim$\+Form\+Field\+Text}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{$\sim$\+Form\+Field\+Text}]{\setlength{\rightskip}{0pt plus 5cm}Form\+Field\+Text\+::$\sim$\+Form\+Field\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_a28e6d7e06e3c824269a3a7c4f7ba290c}
+
+
+Definition at line 144 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+145 \{
+146 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_a4c4633684016169c3aed297269fdcbc5}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!Form\+Field\+Text@{Form\+Field\+Text}}
+\index{Form\+Field\+Text@{Form\+Field\+Text}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{Form\+Field\+Text}]{\setlength{\rightskip}{0pt plus 5cm}Form\+Field\+Text\+::\+Form\+Field\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOkular_1_1FormFieldText_a4c4633684016169c3aed297269fdcbc5}
+
+
+Definition at line 139 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+140     : \hyperlink{classOkular_1_1FormField}{FormField}( *\textcolor{keyword}{new} \hyperlink{classOkular_1_1FormFieldTextPrivate}{FormFieldTextPrivate}() )
+141 \{
+142 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1FormFieldText_ae85f290a7d8cbe1a280c6129d72df561}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!can\+Be\+Spell\+Checked@{can\+Be\+Spell\+Checked}}
+\index{can\+Be\+Spell\+Checked@{can\+Be\+Spell\+Checked}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{can\+Be\+Spell\+Checked}]{\setlength{\rightskip}{0pt plus 5cm}bool Form\+Field\+Text\+::can\+Be\+Spell\+Checked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_ae85f290a7d8cbe1a280c6129d72df561}
+Whether the text inserted manually in the field (where possible) can be spell-\/checked.
+
+\begin{DoxyNote}{Note}
+meaningful only if the field is editable. 
+\end{DoxyNote}
+
+
+Reimplemented in \hyperlink{classPopplerFormFieldText_a98d28ae15bfc391608c7e9f769717b62}{Poppler\+Form\+Field\+Text}.
+
+
+
+Definition at line 172 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+173 \{
+174     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+175 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_ae9c7b5cbde590e6285de3a25993a5202}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!is\+Password@{is\+Password}}
+\index{is\+Password@{is\+Password}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{is\+Password}]{\setlength{\rightskip}{0pt plus 5cm}bool Form\+Field\+Text\+::is\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_ae9c7b5cbde590e6285de3a25993a5202}
+Whether this text field is a password input, eg its text {\bfseries must} be replaced with asterisks.
+
+Always false for \hyperlink{classOkular_1_1FormFieldText_a13b763ea02b44247df564b79996671baaeaeb6def433745650b1ffd5dacefc7e2}{File\+Select} text fields. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldText_a59ff5d5540af224aa20ca27dae4116aa}{Poppler\+Form\+Field\+Text}.
+
+
+
+Definition at line 152 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+153 \{
+154     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+155 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_ab19c3a41187ae8d1129950c5bc03c7b7}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!is\+Rich\+Text@{is\+Rich\+Text}}
+\index{is\+Rich\+Text@{is\+Rich\+Text}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{is\+Rich\+Text}]{\setlength{\rightskip}{0pt plus 5cm}bool Form\+Field\+Text\+::is\+Rich\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_ab19c3a41187ae8d1129950c5bc03c7b7}
+Whether this text field should allow rich text. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldText_a4f67011b791a3c1c550ea60289bb66af}{Poppler\+Form\+Field\+Text}.
+
+
+
+Definition at line 157 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+158 \{
+159     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+160 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_a5a2cc43d03a3b4d21a68b35a48ab52ff}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!maximum\+Length@{maximum\+Length}}
+\index{maximum\+Length@{maximum\+Length}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{maximum\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int Form\+Field\+Text\+::maximum\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_a5a2cc43d03a3b4d21a68b35a48ab52ff}
+The maximum length allowed for the text of text field, or -\/1 if there is no limitation for the text. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldText_abfb39d92f325f14e11cccc9169108caa}{Poppler\+Form\+Field\+Text}.
+
+
+
+Definition at line 162 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+163 \{
+164     \textcolor{keywordflow}{return} -1;
+165 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_ab67ad787fc119bdf87281d07339e310c}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{set\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Form\+Field\+Text\+::set\+Text (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_ab67ad787fc119bdf87281d07339e310c}
+Sets the new {\ttfamily text} in the text field.
+
+The default implementation does nothing.
+
+Reimplemented only if the setting of new text is supported. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldText_a92c704dc8924516f7962884a66e01f8f}{Poppler\+Form\+Field\+Text}.
+
+
+
+Definition at line 148 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+149 \{
+150 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_ae81ae855ec36f258bc690a4960c93eb3}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!text@{text}}
+\index{text@{text}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String Okular\+::\+Form\+Field\+Text\+::text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormFieldText_ae81ae855ec36f258bc690a4960c93eb3}
+The text of text field. 
+
+Implemented in \hyperlink{classPopplerFormFieldText_a5209392f5dce00b6c8dda8955d44a8ae}{Poppler\+Form\+Field\+Text}.
+
+\hypertarget{classOkular_1_1FormFieldText_a5a089e161057983827b40ca3ca57a1b3}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!text\+Alignment@{text\+Alignment}}
+\index{text\+Alignment@{text\+Alignment}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{text\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Alignment Form\+Field\+Text\+::text\+Alignment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOkular_1_1FormFieldText_a5a089e161057983827b40ca3ca57a1b3}
+The alignment of the text within the field. 
+
+Reimplemented in \hyperlink{classPopplerFormFieldText_ab7b918783d8793dfa2c3f952285d0013}{Poppler\+Form\+Field\+Text}.
+
+
+
+Definition at line 167 of file form.\+cpp.
+
+
+\begin{DoxyCode}
+168 \{
+169     \textcolor{keywordflow}{return} Qt::AlignVCenter | Qt::AlignLeft;
+170 \}
+\end{DoxyCode}
+\hypertarget{classOkular_1_1FormFieldText_af23fa9f5620f6b3909a064f8285348fc}{\index{Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}!text\+Type@{text\+Type}}
+\index{text\+Type@{text\+Type}!Okular\+::\+Form\+Field\+Text@{Okular\+::\+Form\+Field\+Text}}
+\subsubsection[{text\+Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Text\+Type} Okular\+::\+Form\+Field\+Text\+::text\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1FormFieldText_af23fa9f5620f6b3909a064f8285348fc}
+The particular type of the text field. 
+
+Implemented in \hyperlink{classPopplerFormFieldText_a293e5c7c0851ad1f383c36775fe46b9a}{Poppler\+Form\+Field\+Text}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\hyperlink{form_8h}{form.\+h}\item 
+core/\hyperlink{form_8cpp}{form.\+cpp}\end{DoxyCompactItemize}

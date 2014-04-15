@@ -1,0 +1,304 @@
+\hypertarget{classComicBook_1_1Document}{\section{Comic\+Book\+:\+:Document Class Reference}
+\label{classComicBook_1_1Document}\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+}
+
+
+{\ttfamily \#include $<$document.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComicBook_1_1Document_acdbcbe550084e8c20f4f67eb229ad66a}{Document} ()
+\item 
+\hyperlink{classComicBook_1_1Document_ac2e3f62307dc22baac21ddc10fa1609c}{$\sim$\+Document} ()
+\item 
+bool \hyperlink{classComicBook_1_1Document_a9048327326e87d025b2af2499e8987da}{open} (const Q\+String \&file\+Name)
+\item 
+void \hyperlink{classComicBook_1_1Document_ae9b8bb9ab6fbf42f47b573e95a5a1198}{close} ()
+\item 
+void \hyperlink{classComicBook_1_1Document_ac9b4abfbf45273ef03051677c7abb00b}{pages} (Q\+Vector$<$ \hyperlink{classOkular_1_1Page}{Okular\+::\+Page} $\ast$ $>$ $\ast$pages\+Vector)
+\item 
+Q\+String\+List \hyperlink{classComicBook_1_1Document_a71c9c6cc020b500b3cf093fc5f039c92}{page\+Titles} () const 
+\item 
+Q\+Image \hyperlink{classComicBook_1_1Document_ae572a3b695f4300eb3ddf76bbcd3b1dd}{page\+Image} (int page) const 
+\item 
+Q\+String \hyperlink{classComicBook_1_1Document_a26f06a190450786328eceb700ebfe45e}{last\+Error\+String} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file document.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classComicBook_1_1Document_acdbcbe550084e8c20f4f67eb229ad66a}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!Document@{Document}}
+\index{Document@{Document}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{Document}]{\setlength{\rightskip}{0pt plus 5cm}Document\+::\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classComicBook_1_1Document_acdbcbe550084e8c20f4f67eb229ad66a}
+
+
+Definition at line 44 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+45     : mDirectory( 0 ), mUnrar( 0 ), mArchive( 0 )
+46 \{
+47 \}
+\end{DoxyCode}
+\hypertarget{classComicBook_1_1Document_ac2e3f62307dc22baac21ddc10fa1609c}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!````~Document@{$\sim$\+Document}}
+\index{````~Document@{$\sim$\+Document}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{$\sim$\+Document}]{\setlength{\rightskip}{0pt plus 5cm}Document\+::$\sim$\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classComicBook_1_1Document_ac2e3f62307dc22baac21ddc10fa1609c}
+
+
+Definition at line 49 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+50 \{
+51 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classComicBook_1_1Document_ae9b8bb9ab6fbf42f47b573e95a5a1198}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!close@{close}}
+\index{close@{close}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classComicBook_1_1Document_ae9b8bb9ab6fbf42f47b573e95a5a1198}
+
+
+Definition at line 121 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+122 \{
+123     mLastErrorString.clear();
+124 
+125     \textcolor{keywordflow}{if} ( !( mArchive || mUnrar || mDirectory ) )
+126         \textcolor{keywordflow}{return};
+127 
+128     \textcolor{keyword}{delete} mArchive;
+129     mArchive = 0;
+130     \textcolor{keyword}{delete} mDirectory;
+131     mDirectory = 0;
+132     \textcolor{keyword}{delete} mUnrar;
+133     mUnrar = 0;
+134     mPageMap.clear();
+135     mEntries.clear();
+136 \}
+\end{DoxyCode}
+\hypertarget{classComicBook_1_1Document_a26f06a190450786328eceb700ebfe45e}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!last\+Error\+String@{last\+Error\+String}}
+\index{last\+Error\+String@{last\+Error\+String}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{last\+Error\+String}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Document\+::last\+Error\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classComicBook_1_1Document_a26f06a190450786328eceb700ebfe45e}
+
+
+Definition at line 225 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+226 \{
+227     \textcolor{keywordflow}{return} mLastErrorString;
+228 \}
+\end{DoxyCode}
+\hypertarget{classComicBook_1_1Document_a9048327326e87d025b2af2499e8987da}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!open@{open}}
+\index{open@{open}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool Document\+::open (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{classComicBook_1_1Document_a9048327326e87d025b2af2499e8987da}
+We have a zip archive
+
+We have a T\+A\+R archive
+
+We have a rar archive
+
+Definition at line 53 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \hyperlink{classComicBook_1_1Document_ae9b8bb9ab6fbf42f47b573e95a5a1198}{close}();
+56 
+57     \textcolor{keyword}{const} KMimeType::Ptr mime = KMimeType::findByFileContent( fileName );
+58 
+62     \textcolor{keywordflow}{if} ( mime->is( \textcolor{stringliteral}{"application/x-cbz"} ) || mime->name() == \textcolor{stringliteral}{"application/zip"} ) \{
+63         mArchive = \textcolor{keyword}{new} KZip( fileName );
+64 
+65         \textcolor{keywordflow}{if} ( !processArchive() ) \{
+66             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+67         \}
+71     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( mime->is( \textcolor{stringliteral}{"application/x-cbt"} ) || mime->name() == \textcolor{stringliteral}{"application/x-gzip"} ||
+72                 mime->name() == \textcolor{stringliteral}{"application/x-tar"} || mime->name() == \textcolor{stringliteral}{"application/x-bzip"} ) \{
+73         mArchive = \textcolor{keyword}{new} KTar( fileName );
+74 
+75         \textcolor{keywordflow}{if} ( !processArchive() ) \{
+76             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+77         \}
+78     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( mime->is( \textcolor{stringliteral}{"application/x-cbr"} ) || mime->name() == \textcolor{stringliteral}{"application/x-rar"} ) \{
+79         \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a2e97c9cb1a32bba23e7df17806668ba2}{Unrar::isAvailable}() ) \{
+80             mLastErrorString = i18n( \textcolor{stringliteral}{"Cannot open document, unrar was not found."} );
+81             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+82         \}
+83 
+84         \textcolor{keywordflow}{if} ( !\hyperlink{classUnrar_a142581395536a82553f2855962e14055}{Unrar::isSuitableVersionAvailable}() ) \{
+85             mLastErrorString = i18n( \textcolor{stringliteral}{"The version of unrar on your system is not suitable for opening
+       comicbooks."} );
+86             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+87         \}
+88 
+92         mUnrar = \textcolor{keyword}{new} \hyperlink{classUnrar}{Unrar}();
+93 
+94         \textcolor{keywordflow}{if} ( !mUnrar->\hyperlink{classUnrar_ad3e0aa6e1af9ecd001781c24422ca531}{open}( fileName ) ) \{
+95             \textcolor{keyword}{delete} mUnrar;
+96             mUnrar = 0;
+97 
+98             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+99         \}
+100 
+101         mEntries = mUnrar->\hyperlink{classUnrar_a2d703bdd105451ed726a2ab4d85528cb}{list}();
+102     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( mime->is( \textcolor{stringliteral}{"inode/directory"} ) ) \{
+103         mDirectory = \textcolor{keyword}{new} \hyperlink{classDirectory}{Directory}();
+104 
+105         \textcolor{keywordflow}{if} ( !mDirectory->\hyperlink{classDirectory_a9e72df151c200002c0f6ba3501780abb}{open}( fileName ) ) \{
+106             \textcolor{keyword}{delete} mDirectory;
+107             mDirectory = 0;
+108 
+109             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+110         \}
+111 
+112         mEntries = mDirectory->\hyperlink{classDirectory_a935b73c0bf500ff22641b64723215407}{list}();
+113     \} \textcolor{keywordflow}{else} \{
+114         mLastErrorString = i18n( \textcolor{stringliteral}{"Unknown ComicBook format."} );
+115         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+116     \}
+117 
+118     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+119 \}
+\end{DoxyCode}
+\hypertarget{classComicBook_1_1Document_ae572a3b695f4300eb3ddf76bbcd3b1dd}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!page\+Image@{page\+Image}}
+\index{page\+Image@{page\+Image}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{page\+Image}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Document\+::page\+Image (
+\begin{DoxyParamCaption}
+\item[{int}]{page}
+\end{DoxyParamCaption}
+) const}}\label{classComicBook_1_1Document_ae572a3b695f4300eb3ddf76bbcd3b1dd}
+
+
+Definition at line 210 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+211 \{
+212     \textcolor{keywordflow}{if} ( mArchive ) \{
+213         \textcolor{keyword}{const} KArchiveFile *entry = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }KArchiveFile*\textcolor{keyword}{>}( mArchiveDir->entry( mPageMap[ page ] 
+      ) );
+214         \textcolor{keywordflow}{if} ( entry )
+215             \textcolor{keywordflow}{return} QImage::fromData( entry->data() );
+216     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( mDirectory ) \{
+217         \textcolor{keywordflow}{return} QImage( mPageMap[ page ] );
+218     \} \textcolor{keywordflow}{else} \{
+219         \textcolor{keywordflow}{return} QImage::fromData( mUnrar->\hyperlink{classUnrar_a00c273a845fdc6a75286de8d89a2223f}{contentOf}( mPageMap[ page ] ) );
+220     \}
+221 
+222     \textcolor{keywordflow}{return} QImage();
+223 \}
+\end{DoxyCode}
+\hypertarget{classComicBook_1_1Document_ac9b4abfbf45273ef03051677c7abb00b}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!pages@{pages}}
+\index{pages@{pages}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{pages}]{\setlength{\rightskip}{0pt plus 5cm}void Document\+::pages (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ {\bf Okular\+::\+Page} $\ast$ $>$ $\ast$}]{pages\+Vector}
+\end{DoxyParamCaption}
+)}}\label{classComicBook_1_1Document_ac9b4abfbf45273ef03051677c7abb00b}
+
+
+Definition at line 161 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+162 \{
+163     qSort( mEntries.begin(), mEntries.end(), \hyperlink{qnatsort_8cpp_a47cfb218123c3ff38d8e674fb78b9f0d}{caseSensitiveNaturalOrderLessThen}
+       );
+164     QScopedPointer< QIODevice > dev;
+165 
+166     \textcolor{keywordtype}{int} count = 0;
+167     pagesVector->clear();
+168     pagesVector->resize( mEntries.size() );
+169     QImageReader reader;
+170     \textcolor{keywordflow}{foreach}(\textcolor{keyword}{const} QString &file, mEntries) \{
+171         \textcolor{keywordflow}{if} ( mArchive ) \{
+172             \textcolor{keyword}{const} KArchiveFile *entry = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }KArchiveFile*\textcolor{keyword}{>}( mArchiveDir->entry( file ) );
+173             \textcolor{keywordflow}{if} ( entry ) \{
+174                 dev.reset( entry->createDevice() );
+175             \}
+176         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( mDirectory ) \{
+177             dev.reset( mDirectory->\hyperlink{classDirectory_a520a88d8f2acd6179486eab7b8d65ee1}{createDevice}( file ) );
+178         \} \textcolor{keywordflow}{else} \{
+179             dev.reset( mUnrar->\hyperlink{classUnrar_a455769d0f1aedf1870eafd19e9c1c76a}{createDevice}( file ) );
+180         \}
+181 
+182         \textcolor{keywordflow}{if} ( ! dev.isNull() ) \{
+183             reader.setDevice( dev.data() );
+184             \textcolor{keywordflow}{if} ( reader.canRead() )
+185             \{
+186                 QSize \hyperlink{classpageSize}{pageSize} = reader.size();
+187                 \textcolor{keywordflow}{if} ( !pageSize.isValid() ) \{
+188                     \textcolor{keyword}{const} QImage i = reader.read();
+189                     \textcolor{keywordflow}{if} ( !i.isNull() )
+190                         pageSize = i.size();
+191                 \}
+192                 \textcolor{keywordflow}{if} ( pageSize.isValid() ) \{
+193                     pagesVector->replace( count, \textcolor{keyword}{new} \hyperlink{classOkular_1_1Page}{Okular::Page}( count, pageSize.width(), 
+      pageSize.height(), \hyperlink{namespaceOkular_a8556d00465f61ef533c6b027669e7da6aa4df8fc3dd09e30520c264c8d23d89c2}{Okular::Rotation0} ) );
+194                     mPageMap.append(file);
+195                     count++;
+196                 \} \textcolor{keywordflow}{else} \{
+197                     kDebug() << \textcolor{stringliteral}{"Ignoring"} << file << \textcolor{stringliteral}{"doesn't seem to be an image even if
+       QImageReader::canRead returned true"};
+198                 \}
+199             \}
+200         \}
+201     \}
+202     pagesVector->resize( count );
+203 \}
+\end{DoxyCode}
+\hypertarget{classComicBook_1_1Document_a71c9c6cc020b500b3cf093fc5f039c92}{\index{Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}!page\+Titles@{page\+Titles}}
+\index{page\+Titles@{page\+Titles}!Comic\+Book\+::\+Document@{Comic\+Book\+::\+Document}}
+\subsubsection[{page\+Titles}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List Document\+::page\+Titles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classComicBook_1_1Document_a71c9c6cc020b500b3cf093fc5f039c92}
+
+
+Definition at line 205 of file document.\+cpp.
+
+
+\begin{DoxyCode}
+206 \{
+207     \textcolor{keywordflow}{return} QStringList();
+208 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+generators/comicbook/\hyperlink{generators_2comicbook_2document_8h}{document.\+h}\item 
+generators/comicbook/\hyperlink{generators_2comicbook_2document_8cpp}{document.\+cpp}\end{DoxyCompactItemize}

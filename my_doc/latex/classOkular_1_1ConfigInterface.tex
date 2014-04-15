@@ -1,0 +1,104 @@
+\hypertarget{classOkular_1_1ConfigInterface}{\section{Okular\+:\+:Config\+Interface Class Reference}
+\label{classOkular_1_1ConfigInterface}\index{Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}}
+}
+
+
+Abstract interface for configuration control.  
+
+
+
+
+{\ttfamily \#include $<$configinterface.\+h$>$}
+
+Inheritance diagram for Okular\+:\+:Config\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.680000cm]{classOkular_1_1ConfigInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classOkular_1_1ConfigInterface_a7aaa737cc8907ee1944e330c43b3c571}{$\sim$\+Config\+Interface} ()
+\item 
+virtual bool \hyperlink{classOkular_1_1ConfigInterface_a0f61ec6852e483b898efd9709b1ef63b}{reparse\+Config} ()=0
+\item 
+virtual void \hyperlink{classOkular_1_1ConfigInterface_a75030ba3abbbd134e388c05154695610}{add\+Pages} (K\+Config\+Dialog $\ast$dialog)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface for configuration control. 
+
+This interface defines a way to configure the \hyperlink{classOkular_1_1Generator}{Generator} itself.
+
+How to use it in a custom \hyperlink{classOkular_1_1Generator}{Generator}\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyGenerator : \textcolor{keyword}{public} \hyperlink{classOkular_1_1Generator}{Okular::Generator}, \textcolor{keyword}{public} 
+      \hyperlink{classOkular_1_1ConfigInterface}{Okular::ConfigInterface}
+\{
+    Q\_OBJECT
+    Q\_INTERFACES( \hyperlink{classOkular_1_1ConfigInterface}{Okular::ConfigInterface} )
+
+    ...
+\};
+\end{DoxyCode}
+ and -\/ of course -\/ implementing its methods. 
+
+Definition at line 38 of file configinterface.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOkular_1_1ConfigInterface_a7aaa737cc8907ee1944e330c43b3c571}{\index{Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}!````~Config\+Interface@{$\sim$\+Config\+Interface}}
+\index{````~Config\+Interface@{$\sim$\+Config\+Interface}!Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}}
+\subsubsection[{$\sim$\+Config\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}virtual Okular\+::\+Config\+Interface\+::$\sim$\+Config\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classOkular_1_1ConfigInterface_a7aaa737cc8907ee1944e330c43b3c571}
+Destroys the config interface. 
+
+Definition at line 44 of file configinterface.\+h.
+
+
+\begin{DoxyCode}
+44 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOkular_1_1ConfigInterface_a75030ba3abbbd134e388c05154695610}{\index{Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}!add\+Pages@{add\+Pages}}
+\index{add\+Pages@{add\+Pages}!Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}}
+\subsubsection[{add\+Pages}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Okular\+::\+Config\+Interface\+::add\+Pages (
+\begin{DoxyParamCaption}
+\item[{K\+Config\+Dialog $\ast$}]{dialog}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1ConfigInterface_a75030ba3abbbd134e388c05154695610}
+This method allows the generator to add custom configuration pages to the config {\ttfamily dialog} of okular. 
+
+Implemented in \hyperlink{classOkular_1_1TextDocumentGenerator_acc42fa387044ecf9f26bc1b4952ad6d3}{Okular\+::\+Text\+Document\+Generator}, \hyperlink{classPDFGenerator_a04e154f556588e29c27de23d1447816b}{P\+D\+F\+Generator}, \hyperlink{classGSGenerator_ae6cccf4dc11e844ec3c9d388d5582ffe}{G\+S\+Generator}, \hyperlink{classTxtGenerator_a30036a27058c18c3ce000e682ae2cb8c}{Txt\+Generator}, \hyperlink{classEPubGenerator_a9ef2fd420a698d07236def3a9162fab4}{E\+Pub\+Generator}, \hyperlink{classFictionBookGenerator_ab88be7d5d552061f08f931cf2d70c248}{Fiction\+Book\+Generator}, \hyperlink{classKOOOGenerator_afcf312689c8cfc2f6773befcffedb594}{K\+O\+O\+O\+Generator}, and \hyperlink{classMobiGenerator_a5121681db8b40d64c87cfc184fdbbf3a}{Mobi\+Generator}.
+
+\hypertarget{classOkular_1_1ConfigInterface_a0f61ec6852e483b898efd9709b1ef63b}{\index{Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}!reparse\+Config@{reparse\+Config}}
+\index{reparse\+Config@{reparse\+Config}!Okular\+::\+Config\+Interface@{Okular\+::\+Config\+Interface}}
+\subsubsection[{reparse\+Config}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Okular\+::\+Config\+Interface\+::reparse\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classOkular_1_1ConfigInterface_a0f61ec6852e483b898efd9709b1ef63b}
+This method is called to tell the generator to re-\/parse its configuration.
+
+Returns true if something has changed.
+
+\begin{DoxyNote}{Note}
+this method can be called also when the generator is not the active generator, or when there was not changed in the config added by the generator itself. So the suggestion is to {\bfseries check} whether something changed, and only in that case return {\ttfamily true} 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classOkular_1_1TextDocumentGenerator_a875a07fa60e300a698a1f9278e32cd07}{Okular\+::\+Text\+Document\+Generator}, \hyperlink{classPDFGenerator_a29ebf5643e2bafa551146a777e61b3bd}{P\+D\+F\+Generator}, and \hyperlink{classGSGenerator_ad7f8c8c8d0a5bb85fa06a6bcbdecb56d}{G\+S\+Generator}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interfaces/\hyperlink{configinterface_8h}{configinterface.\+h}\end{DoxyCompactItemize}
