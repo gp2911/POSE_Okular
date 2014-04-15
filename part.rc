@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="okular_part" version="36">
+<kpartgui name="okular_part" version="37">
 <MenuBar>
   <Menu name="file"><text>&amp;File</text>
     <Action name="get_new_stuff" group="file_open"/>
@@ -44,6 +44,9 @@
     </Menu>
     <Action name="view_pagesizes"/>
     <Action name="view_trim_margins"/>
+    <!--Added by Ganesh P Kumar -->
+    <Action name="view_right_to_left" />
+    <!--Modification ends -->
     <Separator/>
     <Action name="view_toggle_forms"/>
   </Menu>
@@ -84,6 +87,8 @@
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="show_leftpanel" group="show_merge"/>
     <Action name="show_bottombar" group="show_merge"/>
+    <Separator />
+    <Separator />
     <Action name="options_configure_generators" group="configure_merge"/>
     <Action name="options_configure" group="configure_merge"/>
   </Menu>
