@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['_5fsynctex_5fclass_5ft',['_synctex_class_t',['../synctex__parser_8c.html#a115fbd71dc806e374e0b5bedb1857207',1,'synctex_parser.c']]],
-  ['_5fsynctex_5finfo_5fgetter_5ft',['_synctex_info_getter_t',['../synctex__parser_8c.html#a5ba3112f4cb4828de2bb2bb34bc69eea',1,'synctex_parser.c']]],
-  ['_5fsynctex_5fnode_5fgetter_5ft',['_synctex_node_getter_t',['../synctex__parser_8c.html#a68776561342fb5faed30d828674970dc',1,'synctex_parser.c']]],
-  ['_5fsynctex_5fscanner_5ft',['_synctex_scanner_t',['../synctex__parser_8h.html#a05ff652efe60edf7954a646168484476',1,'synctex_parser.h']]],
-  ['_5fsynctex_5fupdater_5ft',['_synctex_updater_t',['../synctex__parser_8h.html#ad019fa90e591adb64846fcda8c6df58b',1,'synctex_parser.h']]]
-];
