@@ -128,6 +128,11 @@ private:
   KAction* m_closeAction;
   KToggleAction* m_fullScreenAction;
   KToggleAction* m_showMenuBarAction;
+
+  /* Added by GP : Cozy Read */
+  KToggleAction* m_cozyRead;
+  /* Modification ends */
+
   bool m_menuBarWasShown, m_toolBarWasShown;
   bool m_unique;
   KUrl m_openUrl;
