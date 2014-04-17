@@ -42,6 +42,11 @@ namespace KActivities { class ResourceInstance; }
  * @author Wilco Greven <greven@kde.org>
  * @version 0.1
  */
+
+/* Added by Ganesh : cozyRead */
+  KDEUI_EXPORT KToggleAction *cozyRead(const QObject *recvr, const char *slot, QObject *parent);
+/* Modification ends */
+
 class Shell : public KParts::MainWindow
 {
   Q_OBJECT
@@ -89,6 +94,10 @@ private slots:
 
   void slotUpdateFullScreen();
   void slotShowMenubar();
+
+  /* Added by Ganesh : cozyRead */
+  void slotCozyRead();
+  /* Modification ends */
 
   void openUrl( const KUrl & url );
   void delayedOpen();

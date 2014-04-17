@@ -3,8 +3,6 @@
 /home/ganesh/okular-src/build/tests/CMakeFiles/annotationstest.dir
 /home/ganesh/okular-src/build/tests/CMakeFiles/annotationstest_automoc.dir
 /home/ganesh/okular-src/build/tests/CMakeFiles/buildtests.dir
-/home/ganesh/okular-src/build/doc/CMakeFiles/doc-handbook.dir
-/home/ganesh/okular-src/build/doc/CMakeFiles/doc-manpage-man-okular.dir
 /home/ganesh/okular-src/build/tests/CMakeFiles/documenttest.dir
 /home/ganesh/okular-src/build/tests/CMakeFiles/documenttest_automoc.dir
 /home/ganesh/okular-src/build/tests/CMakeFiles/editannotationcontentstest.dir

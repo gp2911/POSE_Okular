@@ -228,8 +228,6 @@ QtCore/QObject
 QtCore/QObject
 -
 
-/home/ganesh/okular-src/build/generators/poppler/okularGenerator_poppler_automoc.cpp
-
 /home/ganesh/okular-src/build/generators/poppler/pdfsettings.cpp
 pdfsettings.h
 /home/ganesh/okular-src/build/generators/poppler/pdfsettings.h

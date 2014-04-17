@@ -9,8 +9,6 @@ b8057352895bf66f653d1e935db0ce28 CMakeFiles/uninstall
 3b6fe307a4fe1cac68986bc7c0988e3d active/components/settings.h
 c4ec9f4b8b09fded7ad9878fbc5bf10e active/components/thumbnailitem.moc
 40a0259f8bdef6ae0a626868167390ee active/components/tocmodel.moc
-c30d2335bafa403b90df696e67550d31 doc/CMakeFiles/doc-handbook
-c30d2335bafa403b90df696e67550d31 doc/CMakeFiles/doc-manpage-man-okular
 a74087cdc78037759c1a796b946f8012 doc/index.cache.bz2
 82a264437fd43b2b3a0be1b2795a71c1 doc/okular.1
 7da066217e9477af982b149c07e8c91e generators/comicbook/CMakeFiles/okularGenerator_comicbook_automoc

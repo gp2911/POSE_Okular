@@ -6,19 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../aboutdata.h
-kaboutdata.h
--
-core/version.h
-../core/version.h
-
-../core/version.h
-
 ../kdocumentviewer.h
 QtCore/QStringList
 -
-
-/home/ganesh/okular-src/build/shell/okular_automoc.cpp
 
 /home/ganesh/okular-src/shell/../interfaces/../core/okular_export.h
 kdemacros.h
@@ -31,24 +21,6 @@ QtCore/QObject
 -
 QtCore/QString
 -
-
-/home/ganesh/okular-src/shell/main.cpp
-shell.h
-/home/ganesh/okular-src/shell/shell.h
-kapplication.h
--
-kcmdlineargs.h
--
-klocale.h
--
-QtDBus/qdbusinterface.h
--
-QTextStream
--
-aboutdata.h
-/home/ganesh/okular-src/shell/aboutdata.h
-shellutils.h
-/home/ganesh/okular-src/shell/shellutils.h
 
 /home/ganesh/okular-src/shell/shell.cpp
 shell.h
@@ -122,16 +94,6 @@ kmimetype.h
 QtDBus/QtDBus
 -
 
-/home/ganesh/okular-src/shell/shellutils.cpp
-shellutils.h
-/home/ganesh/okular-src/shell/shellutils.h
-qfile.h
--
-qregexp.h
--
-kcmdlineargs.h
--
-
 /home/ganesh/okular-src/shell/shellutils.h
 qstring.h
 -
@@ -183,10 +145,6 @@ qstring.h
 /usr/include/qt4/QtCore/QStringList
 qstringlist.h
 /usr/include/qt4/QtCore/qstringlist.h
-
-/usr/include/qt4/QtCore/QTextStream
-qtextstream.h
-/usr/include/qt4/QtCore/qtextstream.h
 
 /usr/include/qt4/QtCore/QtCore
 qatomic.h

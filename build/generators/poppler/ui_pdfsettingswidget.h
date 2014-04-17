@@ -4,7 +4,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'pdfsettingswidget.ui'
 **
-** Created: Tue Apr 15 21:09:26 2014
+** Created: Thu Apr 17 22:56:51 2014
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

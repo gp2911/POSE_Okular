@@ -138,8 +138,6 @@ okular_export.h
 global.h
 ../core/global.h
 
-/home/ganesh/okular-src/build/generators/xps/okularGenerator_xps_automoc.cpp
-
 /home/ganesh/okular-src/generators/xps/generator_xps.cpp
 generator_xps.h
 /home/ganesh/okular-src/generators/xps/generator_xps.h

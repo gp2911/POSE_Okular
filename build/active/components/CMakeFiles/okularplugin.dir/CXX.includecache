@@ -334,8 +334,6 @@ thumbnailitem.moc
 pageitem.h
 /home/ganesh/okular-src/active/components/pageitem.h
 
-/home/ganesh/okular-src/build/active/components/okularplugin_automoc.cpp
-
 /home/ganesh/okular-src/build/active/components/settings.cpp
 settings.h
 /home/ganesh/okular-src/build/active/components/settings.h

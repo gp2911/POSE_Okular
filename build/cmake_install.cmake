@@ -189,7 +189,6 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/ganesh/okular-src/build/shell/cmake_install.cmake")
   INCLUDE("/home/ganesh/okular-src/build/generators/cmake_install.cmake")
   INCLUDE("/home/ganesh/okular-src/build/tests/cmake_install.cmake")
-  INCLUDE("/home/ganesh/okular-src/build/doc/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

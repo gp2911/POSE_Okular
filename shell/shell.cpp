@@ -80,6 +80,11 @@ void Shell::init()
   setXMLFile("shell.rc");
   m_fileformatsscanned = false;
   m_showMenuBarAction = 0;
+  
+  /* added by Ganesh : cozyRead */
+  m_cozyRead = 0;
+  /* modification done */
+
   // this routine will find and load our Part.  it finds the Part by
   // name which is a bad idea usually.. but it's alright in this
   // case since our Part is made for this Shell
@@ -282,6 +287,10 @@ void Shell::setupActions()
   m_showMenuBarAction = KStandardAction::showMenubar( this, SLOT(slotShowMenubar()), actionCollection());
   m_fullScreenAction = KStandardAction::fullScreen( this, SLOT(slotUpdateFullScreen()), this,actionCollection() );
 
+  /*Added by Ganesh : cozyRead */
+  //m_cozyRead = cozyRead( this, SLOT(slotCozyRead()), actionCollection());
+  /*Modification ended */
+ 
   m_nextTabAction = actionCollection()->addAction("tab-next");
   m_nextTabAction->setText( i18n("Next Tab") );
   m_nextTabAction->setShortcut( KStandardShortcut::tabNext() );
@@ -438,6 +447,15 @@ void Shell::slotShowMenubar()
     else
         menuBar()->hide();
 }
+
+/* Added by Ganesh : cozyRead */
+void Shell::slotCozyRead()
+{
+    printf("cozyRead called\n");
+    menuBar()->hide();
+    toolBar()->hide();
+}
+/* Modification ends */
 
 QSize Shell::sizeHint() const
 {

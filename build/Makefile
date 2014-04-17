@@ -770,32 +770,6 @@ urldetecttest_automoc/fast:
 	$(MAKE) -f tests/CMakeFiles/urldetecttest_automoc.dir/build.make tests/CMakeFiles/urldetecttest_automoc.dir/build
 .PHONY : urldetecttest_automoc/fast
 
-#=============================================================================
-# Target rules for targets named doc-handbook
-
-# Build rule for target.
-doc-handbook: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 doc-handbook
-.PHONY : doc-handbook
-
-# fast build rule for target.
-doc-handbook/fast:
-	$(MAKE) -f doc/CMakeFiles/doc-handbook.dir/build.make doc/CMakeFiles/doc-handbook.dir/build
-.PHONY : doc-handbook/fast
-
-#=============================================================================
-# Target rules for targets named doc-manpage-man-okular
-
-# Build rule for target.
-doc-manpage-man-okular: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 doc-manpage-man-okular
-.PHONY : doc-manpage-man-okular
-
-# fast build rule for target.
-doc-manpage-man-okular/fast:
-	$(MAKE) -f doc/CMakeFiles/doc-manpage-man-okular.dir/build.make doc/CMakeFiles/doc-manpage-man-okular.dir/build
-.PHONY : doc-manpage-man-okular/fast
-
 # target to build an object file
 conf/dlgaccessibility.o:
 	$(MAKE) -f CMakeFiles/okularpart.dir/build.make CMakeFiles/okularpart.dir/conf/dlgaccessibility.o
@@ -2237,8 +2211,6 @@ help:
 	@echo "... translateannotationtest_automoc"
 	@echo "... urldetecttest"
 	@echo "... urldetecttest_automoc"
-	@echo "... doc-handbook"
-	@echo "... doc-manpage-man-okular"
 	@echo "... conf/dlgaccessibility.o"
 	@echo "... conf/dlgaccessibility.i"
 	@echo "... conf/dlgaccessibility.s"

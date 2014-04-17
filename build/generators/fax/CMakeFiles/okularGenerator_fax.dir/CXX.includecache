@@ -126,8 +126,6 @@ okular_export.h
 global.h
 ../core/global.h
 
-/home/ganesh/okular-src/build/generators/fax/okularGenerator_fax_automoc.cpp
-
 /home/ganesh/okular-src/generators/fax/faxdocument.cpp
 stdlib.h
 -

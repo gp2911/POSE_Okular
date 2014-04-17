@@ -315,6 +315,9 @@ class OKULAR_PART_EXPORT Part : public KParts::ReadWritePart, public Okular::Doc
         KToggleAction* m_showMenuBarAction;
         KToggleAction* m_showLeftPanel;
         KToggleAction* m_showBottomBar;
+	// added by Ganesh : cozyRead 
+	KToggleAction* m_cozyRead;
+	//modification ends
 
 	// added by Ganesh P Kumar
         KToggleAction* m_rightToLeft;

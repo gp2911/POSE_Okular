@@ -138,8 +138,6 @@ okular_export.h
 global.h
 ../core/global.h
 
-/home/ganesh/okular-src/build/generators/comicbook/okularGenerator_comicbook_automoc.cpp
-
 /home/ganesh/okular-src/generators/comicbook/directory.cpp
 directory.h
 /home/ganesh/okular-src/generators/comicbook/directory.h
