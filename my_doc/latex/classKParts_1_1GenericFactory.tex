@@ -1,0 +1,127 @@
+\hypertarget{classKParts_1_1GenericFactory}{\section{\-K\-Parts\-:\-:\-Generic\-Factory$<$ \-T $>$ \-Class \-Template \-Reference}
+\label{classKParts_1_1GenericFactory}\index{\-K\-Parts\-::\-Generic\-Factory$<$ T $>$@{\-K\-Parts\-::\-Generic\-Factory$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$genericfactory.\-h$>$}
+
+\-Inheritance diagram for \-K\-Parts\-:\-:\-Generic\-Factory$<$ \-T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKParts_1_1GenericFactory}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1GenericFactory_aef00baf603a775a324f84fb30ba5a0f4}{\-Generic\-Factory} ()
+\item 
+virtual \hyperlink{classKParts_1_1Part}{\-K\-Parts\-::\-Part} $\ast$ \hyperlink{classKParts_1_1GenericFactory_ac80d722fb2433018dfea04f0f6b89f74}{create\-Part\-Object} (\-Q\-Widget $\ast$parent\-Widget, \-Q\-Object $\ast$parent, const char $\ast$class\-Name, const \-Q\-String\-List \&args)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class T$>$class K\-Parts\-::\-Generic\-Factory$<$ T $>$}
+
+\-A template for a \hyperlink{classKParts_1_1Factory}{\-K\-Parts\-::\-Factory} implementation. \-It implements the pure virtual create\-Part\-Object method by instantiating the template argument when requested through the class\-Name field. \-In addition it is a container for a part's \-K\-Component\-Data object, by providing a static \-K\-Component\-Data \hyperlink{classKParts_1_1GenericFactoryBase_ad4a0ca70dec2fe8f4e0d4293e17eb776}{component\-Data()} method.
+
+\-The template argument has to inherit from \hyperlink{classKParts_1_1Part}{\-K\-Parts\-::\-Part} and has to implement two methods\-: 1) \-There needs to be a public constructor with the following signature\-: \-My\-Part( Q\-Widget $\ast$parent\-Widget, Q\-Object $\ast$parent, const Q\-String\-List\& args )
+
+2) \-It needs to provide one static method to create a \-K\-About\-Data object per request, holding information about the component's name, its authors, license, etc. \-The signature of that static method has to be \-K\-About\-Data $\ast$create\-About\-Data()
+
+\-The template will take care of memory management of the \-K\-Component\-Data and the \-K\-About\-Data object, meaning ownership of what create\-About\-Data returns is passed to the caller (this template) .
+
+\-For advanced use you can also inherit from the template and re-\/implement additionally the virtual \-K\-Component\-Data \hyperlink{classKParts_1_1GenericFactoryBase_ae90ec2009529241553290269f3108134}{create\-Component\-Data()} method, for example in case you want to extend the paths of your instance's \-K\-Standard\-Dirs object.
+
+\-If a \hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} is requested through this factory and the template argument implements a \hyperlink{classKParts_1_1ReadWritePart}{\-K\-Parts\-::\-Read\-Write\-Part} then set\-Read\-Write( false ) will automatically be called in create\-Part\-Object.
+
+\-Use the factory through the \-K\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-\_\-\-F\-A\-C\-T\-O\-R\-Y macro, like that\-: 
+\begin{DoxyCode}
+ typedef KParts::GenericFactory&lt;YourKPart&gt; YourKPartFactory;
+ K_EXPORT_COMPONENT_FACTORY( yourlibrary, YourKPartFactory )
+\end{DoxyCode}
+ yourlibrary is the library name that you compiled your \-K\-Part into. 
+
+\-Definition at line 110 of file genericfactory.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1GenericFactory_aef00baf603a775a324f84fb30ba5a0f4}{\index{\-K\-Parts\-::\-Generic\-Factory@{\-K\-Parts\-::\-Generic\-Factory}!\-Generic\-Factory@{\-Generic\-Factory}}
+\index{\-Generic\-Factory@{\-Generic\-Factory}!KParts::GenericFactory@{\-K\-Parts\-::\-Generic\-Factory}}
+\subsubsection[{\-Generic\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf \-K\-Parts\-::\-Generic\-Factory}$<$ \-T $>$\-::{\bf \-Generic\-Factory} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classKParts_1_1GenericFactory_aef00baf603a775a324f84fb30ba5a0f4}
+
+
+\-Definition at line 113 of file genericfactory.\-h.
+
+
+\begin{DoxyCode}
+{ }
+\end{DoxyCode}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1GenericFactory_ac80d722fb2433018dfea04f0f6b89f74}{\index{\-K\-Parts\-::\-Generic\-Factory@{\-K\-Parts\-::\-Generic\-Factory}!create\-Part\-Object@{create\-Part\-Object}}
+\index{create\-Part\-Object@{create\-Part\-Object}!KParts::GenericFactory@{\-K\-Parts\-::\-Generic\-Factory}}
+\subsubsection[{create\-Part\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ virtual {\bf \-K\-Parts\-::\-Part}$\ast$ {\bf \-K\-Parts\-::\-Generic\-Factory}$<$ \-T $>$\-::{\bf create\-Part\-Object} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Widget $\ast$}]{parent\-Widget, }
+\item[{\-Q\-Object $\ast$}]{parent, }
+\item[{const char $\ast$}]{classname, }
+\item[{const \-Q\-String\-List \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classKParts_1_1GenericFactory_ac80d722fb2433018dfea04f0f6b89f74}
+\-Reimplement this method in your implementation to create the \hyperlink{classKParts_1_1Part}{\-Part}.
+
+\-The \-Q\-String\-List can be used to pass additional arguments to the part. \-If the part needs additional arguments, it should take them as name=\char`\"{}value\char`\"{} pairs. \-This is the way additional arguments will get passed to the part from eg. khtml. \-You can for example emebed the part into \-H\-T\-M\-L by using the following code\-: 
+\begin{DoxyCode}
+    <object type="my_mimetype" data="url_to_my_data">
+        <param name="name1" value="value1">
+        <param name="name2" value="value2">
+    </object>
+\end{DoxyCode}
+ \-This could result in a call to 
+\begin{DoxyCode}
+     createPart( parentWidget, parentObject, "KParts::Part",
+                 QStringList("name1="value1"", "name2="value2") );
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{\-Returns}
+the newly created part. 
+\end{DoxyReturn}
+
+
+\-Implements \hyperlink{classKParts_1_1Factory_a05e336b747b65776e31db466736570f2}{\-K\-Parts\-::\-Factory}.
+
+
+
+\-Definition at line 115 of file genericfactory.\-h.
+
+
+\begin{DoxyCode}
+        {
+            T *part = KDEPrivate::ConcreteFactory<T>::create( parentWidget,
+                                                              parent,
+                                                              className,
+                                                              args );
+
+            if ( part && !qstrcmp( className, "KParts::ReadOnlyPart" ) )
+            {
+                KParts::ReadWritePart *rwp = dynamic_cast<KParts::ReadWritePart
+       *>( part );
+                if ( rwp )
+                    rwp->setReadWrite( false );
+            }
+            return part;
+        }
+\end{DoxyCode}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{genericfactory_8h}{genericfactory.\-h}\end{DoxyCompactItemize}

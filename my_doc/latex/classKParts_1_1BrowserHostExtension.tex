@@ -1,0 +1,102 @@
+\hypertarget{classKParts_1_1BrowserHostExtension}{\section{\-K\-Parts\-:\-:\-Browser\-Host\-Extension \-Class \-Reference}
+\label{classKParts_1_1BrowserHostExtension}\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+}
+
+
+{\ttfamily \#include $<$browserextension.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1BrowserHostExtension_af1c75309d63462007edd8536c0e57274}{\-Browser\-Host\-Extension} (\hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$parent)
+\item 
+virtual \hyperlink{classKParts_1_1BrowserHostExtension_aa7202fb68e55dcf3556e0611c6b78263}{$\sim$\-Browser\-Host\-Extension} ()
+\item 
+virtual \-Q\-String\-List \hyperlink{classKParts_1_1BrowserHostExtension_a25ae4238d3c4f556ee9c7287c16c0f09}{frame\-Names} () const 
+\item 
+virtual const \-Q\-List\*
+$<$ \hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$ $>$ \hyperlink{classKParts_1_1BrowserHostExtension_a65a6429a794aa78ff5de27f973a43e86}{frames} () const 
+\item 
+virtual \hyperlink{classKParts_1_1BrowserHostExtension}{\-Browser\-Host\-Extension} $\ast$ \hyperlink{classKParts_1_1BrowserHostExtension_aa7d6192b9f6a399135f34d530d74a3e7}{find\-Frame\-Parent} (\hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$calling\-Part, const \-Q\-String \&frame)
+\item 
+virtual bool \hyperlink{classKParts_1_1BrowserHostExtension_ae0227348d8b864d3093fb5dc6ca876f0}{open\-Url\-In\-Frame} (const \-K\-Url \&url, const \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} \&arguments, const \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} \&browser\-Arguments)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1BrowserHostExtension}{\-Browser\-Host\-Extension} $\ast$ \hyperlink{classKParts_1_1BrowserHostExtension_aa0a695c166742e7f49f65d8a2f3d5216}{child\-Object} (\-Q\-Object $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An extension class for container parts, i.\-e. parts that contain other parts. \-For instance a \-K\-H\-T\-M\-L\-Part hosts one part per frame. 
+
+\-Definition at line 712 of file browserextension.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1BrowserHostExtension_af1c75309d63462007edd8536c0e57274}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!\-Browser\-Host\-Extension@{\-Browser\-Host\-Extension}}
+\index{\-Browser\-Host\-Extension@{\-Browser\-Host\-Extension}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{\-Browser\-Host\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::\-Browser\-Host\-Extension} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Read\-Only\-Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserHostExtension_af1c75309d63462007edd8536c0e57274}
+\hypertarget{classKParts_1_1BrowserHostExtension_aa7202fb68e55dcf3556e0611c6b78263}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!$\sim$\-Browser\-Host\-Extension@{$\sim$\-Browser\-Host\-Extension}}
+\index{$\sim$\-Browser\-Host\-Extension@{$\sim$\-Browser\-Host\-Extension}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{$\sim$\-Browser\-Host\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::$\sim$\-Browser\-Host\-Extension} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserHostExtension_aa7202fb68e55dcf3556e0611c6b78263}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1BrowserHostExtension_aa0a695c166742e7f49f65d8a2f3d5216}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!child\-Object@{child\-Object}}
+\index{child\-Object@{child\-Object}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{child\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Browser\-Host\-Extension}$\ast$ {\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::child\-Object} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classKParts_1_1BrowserHostExtension_aa0a695c166742e7f49f65d8a2f3d5216}
+\-Queries {\ttfamily obj} for a child object which inherits from this \hyperlink{classKParts_1_1BrowserHostExtension}{\-Browser\-Host\-Extension} class. \-Convenience method. \hypertarget{classKParts_1_1BrowserHostExtension_aa7d6192b9f6a399135f34d530d74a3e7}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!find\-Frame\-Parent@{find\-Frame\-Parent}}
+\index{find\-Frame\-Parent@{find\-Frame\-Parent}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{find\-Frame\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Browser\-Host\-Extension}$\ast$ {\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::find\-Frame\-Parent} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Read\-Only\-Part} $\ast$}]{calling\-Part, }
+\item[{const \-Q\-String \&}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserHostExtension_aa7d6192b9f6a399135f34d530d74a3e7}
+\-Returns the part that contains {\ttfamily frame} and that may be accessed by {\ttfamily calling\-Part} \hypertarget{classKParts_1_1BrowserHostExtension_a25ae4238d3c4f556ee9c7287c16c0f09}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!frame\-Names@{frame\-Names}}
+\index{frame\-Names@{frame\-Names}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{frame\-Names}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-String\-List {\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::frame\-Names} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserHostExtension_a25ae4238d3c4f556ee9c7287c16c0f09}
+\-Returns a list of the names of all hosted child objects.
+
+\-Note that this method does not query the child objects recursively. \hypertarget{classKParts_1_1BrowserHostExtension_a65a6429a794aa78ff5de27f973a43e86}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!frames@{frames}}
+\index{frames@{frames}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{frames}]{\setlength{\rightskip}{0pt plus 5cm}virtual const \-Q\-List$<${\bf \-K\-Parts\-::\-Read\-Only\-Part}$\ast$$>$ {\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::frames} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserHostExtension_a65a6429a794aa78ff5de27f973a43e86}
+\-Returns a list of pointers to all hosted child objects.
+
+\-Note that this method does not query the child objects recursively. \hypertarget{classKParts_1_1BrowserHostExtension_ae0227348d8b864d3093fb5dc6ca876f0}{\index{\-K\-Parts\-::\-Browser\-Host\-Extension@{\-K\-Parts\-::\-Browser\-Host\-Extension}!open\-Url\-In\-Frame@{open\-Url\-In\-Frame}}
+\index{open\-Url\-In\-Frame@{open\-Url\-In\-Frame}!KParts::BrowserHostExtension@{\-K\-Parts\-::\-Browser\-Host\-Extension}}
+\subsubsection[{open\-Url\-In\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Browser\-Host\-Extension\-::open\-Url\-In\-Frame} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url, }
+\item[{const {\bf \-K\-Parts\-::\-Open\-Url\-Arguments} \&}]{arguments, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Arguments} \&}]{browser\-Arguments}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserHostExtension_ae0227348d8b864d3093fb5dc6ca876f0}
+\-Opens the given url in a hosted child frame. \-The frame name is specified in the frame\-Name variable in the {\ttfamily browser\-Arguments} parameter (see \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} ) . 
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browserextension_8h}{browserextension.\-h}\end{DoxyCompactItemize}

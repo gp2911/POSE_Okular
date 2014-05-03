@@ -1,0 +1,499 @@
+\hypertarget{classKParts_1_1PartManager}{\section{\-K\-Parts\-:\-:\-Part\-Manager \-Class \-Reference}
+\label{classKParts_1_1PartManager}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}
+}
+
+
+{\ttfamily \#include $<$partmanager.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34}{\-Selection\-Policy} \{ \hyperlink{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34a79efb88f687be8f2b3aac8df408f837e}{\-Direct}, 
+\hyperlink{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34aa481c1128a4e5df7d28446725af88482}{\-Tri\-State}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Selection policy. \-The default policy of a \hyperlink{classKParts_1_1PartManager}{\-Part\-Manager} is \-Direct. \end{DoxyCompactList}\item 
+enum \hyperlink{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3}{\-Reason} \{ \hyperlink{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a6674110c2c4c77f14b4b1f3f05007930}{\-Reason\-Left\-Click} =  100, 
+\hyperlink{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a994f0fd06068a24c988a111ce920c58a}{\-Reason\-Mid\-Click}, 
+\hyperlink{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a3033a1660a6aaf18dbf6c945d9b0bbaf}{\-Reason\-Right\-Click}, 
+\hyperlink{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3ae3a0e71725462dd7c5f6b63d26bddfe9}{\-No\-Reason}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1PartManager_a0ddd1f334b7c397dcb2b11b418604a3f}{part\-Added} (\hyperlink{classKParts_1_1Part}{\-K\-Parts\-::\-Part} $\ast$part)
+\item 
+void \hyperlink{classKParts_1_1PartManager_afacc58788662a9e2eb73cc9418d442d8}{part\-Removed} (\hyperlink{classKParts_1_1Part}{\-K\-Parts\-::\-Part} $\ast$part)
+\item 
+void \hyperlink{classKParts_1_1PartManager_a9142dcbea26a78a91d4075a223594e3d}{active\-Part\-Changed} (\hyperlink{classKParts_1_1Part}{\-K\-Parts\-::\-Part} $\ast$new\-Part)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1PartManager_ad46e63f77ab7dc553f189f7078fee8c8}{\-Part\-Manager} (\-Q\-Widget $\ast$parent)
+\item 
+\hyperlink{classKParts_1_1PartManager_a549d5b81307465317130047f3ffeb92c}{\-Part\-Manager} (\-Q\-Widget $\ast$top\-Level, \-Q\-Object $\ast$parent)
+\item 
+virtual \hyperlink{classKParts_1_1PartManager_ac5a751da0f9ca33698b2e2e9d0e5a8d1}{$\sim$\-Part\-Manager} ()
+\item 
+void \hyperlink{classKParts_1_1PartManager_a1b9382654eab488363d5f96364dee7ec}{set\-Selection\-Policy} (\hyperlink{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34}{\-Selection\-Policy} policy)
+\item 
+\hyperlink{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34}{\-Selection\-Policy} \hyperlink{classKParts_1_1PartManager_a8bf881c3df8e6993e228d4cc63e600f1}{selection\-Policy} () const 
+\item 
+void \hyperlink{classKParts_1_1PartManager_a141f0dc6283775ecd64a9098b434f7dd}{set\-Allow\-Nested\-Parts} (bool allow)
+\item 
+bool \hyperlink{classKParts_1_1PartManager_afd5a6425e74a5199ece97a1fc52375b3}{allow\-Nested\-Parts} () const 
+\item 
+void \hyperlink{classKParts_1_1PartManager_a83d83a92c295bc560166f9f3d7042919}{set\-Ignore\-Scroll\-Bars} (bool ignore)
+\item 
+bool \hyperlink{classKParts_1_1PartManager_ac92933cad3010594b6572b7e680f39e0}{ignore\-Scroll\-Bars} () const 
+\item 
+void \hyperlink{classKParts_1_1PartManager_a1f7d9cd024ca16b2536e8fb415490932}{set\-Activation\-Button\-Mask} (short int button\-Mask)
+\item 
+short int \hyperlink{classKParts_1_1PartManager_ac17b67e82fd11a3c59476c2724c9b489}{activation\-Button\-Mask} () const 
+\item 
+virtual bool \hyperlink{classKParts_1_1PartManager_a7c8b0609da38332cbe2675fff6502e6e}{event\-Filter} (\-Q\-Object $\ast$obj, \-Q\-Event $\ast$ev)
+\item 
+virtual void \hyperlink{classKParts_1_1PartManager_afe85fcc6ec3dbcb401a66c1bf24391e5}{add\-Part} (\hyperlink{classKParts_1_1Part}{\-Part} $\ast$part, bool set\-Active=true)
+\item 
+virtual void \hyperlink{classKParts_1_1PartManager_a0b24449299b70c53b623f22d6a0ea0db}{remove\-Part} (\hyperlink{classKParts_1_1Part}{\-Part} $\ast$part)
+\item 
+virtual void \hyperlink{classKParts_1_1PartManager_af8bffaa758fc5c4009d3d1d9e37cad82}{replace\-Part} (\hyperlink{classKParts_1_1Part}{\-Part} $\ast$old\-Part, \hyperlink{classKParts_1_1Part}{\-Part} $\ast$new\-Part, bool set\-Active=true)
+\item 
+virtual void \hyperlink{classKParts_1_1PartManager_af7b5c8d0002fdd97805e2cd6e5edf953}{set\-Active\-Part} (\hyperlink{classKParts_1_1Part}{\-Part} $\ast$part, \-Q\-Widget $\ast$widget=0)
+\item 
+virtual \hyperlink{classKParts_1_1Part}{\-Part} $\ast$ \hyperlink{classKParts_1_1PartManager_a5d2bd122e406ce153cc28135e2da78de}{active\-Part} () const 
+\item 
+virtual \-Q\-Widget $\ast$ \hyperlink{classKParts_1_1PartManager_aa2b5518384d745561b968764ca7ca2b1}{active\-Widget} () const 
+\item 
+virtual void \hyperlink{classKParts_1_1PartManager_a1df9580cc201575d32c3203296678dbb}{set\-Selected\-Part} (\hyperlink{classKParts_1_1Part}{\-Part} $\ast$part, \-Q\-Widget $\ast$widget=0)
+\item 
+virtual \hyperlink{classKParts_1_1Part}{\-Part} $\ast$ \hyperlink{classKParts_1_1PartManager_a706102e108c2683b9e38782545e0a817}{selected\-Part} () const 
+\item 
+virtual \-Q\-Widget $\ast$ \hyperlink{classKParts_1_1PartManager_a92a6bf8063ca8b38728199b49983637c}{selected\-Widget} () const 
+\item 
+const \-Q\-List$<$ \hyperlink{classKParts_1_1Part}{\-Part} $\ast$ $>$ \hyperlink{classKParts_1_1PartManager_a9d5edb8bc36564f884a63f54a50ec787}{parts} () const 
+\item 
+void \hyperlink{classKParts_1_1PartManager_abe98bb196d2d7d6e154f554dd32e5ae0}{add\-Managed\-Top\-Level\-Widget} (const \-Q\-Widget $\ast$top\-Level)
+\item 
+void \hyperlink{classKParts_1_1PartManager_a4e4efe62ab0feb8ecd7c2463e179a77d}{remove\-Managed\-Top\-Level\-Widget} (const \-Q\-Widget $\ast$top\-Level)
+\item 
+int \hyperlink{classKParts_1_1PartManager_a35ac9816c27e769deeed841ada32c36d}{reason} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1PartManager_a302a72cbb49af3e0a812ce5e9225c365}{slot\-Object\-Destroyed} ()
+\item 
+void \hyperlink{classKParts_1_1PartManager_ae4126097ecd82d223c316a2b2bb3ef4f}{slot\-Widget\-Destroyed} ()
+\item 
+void \hyperlink{classKParts_1_1PartManager_a74ca60268029a118ee48bb8d84b729e7}{slot\-Managed\-Top\-Level\-Widget\-Destroyed} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classKParts_1_1PartManager_a17cac95827d9bccd23b766582ad349ab}{set\-Active\-Component} (const \-K\-Component\-Data \&instance)
+\end{DoxyCompactItemize}
+\subsection*{\-Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34}{\-Selection\-Policy} \hyperlink{classKParts_1_1PartManager_a277840d67f7fbbacf3e11a272d649ac1}{selection\-Policy}
+\item 
+bool \hyperlink{classKParts_1_1PartManager_a779543221cd7fa24276da76cf17226f4}{allow\-Nested\-Parts}
+\item 
+bool \hyperlink{classKParts_1_1PartManager_a070b8ead9df929e2de58fc4a02b9e8ba}{ignore\-Scroll\-Bars}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The part manager is an object which knows about a collection of parts (even nested ones) and handles activation/deactivation.
+
+\-Applications that want to embed parts without merging \-G\-U\-Is only use a \hyperlink{classKParts_1_1PartManager}{\-K\-Parts\-::\-Part\-Manager}. \-Those who want to merge \-G\-U\-Is use a \hyperlink{classKParts_1_1MainWindow}{\-K\-Parts\-::\-Main\-Window} for example, in addition to a part manager.
+
+\-Parts know about the part manager to add nested parts to it. \-See also \hyperlink{classKParts_1_1Part_a06ea4dd249752f23229bc30b693eed44}{\-K\-Parts\-::\-Part\-::manager()} and \hyperlink{classKParts_1_1Part_afb87e3aed12cfdd6ecf057f916c7889f}{\-K\-Parts\-::\-Part\-::set\-Manager()}. 
+
+\-Definition at line 47 of file partmanager.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Reason@{\-Reason}}
+\index{\-Reason@{\-Reason}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{\-Reason}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-K\-Parts\-::\-Part\-Manager\-::\-Reason}}}\label{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3}
+\-This extends \-Q\-Focus\-Event\-::\-Reason with the non-\/focus-\/event reasons for partmanager to activate a part. \-To test for \char`\"{}any focusin reason\char`\"{}, use $<$ \-Reason\-Left\-Click \-No\-Reason usually means\-: explicit activation with \hyperlink{classKParts_1_1PartManager_af7b5c8d0002fdd97805e2cd6e5edf953}{set\-Active\-Part}. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Reason\-Left\-Click@{\-Reason\-Left\-Click}!\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Reason\-Left\-Click@{\-Reason\-Left\-Click}}\item[{\em 
+\hypertarget{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a6674110c2c4c77f14b4b1f3f05007930}{\-Reason\-Left\-Click}\label{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a6674110c2c4c77f14b4b1f3f05007930}
+}]\index{\-Reason\-Mid\-Click@{\-Reason\-Mid\-Click}!\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Reason\-Mid\-Click@{\-Reason\-Mid\-Click}}\item[{\em 
+\hypertarget{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a994f0fd06068a24c988a111ce920c58a}{\-Reason\-Mid\-Click}\label{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a994f0fd06068a24c988a111ce920c58a}
+}]\index{\-Reason\-Right\-Click@{\-Reason\-Right\-Click}!\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Reason\-Right\-Click@{\-Reason\-Right\-Click}}\item[{\em 
+\hypertarget{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a3033a1660a6aaf18dbf6c945d9b0bbaf}{\-Reason\-Right\-Click}\label{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3a3033a1660a6aaf18dbf6c945d9b0bbaf}
+}]\index{\-No\-Reason@{\-No\-Reason}!\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-No\-Reason@{\-No\-Reason}}\item[{\em 
+\hypertarget{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3ae3a0e71725462dd7c5f6b63d26bddfe9}{\-No\-Reason}\label{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3ae3a0e71725462dd7c5f6b63d26bddfe9}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 63 of file partmanager.\-h.
+
+
+\begin{DoxyCode}
+{ ReasonLeftClick = 100, ReasonMidClick, ReasonRightClick, NoReason };
+\end{DoxyCode}
+\hypertarget{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Selection\-Policy@{\-Selection\-Policy}}
+\index{\-Selection\-Policy@{\-Selection\-Policy}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{\-Selection\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-K\-Parts\-::\-Part\-Manager\-::\-Selection\-Policy}}}\label{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34}
+
+
+\-Selection policy. \-The default policy of a \hyperlink{classKParts_1_1PartManager}{\-Part\-Manager} is \-Direct. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Direct@{\-Direct}!\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Direct@{\-Direct}}\item[{\em 
+\hypertarget{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34a79efb88f687be8f2b3aac8df408f837e}{\-Direct}\label{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34a79efb88f687be8f2b3aac8df408f837e}
+}]\index{\-Tri\-State@{\-Tri\-State}!\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}}\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Tri\-State@{\-Tri\-State}}\item[{\em 
+\hypertarget{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34aa481c1128a4e5df7d28446725af88482}{\-Tri\-State}\label{classKParts_1_1PartManager_a7db25fb7e7f91548fa15566b3af4bb34aa481c1128a4e5df7d28446725af88482}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 56 of file partmanager.\-h.
+
+
+\begin{DoxyCode}
+{ Direct, TriState };
+\end{DoxyCode}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1PartManager_ad46e63f77ab7dc553f189f7078fee8c8}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Part\-Manager@{\-Part\-Manager}}
+\index{\-Part\-Manager@{\-Part\-Manager}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{\-Part\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Part\-Manager\-::\-Part\-Manager} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_ad46e63f77ab7dc553f189f7078fee8c8}
+\-Constructs a part manager.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parent} & \-The toplevel widget (window / dialog) the partmanager should monitor for activation/selection events \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1PartManager_a549d5b81307465317130047f3ffeb92c}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!\-Part\-Manager@{\-Part\-Manager}}
+\index{\-Part\-Manager@{\-Part\-Manager}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{\-Part\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Part\-Manager\-::\-Part\-Manager} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Widget $\ast$}]{top\-Level, }
+\item[{\-Q\-Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_a549d5b81307465317130047f3ffeb92c}
+\-Constructs a part manager.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em top\-Level} & \-The toplevel widget (window / dialog ) the partmanager should monitor for activation/selection events \\
+\hline
+{\em parent} & \-The parent \-Q\-Object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1PartManager_ac5a751da0f9ca33698b2e2e9d0e5a8d1}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!$\sim$\-Part\-Manager@{$\sim$\-Part\-Manager}}
+\index{$\sim$\-Part\-Manager@{$\sim$\-Part\-Manager}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{$\sim$\-Part\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-K\-Parts\-::\-Part\-Manager\-::$\sim$\-Part\-Manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_ac5a751da0f9ca33698b2e2e9d0e5a8d1}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1PartManager_ac17b67e82fd11a3c59476c2724c9b489}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!activation\-Button\-Mask@{activation\-Button\-Mask}}
+\index{activation\-Button\-Mask@{activation\-Button\-Mask}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{activation\-Button\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}short int {\bf \-K\-Parts\-::\-Part\-Manager\-::activation\-Button\-Mask} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartManager_ac17b67e82fd11a3c59476c2724c9b489}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_a1f7d9cd024ca16b2536e8fb415490932}{set\-Activation\-Button\-Mask} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_a5d2bd122e406ce153cc28135e2da78de}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!active\-Part@{active\-Part}}
+\index{active\-Part@{active\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{active\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Part}$\ast$ {\bf \-K\-Parts\-::\-Part\-Manager\-::active\-Part} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a5d2bd122e406ce153cc28135e2da78de}
+\-Returns the active part. \hypertarget{classKParts_1_1PartManager_a9142dcbea26a78a91d4075a223594e3d}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!active\-Part\-Changed@{active\-Part\-Changed}}
+\index{active\-Part\-Changed@{active\-Part\-Changed}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{active\-Part\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::active\-Part\-Changed} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Part} $\ast$}]{new\-Part}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1PartManager_a9142dcbea26a78a91d4075a223594e3d}
+\-Emitted when the active part has changed. \begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_af7b5c8d0002fdd97805e2cd6e5edf953}{set\-Active\-Part()} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_aa2b5518384d745561b968764ca7ca2b1}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!active\-Widget@{active\-Widget}}
+\index{active\-Widget@{active\-Widget}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{active\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-Widget$\ast$ {\bf \-K\-Parts\-::\-Part\-Manager\-::active\-Widget} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_aa2b5518384d745561b968764ca7ca2b1}
+\-Returns the active widget of the current active part (see active\-Part ). \hypertarget{classKParts_1_1PartManager_abe98bb196d2d7d6e154f554dd32e5ae0}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!add\-Managed\-Top\-Level\-Widget@{add\-Managed\-Top\-Level\-Widget}}
+\index{add\-Managed\-Top\-Level\-Widget@{add\-Managed\-Top\-Level\-Widget}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{add\-Managed\-Top\-Level\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::add\-Managed\-Top\-Level\-Widget} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-Widget $\ast$}]{top\-Level}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_abe98bb196d2d7d6e154f554dd32e5ae0}
+\-Adds the {\ttfamily top\-Level} widget to the list of managed toplevel widgets. \-Usually a \hyperlink{classKParts_1_1PartManager}{\-Part\-Manager} only listens for events (for activation/selection) for one toplevel widget (and its children) , the one specified in the constructor. \-Sometimes however (like for example when using the \-K\-D\-E dockwidget library) , it is necessary to extend this. \hypertarget{classKParts_1_1PartManager_afe85fcc6ec3dbcb401a66c1bf24391e5}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!add\-Part@{add\-Part}}
+\index{add\-Part@{add\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{add\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Part\-Manager\-::add\-Part} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Part} $\ast$}]{part, }
+\item[{bool}]{set\-Active = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_afe85fcc6ec3dbcb401a66c1bf24391e5}
+\-Adds a part to the manager.
+
+\-Sets it to the active part automatically if {\ttfamily set\-Active} is true (default ). \-Behavior fix in \-K\-D\-E3.\-4\-: the part's widget is shown only if set\-Active is true, it used to be shown in all cases before. \hypertarget{classKParts_1_1PartManager_afd5a6425e74a5199ece97a1fc52375b3}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!allow\-Nested\-Parts@{allow\-Nested\-Parts}}
+\index{allow\-Nested\-Parts@{allow\-Nested\-Parts}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{allow\-Nested\-Parts}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Part\-Manager\-::allow\-Nested\-Parts} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartManager_afd5a6425e74a5199ece97a1fc52375b3}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_a141f0dc6283775ecd64a9098b434f7dd}{set\-Allow\-Nested\-Parts} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_a7c8b0609da38332cbe2675fff6502e6e}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!event\-Filter@{event\-Filter}}
+\index{event\-Filter@{event\-Filter}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{event\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Part\-Manager\-::event\-Filter} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Object $\ast$}]{obj, }
+\item[{\-Q\-Event $\ast$}]{ev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a7c8b0609da38332cbe2675fff6502e6e}
+\hypertarget{classKParts_1_1PartManager_ac92933cad3010594b6572b7e680f39e0}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!ignore\-Scroll\-Bars@{ignore\-Scroll\-Bars}}
+\index{ignore\-Scroll\-Bars@{ignore\-Scroll\-Bars}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{ignore\-Scroll\-Bars}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Part\-Manager\-::ignore\-Scroll\-Bars} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartManager_ac92933cad3010594b6572b7e680f39e0}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_a83d83a92c295bc560166f9f3d7042919}{set\-Ignore\-Scroll\-Bars} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_a0ddd1f334b7c397dcb2b11b418604a3f}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!part\-Added@{part\-Added}}
+\index{part\-Added@{part\-Added}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{part\-Added}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::part\-Added} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Part} $\ast$}]{part}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1PartManager_a0ddd1f334b7c397dcb2b11b418604a3f}
+\-Emitted when a new part has been added. \begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_afe85fcc6ec3dbcb401a66c1bf24391e5}{add\-Part()} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_afacc58788662a9e2eb73cc9418d442d8}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!part\-Removed@{part\-Removed}}
+\index{part\-Removed@{part\-Removed}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{part\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::part\-Removed} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Part} $\ast$}]{part}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1PartManager_afacc58788662a9e2eb73cc9418d442d8}
+\-Emitted when a part has been removed. \begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_a0b24449299b70c53b623f22d6a0ea0db}{remove\-Part()} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_a9d5edb8bc36564f884a63f54a50ec787}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!parts@{parts}}
+\index{parts@{parts}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{parts}]{\setlength{\rightskip}{0pt plus 5cm}const \-Q\-List$<${\bf \-Part} $\ast$$>$ {\bf \-K\-Parts\-::\-Part\-Manager\-::parts} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartManager_a9d5edb8bc36564f884a63f54a50ec787}
+\-Returns the list of parts being managed by the partmanager. \hypertarget{classKParts_1_1PartManager_a35ac9816c27e769deeed841ada32c36d}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!reason@{reason}}
+\index{reason@{reason}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{reason}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-K\-Parts\-::\-Part\-Manager\-::reason} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartManager_a35ac9816c27e769deeed841ada32c36d}
+\begin{DoxyReturn}{\-Returns}
+the reason for the last active\-Part\-Changed signal emitted. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_a2210acbbe8638df29b112c48e4d9cfb3}{\-Reason} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_a4e4efe62ab0feb8ecd7c2463e179a77d}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!remove\-Managed\-Top\-Level\-Widget@{remove\-Managed\-Top\-Level\-Widget}}
+\index{remove\-Managed\-Top\-Level\-Widget@{remove\-Managed\-Top\-Level\-Widget}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{remove\-Managed\-Top\-Level\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::remove\-Managed\-Top\-Level\-Widget} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-Widget $\ast$}]{top\-Level}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_a4e4efe62ab0feb8ecd7c2463e179a77d}
+\-Removes the {\ttfamily top\-Level} widget from the list of managed toplevel widgets. \begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1PartManager_abe98bb196d2d7d6e154f554dd32e5ae0}{add\-Managed\-Top\-Level\-Widget} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1PartManager_a0b24449299b70c53b623f22d6a0ea0db}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!remove\-Part@{remove\-Part}}
+\index{remove\-Part@{remove\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{remove\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Part\-Manager\-::remove\-Part} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Part} $\ast$}]{part}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a0b24449299b70c53b623f22d6a0ea0db}
+\-Removes a part from the manager (this does not delete the object) .
+
+\-Sets the active part to 0 if {\ttfamily part} is the \hyperlink{classKParts_1_1PartManager_a5d2bd122e406ce153cc28135e2da78de}{active\-Part()} . \hypertarget{classKParts_1_1PartManager_af8bffaa758fc5c4009d3d1d9e37cad82}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!replace\-Part@{replace\-Part}}
+\index{replace\-Part@{replace\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{replace\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Part\-Manager\-::replace\-Part} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Part} $\ast$}]{old\-Part, }
+\item[{{\bf \-Part} $\ast$}]{new\-Part, }
+\item[{bool}]{set\-Active = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_af8bffaa758fc5c4009d3d1d9e37cad82}
+\-Replaces {\ttfamily old\-Part} with {\ttfamily new\-Part}, and sets {\ttfamily new\-Part} as active if {\ttfamily set\-Active} is true. \-This is an optimised version of remove\-Part + add\-Part \hypertarget{classKParts_1_1PartManager_a706102e108c2683b9e38782545e0a817}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!selected\-Part@{selected\-Part}}
+\index{selected\-Part@{selected\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{selected\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Part}$\ast$ {\bf \-K\-Parts\-::\-Part\-Manager\-::selected\-Part} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a706102e108c2683b9e38782545e0a817}
+\-Returns the current selected part. \hypertarget{classKParts_1_1PartManager_a92a6bf8063ca8b38728199b49983637c}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!selected\-Widget@{selected\-Widget}}
+\index{selected\-Widget@{selected\-Widget}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{selected\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-Widget$\ast$ {\bf \-K\-Parts\-::\-Part\-Manager\-::selected\-Widget} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a92a6bf8063ca8b38728199b49983637c}
+\-Returns the selected widget of the current selected part (see selected\-Part ). \hypertarget{classKParts_1_1PartManager_a8bf881c3df8e6993e228d4cc63e600f1}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!selection\-Policy@{selection\-Policy}}
+\index{selection\-Policy@{selection\-Policy}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{selection\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Selection\-Policy} {\bf \-K\-Parts\-::\-Part\-Manager\-::selection\-Policy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1PartManager_a8bf881c3df8e6993e228d4cc63e600f1}
+\-Returns the current selection policy. \hypertarget{classKParts_1_1PartManager_a1f7d9cd024ca16b2536e8fb415490932}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Activation\-Button\-Mask@{set\-Activation\-Button\-Mask}}
+\index{set\-Activation\-Button\-Mask@{set\-Activation\-Button\-Mask}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Activation\-Button\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Activation\-Button\-Mask} (
+\begin{DoxyParamCaption}
+\item[{short int}]{button\-Mask}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_a1f7d9cd024ca16b2536e8fb415490932}
+\-Specifies which mouse buttons the partmanager should react upon. \-By default it reacts on all mouse buttons (\-L\-M\-B/\-M\-M\-B/\-R\-M\-B). 
+\begin{DoxyParams}{\-Parameters}
+{\em button\-Mask} & a combination of \-Qt\-::\-Button\-State values e.\-g. \-Qt\-::\-Left\-Button $|$ \-Qt\-::\-Mid\-Button \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1PartManager_a17cac95827d9bccd23b766582ad349ab}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Active\-Component@{set\-Active\-Component}}
+\index{set\-Active\-Component@{set\-Active\-Component}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Active\-Component}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Active\-Component} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Component\-Data \&}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a17cac95827d9bccd23b766582ad349ab}
+\-Changes the active instance when the active part changes. \-The active instance is used by \-K\-Bug\-Report and \-K\-About\-Dialog. \-Override if you really need to -\/ usually you don't need to. \hypertarget{classKParts_1_1PartManager_af7b5c8d0002fdd97805e2cd6e5edf953}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Active\-Part@{set\-Active\-Part}}
+\index{set\-Active\-Part@{set\-Active\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Active\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Active\-Part} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Part} $\ast$}]{part, }
+\item[{\-Q\-Widget $\ast$}]{widget = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_af7b5c8d0002fdd97805e2cd6e5edf953}
+\-Sets the active part.
+
+\-The active part receives activation events.
+
+{\ttfamily widget} can be used to specify which widget was responsible for the activation. \-This is important if you have multiple views for a document/part , like in \-K\-Office . \hypertarget{classKParts_1_1PartManager_a141f0dc6283775ecd64a9098b434f7dd}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Allow\-Nested\-Parts@{set\-Allow\-Nested\-Parts}}
+\index{set\-Allow\-Nested\-Parts@{set\-Allow\-Nested\-Parts}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Allow\-Nested\-Parts}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Allow\-Nested\-Parts} (
+\begin{DoxyParamCaption}
+\item[{bool}]{allow}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_a141f0dc6283775ecd64a9098b434f7dd}
+\-Specifies whether the partmanager should handle/allow nested parts or not.
+
+\-This is a property the shell has to set/specify. \-Per default we assume that the shell cannot handle nested parts. \-However in case of a \-K\-Office shell for example we allow nested parts. \-A \hyperlink{classKParts_1_1Part}{\-Part} is nested (a child part) if its parent object inherits \hyperlink{classKParts_1_1Part}{\-K\-Parts\-::\-Part}. \-If a child part is activated and nested parts are not allowed/handled, then the top parent part in the tree is activated. \hypertarget{classKParts_1_1PartManager_a83d83a92c295bc560166f9f3d7042919}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Ignore\-Scroll\-Bars@{set\-Ignore\-Scroll\-Bars}}
+\index{set\-Ignore\-Scroll\-Bars@{set\-Ignore\-Scroll\-Bars}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Ignore\-Scroll\-Bars}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Ignore\-Scroll\-Bars} (
+\begin{DoxyParamCaption}
+\item[{bool}]{ignore}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_a83d83a92c295bc560166f9f3d7042919}
+\-Specifies whether the partmanager should ignore mouse click events for scrollbars or not. \-If the partmanager ignores them, then clicking on the scrollbars of a non-\/active/non-\/selected part will not change the selection or activation state.
+
+\-The default value is false (read\-: scrollbars are \-N\-O\-T ignored). \hypertarget{classKParts_1_1PartManager_a1df9580cc201575d32c3203296678dbb}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Selected\-Part@{set\-Selected\-Part}}
+\index{set\-Selected\-Part@{set\-Selected\-Part}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Selected\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Selected\-Part} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Part} $\ast$}]{part, }
+\item[{\-Q\-Widget $\ast$}]{widget = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1PartManager_a1df9580cc201575d32c3203296678dbb}
+\-Sets the selected part.
+
+\-The selected part receives selection events.
+
+{\ttfamily widget} can be used to specify which widget was responsible for the selection. \-This is important if you have multiple views for a document/part , like in \-K\-Office . \hypertarget{classKParts_1_1PartManager_a1b9382654eab488363d5f96364dee7ec}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!set\-Selection\-Policy@{set\-Selection\-Policy}}
+\index{set\-Selection\-Policy@{set\-Selection\-Policy}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{set\-Selection\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::set\-Selection\-Policy} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Selection\-Policy}}]{policy}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1PartManager_a1b9382654eab488363d5f96364dee7ec}
+\-Sets the selection policy of the partmanager. \hypertarget{classKParts_1_1PartManager_a74ca60268029a118ee48bb8d84b729e7}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!slot\-Managed\-Top\-Level\-Widget\-Destroyed@{slot\-Managed\-Top\-Level\-Widget\-Destroyed}}
+\index{slot\-Managed\-Top\-Level\-Widget\-Destroyed@{slot\-Managed\-Top\-Level\-Widget\-Destroyed}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{slot\-Managed\-Top\-Level\-Widget\-Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::slot\-Managed\-Top\-Level\-Widget\-Destroyed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, slot\mbox{]}}}}\label{classKParts_1_1PartManager_a74ca60268029a118ee48bb8d84b729e7}
+\hypertarget{classKParts_1_1PartManager_a302a72cbb49af3e0a812ce5e9225c365}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!slot\-Object\-Destroyed@{slot\-Object\-Destroyed}}
+\index{slot\-Object\-Destroyed@{slot\-Object\-Destroyed}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{slot\-Object\-Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::slot\-Object\-Destroyed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, slot\mbox{]}}}}\label{classKParts_1_1PartManager_a302a72cbb49af3e0a812ce5e9225c365}
+\-Removes a part when it is destroyed. \hypertarget{classKParts_1_1PartManager_ae4126097ecd82d223c316a2b2bb3ef4f}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!slot\-Widget\-Destroyed@{slot\-Widget\-Destroyed}}
+\index{slot\-Widget\-Destroyed@{slot\-Widget\-Destroyed}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{slot\-Widget\-Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Part\-Manager\-::slot\-Widget\-Destroyed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, slot\mbox{]}}}}\label{classKParts_1_1PartManager_ae4126097ecd82d223c316a2b2bb3ef4f}
+
+
+\subsection{\-Property \-Documentation}
+\hypertarget{classKParts_1_1PartManager_a779543221cd7fa24276da76cf17226f4}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!allow\-Nested\-Parts@{allow\-Nested\-Parts}}
+\index{allow\-Nested\-Parts@{allow\-Nested\-Parts}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{allow\-Nested\-Parts}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Part\-Manager\-::allow\-Nested\-Parts}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write\mbox{]}}}}\label{classKParts_1_1PartManager_a779543221cd7fa24276da76cf17226f4}
+
+
+\-Definition at line 52 of file partmanager.\-h.
+
+\hypertarget{classKParts_1_1PartManager_a070b8ead9df929e2de58fc4a02b9e8ba}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!ignore\-Scroll\-Bars@{ignore\-Scroll\-Bars}}
+\index{ignore\-Scroll\-Bars@{ignore\-Scroll\-Bars}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{ignore\-Scroll\-Bars}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Part\-Manager\-::ignore\-Scroll\-Bars}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write\mbox{]}}}}\label{classKParts_1_1PartManager_a070b8ead9df929e2de58fc4a02b9e8ba}
+
+
+\-Definition at line 53 of file partmanager.\-h.
+
+\hypertarget{classKParts_1_1PartManager_a277840d67f7fbbacf3e11a272d649ac1}{\index{\-K\-Parts\-::\-Part\-Manager@{\-K\-Parts\-::\-Part\-Manager}!selection\-Policy@{selection\-Policy}}
+\index{selection\-Policy@{selection\-Policy}!KParts::PartManager@{\-K\-Parts\-::\-Part\-Manager}}
+\subsubsection[{selection\-Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Selection\-Policy} {\bf \-K\-Parts\-::\-Part\-Manager\-::selection\-Policy}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write\mbox{]}}}}\label{classKParts_1_1PartManager_a277840d67f7fbbacf3e11a272d649ac1}
+
+
+\-Definition at line 51 of file partmanager.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{partmanager_8h}{partmanager.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,148 @@
+\hypertarget{classKParts_1_1SelectorInterface}{\section{\-K\-Parts\-:\-:\-Selector\-Interface \-Class \-Reference}
+\label{classKParts_1_1SelectorInterface}\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}}
+}
+
+
+{\ttfamily \#include $<$htmlextension.\-h$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classKParts_1_1SelectorInterface_1_1Element}{\-Element}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\-Query\-Method} \{ \hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dcea75dbd3a4d444c3a5f3ec94c2c20c2322}{\-None} =  0x00, 
+\hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dceac39e4ace6e5f56e828ee81b7d1589d4d}{\-Entire\-Content} =  0x01, 
+\hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dcea98dd4d0cb11e9068d9c017a6c666ce83}{\-Selected\-Content} =  0x02
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classKParts_1_1SelectorInterface_a01573870d1fdd7143defe395acd359fd}{$\sim$\-Selector\-Interface} ()
+\item 
+virtual \-Query\-Methods \hyperlink{classKParts_1_1SelectorInterface_a324f1129034129fa347411c70c8c6e39}{supported\-Query\-Methods} () const 
+\item 
+virtual \hyperlink{classKParts_1_1SelectorInterface_1_1Element}{\-Element} \hyperlink{classKParts_1_1SelectorInterface_a704329531ffbb8abe80c97daaea01b4d}{query\-Selector} (const \-Q\-String \&query, \hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\-Query\-Method} method) const =0
+\item 
+virtual \-Q\-List$<$ \hyperlink{classKParts_1_1SelectorInterface_1_1Element}{\-Element} $>$ \hyperlink{classKParts_1_1SelectorInterface_afe199d585952b4aeb1717122753616b3}{query\-Selector\-All} (const \-Q\-String \&query, \hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\-Query\-Method} method) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Optional base class for \-Html\-Extension-\/derived classes \-Provides \-D\-O\-M \-Selector like \-A\-P\-I\-: query\-Selector and query\-Selector\-All, in order to find specific elements in an \-H\-T\-M\-L document.
+
+\-Example\-: {\ttfamily  const \-Q\-List$<$\-Selector\-Interface\-::\-Element$>$ elements = selector\-Interface-\/$>$query\-Selector\-All(\char`\"{}head $>$ link\mbox{[}rel=$\backslash$\char`\"{}alternate"\mbox{]}"); } 
+
+\-Definition at line 89 of file htmlextension.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!\-Query\-Method@{\-Query\-Method}}
+\index{\-Query\-Method@{\-Query\-Method}!KParts::SelectorInterface@{\-K\-Parts\-::\-Selector\-Interface}}
+\subsubsection[{\-Query\-Method}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-K\-Parts\-::\-Selector\-Interface\-::\-Query\-Method}}}\label{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}
+\-Query methods. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-None@{\-None}!\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}}\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!\-None@{\-None}}\item[{\em 
+\hypertarget{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dcea75dbd3a4d444c3a5f3ec94c2c20c2322}{\-None}\label{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dcea75dbd3a4d444c3a5f3ec94c2c20c2322}
+}]\-Quering is not possible. \index{\-Entire\-Content@{\-Entire\-Content}!\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}}\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!\-Entire\-Content@{\-Entire\-Content}}\item[{\em 
+\hypertarget{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dceac39e4ace6e5f56e828ee81b7d1589d4d}{\-Entire\-Content}\label{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dceac39e4ace6e5f56e828ee81b7d1589d4d}
+}]\-Query or can query the entire content. \index{\-Selected\-Content@{\-Selected\-Content}!\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}}\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!\-Selected\-Content@{\-Selected\-Content}}\item[{\em 
+\hypertarget{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dcea98dd4d0cb11e9068d9c017a6c666ce83}{\-Selected\-Content}\label{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dcea98dd4d0cb11e9068d9c017a6c666ce83}
+}]\-Query or can query only the user selected content, if any. \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 98 of file htmlextension.\-h.
+
+
+\begin{DoxyCode}
+                     {
+        None = 0x00,                   
+        EntireContent = 0x01,          
+        SelectedContent = 0x02         
+    };
+\end{DoxyCode}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1SelectorInterface_a01573870d1fdd7143defe395acd359fd}{\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!$\sim$\-Selector\-Interface@{$\sim$\-Selector\-Interface}}
+\index{$\sim$\-Selector\-Interface@{$\sim$\-Selector\-Interface}!KParts::SelectorInterface@{\-K\-Parts\-::\-Selector\-Interface}}
+\subsubsection[{$\sim$\-Selector\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-K\-Parts\-::\-Selector\-Interface\-::$\sim$\-Selector\-Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classKParts_1_1SelectorInterface_a01573870d1fdd7143defe395acd359fd}
+\-Destructor 
+
+\-Definition at line 108 of file htmlextension.\-h.
+
+
+\begin{DoxyCode}
+{}
+\end{DoxyCode}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1SelectorInterface_a704329531ffbb8abe80c97daaea01b4d}{\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!query\-Selector@{query\-Selector}}
+\index{query\-Selector@{query\-Selector}!KParts::SelectorInterface@{\-K\-Parts\-::\-Selector\-Interface}}
+\subsubsection[{query\-Selector}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Element} {\bf \-K\-Parts\-::\-Selector\-Interface\-::query\-Selector} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{query, }
+\item[{{\bf \-Query\-Method}}]{method}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classKParts_1_1SelectorInterface_a704329531ffbb8abe80c97daaea01b4d}
+\-Returns the first (in document order) element in this fragment matching the given \-C\-S\-S selector {\ttfamily query} and querying method {\ttfamily method}.
+
+\-Note that since the returned item is static snapshot, i.\-e. not live, it will not be updated when the document changes.
+
+\-If the quering method specified by {\ttfamily method} is not supported or cannot be handled, then a null element is returned.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1SelectorInterface_a324f1129034129fa347411c70c8c6e39}{supported\-Query\-Methods} 
+
+\hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\-Query\-Method} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1SelectorInterface_afe199d585952b4aeb1717122753616b3}{\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!query\-Selector\-All@{query\-Selector\-All}}
+\index{query\-Selector\-All@{query\-Selector\-All}!KParts::SelectorInterface@{\-K\-Parts\-::\-Selector\-Interface}}
+\subsubsection[{query\-Selector\-All}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-List$<${\bf \-Element}$>$ {\bf \-K\-Parts\-::\-Selector\-Interface\-::query\-Selector\-All} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{query, }
+\item[{{\bf \-Query\-Method}}]{method}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classKParts_1_1SelectorInterface_afe199d585952b4aeb1717122753616b3}
+\-Returns all (in document order) elements in this fragment matching the given \-C\-S\-S selector {\ttfamily query} and querying method {\ttfamily method}.
+
+\-Note that since the returned list is static snapshot, i.\-e. not live, it will not be updated when the document changes.
+
+\-If the quering method specified by {\ttfamily method} is not supported or cannot be handled, then an empty list is returned.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1SelectorInterface_a324f1129034129fa347411c70c8c6e39}{supported\-Query\-Methods} 
+
+\hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\-Query\-Method} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1SelectorInterface_a324f1129034129fa347411c70c8c6e39}{\index{\-K\-Parts\-::\-Selector\-Interface@{\-K\-Parts\-::\-Selector\-Interface}!supported\-Query\-Methods@{supported\-Query\-Methods}}
+\index{supported\-Query\-Methods@{supported\-Query\-Methods}!KParts::SelectorInterface@{\-K\-Parts\-::\-Selector\-Interface}}
+\subsubsection[{supported\-Query\-Methods}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Query\-Methods {\bf \-K\-Parts\-::\-Selector\-Interface\-::supported\-Query\-Methods} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1SelectorInterface_a324f1129034129fa347411c70c8c6e39}
+\-Returns the supported query methods.
+
+\-By default this function returns \-None.
+
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1SelectorInterface_a90fe11660661a423709a52c91a969dce}{\-Query\-Method} 
+\end{DoxySeeAlso}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{htmlextension_8h}{htmlextension.\-h}\end{DoxyCompactItemize}

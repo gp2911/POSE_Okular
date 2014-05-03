@@ -1,0 +1,183 @@
+\hypertarget{classKParts_1_1TextExtension}{\section{\-K\-Parts\-:\-:\-Text\-Extension \-Class \-Reference}
+\label{classKParts_1_1TextExtension}\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}}
+}
+
+
+an extension for \hyperlink{namespaceKParts}{\-K\-Parts} that allows to retrieve text from the part.  
+
+
+
+
+{\ttfamily \#include $<$textextension.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685d}{\-Format} \{ \hyperlink{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685da8bb1bd219fcb9237fae7b81b6d640f96}{\-Plain\-Text}, 
+\hyperlink{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685da330994e99d37a75f3720547767822f37}{\-H\-T\-M\-L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1TextExtension_a4d5e1cb28d1faa2dbccef3bb41c058f9}{selection\-Changed} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1TextExtension_a1c7077a3114c42f4b6cf78d4254fe5d0}{\-Text\-Extension} (\hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$parent)
+\item 
+\hyperlink{classKParts_1_1TextExtension_a6d4e46c6cc819826182c3fc522a36b71}{$\sim$\-Text\-Extension} ()
+\item 
+virtual bool \hyperlink{classKParts_1_1TextExtension_a68623c6e7e7f57967c382550ccb3c00e}{has\-Selection} () const 
+\item 
+virtual \-Q\-String \hyperlink{classKParts_1_1TextExtension_a5ea4fb6f2237489affcde7c03e531574}{selected\-Text} (\hyperlink{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685d}{\-Format} format) const 
+\item 
+virtual \-Q\-String \hyperlink{classKParts_1_1TextExtension_a42209cf90f31da5a3b01087518ad8625}{complete\-Text} (\hyperlink{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685d}{\-Format} format) const 
+\item 
+virtual int \hyperlink{classKParts_1_1TextExtension_a62e0cd5df36c13591ed526bf58487d96}{page\-Count} () const 
+\item 
+virtual int \hyperlink{classKParts_1_1TextExtension_a3351795dd9a2257127ce978aaff68448}{current\-Page} () const 
+\item 
+virtual \-Q\-String \hyperlink{classKParts_1_1TextExtension_ab0a417697ec8edb599ba35f38bf90261}{page\-Text} (\hyperlink{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685d}{\-Format} format) const 
+\item 
+virtual bool \hyperlink{classKParts_1_1TextExtension_aaaf29f56cbe212b3eea11d3811bfd270}{find\-Text} (const \-Q\-String \&string, \-K\-Find\-::\-Search\-Options options) const 
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1TextExtension}{\-Text\-Extension} $\ast$ \hyperlink{classKParts_1_1TextExtension_ae6a6df769ff322ad46396e83f26e8dec}{child\-Object} (\-Q\-Object $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+an extension for \hyperlink{namespaceKParts}{\-K\-Parts} that allows to retrieve text from the part. 
+
+\-For instance, the text-\/to-\/speech plugin uses this to speak the whole text from the part or the selected text. \-The translation plugin uses it for translating the selected text, and so on.
+
+\begin{DoxySince}{\-Since}
+4.\-6 
+\end{DoxySince}
+
+
+\-Definition at line 42 of file textextension.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685d}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!\-Format@{\-Format}}
+\index{\-Format@{\-Format}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{\-Format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-K\-Parts\-::\-Text\-Extension\-::\-Format}}}\label{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685d}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Plain\-Text@{\-Plain\-Text}!\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}}\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!\-Plain\-Text@{\-Plain\-Text}}\item[{\em 
+\hypertarget{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685da8bb1bd219fcb9237fae7b81b6d640f96}{\-Plain\-Text}\label{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685da8bb1bd219fcb9237fae7b81b6d640f96}
+}]\index{\-H\-T\-M\-L@{\-H\-T\-M\-L}!\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}}\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!\-H\-T\-M\-L@{\-H\-T\-M\-L}}\item[{\em 
+\hypertarget{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685da330994e99d37a75f3720547767822f37}{\-H\-T\-M\-L}\label{classKParts_1_1TextExtension_a65ad08598c74eae19f0c7772a251685da330994e99d37a75f3720547767822f37}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 55 of file textextension.\-h.
+
+
+\begin{DoxyCode}
+{ PlainText, HTML };
+\end{DoxyCode}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1TextExtension_a1c7077a3114c42f4b6cf78d4254fe5d0}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!\-Text\-Extension@{\-Text\-Extension}}
+\index{\-Text\-Extension@{\-Text\-Extension}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{\-Text\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Text\-Extension\-::\-Text\-Extension} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Read\-Only\-Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1TextExtension_a1c7077a3114c42f4b6cf78d4254fe5d0}
+\hypertarget{classKParts_1_1TextExtension_a6d4e46c6cc819826182c3fc522a36b71}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!$\sim$\-Text\-Extension@{$\sim$\-Text\-Extension}}
+\index{$\sim$\-Text\-Extension@{$\sim$\-Text\-Extension}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{$\sim$\-Text\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Text\-Extension\-::$\sim$\-Text\-Extension} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1TextExtension_a6d4e46c6cc819826182c3fc522a36b71}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1TextExtension_ae6a6df769ff322ad46396e83f26e8dec}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!child\-Object@{child\-Object}}
+\index{child\-Object@{child\-Object}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{child\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Text\-Extension}$\ast$ {\bf \-K\-Parts\-::\-Text\-Extension\-::child\-Object} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classKParts_1_1TextExtension_ae6a6df769ff322ad46396e83f26e8dec}
+\-Queries {\ttfamily obj} for a child object which inherits from this \hyperlink{classKParts_1_1TextExtension}{\-Text\-Extension} class. \hypertarget{classKParts_1_1TextExtension_a42209cf90f31da5a3b01087518ad8625}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!complete\-Text@{complete\-Text}}
+\index{complete\-Text@{complete\-Text}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{complete\-Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-String {\bf \-K\-Parts\-::\-Text\-Extension\-::complete\-Text} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Format}}]{format}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_a42209cf90f31da5a3b01087518ad8625}
+\-Returns the complete text shown in the part, in the requested format. \-If the format is not supported, the part must return an empty string. \hypertarget{classKParts_1_1TextExtension_a3351795dd9a2257127ce978aaff68448}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!current\-Page@{current\-Page}}
+\index{current\-Page@{current\-Page}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{current\-Page}]{\setlength{\rightskip}{0pt plus 5cm}virtual int {\bf \-K\-Parts\-::\-Text\-Extension\-::current\-Page} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_a3351795dd9a2257127ce978aaff68448}
+\-Returns the current page (between 0 and \hyperlink{classKParts_1_1TextExtension_a62e0cd5df36c13591ed526bf58487d96}{page\-Count()}-\/1), for parts who support the concept of pages. \-Otherwise returns 0. \hypertarget{classKParts_1_1TextExtension_aaaf29f56cbe212b3eea11d3811bfd270}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!find\-Text@{find\-Text}}
+\index{find\-Text@{find\-Text}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{find\-Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Text\-Extension\-::find\-Text} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{string, }
+\item[{\-K\-Find\-::\-Search\-Options}]{options}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_aaaf29f56cbe212b3eea11d3811bfd270}
+\-Returns true if {\ttfamily string} is found using the given {\ttfamily options}.
+
+\-If any text matches {\ttfamily string}, then it will be selected/highlighted. \-To find the next matching text, simply call this function again with the same search text until it returns false.
+
+\-To clear a selection, just pass an empty string.
+
+\-Note that parts that implement this extension might not support all the options available in \-K\-Find\-::\-Search\-Options. \hypertarget{classKParts_1_1TextExtension_a68623c6e7e7f57967c382550ccb3c00e}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!has\-Selection@{has\-Selection}}
+\index{has\-Selection@{has\-Selection}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{has\-Selection}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Text\-Extension\-::has\-Selection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_a68623c6e7e7f57967c382550ccb3c00e}
+\-Returns true if the user selected text in the part. \hypertarget{classKParts_1_1TextExtension_a62e0cd5df36c13591ed526bf58487d96}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!page\-Count@{page\-Count}}
+\index{page\-Count@{page\-Count}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{page\-Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual int {\bf \-K\-Parts\-::\-Text\-Extension\-::page\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_a62e0cd5df36c13591ed526bf58487d96}
+\-Returns the number of pages, for parts who support the concept of pages. \-Otherwise returns 0. \hypertarget{classKParts_1_1TextExtension_ab0a417697ec8edb599ba35f38bf90261}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!page\-Text@{page\-Text}}
+\index{page\-Text@{page\-Text}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{page\-Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-String {\bf \-K\-Parts\-::\-Text\-Extension\-::page\-Text} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Format}}]{format}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_ab0a417697ec8edb599ba35f38bf90261}
+\-Returns the text in a given page, in the requested format. \hypertarget{classKParts_1_1TextExtension_a5ea4fb6f2237489affcde7c03e531574}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!selected\-Text@{selected\-Text}}
+\index{selected\-Text@{selected\-Text}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{selected\-Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-String {\bf \-K\-Parts\-::\-Text\-Extension\-::selected\-Text} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Format}}]{format}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1TextExtension_a5ea4fb6f2237489affcde7c03e531574}
+\-Returns the selected text, in the requested format. \-If the format is not supported, the part must return an empty string. \hypertarget{classKParts_1_1TextExtension_a4d5e1cb28d1faa2dbccef3bb41c058f9}{\index{\-K\-Parts\-::\-Text\-Extension@{\-K\-Parts\-::\-Text\-Extension}!selection\-Changed@{selection\-Changed}}
+\index{selection\-Changed@{selection\-Changed}!KParts::TextExtension@{\-K\-Parts\-::\-Text\-Extension}}
+\subsubsection[{selection\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Text\-Extension\-::selection\-Changed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1TextExtension_a4d5e1cb28d1faa2dbccef3bb41c058f9}
+\-This signal is emitted when the selection changes. 
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{textextension_8h}{textextension.\-h}\end{DoxyCompactItemize}

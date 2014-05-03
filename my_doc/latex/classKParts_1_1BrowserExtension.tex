@@ -1,0 +1,676 @@
+\hypertarget{classKParts_1_1BrowserExtension}{\section{\-K\-Parts\-:\-:\-Browser\-Extension \-Class \-Reference}
+\label{classKParts_1_1BrowserExtension}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}
+}
+
+
+{\ttfamily \#include $<$browserextension.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3}{\-Popup\-Flag} \{ \*
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a59ee58fca9e8b900d617c4f232b497f7}{\-Default\-Popup\-Items} = 0x0000, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a05faf3d46fca9da3a396d72c993eec5c}{\-Show\-Navigation\-Items} = 0x0001, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3af6030e3884ded53eace393f2af510c68}{\-Show\-Up} = 0x0002, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a97cbb12bbef8ef52b233c24d0bf3e41e}{\-Show\-Reload} = 0x0004, 
+\*
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3ac6c783f725ac9fe594d0b563495feb64}{\-Show\-Bookmark} = 0x0008, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a152988520c15f75baddf48de43c9092a}{\-Show\-Create\-Directory} = 0x0010, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a947c452c66b8c500ac2ce303451d68c4}{\-Show\-Text\-Selection\-Items} = 0x0020, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a2332ecaf86d9179ba1ba92b9b3b10463}{\-No\-Deletion} = 0x0040, 
+\*
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a0521ef0fcccfba841ae8c5ae373f8976}{\-Is\-Link} = 0x0080, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a40232b7894e5aa48029559354b84aeb5}{\-Show\-Url\-Operations} = 0x0100, 
+\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a12a41a796fe0be4f8411259b7a77920d}{\-Show\-Properties} = 0x200
+ \}
+\item 
+typedef \-Q\-Map$<$ \-Q\-Byte\-Array, \*
+\-Q\-Byte\-Array $>$ \hyperlink{classKParts_1_1BrowserExtension_ac931bbd8189a4386b609180b5e704344}{\-Action\-Slot\-Map}
+\item 
+typedef \-Q\-Map$<$ \-Q\-String, \-Q\-List\*
+$<$ \-Q\-Action $\ast$ $>$ $>$ \hyperlink{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}{\-Action\-Group\-Map}
+\item 
+typedef \-Q\-Map$<$ \-Q\-Byte\-Array, int $>$ \hyperlink{classKParts_1_1BrowserExtension_a71369db13dead055035067d4f8ff498d}{\-Action\-Number\-Map}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1BrowserExtension_acd4e7ef6cc706f7d65e82563085c1e31}{\-Browser\-Extension} (\hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$parent)
+\item 
+virtual \hyperlink{classKParts_1_1BrowserExtension_a6a953bf6ca91db1779fdd5d52e5f5b0d}{$\sim$\-Browser\-Extension} ()
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserExtension_a19637ad8f74585047a4477506db764bd}{set\-Browser\-Arguments} (const \hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} \&args)
+\item 
+\hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} \hyperlink{classKParts_1_1BrowserExtension_a8bd50c2c5bd6b43d15c4af157977cc42}{browser\-Arguments} () const 
+\item 
+virtual int \hyperlink{classKParts_1_1BrowserExtension_a8c8b975e3805b54a32e28c1a1b66319a}{x\-Offset} ()
+\item 
+virtual int \hyperlink{classKParts_1_1BrowserExtension_a205e59060b7b7d6daf1c25bf9cfdcee5}{y\-Offset} ()
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserExtension_afe2fe963a5097ad43bea5d076485e759}{save\-State} (\-Q\-Data\-Stream \&stream)
+\item 
+virtual void \hyperlink{classKParts_1_1BrowserExtension_a26bba6343df8031d9aceb94cf6c6ef47}{restore\-State} (\-Q\-Data\-Stream \&stream)
+\item 
+bool \hyperlink{classKParts_1_1BrowserExtension_ad28ffe47eb30efa2dde7ba4b5684570e}{is\-U\-R\-L\-Drop\-Handling\-Enabled} () const 
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a16e798977df4a2992e0f60a9dc01d33f}{set\-U\-R\-L\-Drop\-Handling\-Enabled} (bool enable)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a9803f929d3103b57b7d50e1bd45ea280}{set\-Browser\-Interface} (\hyperlink{classKParts_1_1BrowserInterface}{\-Browser\-Interface} $\ast$impl)
+\item 
+\hyperlink{classKParts_1_1BrowserInterface}{\-Browser\-Interface} $\ast$ \hyperlink{classKParts_1_1BrowserExtension_a7a4bdce73bd132afb5e9864184592fef}{browser\-Interface} () const 
+\item 
+bool \hyperlink{classKParts_1_1BrowserExtension_a28ba7afad45aa10823156627012a8fdb}{is\-Action\-Enabled} (const char $\ast$name) const 
+\item 
+\-Q\-String \hyperlink{classKParts_1_1BrowserExtension_a3679c7a2a8b77b9f8afec49393eea1d5}{action\-Text} (const char $\ast$name) const 
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_ae6ee41fff23065d6d40e06247feae6e2}{paste\-Request} ()
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a3252f2adebd103519ee15e57037c7386}{enable\-Action} (const char $\ast$name, bool enabled)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a73506e6a8b89d661512d4a6dfcfaabd5}{set\-Action\-Text} (const char $\ast$name, const \-Q\-String \&text)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}{open\-Url\-Request} (const \-K\-Url \&url, const \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} \&arguments=\hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments}(), const \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} \&\hyperlink{classKParts_1_1BrowserExtension_a8bd50c2c5bd6b43d15c4af157977cc42}{browser\-Arguments}=\hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments}())
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a8556e230ec679f8b2ddfde63c3039428}{open\-Url\-Request\-Delayed} (const \-K\-Url \&url, const \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} \&arguments, const \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} \&\hyperlink{classKParts_1_1BrowserExtension_a8bd50c2c5bd6b43d15c4af157977cc42}{browser\-Arguments})
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a06b1ae0f0712677310ff7bc0b31b376a}{open\-Url\-Notify} ()
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a335b6f5c78db67e7b8d385eb313b8aef}{set\-Location\-Bar\-Url} (const \-Q\-String \&url)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_aded24c62c57a7768f54c852831f4fd30}{set\-Icon\-Url} (const \-K\-Url \&url)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a99ae7fd5726079c473de103bf3e33833}{create\-New\-Window} (const \-K\-Url \&url, const \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} \&arguments=\hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments}(), const \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} \&\hyperlink{classKParts_1_1BrowserExtension_a8bd50c2c5bd6b43d15c4af157977cc42}{browser\-Arguments}=\hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments}(), const \hyperlink{classKParts_1_1WindowArgs}{\-K\-Parts\-::\-Window\-Args} \&window\-Args=\hyperlink{classKParts_1_1WindowArgs}{\-K\-Parts\-::\-Window\-Args}(), \hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$$\ast$part=0)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a347035c05f6d6064f18ee656d61faed7}{loading\-Progress} (int percent)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a51c00341228e2280d548e960b3d1fbe6}{speed\-Progress} (int bytes\-Per\-Second)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_af07247232a4925903ed26ec9f9433aa4}{info\-Message} (const \-Q\-String \&)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a97f2ed6d4318555095512275f6988484}{popup\-Menu} (const \-Q\-Point \&global, const \-K\-File\-Item\-List \&items, const \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} \&args=\hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments}(), const \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} \&browser\-Args=\hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments}(), \-K\-Parts\-::\-Browser\-Extension\-::\-Popup\-Flags flags=\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a59ee58fca9e8b900d617c4f232b497f7}{\-K\-Parts\-::\-Browser\-Extension\-::\-Default\-Popup\-Items}, const \hyperlink{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}{\-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Group\-Map} \&action\-Groups=\hyperlink{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}{\-Action\-Group\-Map}())
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a0f5b5fc1bfa84d5949590a82f40849e3}{popup\-Menu} (const \-Q\-Point \&global, const \-K\-Url \&url, mode\-\_\-t mode=static\-\_\-cast$<$ mode\-\_\-t $>$(-\/1), const \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} \&args=\hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments}(), const \hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments} \&browser\-Args=\hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments}(), \-K\-Parts\-::\-Browser\-Extension\-::\-Popup\-Flags flags=\hyperlink{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a59ee58fca9e8b900d617c4f232b497f7}{\-K\-Parts\-::\-Browser\-Extension\-::\-Default\-Popup\-Items}, const \hyperlink{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}{\-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Group\-Map} \&action\-Groups=\hyperlink{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}{\-Action\-Group\-Map}())
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_aae2db786c70b458b433a2819ed2110fe}{selection\-Info} (const \-K\-File\-Item\-List \&items)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a5acae1ffb924f3791fd55900443c3bc0}{selection\-Info} (const \-Q\-String \&text)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a84e9c471487de0d8d82067c2db80a539}{selection\-Info} (const \-K\-Url\-::\-List \&urls)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_abc6b8cdb9134eadcf817a3a9dea4c898}{mouse\-Over\-Info} (const \-K\-File\-Item \&item)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a6ea5c473f5bf65cb1dfce8e6f1e81ad3}{add\-Web\-Side\-Bar} (const \-K\-Url \&url, const \-Q\-String \&name)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_aad5b1ddfb7313a8cf23a791fde7ec336}{move\-Top\-Level\-Widget} (int x, int y)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a5ac0475a4a7d3434326c96bfcff57006}{resize\-Top\-Level\-Widget} (int w, int h)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a8424167e31fd3c68e53cfd0aacb38934}{request\-Focus} (\hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} $\ast$part)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_a7a352d71c9bcabd14a48efb589dd0957}{set\-Page\-Security} (int)
+\item 
+void \hyperlink{classKParts_1_1BrowserExtension_ab52eaff5194bfec9aeff1e346f94d757}{items\-Removed} (const \-K\-File\-Item\-List \&items)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classKParts_1_1BrowserExtension_ac931bbd8189a4386b609180b5e704344}{\-Action\-Slot\-Map} \hyperlink{classKParts_1_1BrowserExtension_aa7f7e7ec66238e1fdca4e9354c2d9d18}{action\-Slot\-Map} ()
+\item 
+static \hyperlink{classKParts_1_1BrowserExtension_ac931bbd8189a4386b609180b5e704344}{\-Action\-Slot\-Map} $\ast$ \hyperlink{classKParts_1_1BrowserExtension_a1279e5f1b056f582536be9ef3c76f5f3}{action\-Slot\-Map\-Ptr} ()
+\item 
+static \hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension} $\ast$ \hyperlink{classKParts_1_1BrowserExtension_a4e0584a51eed738958ff3fe0ad82a202}{child\-Object} (\-Q\-Object $\ast$obj)
+\end{DoxyCompactItemize}
+\subsection*{\-Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classKParts_1_1BrowserExtension_a3f4216207e98c29842379e4abf2c1c06}{url\-Drop\-Handling}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The \-Browser \-Extension is an extension (yes, no kidding) to \hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part}, which allows a better integration of parts with browsers (in particular \-Konqueror). \-Remember that \hyperlink{classKParts_1_1ReadOnlyPart}{\-Read\-Only\-Part} only has open\-Url(\-K\-Url) and a few arguments() but not much more. \-For full-\/fledged browsing, we need much more than that, including enabling/disabling of standard actions (print, copy, paste...), allowing parts to save and restore their data into the back/forward history, allowing parts to control the location bar \-U\-R\-L, to requests \-U\-R\-Ls to be opened by the hosting browser, etc.
+
+\-The part developer needs to define its own class derived from \hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension}, to implement the virtual methods \mbox{[}and the standard-\/actions slots, see below\mbox{]}.
+
+\-The way to associate the \hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension} with the part is to simply create the \hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension} as a child of the part (in \-Q\-Object's terms). \-The hosting application will look for it automatically.
+
+\-Another aspect of the browser integration is that a set of standard actions are provided by the browser, but implemented by the part (for the actions it supports).
+
+\-The following standard actions are defined by the host of the view\-:
+
+\mbox{[}selection-\/dependent actions\mbox{]} \begin{DoxyItemize}
+\item {\ttfamily cut} \-: \-Copy selected items to clipboard and store 'not cut' in clipboard. \item {\ttfamily copy} \-: \-Copy selected items to clipboard and store 'cut' in clipboard. \item {\ttfamily paste} \-: \-Paste clipboard into view \-U\-R\-L. \item {\ttfamily paste\-To(const K\-Url \&)} \-: \-Paste clipboard into given \-U\-R\-L. \item {\ttfamily search\-Provider} \-: \-Lookup selected text at default search provider\end{DoxyItemize}
+\mbox{[}normal actions\mbox{]} \begin{DoxyItemize}
+\item \-None anymore.\end{DoxyItemize}
+\-The view defines a slot with the name of the action in order to implement the action. \-The browser will detect the slot automatically and connect its action to it when appropriate (i.\-e. when the view is active).
+
+\-The selection-\/dependent actions are disabled by default and the view should enable them when the selection changes, emitting \hyperlink{classKParts_1_1BrowserExtension_a3252f2adebd103519ee15e57037c7386}{enable\-Action()}.
+
+\-The normal actions do not depend on the selection.
+
+\-A special case is the configuration slots, not connected to any action directly.
+
+\mbox{[}configuration slot\mbox{]} \begin{DoxyItemize}
+\item {\ttfamily reparse\-Configuration} \-: \-Re-\/read configuration and apply it. \item {\ttfamily disable\-Scrolling\-:} no scrollbars \end{DoxyItemize}
+
+
+\-Definition at line 320 of file browserextension.\-h.
+
+
+
+\subsection{\-Member \-Typedef \-Documentation}
+\hypertarget{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Action\-Group\-Map@{\-Action\-Group\-Map}}
+\index{\-Action\-Group\-Map@{\-Action\-Group\-Map}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{\-Action\-Group\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-Q\-Map$<$\-Q\-String, \-Q\-List$<$\-Q\-Action $\ast$$>$ $>$ {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Group\-Map}}}\label{classKParts_1_1BrowserExtension_a73ab162c395443c0227946524a8ee04c}
+\-Associates a list of actions with a predefined name known by the host's popupmenu\-: \char`\"{}editactions\char`\"{} for actions related text editing, \char`\"{}linkactions\char`\"{} for actions related to hyperlinks, \char`\"{}partactions\char`\"{} for any other actions provided by the part 
+
+\-Definition at line 493 of file browserextension.\-h.
+
+\hypertarget{classKParts_1_1BrowserExtension_a71369db13dead055035067d4f8ff498d}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Action\-Number\-Map@{\-Action\-Number\-Map}}
+\index{\-Action\-Number\-Map@{\-Action\-Number\-Map}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{\-Action\-Number\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-Q\-Map$<$\-Q\-Byte\-Array,int$>$ {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Number\-Map}}}\label{classKParts_1_1BrowserExtension_a71369db13dead055035067d4f8ff498d}
+
+
+\-Definition at line 700 of file browserextension.\-h.
+
+\hypertarget{classKParts_1_1BrowserExtension_ac931bbd8189a4386b609180b5e704344}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Action\-Slot\-Map@{\-Action\-Slot\-Map}}
+\index{\-Action\-Slot\-Map@{\-Action\-Slot\-Map}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{\-Action\-Slot\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef \-Q\-Map$<$\-Q\-Byte\-Array,\-Q\-Byte\-Array$>$ {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Slot\-Map}}}\label{classKParts_1_1BrowserExtension_ac931bbd8189a4386b609180b5e704344}
+
+
+\-Definition at line 439 of file browserextension.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Popup\-Flag@{\-Popup\-Flag}}
+\index{\-Popup\-Flag@{\-Popup\-Flag}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{\-Popup\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Popup\-Flag}}}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3}
+\-Set of flags passed via the popup\-Menu signal, to ask for some items in the popup menu. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Default\-Popup\-Items@{\-Default\-Popup\-Items}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Default\-Popup\-Items@{\-Default\-Popup\-Items}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a59ee58fca9e8b900d617c4f232b497f7}{\-Default\-Popup\-Items}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a59ee58fca9e8b900d617c4f232b497f7}
+}]default value, no additional menu item \index{\-Show\-Navigation\-Items@{\-Show\-Navigation\-Items}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Navigation\-Items@{\-Show\-Navigation\-Items}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a05faf3d46fca9da3a396d72c993eec5c}{\-Show\-Navigation\-Items}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a05faf3d46fca9da3a396d72c993eec5c}
+}]show \char`\"{}back\char`\"{} and \char`\"{}forward\char`\"{} (usually done when clicking the background of the view, but not an item) \index{\-Show\-Up@{\-Show\-Up}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Up@{\-Show\-Up}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3af6030e3884ded53eace393f2af510c68}{\-Show\-Up}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3af6030e3884ded53eace393f2af510c68}
+}]show \char`\"{}up\char`\"{} (same thing, but not over e.\-g. \-H\-T\-T\-P). \-Requires \-Show\-Navigation\-Items. \index{\-Show\-Reload@{\-Show\-Reload}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Reload@{\-Show\-Reload}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a97cbb12bbef8ef52b233c24d0bf3e41e}{\-Show\-Reload}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a97cbb12bbef8ef52b233c24d0bf3e41e}
+}]show \char`\"{}reload\char`\"{} (usually done when clicking the background of the view, but not an item) \index{\-Show\-Bookmark@{\-Show\-Bookmark}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Bookmark@{\-Show\-Bookmark}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3ac6c783f725ac9fe594d0b563495feb64}{\-Show\-Bookmark}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3ac6c783f725ac9fe594d0b563495feb64}
+}]show \char`\"{}add to bookmarks\char`\"{} (usually not done on the local filesystem) \index{\-Show\-Create\-Directory@{\-Show\-Create\-Directory}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Create\-Directory@{\-Show\-Create\-Directory}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a152988520c15f75baddf48de43c9092a}{\-Show\-Create\-Directory}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a152988520c15f75baddf48de43c9092a}
+}]show \char`\"{}create directory\char`\"{} (usually only done on the background of the view, or in hierarchical views like directory trees, where the new dir would be visible) \index{\-Show\-Text\-Selection\-Items@{\-Show\-Text\-Selection\-Items}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Text\-Selection\-Items@{\-Show\-Text\-Selection\-Items}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a947c452c66b8c500ac2ce303451d68c4}{\-Show\-Text\-Selection\-Items}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a947c452c66b8c500ac2ce303451d68c4}
+}]set when selecting text, for a popup that only contains text-\/related items. \index{\-No\-Deletion@{\-No\-Deletion}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-No\-Deletion@{\-No\-Deletion}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a2332ecaf86d9179ba1ba92b9b3b10463}{\-No\-Deletion}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a2332ecaf86d9179ba1ba92b9b3b10463}
+}]deletion, trashing and renaming not allowed (e.\-g. parent dir not writeable). (this is only needed if the protocol itself supports deletion, unlike e.\-g. \-H\-T\-T\-P) \index{\-Is\-Link@{\-Is\-Link}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Is\-Link@{\-Is\-Link}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a0521ef0fcccfba841ae8c5ae373f8976}{\-Is\-Link}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a0521ef0fcccfba841ae8c5ae373f8976}
+}]show \char`\"{}\-Bookmark This Link\char`\"{} and other link-\/related actions (linkactions merging group) \index{\-Show\-Url\-Operations@{\-Show\-Url\-Operations}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Url\-Operations@{\-Show\-Url\-Operations}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a40232b7894e5aa48029559354b84aeb5}{\-Show\-Url\-Operations}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a40232b7894e5aa48029559354b84aeb5}
+}]show copy, paste, as well as cut if \-No\-Deletion is not set. \index{\-Show\-Properties@{\-Show\-Properties}!\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}}\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Show\-Properties@{\-Show\-Properties}}\item[{\em 
+\hypertarget{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a12a41a796fe0be4f8411259b7a77920d}{\-Show\-Properties}\label{classKParts_1_1BrowserExtension_ae5b9acf92e7d83faf5142597371ef1e3a12a41a796fe0be4f8411259b7a77920d}
+}]show \char`\"{}\-Properties\char`\"{} action (usually done by directory views) \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 338 of file browserextension.\-h.
+
+
+\begin{DoxyCode}
+                 {
+      DefaultPopupItems=0x0000, 
+      ShowNavigationItems=0x0001, 
+      ShowUp=0x0002, 
+      ShowReload=0x0004, 
+      ShowBookmark=0x0008, 
+      ShowCreateDirectory=0x0010, 
+      ShowTextSelectionItems=0x0020, 
+      NoDeletion=0x0040, 
+      IsLink=0x0080, 
+      ShowUrlOperations=0x0100, 
+      ShowProperties=0x200     
+  };
+\end{DoxyCode}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1BrowserExtension_acd4e7ef6cc706f7d65e82563085c1e31}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!\-Browser\-Extension@{\-Browser\-Extension}}
+\index{\-Browser\-Extension@{\-Browser\-Extension}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{\-Browser\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Browser\-Extension} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Read\-Only\-Part} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}\label{classKParts_1_1BrowserExtension_acd4e7ef6cc706f7d65e82563085c1e31}
+\-Constructor
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parent} & \-The \hyperlink{classKParts_1_1ReadOnlyPart}{\-K\-Parts\-::\-Read\-Only\-Part} that this extension ... \char`\"{}extends\char`\"{} \-:) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1BrowserExtension_a6a953bf6ca91db1779fdd5d52e5f5b0d}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!$\sim$\-Browser\-Extension@{$\sim$\-Browser\-Extension}}
+\index{$\sim$\-Browser\-Extension@{$\sim$\-Browser\-Extension}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{$\sim$\-Browser\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-K\-Parts\-::\-Browser\-Extension\-::$\sim$\-Browser\-Extension} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a6a953bf6ca91db1779fdd5d52e5f5b0d}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1BrowserExtension_aa7f7e7ec66238e1fdca4e9354c2d9d18}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!action\-Slot\-Map@{action\-Slot\-Map}}
+\index{action\-Slot\-Map@{action\-Slot\-Map}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{action\-Slot\-Map}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Action\-Slot\-Map} {\bf \-K\-Parts\-::\-Browser\-Extension\-::action\-Slot\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classKParts_1_1BrowserExtension_aa7f7e7ec66238e1fdca4e9354c2d9d18}
+\-Returns a map containing the action names as keys and corresponding \-S\-L\-O\-T()'ified method names as data entries.
+
+\-This is very useful for the host component, when connecting the own signals with the extension's slots. \-Basically you iterate over the map, check if the extension implements the slot and connect to the slot using the data value of your map iterator. \-Checking if the extension implements a certain slot can be done like this\-:
+
+
+\begin{DoxyCode}
+   extension->metaObject()->slotNames().contains( actionName + "()" )
+\end{DoxyCode}
+
+
+(note that {\ttfamily action\-Name} is the iterator's key value if already iterating over the action slot map, returned by this method)
+
+\-Connecting to the slot can be done like this\-:
+
+
+\begin{DoxyCode}
+   connect( yourObject, SIGNAL( yourSignal() ),
+            extension, mapIterator.data() )
+\end{DoxyCode}
+
+
+(where \char`\"{}map\-Iterator\char`\"{} is your \-Q\-Map$<$\-Q\-C\-String,\-Q\-C\-String$>$ iterator) \hypertarget{classKParts_1_1BrowserExtension_a1279e5f1b056f582536be9ef3c76f5f3}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!action\-Slot\-Map\-Ptr@{action\-Slot\-Map\-Ptr}}
+\index{action\-Slot\-Map\-Ptr@{action\-Slot\-Map\-Ptr}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{action\-Slot\-Map\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Action\-Slot\-Map}$\ast$ {\bf \-K\-Parts\-::\-Browser\-Extension\-::action\-Slot\-Map\-Ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a1279e5f1b056f582536be9ef3c76f5f3}
+\begin{DoxyReturn}{\-Returns}
+a pointer to the static action-\/slot map. \-Preferred method to get it. \-The map is created if it doesn't exist yet 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserExtension_a3679c7a2a8b77b9f8afec49393eea1d5}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!action\-Text@{action\-Text}}
+\index{action\-Text@{action\-Text}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{action\-Text}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String {\bf \-K\-Parts\-::\-Browser\-Extension\-::action\-Text} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserExtension_a3679c7a2a8b77b9f8afec49393eea1d5}
+\begin{DoxyReturn}{\-Returns}
+the text of an action, if it was set explicitly by the part. \-When the set\-Action\-Text signal is emitted, the browserextension stores the text of the action internally, so that it's possible to query later for the text of the action, using this method. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserExtension_a6ea5c473f5bf65cb1dfce8e6f1e81ad3}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!add\-Web\-Side\-Bar@{add\-Web\-Side\-Bar}}
+\index{add\-Web\-Side\-Bar@{add\-Web\-Side\-Bar}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{add\-Web\-Side\-Bar}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::add\-Web\-Side\-Bar} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url, }
+\item[{const \-Q\-String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a6ea5c473f5bf65cb1dfce8e6f1e81ad3}
+\-Ask the hosting application to add a new \-H\-T\-M\-L (aka \-Mozilla/\-Netscape) \-Side\-Bar entry. \hypertarget{classKParts_1_1BrowserExtension_a8bd50c2c5bd6b43d15c4af157977cc42}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!browser\-Arguments@{browser\-Arguments}}
+\index{browser\-Arguments@{browser\-Arguments}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{browser\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Browser\-Arguments} {\bf \-K\-Parts\-::\-Browser\-Extension\-::browser\-Arguments} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserExtension_a8bd50c2c5bd6b43d15c4af157977cc42}
+\-Retrieve the set of parameters to use for opening the \-U\-R\-L (this must be called from open\-Url() in the part). \begin{DoxySeeAlso}{\-See also}
+\hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1BrowserExtension_a7a4bdce73bd132afb5e9864184592fef}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!browser\-Interface@{browser\-Interface}}
+\index{browser\-Interface@{browser\-Interface}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{browser\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Browser\-Interface}$\ast$ {\bf \-K\-Parts\-::\-Browser\-Extension\-::browser\-Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserExtension_a7a4bdce73bd132afb5e9864184592fef}
+\hypertarget{classKParts_1_1BrowserExtension_a4e0584a51eed738958ff3fe0ad82a202}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!child\-Object@{child\-Object}}
+\index{child\-Object@{child\-Object}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{child\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Browser\-Extension}$\ast$ {\bf \-K\-Parts\-::\-Browser\-Extension\-::child\-Object} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Object $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a4e0584a51eed738958ff3fe0ad82a202}
+\-Queries {\ttfamily obj} for a child object which inherits from this \hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension} class. \-Convenience method. \hypertarget{classKParts_1_1BrowserExtension_a99ae7fd5726079c473de103bf3e33833}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!create\-New\-Window@{create\-New\-Window}}
+\index{create\-New\-Window@{create\-New\-Window}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{create\-New\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::create\-New\-Window} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url, }
+\item[{const {\bf \-K\-Parts\-::\-Open\-Url\-Arguments} \&}]{arguments = {\ttfamily {\bf \-K\-Parts\-::\-Open\-Url\-Arguments}()}, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Arguments} \&}]{browser\-Arguments = {\ttfamily {\bf \-K\-Parts\-::\-Browser\-Arguments}()}, }
+\item[{const {\bf \-K\-Parts\-::\-Window\-Args} \&}]{window\-Args = {\ttfamily {\bf \-K\-Parts\-::\-Window\-Args}()}, }
+\item[{{\bf \-K\-Parts\-::\-Read\-Only\-Part} $\ast$$\ast$}]{part = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a99ae7fd5726079c473de103bf3e33833}
+\-Asks the hosting browser to open a new window for the given {\ttfamily url} and return a reference to the content part.
+
+{\ttfamily arguments} is optional additional information about how to open the url, \begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments}
+\end{DoxySeeAlso}
+{\ttfamily browser\-Arguments} is optional additional information for web browsers, \begin{DoxySeeAlso}{\-See also}
+\hyperlink{structKParts_1_1BrowserArguments}{\-K\-Parts\-::\-Browser\-Arguments}
+\end{DoxySeeAlso}
+\-The request for a pointer to the part is only fulfilled/processed if the mime\-Type is set in the {\ttfamily browser\-Arguments}. (otherwise the request cannot be processed synchronously). \hypertarget{classKParts_1_1BrowserExtension_a3252f2adebd103519ee15e57037c7386}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!enable\-Action@{enable\-Action}}
+\index{enable\-Action@{enable\-Action}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{enable\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::enable\-Action} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a3252f2adebd103519ee15e57037c7386}
+\-Enables or disable a standard action held by the browser.
+
+\-See class documentation for the list of standard actions. \hypertarget{classKParts_1_1BrowserExtension_af07247232a4925903ed26ec9f9433aa4}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!info\-Message@{info\-Message}}
+\index{info\-Message@{info\-Message}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{info\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::info\-Message} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_af07247232a4925903ed26ec9f9433aa4}
+\hypertarget{classKParts_1_1BrowserExtension_a28ba7afad45aa10823156627012a8fdb}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!is\-Action\-Enabled@{is\-Action\-Enabled}}
+\index{is\-Action\-Enabled@{is\-Action\-Enabled}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{is\-Action\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Extension\-::is\-Action\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserExtension_a28ba7afad45aa10823156627012a8fdb}
+\begin{DoxyReturn}{\-Returns}
+the status (enabled/disabled) of an action. \-When the enable\-Action signal is emitted, the browserextension stores the status of the action internally, so that it's possible to query later for the status of the action, using this method. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1BrowserExtension_ad28ffe47eb30efa2dde7ba4b5684570e}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!is\-U\-R\-L\-Drop\-Handling\-Enabled@{is\-U\-R\-L\-Drop\-Handling\-Enabled}}
+\index{is\-U\-R\-L\-Drop\-Handling\-Enabled@{is\-U\-R\-L\-Drop\-Handling\-Enabled}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{is\-U\-R\-L\-Drop\-Handling\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Extension\-::is\-U\-R\-L\-Drop\-Handling\-Enabled} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1BrowserExtension_ad28ffe47eb30efa2dde7ba4b5684570e}
+\-Returns whether url drop handling is enabled. \-See set\-U\-R\-L\-Drop\-Handling\-Enabled for more information about this property. \hypertarget{classKParts_1_1BrowserExtension_ab52eaff5194bfec9aeff1e346f94d757}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!items\-Removed@{items\-Removed}}
+\index{items\-Removed@{items\-Removed}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{items\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::items\-Removed} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-File\-Item\-List \&}]{items}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_ab52eaff5194bfec9aeff1e346f94d757}
+\-Inform the host about items that have been removed. \hypertarget{classKParts_1_1BrowserExtension_a347035c05f6d6064f18ee656d61faed7}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!loading\-Progress@{loading\-Progress}}
+\index{loading\-Progress@{loading\-Progress}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{loading\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::loading\-Progress} (
+\begin{DoxyParamCaption}
+\item[{int}]{percent}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a347035c05f6d6064f18ee656d61faed7}
+\-Since the part emits the jobid in the started() signal, progress information is automatically displayed.
+
+\-However, if you don't use a \-K\-I\-O\-::\-Job in the part, you can use \hyperlink{classKParts_1_1BrowserExtension_a347035c05f6d6064f18ee656d61faed7}{loading\-Progress()} and \hyperlink{classKParts_1_1BrowserExtension_a51c00341228e2280d548e960b3d1fbe6}{speed\-Progress()} to display progress information. \hypertarget{classKParts_1_1BrowserExtension_abc6b8cdb9134eadcf817a3a9dea4c898}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!mouse\-Over\-Info@{mouse\-Over\-Info}}
+\index{mouse\-Over\-Info@{mouse\-Over\-Info}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{mouse\-Over\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::mouse\-Over\-Info} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-File\-Item \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_abc6b8cdb9134eadcf817a3a9dea4c898}
+\-Inform the hosting application that the user moved the mouse over an item. \-Used when the mouse is on an \-U\-R\-L. \hypertarget{classKParts_1_1BrowserExtension_aad5b1ddfb7313a8cf23a791fde7ec336}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!move\-Top\-Level\-Widget@{move\-Top\-Level\-Widget}}
+\index{move\-Top\-Level\-Widget@{move\-Top\-Level\-Widget}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{move\-Top\-Level\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::move\-Top\-Level\-Widget} (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_aad5b1ddfb7313a8cf23a791fde7ec336}
+\-Ask the hosting application to move the top level widget. \hypertarget{classKParts_1_1BrowserExtension_a06b1ae0f0712677310ff7bc0b31b376a}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!open\-Url\-Notify@{open\-Url\-Notify}}
+\index{open\-Url\-Notify@{open\-Url\-Notify}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{open\-Url\-Notify}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::open\-Url\-Notify} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a06b1ae0f0712677310ff7bc0b31b376a}
+\-Tells the hosting browser that the part opened a new \-U\-R\-L (which can be queried via \-K\-Parts\-::\-Part\-::url().
+
+\-This helps the browser to update/create an entry in the history. \-The part may {\itshape not\/} emit this signal together with \hyperlink{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}{open\-Url\-Request()}. \-Emit \hyperlink{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}{open\-Url\-Request()} if you want the browser to handle a \-U\-R\-L the user asked to open (from within your part/document). \-This signal however is useful if you want to handle \-U\-R\-Ls all yourself internally, while still telling the hosting browser about new opened \-U\-R\-Ls, in order to provide a proper history functionality to the user. \-An example of usage is a html rendering component which wants to emit this signal when a child frame document changed its \-U\-R\-L. \-Conclusion\-: you probably want to use \hyperlink{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}{open\-Url\-Request()} instead. \hypertarget{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!open\-Url\-Request@{open\-Url\-Request}}
+\index{open\-Url\-Request@{open\-Url\-Request}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{open\-Url\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::open\-Url\-Request} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url, }
+\item[{const {\bf \-K\-Parts\-::\-Open\-Url\-Arguments} \&}]{arguments = {\ttfamily {\bf \-K\-Parts\-::\-Open\-Url\-Arguments}()}, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Arguments} \&}]{browser\-Arguments = {\ttfamily {\bf \-K\-Parts\-::\-Browser\-Arguments}()}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}
+\-Asks the host (browser) to open {\ttfamily url}. \-To set a reload, the x and y offsets, the service type etc., fill in the appropriate fields in the {\ttfamily args} structure. \-Hosts should not connect to this signal but to \hyperlink{classKParts_1_1BrowserExtension_a8556e230ec679f8b2ddfde63c3039428}{open\-Url\-Request\-Delayed()}. \hypertarget{classKParts_1_1BrowserExtension_a8556e230ec679f8b2ddfde63c3039428}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!open\-Url\-Request\-Delayed@{open\-Url\-Request\-Delayed}}
+\index{open\-Url\-Request\-Delayed@{open\-Url\-Request\-Delayed}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{open\-Url\-Request\-Delayed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::open\-Url\-Request\-Delayed} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url, }
+\item[{const {\bf \-K\-Parts\-::\-Open\-Url\-Arguments} \&}]{arguments, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Arguments} \&}]{browser\-Arguments}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a8556e230ec679f8b2ddfde63c3039428}
+\-This signal is emitted when \hyperlink{classKParts_1_1BrowserExtension_ac58ebde72bd36f1bfc189ea3ccf05a07}{open\-Url\-Request()} is called, after a 0-\/seconds timer. \-This allows the caller to terminate what it's doing first, before (usually) being destroyed. \-Parts should never use this signal, hosts should only connect to this signal. \hypertarget{classKParts_1_1BrowserExtension_ae6ee41fff23065d6d40e06247feae6e2}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!paste\-Request@{paste\-Request}}
+\index{paste\-Request@{paste\-Request}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{paste\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::paste\-Request} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_ae6ee41fff23065d6d40e06247feae6e2}
+\-Asks the hosting browser to perform a paste (using \hyperlink{classKParts_1_1BrowserExtension_a8556e230ec679f8b2ddfde63c3039428}{open\-Url\-Request\-Delayed()}) \hypertarget{classKParts_1_1BrowserExtension_a97f2ed6d4318555095512275f6988484}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!popup\-Menu@{popup\-Menu}}
+\index{popup\-Menu@{popup\-Menu}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{popup\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::popup\-Menu} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-Point \&}]{global, }
+\item[{const \-K\-File\-Item\-List \&}]{items, }
+\item[{const {\bf \-K\-Parts\-::\-Open\-Url\-Arguments} \&}]{args = {\ttfamily {\bf \-K\-Parts\-::\-Open\-Url\-Arguments}()}, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Arguments} \&}]{browser\-Args = {\ttfamily {\bf \-K\-Parts\-::\-Browser\-Arguments}()}, }
+\item[{\-K\-Parts\-::\-Browser\-Extension\-::\-Popup\-Flags}]{flags = {\ttfamily {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Default\-Popup\-Items}}, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Group\-Map} \&}]{action\-Groups = {\ttfamily {\bf \-Action\-Group\-Map}()}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a97f2ed6d4318555095512275f6988484}
+\-Emit this to make the browser show a standard popup menu for the files {\ttfamily items}.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em global} & global coordinates where the popup should be shown \\
+\hline
+{\em items} & list of file items which the popup applies to \\
+\hline
+{\em args} & \hyperlink{classKParts_1_1OpenUrlArguments}{\-Open\-Url\-Arguments}, mostly for metadata here \\
+\hline
+{\em browser\-Arguments} & \hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments}, mostly for referrer \\
+\hline
+{\em flags} & enables/disables certain builtin actions in the popupmenu \\
+\hline
+{\em action\-Groups} & named groups of actions which should be inserted into the popup, see \-Action\-Group\-Map \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1BrowserExtension_a0f5b5fc1bfa84d5949590a82f40849e3}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!popup\-Menu@{popup\-Menu}}
+\index{popup\-Menu@{popup\-Menu}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{popup\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::popup\-Menu} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-Point \&}]{global, }
+\item[{const \-K\-Url \&}]{url, }
+\item[{mode\-\_\-t}]{mode = {\ttfamily static\-\_\-cast$<$~mode\-\_\-t~$>$(-\/1)}, }
+\item[{const {\bf \-K\-Parts\-::\-Open\-Url\-Arguments} \&}]{args = {\ttfamily {\bf \-K\-Parts\-::\-Open\-Url\-Arguments}()}, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Arguments} \&}]{browser\-Args = {\ttfamily {\bf \-K\-Parts\-::\-Browser\-Arguments}()}, }
+\item[{\-K\-Parts\-::\-Browser\-Extension\-::\-Popup\-Flags}]{flags = {\ttfamily {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Default\-Popup\-Items}}, }
+\item[{const {\bf \-K\-Parts\-::\-Browser\-Extension\-::\-Action\-Group\-Map} \&}]{action\-Groups = {\ttfamily {\bf \-Action\-Group\-Map}()}}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a0f5b5fc1bfa84d5949590a82f40849e3}
+\-Emit this to make the browser show a standard popup menu for the given {\ttfamily url}.
+
+\-Give as much information about this \-U\-R\-L as possible, like {\ttfamily args.\-mime\-Type} and the file type {\ttfamily mode} 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em global} & global coordinates where the popup should be shown \\
+\hline
+{\em url} & the \-U\-R\-L this popup applies to \\
+\hline
+{\em mode} & the file type of the url (\-S\-\_\-\-I\-F\-R\-E\-G, \-S\-\_\-\-I\-F\-D\-I\-R...) \\
+\hline
+{\em args} & \hyperlink{classKParts_1_1OpenUrlArguments}{\-Open\-Url\-Arguments}, set the mimetype of the \-U\-R\-L using set\-Mime\-Type() \\
+\hline
+{\em browser\-Arguments} & \hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments}, mostly for referrer \\
+\hline
+{\em flags} & enables/disables certain builtin actions in the popupmenu \\
+\hline
+{\em action\-Groups} & named groups of actions which should be inserted into the popup, see \-Action\-Group\-Map \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1BrowserExtension_a8424167e31fd3c68e53cfd0aacb38934}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!request\-Focus@{request\-Focus}}
+\index{request\-Focus@{request\-Focus}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{request\-Focus}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::request\-Focus} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-K\-Parts\-::\-Read\-Only\-Part} $\ast$}]{part}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a8424167e31fd3c68e53cfd0aacb38934}
+\-Ask the hosting application to focus {\ttfamily part}. \hypertarget{classKParts_1_1BrowserExtension_a5ac0475a4a7d3434326c96bfcff57006}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!resize\-Top\-Level\-Widget@{resize\-Top\-Level\-Widget}}
+\index{resize\-Top\-Level\-Widget@{resize\-Top\-Level\-Widget}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{resize\-Top\-Level\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::resize\-Top\-Level\-Widget} (
+\begin{DoxyParamCaption}
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a5ac0475a4a7d3434326c96bfcff57006}
+\-Ask the hosting application to resize the top level widget. \hypertarget{classKParts_1_1BrowserExtension_a26bba6343df8031d9aceb94cf6c6ef47}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!restore\-State@{restore\-State}}
+\index{restore\-State@{restore\-State}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{restore\-State}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Browser\-Extension\-::restore\-State} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Data\-Stream \&}]{stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a26bba6343df8031d9aceb94cf6c6ef47}
+\-Used by the browser to restore the view in the state it was when we left it.
+
+\-If you saved additional properties, reimplement it but don't forget to call the parent method (probably first). \hypertarget{classKParts_1_1BrowserExtension_afe2fe963a5097ad43bea5d076485e759}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!save\-State@{save\-State}}
+\index{save\-State@{save\-State}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{save\-State}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Browser\-Extension\-::save\-State} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Data\-Stream \&}]{stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserExtension_afe2fe963a5097ad43bea5d076485e759}
+\-Used by the browser to save the current state of the view (in order to restore it if going back in navigation).
+
+\-If you want to save additional properties, reimplement it but don't forget to call the parent method (probably first). \hypertarget{classKParts_1_1BrowserExtension_aae2db786c70b458b433a2819ed2110fe}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!selection\-Info@{selection\-Info}}
+\index{selection\-Info@{selection\-Info}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{selection\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::selection\-Info} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-File\-Item\-List \&}]{items}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_aae2db786c70b458b433a2819ed2110fe}
+\-Inform the hosting application about the current selection. \-Used when a set of files/\-U\-R\-Ls is selected (with full information about those \-U\-R\-Ls, including size, permissions etc.) \hypertarget{classKParts_1_1BrowserExtension_a5acae1ffb924f3791fd55900443c3bc0}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!selection\-Info@{selection\-Info}}
+\index{selection\-Info@{selection\-Info}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{selection\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::selection\-Info} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{text}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a5acae1ffb924f3791fd55900443c3bc0}
+\-Inform the hosting application about the current selection. \-Used when some text is selected. \hypertarget{classKParts_1_1BrowserExtension_a84e9c471487de0d8d82067c2db80a539}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!selection\-Info@{selection\-Info}}
+\index{selection\-Info@{selection\-Info}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{selection\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::selection\-Info} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url\-::\-List \&}]{urls}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a84e9c471487de0d8d82067c2db80a539}
+\-Inform the hosting application about the current selection. \-Used when a set of \-U\-R\-Ls is selected. \hypertarget{classKParts_1_1BrowserExtension_a73506e6a8b89d661512d4a6dfcfaabd5}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-Action\-Text@{set\-Action\-Text}}
+\index{set\-Action\-Text@{set\-Action\-Text}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-Action\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-Action\-Text} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const \-Q\-String \&}]{text}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a73506e6a8b89d661512d4a6dfcfaabd5}
+\-Change the text of a standard action held by the browser. \-This can be used to change \char`\"{}\-Paste\char`\"{} into \char`\"{}\-Paste Image\char`\"{} for instance.
+
+\-See class documentation for the list of standard actions. \hypertarget{classKParts_1_1BrowserExtension_a19637ad8f74585047a4477506db764bd}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-Browser\-Arguments@{set\-Browser\-Arguments}}
+\index{set\-Browser\-Arguments@{set\-Browser\-Arguments}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-Browser\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-Browser\-Arguments} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Browser\-Arguments} \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a19637ad8f74585047a4477506db764bd}
+\-Set the parameters to use for opening the next \-U\-R\-L. \-This is called by the \char`\"{}hosting\char`\"{} application, to pass parameters to the part. \begin{DoxySeeAlso}{\-See also}
+\hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1BrowserExtension_a9803f929d3103b57b7d50e1bd45ea280}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-Browser\-Interface@{set\-Browser\-Interface}}
+\index{set\-Browser\-Interface@{set\-Browser\-Interface}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-Browser\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-Browser\-Interface} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Browser\-Interface} $\ast$}]{impl}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a9803f929d3103b57b7d50e1bd45ea280}
+\hypertarget{classKParts_1_1BrowserExtension_aded24c62c57a7768f54c852831f4fd30}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-Icon\-Url@{set\-Icon\-Url}}
+\index{set\-Icon\-Url@{set\-Icon\-Url}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-Icon\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-Icon\-Url} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_aded24c62c57a7768f54c852831f4fd30}
+\-Sets the \-U\-R\-L of an icon for the currently displayed page. \hypertarget{classKParts_1_1BrowserExtension_a335b6f5c78db67e7b8d385eb313b8aef}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-Location\-Bar\-Url@{set\-Location\-Bar\-Url}}
+\index{set\-Location\-Bar\-Url@{set\-Location\-Bar\-Url}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-Location\-Bar\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-Location\-Bar\-Url} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a335b6f5c78db67e7b8d385eb313b8aef}
+\-Updates the \-U\-R\-L shown in the browser's location bar to {\ttfamily url}. \hypertarget{classKParts_1_1BrowserExtension_a7a352d71c9bcabd14a48efb589dd0957}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-Page\-Security@{set\-Page\-Security}}
+\index{set\-Page\-Security@{set\-Page\-Security}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-Page\-Security}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-Page\-Security} (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a7a352d71c9bcabd14a48efb589dd0957}
+\-Tell the host (browser) about security state of current page enum \-Page\-Security \{ \-Not\-Crypted, \-Encrypted, \-Mixed \}; \hypertarget{classKParts_1_1BrowserExtension_a16e798977df4a2992e0f60a9dc01d33f}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!set\-U\-R\-L\-Drop\-Handling\-Enabled@{set\-U\-R\-L\-Drop\-Handling\-Enabled}}
+\index{set\-U\-R\-L\-Drop\-Handling\-Enabled@{set\-U\-R\-L\-Drop\-Handling\-Enabled}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{set\-U\-R\-L\-Drop\-Handling\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::set\-U\-R\-L\-Drop\-Handling\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a16e798977df4a2992e0f60a9dc01d33f}
+\-Enables or disables url drop handling. \-U\-R\-L drop handling is a property describing whether the hosting shell component is allowed to install an event filter on the part's widget, to listen for \-U\-R\-I drop events. \-Set it to true if you are exporting a \hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension} implementation and do not provide any special \-U\-R\-I drop handling. \-If set to false you can be sure to receive all those \-U\-R\-I drop events unfiltered. \-Also note that the implementation as of \-Konqueror installs the event filter only on the part's widget itself, not on child widgets. \hypertarget{classKParts_1_1BrowserExtension_a51c00341228e2280d548e960b3d1fbe6}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!speed\-Progress@{speed\-Progress}}
+\index{speed\-Progress@{speed\-Progress}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{speed\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Extension\-::speed\-Progress} (
+\begin{DoxyParamCaption}
+\item[{int}]{bytes\-Per\-Second}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1BrowserExtension_a51c00341228e2280d548e960b3d1fbe6}
+\begin{DoxySeeAlso}{\-See also}
+\hyperlink{classKParts_1_1BrowserExtension_a347035c05f6d6064f18ee656d61faed7}{loading\-Progress} 
+\end{DoxySeeAlso}
+\hypertarget{classKParts_1_1BrowserExtension_a8c8b975e3805b54a32e28c1a1b66319a}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!x\-Offset@{x\-Offset}}
+\index{x\-Offset@{x\-Offset}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{x\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}virtual int {\bf \-K\-Parts\-::\-Browser\-Extension\-::x\-Offset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a8c8b975e3805b54a32e28c1a1b66319a}
+\-Returns the current x offset.
+
+\-For a scrollview, implement this using contents\-X(). \hypertarget{classKParts_1_1BrowserExtension_a205e59060b7b7d6daf1c25bf9cfdcee5}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!y\-Offset@{y\-Offset}}
+\index{y\-Offset@{y\-Offset}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{y\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}virtual int {\bf \-K\-Parts\-::\-Browser\-Extension\-::y\-Offset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a205e59060b7b7d6daf1c25bf9cfdcee5}
+\-Returns the current y offset.
+
+\-For a scrollview, implement this using contents\-Y(). 
+
+\subsection{\-Property \-Documentation}
+\hypertarget{classKParts_1_1BrowserExtension_a3f4216207e98c29842379e4abf2c1c06}{\index{\-K\-Parts\-::\-Browser\-Extension@{\-K\-Parts\-::\-Browser\-Extension}!url\-Drop\-Handling@{url\-Drop\-Handling}}
+\index{url\-Drop\-Handling@{url\-Drop\-Handling}!KParts::BrowserExtension@{\-K\-Parts\-::\-Browser\-Extension}}
+\subsubsection[{url\-Drop\-Handling}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Extension\-::url\-Drop\-Handling}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write\mbox{]}}}}\label{classKParts_1_1BrowserExtension_a3f4216207e98c29842379e4abf2c1c06}
+
+
+\-Definition at line 323 of file browserextension.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browserextension_8h}{browserextension.\-h}\end{DoxyCompactItemize}

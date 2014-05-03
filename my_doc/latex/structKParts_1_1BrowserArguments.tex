@@ -1,0 +1,252 @@
+\hypertarget{structKParts_1_1BrowserArguments}{\section{\-K\-Parts\-:\-:\-Browser\-Arguments \-Struct \-Reference}
+\label{structKParts_1_1BrowserArguments}\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+}
+
+
+{\ttfamily \#include $<$browserextension.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structKParts_1_1BrowserArguments_a87b08664fe9d6dc90631f4a7c0d4a871}{\-Browser\-Arguments} ()
+\item 
+\hyperlink{structKParts_1_1BrowserArguments_a1a9790044d682d0346c03f9468d31aa5}{\-Browser\-Arguments} (const \hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} \&args)
+\item 
+\hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} \& \hyperlink{structKParts_1_1BrowserArguments_acd0d51024957675a322c5120ab8a9b89}{operator=} (const \hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} \&args)
+\item 
+virtual \hyperlink{structKParts_1_1BrowserArguments_a1f558d1e3fc7441f86346e82f4e6fcaf}{$\sim$\-Browser\-Arguments} ()
+\item 
+void \hyperlink{structKParts_1_1BrowserArguments_aa2a3384e7711f1a6fc6b710852d11bc4}{set\-Content\-Type} (const \-Q\-String \&\hyperlink{structKParts_1_1BrowserArguments_a11198af20bc7c8b9f5c165ed0ba1401b}{content\-Type})
+\item 
+\-Q\-String \hyperlink{structKParts_1_1BrowserArguments_a11198af20bc7c8b9f5c165ed0ba1401b}{content\-Type} () const 
+\item 
+void \hyperlink{structKParts_1_1BrowserArguments_a7c934a91eddfd3ddfb9e1fe0f4eace9f}{set\-Do\-Post} (bool enable)
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_a8470520e769024497a32293e36bdd92f}{do\-Post} () const 
+\item 
+void \hyperlink{structKParts_1_1BrowserArguments_ad4ad5d94380a0548c5d3e53368f6f1f5}{set\-Lock\-History} (bool lock)
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_a5292374726fba2faee5f9b44acd67c70}{lock\-History} () const 
+\item 
+void \hyperlink{structKParts_1_1BrowserArguments_a17bbf30d75c3e5c4d906b91b1c8eed3b}{set\-New\-Tab} (bool \hyperlink{structKParts_1_1BrowserArguments_acdc75a4b3726424aabb4958d58b6e586}{new\-Tab})
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_acdc75a4b3726424aabb4958d58b6e586}{new\-Tab} () const 
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_a3a3c15968b056a76248f483ea613740a}{redirected\-Request} () const 
+\item 
+void \hyperlink{structKParts_1_1BrowserArguments_a7169bd696dd783e0312f7bf220884e0e}{set\-Redirected\-Request} (bool redirected)
+\item 
+void \hyperlink{structKParts_1_1BrowserArguments_a0a0f93b431d62e60a9bb411f97be0126}{set\-Forces\-New\-Window} (bool \hyperlink{structKParts_1_1BrowserArguments_add9a79530ee4c265e8e37493d94f1f08}{forces\-New\-Window})
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_add9a79530ee4c265e8e37493d94f1f08}{forces\-New\-Window} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-Q\-String\-List \hyperlink{structKParts_1_1BrowserArguments_a76aed0d1e923b73db918038d23f524ec}{doc\-State}
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_af06b08da058cd6fc19ad42e2904e2594}{soft\-Reload}
+\item 
+\-Q\-Byte\-Array \hyperlink{structKParts_1_1BrowserArguments_a9c1fb6cb602a10fec4ca05a25f1b9ac6}{post\-Data}
+\item 
+\-Q\-String \hyperlink{structKParts_1_1BrowserArguments_ad8b767db0ac78790860f4f0cbef64ea2}{frame\-Name}
+\item 
+bool \hyperlink{structKParts_1_1BrowserArguments_aa9e31eabaee6af2692319d21721fc9cb}{trusted\-Source}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{structKParts_1_1BrowserArguments}{\-Browser\-Arguments} is a set of web-\/browsing-\/specific arguments, which allow specifying how a \-U\-R\-L should be opened by open\-Url() (as a complement to \hyperlink{classKParts_1_1OpenUrlArguments}{\-K\-Parts\-::\-Open\-Url\-Arguments} which are the non-\/web-\/specific arguments)
+
+\-The arguments remain stored in the browser extension after that, and can be used for instance to jump to the x\-Offset/y\-Offset position once the url has finished loading.
+
+\-The parts (with a browser extension) who care about urlargs will use those arguments, others will ignore them.
+
+\-This can also be used the other way round, when a part asks for a \-U\-R\-L to be opened (with open\-Url\-Request or create\-New\-Window). 
+
+\-Definition at line 64 of file browserextension.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structKParts_1_1BrowserArguments_a87b08664fe9d6dc90631f4a7c0d4a871}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!\-Browser\-Arguments@{\-Browser\-Arguments}}
+\index{\-Browser\-Arguments@{\-Browser\-Arguments}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{\-Browser\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Browser\-Arguments\-::\-Browser\-Arguments} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_a87b08664fe9d6dc90631f4a7c0d4a871}
+\hypertarget{structKParts_1_1BrowserArguments_a1a9790044d682d0346c03f9468d31aa5}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!\-Browser\-Arguments@{\-Browser\-Arguments}}
+\index{\-Browser\-Arguments@{\-Browser\-Arguments}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{\-Browser\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Browser\-Arguments\-::\-Browser\-Arguments} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Browser\-Arguments} \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_a1a9790044d682d0346c03f9468d31aa5}
+\hypertarget{structKParts_1_1BrowserArguments_a1f558d1e3fc7441f86346e82f4e6fcaf}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!$\sim$\-Browser\-Arguments@{$\sim$\-Browser\-Arguments}}
+\index{$\sim$\-Browser\-Arguments@{$\sim$\-Browser\-Arguments}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{$\sim$\-Browser\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-K\-Parts\-::\-Browser\-Arguments\-::$\sim$\-Browser\-Arguments} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{structKParts_1_1BrowserArguments_a1f558d1e3fc7441f86346e82f4e6fcaf}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structKParts_1_1BrowserArguments_a11198af20bc7c8b9f5c165ed0ba1401b}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!content\-Type@{content\-Type}}
+\index{content\-Type@{content\-Type}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{content\-Type}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String {\bf \-K\-Parts\-::\-Browser\-Arguments\-::content\-Type} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structKParts_1_1BrowserArguments_a11198af20bc7c8b9f5c165ed0ba1401b}
+\-K\-H\-T\-M\-L-\/specific field, header defining the type of the \-P\-O\-S\-T data. \hypertarget{structKParts_1_1BrowserArguments_a8470520e769024497a32293e36bdd92f}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!do\-Post@{do\-Post}}
+\index{do\-Post@{do\-Post}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{do\-Post}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::do\-Post} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structKParts_1_1BrowserArguments_a8470520e769024497a32293e36bdd92f}
+\-K\-H\-T\-M\-L-\/specific field, whether to do a \-P\-O\-S\-T instead of a \-G\-E\-T, for the next open\-U\-R\-L. \hypertarget{structKParts_1_1BrowserArguments_add9a79530ee4c265e8e37493d94f1f08}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!forces\-New\-Window@{forces\-New\-Window}}
+\index{forces\-New\-Window@{forces\-New\-Window}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{forces\-New\-Window}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::forces\-New\-Window} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structKParts_1_1BrowserArguments_add9a79530ee4c265e8e37493d94f1f08}
+\-Whether the \-U\-R\-L specifies to be opened in a new window \hypertarget{structKParts_1_1BrowserArguments_a5292374726fba2faee5f9b44acd67c70}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!lock\-History@{lock\-History}}
+\index{lock\-History@{lock\-History}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{lock\-History}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::lock\-History} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structKParts_1_1BrowserArguments_a5292374726fba2faee5f9b44acd67c70}
+\hypertarget{structKParts_1_1BrowserArguments_acdc75a4b3726424aabb4958d58b6e586}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!new\-Tab@{new\-Tab}}
+\index{new\-Tab@{new\-Tab}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{new\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::new\-Tab} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structKParts_1_1BrowserArguments_acdc75a4b3726424aabb4958d58b6e586}
+\hypertarget{structKParts_1_1BrowserArguments_acd0d51024957675a322c5120ab8a9b89}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!operator=@{operator=}}
+\index{operator=@{operator=}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Browser\-Arguments}\& \-K\-Parts\-::\-Browser\-Arguments\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Browser\-Arguments} \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_acd0d51024957675a322c5120ab8a9b89}
+\hypertarget{structKParts_1_1BrowserArguments_a3a3c15968b056a76248f483ea613740a}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!redirected\-Request@{redirected\-Request}}
+\index{redirected\-Request@{redirected\-Request}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{redirected\-Request}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::redirected\-Request} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structKParts_1_1BrowserArguments_a3a3c15968b056a76248f483ea613740a}
+\begin{DoxyReturn}{\-Returns}
+true if the request was a result of a \-M\-E\-T\-A refresh/redirect request or \-H\-T\-T\-P redirect. 
+\end{DoxyReturn}
+\hypertarget{structKParts_1_1BrowserArguments_aa2a3384e7711f1a6fc6b710852d11bc4}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!set\-Content\-Type@{set\-Content\-Type}}
+\index{set\-Content\-Type@{set\-Content\-Type}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{set\-Content\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Arguments\-::set\-Content\-Type} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{content\-Type}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_aa2a3384e7711f1a6fc6b710852d11bc4}
+\-K\-H\-T\-M\-L-\/specific field, header defining the type of the \-P\-O\-S\-T data. \hypertarget{structKParts_1_1BrowserArguments_a7c934a91eddfd3ddfb9e1fe0f4eace9f}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!set\-Do\-Post@{set\-Do\-Post}}
+\index{set\-Do\-Post@{set\-Do\-Post}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{set\-Do\-Post}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Arguments\-::set\-Do\-Post} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_a7c934a91eddfd3ddfb9e1fe0f4eace9f}
+\-K\-H\-T\-M\-L-\/specific field, whether to do a \-P\-O\-S\-T instead of a \-G\-E\-T, for the next open\-U\-R\-L. \hypertarget{structKParts_1_1BrowserArguments_a0a0f93b431d62e60a9bb411f97be0126}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!set\-Forces\-New\-Window@{set\-Forces\-New\-Window}}
+\index{set\-Forces\-New\-Window@{set\-Forces\-New\-Window}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{set\-Forces\-New\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Arguments\-::set\-Forces\-New\-Window} (
+\begin{DoxyParamCaption}
+\item[{bool}]{forces\-New\-Window}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_a0a0f93b431d62e60a9bb411f97be0126}
+\-Set whether the \-U\-R\-L specifies to be opened in a new window.
+
+\-When open\-Url\-Request is emitted\-: 
+\begin{DoxyItemize}
+\item normally the url would be opened in the current view. 
+\item set\-Forces\-New\-Window(true) specifies that a new window or tab should be used\-: set\-New\-Tab(true) requests a tab specifically, otherwise the user-\/preference is followed. \-This is typically used for target=\char`\"{}\-\_\-blank\char`\"{} in web browsers. 
+\end{DoxyItemize}
+
+\-When create\-New\-Window is emitted\-: 
+\begin{DoxyItemize}
+\item if set\-New\-Tab(true) was called, a tab is created. 
+\item otherwise, if set\-Forces\-New\-Window(true) was called, a window is created. 
+\item otherwise the user preference is followed. 
+\end{DoxyItemize}\hypertarget{structKParts_1_1BrowserArguments_ad4ad5d94380a0548c5d3e53368f6f1f5}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!set\-Lock\-History@{set\-Lock\-History}}
+\index{set\-Lock\-History@{set\-Lock\-History}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{set\-Lock\-History}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Arguments\-::set\-Lock\-History} (
+\begin{DoxyParamCaption}
+\item[{bool}]{lock}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_ad4ad5d94380a0548c5d3e53368f6f1f5}
+\-Whether to lock the history when opening the next \-U\-R\-L. \-This is used during e.\-g. a redirection, to avoid a new entry in the history. \hypertarget{structKParts_1_1BrowserArguments_a17bbf30d75c3e5c4d906b91b1c8eed3b}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!set\-New\-Tab@{set\-New\-Tab}}
+\index{set\-New\-Tab@{set\-New\-Tab}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{set\-New\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Arguments\-::set\-New\-Tab} (
+\begin{DoxyParamCaption}
+\item[{bool}]{new\-Tab}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_a17bbf30d75c3e5c4d906b91b1c8eed3b}
+\-Whether the \-U\-R\-L should be opened in a new tab instead in a new window. \hypertarget{structKParts_1_1BrowserArguments_a7169bd696dd783e0312f7bf220884e0e}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!set\-Redirected\-Request@{set\-Redirected\-Request}}
+\index{set\-Redirected\-Request@{set\-Redirected\-Request}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{set\-Redirected\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Browser\-Arguments\-::set\-Redirected\-Request} (
+\begin{DoxyParamCaption}
+\item[{bool}]{redirected}
+\end{DoxyParamCaption}
+)}}\label{structKParts_1_1BrowserArguments_a7169bd696dd783e0312f7bf220884e0e}
+\-Set the redirect flag to indicate \-U\-R\-L is a result of either a \-M\-E\-T\-A redirect or \-H\-T\-T\-P redirect.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em redirected} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structKParts_1_1BrowserArguments_a76aed0d1e923b73db918038d23f524ec}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!doc\-State@{doc\-State}}
+\index{doc\-State@{doc\-State}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{doc\-State}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String\-List {\bf \-K\-Parts\-::\-Browser\-Arguments\-::doc\-State}}}\label{structKParts_1_1BrowserArguments_a76aed0d1e923b73db918038d23f524ec}
+\-This buffer can be used by the part to save and restore its contents. \-See \-K\-H\-T\-M\-L\-Part for instance. 
+
+\-Definition at line 81 of file browserextension.\-h.
+
+\hypertarget{structKParts_1_1BrowserArguments_ad8b767db0ac78790860f4f0cbef64ea2}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!frame\-Name@{frame\-Name}}
+\index{frame\-Name@{frame\-Name}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{frame\-Name}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String {\bf \-K\-Parts\-::\-Browser\-Arguments\-::frame\-Name}}}\label{structKParts_1_1BrowserArguments_ad8b767db0ac78790860f4f0cbef64ea2}
+\-The frame in which to open the \-U\-R\-L. \-K\-H\-T\-M\-L/\-Konqueror-\/specific. 
+
+\-Definition at line 133 of file browserextension.\-h.
+
+\hypertarget{structKParts_1_1BrowserArguments_a9c1fb6cb602a10fec4ca05a25f1b9ac6}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!post\-Data@{post\-Data}}
+\index{post\-Data@{post\-Data}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{post\-Data}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Byte\-Array {\bf \-K\-Parts\-::\-Browser\-Arguments\-::post\-Data}}}\label{structKParts_1_1BrowserArguments_a9c1fb6cb602a10fec4ca05a25f1b9ac6}
+\-K\-H\-T\-M\-L-\/specific field, contents of the \-H\-T\-T\-P \-P\-O\-S\-T data. 
+
+\-Definition at line 94 of file browserextension.\-h.
+
+\hypertarget{structKParts_1_1BrowserArguments_af06b08da058cd6fc19ad42e2904e2594}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!soft\-Reload@{soft\-Reload}}
+\index{soft\-Reload@{soft\-Reload}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{soft\-Reload}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::soft\-Reload}}}\label{structKParts_1_1BrowserArguments_af06b08da058cd6fc19ad42e2904e2594}
+{\ttfamily soft\-Reload} is set when user just hits reload button. \-It's used currently for two different frameset reload strategies. \-In case of soft reload individual frames are reloaded instead of reloading whole frameset. 
+
+\-Definition at line 89 of file browserextension.\-h.
+
+\hypertarget{structKParts_1_1BrowserArguments_aa9e31eabaee6af2692319d21721fc9cb}{\index{\-K\-Parts\-::\-Browser\-Arguments@{\-K\-Parts\-::\-Browser\-Arguments}!trusted\-Source@{trusted\-Source}}
+\index{trusted\-Source@{trusted\-Source}!KParts::BrowserArguments@{\-K\-Parts\-::\-Browser\-Arguments}}
+\subsubsection[{trusted\-Source}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Browser\-Arguments\-::trusted\-Source}}}\label{structKParts_1_1BrowserArguments_aa9e31eabaee6af2692319d21721fc9cb}
+\-If true, the part who asks for a \-U\-R\-L to be opened can be 'trusted' to execute applications. \-For instance, the directory views can be 'trusted' whereas \-H\-T\-M\-L pages are not trusted in that respect. 
+
+\-Definition at line 140 of file browserextension.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{browserextension_8h}{browserextension.\-h}\end{DoxyCompactItemize}

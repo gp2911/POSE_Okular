@@ -1,0 +1,356 @@
+\hypertarget{classKParts_1_1ReadOnlyPart}{\section{\-K\-Parts\-:\-:\-Read\-Only\-Part \-Class \-Reference}
+\label{classKParts_1_1ReadOnlyPart}\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}}
+}
+
+
+{\ttfamily \#include $<$part.\-h$>$}
+
+\-Inheritance diagram for \-K\-Parts\-:\-:\-Read\-Only\-Part\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classKParts_1_1ReadOnlyPart}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\-Url} (const \-K\-Url \&\hyperlink{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{url})
+\end{DoxyCompactItemize}
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_a1839e6f2741b7fca77cd4b04b5acdc6d}{started} (\-K\-I\-O\-::\-Job $\ast$)
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_a7dbe7a0dd64ed631d7d7fc763167de31}{completed} ()
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_a48ddc679f4b303102237f8e33b29c904}{completed} (bool pending\-Action)
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_ab1083f7c30e868d66e1f326b94851d8c}{canceled} (const \-Q\-String \&err\-Msg)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKParts_1_1ReadOnlyPart_ad8b7c3b0f0bc8303dc66c79d8ebc57e9}{\-Read\-Only\-Part} (\-Q\-Object $\ast$parent=0)
+\item 
+virtual \hyperlink{classKParts_1_1ReadOnlyPart_a8609199ca6addc35abf7f78b02e3236c}{$\sim$\-Read\-Only\-Part} ()
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_a95a547b488bc688035cffbd3df6f0b27}{set\-Progress\-Info\-Enabled} (bool show)
+\item 
+bool \hyperlink{classKParts_1_1ReadOnlyPart_aa1cff9c4698b9631d5bdd9f912f91568}{is\-Progress\-Info\-Enabled} () const 
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_ab3e6bd5d262b6b0b26acc003b2957c0b}{show\-Progress\-Info} (bool show)
+\item 
+\-K\-Url \hyperlink{classKParts_1_1ReadOnlyPart_aba05c3b2fd42dcfebc6585e4f746d2cb}{url} () const 
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadOnlyPart_a1df069c3c0503f529dc9f0d7007f144d}{close\-Url} ()
+\item 
+\hyperlink{classKParts_1_1BrowserExtension}{\-Browser\-Extension} $\ast$ \hyperlink{classKParts_1_1ReadOnlyPart_a58d61ab4d2b2ed8d7944e1b02dbba0e2}{browser\-Extension} () const 
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_aab893a47747cad8bb29f1f95316140de}{set\-Arguments} (const \hyperlink{classKParts_1_1OpenUrlArguments}{\-Open\-Url\-Arguments} \&\hyperlink{classKParts_1_1ReadOnlyPart_a811e25200521dcf347bacb6be7ab8ecf}{arguments})
+\item 
+\hyperlink{classKParts_1_1OpenUrlArguments}{\-Open\-Url\-Arguments} \hyperlink{classKParts_1_1ReadOnlyPart_a811e25200521dcf347bacb6be7ab8ecf}{arguments} () const 
+\item 
+bool \hyperlink{classKParts_1_1ReadOnlyPart_aa3dacdfd6412d40f62ed75b02058b5e4}{open\-Stream} (const \-Q\-String \&mime\-Type, const \-K\-Url \&\hyperlink{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{url})
+\item 
+bool \hyperlink{classKParts_1_1ReadOnlyPart_a5e6aac81ead43987e1711207b00878db}{write\-Stream} (const \-Q\-Byte\-Array \&data)
+\item 
+bool \hyperlink{classKParts_1_1ReadOnlyPart_a7af5ff9f593ee75dac30498ebf87c255}{close\-Stream} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classKParts_1_1ReadOnlyPart_a951a032497fb94b092dfd4fd134db09b}{open\-File} ()
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_abcfbcbb7ae52b89cbb4844405e8e9b6e}{abort\-Load} ()
+\item 
+virtual void \hyperlink{classKParts_1_1ReadOnlyPart_aa5ac9f161aef38a92bbf25891746cac0}{gui\-Activate\-Event} (\hyperlink{classKParts_1_1GUIActivateEvent}{\-G\-U\-I\-Activate\-Event} $\ast$event)
+\item 
+\-K\-D\-E\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D bool \hyperlink{classKParts_1_1ReadOnlyPart_ace00a87565affbcdb3318a14d73969a6}{is\-Local\-File\-Temporary} () const 
+\item 
+\-K\-D\-E\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D void \hyperlink{classKParts_1_1ReadOnlyPart_a68ab78486399e688ee5ebe9fda0cf35b}{set\-Local\-File\-Temporary} (bool temp)
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_a2d64650f22a8b72d8c56ddec21717df9}{set\-Url} (const \-K\-Url \&\hyperlink{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{url})
+\item 
+\-Q\-String \hyperlink{classKParts_1_1ReadOnlyPart_a9c411f8471de1a852c8595719d179946}{local\-File\-Path} () const 
+\item 
+void \hyperlink{classKParts_1_1ReadOnlyPart_a25c155283ba9ad06eeb8b1b203e49789}{set\-Local\-File\-Path} (const \-Q\-String \&\hyperlink{classKParts_1_1ReadOnlyPart_a9c411f8471de1a852c8595719d179946}{local\-File\-Path})
+\item 
+\hyperlink{classKParts_1_1ReadOnlyPart_a08c76aee8709e9956d79266ba02791ff}{\-Read\-Only\-Part} (\-Read\-Only\-Part\-Private \&dd, \-Q\-Object $\ast$parent)
+\end{DoxyCompactItemize}
+\subsection*{\-Properties}
+\begin{DoxyCompactItemize}
+\item 
+\-K\-Url \hyperlink{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{url}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Base class for any \char`\"{}viewer\char`\"{} part.
+
+\-This class takes care of network transparency for you, in the simplest way (downloading to a temporary file, then letting the part load from the temporary file). \-To use the built-\/in network transparency, you only need to implement \hyperlink{classKParts_1_1ReadOnlyPart_a951a032497fb94b092dfd4fd134db09b}{open\-File()}, not \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\-Url()}.
+
+\-To implement network transparency differently (e.\-g. for progressive loading, like a web browser does for instance), or to prevent network transparency (but why would you do that?), you can override \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\-Url()}.
+
+\hyperlink{namespaceKParts}{\-K\-Parts} \-Application can use the signals to show feedback while the \-U\-R\-L is being loaded.
+
+\hyperlink{classKParts_1_1ReadOnlyPart}{\-Read\-Only\-Part} handles the window caption by setting it to the current \-U\-R\-L (set in \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\-Url()}, and each time the part is activated). \-If you want another caption, set it in \hyperlink{classKParts_1_1ReadOnlyPart_a951a032497fb94b092dfd4fd134db09b}{open\-File()} and (if the part might ever be used with a part manager) in \hyperlink{classKParts_1_1ReadOnlyPart_aa5ac9f161aef38a92bbf25891746cac0}{gui\-Activate\-Event()} 
+
+\-Definition at line 488 of file part.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classKParts_1_1ReadOnlyPart_ad8b7c3b0f0bc8303dc66c79d8ebc57e9}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!\-Read\-Only\-Part@{\-Read\-Only\-Part}}
+\index{\-Read\-Only\-Part@{\-Read\-Only\-Part}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{\-Read\-Only\-Part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Read\-Only\-Part\-::\-Read\-Only\-Part} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_ad8b7c3b0f0bc8303dc66c79d8ebc57e9}
+\-Constructor \-See also \hyperlink{classKParts_1_1Part}{\-Part} for the set\-X\-X\-X methods to call. \hypertarget{classKParts_1_1ReadOnlyPart_a8609199ca6addc35abf7f78b02e3236c}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!$\sim$\-Read\-Only\-Part@{$\sim$\-Read\-Only\-Part}}
+\index{$\sim$\-Read\-Only\-Part@{$\sim$\-Read\-Only\-Part}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{$\sim$\-Read\-Only\-Part}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::$\sim$\-Read\-Only\-Part} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a8609199ca6addc35abf7f78b02e3236c}
+\-Destructor \hypertarget{classKParts_1_1ReadOnlyPart_a08c76aee8709e9956d79266ba02791ff}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!\-Read\-Only\-Part@{\-Read\-Only\-Part}}
+\index{\-Read\-Only\-Part@{\-Read\-Only\-Part}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{\-Read\-Only\-Part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-K\-Parts\-::\-Read\-Only\-Part\-::\-Read\-Only\-Part} (
+\begin{DoxyParamCaption}
+\item[{\-Read\-Only\-Part\-Private \&}]{dd, }
+\item[{\-Q\-Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a08c76aee8709e9956d79266ba02791ff}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classKParts_1_1ReadOnlyPart_abcfbcbb7ae52b89cbb4844405e8e9b6e}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!abort\-Load@{abort\-Load}}
+\index{abort\-Load@{abort\-Load}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{abort\-Load}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::abort\-Load} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_abcfbcbb7ae52b89cbb4844405e8e9b6e}
+\hypertarget{classKParts_1_1ReadOnlyPart_a811e25200521dcf347bacb6be7ab8ecf}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!arguments@{arguments}}
+\index{arguments@{arguments}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{arguments}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Open\-Url\-Arguments} {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::arguments} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ReadOnlyPart_a811e25200521dcf347bacb6be7ab8ecf}
+\begin{DoxyReturn}{\-Returns}
+the arguments that were used to open this \-U\-R\-L. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ReadOnlyPart_a58d61ab4d2b2ed8d7944e1b02dbba0e2}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!browser\-Extension@{browser\-Extension}}
+\index{browser\-Extension@{browser\-Extension}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{browser\-Extension}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Browser\-Extension}$\ast$ {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::browser\-Extension} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ReadOnlyPart_a58d61ab4d2b2ed8d7944e1b02dbba0e2}
+\-This convenience method returns the browser\-Extension for this part, or 0 if there isn't any. \hypertarget{classKParts_1_1ReadOnlyPart_ab1083f7c30e868d66e1f326b94851d8c}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!canceled@{canceled}}
+\index{canceled@{canceled}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{canceled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::canceled} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{err\-Msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_ab1083f7c30e868d66e1f326b94851d8c}
+\-Emit this if loading is canceled by the user or by an error. 
+\begin{DoxyParams}{\-Parameters}
+{\em err\-Msg} & the error message, empty if the user canceled the loading voluntarily. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKParts_1_1ReadOnlyPart_a7af5ff9f593ee75dac30498ebf87c255}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!close\-Stream@{close\-Stream}}
+\index{close\-Stream@{close\-Stream}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{close\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::close\-Stream} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ReadOnlyPart_a7af5ff9f593ee75dac30498ebf87c255}
+\-Terminate the sending of data to the part. \-With some data types (text, html...) close\-Stream might never actually be called, in the case of continuous streams, for instance plain text or \-H\-T\-M\-L data. \hypertarget{classKParts_1_1ReadOnlyPart_a1df069c3c0503f529dc9f0d7007f144d}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!close\-Url@{close\-Url}}
+\index{close\-Url@{close\-Url}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{close\-Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::close\-Url} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a1df069c3c0503f529dc9f0d7007f144d}
+\-Called when closing the current url (e.\-g. document), for instance when switching to another url (note that \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\-Url()} calls it automatically in this case). \-If the current \-U\-R\-L is not fully loaded yet, aborts loading. \-Deletes the temporary file used when the url is remote. \begin{DoxyReturn}{\-Returns}
+always true, but the return value exists for reimplementations 
+\end{DoxyReturn}
+
+
+\-Reimplemented in \hyperlink{classKParts_1_1ReadWritePart_a45ed4bb6df997d6db0eae0d63f66b050}{\-K\-Parts\-::\-Read\-Write\-Part}.
+
+\hypertarget{classKParts_1_1ReadOnlyPart_a7dbe7a0dd64ed631d7d7fc763167de31}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!completed@{completed}}
+\index{completed@{completed}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{completed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::completed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a7dbe7a0dd64ed631d7d7fc763167de31}
+\-Emit this when you have completed loading data. \-Hosting apps will want to know when the process of loading the data is finished, so that they can access the data when everything is loaded. \hypertarget{classKParts_1_1ReadOnlyPart_a48ddc679f4b303102237f8e33b29c904}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!completed@{completed}}
+\index{completed@{completed}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{completed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::completed} (
+\begin{DoxyParamCaption}
+\item[{bool}]{pending\-Action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a48ddc679f4b303102237f8e33b29c904}
+\-Same as the above signal except it indicates whether there is a pending action to be executed on a delay timer. \-An example of this is the meta-\/refresh tags on web pages used to reload/redirect after a certain period of time. \-This signal is useful if you want to give the user the ability to cancel such pending actions.
+
+{\ttfamily pending\-Action} true if a pending action exists, false otherwise. \hypertarget{classKParts_1_1ReadOnlyPart_aa5ac9f161aef38a92bbf25891746cac0}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!gui\-Activate\-Event@{gui\-Activate\-Event}}
+\index{gui\-Activate\-Event@{gui\-Activate\-Event}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{gui\-Activate\-Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::gui\-Activate\-Event} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-G\-U\-I\-Activate\-Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_aa5ac9f161aef38a92bbf25891746cac0}
+\-Reimplemented from \hyperlink{classKParts_1_1Part}{\-Part}, so that the window caption is set to the current url (decoded) when the part is activated \-This is the usual behavior in 99\% of the apps \-Reimplement if you don't like it -\/ test for event-\/$>$activated() !
+
+\-Technical note \-: this is done with \hyperlink{classKParts_1_1GUIActivateEvent}{\-G\-U\-I\-Activate\-Event} and not with \hyperlink{classKParts_1_1PartActivateEvent}{\-Part\-Activate\-Event} because it's handled by the mainwindow (which gets the even after the \hyperlink{classKParts_1_1PartActivateEvent}{\-Part\-Activate\-Event} events have been sent) 
+
+\-Reimplemented from \hyperlink{classKParts_1_1Part_a34b92f00459085ca7e05b7e8ee321347}{\-K\-Parts\-::\-Part}.
+
+\hypertarget{classKParts_1_1ReadOnlyPart_ace00a87565affbcdb3318a14d73969a6}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!is\-Local\-File\-Temporary@{is\-Local\-File\-Temporary}}
+\index{is\-Local\-File\-Temporary@{is\-Local\-File\-Temporary}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{is\-Local\-File\-Temporary}]{\setlength{\rightskip}{0pt plus 5cm}\-K\-D\-E\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::is\-Local\-File\-Temporary} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_ace00a87565affbcdb3318a14d73969a6}
+\hypertarget{classKParts_1_1ReadOnlyPart_aa1cff9c4698b9631d5bdd9f912f91568}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!is\-Progress\-Info\-Enabled@{is\-Progress\-Info\-Enabled}}
+\index{is\-Progress\-Info\-Enabled@{is\-Progress\-Info\-Enabled}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{is\-Progress\-Info\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::is\-Progress\-Info\-Enabled} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ReadOnlyPart_aa1cff9c4698b9631d5bdd9f912f91568}
+\-Returns whether the part shows the progress info dialog used by internal \hyperlink{namespaceKIO}{\-K\-I\-O} job. \hypertarget{classKParts_1_1ReadOnlyPart_a9c411f8471de1a852c8595719d179946}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!local\-File\-Path@{local\-File\-Path}}
+\index{local\-File\-Path@{local\-File\-Path}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{local\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::local\-File\-Path} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a9c411f8471de1a852c8595719d179946}
+\-Returns the local file path associated with this part. \hypertarget{classKParts_1_1ReadOnlyPart_a951a032497fb94b092dfd4fd134db09b}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!open\-File@{open\-File}}
+\index{open\-File@{open\-File}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{open\-File}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::open\-File} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a951a032497fb94b092dfd4fd134db09b}
+\-If the part uses the standard implementation of \hyperlink{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{open\-Url()}, it must reimplement this, to open the local file. \-The default implementation is simply \{ return false; \} \hypertarget{classKParts_1_1ReadOnlyPart_aa3dacdfd6412d40f62ed75b02058b5e4}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!open\-Stream@{open\-Stream}}
+\index{open\-Stream@{open\-Stream}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{open\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::open\-Stream} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{mime\-Type, }
+\item[{const \-K\-Url \&}]{url}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ReadOnlyPart_aa3dacdfd6412d40f62ed75b02058b5e4}
+\-Initiate sending data to this part. \-This is an alternative to open\-Url, which allows the user of the part to load the data itself, and send it progressively to the part.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em mime\-Type} & the type of data that is going to be sent to this part. \\
+\hline
+{\em url} & the \-U\-R\-L representing this data. \-Although not directly used, every \hyperlink{classKParts_1_1ReadOnlyPart}{\-Read\-Only\-Part} has a \-U\-R\-L (see \hyperlink{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{url()}), so this simply sets it. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if the part supports progressive loading and accepts data, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!open\-Url@{open\-Url}}
+\index{open\-Url@{open\-Url}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{open\-Url}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::open\-Url} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual, slot\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a1ff41b28f8da57ccc380e0c092a50c0c}
+\-Only reimplement open\-Url if you don't want the network transparency support to download from the url into a temporary file (when the url isn't local). \-Otherwise, reimplement \hyperlink{classKParts_1_1ReadOnlyPart_a951a032497fb94b092dfd4fd134db09b}{open\-File()} only .
+
+\-If you reimplement it, don't forget to set the caption, usually with emit set\-Window\-Caption( url.\-pretty\-Url() ); \hypertarget{classKParts_1_1ReadOnlyPart_aab893a47747cad8bb29f1f95316140de}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!set\-Arguments@{set\-Arguments}}
+\index{set\-Arguments@{set\-Arguments}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{set\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::set\-Arguments} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Open\-Url\-Arguments} \&}]{arguments}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ReadOnlyPart_aab893a47747cad8bb29f1f95316140de}
+\-Sets the arguments to use for the next open\-Url call. \hypertarget{classKParts_1_1ReadOnlyPart_a25c155283ba9ad06eeb8b1b203e49789}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!set\-Local\-File\-Path@{set\-Local\-File\-Path}}
+\index{set\-Local\-File\-Path@{set\-Local\-File\-Path}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{set\-Local\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::set\-Local\-File\-Path} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-String \&}]{local\-File\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a25c155283ba9ad06eeb8b1b203e49789}
+\-Sets the local file path associated with this part. \hypertarget{classKParts_1_1ReadOnlyPart_a68ab78486399e688ee5ebe9fda0cf35b}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!set\-Local\-File\-Temporary@{set\-Local\-File\-Temporary}}
+\index{set\-Local\-File\-Temporary@{set\-Local\-File\-Temporary}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{set\-Local\-File\-Temporary}]{\setlength{\rightskip}{0pt plus 5cm}\-K\-D\-E\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::set\-Local\-File\-Temporary} (
+\begin{DoxyParamCaption}
+\item[{bool}]{temp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a68ab78486399e688ee5ebe9fda0cf35b}
+\hypertarget{classKParts_1_1ReadOnlyPart_a95a547b488bc688035cffbd3df6f0b27}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!set\-Progress\-Info\-Enabled@{set\-Progress\-Info\-Enabled}}
+\index{set\-Progress\-Info\-Enabled@{set\-Progress\-Info\-Enabled}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{set\-Progress\-Info\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::set\-Progress\-Info\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ReadOnlyPart_a95a547b488bc688035cffbd3df6f0b27}
+\-Call this to turn off the progress info dialog used by the internal \hyperlink{namespaceKIO}{\-K\-I\-O} job. \-Use this if you provide another way of displaying progress info (e.\-g. a statusbar), using the signals emitted by this class, and/or those emitted by the \-Job given by started. \hypertarget{classKParts_1_1ReadOnlyPart_a2d64650f22a8b72d8c56ddec21717df9}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!set\-Url@{set\-Url}}
+\index{set\-Url@{set\-Url}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{set\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::set\-Url} (
+\begin{DoxyParamCaption}
+\item[{const \-K\-Url \&}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a2d64650f22a8b72d8c56ddec21717df9}
+\-Sets the url associated with this part. \hypertarget{classKParts_1_1ReadOnlyPart_ab3e6bd5d262b6b0b26acc003b2957c0b}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!show\-Progress\-Info@{show\-Progress\-Info}}
+\index{show\-Progress\-Info@{show\-Progress\-Info}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{show\-Progress\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::show\-Progress\-Info} (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ReadOnlyPart_ab3e6bd5d262b6b0b26acc003b2957c0b}
+\hypertarget{classKParts_1_1ReadOnlyPart_a1839e6f2741b7fca77cd4b04b5acdc6d}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!started@{started}}
+\index{started@{started}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{started}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::started} (
+\begin{DoxyParamCaption}
+\item[{\-K\-I\-O\-::\-Job $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a1839e6f2741b7fca77cd4b04b5acdc6d}
+\-The part emits this when starting data. \-If using a \-K\-I\-O\-::\-Job, it sets the job in the signal, so that progress information can be shown. \-Otherwise, job is 0. \hypertarget{classKParts_1_1ReadOnlyPart_aba05c3b2fd42dcfebc6585e4f746d2cb}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!url@{url}}
+\index{url@{url}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}\-K\-Url {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::url} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKParts_1_1ReadOnlyPart_aba05c3b2fd42dcfebc6585e4f746d2cb}
+\-Returns the \-U\-R\-L currently opened in this part.
+
+\begin{DoxyReturn}{\-Returns}
+\-The current \-U\-R\-L. 
+\end{DoxyReturn}
+\hypertarget{classKParts_1_1ReadOnlyPart_a5e6aac81ead43987e1711207b00878db}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!write\-Stream@{write\-Stream}}
+\index{write\-Stream@{write\-Stream}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{write\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::write\-Stream} (
+\begin{DoxyParamCaption}
+\item[{const \-Q\-Byte\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classKParts_1_1ReadOnlyPart_a5e6aac81ead43987e1711207b00878db}
+\-Send some data to the part. open\-Stream must have been called previously, and must have returned true. \begin{DoxyReturn}{\-Returns}
+true if the data was accepted by the part. \-If false is returned, the application should stop sending data, and doesn't have to call close\-Stream. 
+\end{DoxyReturn}
+
+
+\subsection{\-Property \-Documentation}
+\hypertarget{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}{\index{\-K\-Parts\-::\-Read\-Only\-Part@{\-K\-Parts\-::\-Read\-Only\-Part}!url@{url}}
+\index{url@{url}!KParts::ReadOnlyPart@{\-K\-Parts\-::\-Read\-Only\-Part}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}\-K\-Url {\bf \-K\-Parts\-::\-Read\-Only\-Part\-::url}\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}\label{classKParts_1_1ReadOnlyPart_a5b8edbf05a338814287496882adde559}
+
+
+\-Definition at line 492 of file part.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/usr/include/kparts/\hyperlink{part_8h}{part.\-h}\end{DoxyCompactItemize}
